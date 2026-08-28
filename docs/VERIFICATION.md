@@ -4,6 +4,33 @@ Snapshot date: **2026-08-28** (UTC). Everything below was read directly from the
 source on that date and transcribed by hand into `data/`. Nothing was inferred, estimated
 from memory, or taken from a secondary aggregator unless explicitly marked.
 
+## 0. Independent re-verification (running again on 2026-08-28 by the site build)
+
+A second, independent pass was run while building the GitHub Pages site. What it checked and found:
+
+* **Pipeline reproducibility.** `python3 scripts/build.py` was run from a clean working tree.
+  Output was byte-for-byte identical to the committed `data/processed/free_time.json`,
+  `data/processed/mlb.json`, and `schedules.md`. `git status` stayed clean.
+* **MLB clubs.** `https://statsapi.mlb.com/api/v1/teams?sportId=1&season=2026` returned
+  exactly the same 30 clubs (id, abbr, league, division) as `data/raw/teams_mlb.json`.
+* **MLB game records.** The official schedule endpoint matched the repo byte-exactly on every
+  date re-pulled: 2026-08-28 (15 games), 2026-08-29 (17 games; both AZ@SF and BOS@NYY
+  doubleheaders), 2026-09-01 (15), 2026-09-02 (15), 2026-09-04 (16; DET@CLE doubleheader),
+  and 2026-09-27 (15 games, all 19:05-19:20Z). 2026-09-28 returned no MLB games, matching the
+  "Sep 28 off day" irregularity.
+* **Raw totals.** Parsing the raw files directly gives 778 MLB regular-season games over 58
+  dates (per-team range 51-53 = 51.9 mean), 55 postseason placeholders over 28 dates, and 44
+  49ers/Earthquakes/Stanford/Cal games. These equal the build report values.
+* **Official club/sport pages.** The 49ers schedule page matched all 10 window games, the
+  Earthquakes 2026 PDF matched all 16 window games, the Stanford schedule page matched all 9
+  window games, and the Cal schedule page matched all 9 window games.
+* **Sandbox limitation (flagged).** The build sandbox could not open `statsapi.mlb.com` or
+  `github.io` directly (TLS handshake was dropped for outbound `curl`/`urllib`). Those two
+  hosts were reached instead through the page-fetch proxy, which returned the raw API JSON.
+  As a result, the full 778-game list was NOT re-downloaded inside the sandbox; verification of
+  the MLB list was done on the dates above plus a deterministic re-parse of the committed raw
+  files. This is an environment limitation, not a data error found in the repo.
+
 ## 1. Primary sources (open each link to re-verify manually)
 
 | Dataset | Source | Status |
@@ -85,6 +112,16 @@ The complete machine-generated list is at the bottom of `schedules.md`. The mate
 11. **Stanford's NC State game was date-ambiguous.** The Jan 26 official release said
     "Friday, Oct. 23 OR Saturday, Oct. 24"; the live schedule page now lists Fri Oct 23,
     7:30 PM PDT. Recorded as Oct 23 and flagged.
+12. **The MLB duration figure is contested across the cited sources.** The shipped default
+    is 164 min (2:44), from BetMGM's Aug 25 2026 post. On the same re-check date, another
+    sports-data page said MLB was "trending near 2:38" and cited official MLB pace-of-play
+    data for 2025 (2:38). Neither is an MLB.com press release, and the value is editable in
+    the UI and in `scripts/build.py`. Treat 164 min as a reasonable-but-not-official 2026
+    default.
+13. **README wording contradiction.** README says "No manual entry anywhere," but the raw
+    files are explicitly described as "hand-transcribed" (the only way to snapshot the
+    source URLs). The data is source-attributed and reproducible, but transcription is
+    manual and should be re-verified against the URLs in this file.
 
 ## 4. Known limitations (stated plainly)
 
