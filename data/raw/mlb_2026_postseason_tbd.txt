@@ -1,0 +1,33 @@
+# MLB 2026 POSTSEASON placeholders. EVERY game below returned gameDate "T07:33:00Z" (a placeholder, NOT a real
+# start time) and placeholder team ids (4612-4947, 5513-5533, 2710/2711). Times and teams are UNCONFIRMED.
+# Source: https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-09-02&endDate=2026-11-08&fields=dates,date,games,gameDate,teams,away,home,team,id
+# Fetched 2026-08-28. Format: date|TBDxN  (N = number of scheduled postseason games that day)
+# 2026-09-28 has NO games at all (off day between end of regular season and Wild Card round).
+2026-09-29|TBDx4
+2026-09-30|TBDx4
+2026-10-01|TBDx4
+2026-10-03|TBDx4
+2026-10-04|TBDx4
+2026-10-05|TBDx2
+2026-10-06|TBDx2
+2026-10-07|TBDx4
+2026-10-08|TBDx2
+2026-10-09|TBDx2
+2026-10-10|TBDx2
+2026-10-11|TBDx1
+2026-10-12|TBDx2
+2026-10-13|TBDx1
+2026-10-14|TBDx1
+2026-10-15|TBDx2
+2026-10-16|TBDx2
+2026-10-17|TBDx1
+2026-10-18|TBDx1
+2026-10-19|TBDx2
+2026-10-20|TBDx1
+2026-10-23|TBDx1
+2026-10-24|TBDx1
+2026-10-26|TBDx1
+2026-10-27|TBDx1
+2026-10-28|TBDx1
+2026-10-30|TBDx1
+2026-10-31|TBDx1

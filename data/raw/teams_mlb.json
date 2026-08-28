@@ -1,0 +1,40 @@
+{
+  "_provenance": {
+    "source": "MLB Stats API (MLB Advanced Media) /api/v1/teams",
+    "url": "https://statsapi.mlb.com/api/v1/teams?sportId=1&season=2026&fields=teams,id,name,abbreviation,league,name,division,name,venue,name,timeZone,id",
+    "fetched_at_utc": "2026-08-28",
+    "note": "All 30 MLB clubs. id is the MLB Stats API teamId used in every schedule record."
+  },
+  "teams": [
+    {"id":108,"abbr":"LAA","name":"Los Angeles Angels","league":"American League","division":"American League West"},
+    {"id":109,"abbr":"AZ","name":"Arizona Diamondbacks","league":"National League","division":"National League West"},
+    {"id":110,"abbr":"BAL","name":"Baltimore Orioles","league":"American League","division":"American League East"},
+    {"id":111,"abbr":"BOS","name":"Boston Red Sox","league":"American League","division":"American League East"},
+    {"id":112,"abbr":"CHC","name":"Chicago Cubs","league":"National League","division":"National League Central"},
+    {"id":113,"abbr":"CIN","name":"Cincinnati Reds","league":"National League","division":"National League Central"},
+    {"id":114,"abbr":"CLE","name":"Cleveland Guardians","league":"American League","division":"American League Central"},
+    {"id":115,"abbr":"COL","name":"Colorado Rockies","league":"National League","division":"National League West"},
+    {"id":116,"abbr":"DET","name":"Detroit Tigers","league":"American League","division":"American League Central"},
+    {"id":117,"abbr":"HOU","name":"Houston Astros","league":"American League","division":"American League West"},
+    {"id":118,"abbr":"KC","name":"Kansas City Royals","league":"American League","division":"American League Central"},
+    {"id":119,"abbr":"LAD","name":"Los Angeles Dodgers","league":"National League","division":"National League West"},
+    {"id":120,"abbr":"WSH","name":"Washington Nationals","league":"National League","division":"National League East"},
+    {"id":121,"abbr":"NYM","name":"New York Mets","league":"National League","division":"National League East"},
+    {"id":133,"abbr":"ATH","name":"Athletics","league":"American League","division":"American League West","priority":"HIGH"},
+    {"id":134,"abbr":"PIT","name":"Pittsburgh Pirates","league":"National League","division":"National League Central"},
+    {"id":135,"abbr":"SD","name":"San Diego Padres","league":"National League","division":"National League West"},
+    {"id":136,"abbr":"SEA","name":"Seattle Mariners","league":"American League","division":"American League West"},
+    {"id":137,"abbr":"SF","name":"San Francisco Giants","league":"National League","division":"National League West","priority":"HIGH"},
+    {"id":138,"abbr":"STL","name":"St. Louis Cardinals","league":"National League","division":"National League Central"},
+    {"id":139,"abbr":"TB","name":"Tampa Bay Rays","league":"American League","division":"American League East"},
+    {"id":140,"abbr":"TEX","name":"Texas Rangers","league":"American League","division":"American League West"},
+    {"id":141,"abbr":"TOR","name":"Toronto Blue Jays","league":"American League","division":"American League East"},
+    {"id":142,"abbr":"MIN","name":"Minnesota Twins","league":"American League","division":"American League Central"},
+    {"id":143,"abbr":"PHI","name":"Philadelphia Phillies","league":"National League","division":"National League East"},
+    {"id":144,"abbr":"ATL","name":"Atlanta Braves","league":"National League","division":"National League East"},
+    {"id":145,"abbr":"CWS","name":"Chicago White Sox","league":"American League","division":"American League Central"},
+    {"id":146,"abbr":"MIA","name":"Miami Marlins","league":"National League","division":"National League East"},
+    {"id":147,"abbr":"NYY","name":"New York Yankees","league":"American League","division":"American League East"},
+    {"id":158,"abbr":"MIL","name":"Milwaukee Brewers","league":"National League","division":"National League Central"}
+  ]
+}
