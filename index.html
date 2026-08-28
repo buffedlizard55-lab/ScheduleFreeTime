@@ -1,659 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ScheduleFreeTime - Free Time Availability Calendar</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ScheduleFreeTime — Free Time Scoreboard</title>
   <style>
-    :root {
-      --bg: #0a0a0f;
-      --bg-subtle: #12121a;
-      --fg: #e8e8f0;
-      --muted: #6b6b80;
-      --accent: #00d4aa;
-      --accent-dim: rgba(0, 212, 170, 0.15);
-      --danger: #ff4757;
-      --warning: #ffa502;
-      --card: #1a1a24;
-      --border: #2a2a3a;
-      --free-bg: #00d4aa;
-      --free-text: #0a0a0f;
-      --occupied-bg: #ff4757;
-      --occupied-text: #ffffff;
+    :root{
+      --bg:#0a0c10; --panel:#12161d; --panel2:#171c25; --line:#222a36;
+      --fg:#e8edf4; --muted:#8a93a3; --free:#19c37d; --free-d:#0e7a4d;
+      --busy:#e23b4e; --accent:#fd5a1e; --gold:#fdb515;
+      --mlb:#fd5a1e; --nfl:#e4002b; --mls:#0a6cff; --stan:#8c1515; --cal:#003262;
     }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      background:var(--bg);color:var(--fg);min-height:100vh}
+    a{color:var(--accent);text-decoration:none}
+    .wrap{max-width:1200px;margin:0 auto;padding:0 16px 60px}
 
-    * { box-sizing: border-box; }
+    /* header / scoreboard bar */
+    .topbar{background:linear-gradient(180deg,#0d1016,#0a0c10);border-bottom:2px solid var(--line);
+      position:sticky;top:0;z-index:20}
+    .topbar-in{max-width:1200px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;
+      justify-content:space-between;gap:12px;flex-wrap:wrap}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.5px;font-size:18px}
+    .brand .dot{width:12px;height:12px;border-radius:50%;background:var(--accent);
+      box-shadow:0 0 12px var(--accent)}
+    .nav{display:flex;align-items:center;gap:8px}
+    .nav button{background:var(--panel2);color:var(--fg);border:1px solid var(--line);border-radius:10px;
+      padding:8px 12px;font-size:14px;cursor:pointer;transition:.15s;font-weight:600}
+    .nav button:hover{border-color:var(--accent);color:var(--accent)}
+    .nav button.primary{background:var(--accent);color:#111;border-color:var(--accent)}
+    #hdr-date{font-weight:800;font-size:16px;min-width:230px;text-align:center}
+    .nav .arrow{font-size:18px;line-height:1;padding:6px 10px}
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--fg);
-      min-height: 100vh;
-      margin: 0;
-    }
+    /* layout */
+    .grid{display:grid;grid-template-columns:1.05fr 1fr;gap:18px;margin-top:18px}
+    @media(max-width:880px){.grid{grid-template-columns:1fr}}
+    .panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px}
+    .panel h2{margin:0 0 10px;font-size:14px;text-transform:uppercase;letter-spacing:1px;color:var(--muted)}
 
-    .scoreboard-header {
-      background: linear-gradient(135deg, var(--bg-subtle), var(--bg));
-      border-bottom: 1px solid var(--border);
-    }
+    /* filter chips */
+    #filter-bar{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 4px}
+    .chip{background:var(--panel2);border:1px solid var(--line);color:var(--muted);border-radius:999px;
+      padding:6px 12px;font-size:12px;font-weight:700;cursor:pointer;letter-spacing:.5px}
+    .chip.on{color:var(--fg);border-color:var(--fg)}
+    .chip:hover{color:var(--fg)}
 
-    .nav-btn {
-      background: var(--card);
-      border: 1px solid var(--border);
-      color: var(--muted);
-      width: 40px;
-      height: 40px;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.2s ease;
-      cursor: pointer;
-    }
+    /* calendar */
+    .cal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+    #cal-month-label{font-weight:800;font-size:16px}
+    .cal-nav{display:flex;gap:6px}
+    .cal-nav button{background:var(--panel2);border:1px solid var(--line);color:var(--fg);border-radius:8px;
+      width:30px;height:30px;cursor:pointer;font-size:16px}
+    .cal-nav button:hover{border-color:var(--accent);color:var(--accent)}
+    #calendar-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+    .weekday-row{grid-column:1/-1;display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-bottom:2px}
+    .weekday-cell{text-align:center;font-size:11px;color:var(--muted);font-weight:700;letter-spacing:1px}
+    .day-cell{position:relative;aspect-ratio:1/1;border-radius:10px;border:1px solid var(--line);
+      display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;
+      background:var(--panel2);transition:.12s;overflow:hidden}
+    .day-cell.empty{background:transparent;border:none;cursor:default}
+    .day-cell.free{background:rgba(25,195,125,.14);border-color:var(--free)}
+    .day-cell.busy{background:rgba(226,59,78,.12);border-color:var(--busy)}
+    .day-cell:hover{transform:translateY(-2px);border-color:var(--accent)}
+    .day-cell.selected{outline:2px solid var(--accent);outline-offset:1px}
+    .day-cell.today::after{content:"";position:absolute;top:6px;right:6px;width:7px;height:7px;
+      border-radius:50%;background:var(--gold);box-shadow:0 0 8px var(--gold)}
+    .day-number{font-size:16px;font-weight:700;line-height:1}
+    .day-status{font-size:9px;font-weight:800;letter-spacing:.5px;margin-top:3px;color:var(--muted)}
+    .day-cell.free .day-status{color:var(--free)}
+    .day-cell.busy .day-status{color:var(--busy)}
+    .league-dots{position:absolute;bottom:5px;display:flex;gap:3px}
+    .league-dots .dot{width:6px;height:6px;border-radius:50%}
 
-    .nav-btn:hover {
-      background: var(--accent-dim);
-      border-color: var(--accent);
-      color: var(--accent);
-    }
+    /* day detail */
+    .detail-title{font-weight:800;font-size:15px;margin-bottom:12px;color:#fff}
+    .free-banner{background:rgba(25,195,125,.16);border:1px solid var(--free);border-radius:10px;
+      padding:14px;font-size:15px;color:var(--free);text-align:center;margin-bottom:12px}
+    .game-list{display:flex;flex-direction:column;gap:8px;margin-bottom:14px}
+    .game-card{display:flex;align-items:center;gap:10px;background:var(--panel2);border:1px solid var(--line);
+      border-radius:10px;padding:10px}
+    .league-badge{font-size:11px;font-weight:800;color:#fff;border-radius:6px;padding:4px 7px;min-width:46px;text-align:center}
+    .game-info{flex:1;min-width:0}
+    .game-match{font-weight:700;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .game-sub{font-size:12px;color:var(--muted);margin-top:2px}
+    .game-src{font-size:11px;color:var(--muted);white-space:nowrap}
+    .game-src:hover{color:var(--accent)}
 
-    .nav-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-    .nav-btn.disabled { opacity: 0.4; cursor: not-allowed; }
+    /* timeline */
+    .timeline-box{margin:6px 0 14px}
+    .timeline{position:relative;height:26px;border-radius:8px;overflow:hidden;border:1px solid var(--line);background:rgba(25,195,125,.18)}
+    .tl-free{position:absolute;inset:0}
+    .tl-busy{position:absolute;top:0;bottom:0;opacity:.92;border-left:1px solid rgba(0,0,0,.3);
+      border-right:1px solid rgba(0,0,0,.3)}
+    .tl-ticks{position:relative;height:16px;margin-top:4px}
+    .tl-ticks span{position:absolute;transform:translateX(-50%);font-size:10px;color:var(--muted)}
 
-    .day-cell {
-      aspect-ratio: 1;
-      border-radius: 12px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-end;
-      padding: 8px 4px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      margin: 2px;
-      position: relative;
-    }
+    /* free windows */
+    .tbd-note{background:rgba(253,181,21,.12);border:1px solid var(--gold);color:var(--gold);
+      border-radius:8px;padding:8px 10px;font-size:12px;margin-bottom:10px}
+    .fw-head{font-size:13px;color:var(--muted);margin-bottom:8px}
+    .fw-head b{color:var(--free);font-size:15px}
+    .fw-item{background:rgba(25,195,125,.10);border-left:3px solid var(--free);border-radius:6px;
+      padding:7px 10px;margin-bottom:6px;font-size:14px;font-weight:600}
+    .fw-dur{color:var(--muted);font-weight:400;font-size:12px;margin-left:6px}
 
-    .day-cell:hover:not(.empty):not(.free):not(.occupied) { background: var(--accent-dim); }
-
-    .day-cell.free { background: var(--free-bg); color: var(--free-text); }
-    .day-cell.free:hover { background: var(--accent-dim); transform: scale(1.05); }
-
-    .day-cell.occupied { background: var(--occupied-bg); color: var(--occupied-text); }
-    .day-cell.occupied:hover { background: #c0392b; transform: scale(1.05); }
-
-    .day-cell.empty { background: var(--card); color: var(--muted); }
-
-    .day-number { font-size: 1.2rem; font-weight: 600; margin-bottom: 2px; }
-    .day-label { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.7; }
-
-    .status-badge {
-      position: absolute; top: 4px; right: 4px;
-      background: var(--bg); border: 1px solid var(--border);
-      border-radius: 10px; padding: 2px 6px;
-      font-size: 0.55rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;
-    }
-    .status-badge.free { border-color: var(--accent); color: var(--accent); }
-    .status-badge.occupied { border-color: var(--danger); color: var(--danger); }
-
-    .month-nav { display: flex; gap: 10px; margin-bottom: 15px; }
-    .month-btn { background: var(--card); border: 1px solid var(--border); color: var(--fg); padding: 8px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease; }
-    .month-btn:hover { border-color: var(--accent); color: var(--accent); }
-    .month-btn.active { background: var(--accent); color: var(--bg); }
-
-    .game-tooltip { position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%) translateY(8px);
-      background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 8px 12px;
-      font-size: 0.65rem; white-space: nowrap; z-index: 100; min-width: 200px; max-width: 300px; }
-    .tooltip-header { font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; display: flex; align-items: center; gap: 4px; }
-    .tooltip-content { font-size: 0.7rem; line-height: 1.4; }
-    .tooltip-content .league { font-weight: 600; color: var(--accent); margin-right: 4px; }
-
-    .free-time-info { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 12px; margin-top: 8px; }
-    .free-time-item { margin: 4px 0; font-size: 0.85rem; }
-    .free-time-label { color: var(--muted); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; margin-right: 4px; }
-    .free-time-windows { color: var(--fg); font-size: 0.8rem; }
-
-    .no-games-text { color: var(--muted); font-size: 0.85rem; text-align: center; padding: 20px; }
-
-    @media (max-width: 640px) { .day-number { font-size: 1rem; } .day-label { font-size: 0.5rem; } }
+    .legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:14px;font-size:12px;color:var(--muted)}
+    .legend span{display:flex;align-items:center;gap:6px}
+    .legend i{width:10px;height:10px;border-radius:2px;display:inline-block}
+    .footnote{margin-top:18px;font-size:12px;color:var(--muted);line-height:1.6}
+    .footnote code{background:var(--panel2);padding:1px 5px;border-radius:4px;color:var(--fg)}
   </style>
 </head>
 <body>
-  <div class="scoreboard-header">
-    <div class="max-w-7xl mx-auto px-4 py-3">
-      <div class="flex items-center justify-between">
-        <div class="flex items-center gap-3">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="2" y="6" width="20" height="12" rx="2" ry="2"/>
-            <path d="M6 2L3 6l3 6l3-6l3 6v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z"/>
-            <lijn x1="8" y1="12" x2="9" y2="12"/>
-            <circle cx="18" cy="12" r="2"/>
-          </svg>
-          <span>ScheduleFreeTime</span>
-        </div>
-        <div id="nav-buttons">
-          <button class="nav-btn prev-day" aria-label="Yesterday" disabled>←</button>
-          <span id="current-month" class="text-lg font-medium"></span>
-          <button class="nav-btn next-day" aria-label="Tomorrow">→</button>
-        </div>
+  <div class="topbar">
+    <div class="topbar-in">
+      <div class="brand"><span class="dot"></span> ScheduleFreeTime</div>
+      <div id="hdr-date"></div>
+      <div class="nav">
+        <button class="arrow" id="prev-day" title="Yesterday">‹</button>
+        <button class="primary" id="today-btn" title="Today">TODAY</button>
+        <button class="arrow" id="next-day" title="Tomorrow">›</button>
       </div>
     </div>
   </div>
 
-  <main class="max-w-7xl mx-auto p-4">
-    <div class="flex items-center justify-between mb-4">
-      <h1 class="text-2xl font-bold">Free Time Availability</h1>
-      <div class="month-nav">
-        <button class="month-btn prev-month" aria-label="Previous month">‹</button>
-        <span id="current-month-display"></span>
-        <button class="month-btn next-month" aria-label="Next month">›</button>
+  <div class="wrap">
+    <div id="filter-bar"></div>
+
+    <div class="grid">
+      <!-- CALENDAR -->
+      <div class="panel">
+        <div class="cal-head">
+          <h2 style="margin:0">Calendar</h2>
+          <div class="cal-nav">
+            <button id="prev-month" title="Previous month">‹</button>
+            <span id="cal-month-label"></span>
+            <button id="next-month" title="Next month">›</button>
+          </div>
+        </div>
+        <div id="calendar-grid"></div>
+        <div class="legend">
+          <span><i style="background:var(--free)"></i> Free day (no games)</span>
+          <span><i style="background:var(--busy)"></i> Game day</span>
+          <span><i style="background:var(--mlb)"></i> MLB</span>
+          <span><i style="background:var(--nfl)"></i> NFL</span>
+          <span><i style="background:var(--mls)"></i> MLS</span>
+          <span><i style="background:var(--stan)"></i> Stanford</span>
+          <span><i style="background:var(--cal)"></i> Cal</span>
+        </div>
+      </div>
+
+      <!-- DAY DETAIL -->
+      <div class="panel">
+        <h2>Day Detail — Free Time (Pacific)</h2>
+        <div id="day-detail"></div>
       </div>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols gap-3" id="calendar-grid">
-      <!-- Calendar days generated by JS -->
+    <div class="footnote">
+      <b>How free time is computed:</b> each game blocks Pacific time from its start for its estimated average
+      duration (MLB 158m, NFL 192m, CFB 200m, MLS 120m — football includes halftime). Free time is the
+      complementary window(s). Times are <code>PT</code> (Aug–Oct = PDT, UTC−7). TBD-time games are shown but
+      excluded from the estimate. Filter the leagues above to isolate any one team. Source data &amp; official
+      links: <a href="schedules.md">schedules.md</a> (96 verified entries).
+      <br/><b>Key assumption:</b> "no MLB games on" is interpreted as <b>San Francisco Giants</b> regular-season
+      games (2026 MLB regular season ends Sep 27). See schedules.md FLAGS for review items.
     </div>
+  </div>
 
-    <div id="tooltip" class="game-tooltip" style="display: none; position: fixed;">
-      <div class="tooltip-header" id="tooltip-title">Games</div>
-      <div class="tooltip-content" id="tooltip-content"></div>
-    </div>
-
-    <div id="free-time-panel" class="hidden" style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: var(--card); border: 1px solid var(--border); padding: 15px; border-radius: 8px; min-width: 280px; z-index: 100; margin-bottom: 20px;">
-      <div style="font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;">Free Time Windows Today</div>
-      <div id="free-time-windows-content"></div>
-    </div>
-  </main>
-
-  <script>
-    // ===== SCHEDULE DATA =====
-    // All dates in PT (Pacific Time) where applicable
-    // Average game durations (minutes):
-    // MLB: 163 min (2:43 avg from xbotgo.com, hoopsking.com, sportsbusinessjournal.com)
-    // NFL: 192 min (3:12 avg from sportsgeardaily.com, leovegas.com, huffsports.com)
-    // MLS: 120 min (2:00 avg from mlsfootball.com, tickpick.com, soccermodo.com)
-    // Stanford Football: 187 min (3:07 from actual 2026 Stanford vs Hawaii game on gostanford.com)
-    // Cal Football: 204 min (3:24 avg NCAA from sportsgeardaily.com)
-
-    const SCHEDULE_DATA = {
-      // MLB 2026 - games virtually every day Aug-Oct
-      mlb: {
-        avgDuration: 163,
-        source: 'xbotgo.com, hoopsking.com, sportsbusinessjournal.com',
-        // Key dates with games in Aug-Oct 2026
-        gameDates: [
-          '2026-08-27', '2026-08-28',
-          '2026-09-01', '2026-09-02', '2026-09-03', '2026-09-04', '2026-09-05',
-          '2026-09-06', '2026-09-07', '2026-09-08', '2026-09-09', '2026-09-10',
-          '2026-09-11', '2026-09-12', '2026-09-13', '2026-09-14', '2026-09-15',
-          '2026-09-16', '2026-09-17', '2026-09-18', '2026-09-19', '2026-09-20',
-          '2026-09-21', '2026-09-22', '2026-09-23', '2026-09-24', '2026-09-25',
-          '2026-09-26', '2026-09-27', '2026-09-28', '2026-09-29', '2026-09-30',
-          '2026-10-01', '2026-10-02', '2026-10-03', '2026-10-04', '2026-10-05',
-          '2026-10-06', '2026-10-07', '2026-10-08', '2026-10-09', '2026-10-10',
-          '2026-10-11', '2026-10-12', '2026-10-13', '2026-10-14', '2026-10-15',
-          '2026-10-16', '2026-10-17', '2026-10-18', '2026-10-19', '2026-10-20',
-          '2026-10-21', '2026-10-22', '2026-10-23', '2026-10-24', '2026-10-25',
-          '2026-10-26', '2026-10-27', '2026-10-28', '2026-10-29', '2026-10-30',
-          '2026-10-31'
-        ]
-      },
-
-      // NFL 49ers 2026 - preseason + regular season
-      nfl_49ers: {
-        avgDuration: 192, // 3:12
-        source: 'sportsgeardaily.com, leovegas.com, huffsports.com',
-        preseason: [
-          { date: '2026-08-13', opponent: 'vs Tennessee Titans', time: '6:00 PM PT' },
-          { date: '2026-08-20', opponent: '@ Los Angeles Chargers', time: '7:00 PM PT' },
-          { date: '2026-08-27', opponent: 'vs Las Vegas Raiders', time: '5:00 PM PT' }
-        ],
-        regularSeason: [
-          { date: '2026-09-10', opponent: '@ Los Angeles Rams (TNF)', time: '8:35 PM ET' },
-          { date: '2026-09-20', opponent: 'vs Miami Dolphins', time: '1:25 PM PT' },
-          { date: '2026-09-27', opponent: 'vs Arizona Cardinals', time: '1:05 PM PT' },
-          { date: '2026-10-04', opponent: 'vs Denver Broncos', time: '1:25 PM PT' },
-          { date: '2026-10-11', opponent: '@ Seattle Seahawks', time: '1:25 PM PT' },
-          { date: '2026-10-19', opponent: 'vs Washington Commanders', time: '5:15 PM PT (Mon)' },
-          { date: '2026-10-25', opponent: '@ Atlanta Falcons', time: '10:00 AM PT' }
-        ]
-      },
-
-      // San Jose Earthquakes 2026 MLS
-      earthquakes: {
-        avgDuration: 120, // 2:00
-        source: 'mlsfootball.com, tickpick.com, soccermodo.com',
-        mls: [
-          { date: '2026-08-15', opponent: 'vs St. Louis CITY SC', time: '7:30 PM PT' },
-          { date: '2026-08-19', opponent: 'at LA Galaxy', time: '7:30 PM PT' },
-          { date: '2026-08-22', opponent: 'vs Minnesota United FC', time: '7:30 PM PT' },
-          { date: '2026-08-29', opponent: 'at Houston Dynamo FC', time: '5:30 PM PT' },
-          { date: '2026-09-05', opponent: 'at Austin FC', time: '5:30 PM PT' },
-          { date: '2026-09-09', opponent: 'at San Diego FC', time: '7:30 PM PT' },
-          { date: '2026-09-12', opponent: 'vs Houston Dynamo FC', time: '7:30 PM PT' },
-          { date: '2026-09-19', opponent: 'vs LAFC', time: '4:30 PM PT' },
-          { date: '2026-09-26', opponent: 'vs Portland Timbers', time: '7:30 PM PT' },
-          { date: '2026-10-10', opponent: 'at Colorado Rapids', time: '6:30 PM PT' },
-          { date: '2026-10-14', opponent: 'at Real Salt Lake', time: '6:30 PM PT' },
-          { date: '2026-10-17', opponent: 'vs Nashville SC', time: '7:30 PM PT' },
-          { date: '2026-10-24', opponent: 'at FC Dallas', time: '5:30 PM PT' },
-          { date: '2026-10-28', opponent: 'vs Colorado Rapids', time: '7:30 PM PT' },
-          { date: '2026-10-31', opponent: 'vs Real Salt Lake', time: 'TBD' }
-        ]
-      },
-
-      // Stanford Cardinal Football 2026
-      stanford: {
-        avgDuration: 187, // 3:07 from actual 2026 game
-        source: 'gostanford.com (Stanford vs Hawaii 2026: 3:07)',
-        football: [
-          { date: '2026-08-29', opponent: "vs Hawai'i Rainbow Warriors", time: '4:00 PM PT' },
-          { date: '2026-09-04', opponent: 'vs Miami Hurricanes', time: '6:00 PM PT' },
-          { date: '2026-09-19', opponent: '@ Duke Blue Devils', time: '1:00 PM PT' },
-          { date: '2026-09-26', opponent: 'vs Georgia Tech Yellow Jackets', time: '7:30 PM PT' },
-          { date: '2026-10-03', opponent: '@ Wake Forest Demon Deacons', time: 'TBA', duration: 187 },
-          { date: '2026-10-10', opponent: '@ Notre Dame Fighting Irish', time: '12:30 PM PT' },
-          { date: '2026-10-17', opponent: 'vs Elon Phoenix', time: '4:30 PM PT' },
-          { date: '2026-10-23', opponent: 'vs NC State Wolfpack', time: '7:30 PM PT' },
-          { date: '2026-10-31', opponent: '@ Louisville Cardinals', time: 'TBA' }
-        ]
-      },
-
-      // California Golden Bears Football 2026
-      cal: {
-        avgDuration: 204, // 3:24 avg NCAA
-        source: 'sportsgeardaily.com (NCAA avg)',
-        // Games with ET times that need conversion to PT
-        football: [
-          { date: '2026-09-05', opponent: 'vs UCLA Bruins', time: '10:30 PM ET', duration: 204 },
-          { date: '2026-09-12', opponent: '@ Syracuse Orange', time: '3:30 PM ET', duration: 204 },
-          { date: '2026-09-19', opponent: 'vs Wagner Seahawks', time: '3:30 PM ET', duration: 204 },
-          { date: '2026-09-25', opponent: 'vs Clemson Tigers', time: '10:30 PM ET', duration: 204 },
-          { date: '2026-10-03', opponent: '@ UNLV Rebels', time: 'TBD', duration: 204 },
-          { date: '2026-10-10', opponent: 'vs Virginia Tech Hokies', time: 'TBD', duration: 204 },
-          { date: '2026-10-17', opponent: 'vs Wake Forest Demon Deacons', time: 'TBD', duration: 204 },
-          { date: '2026-10-24', opponent: '@ SMU Mustangs', time: 'TBD', duration: 204 },
-          { date: '2026-10-31', opponent: '@ NC State Wolfpack', time: 'TBD', duration: 204 }
-        ]
-      }
-    };
-
-    // Convert ET times to PT
-    function convertETtoPT(timeStr) {
-      if (!timeStr) return timeStr;
-      const match = timeStr.match(/(\d+):(\d+)\s*(AM|PM)\s*(ET|PT)/i);
-      if (match) {
-        let hours = parseInt(match[1]);
-        let mins = parseInt(match[2]);
-        let ampm = match[3].toUpperCase();
-        let zone = match[4].toUpperCase();
-        
-        if (ampm === 'AM' && hours === 12) hours = 0;
-        if (ampm === 'PM' && hours !== 12) hours += 12;
-        
-        // Convert ET to PT (subtract 3 hours = 180 minutes)
-        let totalMins = hours * 60 + mins - 180;
-        if (totalMins < 0) totalMins += 24 * 60;
-        if (totalMins >= 24 * 60) totalMins -= 24 * 60;
-        
-        let newHrs = Math.floor(totalMins / 60);
-        let newMins = totalMins % 60;
-        
-        let newAmpm = newHrs >= 12 ? 'PM' : 'AM';
-        let dispHrs = newHrs % 12;
-        dispHrs = dispHrs ? dispHrs : 12;
-        
-        return dispHrs + ':' + (newMins < 10 ? '0' : '') + newMins + ' ' + newAmpm + ' PT';
-      }
-      return timeStr;
-    }
-
-    // Convert all Cal game times from ET to PT
-    function convertCalTimes() {
-      const calGames = SCHEDULE_DATA.cal.football;
-      calGames.forEach(g => {
-        const match = g.time.match(/(\d+):(\d+)\s*(AM|PM)\s*(ET|PT)/i);
-        if (match && match[4] === 'ET') {
-          let hours = parseInt(match[1]);
-          let mins = parseInt(match[2]);
-          let ampm = match[3].toUpperCase();
-          
-          if (ampm === 'AM' && hours === 12) hours = 0;
-          if (ampm === 'PM' && hours !== 12) hours += 12;
-          
-          let totalMins = hours * 60 + mins - 180;
-          if (totalMins < 0) totalMins += 24 * 60;
-          if (totalMins >= 24 * 60) totalMins -= 24 * 60;
-          
-          let newHrs = Math.floor(totalMins / 60);
-          let newMins = totalMins % 60;
-          let newAmpm = newHrs >= 12 ? 'PM' : 'AM';
-          let dispHrs = newHrs % 12 || 12;
-          
-          g.ptTime = dispHrs + ':' + (newMins < 10 ? '0' : '') + newMins + ' ' + newAmpm + ' PT';
-        } else {
-          g.ptTime = g.time;
-        }
-      });
-    }
-    
-    convertCalTimes();
-
-    // ===== GAME DATE SET =====
-    function buildGameDateSet() {
-      const gameDates = new Set();
-      
-      // MLB dates
-      SCHEDULE_DATA.mlb.gameDates.forEach(d => gameDates.add(d));
-      
-      // 49ers preseason
-      SCHEDULE_DATA.nfl_49ers.preseason.forEach(g => gameDates.add(g.date));
-      // 49ers regular season
-      SCHEDULE_DATA.nfl_49ers.regularSeason.forEach(g => gameDates.add(g.date));
-      // Earthquakes MLS
-      SCHEDULE_DATA.earthquakes.mls.forEach(g => gameDates.add(g.date));
-      // Stanford football
-      SCHEDULE_DATA.stanford.football.forEach(g => gameDates.add(g.date));
-      // Cal football
-      SCHEDULE_DATA.cal.football.forEach(g => gameDates.add(g.date));
-      
-      return gameDates;
-    }
-
-    const GAME_DATE_SET = buildGameDateSet();
-
-    // ===== FREE TIME CALCULATION =====
-    // Average durations in minutes
-    const DURATIONS = {
-      mlb: SCHEDULE_DATA.mlb.avgDuration,
-      nfl: SCHEDULE_DATA.nfl_49ers.avgDuration,
-      mlssoccer: SCHEDULE_DATA.earthquakes.avgDuration,
-      stanford: SCHEDULE_DATA.stanford.avgDuration,
-      cal: SCHEDULE_DATA.cal.avgDuration
-    };
-
-    function getGamesOnDate(dateStr) {
-      const games = [];
-      
-      // Check 49ers preseason
-      SCHEDULE_DATA.nfl_49ers.preseason.forEach(g => { if (g.date === dateStr) games.push({ league: 'NFL 49ers (Preseason)', time: g.time, duration: DURATIONS.nfl }); });
-      // Check 49ers regular season
-      SCHEDULE_DATA.nfl_49ers.regularSeason.forEach(g => { if (g.date === dateStr) games.push({ league: 'NFL 49ers (Regular)', time: g.time, duration: DURATIONS.nfl }); });
-      // Check Earthquakes
-      SCHEDULE_DATA.earthquakes.mls.forEach(g => { if (g.date === dateStr) games.push({ league: 'MLS Earthquakes', time: g.time, duration: DURATIONS.mlssoccer }); });
-      // Check Stanford
-      SCHEDULE_DATA.stanford.football.forEach(g => { if (g.date === dateStr) games.push({ league: 'Stanford Football', time: g.time, duration: DURATIONS.stanford }); });
-      // Check Cal (use ptTime if available)
-      SCHEDULE_DATA.cal.football.forEach(g => { if (g.date === dateStr) games.push({ league: 'Cal Football', time: g.ptTime || g.time, duration: DURATIONS.cal }); });
-
-      return games;
-    }
-
-    function calculateFreeTimeWindows(dateStr) {
-      const games = getGamesOnDate(dateStr);
-      
-      if (games.length === 0) {
-        return { isFree: true, windows: [{ start: '12:00 AM', end: '11:59 PM', label: 'FREE DAY' }], busyPeriods: [] };
-      }
-      
-      // Initialize 30-minute slots from 12:00 AM to 11:30 PM
-      const slots = [];
-      for (let h = 0; h < 24; h++) {
-        for (let m = 0; m < 60; m += 30) {
-          slots.push({ hour: h, minute: m, occupied: false });
-        }
-      }
-      
-      // Mark game slots as occupied
-      games.forEach(game => {
-        const timeMatch = game.time.match(/(\d+):(\d+)\s*(AM|PM)/i);
-        if (!timeMatch) return;
-        
-        let hours = parseInt(timeMatch[1]);
-        let mins = parseInt(timeMatch[2]);
-        let ampm = timeMatch[3].toUpperCase();
-        
-        // Convert to 24-hour
-        if (ampm === 'AM' && hours === 12) hours = 0;
-        if (ampm === 'PM' && hours !== 12) hours += 12;
-        
-        // Calculate end time in minutes from midnight
-        const gameEndMin = hours * 60 + mins + game.duration;
-        const endHrs = Math.floor(gameEndMin / 60) % 24;
-        const endMin = gameEndMin % 60;
-        
-        // Mark each 30-minute slot as occupied
-        let slotIndex = hours * 60 + mins;
-        const slotsPerGame = Math.ceil(game.duration / 30);
-        
-        for (let s = 0; s < slotsPerGame; s++) {
-          const absMin = slotIndex + s * 30;
-          const slotHr = Math.floor(absMin / 60) % 24;
-          const slotMin = absMin % 60;
-          
-          const slot = slots.find(s => s.hour === slotHr && s.minute === slotMin);
-          if (slot) slot.occupied = true;
-        }
-      });
-      
-      // Find free windows
-      const freeWindows = [];
-      let inFreeWindow = false;
-      let windowStart = null;
-      
-      slots.forEach((slot, index) => {
-        if (!slot.occupied) {
-          if (!inFreeWindow) {
-            windowStart = { hour: slot.hour, minute: slot.minute };
-            inFreeWindow = true;
-          }
-        } else {
-          if (inFreeWindow) {
-            freeWindows.push({
-              start: pad(windowStart.hour) + ':' + pad(windowStart.minute) + ' PT',
-              end: pad(slot.hour) + ':' + pad(slot.minute) + ' PT',
-              label: 'Free time'
-            });
-            inFreeWindow = false;
-          }
-        }
-      });
-      
-      // Window that extends to end of day
-      if (inFreeWindow) {
-        freeWindows.push({
-          start: pad(windowStart.hour) + ':' + pad(windowStart.minute) + ' PT',
-          end: '11:59 PM PT',
-          label: 'Free time'
-        });
-      }
-      
-      return { isFree: freeWindows.length > 0 || games.length === 0, windows: freeWindows, busyPeriods: games.length };
-    }
-
-    function pad(num) { return num < 10 ? '0' + num : num; }
-
-    // ===== RENDER CALENDAR =====
-    function getMonthRange(year, monthIdx) {
-      const start = new Date(year, monthIdx, 1);
-      const end = new Date(year, monthIdx + 1, 0);
-      return { start, end, numDays: end.getDate() };
-    }
-
-    function getMonthName(monthIdx) {
-      const names = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-      return names[monthIdx];
-    }
-
-    function generateCalendarDays(year, monthIdx) {
-      const { start, end, numDays } = getMonthRange(year, monthIdx);
-      const firstDayIdx = start.getDay(); // 0=Sunday, 1=Monday, ...
-      
-      const days = [];
-      
-      // Add leading empty cells to align with actual calendar start
-      // If Jan 1 is Monday (1), we need 1 empty cell before it
-      for (let i = 0; i < firstDayIdx; i++) {
-        days.push({ type: 'empty', date: null, day: null });
-      }
-      
-      // Add actual days of the month
-      for (let day = 1; day <= numDays; day++) {
-        const currentDate = new Date(year, monthIdx, day);
-        const dateStr = currentDate.toISOString().split('T')[0];
-        const dayName = currentDate.toLocaleDateString(undefined, { weekday: 'short' });
-        const isToday = currentDate.toISOString().split('T')[0] === new Date().toISOString().split('T')[0];
-        const isFree = !GAME_DATE_SET.has(dateStr);
-        
-        days.push({
-          type: isFree ? 'free' : 'occupied',
-          date: day,
-          dateStr: dateStr,
-          dayName: dayName,
-          isCurrentMonth: true,
-          isToday: isToday
-        });
-      }
-      
-      return days;
-    }
-
-    function renderCalendar(year, monthIdx) {
-      const days = generateCalendarDays(year, monthIdx);
-      const container = document.getElementById('calendar-grid');
-      const monthDisplay = document.getElementById('current-month-display');
-      
-      monthDisplay.textContent = `${getMonthName(monthIdx)} ${year}`;
-      
-      container.innerHTML = '';
-      
-      days.forEach(day => {
-        const cell = document.createElement('div');
-        
-        if (day.type === 'empty') {
-          cell.className = 'day-cell empty';
-          cell.innerHTML = '';
-          container.appendChild(cell);
-          return;
-        }
-        
-        const dateStr = day.dateStr;
-        const isFree = day.type === 'free';
-        const isToday = day.isToday;
-        
-        cell.className = `day-cell ${isFree ? 'free' : 'occupied'} ${isToday ? 'today' : ''}`;
-        
-        // Get games and calculate free time windows
-        const gamesInfo = calculateFreeTimeWindows(dateStr);
-        
-        let content = '';
-        content += `<span class="day-number">${day.date}</span>`;
-        content += `<span class="day-label">${day.dayName}</span>`;
-        
-        if (isFree) {
-          content += `<span class="status-badge free">FREE</span>`;
-          content += `<div class="free-time-info">
-            <div class="free-time-label">Free Time Windows:</div>
-            <div class="free-time-windows">${gamesInfo.windows.map(w => w.label).join(' · ')}</div>
-          </div>`);
-        } else {
-          content += `<span class="status-badge occupied">G</span>`;
-          // Show first game for reference
-          const firstGame = gamesInfo.windows.length > 0 ? '' : '';
-          content += `<div class="free-time-info compact">
-            <div class="free-time-label">Games:</div>
-            <div class="free-time-windows">${gamesInfo.windows.length > 0 ? gamesInfo.windows.map(w => `${gamesInfo.windows.length} windows}` : 'Busy').join(', ')}</div>
-          </div>`);
-        }
-        
-        // Tooltip on hover
-        cell.addEventListener('mouseenter', (e) => showTooltip(e, dateStr));
-        cell.addEventListener('mouseleave', hideTooltip);
-        cell.addEventListener('click', () => navigateToDate(year, monthIdx, day.date));
-        
-        cell.innerHTML = content;
-        container.appendChild(cell);
-      });
-      
-      // Nav button states
-      const prevBtn = document.querySelector('.prev-day');
-      const nextBtn = document.querySelector('.next-day');
-      prevBtn.disabled = monthIdx <= 7; // August is month 7
-      nextBtn.disabled = monthIdx >= 10; // October is month 10
-    }
-
-    // ===== TOOLTIP =====
-    function showTooltip(event, dateStr) {
-      const tooltip = document.getElementById('tooltip');
-      const tooltipContent = document.getElementById('tooltip-content');
-      const tooltipTitle = document.getElementById('tooltip-title');
-      
-      const games = getGamesOnDate(dateStr);
-      
-      if (games.length === 0) {
-        tooltip.style.display = 'none';
-        return;
-      }
-      
-      tooltipTitle.textContent = `Games on ${dateStr}`;
-      tooltipContent.innerHTML = games.map(g => `
-        <div class="tooltip-content">
-          <span class="league">${g.league}</span> ${g.time} (${gameDurationStr(g.duration)})
-        </div>
-      `).join('');
-      
-      tooltip.style.display = 'block';
-      tooltip.style.left = `${event.pageX}px`;
-      tooltip.style.top = `${event.pageY - 10}px`;
-    }
-
-    function hideTooltip() { document.getElementById('tooltip').style.display = 'none'; }
-
-    function gameDurationStr(minutes) {
-      const hrs = Math.floor(minutes / 60);
-      const mins = minutes % 60;
-      return hrs > 0 ? `${hrs}h ${mins}m` : `${mins}min`;
-    }
-
-    // ===== NAVIGATION =====
-    function navigateToDate(year, monthIdx, day) {
-      renderCalendar(year, monthIdx);
-    }
-
-    document.querySelector('.prev-day').addEventListener('click', () => {
-      const displayed = document.getElementById('current-month-display').textContent;
-      const [yearStr, monthStr] = displayed.split(' ');
-      const year = parseInt(yearStr);
-      const month = ['January','February','March','April','May','June','July','August','September','October','November','December'].indexOf(monthStr);
-      
-      if (month > 7) navigateToDate(year, month - 1, 1);
-    });
-
-    document.querySelector('.next-day').addEventListener('click', () => {
-      const displayed = document.getElementById('current-month-display').textContent;
-      const [yearStr, monthStr] = displayed.split(' ');
-      const year = parseInt(yearStr);
-      const month = ['January','February','March','April','May','June','July','August','September','October','November','December'].indexOf(monthStr);
-      
-      if (month < 10) navigateToDate(year, month + 1, 1);
-    });
-
-    document.querySelector('.prev-month').addEventListener('click', () => {
-      const month = monthIdx - 1;
-      if (month >= 7) renderCalendar(2026, month);
-    });
-
-    document.querySelector('.next-month').addEventListener('click', () => {
-      const month = monthIdx + 1;
-      if (month <= 10) renderCalendar(2026, month);
-    });
-
-    // Initialize - start with August 2026
-    const year = 2026;
-    const monthIdx = 7; // August (0-indexed: 0=Jan, 7=Aug)
-    renderCalendar(year, monthIdx);
-  </script>
+  <script src="schedule-data.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
