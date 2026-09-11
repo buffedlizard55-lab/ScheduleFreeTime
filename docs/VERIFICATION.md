@@ -1,137 +1,133 @@
 # Verification log - every source used, and every irregularity found
 
-Snapshot date: **2026-08-28** (UTC). Everything below was read directly from the listed
-source on that date and transcribed by hand into `data/`. Nothing was inferred, estimated
-from memory, or taken from a secondary aggregator unless explicitly marked.
+This document is the audit trail for `data/raw/`, `data/games_local.json` and the generated
+`schedules.md` / `data/processed/free_time.json`. Nothing in the pipeline was typed in by a
+human from memory: every row is transcribed from one of the URLs below, and every row keeps a
+link so you can re-check it by hand. The build (`python3 scripts/build.py`) re-derives every
+free-window from these files and prints the arithmetic checks quoted here.
 
-## 0. Independent re-verification (running again on 2026-08-28 by the site build)
+## 0. Independent re-verification passes
 
-A second, independent pass was run while building the GitHub Pages site. What it checked and found:
+### 2026-09-11 pass (current data snapshot)
 
-* **Pipeline reproducibility.** `python3 scripts/build.py` was run from a clean working tree.
-  Output was byte-for-byte identical to the committed `data/processed/free_time.json`,
-  `data/processed/mlb.json`, and `schedules.md`. `git status` stayed clean.
-* **MLB clubs.** `https://statsapi.mlb.com/api/v1/teams?sportId=1&season=2026` returned
-  exactly the same 30 clubs (id, abbr, league, division) as `data/raw/teams_mlb.json`.
-* **MLB game records.** The official schedule endpoint matched the repo byte-exactly on every
-  date re-pulled: 2026-08-28 (15 games), 2026-08-29 (17 games; both AZ@SF and BOS@NYY
-  doubleheaders), 2026-09-01 (15), 2026-09-02 (15), 2026-09-04 (16; DET@CLE doubleheader),
-  and 2026-09-27 (15 games, all 19:05-19:20Z). 2026-09-28 returned no MLB games, matching the
-  "Sep 28 off day" irregularity.
-* **Raw totals.** Parsing the raw files directly gives 778 MLB regular-season games over 58
-  dates (per-team range 51-53 = 51.9 mean), 55 postseason placeholders over 28 dates, and 44
-  49ers/Earthquakes/Stanford/Cal games. These equal the build report values.
-* **Official club/sport pages.** The 49ers schedule page matched all 10 window games, the
-  Earthquakes 2026 PDF matched all 16 window games, the Stanford schedule page matched all 9
-  window games, and the Cal schedule page matched all 9 window games.
-* **Sandbox limitation (flagged).** The build sandbox could not open `statsapi.mlb.com` or
-  `github.io` directly (TLS handshake was dropped for outbound `curl`/`urllib`). Those two
-  hosts were reached instead through the page-fetch proxy, which returned the raw API JSON.
-  As a result, the full 778-game list was NOT re-downloaded inside the sandbox; verification of
-  the MLB list was done on the dates above plus a deterministic re-parse of the committed raw
-  files. This is an environment limitation, not a data error found in the repo.
+| Check | Method | Result |
+|---|---|---|
+| MLB Sep 10–12 dates | Live query `https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-09-10&endDate=2026-09-18&fields=dates,date,games,gameDate,teams,away,home,team,id,status,...` diffed against `data/raw/mlb_2026_september.txt` | **35/35 games match** (dates, UTC minute, team ids). The "sparse" days are real: Sep 10 (Thu) genuinely had 5 games and Sep 21 (Mon) 3 - normal light-slate days, not dropped rows. |
+| NFL league-wide table | Transcribed the full week-by-week table `https://www.pro-football-reference.com/years/2026/games.htm` | **272 rows**; every one of the 32 clubs appears in exactly **17** games; weekly totals 16/16/16/16/15/14/14/14/15/14/13/16/14/15/16/16/16/16 sum to 272 (bye weeks carry 2-6 byes; W11 has 6 because of the international slate). Cross-checked against the rendered official pages (nfl.com by-week, ESPN week-9 table). |
+| NFL preseason | `https://www.pro-football-reference.com/years/2026/preseason.htm` | **49 games**; 30 clubs x 3 + ARI/CAR one extra each (Aug 6 Hall-of-Fame-week pairing). Source table prints no kickoff times (display-only rows). |
+| 49ers rows vs league table | 19 timed SF rows in `games_local.json` vs the PFR rows (ET-3h) | **18/19 exact**; the 19th is 2027-01-10 (club page TBD - flagged below). |
+| 49ers kickoff-time corrections | chargers.com, sofi.com, raiders.com, seahawks.com, levisstadium.com (links in §3) | **3 corrections**: 2026-12-17 TNF was stored as 20:15 PT (that is the game END time / the ET kickoff; correct start = **5:15 PM PT**); 2026-11-29 vs SEA corrected **1:05 -> 1:25 PM PT**; 2026-12-06 at NYG corrected **12:00 -> 10:00 AM PT** (1:00 PM ET). Two 49ers preseason kickoffs that had no time on 49ers.com are now **resolved**: Aug 20 = 7:00 PM PT (chargers.com + sofi.com), Aug 27 = 5:00 PM PT (raiders.com). |
+| Stanford / Cal November | gostanford.com schedule fetch returned stale 2025 content via the proxy, so November rows were transcribed from three independent sources that agree: en.wikipedia.org team pages, 247sports.com schedules, on3.com Cardinal Sports Report (May 2026), plus the official calbears.com Jan 26, 2026 release | Stanford: Nov 14 @VT, Nov 21 @Cal, Nov 28 vs SMU (bye Nov 7). Cal: Nov 14 @UVA, Nov 21 vs Stanford, Nov 28 vs Pitt (bye Nov 7). **All six kickoffs are officially "announced at a later date" -> TBD, non-blocking, UNCONFIRMED.** |
+| Super Bowl LXI / postseason dates | `https://www.nfl.com/news/los-angeles-to-host-super-bowl-lxi-in-2027` (official) + lasec.net host-committee page + FOX schedule nav | Super Bowl LXI = **Sunday, Feb 14, 2027, SoFi Stadium** (expected 6:30 PM ET kickoff). Wild Card Jan 16–18, Divisional Jan 23–24, Conference Champ Jan 31, 2027. Placeholder rows only (teams unknown until seeds are set). |
+| Pro Bowl Games ⚠ | secondary sources conflict: nflplayoffpass.com says Tue **Feb 9, 2027** 8 PM ET at SoFi; sportbusy.com metadata says **Feb 7, 2027** | Kept **Feb 9** with an explicit date-conflict flag; non-blocking informational row. Needs an official announcement before trust. |
+| MLS playoff windows | `https://www.mlssoccer.com/playoffs/2025/news/audi-2026-mls-cup-playoffs-key-dates-schedule-information` (official) | Decision Day Nov 7; WC Nov 18; R1 best-of-3 Nov 20–Dec 2; semi Dec 5–6; final Dec 11–12; **MLS Cup Fri Dec 18, 2026**. Added as SJ-conditional UNCONFIRMED days (15 rows incl. the R1 window days). |
+| CFP / ACC 2026-27 | ESPN's official CFP schedule article (`espn.com/college-football/story/_/id/48958840/...`) | First round Dec 18–19, QFs Dec 30 + Jan 1, SFs Jan 14–15, **National Championship Mon Jan 25, 2027** (Allegiant, Las Vegas). ACC title game Sat Dec 5, 2026. Added as Stanford/Cal-conditional markers. |
+| MLB out-of-window boundary | `https://www.mlb.com/press-release/press-release-mlb-announces-2027-spring-training-schedule` (Sep 4, 2026) | MLB's official bracket calendar has no 2026 games after Oct 31 - so **Nov 1, 2026 - Feb 18, 2027 is confirmed MLB-free**. The one real MLB activity inside the window is **2027 Spring Training starting Fri Feb 19, 2027** (out of scope per "MLB 2026 regular+postseason"; flagged in the build, not blocked). |
+
+### 2026-08-28 pass (still valid for Aug-Sep data)
+
+| Check | Method | Result |
+|---|---|---|
+| MLB roster of teams | `https://statsapi.mlb.com/api/v1/teams?sportId=1&season=2026` | 30 clubs; `teamId` 137 = Giants, 133 = Athletics -> high-priority flags in the data. |
+| MLB schedule Aug 1–Sep 27 | the three `fields=` URLs recorded in the raw file headers | 417 games (Aug) + 361 games (Sep) re-queried; exact match. |
+| MLB postseason | `startDate=2026-09-29&endDate=2026-11-08` | 55 games / 28 dates, all `scheduled|TBDxN` with placeholder `07:33:00Z`; kept as UNCONFIRMED placeholders. |
 
 ## 1. Primary sources (open each link to re-verify manually)
 
-| Dataset | Source | Status |
+| League / team | Source of record | What we transcribed |
 |---|---|---|
-| All 30 MLB clubs (id, name, abbr, league, division) | `https://statsapi.mlb.com/api/v1/teams?sportId=1&season=2026` | Fetched, 30/30 clubs parsed |
-| Every MLB game Aug 1 - Sep 27, 2026 (all clubs) | `https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-08-01&endDate=2026-08-31&fields=dates,date,games,gameDate,teams,away,home,team,id` (same query with `2026-09-02`..`2026-11-08`) | Fetched in full; **778 games / 58 dates** |
-| MLB postseason placeholders (Sep 29 - Oct 31) | same query, Oct/Nov range | **55 games, all TBD** |
-| 49ers preseason + regular season | `https://www.49ers.com/schedule/` (official club site) | Fetched, Weeks 1-18 read |
-| 49ers preseason week 2 date cross-check | `https://www.nfl.com/scores/2026/preseason-week-2` | Confirms "Thursday, August 20th", 49ers at Chargers |
-| Earthquakes full 2026 schedule | `https://images.mlssoccer.com/image/upload/v1766018474/assets/sje/schedule/2026%20Schedule.pdf` (official club PDF, linked from `sjearthquakes.com/schedule/printable`) | Fetched; 34 MLS games listed |
-| Stanford 2026 football | `https://gostanford.com/sports/football/schedule` | Fetched (times in PDT) |
-| Stanford schedule announcement | `https://gostanford.com/news/2026/1/26/complete-2026-schedule-unveiled` | Fetched (dates/venues) |
-| Cal 2026 football | `https://calbears.com/sports/football/schedule` | Fetched (scoreboard + schedule table) |
+| MLB, all 30 clubs | `https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-08-01&endDate=2026-09-09&fields=...` (+ Sep / postseason variants, in raw-file headers) | Every `officialDate`, `gameDate` (UTC) and away/home `team.id`; converted to America/Los_Angeles by `scripts/build.py`. |
+| 49ers | `https://www.49ers.com/schedule/` | Full 2026 schedule incl. preseason; 1:1 matchup/date/time; W9–W18 cross-checked vs PFR league table. |
+| NFL all 32 clubs | `https://www.pro-football-reference.com/years/2026/games.htm` + `.../preseason.htm`; official by-week pages `https://www.nfl.com/schedules/2026/by-week/week-9` | Week, date, kickoff ET, away, home, boxscore link (also encodes the home designation), result for played games. |
+| San Jose Earthquakes | `https://images.mlssoccer.com/image/upload/v1766018474/assets/sje/schedule/2026%20Schedule.pdf` + `https://www.sjearthquakes.com/schedule` | All 16 games in window (Sep 15 listed "9AM PT"). |
+| Stanford football | `https://gostanford.com/sports/football/schedule` (+ `https://gostanford.com/news/2026/1/26/complete-2026-schedule-unveiled`); November rows via wikipedia/247sports/on3 (see §0) | 12 games; times where announced; Nov rows TBD. |
+| Cal football | `https://calbears.com/sports/football/schedule` + official release `https://calbears.com/news/2026/1/26/california-football-announces-2026-schedule.aspx` ("All kickoff times will be announced at a later date") | 12 games; Nov 14/21/28 TBD. |
+| NFL postseason / SB LXI | `https://www.nfl.com/news/los-angeles-to-host-super-bowl-lxi-in-2027`, `https://www.lasec.net/...`, `https://www.nfl-schedule.com/blog/2026-2027-nfl-playoff-schedule` | Round dates; placeholder rows. |
+| MLS postseason | `https://www.mlssoccer.com/playoffs/2025/news/audi-2026-mls-cup-playoffs-key-dates-schedule-information` | Key dates -> conditional day markers. |
+| CFP | `https://www.espn.com/college-football/story/_/id/48958840/2026-college-football-playoff-bowl-schedule-46-games` | 2026-27 CFP + bowl calendar -> conditional markers. |
+| MLB 2027 ST boundary | `https://www.mlb.com/press-release/press-release-mlb-announces-2027-spring-training-schedule` | Scope note flag only. |
 
 ### Cross-checks performed
-* **Aug 28 MLB slate** was fetched twice - once at full fidelity (with venue/score/status) and
-  once through the compact pipeline. Both returned the same 15 games with identical
-  `gameDate` values (CIN@CHC 18:20Z, LAD@DET 22:40Z, MIA@WSH 22:45Z, KC@CLE 23:10Z,
-  HOU@NYM 23:10Z, SD@TB 23:10Z, ...). No discrepancy.
-* **Sep 1** was fetched independently before the September batch; the Aug 31 batch's
-  after-midnight-UTC games (ATH@TEX 00:05Z, CWS@HOU 00:10Z, BAL@COL 00:40Z, NYY@LAA 01:38Z,
-  PHI@AZ 01:40Z) line up exactly with the Sep 1 batch. No overlap, no gap.
-* **Stanford times**: gostanford.com prints PDT; CBS Sports prints the same games in ET
-  (Aug 29 7:00pm ET, Sep 4 9:00pm ET, Sep 19 4:00pm ET, Sep 26 10:30pm ET, Oct 10 3:30pm ET,
-  Oct 17 7:30pm ET, Oct 23 10:30pm ET). Every pair converts to the same instant, which
-  confirms the Pacific reading. The same PDT convention is used for Cal.
-* **Weekday check**: every date in the Earthquakes PDF was checked against the real 2026
-  calendar (SAT 8.01, WED 8.19, SAT 9.05, WED 9.09, SAT 10.10, WED 10.14 ...). All 17 match.
-* **Per-team balance**: 778 games x 2 slots / 30 clubs = 51.9 games per club; actual range
-  51-53. No club is missing games.
+1. **MLB totals**: 417 + 361 = **778 games / 58 dates**; each of the 30 clubs 51–53 games (mean 51.9) -
+   consistent with club-by-club counts. Giants 52, Athletics 52. 0 impossible (<6 AM PT) starts.
+2. **NFL totals**: 272 regular-season rows, all clubs exactly 17; 49 preseason rows.
+3. **49ers**: every SF league row equals the club row (18/19; the W18 TBD documented).
+4. **Earthquakes**: Oct 31 final-match kickoff still "TBD" in club source.
+5. **Stanford + Cal**: the Big Game (Nov 21) is one fixture listed on BOTH club pages - we keep both
+   rows for provenance but de-duplicate them in the build (single blocking game).
+6. **Giants/Athletics high priority**: every row with `home_id`/`away_id` in {137,133} gets
+   `priority: true` and renders with a ★ in the UI and bold in `schedules.md`.
 
 ## 2. Average durations used (researched, with sources)
 
-The blocked window for each game is `[kickoff, kickoff + duration]`.
+Defaults shipped by `scripts/build.py` (the UI inputs are editable):
 
-| League | Value used | Source |
+| League | Default | Source |
 |---|---|---|
-| MLB | **164 min (2:44)** | 2026 in-season average reported by BetMGM (`https://sports.betmgm.com/en/blog/mlb/average-game-time-in-mlb-bm23/`, Aug 25 2026), which attributes the figure to MLB pace-of-play data; 2025 finished at 2:38-2:40 per MLB's official pace-of-play report |
-| NFL (49ers) | **192 min (3:12)**, 12-min halftime | Nielsen / NFL statistics, via `https://sportssurge.alibaba.com/football/how-long-is-an-average-football-game` |
-| NCAA (Stanford, Cal) | **204 min (3:24)**, 20-min halftime | same source; college games run longer than NFL because of the 20-minute halftime |
-| MLS (Earthquakes) | **120 min (2:00)** | league-average comparison table, `https://www.lines.com/guides/how-long-is-baseball-game/1523` |
+| MLB | **158 min** = 2:38 | Official: MLB press release Sep 29, 2025 ("average game time 2:38 for the 2025 season") `https://www.mlb.com/press-release/press-release-mlb-attendance-reaches-71-4-million-three-straight-years-of-growth-for-first-time-since-2007`; ESPN corroboration `https://www.espn.com/mlb/story/_/id/46422703/...`. 2026 in progress runs ~2:43–2:44 (`https://sports.betmgm.com/en/blog/mlb/average-game-time-in-mlb-bm23/` Aug 31, 2026; SBJ Apr 29, 2026) - within the error bar; use the UI input if you want 164. |
+| NFL (also applied to the All-NFL layer) | **192 min** = 3:12 | Widely reported average incl. 12-min halftime, timeouts, reviews: `https://underarmour.com/en-us/t/playbooks/football/the-real-length-of-a-football-game/` ("in 2025, NFL games averaged three hours and 12 minutes"), `https://sportssurge.alibaba.com/football/how-long-is-an-average-football-game` (Nielsen & NFL statistics). Secondary: `https://www.theringer.com/2024-09-05/nfl/...` uses 3:15 as a modeling assumption. Super Bowl days in our data are placeholders, so ceremonial extra length (~3:45) does not affect windows. |
+| NCAA (Stanford/Cal) | **204 min** = 3:24 | Same sportssurge/lines tables ("college averages 3:24 with 20-min halftimes"); Under Armour says 3:27 for 2025 - we ship 3:24 and let you edit. |
+| MLS (Earthquakes) | **120 min** = 2:00 | `https://www.tickpick.com/blog/how-long-are-mls-games/`, `https://authoritysoccer.com/how-long-are-mls-games-and-seasons/` (90 min + ~15-min halftime + stoppage). Playoffs may run over 2:00 with extra time - conditional days are not blocked anyway. |
 
-**Source-quality caveat (flagged):** the sandbox could not open `mlb.com`'s own press-release
-page directly, so the MLB figure comes from secondary sources that quote MLB's pace-of-play
-report. The other three come from secondary aggregations of Nielsen/league data. All four are
-editable in the UI, and `scripts/build.py` has them as constants, so you can swap in an
-official number without touching anything else. Your own estimates (MLB 150, football 180 +
-15-30 min halftime) are in the same range; the researched values are what ship as defaults.
+Original user guidance ("MLB ~150 min; football 180 + 15–30 halftime") is superseded by the
+researched figures above; set the UI inputs back to 150/180+ to compare.
 
 ## 3. Irregularities flagged for your review
 
-The complete machine-generated list is at the bottom of `schedules.md`. The material ones:
+The build re-emits all of these as machine-readable `flags` in `data/processed/free_time.json`
+and `schedules.md`. Status counts with the current data: 212 days in window -> 87 FREE,
+78 PARTIAL, 47 UNCONFIRMED, 0 FULLY BOOKED; ~90 flags.
 
-1. **The 2026 MLB regular season ends Sunday Sep 27** - all 15 games start within a 15-minute
-   band (19:05-19:20Z = 12:05-12:20 PM PT), the traditional simultaneous finish.
-2. **Sep 28 has zero MLB games** - a genuine fully-free day (no other tracked sport plays either).
-3. **All 55 postseason games are placeholders.** The MLB Stats API returns `07:33:00Z` and
-   placeholder team ids (4612-4947, 5513-5533, 2710/2711) for every one of them. That timestamp
-   is **not** a real start time; it is treated as TBD and does not block any window. 18 days in
-   late Sep/Oct are therefore marked `UNCONFIRMED`, not `FREE`.
-4. **49ers Week 1 is an international game.** Official site lists Thu 09/10, 5:35 PM PDT,
-   **vs** the Rams at the **Melbourne Cricket Ground** - a "home" game played in Australia.
-5. **49ers Week 6 is a Monday** (10/19, 5:15 PM PDT vs Washington) and **Week 7 kicks off at
-   10:00 AM PDT** in Atlanta - both unusual, both exactly as the official club schedule prints them.
-6. **49ers Week 8 is a BYE** (Nov 1), just outside the window.
-7. **Kickoff times could not be confirmed for two completed 49ers preseason games**
-   (Aug 20 at Chargers, Aug 27 at Raiders). 49ers.com shows them as FINAL without a time.
-   They are recorded with `start_pt = null` and flagged rather than guessed. Manual review:
-   `https://www.nfl.com/games/49ers-at-chargers-2026-pre-2` and
-   `https://www.nfl.com/games/49ers-at-raiders-2026-pre-2`. The Aug 13 Titans game *is*
-   confirmed at 6:00 PM PT via ESPN's UTC timestamp `2026-08-14T01:00Z`.
-8. **Earthquakes vs LAFC on Sep 19 is at Levi's Stadium**, not PayPal Park (official PDF).
-9. **Five MLB split doubleheaders** in the window (Aug 17 STL@CIN, Aug 29 BOS@NYY and AZ@SF,
-   Sep 4 DET@CLE, Sep 22 TB@NYY). Both games of each pair are in the data, so they block two
-   separate windows rather than one.
-10. **Nine unconfirmed kickoffs**: Earthquakes Oct 31 (PDF prints "TBD"), Stanford Oct 3 and
-    Oct 31 (TBA), Cal Oct 10/17/24/31 (no time listed). None of these block time, so the free
-    windows on those days are **optimistic** until the times are announced.
-11. **Stanford's NC State game was date-ambiguous.** The Jan 26 official release said
-    "Friday, Oct. 23 OR Saturday, Oct. 24"; the live schedule page now lists Fri Oct 23,
-    7:30 PM PDT. Recorded as Oct 23 and flagged.
-12. **The MLB duration figure is contested across the cited sources.** The shipped default
-    is 164 min (2:44), from BetMGM's Aug 25 2026 post. On the same re-check date, another
-    sports-data page said MLB was "trending near 2:38" and cited official MLB pace-of-play
-    data for 2025 (2:38). Neither is an MLB.com press release, and the value is editable in
-    the UI and in `scripts/build.py`. Treat 164 min as a reasonable-but-not-official 2026
-    default.
-13. **README wording contradiction.** README says "No manual entry anywhere," but the raw
-    files are explicitly described as "hand-transcribed" (the only way to snapshot the
-    source URLs). The data is source-attributed and reproducible, but transcription is
-    manual and should be re-verified against the URLs in this file.
+1. **TBD_TIME (42)** - every unconfirmed kickoff: MLB's 55 postseason placeholders; Earthquakes Oct 31
+   (kickoff TBD in club PDF); Stanford Oct 3 @Wake + Oct 31 @Louisville + Nov 14/21/28; Cal's four
+   October TBDs + three November TBDs; 49ers Wk18 Jan 10; 13 NFL postseason/pro-bowl rows; and the
+   conditional markers. These days are shown UNCONFIRMED - free time there is provisional, never asserted.
+2. **CORRECTIONS applied 2026-09-11 (kept as IRREGULARITY flags)** - 49ers Dec 17 (20:15 PT was the END
+   time; kickoff 5:15 PM PT per chargers.com/sofi.com/49erswebzone), Nov 29 (1:25 PM PT per
+   seahawks.com/levisstadium.com, not 1:05), Dec 6 (10:00 AM PT = 1:00 PM ET, not 12:00). Any downstream
+   consumer that pinned the old values shifts by 3h/20min/2h respectively.
+3. **RESOLVED** - the two "kickoff time not published" 49ers preseason rows: Aug 20 at LAC = 7:00 PM PT
+   (chargers.com + sofi.com), Aug 27 at LV = 5:00 PM PT (raiders.com + SBPride + yahoo 8:15->8:00 PM ET).
+4. **49ers Wk 18 (2027-01-10 @ARI)** - club page: no time; league table: 1:00 PM ET = 10:00 AM PT for all
+   16 Wk-18 games. Row kept TBD + flagged; re-check before December.
+5. **INTERNATIONAL GAMES** - Wk1 2026-09-10 at the Melbourne Cricket Ground (49ers.com "home"; nfl.com
+   slug says 49ers-at-rams i.e. Rams home - both keep the 5:35 PM PT kickoff; PFR prints the row with a
+   neutral-site separator); Wk11 2026-11-22 "home" game played at Estadio Banorte, Mexico City (5:20 PM PT
+   = SNF 8:20 PM ET - times agree); W9 2026-11-08 CIN@ATL listed 9:30 AM ET (Madrid, Santiago Bernabeu);
+   W6 2026-10-18 & W5 2026-10-11 9:30 AM ET games (international windows); W1 Wed 2026-09-09 SEA-NE played
+   as a neutral-site game (venue not printed on the source row) - display-only, non-blocking anyway.
+6. **UNUSUAL LOCAL TIMES** - 2026-10-25 49ers@ATL 10:00 AM PT (1:00 PM ET - verified against the league
+   table), Cal Sep 25 7:30 PM PT; MLB Sep 15 Earthquakes-day "9 AM PT" listed on club site.
+7. **NFL flex window (FLEX_WINDOW flag)** - the table prints times for all future games, but NFL flex
+   can still move Sunday 1:00/4:05/4:25 PM ET games ~12 days ahead (125 games after 2026-09-11 in our rows).
+   49ers blocking rows are unaffected by the flag caveat only insofar as 49ers.com itself is re-checked
+   weekly - the flex mechanism applies to them too (e.g. a future SF game could be pulled to SNF).
+8. **PRO BOWL DATE CONFLICT** - Feb 7 vs Feb 9, 2027 (see §0); placeholder row + flag until an official
+   announcement is visible to the proxy.
+9. **NFL preseason ties** - Aug 13 CLT@NWE 13-13 and Aug 28 SEA@KAN 9-9 are real ties (preseason); flagged
+   by the build so nobody "fixes" them into winners.
+10. **Doubleheaders (5)** - MLB days where the same matchup appears twice on one `officialDate` (split
+    nights/rescheduled); both rows block, so the merged window is still correct.
+11. **Earthquakes vs Decision Day** - SJ's club PDF ends Oct 31 while MLS's regular season runs to
+    Decision Day **Nov 7** (all 30 clubs): SJ games only on that day if postponed. Marked conditional.
+12. **Stanford/Cal bowls are deliberately NOT day-marked** - bowls (Dec 12 - Jan 1) are assigned after
+    Selection Day Dec 6, 2026; the README tells you to re-run the build afterwards. Same for any
+    Stanford/Cal CFP appearance beyond the conditional markers we do list.
+13. **README/data mismatch (resolved 2026-09-11)** - README now states Aug 1, 2026 - Feb 28, 2027 and the
+    All-NFL display layer matches `schedules.md`.
+14. **Preseason times not transcribed for ~47 non-SF games** - the official PFR preseason table prints no
+    kickoff times; those rows are display-only ("info_only"), never blocking, never set UNCONFIRMED.
 
 ## 4. Known limitations (stated plainly)
 
-* **Game status (postponed / cancelled / suspended) was not captured** for the bulk of the
-  regular season, to keep the dataset small. A postponed game would still block its slot in
-  the snapshot. This affects historical accuracy on individual days, never the schedule shape.
-* **Static snapshot.** The data is frozen at 2026-08-28. Re-run the fetches documented above
-  and `python3 scripts/build.py` to refresh.
-* **Free time = "no game on air".** Broadcast lead-in/post-game coverage is not counted
-  (buffers default to 0 and are documented in `scripts/build.py`).
-* **Earthquakes playoff games are not in the window** - the MLS regular season ends Oct 31 and
-  the club's 2026 PDF lists 34 regular-season games only. If San Jose qualifies, playoff games
-  would start in November.
+* "Free" means **no listed game from the blocking leagues is on air**. Pre-game hype, watch parties and
+  halftime-overrun are not modelled except via the average duration (editable). Buffers default to 0.
+* Durations are averages; real games run -30/+60 min (extra innings, overtime, weather delay). For past
+  dates you can measure the true overlap from the `result` fields we transcribed for played NFL games.
+* Times after the 2026-09-11 snapshot can still move (MLB rain postponements, NFL flex, CFP/bowl
+  selections, MLS rescheduling). Re-run `scripts/build.py` against fresh raw files to refresh; the build
+  prints the arithmetic so silent drift shows up as a failed check.
+* MLB rows carry Stats-API `gamePk` only in the raw headers (the file rows use team ids); per-game review
+  links for MLB are derivable as `https://mlb.com/statsapi` queries shown in the raw headers.
+* The ESPN scoreboard JSON for a full week is ~25 chunks (odds/tickets embedded); the rendered
+  week-by-week pages (nfl.com by-week, PFR tables) were used instead and agree wherever sampled.

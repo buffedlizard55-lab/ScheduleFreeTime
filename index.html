@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ScheduleFreeTime — When are you free? (Aug–Oct 2026)</title>
+<title>ScheduleFreeTime — When are you free? (Aug 2026 – Feb 2027)</title>
 <meta name="description" content="A Bay Area sports schedule visualizer: find every free window across MLB (all 30 clubs), the San Francisco 49ers, San Jose Earthquakes, Stanford, and Cal. All times in America/Los_Angeles.">
 <meta name="theme-color" content="#0f4c3f">
 <style>
@@ -78,7 +78,7 @@ th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--line);vertic
 th{color:var(--mut);font-size:11px;text-transform:uppercase;letter-spacing:.06em}
 tr:last-child td{border-bottom:none}
 .tag{display:inline-block;padding:2px 8px;border-radius:6px;font-size:10.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase}
-.t-mlb{background:#e4eefb;color:#1c4f8c}.t-nfl{background:#fbe3e3;color:#7a2020}.t-mls{background:#e2f4ec;color:#136449}.t-ncaa{background:#f7ecda;color:#7a5411}
+.t-mlb{background:#e4eefb;color:#1c4f8c}.t-nfl{background:#fbe3e3;color:#7a2020}.t-mls{background:#e2f4ec;color:#136449}.t-ncaa{background:#f7ecda;color:#7a5411}.t-nfl_all{background:#efe6f7;color:#59306e}.tag.ghost{opacity:.75}
 .hi{color:var(--hi);font-weight:800}
 .muted{color:var(--mut)}
 /* calendar */
@@ -213,11 +213,13 @@ footer .container{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-betw
           <label class="toggle-row"><input type="checkbox" data-lg="nfl" checked> San Francisco 49ers</label>
           <label class="toggle-row"><input type="checkbox" data-lg="mls" checked> San Jose Earthquakes</label>
           <label class="toggle-row"><input type="checkbox" data-lg="ncaa" checked> Stanford + Cal</label>
+          <label class="toggle-row"><input type="checkbox" data-lg="nfl_all" checked> All-NFL games (all 32 clubs — listed; playoffs, Pro Bowl &amp; Super Bowl as TBD)</label>
+          <label class="toggle-row"><input type="checkbox" id="blockAll"> Block all-NFL games too (off = free-time rule per spec: MLB + 49ers + Quakes + Stanford + Cal only)</label>
         </div>
         <div>
           <div class="set-title">Average duration used (minutes)</div>
-          <label class="toggle-row">MLB <input type="number" id="d_mlb" value="150" min="30" step="5"></label>
-          <label class="toggle-row">NFL <input type="number" id="d_nfl" value="180" min="30" step="5"></label>
+          <label class="toggle-row">MLB <input type="number" id="d_mlb" value="158" min="30" step="5"></label>
+          <label class="toggle-row">NFL (49ers &amp; all-NFL) <input type="number" id="d_nfl" value="192" min="30" step="5"></label>
           <label class="toggle-row">NCAA <input type="number" id="d_ncaa" value="204" min="30" step="5"></label>
           <label class="toggle-row">MLS <input type="number" id="d_mls" value="120" min="30" step="5"></label>
         </div>
@@ -249,14 +251,20 @@ footer .container{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-betw
             <tr><td>San Jose Earthquakes 2026</td><td><a target="_blank" rel="noopener" href="https://images.mlssoccer.com/image/upload/v1766018474/assets/sje/schedule/2026%20Schedule.pdf">Official Earthquakes PDF</a></td></tr>
             <tr><td>Stanford 2026 football</td><td><a target="_blank" rel="noopener" href="https://gostanford.com/sports/football/schedule">gostanford.com schedule</a></td></tr>
             <tr><td>Cal 2026 football</td><td><a target="_blank" rel="noopener" href="https://calbears.com/sports/football/schedule">calbears.com schedule</a></td></tr>
-            <tr><td>MLB average length</td><td><a target="_blank" rel="noopener" href="https://sports.betmgm.com/en/blog/mlb/average-game-time-in-mlb-bm23/">BetMGM (secondary)</a></td></tr>
+            <tr><td>All-NFL regular season (272) + preseason (49)</td><td><a target="_blank" rel="noopener" href="https://www.pro-football-reference.com/years/2026/games.htm">PFR league week-by-week table</a> &middot; <a target="_blank" rel="noopener" href="https://www.pro-football-reference.com/years/2026/preseason.htm">PFR preseason</a> &middot; official by-week pages: <a target="_blank" rel="noopener" href="https://www.nfl.com/schedules/2026/by-week/week-9">nfl.com week 9</a></td></tr>
+            <tr><td>NFL postseason / Super Bowl LXI (Feb 14, 2027, SoFi)</td><td><a target="_blank" rel="noopener" href="https://www.nfl.com/news/los-angeles-to-host-super-bowl-lxi-in-2027">nfl.com &mdash; LA to host SB LXI</a> &middot; <a target="_blank" rel="noopener" href="https://www.lasec.net/los-angeles-region-to-host-super-bowl-lxi-in-2027-welcoming-the-nfls-biggest-stage-for-the-second-time-this-decade-to-sofi-stadium/">LA host committee</a></td></tr>
+            <tr><td>MLS playoff windows (SJ conditional)</td><td><a target="_blank" rel="noopener" href="https://www.mlssoccer.com/playoffs/2025/news/audi-2026-mls-cup-playoffs-key-dates-schedule-information">mlssoccer.com &mdash; 2026 playoffs key dates</a></td></tr>
+            <tr><td>CFP / ACC 2026-27 dates</td><td><a target="_blank" rel="noopener" href="https://www.espn.com/college-football/story/_/id/48958840/2026-college-football-playoff-bowl-schedule-46-games">ESPN CFP schedule article</a></td></tr>
+            <tr><td>MLB 2027 spring training (out of scope, flagged)</td><td><a target="_blank" rel="noopener" href="https://www.mlb.com/press-release/press-release-mlb-announces-2027-spring-training-schedule">MLB press release &mdash; ST opens Feb 19, 2027</a></td></tr>
+            <tr><td>MLB average length (official)</td><td><a target="_blank" rel="noopener" href="https://www.mlb.com/press-release/press-release-mlb-attendance-reaches-71-4-million-three-straight-years-of-growth-for-first-time-since-2007">MLB PR: 2025 avg game time 2:38</a> &middot; <a target="_blank" rel="noopener" href="https://sports.betmgm.com/en/blog/mlb/average-game-time-in-mlb-bm23/">BetMGM: 2026 in progress 2:44 (secondary)</a></td></tr>
           </tbody>
         </table>
       </div>
-      <div class="callout"><b>Verification note:</b> this snapshot was re-checked against the primary sources on
-        2026-08-28. The MLB Stats API returned 30/30 clubs and, on every date sampled, the exact same
-        <code>gameDate</code> and team ids as the data in this repo. See <code>docs/VERIFICATION.md</code> for
-        the manual-review links and the full list of accepted caveats.</div>
+      <div class="callout"><b>Verification note:</b> re-checked against primary sources on <b>2026-09-11</b>.
+        MLB Stats API matches the repo 35/35 games for Sep 10&ndash;12; all 272 NFL regular-season rows pass the
+        17-games-per-team check, and the 49ers club list matches the league table on 18/19 timed rows (two
+        corrected times and the Week-18 TBD are documented flags). See <code>docs/VERIFICATION.md</code> and
+        <code>schedules.md</code> for every manual-review link and accepted caveat.</div>
     </section>
   </div>
 </main>
@@ -264,27 +272,30 @@ footer .container{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-betw
 <footer>
   <div class="container">
     <span>ScheduleFreeTime &middot; a static GitHub Pages snapshot with no server-side code.</span>
-    <span>Timezone: America/Los_Angeles (PDT, UTC-7 for the whole window).</span>
+    <span>Timezone: America/Los_Angeles — PDT (UTC-7) through Oct 31, 2026, then PST (UTC-8).</span>
   </div>
 </footer>
 
 <script>
-const DUR={mlb:164,nfl:192,ncaa:204,mls:120};
-const LG={mlb:true,nfl:true,mls:true,ncaa:true};
-const SNAPSHOT=new Date(2027,1,28);            // dataset snapshot day (2026-08-28)
+const DUR={mlb:158,nfl:192,ncaa:204,mls:120};   // researched averages (docs/VERIFICATION.md)
+const LG={mlb:true,nfl:true,mls:true,ncaa:true,nfl_all:true};   // nfl_all = LISTED display layer
+const BLOCK={mlb:true,nfl:true,mls:true,ncaa:true};           // user's free-time rule (blocking layer)
+let blockAll=false;                                   // opt-in: treat all-NFL games as busy too
+const SNAPSHOT=new Date(2026,8,11);           // dataset snapshot / last verification day (2026-09-11)
 const WIN_S=new Date(2026,7,1), WIN_E=new Date(2027,2,28);
 let DATA=null, BYDATE={}, CUR=new Date(SNAPSHOT), MONTH=new Date(2026,7,1);
 const pad=n=>String(n).padStart(2,'0');
 const key=d=>`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
 const shift=(d,n)=>{const x=new Date(d);x.setDate(x.getDate()+n);return x;};
 function fmt(m){m=Math.round(m);if(m>=1440)return"12:00 AM (midnight)";const h=Math.floor(m/60),mi=m%60,ap=h<12?"AM":"PM";return `${h%12||12}:${pad(mi)} ${ap}`;}
-function dur(sport){return DUR[sport]||120;}
+function dur(sport){return sport==='nfl_all'?DUR.nfl:(DUR[sport]||120);}
+function isBlocking(g){return (BLOCK[g.sport]||(g.sport==='nfl_all'&&blockAll))&&g.start_min!=null;}
 
 function dayGames(ds){
   return (BYDATE[ds]||[]).filter(g=>LG[g.sport]).sort((a,b)=>(a.start_min??9999)-(b.start_min??9999));
 }
 function windows(gs){
-  const blocks=gs.filter(g=>g.start_min!=null).map(g=>[g.start_min,g.start_min+dur(g.sport)]).sort((a,b)=>a[0]-b[0]);
+  const blocks=gs.filter(isBlocking).map(g=>[g.start_min,g.start_min+dur(g.sport)]).sort((a,b)=>a[0]-b[0]);
   const merged=[];
   for(const[s,e]of blocks){
     if(merged.length&&s<=merged[merged.length-1][1]) merged[merged.length-1][1]=Math.max(merged[merged.length-1][1],e);
@@ -298,10 +309,12 @@ function windows(gs){
 function renderStats(){
   const days=DATA.days;
   const freeCount=days.filter(d=>d.status==='FREE').length;
-  const totalGames=DATA.meta.totals.mlb_games+DATA.meta.totals.mlb_postseason_tbd+DATA.meta.totals.local_games;
+  const tt=DATA.meta.totals;
+  const totalGames=tt.mlb_games+tt.mlb_postseason_tbd+tt.local_games+tt.conditional_days;
   document.getElementById('stats').innerHTML=
     `<div class="stat"><b>${DATA.meta.totals.mlb_games}</b><span>MLB games (all 30 clubs)</span></div>`+
     `<div class="stat"><b>${DATA.meta.totals.local_games}</b><span>49ers / Quakes / Stanford / Cal</span></div>`+
+    `<div class="stat"><b>${DATA.meta.totals.nfl_reg_games+DATA.meta.totals.nfl_pre_games}</b><span>All-NFL games (272 reg + 49 pre)</span></div>`+
     `<div class="stat"><b>${freeCount}</b><span>Fully free days</span></div>`+
     `<div class="stat"><b>${DATA.flags.length}</b><span>Flags raised</span></div>`;
   document.getElementById('meta').innerHTML=
@@ -322,7 +335,8 @@ function renderCal(){
     const e=document.createElement('div');e.className='cell';
     const gs=dayGames(ds);
     const {merged,free}=windows(gs);
-    const tbd=gs.filter(g=>g.start_min==null).length;
+    const tbd=gs.filter(g=>g.start_min==null&&g.sport!=='nfl_all').length
+              +gs.filter(g=>g.sport==='nfl_all'&&g.tbd_count&&blockAll).reduce((a,g)=>a+(g.tbd_count||0),0);
     const fm=free.reduce((a,b)=>a+b[1]-b[0],0);
     if(!inWin){e.classList.add('out');}
     else if(!merged.length&&tbd)e.classList.add('unc');
@@ -342,7 +356,7 @@ function renderDay(){
   const ds=key(CUR);
   document.getElementById('dLabel').textContent=CUR.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});
   const gs=dayGames(ds), {merged,free}=windows(gs);
-  const tbd=gs.filter(g=>g.start_min==null);
+  const tbd=gs.filter(g=>g.start_min==null&&(g.sport!=='nfl_all'||(blockAll&&g.tbd_count)));
   const fm=free.reduce((a,b)=>a+b[1]-b[0],0);
   let st='PARTIAL';
   if(!merged.length&&tbd.length)st='UNCONFIRMED';
@@ -364,10 +378,10 @@ function renderDay(){
     const end=g.start_min!=null?fmt(g.start_min+dur(g.sport)):'TBD';
     tb.insertAdjacentHTML('beforeend',
       `<tr><td>${g.start_pt?g.start_pt+' PT':'<b class="hi">TBD</b>'}</td>`+
-      `<td><span class="tag t-${g.sport}">${g.sport==='mls'?'MLS':g.sport==='ncaa'?'NCAA':g.sport.toUpperCase()}</span>${g.priority?' <span class="hi">&#9733;</span>':''}</td>`+
-      `<td>${g.label}${g.phase?` <span class="muted">(${g.phase})</span>`:''}${g.flag?`<div class="flag" style="margin-top:4px"><b>&#9888;</b> ${g.flag}</div>`:''}</td>`+
+      `<td><span class="tag t-${g.sport}${g.sport==='nfl_all'&&!blockAll?' ghost':''}">${g.sport==='mls'?'MLS':g.sport==='ncaa'?'NCAA':g.sport==='nfl_all'?'NFL ALL':g.sport.toUpperCase()}</span>${g.priority?' <span class="hi">&#9733;</span>':''}${g.sport==='nfl_all'&&!blockAll?' <span class="muted" style="font-size:10px">(non-blocking)</span>':''}${g.conditional?' <span class="tag" style="background:#efe9f2;color:#59306e">conditional</span>':''}</td>`+
+      `<td>${g.label}${g.phase?` <span class="muted">(${g.phase})</span>`:''}${g.result?` <span class="muted">&ndash; ${g.result}</span>`:''}${g.flag?`<div class="flag" style="margin-top:4px"><b>&#9888;</b> ${g.flag}</div>`:''}</td>`+
       `<td>${end}</td>`+
-      `<td class="muted" style="font-size:11.5px">${(g.source||'').replace(/^.*\//,'')}</td></tr>`);
+      `<td class="muted" style="font-size:11.5px">${g.review?`<a href="${g.review}" target="_blank" rel="noopener">review</a> &middot; `:''}${(g.source||'').replace(/^.*\//,'')}</td></tr>`);
   });
 }
 function renderFlags(){
@@ -394,6 +408,7 @@ async function boot(){
   document.getElementById('prevM').onclick=()=>{MONTH=new Date(MONTH.getFullYear(),MONTH.getMonth()-1,1);renderCal();};
   document.getElementById('nextM').onclick=()=>{MONTH=new Date(MONTH.getFullYear(),MONTH.getMonth()+1,1);renderCal();};
   document.querySelectorAll('input[data-lg]').forEach(i=>i.onchange=()=>{LG[i.dataset.lg]=i.checked;renderCal();renderDay();});
+  document.getElementById('blockAll').onchange=e=>{blockAll=e.target.checked;renderCal();renderDay();};
   ['mlb','nfl','ncaa','mls'].forEach(k=>{document.getElementById('d_'+k).onchange=e=>{DUR[k]=Math.max(30,parseInt(e.target.value)||120);renderCal();renderDay();};});
   document.addEventListener('keydown',e=>{
     if(e.key==='ArrowLeft')document.getElementById('prevD').click();

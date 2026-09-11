@@ -1,0 +1,28 @@
+# NFL 2026 postseason — round dates only; matchups and kickoff times are TBD until the
+# conference championship games are decided. Placeholder rows so the calendar shows these
+# days as "unconfirmed". Sources (fetched 2026-09-11):
+#   - https://www.nfl.com/news/los-angeles-to-host-super-bowl-lxi-in-2027  (official: SB LXI at SoFi)
+#   - https://www.lasec.net/los-angeles-region-to-host-super-bowl-lxi-in-2027-welcoming-the-nfls-biggest-stage-for-the-second-time-this-decade-to-sofi-stadium/
+#       "...will be played at SoFi Stadium on February 14, 2027" (official host committee)
+#   - https://www.nfl-schedule.com/blog/2026-2027-nfl-playoff-schedule "round dates are official":
+#       Wild Card Jan 16-18, 2027 | Divisional Jan 23-24 | Conference Champ Jan 31 | Super Bowl LXI Feb 14
+#   - FOX Sports league schedule nav agrees (https://www.foxsports.com/nfl/schedule):
+#       Wild Card Jan 16-18, Div Jan 23-24, Conf Champ Jan 31, Super Bowl Feb 14
+# PRO BOWL CONFLICT: nflplayoffpass.com reports the Pro Bowl Games flag-football game on
+#   Tuesday, Feb 9, 2027, 8:00 PM ET at SoFi (moved into Super Bowl week, tied to LA 2028
+#   Olympics promotion); sportbusy.com metadata says Feb 7, 2027. Unresolved -> flagged,
+#   listed as unconfirmed, non-blocking.
+# The user's blocking rule counts 49ers "preseason and regular season" games; NFL playoff
+# games are therefore shown here but NEVER block (even a 49ers playoff game). Toggle
+# "block NFL postseason" in the UI (off by default) to include them.
+# Format: round|date|games|label
+WC1|2027-01-16|2|Wild Card (Sat slot) - matchups/time TBD
+WC2|2027-01-17|3|Wild Card (Sun slot) - matchups/time TBD
+WC3|2027-01-18|1|Wild Card (Mon slot) - matchups/time TBD
+DIV|2027-01-23|2|Divisional round (Sat) - matchups/time TBD
+DIV|2027-01-24|2|Divisional round (Sun) - matchups/time TBD
+CC|2027-01-31|2|AFC & NFC Championship Games - matchups/time TBD
+SB|2027-02-14|1|Super Bowl LXI - SoFi Stadium, Inglewood CA; expected 6:30 PM ET kickoff (PST)
+PRO|2027-02-09|1|NFL Pro Bowl Games (flag football) - DATE CONFLICT Feb 7 vs Feb 9, see header
+# Round game counts follow the standard 14-team bracket: 6 WC (2/3/1), 4 Div, 2 CC, 1 SB.
+# Per-game start times become official after the final regular-season Sunday (Jan 10, 2027).

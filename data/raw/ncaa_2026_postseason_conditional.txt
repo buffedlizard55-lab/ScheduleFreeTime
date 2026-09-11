@@ -1,0 +1,28 @@
+# 2026-27 post-season college football - CONDITIONAL windows for Stanford & Cal (both ACC members).
+# Both teams' regular seasons end Sat Nov 28, 2026. Any further Stanford/Cal game depends on
+# conference standing / bowl selection and cannot be pinned down yet; these rows only mark
+# candidate days (UNCONFIRMED, never block). Sources (fetched 2026-09-11):
+#   - ACC Championship Game: Sat Dec 5, 2026 (sportsbrackets.net 2026 Stanford schedule table shows
+#       "CCG | Sat, Dec 5 | ACC Championship (if qualified) | 12:00 PM | ABC"; time is 12:00 PM ET
+#       = 9:00 AM PT). Top-two ACC rule; Stanford and Cal both currently outside the picture as of
+#       2026-09-11, so this is a possibility, not a probability.
+#   - ESPN 2026-27 CFP schedule: https://www.espn.com/college-football/story/_/id/48958840/2026-college-football-playoff-bowl-schedule-46-games
+#       First round Dec 18-19 (campus sites; FRI 8:00 PM ET, SAT noon & 3:30 & 7:30 PM ET),
+#       Quarterfinals Wed Dec 30 (Fiesta, 7:30 PM ET) + Fri Jan 1 (noon/4pm/8pm ET),
+#       Semifinals Thu Jan 14 (Orange, 7:30 PM ET) & Fri Jan 15 (Sugar, 7:30 PM ET),
+#       National Championship Mon Jan 25, 2027 7:30 PM ET, Allegiant Stadium, Las Vegas.
+#       (CFP only relevant to Stanford/Cal if a Cardinal/Bear is selected - 12-team field.)
+#   - Bowl selection day: Sun Dec 6, 2026 (per ESPN article footnote: quarterfinal sites assigned on
+#       Selection Day); bowl games are played Dec 12, 2026 - Jan 1, 2027 on various dates. Because a
+#       Stanford/Cal bowl appearance could land on any of those days, we flag the window in the
+#       README/VERIFICATION docs instead of marking 20+ days; re-run scripts/build.py after Dec 7
+#       once actual bowls are scheduled.
+# Format: date|games|label
+2026-12-05|cond|ACC Championship Game - only if Stanford or Cal finishes top-2 in ACC (9:00 AM PT planned)
+2026-12-18|cond|CFP first round (Fri 8:00 PM ET slot) - only if Stanford/Cal selected in top 12
+2026-12-19|cond|CFP first round (Sat slots noon-7:30 PM ET) - only if Stanford/Cal selected
+2026-12-30|cond|CFP quarterfinal @ Fiesta Bowl - only if Stanford/Cal advanced
+2027-01-01|cond|CFP quarterfinals (3 games) - only if Stanford/Cal advanced
+2027-01-14|cond|CFP semifinal @ Orange Bowl - only if Stanford/Cal advanced
+2027-01-15|cond|CFP semifinal @ Sugar Bowl - only if Stanford/Cal advanced
+2027-01-25|cond|CFP National Championship (Las Vegas) - only if Stanford/Cal advanced
