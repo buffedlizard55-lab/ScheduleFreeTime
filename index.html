@@ -147,7 +147,7 @@ footer .container{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-betw
       <h2>When am I free?</h2>
       <p>A time counts as <b>busy</b> if any of these is on air: any MLB game (all 30 clubs),
          the San Francisco 49ers, the San Jose Earthquakes, Stanford football, or Cal football.
-         Everything is shown in <b>America/Los_Angeles</b> for <b>Aug 1 – Oct 31, 2026</b>.</p>
+         Everything is shown in <b>America/Los_Angeles</b> for <b>Aug 1, 2026 – Feb 28, 2027</b>.</p>
     </div>
     <div class="legend" aria-label="Status legend">
       <span class="leg"><span class="dot"></span> Fully free</span>
@@ -216,8 +216,8 @@ footer .container{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-betw
         </div>
         <div>
           <div class="set-title">Average duration used (minutes)</div>
-          <label class="toggle-row">MLB <input type="number" id="d_mlb" value="164" min="30" step="5"></label>
-          <label class="toggle-row">NFL <input type="number" id="d_nfl" value="192" min="30" step="5"></label>
+          <label class="toggle-row">MLB <input type="number" id="d_mlb" value="150" min="30" step="5"></label>
+          <label class="toggle-row">NFL <input type="number" id="d_nfl" value="180" min="30" step="5"></label>
           <label class="toggle-row">NCAA <input type="number" id="d_ncaa" value="204" min="30" step="5"></label>
           <label class="toggle-row">MLS <input type="number" id="d_mls" value="120" min="30" step="5"></label>
         </div>
@@ -271,8 +271,8 @@ footer .container{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-betw
 <script>
 const DUR={mlb:164,nfl:192,ncaa:204,mls:120};
 const LG={mlb:true,nfl:true,mls:true,ncaa:true};
-const SNAPSHOT=new Date(2026,7,28);            // dataset snapshot day (2026-08-28)
-const WIN_S=new Date(2026,7,1), WIN_E=new Date(2026,9,31);
+const SNAPSHOT=new Date(2027,1,28);            // dataset snapshot day (2026-08-28)
+const WIN_S=new Date(2026,7,1), WIN_E=new Date(2027,2,28);
 let DATA=null, BYDATE={}, CUR=new Date(SNAPSHOT), MONTH=new Date(2026,7,1);
 const pad=n=>String(n).padStart(2,'0');
 const key=d=>`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;

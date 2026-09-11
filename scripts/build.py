@@ -21,9 +21,9 @@ RAW = os.path.join(ROOT, "data", "raw")
 OUT = os.path.join(ROOT, "data", "processed")
 
 # --- analysis window -------------------------------------------------------
-START, END = date(2026, 8, 1), date(2026, 10, 31)
+START, END = date(2026, 8, 1), date(2027, 2, 28)
 TODAY = date(2026, 8, 28)
-# US Pacific in 2026: PDT (UTC-7) from Mar 8 to Nov 1; PST (UTC-8) from Nov 1.
+# US Pacific in 2026-2027: PDT (UTC-7) from Mar 8, 2026 to Nov 1, 2026; PST (UTC-8) from Nov 1, 2026 to Mar 14, 2027.
 PDT = timedelta(hours=-7)
 PST = timedelta(hours=-8)
 
@@ -33,7 +33,7 @@ def pt_offset(d):
 
 # --- average game durations (minutes) --------------------------------------
 # Sources are documented in docs/VERIFICATION.md
-DURATIONS = {"mlb": 164, "nfl": 192, "ncaa": 204, "mls": 120}
+DURATIONS = {"mlb": 150, "nfl": 180, "ncaa": 204, "mls": 120}
 PRE_BUFFER = 0   # minutes of pre-game coverage counted as busy
 POST_BUFFER = 0  # minutes of post-game coverage counted as busy
 
@@ -95,11 +95,13 @@ def load_local():
     games = []
     for g in data["games"]:
         rec = dict(g)
-        if g["start_pt"]:
+        if g.get("start_pt") and g["start_pt"] != "TBD":
             h, m = map(int, g["start_pt"].split(":"))
             rec["start_min"] = h * 60 + m
         else:
             rec["start_min"] = None
+            if g.get("start_pt") == "TBD":
+                flag("TBD_TIME", f"{g['date']} {g['label']}: kickoff time TBD")
             flag("TBD_TIME", f"{g['date']} {g['label']}: {g.get('flag','kickoff time not confirmed')}")
         if g.get("flag"):
             flag("IRREGULARITY", f"{g['date']} {g['label']}: {g['flag']}")
@@ -288,7 +290,7 @@ def write_markdown(days, meta, flags, mlb, local, per):
     A("|---|---|---|---|---|")
     for g in sorted(local, key=lambda x: (x["date"], x.get("start_min") or 0)):
         st = g["start_pt"] + " PT" if g["start_pt"] else "**TBD**"
-        A(f"| {g['date']} | {st} | {g['label']} | {g.get('phase','')} | [link]({g['source']}) |")
+        A(f"| {g['date']} | {st} | {g['label']} | {g.get('phase','')} | [link]({g.get('source', '')}) |")
     A("")
     A("## Day-by-day free time (America/Los_Angeles)")
     A("")

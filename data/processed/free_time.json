@@ -3,12 +3,12 @@
   "generated_utc": "2026-08-28",
   "window": {
    "start": "2026-08-01",
-   "end": "2026-10-31"
+   "end": "2027-02-28"
   },
   "timezone": "America/Los_Angeles (PDT, UTC-7 for the entire window)",
   "durations_minutes": {
-   "mlb": 164,
-   "nfl": 192,
+   "mlb": 150,
+   "nfl": 180,
    "ncaa": 204,
    "mls": 120
   },
@@ -17,7 +17,7 @@
   "totals": {
    "mlb_games": 778,
    "mlb_postseason_tbd": 55,
-   "local_games": 44
+   "local_games": 54
   }
  },
  "days": [
@@ -267,9 +267,9 @@
    "blocked": [
     {
      "start": 727,
-     "end": 1284,
+     "end": 1270,
      "start_t": "12:07 PM",
-     "end_t": "9:24 PM"
+     "end_t": "9:10 PM"
     }
    ],
    "free": [
@@ -281,14 +281,14 @@
      "minutes": 727
     },
     {
-     "start": 1284,
+     "start": 1270,
      "end": 1440,
-     "start_t": "9:24 PM",
+     "start_t": "9:10 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 156
+     "minutes": 170
     }
    ],
-   "free_minutes": 883,
+   "free_minutes": 897,
    "game_count": 16,
    "tbd_count": 0,
    "has_priority": true
@@ -527,15 +527,15 @@
    "blocked": [
     {
      "start": 635,
-     "end": 954,
+     "end": 940,
      "start_t": "10:35 AM",
-     "end_t": "3:54 PM"
+     "end_t": "3:40 PM"
     },
     {
      "start": 980,
-     "end": 1144,
+     "end": 1130,
      "start_t": "4:20 PM",
-     "end_t": "7:04 PM"
+     "end_t": "6:50 PM"
     }
    ],
    "free": [
@@ -547,21 +547,21 @@
      "minutes": 635
     },
     {
-     "start": 954,
+     "start": 940,
      "end": 980,
-     "start_t": "3:54 PM",
+     "start_t": "3:40 PM",
      "end_t": "4:20 PM",
-     "minutes": 26
+     "minutes": 40
     },
     {
-     "start": 1144,
+     "start": 1130,
      "end": 1440,
-     "start_t": "7:04 PM",
+     "start_t": "6:50 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 296
+     "minutes": 310
     }
    ],
-   "free_minutes": 957,
+   "free_minutes": 985,
    "game_count": 15,
    "tbd_count": 0,
    "has_priority": true
@@ -695,9 +695,9 @@
    "blocked": [
     {
      "start": 940,
-     "end": 1284,
+     "end": 1270,
      "start_t": "3:40 PM",
-     "end_t": "9:24 PM"
+     "end_t": "9:10 PM"
     }
    ],
    "free": [
@@ -709,14 +709,14 @@
      "minutes": 940
     },
     {
-     "start": 1284,
+     "start": 1270,
      "end": 1440,
-     "start_t": "9:24 PM",
+     "start_t": "9:10 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 156
+     "minutes": 170
     }
    ],
-   "free_minutes": 1096,
+   "free_minutes": 1110,
    "game_count": 8,
    "tbd_count": 0,
    "has_priority": true
@@ -955,9 +955,9 @@
    "blocked": [
     {
      "start": 935,
-     "end": 1284,
+     "end": 1270,
      "start_t": "3:35 PM",
-     "end_t": "9:24 PM"
+     "end_t": "9:10 PM"
     }
    ],
    "free": [
@@ -969,14 +969,14 @@
      "minutes": 935
     },
     {
-     "start": 1284,
+     "start": 1270,
      "end": 1440,
-     "start_t": "9:24 PM",
+     "start_t": "9:10 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 156
+     "minutes": 170
     }
    ],
-   "free_minutes": 1091,
+   "free_minutes": 1105,
    "game_count": 15,
    "tbd_count": 0,
    "has_priority": true
@@ -1215,15 +1215,15 @@
    "blocked": [
     {
      "start": 670,
-     "end": 894,
+     "end": 880,
      "start_t": "11:10 AM",
-     "end_t": "2:54 PM"
+     "end_t": "2:40 PM"
     },
     {
      "start": 935,
-     "end": 1284,
+     "end": 1270,
      "start_t": "3:35 PM",
-     "end_t": "9:24 PM"
+     "end_t": "9:10 PM"
     }
    ],
    "free": [
@@ -1235,21 +1235,21 @@
      "minutes": 670
     },
     {
-     "start": 894,
+     "start": 880,
      "end": 935,
-     "start_t": "2:54 PM",
+     "start_t": "2:40 PM",
      "end_t": "3:35 PM",
-     "minutes": 41
+     "minutes": 55
     },
     {
-     "start": 1284,
+     "start": 1270,
      "end": 1440,
-     "start_t": "9:24 PM",
+     "start_t": "9:10 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 156
+     "minutes": 170
     }
    ],
-   "free_minutes": 867,
+   "free_minutes": 895,
    "game_count": 15,
    "tbd_count": 0,
    "has_priority": true
@@ -1428,9 +1428,9 @@
    "blocked": [
     {
      "start": 575,
-     "end": 1284,
+     "end": 1270,
      "start_t": "9:35 AM",
-     "end_t": "9:24 PM"
+     "end_t": "9:10 PM"
     }
    ],
    "free": [
@@ -1442,14 +1442,14 @@
      "minutes": 575
     },
     {
-     "start": 1284,
+     "start": 1270,
      "end": 1440,
-     "start_t": "9:24 PM",
+     "start_t": "9:10 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 156
+     "minutes": 170
     }
    ],
-   "free_minutes": 731,
+   "free_minutes": 745,
    "game_count": 11,
    "tbd_count": 0,
    "has_priority": true
@@ -1688,9 +1688,9 @@
    "blocked": [
     {
      "start": 940,
-     "end": 1319,
+     "end": 1305,
      "start_t": "3:40 PM",
-     "end_t": "9:59 PM"
+     "end_t": "9:45 PM"
     }
    ],
    "free": [
@@ -1702,14 +1702,14 @@
      "minutes": 940
     },
     {
-     "start": 1319,
+     "start": 1305,
      "end": 1440,
-     "start_t": "9:59 PM",
+     "start_t": "9:45 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 121
+     "minutes": 135
     }
    ],
-   "free_minutes": 1061,
+   "free_minutes": 1075,
    "game_count": 15,
    "tbd_count": 0,
    "has_priority": true
@@ -1948,9 +1948,9 @@
    "blocked": [
     {
      "start": 725,
-     "end": 1294,
+     "end": 1280,
      "start_t": "12:05 PM",
-     "end_t": "9:34 PM"
+     "end_t": "9:20 PM"
     }
    ],
    "free": [
@@ -1962,14 +1962,14 @@
      "minutes": 725
     },
     {
-     "start": 1294,
+     "start": 1280,
      "end": 1440,
-     "start_t": "9:34 PM",
+     "start_t": "9:20 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 146
+     "minutes": 160
     }
    ],
-   "free_minutes": 871,
+   "free_minutes": 885,
    "game_count": 15,
    "tbd_count": 0,
    "has_priority": true
@@ -2208,15 +2208,15 @@
    "blocked": [
     {
      "start": 555,
-     "end": 954,
+     "end": 940,
      "start_t": "9:15 AM",
-     "end_t": "3:54 PM"
+     "end_t": "3:40 PM"
     },
     {
      "start": 1040,
-     "end": 1204,
+     "end": 1190,
      "start_t": "5:20 PM",
-     "end_t": "8:04 PM"
+     "end_t": "7:50 PM"
     }
    ],
    "free": [
@@ -2228,21 +2228,21 @@
      "minutes": 555
     },
     {
-     "start": 954,
+     "start": 940,
      "end": 1040,
-     "start_t": "3:54 PM",
+     "start_t": "3:40 PM",
      "end_t": "5:20 PM",
-     "minutes": 86
+     "minutes": 100
     },
     {
-     "start": 1204,
+     "start": 1190,
      "end": 1440,
-     "start_t": "8:04 PM",
+     "start_t": "7:50 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 236
+     "minutes": 250
     }
    ],
-   "free_minutes": 877,
+   "free_minutes": 905,
    "game_count": 15,
    "tbd_count": 0,
    "has_priority": true
@@ -2406,9 +2406,9 @@
    "blocked": [
     {
      "start": 967,
-     "end": 1314,
+     "end": 1300,
      "start_t": "4:07 PM",
-     "end_t": "9:54 PM"
+     "end_t": "9:40 PM"
     }
    ],
    "free": [
@@ -2420,14 +2420,14 @@
      "minutes": 967
     },
     {
-     "start": 1314,
+     "start": 1300,
      "end": 1440,
-     "start_t": "9:54 PM",
+     "start_t": "9:40 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 126
+     "minutes": 140
     }
    ],
-   "free_minutes": 1093,
+   "free_minutes": 1107,
    "game_count": 10,
    "tbd_count": 0,
    "has_priority": true
@@ -2666,9 +2666,9 @@
    "blocked": [
     {
      "start": 940,
-     "end": 1314,
+     "end": 1300,
      "start_t": "3:40 PM",
-     "end_t": "9:54 PM"
+     "end_t": "9:40 PM"
     }
    ],
    "free": [
@@ -2680,14 +2680,14 @@
      "minutes": 940
     },
     {
-     "start": 1314,
+     "start": 1300,
      "end": 1440,
-     "start_t": "9:54 PM",
+     "start_t": "9:40 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 126
+     "minutes": 140
     }
    ],
-   "free_minutes": 1066,
+   "free_minutes": 1080,
    "game_count": 15,
    "tbd_count": 0,
    "has_priority": true
@@ -2926,9 +2926,9 @@
    "blocked": [
     {
      "start": 640,
-     "end": 1314,
+     "end": 1300,
      "start_t": "10:40 AM",
-     "end_t": "9:54 PM"
+     "end_t": "9:40 PM"
     }
    ],
    "free": [
@@ -2940,14 +2940,14 @@
      "minutes": 640
     },
     {
-     "start": 1314,
+     "start": 1300,
      "end": 1440,
-     "start_t": "9:54 PM",
+     "start_t": "9:40 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 126
+     "minutes": 140
     }
    ],
-   "free_minutes": 766,
+   "free_minutes": 780,
    "game_count": 15,
    "tbd_count": 0,
    "has_priority": true
@@ -3111,15 +3111,15 @@
    "blocked": [
     {
      "start": 610,
-     "end": 949,
+     "end": 935,
      "start_t": "10:10 AM",
-     "end_t": "3:49 PM"
+     "end_t": "3:35 PM"
     },
     {
      "start": 990,
-     "end": 1314,
+     "end": 1300,
      "start_t": "4:30 PM",
-     "end_t": "9:54 PM"
+     "end_t": "9:40 PM"
     }
    ],
    "free": [
@@ -3131,21 +3131,21 @@
      "minutes": 610
     },
     {
-     "start": 949,
+     "start": 935,
      "end": 990,
-     "start_t": "3:49 PM",
+     "start_t": "3:35 PM",
      "end_t": "4:30 PM",
-     "minutes": 41
+     "minutes": 55
     },
     {
-     "start": 1314,
+     "start": 1300,
      "end": 1440,
-     "start_t": "9:54 PM",
+     "start_t": "9:40 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 126
+     "minutes": 140
     }
    ],
-   "free_minutes": 777,
+   "free_minutes": 805,
    "game_count": 10,
    "tbd_count": 0,
    "has_priority": false
@@ -3369,15 +3369,15 @@
    "blocked": [
     {
      "start": 680,
-     "end": 844,
+     "end": 830,
      "start_t": "11:20 AM",
-     "end_t": "2:04 PM"
+     "end_t": "1:50 PM"
     },
     {
      "start": 910,
-     "end": 1319,
+     "end": 1305,
      "start_t": "3:10 PM",
-     "end_t": "9:59 PM"
+     "end_t": "9:45 PM"
     }
    ],
    "free": [
@@ -3389,21 +3389,21 @@
      "minutes": 680
     },
     {
-     "start": 844,
+     "start": 830,
      "end": 910,
-     "start_t": "2:04 PM",
+     "start_t": "1:50 PM",
      "end_t": "3:10 PM",
-     "minutes": 66
+     "minutes": 80
     },
     {
-     "start": 1319,
+     "start": 1305,
      "end": 1440,
-     "start_t": "9:59 PM",
+     "start_t": "9:45 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 121
+     "minutes": 135
     }
    ],
-   "free_minutes": 867,
+   "free_minutes": 895,
    "game_count": 14,
    "tbd_count": 0,
    "has_priority": true
@@ -3915,15 +3915,15 @@
    "blocked": [
     {
      "start": 555,
-     "end": 954,
+     "end": 940,
      "start_t": "9:15 AM",
-     "end_t": "3:54 PM"
+     "end_t": "3:40 PM"
     },
     {
      "start": 980,
-     "end": 1144,
+     "end": 1130,
      "start_t": "4:20 PM",
-     "end_t": "7:04 PM"
+     "end_t": "6:50 PM"
     }
    ],
    "free": [
@@ -3935,21 +3935,21 @@
      "minutes": 555
     },
     {
-     "start": 954,
+     "start": 940,
      "end": 980,
-     "start_t": "3:54 PM",
+     "start_t": "3:40 PM",
      "end_t": "4:20 PM",
-     "minutes": 26
+     "minutes": 40
     },
     {
-     "start": 1144,
+     "start": 1130,
      "end": 1440,
-     "start_t": "7:04 PM",
+     "start_t": "6:50 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 296
+     "minutes": 310
     }
    ],
-   "free_minutes": 877,
+   "free_minutes": 905,
    "game_count": 15,
    "tbd_count": 0,
    "has_priority": true
@@ -4128,15 +4128,15 @@
    "blocked": [
     {
      "start": 640,
-     "end": 804,
+     "end": 790,
      "start_t": "10:40 AM",
-     "end_t": "1:24 PM"
+     "end_t": "1:10 PM"
     },
     {
      "start": 905,
-     "end": 1224,
+     "end": 1210,
      "start_t": "3:05 PM",
-     "end_t": "8:24 PM"
+     "end_t": "8:10 PM"
     }
    ],
    "free": [
@@ -4148,21 +4148,21 @@
      "minutes": 640
     },
     {
-     "start": 804,
+     "start": 790,
      "end": 905,
-     "start_t": "1:24 PM",
+     "start_t": "1:10 PM",
      "end_t": "3:05 PM",
-     "minutes": 101
+     "minutes": 115
     },
     {
-     "start": 1224,
+     "start": 1210,
      "end": 1440,
-     "start_t": "8:24 PM",
+     "start_t": "8:10 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 216
+     "minutes": 230
     }
    ],
-   "free_minutes": 957,
+   "free_minutes": 985,
    "game_count": 11,
    "tbd_count": 0,
    "has_priority": true
@@ -4401,9 +4401,9 @@
    "blocked": [
     {
      "start": 935,
-     "end": 1224,
+     "end": 1210,
      "start_t": "3:35 PM",
-     "end_t": "8:24 PM"
+     "end_t": "8:10 PM"
     }
    ],
    "free": [
@@ -4415,14 +4415,14 @@
      "minutes": 935
     },
     {
-     "start": 1224,
+     "start": 1210,
      "end": 1440,
-     "start_t": "8:24 PM",
+     "start_t": "8:10 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 216
+     "minutes": 230
     }
    ],
-   "free_minutes": 1151,
+   "free_minutes": 1165,
    "game_count": 15,
    "tbd_count": 0,
    "has_priority": true
@@ -4858,15 +4858,15 @@
    "blocked": [
     {
      "start": 580,
-     "end": 834,
+     "end": 820,
      "start_t": "9:40 AM",
-     "end_t": "1:54 PM"
+     "end_t": "1:40 PM"
     },
     {
      "start": 935,
-     "end": 1194,
+     "end": 1180,
      "start_t": "3:35 PM",
-     "end_t": "7:54 PM"
+     "end_t": "7:40 PM"
     }
    ],
    "free": [
@@ -4878,21 +4878,21 @@
      "minutes": 580
     },
     {
-     "start": 834,
+     "start": 820,
      "end": 935,
-     "start_t": "1:54 PM",
+     "start_t": "1:40 PM",
      "end_t": "3:35 PM",
-     "minutes": 101
+     "minutes": 115
     },
     {
-     "start": 1194,
+     "start": 1180,
      "end": 1440,
-     "start_t": "7:54 PM",
+     "start_t": "7:40 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 246
+     "minutes": 260
     }
    ],
-   "free_minutes": 927,
+   "free_minutes": 955,
    "game_count": 9,
    "tbd_count": 1,
    "has_priority": true
@@ -5131,9 +5131,9 @@
    "blocked": [
     {
      "start": 790,
-     "end": 1314,
+     "end": 1300,
      "start_t": "1:10 PM",
-     "end_t": "9:54 PM"
+     "end_t": "9:40 PM"
     }
    ],
    "free": [
@@ -5145,14 +5145,14 @@
      "minutes": 790
     },
     {
-     "start": 1314,
+     "start": 1300,
      "end": 1440,
-     "start_t": "9:54 PM",
+     "start_t": "9:40 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 126
+     "minutes": 140
     }
    ],
-   "free_minutes": 916,
+   "free_minutes": 930,
    "game_count": 15,
    "tbd_count": 0,
    "has_priority": true
@@ -5664,15 +5664,15 @@
    "blocked": [
     {
      "start": 635,
-     "end": 959,
+     "end": 945,
      "start_t": "10:35 AM",
-     "end_t": "3:59 PM"
+     "end_t": "3:45 PM"
     },
     {
      "start": 970,
-     "end": 1134,
+     "end": 1120,
      "start_t": "4:10 PM",
-     "end_t": "6:54 PM"
+     "end_t": "6:40 PM"
     }
    ],
    "free": [
@@ -5684,21 +5684,21 @@
      "minutes": 635
     },
     {
-     "start": 959,
+     "start": 945,
      "end": 970,
-     "start_t": "3:59 PM",
+     "start_t": "3:45 PM",
      "end_t": "4:10 PM",
-     "minutes": 11
+     "minutes": 25
     },
     {
-     "start": 1134,
+     "start": 1120,
      "end": 1440,
-     "start_t": "6:54 PM",
+     "start_t": "6:40 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 306
+     "minutes": 320
     }
    ],
-   "free_minutes": 952,
+   "free_minutes": 980,
    "game_count": 15,
    "tbd_count": 0,
    "has_priority": true
@@ -5862,9 +5862,9 @@
    "blocked": [
     {
      "start": 940,
-     "end": 1289,
+     "end": 1275,
      "start_t": "3:40 PM",
-     "end_t": "9:29 PM"
+     "end_t": "9:15 PM"
     }
    ],
    "free": [
@@ -5876,14 +5876,14 @@
      "minutes": 940
     },
     {
-     "start": 1289,
+     "start": 1275,
      "end": 1440,
-     "start_t": "9:29 PM",
+     "start_t": "9:15 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 151
+     "minutes": 165
     }
    ],
-   "free_minutes": 1091,
+   "free_minutes": 1105,
    "game_count": 10,
    "tbd_count": 0,
    "has_priority": true
@@ -6122,9 +6122,9 @@
    "blocked": [
     {
      "start": 940,
-     "end": 1289,
+     "end": 1275,
      "start_t": "3:40 PM",
-     "end_t": "9:29 PM"
+     "end_t": "9:15 PM"
     }
    ],
    "free": [
@@ -6136,14 +6136,14 @@
      "minutes": 940
     },
     {
-     "start": 1289,
+     "start": 1275,
      "end": 1440,
-     "start_t": "9:29 PM",
+     "start_t": "9:15 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 151
+     "minutes": 165
     }
    ],
-   "free_minutes": 1091,
+   "free_minutes": 1105,
    "game_count": 15,
    "tbd_count": 0,
    "has_priority": true
@@ -6382,9 +6382,9 @@
    "blocked": [
     {
      "start": 610,
-     "end": 1249,
+     "end": 1235,
      "start_t": "10:10 AM",
-     "end_t": "8:49 PM"
+     "end_t": "8:35 PM"
     }
    ],
    "free": [
@@ -6396,14 +6396,14 @@
      "minutes": 610
     },
     {
-     "start": 1249,
+     "start": 1235,
      "end": 1440,
-     "start_t": "8:49 PM",
+     "start_t": "8:35 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 191
+     "minutes": 205
     }
    ],
-   "free_minutes": 801,
+   "free_minutes": 815,
    "game_count": 15,
    "tbd_count": 0,
    "has_priority": true
@@ -6537,15 +6537,15 @@
    "blocked": [
     {
      "start": 605,
-     "end": 839,
+     "end": 825,
      "start_t": "10:05 AM",
-     "end_t": "1:59 PM"
+     "end_t": "1:45 PM"
     },
     {
      "start": 965,
-     "end": 1289,
+     "end": 1275,
      "start_t": "4:05 PM",
-     "end_t": "9:29 PM"
+     "end_t": "9:15 PM"
     }
    ],
    "free": [
@@ -6557,21 +6557,21 @@
      "minutes": 605
     },
     {
-     "start": 839,
+     "start": 825,
      "end": 965,
-     "start_t": "1:59 PM",
+     "start_t": "1:45 PM",
      "end_t": "4:05 PM",
-     "minutes": 126
+     "minutes": 140
     },
     {
-     "start": 1289,
+     "start": 1275,
      "end": 1440,
-     "start_t": "9:29 PM",
+     "start_t": "9:15 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 151
+     "minutes": 165
     }
    ],
-   "free_minutes": 882,
+   "free_minutes": 910,
    "game_count": 7,
    "tbd_count": 1,
    "has_priority": true
@@ -6810,15 +6810,15 @@
    "blocked": [
     {
      "start": 680,
-     "end": 844,
+     "end": 830,
      "start_t": "11:20 AM",
-     "end_t": "2:04 PM"
+     "end_t": "1:50 PM"
     },
     {
      "start": 940,
-     "end": 1319,
+     "end": 1305,
      "start_t": "3:40 PM",
-     "end_t": "9:59 PM"
+     "end_t": "9:45 PM"
     }
    ],
    "free": [
@@ -6830,21 +6830,21 @@
      "minutes": 680
     },
     {
-     "start": 844,
+     "start": 830,
      "end": 940,
-     "start_t": "2:04 PM",
+     "start_t": "1:50 PM",
      "end_t": "3:40 PM",
-     "minutes": 96
+     "minutes": 110
     },
     {
-     "start": 1319,
+     "start": 1305,
      "end": 1440,
-     "start_t": "9:59 PM",
+     "start_t": "9:45 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 121
+     "minutes": 135
     }
    ],
-   "free_minutes": 897,
+   "free_minutes": 925,
    "game_count": 15,
    "tbd_count": 0,
    "has_priority": true
@@ -7140,15 +7140,15 @@
    "blocked": [
     {
      "start": 605,
-     "end": 954,
+     "end": 940,
      "start_t": "10:05 AM",
-     "end_t": "3:54 PM"
+     "end_t": "3:40 PM"
     },
     {
      "start": 960,
-     "end": 1311,
+     "end": 1297,
      "start_t": "4:00 PM",
-     "end_t": "9:51 PM"
+     "end_t": "9:37 PM"
     }
    ],
    "free": [
@@ -7160,21 +7160,21 @@
      "minutes": 605
     },
     {
-     "start": 954,
+     "start": 940,
      "end": 960,
-     "start_t": "3:54 PM",
+     "start_t": "3:40 PM",
      "end_t": "4:00 PM",
-     "minutes": 6
+     "minutes": 20
     },
     {
-     "start": 1311,
+     "start": 1297,
      "end": 1440,
-     "start_t": "9:51 PM",
+     "start_t": "9:37 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 129
+     "minutes": 143
     }
    ],
-   "free_minutes": 740,
+   "free_minutes": 768,
    "game_count": 19,
    "tbd_count": 0,
    "has_priority": true
@@ -7398,15 +7398,15 @@
    "blocked": [
     {
      "start": 555,
-     "end": 951,
+     "end": 937,
      "start_t": "9:15 AM",
-     "end_t": "3:51 PM"
+     "end_t": "3:37 PM"
     },
     {
      "start": 980,
-     "end": 1144,
+     "end": 1130,
      "start_t": "4:20 PM",
-     "end_t": "7:04 PM"
+     "end_t": "6:50 PM"
     }
    ],
    "free": [
@@ -7418,21 +7418,21 @@
      "minutes": 555
     },
     {
-     "start": 951,
+     "start": 937,
      "end": 980,
-     "start_t": "3:51 PM",
+     "start_t": "3:37 PM",
      "end_t": "4:20 PM",
-     "minutes": 29
+     "minutes": 43
     },
     {
-     "start": 1144,
+     "start": 1130,
      "end": 1440,
-     "start_t": "7:04 PM",
+     "start_t": "6:50 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 296
+     "minutes": 310
     }
    ],
-   "free_minutes": 880,
+   "free_minutes": 908,
    "game_count": 14,
    "tbd_count": 0,
    "has_priority": true
@@ -7626,9 +7626,9 @@
    "blocked": [
     {
      "start": 905,
-     "end": 1284,
+     "end": 1270,
      "start_t": "3:05 PM",
-     "end_t": "9:24 PM"
+     "end_t": "9:10 PM"
     }
    ],
    "free": [
@@ -7640,14 +7640,14 @@
      "minutes": 905
     },
     {
-     "start": 1284,
+     "start": 1270,
      "end": 1440,
-     "start_t": "9:24 PM",
+     "start_t": "9:10 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 156
+     "minutes": 170
     }
    ],
-   "free_minutes": 1061,
+   "free_minutes": 1075,
    "game_count": 12,
    "tbd_count": 0,
    "has_priority": true
@@ -7886,9 +7886,9 @@
    "blocked": [
     {
      "start": 940,
-     "end": 1314,
+     "end": 1300,
      "start_t": "3:40 PM",
-     "end_t": "9:54 PM"
+     "end_t": "9:40 PM"
     }
    ],
    "free": [
@@ -7900,14 +7900,14 @@
      "minutes": 940
     },
     {
-     "start": 1314,
+     "start": 1300,
      "end": 1440,
-     "start_t": "9:54 PM",
+     "start_t": "9:40 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 126
+     "minutes": 140
     }
    ],
-   "free_minutes": 1066,
+   "free_minutes": 1080,
    "game_count": 15,
    "tbd_count": 0,
    "has_priority": true
@@ -8146,9 +8146,9 @@
    "blocked": [
     {
      "start": 580,
-     "end": 1314,
+     "end": 1300,
      "start_t": "9:40 AM",
-     "end_t": "9:54 PM"
+     "end_t": "9:40 PM"
     }
    ],
    "free": [
@@ -8160,14 +8160,14 @@
      "minutes": 580
     },
     {
-     "start": 1314,
+     "start": 1300,
      "end": 1440,
-     "start_t": "9:54 PM",
+     "start_t": "9:40 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 126
+     "minutes": 140
     }
    ],
-   "free_minutes": 706,
+   "free_minutes": 720,
    "game_count": 15,
    "tbd_count": 0,
    "has_priority": true
@@ -8316,15 +8316,15 @@
    "blocked": [
     {
      "start": 575,
-     "end": 834,
+     "end": 820,
      "start_t": "9:35 AM",
-     "end_t": "1:54 PM"
+     "end_t": "1:40 PM"
     },
     {
      "start": 975,
-     "end": 1314,
+     "end": 1300,
      "start_t": "4:15 PM",
-     "end_t": "9:54 PM"
+     "end_t": "9:40 PM"
     }
    ],
    "free": [
@@ -8336,21 +8336,21 @@
      "minutes": 575
     },
     {
-     "start": 834,
+     "start": 820,
      "end": 975,
-     "start_t": "1:54 PM",
+     "start_t": "1:40 PM",
      "end_t": "4:15 PM",
-     "minutes": 141
+     "minutes": 155
     },
     {
-     "start": 1314,
+     "start": 1300,
      "end": 1440,
-     "start_t": "9:54 PM",
+     "start_t": "9:40 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 126
+     "minutes": 140
     }
    ],
-   "free_minutes": 842,
+   "free_minutes": 870,
    "game_count": 9,
    "tbd_count": 0,
    "has_priority": true
@@ -8619,15 +8619,15 @@
    "blocked": [
     {
      "start": 670,
-     "end": 834,
+     "end": 820,
      "start_t": "11:10 AM",
-     "end_t": "1:54 PM"
+     "end_t": "1:40 PM"
     },
     {
      "start": 910,
-     "end": 1314,
+     "end": 1300,
      "start_t": "3:10 PM",
-     "end_t": "9:54 PM"
+     "end_t": "9:40 PM"
     }
    ],
    "free": [
@@ -8639,21 +8639,21 @@
      "minutes": 670
     },
     {
-     "start": 834,
+     "start": 820,
      "end": 910,
-     "start_t": "1:54 PM",
+     "start_t": "1:40 PM",
      "end_t": "3:10 PM",
-     "minutes": 76
+     "minutes": 90
     },
     {
-     "start": 1314,
+     "start": 1300,
      "end": 1440,
-     "start_t": "9:54 PM",
+     "start_t": "9:40 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 126
+     "minutes": 140
     }
    ],
-   "free_minutes": 872,
+   "free_minutes": 900,
    "game_count": 17,
    "tbd_count": 0,
    "has_priority": true
@@ -9178,15 +9178,15 @@
    "blocked": [
     {
      "start": 550,
-     "end": 1084,
+     "end": 1070,
      "start_t": "9:10 AM",
-     "end_t": "6:04 PM"
+     "end_t": "5:50 PM"
     },
     {
      "start": 1150,
-     "end": 1314,
+     "end": 1300,
      "start_t": "7:10 PM",
-     "end_t": "9:54 PM"
+     "end_t": "9:40 PM"
     }
    ],
    "free": [
@@ -9198,21 +9198,21 @@
      "minutes": 550
     },
     {
-     "start": 1084,
+     "start": 1070,
      "end": 1150,
-     "start_t": "6:04 PM",
+     "start_t": "5:50 PM",
      "end_t": "7:10 PM",
-     "minutes": 66
+     "minutes": 80
     },
     {
-     "start": 1314,
+     "start": 1300,
      "end": 1440,
-     "start_t": "9:54 PM",
+     "start_t": "9:40 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 126
+     "minutes": 140
     }
    ],
-   "free_minutes": 742,
+   "free_minutes": 770,
    "game_count": 15,
    "tbd_count": 0,
    "has_priority": true
@@ -9391,15 +9391,15 @@
    "blocked": [
     {
      "start": 605,
-     "end": 1014,
+     "end": 1000,
      "start_t": "10:05 AM",
-     "end_t": "4:54 PM"
+     "end_t": "4:40 PM"
     },
     {
      "start": 1030,
-     "end": 1309,
+     "end": 1295,
      "start_t": "5:10 PM",
-     "end_t": "9:49 PM"
+     "end_t": "9:35 PM"
     }
    ],
    "free": [
@@ -9411,21 +9411,21 @@
      "minutes": 605
     },
     {
-     "start": 1014,
+     "start": 1000,
      "end": 1030,
-     "start_t": "4:54 PM",
+     "start_t": "4:40 PM",
      "end_t": "5:10 PM",
-     "minutes": 16
+     "minutes": 30
     },
     {
-     "start": 1309,
+     "start": 1295,
      "end": 1440,
-     "start_t": "9:49 PM",
+     "start_t": "9:35 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 131
+     "minutes": 145
     }
    ],
-   "free_minutes": 752,
+   "free_minutes": 780,
    "game_count": 11,
    "tbd_count": 0,
    "has_priority": true
@@ -9664,9 +9664,9 @@
    "blocked": [
     {
      "start": 935,
-     "end": 1314,
+     "end": 1300,
      "start_t": "3:35 PM",
-     "end_t": "9:54 PM"
+     "end_t": "9:40 PM"
     }
    ],
    "free": [
@@ -9678,14 +9678,14 @@
      "minutes": 935
     },
     {
-     "start": 1314,
+     "start": 1300,
      "end": 1440,
-     "start_t": "9:54 PM",
+     "start_t": "9:40 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 126
+     "minutes": 140
     }
    ],
-   "free_minutes": 1061,
+   "free_minutes": 1075,
    "game_count": 15,
    "tbd_count": 0,
    "has_priority": true
@@ -9936,9 +9936,9 @@
    "blocked": [
     {
      "start": 610,
-     "end": 1314,
+     "end": 1300,
      "start_t": "10:10 AM",
-     "end_t": "9:54 PM"
+     "end_t": "9:40 PM"
     }
    ],
    "free": [
@@ -9950,14 +9950,14 @@
      "minutes": 610
     },
     {
-     "start": 1314,
+     "start": 1300,
      "end": 1440,
-     "start_t": "9:54 PM",
+     "start_t": "9:40 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 126
+     "minutes": 140
     }
    ],
-   "free_minutes": 736,
+   "free_minutes": 750,
    "game_count": 16,
    "tbd_count": 0,
    "has_priority": true
@@ -10061,21 +10061,21 @@
    "blocked": [
     {
      "start": 555,
-     "end": 769,
+     "end": 755,
      "start_t": "9:15 AM",
-     "end_t": "12:49 PM"
+     "end_t": "12:35 PM"
     },
     {
      "start": 790,
-     "end": 954,
+     "end": 940,
      "start_t": "1:10 PM",
-     "end_t": "3:54 PM"
+     "end_t": "3:40 PM"
     },
     {
      "start": 965,
-     "end": 1247,
+     "end": 1235,
      "start_t": "4:05 PM",
-     "end_t": "8:47 PM"
+     "end_t": "8:35 PM"
     }
    ],
    "free": [
@@ -10087,28 +10087,28 @@
      "minutes": 555
     },
     {
-     "start": 769,
+     "start": 755,
      "end": 790,
-     "start_t": "12:49 PM",
+     "start_t": "12:35 PM",
      "end_t": "1:10 PM",
-     "minutes": 21
+     "minutes": 35
     },
     {
-     "start": 954,
+     "start": 940,
      "end": 965,
-     "start_t": "3:54 PM",
+     "start_t": "3:40 PM",
      "end_t": "4:05 PM",
-     "minutes": 11
+     "minutes": 25
     },
     {
-     "start": 1247,
+     "start": 1235,
      "end": 1440,
-     "start_t": "8:47 PM",
+     "start_t": "8:35 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 193
+     "minutes": 205
     }
    ],
-   "free_minutes": 780,
+   "free_minutes": 820,
    "game_count": 6,
    "tbd_count": 0,
    "has_priority": false
@@ -10347,15 +10347,15 @@
    "blocked": [
     {
      "start": 680,
-     "end": 844,
+     "end": 830,
      "start_t": "11:20 AM",
-     "end_t": "2:04 PM"
+     "end_t": "1:50 PM"
     },
     {
      "start": 940,
-     "end": 1319,
+     "end": 1305,
      "start_t": "3:40 PM",
-     "end_t": "9:59 PM"
+     "end_t": "9:45 PM"
     }
    ],
    "free": [
@@ -10367,21 +10367,21 @@
      "minutes": 680
     },
     {
-     "start": 844,
+     "start": 830,
      "end": 940,
-     "start_t": "2:04 PM",
+     "start_t": "1:50 PM",
      "end_t": "3:40 PM",
-     "minutes": 96
+     "minutes": 110
     },
     {
-     "start": 1319,
+     "start": 1305,
      "end": 1440,
-     "start_t": "9:59 PM",
+     "start_t": "9:45 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 121
+     "minutes": 135
     }
    ],
-   "free_minutes": 897,
+   "free_minutes": 925,
    "game_count": 15,
    "tbd_count": 0,
    "has_priority": true
@@ -10907,15 +10907,15 @@
    "blocked": [
     {
      "start": 550,
-     "end": 954,
+     "end": 940,
      "start_t": "9:10 AM",
-     "end_t": "3:54 PM"
+     "end_t": "3:40 PM"
     },
     {
      "start": 980,
-     "end": 1144,
+     "end": 1130,
      "start_t": "4:20 PM",
-     "end_t": "7:04 PM"
+     "end_t": "6:50 PM"
     }
    ],
    "free": [
@@ -10927,21 +10927,21 @@
      "minutes": 550
     },
     {
-     "start": 954,
+     "start": 940,
      "end": 980,
-     "start_t": "3:54 PM",
+     "start_t": "3:40 PM",
      "end_t": "4:20 PM",
-     "minutes": 26
+     "minutes": 40
     },
     {
-     "start": 1144,
+     "start": 1130,
      "end": 1440,
-     "start_t": "7:04 PM",
+     "start_t": "6:50 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 296
+     "minutes": 310
     }
    ],
-   "free_minutes": 872,
+   "free_minutes": 900,
    "game_count": 15,
    "tbd_count": 0,
    "has_priority": true
@@ -11105,9 +11105,9 @@
    "blocked": [
     {
      "start": 940,
-     "end": 1284,
+     "end": 1270,
      "start_t": "3:40 PM",
-     "end_t": "9:24 PM"
+     "end_t": "9:10 PM"
     }
    ],
    "free": [
@@ -11119,14 +11119,14 @@
      "minutes": 940
     },
     {
-     "start": 1284,
+     "start": 1270,
      "end": 1440,
-     "start_t": "9:24 PM",
+     "start_t": "9:10 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 156
+     "minutes": 170
     }
    ],
-   "free_minutes": 1096,
+   "free_minutes": 1110,
    "game_count": 10,
    "tbd_count": 0,
    "has_priority": true
@@ -11365,9 +11365,9 @@
    "blocked": [
     {
      "start": 940,
-     "end": 1284,
+     "end": 1270,
      "start_t": "3:40 PM",
-     "end_t": "9:24 PM"
+     "end_t": "9:10 PM"
     }
    ],
    "free": [
@@ -11379,14 +11379,14 @@
      "minutes": 940
     },
     {
-     "start": 1284,
+     "start": 1270,
      "end": 1440,
-     "start_t": "9:24 PM",
+     "start_t": "9:10 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 156
+     "minutes": 170
     }
    ],
-   "free_minutes": 1096,
+   "free_minutes": 1110,
    "game_count": 15,
    "tbd_count": 0,
    "has_priority": true
@@ -11625,15 +11625,15 @@
    "blocked": [
     {
      "start": 610,
-     "end": 891,
+     "end": 877,
      "start_t": "10:10 AM",
-     "end_t": "2:51 PM"
+     "end_t": "2:37 PM"
     },
     {
      "start": 940,
-     "end": 1284,
+     "end": 1270,
      "start_t": "3:40 PM",
-     "end_t": "9:24 PM"
+     "end_t": "9:10 PM"
     }
    ],
    "free": [
@@ -11645,21 +11645,21 @@
      "minutes": 610
     },
     {
-     "start": 891,
+     "start": 877,
      "end": 940,
-     "start_t": "2:51 PM",
+     "start_t": "2:37 PM",
      "end_t": "3:40 PM",
-     "minutes": 49
+     "minutes": 63
     },
     {
-     "start": 1284,
+     "start": 1270,
      "end": 1440,
-     "start_t": "9:24 PM",
+     "start_t": "9:10 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 156
+     "minutes": 170
     }
    ],
-   "free_minutes": 815,
+   "free_minutes": 843,
    "game_count": 15,
    "tbd_count": 0,
    "has_priority": true
@@ -11808,15 +11808,15 @@
    "blocked": [
     {
      "start": 575,
-     "end": 894,
+     "end": 880,
      "start_t": "9:35 AM",
-     "end_t": "2:54 PM"
+     "end_t": "2:40 PM"
     },
     {
      "start": 975,
-     "end": 1282,
+     "end": 1268,
      "start_t": "4:15 PM",
-     "end_t": "9:22 PM"
+     "end_t": "9:08 PM"
     }
    ],
    "free": [
@@ -11828,21 +11828,21 @@
      "minutes": 575
     },
     {
-     "start": 894,
+     "start": 880,
      "end": 975,
-     "start_t": "2:54 PM",
+     "start_t": "2:40 PM",
      "end_t": "4:15 PM",
-     "minutes": 81
+     "minutes": 95
     },
     {
-     "start": 1282,
+     "start": 1268,
      "end": 1440,
-     "start_t": "9:22 PM",
+     "start_t": "9:08 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 158
+     "minutes": 172
     }
    ],
-   "free_minutes": 814,
+   "free_minutes": 842,
    "game_count": 9,
    "tbd_count": 0,
    "has_priority": true
@@ -12081,9 +12081,9 @@
    "blocked": [
     {
      "start": 940,
-     "end": 1319,
+     "end": 1305,
      "start_t": "3:40 PM",
-     "end_t": "9:59 PM"
+     "end_t": "9:45 PM"
     }
    ],
    "free": [
@@ -12095,14 +12095,14 @@
      "minutes": 940
     },
     {
-     "start": 1319,
+     "start": 1305,
      "end": 1440,
-     "start_t": "9:59 PM",
+     "start_t": "9:45 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 121
+     "minutes": 135
     }
    ],
-   "free_minutes": 1061,
+   "free_minutes": 1075,
    "game_count": 15,
    "tbd_count": 0,
    "has_priority": true
@@ -12383,9 +12383,9 @@
    "blocked": [
     {
      "start": 750,
-     "end": 1282,
+     "end": 1268,
      "start_t": "12:30 PM",
-     "end_t": "9:22 PM"
+     "end_t": "9:08 PM"
     }
    ],
    "free": [
@@ -12397,14 +12397,14 @@
      "minutes": 750
     },
     {
-     "start": 1282,
+     "start": 1268,
      "end": 1440,
-     "start_t": "9:22 PM",
+     "start_t": "9:08 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 158
+     "minutes": 172
     }
    ],
-   "free_minutes": 908,
+   "free_minutes": 922,
    "game_count": 18,
    "tbd_count": 0,
    "has_priority": true
@@ -12658,9 +12658,9 @@
    "blocked": [
     {
      "start": 610,
-     "end": 1144,
+     "end": 1130,
      "start_t": "10:10 AM",
-     "end_t": "7:04 PM"
+     "end_t": "6:50 PM"
     }
    ],
    "free": [
@@ -12672,14 +12672,14 @@
      "minutes": 610
     },
     {
-     "start": 1144,
+     "start": 1130,
      "end": 1440,
-     "start_t": "7:04 PM",
+     "start_t": "6:50 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 296
+     "minutes": 310
     }
    ],
-   "free_minutes": 906,
+   "free_minutes": 920,
    "game_count": 16,
    "tbd_count": 0,
    "has_priority": true
@@ -12738,15 +12738,15 @@
    "blocked": [
     {
      "start": 935,
-     "end": 1104,
+     "end": 1090,
      "start_t": "3:35 PM",
-     "end_t": "6:24 PM"
+     "end_t": "6:10 PM"
     },
     {
      "start": 1125,
-     "end": 1289,
+     "end": 1275,
      "start_t": "6:45 PM",
-     "end_t": "9:29 PM"
+     "end_t": "9:15 PM"
     }
    ],
    "free": [
@@ -12758,21 +12758,21 @@
      "minutes": 935
     },
     {
-     "start": 1104,
+     "start": 1090,
      "end": 1125,
-     "start_t": "6:24 PM",
+     "start_t": "6:10 PM",
      "end_t": "6:45 PM",
-     "minutes": 21
+     "minutes": 35
     },
     {
-     "start": 1289,
+     "start": 1275,
      "end": 1440,
-     "start_t": "9:29 PM",
+     "start_t": "9:15 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 151
+     "minutes": 165
     }
    ],
-   "free_minutes": 1107,
+   "free_minutes": 1135,
    "game_count": 3,
    "tbd_count": 0,
    "has_priority": true
@@ -13026,15 +13026,15 @@
    "blocked": [
     {
      "start": 605,
-     "end": 769,
+     "end": 755,
      "start_t": "10:05 AM",
-     "end_t": "12:49 PM"
+     "end_t": "12:35 PM"
     },
     {
      "start": 935,
-     "end": 1314,
+     "end": 1300,
      "start_t": "3:35 PM",
-     "end_t": "9:54 PM"
+     "end_t": "9:40 PM"
     }
    ],
    "free": [
@@ -13046,21 +13046,21 @@
      "minutes": 605
     },
     {
-     "start": 769,
+     "start": 755,
      "end": 935,
-     "start_t": "12:49 PM",
+     "start_t": "12:35 PM",
      "end_t": "3:35 PM",
-     "minutes": 166
+     "minutes": 180
     },
     {
-     "start": 1314,
+     "start": 1300,
      "end": 1440,
-     "start_t": "9:54 PM",
+     "start_t": "9:40 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 126
+     "minutes": 140
     }
    ],
-   "free_minutes": 897,
+   "free_minutes": 925,
    "game_count": 16,
    "tbd_count": 0,
    "has_priority": true
@@ -13299,15 +13299,21 @@
    "blocked": [
     {
      "start": 610,
-     "end": 929,
+     "end": 760,
      "start_t": "10:10 AM",
-     "end_t": "3:29 PM"
+     "end_t": "12:40 PM"
+    },
+    {
+     "start": 765,
+     "end": 915,
+     "start_t": "12:45 PM",
+     "end_t": "3:15 PM"
     },
     {
      "start": 935,
-     "end": 1314,
+     "end": 1300,
      "start_t": "3:35 PM",
-     "end_t": "9:54 PM"
+     "end_t": "9:40 PM"
     }
    ],
    "free": [
@@ -13319,21 +13325,28 @@
      "minutes": 610
     },
     {
-     "start": 929,
-     "end": 935,
-     "start_t": "3:29 PM",
-     "end_t": "3:35 PM",
-     "minutes": 6
+     "start": 760,
+     "end": 765,
+     "start_t": "12:40 PM",
+     "end_t": "12:45 PM",
+     "minutes": 5
     },
     {
-     "start": 1314,
+     "start": 915,
+     "end": 935,
+     "start_t": "3:15 PM",
+     "end_t": "3:35 PM",
+     "minutes": 20
+    },
+    {
+     "start": 1300,
      "end": 1440,
-     "start_t": "9:54 PM",
+     "start_t": "9:40 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 126
+     "minutes": 140
     }
    ],
-   "free_minutes": 742,
+   "free_minutes": 775,
    "game_count": 15,
    "tbd_count": 0,
    "has_priority": true
@@ -13527,15 +13540,15 @@
    "blocked": [
     {
      "start": 575,
-     "end": 894,
+     "end": 880,
      "start_t": "9:35 AM",
-     "end_t": "2:54 PM"
+     "end_t": "2:40 PM"
     },
     {
      "start": 905,
-     "end": 1314,
+     "end": 1300,
      "start_t": "3:05 PM",
-     "end_t": "9:54 PM"
+     "end_t": "9:40 PM"
     }
    ],
    "free": [
@@ -13547,21 +13560,21 @@
      "minutes": 575
     },
     {
-     "start": 894,
+     "start": 880,
      "end": 905,
-     "start_t": "2:54 PM",
+     "start_t": "2:40 PM",
      "end_t": "3:05 PM",
-     "minutes": 11
+     "minutes": 25
     },
     {
-     "start": 1314,
+     "start": 1300,
      "end": 1440,
-     "start_t": "9:54 PM",
+     "start_t": "9:40 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 126
+     "minutes": 140
     }
    ],
-   "free_minutes": 712,
+   "free_minutes": 740,
    "game_count": 12,
    "tbd_count": 0,
    "has_priority": true
@@ -14102,9 +14115,9 @@
    "blocked": [
     {
      "start": 610,
-     "end": 954,
+     "end": 940,
      "start_t": "10:10 AM",
-     "end_t": "3:54 PM"
+     "end_t": "3:40 PM"
     },
     {
      "start": 970,
@@ -14122,11 +14135,11 @@
      "minutes": 610
     },
     {
-     "start": 954,
+     "start": 940,
      "end": 970,
-     "start_t": "3:54 PM",
+     "start_t": "3:40 PM",
      "end_t": "4:10 PM",
-     "minutes": 16
+     "minutes": 30
     },
     {
      "start": 1374,
@@ -14136,7 +14149,7 @@
      "minutes": 66
     }
    ],
-   "free_minutes": 692,
+   "free_minutes": 706,
    "game_count": 17,
    "tbd_count": 0,
    "has_priority": true
@@ -14390,9 +14403,9 @@
    "blocked": [
     {
      "start": 725,
-     "end": 977,
+     "end": 965,
      "start_t": "12:05 PM",
-     "end_t": "4:17 PM"
+     "end_t": "4:05 PM"
     }
    ],
    "free": [
@@ -14404,14 +14417,14 @@
      "minutes": 725
     },
     {
-     "start": 977,
+     "start": 965,
      "end": 1440,
-     "start_t": "4:17 PM",
+     "start_t": "4:05 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 463
+     "minutes": 475
     }
    ],
-   "free_minutes": 1188,
+   "free_minutes": 1200,
    "game_count": 16,
    "tbd_count": 0,
    "has_priority": true
@@ -14651,9 +14664,9 @@
    "blocked": [
     {
      "start": 805,
-     "end": 997,
+     "end": 985,
      "start_t": "1:25 PM",
-     "end_t": "4:37 PM"
+     "end_t": "4:25 PM"
     }
    ],
    "free": [
@@ -14665,14 +14678,14 @@
      "minutes": 805
     },
     {
-     "start": 997,
+     "start": 985,
      "end": 1440,
-     "start_t": "4:37 PM",
+     "start_t": "4:25 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 443
+     "minutes": 455
     }
    ],
-   "free_minutes": 1248,
+   "free_minutes": 1260,
    "game_count": 1,
    "tbd_count": 4,
    "has_priority": false
@@ -14958,9 +14971,9 @@
    "blocked": [
     {
      "start": 805,
-     "end": 997,
+     "end": 985,
      "start_t": "1:25 PM",
-     "end_t": "4:37 PM"
+     "end_t": "4:25 PM"
     }
    ],
    "free": [
@@ -14972,14 +14985,14 @@
      "minutes": 805
     },
     {
-     "start": 997,
+     "start": 985,
      "end": 1440,
-     "start_t": "4:37 PM",
+     "start_t": "4:25 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 443
+     "minutes": 455
     }
    ],
-   "free_minutes": 1248,
+   "free_minutes": 1260,
    "game_count": 1,
    "tbd_count": 1,
    "has_priority": false
@@ -15309,9 +15322,9 @@
    "blocked": [
     {
      "start": 1035,
-     "end": 1227,
+     "end": 1215,
      "start_t": "5:15 PM",
-     "end_t": "8:27 PM"
+     "end_t": "8:15 PM"
     }
    ],
    "free": [
@@ -15323,14 +15336,14 @@
      "minutes": 1035
     },
     {
-     "start": 1227,
+     "start": 1215,
      "end": 1440,
-     "start_t": "8:27 PM",
+     "start_t": "8:15 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 213
+     "minutes": 225
     }
    ],
-   "free_minutes": 1248,
+   "free_minutes": 1260,
    "game_count": 1,
    "tbd_count": 2,
    "has_priority": false
@@ -15558,9 +15571,9 @@
    "blocked": [
     {
      "start": 600,
-     "end": 792,
+     "end": 780,
      "start_t": "10:00 AM",
-     "end_t": "1:12 PM"
+     "end_t": "1:00 PM"
     }
    ],
    "free": [
@@ -15572,14 +15585,14 @@
      "minutes": 600
     },
     {
-     "start": 792,
+     "start": 780,
      "end": 1440,
-     "start_t": "1:12 PM",
+     "start_t": "1:00 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 648
+     "minutes": 660
     }
    ],
-   "free_minutes": 1248,
+   "free_minutes": 1260,
    "game_count": 1,
    "tbd_count": 0,
    "has_priority": false
@@ -15821,6 +15834,2672 @@
    "game_count": 0,
    "tbd_count": 4,
    "has_priority": false
+  },
+  {
+   "date": "2026-11-01",
+   "weekday": "Sun",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-11-02",
+   "weekday": "Mon",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-11-03",
+   "weekday": "Tue",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-11-04",
+   "weekday": "Wed",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-11-05",
+   "weekday": "Thu",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-11-06",
+   "weekday": "Fri",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-11-07",
+   "weekday": "Sat",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-11-08",
+   "weekday": "Sun",
+   "status": "PARTIAL",
+   "games": [
+    {
+     "date": "2026-11-08",
+     "sport": "nfl",
+     "label": "49ers vs Las Vegas Raiders",
+     "ha": "home",
+     "start_pt": "13:05",
+     "phase": "Regular Season Wk 9",
+     "venue": "Levi's Stadium",
+     "kickoff_source": "",
+     "flag": "",
+     "start_min": 785,
+     "pt_date": "2026-11-08"
+    }
+   ],
+   "blocked": [
+    {
+     "start": 785,
+     "end": 965,
+     "start_t": "1:05 PM",
+     "end_t": "4:05 PM"
+    }
+   ],
+   "free": [
+    {
+     "start": 0,
+     "end": 785,
+     "start_t": "12:00 AM",
+     "end_t": "1:05 PM",
+     "minutes": 785
+    },
+    {
+     "start": 965,
+     "end": 1440,
+     "start_t": "4:05 PM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 475
+    }
+   ],
+   "free_minutes": 1260,
+   "game_count": 1,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-11-09",
+   "weekday": "Mon",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-11-10",
+   "weekday": "Tue",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-11-11",
+   "weekday": "Wed",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-11-12",
+   "weekday": "Thu",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-11-13",
+   "weekday": "Fri",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-11-14",
+   "weekday": "Sat",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-11-15",
+   "weekday": "Sun",
+   "status": "PARTIAL",
+   "games": [
+    {
+     "date": "2026-11-15",
+     "sport": "nfl",
+     "label": "49ers at Dallas Cowboys",
+     "ha": "away",
+     "start_pt": "13:25",
+     "phase": "Regular Season Wk 10",
+     "venue": "AT&T Stadium",
+     "kickoff_source": "",
+     "flag": "",
+     "start_min": 805,
+     "pt_date": "2026-11-15"
+    }
+   ],
+   "blocked": [
+    {
+     "start": 805,
+     "end": 985,
+     "start_t": "1:25 PM",
+     "end_t": "4:25 PM"
+    }
+   ],
+   "free": [
+    {
+     "start": 0,
+     "end": 805,
+     "start_t": "12:00 AM",
+     "end_t": "1:25 PM",
+     "minutes": 805
+    },
+    {
+     "start": 985,
+     "end": 1440,
+     "start_t": "4:25 PM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 455
+    }
+   ],
+   "free_minutes": 1260,
+   "game_count": 1,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-11-16",
+   "weekday": "Mon",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-11-17",
+   "weekday": "Tue",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-11-18",
+   "weekday": "Wed",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-11-19",
+   "weekday": "Thu",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-11-20",
+   "weekday": "Fri",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-11-21",
+   "weekday": "Sat",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-11-22",
+   "weekday": "Sun",
+   "status": "PARTIAL",
+   "games": [
+    {
+     "date": "2026-11-22",
+     "sport": "nfl",
+     "label": "49ers vs Minnesota Vikings",
+     "ha": "home",
+     "start_pt": "17:20",
+     "phase": "Regular Season Wk 11",
+     "venue": "Estadio Banorte, Mexico City",
+     "kickoff_source": "",
+     "flag": "MEXICO CITY GAME: Played at Estadio Banorte, not Levi's Stadium.",
+     "start_min": 1040,
+     "pt_date": "2026-11-22"
+    }
+   ],
+   "blocked": [
+    {
+     "start": 1040,
+     "end": 1220,
+     "start_t": "5:20 PM",
+     "end_t": "8:20 PM"
+    }
+   ],
+   "free": [
+    {
+     "start": 0,
+     "end": 1040,
+     "start_t": "12:00 AM",
+     "end_t": "5:20 PM",
+     "minutes": 1040
+    },
+    {
+     "start": 1220,
+     "end": 1440,
+     "start_t": "8:20 PM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 220
+    }
+   ],
+   "free_minutes": 1260,
+   "game_count": 1,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-11-23",
+   "weekday": "Mon",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-11-24",
+   "weekday": "Tue",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-11-25",
+   "weekday": "Wed",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-11-26",
+   "weekday": "Thu",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-11-27",
+   "weekday": "Fri",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-11-28",
+   "weekday": "Sat",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-11-29",
+   "weekday": "Sun",
+   "status": "PARTIAL",
+   "games": [
+    {
+     "date": "2026-11-29",
+     "sport": "nfl",
+     "label": "49ers vs Seattle Seahawks",
+     "ha": "home",
+     "start_pt": "13:05",
+     "phase": "Regular Season Wk 12",
+     "venue": "Levi's Stadium",
+     "kickoff_source": "",
+     "flag": "",
+     "start_min": 785,
+     "pt_date": "2026-11-29"
+    }
+   ],
+   "blocked": [
+    {
+     "start": 785,
+     "end": 965,
+     "start_t": "1:05 PM",
+     "end_t": "4:05 PM"
+    }
+   ],
+   "free": [
+    {
+     "start": 0,
+     "end": 785,
+     "start_t": "12:00 AM",
+     "end_t": "1:05 PM",
+     "minutes": 785
+    },
+    {
+     "start": 965,
+     "end": 1440,
+     "start_t": "4:05 PM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 475
+    }
+   ],
+   "free_minutes": 1260,
+   "game_count": 1,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-11-30",
+   "weekday": "Mon",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-12-01",
+   "weekday": "Tue",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-12-02",
+   "weekday": "Wed",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-12-03",
+   "weekday": "Thu",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-12-04",
+   "weekday": "Fri",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-12-05",
+   "weekday": "Sat",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-12-06",
+   "weekday": "Sun",
+   "status": "PARTIAL",
+   "games": [
+    {
+     "date": "2026-12-06",
+     "sport": "nfl",
+     "label": "49ers at New York Giants",
+     "ha": "away",
+     "start_pt": "12:00",
+     "phase": "Regular Season Wk 13",
+     "venue": "MetLife Stadium",
+     "kickoff_source": "",
+     "flag": "",
+     "start_min": 720,
+     "pt_date": "2026-12-06"
+    }
+   ],
+   "blocked": [
+    {
+     "start": 720,
+     "end": 900,
+     "start_t": "12:00 PM",
+     "end_t": "3:00 PM"
+    }
+   ],
+   "free": [
+    {
+     "start": 0,
+     "end": 720,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 PM",
+     "minutes": 720
+    },
+    {
+     "start": 900,
+     "end": 1440,
+     "start_t": "3:00 PM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 540
+    }
+   ],
+   "free_minutes": 1260,
+   "game_count": 1,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-12-07",
+   "weekday": "Mon",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-12-08",
+   "weekday": "Tue",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-12-09",
+   "weekday": "Wed",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-12-10",
+   "weekday": "Thu",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-12-11",
+   "weekday": "Fri",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-12-12",
+   "weekday": "Sat",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-12-13",
+   "weekday": "Sun",
+   "status": "PARTIAL",
+   "games": [
+    {
+     "date": "2026-12-13",
+     "sport": "nfl",
+     "label": "49ers vs Los Angeles Rams",
+     "ha": "home",
+     "start_pt": "13:25",
+     "phase": "Regular Season Wk 14",
+     "venue": "Levi's Stadium",
+     "kickoff_source": "",
+     "flag": "",
+     "start_min": 805,
+     "pt_date": "2026-12-13"
+    }
+   ],
+   "blocked": [
+    {
+     "start": 805,
+     "end": 985,
+     "start_t": "1:25 PM",
+     "end_t": "4:25 PM"
+    }
+   ],
+   "free": [
+    {
+     "start": 0,
+     "end": 805,
+     "start_t": "12:00 AM",
+     "end_t": "1:25 PM",
+     "minutes": 805
+    },
+    {
+     "start": 985,
+     "end": 1440,
+     "start_t": "4:25 PM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 455
+    }
+   ],
+   "free_minutes": 1260,
+   "game_count": 1,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-12-14",
+   "weekday": "Mon",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-12-15",
+   "weekday": "Tue",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-12-16",
+   "weekday": "Wed",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-12-17",
+   "weekday": "Thu",
+   "status": "PARTIAL",
+   "games": [
+    {
+     "date": "2026-12-17",
+     "sport": "nfl",
+     "label": "49ers at Los Angeles Chargers",
+     "ha": "away",
+     "start_pt": "20:15",
+     "phase": "Regular Season Wk 15",
+     "venue": "SoFi Stadium",
+     "kickoff_source": "",
+     "flag": "TNF game on Prime Video",
+     "start_min": 1215,
+     "pt_date": "2026-12-17"
+    }
+   ],
+   "blocked": [
+    {
+     "start": 1215,
+     "end": 1395,
+     "start_t": "8:15 PM",
+     "end_t": "11:15 PM"
+    }
+   ],
+   "free": [
+    {
+     "start": 0,
+     "end": 1215,
+     "start_t": "12:00 AM",
+     "end_t": "8:15 PM",
+     "minutes": 1215
+    },
+    {
+     "start": 1395,
+     "end": 1440,
+     "start_t": "11:15 PM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 45
+    }
+   ],
+   "free_minutes": 1260,
+   "game_count": 1,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-12-18",
+   "weekday": "Fri",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-12-19",
+   "weekday": "Sat",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-12-20",
+   "weekday": "Sun",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-12-21",
+   "weekday": "Mon",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-12-22",
+   "weekday": "Tue",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-12-23",
+   "weekday": "Wed",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-12-24",
+   "weekday": "Thu",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-12-25",
+   "weekday": "Fri",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-12-26",
+   "weekday": "Sat",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-12-27",
+   "weekday": "Sun",
+   "status": "PARTIAL",
+   "games": [
+    {
+     "date": "2026-12-27",
+     "sport": "nfl",
+     "label": "49ers at Kansas City Chiefs",
+     "ha": "away",
+     "start_pt": "13:25",
+     "phase": "Regular Season Wk 16",
+     "venue": "GEHA Field at Arrowhead Stadium",
+     "kickoff_source": "",
+     "flag": "",
+     "start_min": 805,
+     "pt_date": "2026-12-27"
+    }
+   ],
+   "blocked": [
+    {
+     "start": 805,
+     "end": 985,
+     "start_t": "1:25 PM",
+     "end_t": "4:25 PM"
+    }
+   ],
+   "free": [
+    {
+     "start": 0,
+     "end": 805,
+     "start_t": "12:00 AM",
+     "end_t": "1:25 PM",
+     "minutes": 805
+    },
+    {
+     "start": 985,
+     "end": 1440,
+     "start_t": "4:25 PM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 455
+    }
+   ],
+   "free_minutes": 1260,
+   "game_count": 1,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-12-28",
+   "weekday": "Mon",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-12-29",
+   "weekday": "Tue",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-12-30",
+   "weekday": "Wed",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2026-12-31",
+   "weekday": "Thu",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-01-01",
+   "weekday": "Fri",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-01-02",
+   "weekday": "Sat",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-01-03",
+   "weekday": "Sun",
+   "status": "PARTIAL",
+   "games": [
+    {
+     "date": "2027-01-03",
+     "sport": "nfl",
+     "label": "49ers vs Philadelphia Eagles",
+     "ha": "home",
+     "start_pt": "17:20",
+     "phase": "Regular Season Wk 17",
+     "venue": "Levi's Stadium",
+     "kickoff_source": "",
+     "flag": "",
+     "start_min": 1040,
+     "pt_date": "2027-01-03"
+    }
+   ],
+   "blocked": [
+    {
+     "start": 1040,
+     "end": 1220,
+     "start_t": "5:20 PM",
+     "end_t": "8:20 PM"
+    }
+   ],
+   "free": [
+    {
+     "start": 0,
+     "end": 1040,
+     "start_t": "12:00 AM",
+     "end_t": "5:20 PM",
+     "minutes": 1040
+    },
+    {
+     "start": 1220,
+     "end": 1440,
+     "start_t": "8:20 PM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 220
+    }
+   ],
+   "free_minutes": 1260,
+   "game_count": 1,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-01-04",
+   "weekday": "Mon",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-01-05",
+   "weekday": "Tue",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-01-06",
+   "weekday": "Wed",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-01-07",
+   "weekday": "Thu",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-01-08",
+   "weekday": "Fri",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-01-09",
+   "weekday": "Sat",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-01-10",
+   "weekday": "Sun",
+   "status": "UNCONFIRMED",
+   "games": [
+    {
+     "date": "2027-01-10",
+     "sport": "nfl",
+     "label": "49ers at Arizona Cardinals",
+     "ha": "away",
+     "start_pt": "TBD",
+     "phase": "Regular Season Wk 18",
+     "venue": "State Farm Stadium",
+     "kickoff_source": "",
+     "flag": "KICKOFF TIME TBD - Week 18 flex schedule",
+     "start_min": null,
+     "pt_date": "2027-01-10"
+    }
+   ],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 1,
+   "has_priority": false
+  },
+  {
+   "date": "2027-01-11",
+   "weekday": "Mon",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-01-12",
+   "weekday": "Tue",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-01-13",
+   "weekday": "Wed",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-01-14",
+   "weekday": "Thu",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-01-15",
+   "weekday": "Fri",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-01-16",
+   "weekday": "Sat",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-01-17",
+   "weekday": "Sun",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-01-18",
+   "weekday": "Mon",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-01-19",
+   "weekday": "Tue",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-01-20",
+   "weekday": "Wed",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-01-21",
+   "weekday": "Thu",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-01-22",
+   "weekday": "Fri",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-01-23",
+   "weekday": "Sat",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-01-24",
+   "weekday": "Sun",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-01-25",
+   "weekday": "Mon",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-01-26",
+   "weekday": "Tue",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-01-27",
+   "weekday": "Wed",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-01-28",
+   "weekday": "Thu",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-01-29",
+   "weekday": "Fri",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-01-30",
+   "weekday": "Sat",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-01-31",
+   "weekday": "Sun",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-02-01",
+   "weekday": "Mon",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-02-02",
+   "weekday": "Tue",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-02-03",
+   "weekday": "Wed",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-02-04",
+   "weekday": "Thu",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-02-05",
+   "weekday": "Fri",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-02-06",
+   "weekday": "Sat",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-02-07",
+   "weekday": "Sun",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-02-08",
+   "weekday": "Mon",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-02-09",
+   "weekday": "Tue",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-02-10",
+   "weekday": "Wed",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-02-11",
+   "weekday": "Thu",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-02-12",
+   "weekday": "Fri",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-02-13",
+   "weekday": "Sat",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-02-14",
+   "weekday": "Sun",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-02-15",
+   "weekday": "Mon",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-02-16",
+   "weekday": "Tue",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-02-17",
+   "weekday": "Wed",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-02-18",
+   "weekday": "Thu",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-02-19",
+   "weekday": "Fri",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-02-20",
+   "weekday": "Sat",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-02-21",
+   "weekday": "Sun",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-02-22",
+   "weekday": "Mon",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-02-23",
+   "weekday": "Tue",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-02-24",
+   "weekday": "Wed",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-02-25",
+   "weekday": "Thu",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-02-26",
+   "weekday": "Fri",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-02-27",
+   "weekday": "Sat",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
+  },
+  {
+   "date": "2027-02-28",
+   "weekday": "Sun",
+   "status": "FREE",
+   "games": [],
+   "blocked": [],
+   "free": [
+    {
+     "start": 0,
+     "end": 1440,
+     "start_t": "12:00 AM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 1440
+    }
+   ],
+   "free_minutes": 1440,
+   "game_count": 0,
+   "tbd_count": 0,
+   "has_priority": false
   }
  ],
  "flags": [
@@ -16037,6 +18716,26 @@
    "msg": "2026-10-31 Cal at NC State: KICKOFF TIME TBD - no time listed on official Cal schedule."
   },
   {
+   "kind": "IRREGULARITY",
+   "msg": "2026-11-22 49ers vs Minnesota Vikings: MEXICO CITY GAME: Played at Estadio Banorte, not Levi's Stadium."
+  },
+  {
+   "kind": "IRREGULARITY",
+   "msg": "2026-12-17 49ers at Los Angeles Chargers: TNF game on Prime Video"
+  },
+  {
+   "kind": "TBD_TIME",
+   "msg": "2027-01-10 49ers at Arizona Cardinals: kickoff time TBD"
+  },
+  {
+   "kind": "TBD_TIME",
+   "msg": "2027-01-10 49ers at Arizona Cardinals: KICKOFF TIME TBD - Week 18 flex schedule"
+  },
+  {
+   "kind": "IRREGULARITY",
+   "msg": "2027-01-10 49ers at Arizona Cardinals: KICKOFF TIME TBD - Week 18 flex schedule"
+  },
+  {
    "kind": "DOUBLEHEADER",
    "msg": "2026-08-17: STL @ CIN appears 2x (doubleheader)"
   },
@@ -16091,6 +18790,10 @@
   {
    "kind": "UNBLOCKED_TBD",
    "msg": "2026-10-31: 'Cal at NC State' has no confirmed start time so it does NOT block any time - the day's free windows may be overstated."
+  },
+  {
+   "kind": "UNBLOCKED_TBD",
+   "msg": "2027-01-10: '49ers at Arizona Cardinals' has no confirmed start time so it does NOT block any time - the day's free windows may be overstated."
   }
  ]
 }

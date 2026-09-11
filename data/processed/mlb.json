@@ -3,12 +3,12 @@
   "generated_utc": "2026-08-28",
   "window": {
    "start": "2026-08-01",
-   "end": "2026-10-31"
+   "end": "2027-02-28"
   },
   "timezone": "America/Los_Angeles (PDT, UTC-7 for the entire window)",
   "durations_minutes": {
-   "mlb": 164,
-   "nfl": 192,
+   "mlb": 150,
+   "nfl": 180,
    "ncaa": 204,
    "mls": 120
   },
@@ -17,7 +17,7 @@
   "totals": {
    "mlb_games": 778,
    "mlb_postseason_tbd": 55,
-   "local_games": 44
+   "local_games": 54
   }
  },
  "games": [
