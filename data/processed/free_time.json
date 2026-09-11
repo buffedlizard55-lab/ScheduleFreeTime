@@ -24968,7 +24968,7 @@
      "start_pt": null,
      "start_min": null,
      "tbd_count": 1,
-     "label": "NFL Pro Bowl Games (flag football) - DATE CONFLICT Feb 7 vs Feb 9, see header",
+     "label": "NFL Pro Bowl Games (all-star, flag football) - DATE UNRESOLVED: Feb 7 (sportbusy) vs Feb 9 (nflplayoffpass), see header",
      "conditional": true,
      "source": "nfl_2027_postseason_tbd.txt",
      "review": "https://www.nfl.com/schedules/2026/"

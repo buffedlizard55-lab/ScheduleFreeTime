@@ -548,7 +548,7 @@ Regular season from the official week-by-week table (https://www.pro-football-re
 | 2027-01-23 (DIV) | **TBD** | - ET | Divisional round (Sat) - matchups/time TBD | TBD-placeholder | [box](https://www.nfl.com/schedules/2026/) |
 | 2027-01-24 (DIV) | **TBD** | - ET | Divisional round (Sun) - matchups/time TBD | TBD-placeholder | [box](https://www.nfl.com/schedules/2026/) |
 | 2027-01-31 (CC) | **TBD** | - ET | AFC & NFC Championship Games - matchups/time TBD | TBD-placeholder | [box](https://www.nfl.com/schedules/2026/) |
-| 2027-02-09 (PRO) | **TBD** | - ET | NFL Pro Bowl Games (flag football) - DATE CONFLICT Feb 7 vs Feb 9, see header | TBD-placeholder | [box](https://www.nfl.com/schedules/2026/) |
+| 2027-02-09 (PRO) | **TBD** | - ET | NFL Pro Bowl Games (all-star, flag football) - DATE UNRESOLVED: Feb 7 (sportbusy) vs Feb 9 (nflplayoffpass), see header | TBD-placeholder | [box](https://www.nfl.com/schedules/2026/) |
 | 2027-02-14 (SB) | **TBD** | - ET | Super Bowl LXI - SoFi Stadium, Inglewood CA; expected 6:30 PM ET kickoff (PST) | TBD-placeholder | [box](https://www.nfl.com/schedules/2026/) |
 
 ## Conditional days (unconfirmed; never block)
