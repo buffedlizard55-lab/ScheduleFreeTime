@@ -11,15 +11,17 @@ data/games_local.json, then:
   5. regenerates schedules.md (the full master list),
   6. prints a verification report and flags every irregularity it finds.
 
-Blocking rule (user spec): a day is busy only around MLB games (ALL 30 clubs,
-regular season + postseason 2026), San Francisco 49ers games (preseason +
-regular season), San Jose Earthquakes games, Stanford football games and Cal
-football games. League-wide NFL games (all 32 clubs, incl. postseason /
-Pro Bowl / Super Bowl) are LISTED on every day and shown in the UI, but do not
-block free time unless the user turns on the "block all NFL games" toggle.
-"Conditional" rows (MLS playoff days if SJ qualifies, ACC/CFP/bowl days if
-Stanford or Cal qualify, NFL postseason with teams TBD) never block; they mark
-a day UNCONFIRMED so free time is honestly labeled, not asserted.
+Blocking rule (user spec, corrected 2026-09-11): a day is busy around EVERY game
+the site tracks - any MLB game (ALL 30 clubs, regular season + postseason 2026),
+ALL NFL games (all 32 clubs: preseason, regular season, postseason, Pro Bowl,
+Super Bowl - TBD until confirmed), San Jose Earthquakes games, Stanford football
+games and Cal football games. (Earlier builds listed the all-NFL layer as
+display-only, which wrongly reported free time on days when non-49ers NFL games
+were on air. That is fixed here.) "Conditional" rows (MLS playoff days if SJ
+qualifies, ACC/CFP/bowl days if Stanford or Cal qualify) never block; they mark a
+day UNCONFIRMED so free time is honestly labeled, not asserted. Games with a TBD
+kickoff never fabricate a window - they mark the day UNCONFIRMED until confirmed.
+
 
 No manual input: run `python3 scripts/build.py`.
 """
@@ -48,16 +50,19 @@ def pt_offset(d):
     return PDT   # (not reached inside this window)
 
 # --- average game durations (minutes), researched averages ------------------
-# Sources + citations in docs/VERIFICATION.md sec. 3:
-#   mlb   158 = 2:38, MLB official 2025-season average (2026 in progress ~2:43-2:44)
-#   nfl   192 = 3:12, widely reported average incl. halftime & stoppages
-#   ncaa  204 = 3:24 (longer halftimes; 2025 data ranges 3:24-3:27)
-#   mls   120 = 2:00 (90 min + halftime + stoppage)
-DURATIONS = {"mlb": 158, "nfl": 192, "ncaa": 204, "mls": 120}
+# Sources + citations in docs/VERIFICATION.md sec. 2:
+#   mlb   164 = 2:44, 2026 season-to-date average (BetMGM 2026-08-31: "2:44";
+#                SBJ 2026-04-29: 2:43 through the first 421 games). MLB's official
+#                2025 final was 2:38 (158 min). Postseason runs longer (~3:04-3:15)
+#                but postseason rows are TBD and do not block.
+#   nfl   192 = 3:12, widely reported 2025 average incl. 12-min halftime & stoppages
+#   ncaa  204 = 3:24 (longer 20-min halftimes; 2025 data ranges 3:24-3:27)
+#   mls   120 = 2:00 (90 min + ~15-min halftime + stoppage)
+DURATIONS = {"mlb": 164, "nfl": 192, "ncaa": 204, "mls": 120}
 DUR_OF = lambda sport: DURATIONS["nfl"] if sport == "nfl_all" else DURATIONS[sport]
 PRE_BUFFER = 0   # minutes of pre-game coverage counted as busy
 POST_BUFFER = 0  # minutes of post-game coverage counted as busy
-BLOCKING_SPORTS = {"mlb", "nfl", "ncaa", "mls"}   # user's free-time rule
+BLOCKING_SPORTS = {"mlb", "nfl", "ncaa", "mls", "nfl_all"}   # user's free-time rule: every tracked league blocks
 NFL_TEAM_NAMES = {
  "ARI":"Cardinals","ATL":"Falcons","BAL":"Ravens","BUF":"Bills","CAR":"Panthers",
  "CHI":"Bears","CIN":"Bengals","CLE":"Browns","DAL":"Cowboys","DEN":"Broncos",
@@ -144,7 +149,8 @@ def load_nfl_all():
                       "result": res.replace(" FINAL", "") if res else "",
                       "review": f"https://www.pro-football-reference.com/boxscores/{box}.htm",
                       "source": "nfl_2026_pfr_regseason.txt",
-                      "is_sf": "SF" in (aw2, hm2)})
+                      "is_sf": "SF" in (aw2, hm2),
+                      "priority": "SF" in (aw2, hm2)})
     # preseason: wk|date|timeET|away|home|score|note  (times mostly not printed on the source)
     path = os.path.join(RAW, "nfl_2026_pfr_preseason.txt")
     for line in open(path):
@@ -167,6 +173,7 @@ def load_nfl_all():
         if "TIE" in score:
             flag("IRREGULARITY", f"{dt} NFL preseason {rec['label']}: game ended {score} (tie)")
         rec["is_sf"] = "SF" in (rec["away"], rec["home"])
+        rec["priority"] = rec["is_sf"]
         games.append(rec)
     # NFL postseason / pro bowl / super bowl placeholder rows (never block; mark UNCONFIRMED)
     path = os.path.join(RAW, "nfl_2027_postseason_tbd.txt")
@@ -187,6 +194,8 @@ def load_local():
     games, seen_big = [], set()
     for g in data["games"]:
         rec = dict(g)
+        if g["sport"] == "nfl":      # 49ers are high-priority per spec
+            rec["priority"] = True
         if g.get("start_pt") and g["start_pt"] != "TBD":
             h, m = map(int, g["start_pt"].split(":"))
             rec["start_min"] = h * 60 + m
@@ -254,6 +263,16 @@ def main():
     nfl_all = load_nfl_all()
     local = load_local()
     cond = load_conditional()
+
+    # 49ers appear in BOTH games_local.json (club list = source of truth for
+    # kickoff times) and the league-wide NFL table. Keep the club row and drop the
+    # duplicate league row from the per-day view so a 49ers game is not listed or
+    # blocked twice. The master All-NFL table in schedules.md still shows all 272.
+    sf_local_dates = {g["date"] for g in local if g["sport"] == "nfl"}
+    for g in nfl_all:
+        if g.get("is_sf") and g["date"] in sf_local_dates:
+            g["dedup"] = True
+
     allg = mlb + nfl_all + local + cond
 
     # doubleheader / duplicate detection (same matchup twice on one official date)
@@ -275,7 +294,8 @@ def main():
              f"{flex} league-wide NFL games after {TODAY.isoformat()} sit in the Sunday 1:00 PM / 4:05 PM / "
              f"4:25 PM ET windows and can still be moved by NFL flex scheduling; times as printed by the "
              f"source on 2026-09-11. Thursday/Sunday/Monday night, international and Saturday games are "
-             f"locked. This does not affect the 49ers blocking rows (those come from 49ers.com).")
+             f"locked. Because ALL league-wide NFL games now block free time, a flex move will shift the "
+             f"affected day's free windows - re-run the build after each Tuesday flex announcement.")
 
     # MLB scope boundary notes
     flag("SCOPE_NOTE", "MLB: the tracked 2026 season (regular + postseason) ends with the World Series "
@@ -298,7 +318,7 @@ def main():
         for g in blocking:
             if g.get("start_min") is None:
                 continue
-            dur = DURATIONS[g["sport"]]
+            dur = DUR_OF(g["sport"])
             blocks.append([g["start_min"] - PRE_BUFFER, g["start_min"] + dur + POST_BUFFER])
         blocks.sort()
         merged = []
@@ -308,11 +328,17 @@ def main():
             else:
                 merged.append([s, e])
         fw = free_windows(merged)
-        tbd = [g for g in blocking + nfla
-               if g.get("start_min") is None and not g.get("info_only") and not g.get("dedup")]
+        # blocking already contains nfl_all now (and excludes dedup'd rows), so no
+        # separate + nfla term is needed (that double-counted the all-NFL layer).
+        tbd = [g for g in blocking
+               if g.get("start_min") is None and not g.get("info_only")]
         tbd_n = len([g for g in tbd if not g.get("tbd_count")]) + sum(g.get("tbd_count", 0) for g in tbd)
-        if not blocks and tbd_n:
-            status = "UNCONFIRMED"   # only unconfirmed games that day -> free time cannot be asserted
+        # Honesty rule: if ANY scheduled game that day still has a TBD kickoff (or a
+        # conditional playoff/qualification marker exists), the day's free time cannot be
+        # asserted - label it UNCONFIRMED even when other games have known times. Known
+        # windows are still computed and shown (provisionally) in the UI, but never asserted.
+        if tbd_n:
+            status = "UNCONFIRMED"
         elif not blocks:
             status = "FREE"
         elif sum(e - s for s, e in fw) == 0:
@@ -327,7 +353,7 @@ def main():
             "free": [{"start": s, "end": e, "start_t": fmt(s), "end_t": fmt(e), "minutes": e - s} for s, e in fw],
             "free_minutes": sum(e - s for s, e in fw),
             "game_count": len([g for g in blocking if g.get("start_min") is not None]),
-            "nfl_all_count": len([g for g in nfla if g.get("start_min") is not None]),
+            "nfl_all_count": len([g for g in nfla if g.get("start_min") is not None and not g.get("dedup")]),
             "tbd_count": tbd_n,
             "has_priority": any(g.get("priority") for g in todays),
             "has_sf": any(g.get("is_sf") for g in nfla) or any(g["sport"]=="nfl" for g in blocking),
@@ -365,7 +391,7 @@ def main():
     print(f"MLB postseason TBD: {meta['totals']['mlb_postseason_tbd']} games (times/teams unconfirmed)")
     print(f"49ers/Quakes/NCAA : {len(local)} blocking games (+{len(cond)} conditional day markers)")
     print(f"NFL league-wide   : {len(reg)} regular-season games + {len(pre)} preseason games "
-          f"(display only; 49ers blocking rows come from games_local.json)")
+          f"(ALL now block; 49ers rows dedup against the club list in games_local.json)")
 
     # NFL arithmetic checks
     ok = True
@@ -464,11 +490,14 @@ def write_markdown(days, meta, flags, mlb, nfl_all, local, cond, per):
       f"NFL {meta['durations_minutes']['nfl']}m, NCAA {meta['durations_minutes']['ncaa']}m, "
       f"MLS {meta['durations_minutes']['mls']}m (research sources in docs/VERIFICATION.md; "
       f"the UI lets you change them and recompute).")
-    A(f"- Free-time rule: a game blocks only if it is MLB (any club), 49ers (pre + regular season), "
-      f"Earthquakes, Stanford or Cal. League-wide NFL rows are shown but non-blocking unless you "
-      f"enable the 'block all-NFL' toggle in the UI.")
+    A(f"- Free-time rule: a game blocks if it is in ANY tracked league - MLB (any club, incl. "
+      f"postseason), NFL (all 32 clubs: preseason, regular season, postseason, Pro Bowl, "
+      f"Super Bowl - TBD until confirmed), Earthquakes, Stanford or Cal. Games with a TBD kickoff "
+      f"never fabricate a window; they mark the day UNCONFIRMED.")
     A("")
-    A("## High-priority clubs: San Francisco Giants + Athletics (+ 49ers)")
+    A("## High-priority clubs: San Francisco Giants + Athletics + 49ers")
+    A("")
+    A("### Giants & Athletics (MLB)")
     A("")
     A("| Date | PT start | Matchup |")
     A("|---|---|---|")
@@ -476,8 +505,19 @@ def write_markdown(days, meta, flags, mlb, nfl_all, local, cond, per):
         star = " **(home)**" if g["home_id"] in HI_PRIORITY else ""
         A(f"| {g['date']} | {g['start_pt']} PT | {g['away']} @ {g['home']}{star} |")
     A("")
-    A(f"Giants: {per.get(137)} games in window - Athletics: {per.get(133)} games in window. "
-      f"All 49ers games are also high-priority: see next section (blocking) and the NFL-all list.")
+    A(f"Giants: {per.get(137)} games in window - Athletics: {per.get(133)} games in window.")
+    A("")
+    A("### 49ers (every game, preseason + regular season)")
+    A("")
+    A("| Date | PT start | Game | Phase |")
+    A("|---|---|---|---|")
+    for g in sorted([g for g in local if g["sport"] == "nfl"], key=lambda x: (x["date"], x.get("start_min") or 0)):
+        st = (g.get("start_pt") or "TBD") + (" PT" if g.get("start_pt") and g.get("start_pt") != "TBD" else "")
+        A(f"| {g['date']} | {st} | {g['label']} | {g.get('phase','')} |")
+    A("")
+    A(f"49ers: {len([g for g in local if g['sport'] == 'nfl'])} games in window (preseason + regular "
+      f"season). 49ers playoff games would fall on the Jan/Feb NFL postseason placeholder days and "
+      f"are non-blocking only because their date/time is TBD (flagged UNCONFIRMED).")
     A("")
     A("## 49ers / Earthquakes / Stanford / Cal - every blocking game")
     A("")
@@ -487,13 +527,15 @@ def write_markdown(days, meta, flags, mlb, nfl_all, local, cond, per):
         st = (g.get("start_pt") or "TBD") + (" PT" if g.get("start_pt") and g.get("start_pt") != "TBD" else "")
         A(f"| {g['date']} | {st or '**TBD**'} | {g['label']} | {g.get('phase','')} | [link]({g.get('source', '')}) |")
     A("")
-    A("## All-NFL, every game (league-wide; non-blocking display)")
+    A("## All-NFL, every game (league-wide; BLOCKS free time)")
     A("")
     A("Regular season from the official week-by-week table "
       "(https://www.pro-football-reference.com/years/2026/games.htm, fetched 2026-09-11); "
       "preseason from https://www.pro-football-reference.com/years/2026/preseason.htm; postseason "
       "rows are round-date placeholders. Kickoff in both ET (source) and PT. Times after 2026-09-11 "
-      "are subject to NFL flex scheduling for Sunday-window games.")
+      "are subject to NFL flex scheduling for Sunday-window games. Every row with a kickoff time "
+      "blocks free time; rows with no time (preseason info-only, postseason/pro-bowl placeholders) "
+      "mark the day UNCONFIRMED instead of asserting free time.")
     A("")
     A("| Date | PT | ET | Game | Status | Review link |")
     A("|---|---|---|---|---|---|")
@@ -506,10 +548,12 @@ def write_markdown(days, meta, flags, mlb, nfl_all, local, cond, per):
     A("## Conditional days (unconfirmed; never block)")
     A("")
     A("MLS playoff days apply to the San Jose Earthquakes only if they qualify (Decision Day Nov 7, "
-      "2026 decides it). ACC/CFP days apply to Stanford or Cal only if they qualify. Bowl games for "
-      "Stanford/Cal could fall on any bowl date Dec 12, 2026 - Jan 1, 2027 once selected on Dec 6 - "
-      "not day-marked; re-run the build after Dec 7, 2026 for those. NFL postseason rows above are "
-      "placeholders until seeds are set (games may include the 49ers; still non-blocking by spec).")
+      "2026 decides it; SJ's Decision Day match itself is a real scheduled game in games_local.json). "
+      "ACC/CFP days apply to Stanford or Cal only if they qualify. Bowl games for Stanford/Cal could "
+      "fall on any bowl date Dec 12, 2026 - Jan 1, 2027 once selected on Dec 6 - not day-marked; "
+      "re-run the build after Dec 7, 2026 for those. NFL postseason rows above are placeholders until "
+      "seeds are set (games may include the 49ers); they mark their days UNCONFIRMED because kickoff "
+      "times are TBD - once times are announced, add them and re-run.")
     A("")
     A("| Date | League | Conditional entry |")
     A("|---|---|---|")

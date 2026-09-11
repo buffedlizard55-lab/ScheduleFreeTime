@@ -2,19 +2,21 @@
 # Official key dates (fetched 2026-09-11):
 #   https://www.mlssoccer.com/playoffs/2025/news/audi-2026-mls-cup-playoffs-key-dates-schedule-information
 #   - Decision Day (last regular-season matchday, all 30 clubs): Sat Nov 7, 2026
+#       (the Earthquakes' Decision Day match IS scheduled - @ Minnesota United, 4:00 PM PT -
+#       and lives in data/games_local.json as a real blocking game, not here)
 #   - Wild Card matches (No.8 vs No.9, one per conference):        Wed Nov 18, 2026
 #   - Round One, best-of-3 series:                                 Fri Nov 20 - Wed Dec 2, 2026
 #   - Conference Semifinals:                                       Sat Dec 5 - Sun Dec 6, 2026
 #   - Conference Finals:                                           Fri Dec 11 - Sat Dec 12, 2026
 #   - MLS Cup presented by Audi:                                   Fri Dec 18, 2026
-# The Earthquakes' season as scheduled on their official page ended Oct 31 (last game:
-# Oct 31, kickoff TBD in repo data). Whether SJ plays any of these dates is UNKNOWN until
-# Decision Day; per-game kickoff times for the playoff rounds are also set after Nov 7.
+# The Earthquakes' season as scheduled on their official page runs through Decision Day Nov 7
+# (last game: @ Minnesota United, 4:00 PM PT - in games_local.json). Whether SJ plays any
+# playoff date below is UNKNOWN until Decision Day; per-game kickoff times for the playoff
+# rounds are also set after Nov 7.
 # Round-One games within Nov 20 - Dec 2 use the league's traditional Friday/Saturday/
 # Tuesday/Wednesday windows; the exact series calendar is published after Decision Day.
 # None of these rows block by themselves (SJ may not play) - they set UNCONFIRMED status.
 # Format: date|games|label
-2026-11-07|cond|MLS Decision Day - SJ regular-season game only if the club's final match was postponed to this matchday
 2026-11-18|cond|MLS Cup Playoffs Wild Card - San Jose if seeded 8/9 West (time TBA)
 2026-11-20|cond|MLS Cup Playoffs Round One window (G1 Friday; SJ if qualified)
 2026-11-21|cond|MLS Cup Playoffs Round One window (Saturday; SJ if qualified)

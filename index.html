@@ -145,9 +145,11 @@ footer .container{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-betw
   <section class="card intro">
     <div>
       <h2>When am I free?</h2>
-      <p>A time counts as <b>busy</b> if any of these is on air: any MLB game (all 30 clubs),
-         the San Francisco 49ers, the San Jose Earthquakes, Stanford football, or Cal football.
-         Everything is shown in <b>America/Los_Angeles</b> for <b>Aug 1, 2026 – Feb 28, 2027</b>.</p>
+      <p>A time counts as <b>busy</b> if any of these is on air: <b>any MLB game</b> (all 30 clubs,
+         regular season + postseason), <b>any NFL game</b> (all 32 clubs — preseason, regular season,
+         postseason, Pro Bowl, Super Bowl), the <b>San Jose Earthquakes</b>, <b>Stanford</b> football, or
+         <b>Cal</b> football. Everything is shown in <b>America/Los_Angeles</b> for
+         <b>Aug 1, 2026 – Feb 28, 2027</b>.</p>
     </div>
     <div class="legend" aria-label="Status legend">
       <span class="leg"><span class="dot"></span> Fully free</span>
@@ -200,7 +202,7 @@ footer .container{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-betw
         <span style="color:var(--warn);font-weight:800">&#9632;</span> partial &nbsp;
         <span style="color:var(--busy);font-weight:800">&#9632;</span> unconfirmed / booked &nbsp;
         <span style="color:var(--accent2);font-weight:800">&#9642;</span> snapshot day &nbsp;
-        <span style="color:var(--hi);font-weight:800">&#9733;</span> Giants or Athletics play.</p>
+        <span style="color:var(--hi);font-weight:800">&#9733;</span> Giants, Athletics or 49ers play.</p>
     </section>
 
     <section class="card" id="settings" aria-labelledby="setHeading">
@@ -210,22 +212,23 @@ footer .container{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-betw
         <div>
           <div class="set-title">Leagues counted</div>
           <label class="toggle-row"><input type="checkbox" data-lg="mlb" checked> MLB (all 30 clubs)</label>
-          <label class="toggle-row"><input type="checkbox" data-lg="nfl" checked> San Francisco 49ers</label>
+          <label class="toggle-row"><input type="checkbox" data-lg="nfl" checked> San Francisco 49ers (high priority)</label>
           <label class="toggle-row"><input type="checkbox" data-lg="mls" checked> San Jose Earthquakes</label>
           <label class="toggle-row"><input type="checkbox" data-lg="ncaa" checked> Stanford + Cal</label>
-          <label class="toggle-row"><input type="checkbox" data-lg="nfl_all" checked> All-NFL games (all 32 clubs — listed; playoffs, Pro Bowl &amp; Super Bowl as TBD)</label>
-          <label class="toggle-row"><input type="checkbox" id="blockAll"> Block all-NFL games too (off = free-time rule per spec: MLB + 49ers + Quakes + Stanford + Cal only)</label>
+          <label class="toggle-row"><input type="checkbox" data-lg="nfl_all" checked> All-NFL games (all 32 clubs — blocks; playoffs, Pro Bowl &amp; Super Bowl TBD until confirmed)</label>
         </div>
         <div>
           <div class="set-title">Average duration used (minutes)</div>
-          <label class="toggle-row">MLB <input type="number" id="d_mlb" value="158" min="30" step="5"></label>
+          <label class="toggle-row">MLB <input type="number" id="d_mlb" value="164" min="30" step="5"></label>
           <label class="toggle-row">NFL (49ers &amp; all-NFL) <input type="number" id="d_nfl" value="192" min="30" step="5"></label>
           <label class="toggle-row">NCAA <input type="number" id="d_ncaa" value="204" min="30" step="5"></label>
           <label class="toggle-row">MLS <input type="number" id="d_mls" value="120" min="30" step="5"></label>
         </div>
       </div>
-      <div class="callout">Defaults are researched league averages. See the <a href="#sources">Sources &amp; verification</a>
-        section for caveats &mdash; several duration figures come from secondary sources, not official league press releases.</div>
+      <div class="callout">Defaults are researched league averages (MLB 2:44, NFL 3:12, NCAA 3:24, MLS 2:00).
+        They're editable above. Every game with a TBD kickoff is shown but never fabricates a window —
+        those days are labeled <b>UNCONFIRMED</b> until the time is announced. See
+        <a href="#sources">Sources &amp; verification</a> for the links.</div>
     </section>
   </div>
 
@@ -256,15 +259,16 @@ footer .container{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-betw
             <tr><td>MLS playoff windows (SJ conditional)</td><td><a target="_blank" rel="noopener" href="https://www.mlssoccer.com/playoffs/2025/news/audi-2026-mls-cup-playoffs-key-dates-schedule-information">mlssoccer.com &mdash; 2026 playoffs key dates</a></td></tr>
             <tr><td>CFP / ACC 2026-27 dates</td><td><a target="_blank" rel="noopener" href="https://www.espn.com/college-football/story/_/id/48958840/2026-college-football-playoff-bowl-schedule-46-games">ESPN CFP schedule article</a></td></tr>
             <tr><td>MLB 2027 spring training (out of scope, flagged)</td><td><a target="_blank" rel="noopener" href="https://www.mlb.com/press-release/press-release-mlb-announces-2027-spring-training-schedule">MLB press release &mdash; ST opens Feb 19, 2027</a></td></tr>
-            <tr><td>MLB average length (official)</td><td><a target="_blank" rel="noopener" href="https://www.mlb.com/press-release/press-release-mlb-attendance-reaches-71-4-million-three-straight-years-of-growth-for-first-time-since-2007">MLB PR: 2025 avg game time 2:38</a> &middot; <a target="_blank" rel="noopener" href="https://sports.betmgm.com/en/blog/mlb/average-game-time-in-mlb-bm23/">BetMGM: 2026 in progress 2:44 (secondary)</a></td></tr>
+            <tr><td>MLB average length (2026 = 2:44 default)</td><td><a target="_blank" rel="noopener" href="https://sports.betmgm.com/en/blog/mlb/average-game-time-in-mlb-bm23/">BetMGM: 2026 avg 2:44</a> &middot; <a target="_blank" rel="noopener" href="https://www.sportsbusinessjournal.com/Articles/2026/04/29/mlb-pace-of-play-slows-game-lengths-rise-despite-pitch-timer/">SBJ: 2026 2:43 thru first 421 games</a> &middot; <a target="_blank" rel="noopener" href="https://www.mlb.com/press-release/press-release-mlb-attendance-reaches-71-4-million-three-straight-years-of-growth-for-first-time-since-2007">MLB PR: 2025 final 2:38</a></td></tr>
           </tbody>
         </table>
       </div>
       <div class="callout"><b>Verification note:</b> re-checked against primary sources on <b>2026-09-11</b>.
-        MLB Stats API matches the repo 35/35 games for Sep 10&ndash;12; all 272 NFL regular-season rows pass the
-        17-games-per-team check, and the 49ers club list matches the league table on 18/19 timed rows (two
-        corrected times and the Week-18 TBD are documented flags). See <code>docs/VERIFICATION.md</code> and
-        <code>schedules.md</code> for every manual-review link and accepted caveat.</div>
+        MLB Stats API matches the repo for Sep 10&ndash;12 (15+15+5 games) and for all 28 postseason dates (all
+        TBD placeholders); all 272 NFL regular-season rows pass the 17-games-per-team check and Week 1 / the
+        Thanksgiving (Week 12) slate match the NFL's own announcements; the 49ers club list, the 17 Earthquakes
+        games, and the 12 Stanford + 12 Cal games each match their official releases. See
+        <code>docs/VERIFICATION.md</code> and <code>schedules.md</code> for every manual-review link and caveat.</div>
     </section>
   </div>
 </main>
@@ -277,10 +281,9 @@ footer .container{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-betw
 </footer>
 
 <script>
-const DUR={mlb:158,nfl:192,ncaa:204,mls:120};   // researched averages (docs/VERIFICATION.md)
-const LG={mlb:true,nfl:true,mls:true,ncaa:true,nfl_all:true};   // nfl_all = LISTED display layer
-const BLOCK={mlb:true,nfl:true,mls:true,ncaa:true};           // user's free-time rule (blocking layer)
-let blockAll=false;                                   // opt-in: treat all-NFL games as busy too
+const DUR={mlb:164,nfl:192,ncaa:204,mls:120};   // researched averages (docs/VERIFICATION.md)
+const LG={mlb:true,nfl:true,mls:true,ncaa:true,nfl_all:true};   // league toggles (show + count)
+const BLOCK={mlb:true,nfl:true,mls:true,ncaa:true,nfl_all:true}; // every tracked league blocks free time
 const SNAPSHOT=new Date(2026,8,11);           // dataset snapshot / last verification day (2026-09-11)
 const WIN_S=new Date(2026,7,1), WIN_E=new Date(2027,2,28);
 let DATA=null, BYDATE={}, CUR=new Date(SNAPSHOT), MONTH=new Date(2026,7,1);
@@ -289,10 +292,10 @@ const key=d=>`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
 const shift=(d,n)=>{const x=new Date(d);x.setDate(x.getDate()+n);return x;};
 function fmt(m){m=Math.round(m);if(m>=1440)return"12:00 AM (midnight)";const h=Math.floor(m/60),mi=m%60,ap=h<12?"AM":"PM";return `${h%12||12}:${pad(mi)} ${ap}`;}
 function dur(sport){return sport==='nfl_all'?DUR.nfl:(DUR[sport]||120);}
-function isBlocking(g){return (BLOCK[g.sport]||(g.sport==='nfl_all'&&blockAll))&&g.start_min!=null;}
+function isBlocking(g){return BLOCK[g.sport]&&g.start_min!=null;}
 
 function dayGames(ds){
-  return (BYDATE[ds]||[]).filter(g=>LG[g.sport]).sort((a,b)=>(a.start_min??9999)-(b.start_min??9999));
+  return (BYDATE[ds]||[]).filter(g=>LG[g.sport]&&!g.dedup).sort((a,b)=>(a.start_min??9999)-(b.start_min??9999));
 }
 function windows(gs){
   const blocks=gs.filter(isBlocking).map(g=>[g.start_min,g.start_min+dur(g.sport)]).sort((a,b)=>a[0]-b[0]);
@@ -335,17 +338,16 @@ function renderCal(){
     const e=document.createElement('div');e.className='cell';
     const gs=dayGames(ds);
     const {merged,free}=windows(gs);
-    const tbd=gs.filter(g=>g.start_min==null&&g.sport!=='nfl_all').length
-              +gs.filter(g=>g.sport==='nfl_all'&&g.tbd_count&&blockAll).reduce((a,g)=>a+(g.tbd_count||0),0);
+    const tbd=gs.filter(g=>g.start_min==null&&!g.info_only&&!g.dedup).length;
     const fm=free.reduce((a,b)=>a+b[1]-b[0],0);
     if(!inWin){e.classList.add('out');}
-    else if(!merged.length&&tbd)e.classList.add('unc');
+    else if(tbd)e.classList.add('unc');
     else if(!merged.length)e.classList.add('free');
     else if(fm===0)e.classList.add('booked');
     else e.classList.add('part');
     if(ds===key(CUR))e.classList.add('sel');
     if(ds===key(SNAPSHOT))e.classList.add('today');
-    e.innerHTML=`<div class="n">${d}</div><div class="m">${inWin?(merged.length||tbd?Math.round(fm/60)+'h free':'free'):'out'}</div>`+
+    e.innerHTML=`<div class="n">${d}</div><div class="m">${!inWin?'out':tbd?'tbd':(merged.length?Math.round(fm/60)+'h free':'free')}</div>`+
       (gs.some(g=>g.priority)?'<div class="star">&#9733;</div>':'');
     if(inWin){e.tabIndex=0;e.setAttribute('role','button');e.setAttribute('aria-label',`${dt.toLocaleDateString('en-US')} - ${Math.round(fm/60)} hours free`);e.onclick=()=>{CUR=dt;renderDay();renderCal();};
       e.onkeydown=ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();e.click();}};}
@@ -356,14 +358,16 @@ function renderDay(){
   const ds=key(CUR);
   document.getElementById('dLabel').textContent=CUR.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});
   const gs=dayGames(ds), {merged,free}=windows(gs);
-  const tbd=gs.filter(g=>g.start_min==null&&(g.sport!=='nfl_all'||(blockAll&&g.tbd_count)));
+  const tbd=gs.filter(g=>g.start_min==null&&!g.info_only);
   const fm=free.reduce((a,b)=>a+b[1]-b[0],0);
-  let st='PARTIAL';
-  if(!merged.length&&tbd.length)st='UNCONFIRMED';
-  else if(!merged.length)st='FREE';
-  else if(fm===0)st='FULLY BOOKED';
+  let st='UNCONFIRMED';
+  if(!tbd.length){
+    if(!merged.length)st='FREE';
+    else if(fm===0)st='FULLY BOOKED';
+    else st='PARTIAL';
+  }
   document.getElementById('dBadge').innerHTML=
-    `<span class="badge b-${st.split(' ')[0]}">${st}</span> <span class="sub">${gs.length} game(s) &middot; ${Math.floor(fm/60)}h ${fm%60}m free</span>`;
+    `<span class="badge b-${st.split(' ')[0]}">${st}</span> <span class="sub">${gs.length} game(s) &middot; ${Math.floor(fm/60)}h ${fm%60}m free${tbd.length?' (provisional)':''}</span>`;
   const tl=document.getElementById('tl');tl.innerHTML='';
   free.forEach(([s,e])=>{const d=document.createElement('div');d.className='fr';d.style.left=(s/1440*100)+'%';d.style.width=((e-s)/1440*100)+'%';tl.appendChild(d);});
   merged.forEach(([s,e])=>{const d=document.createElement('div');d.className='blk';d.style.left=(Math.max(s,0)/1440*100)+'%';d.style.width=((Math.min(e,1440)-Math.max(s,0))/1440*100)+'%';d.title='Games on: '+fmt(s)+' - '+fmt(e);tl.appendChild(d);});
@@ -378,7 +382,7 @@ function renderDay(){
     const end=g.start_min!=null?fmt(g.start_min+dur(g.sport)):'TBD';
     tb.insertAdjacentHTML('beforeend',
       `<tr><td>${g.start_pt?g.start_pt+' PT':'<b class="hi">TBD</b>'}</td>`+
-      `<td><span class="tag t-${g.sport}${g.sport==='nfl_all'&&!blockAll?' ghost':''}">${g.sport==='mls'?'MLS':g.sport==='ncaa'?'NCAA':g.sport==='nfl_all'?'NFL ALL':g.sport.toUpperCase()}</span>${g.priority?' <span class="hi">&#9733;</span>':''}${g.sport==='nfl_all'&&!blockAll?' <span class="muted" style="font-size:10px">(non-blocking)</span>':''}${g.conditional?' <span class="tag" style="background:#efe9f2;color:#59306e">conditional</span>':''}</td>`+
+      `<td><span class="tag t-${g.sport}">${g.sport==='mls'?'MLS':g.sport==='ncaa'?'NCAA':g.sport==='nfl_all'?'NFL':g.sport.toUpperCase()}</span>${g.priority?' <span class="hi">&#9733;</span>':''}${g.conditional?' <span class="tag" style="background:#efe9f2;color:#59306e">conditional</span>':''}${g.info_only?' <span class="muted" style="font-size:10px">(time not published)</span>':''}</td>`+
       `<td>${g.label}${g.phase?` <span class="muted">(${g.phase})</span>`:''}${g.result?` <span class="muted">&ndash; ${g.result}</span>`:''}${g.flag?`<div class="flag" style="margin-top:4px"><b>&#9888;</b> ${g.flag}</div>`:''}</td>`+
       `<td>${end}</td>`+
       `<td class="muted" style="font-size:11.5px">${g.review?`<a href="${g.review}" target="_blank" rel="noopener">review</a> &middot; `:''}${(g.source||'').replace(/^.*\//,'')}</td></tr>`);
@@ -408,7 +412,6 @@ async function boot(){
   document.getElementById('prevM').onclick=()=>{MONTH=new Date(MONTH.getFullYear(),MONTH.getMonth()-1,1);renderCal();};
   document.getElementById('nextM').onclick=()=>{MONTH=new Date(MONTH.getFullYear(),MONTH.getMonth()+1,1);renderCal();};
   document.querySelectorAll('input[data-lg]').forEach(i=>i.onchange=()=>{LG[i.dataset.lg]=i.checked;renderCal();renderDay();});
-  document.getElementById('blockAll').onchange=e=>{blockAll=e.target.checked;renderCal();renderDay();};
   ['mlb','nfl','ncaa','mls'].forEach(k=>{document.getElementById('d_'+k).onchange=e=>{DUR[k]=Math.max(30,parseInt(e.target.value)||120);renderCal();renderDay();};});
   document.addEventListener('keydown',e=>{
     if(e.key==='ArrowLeft')document.getElementById('prevD').click();

@@ -7,7 +7,7 @@
   },
   "timezone": "America/Los_Angeles - PDT (UTC-7) through Oct 31, 2026; PST (UTC-8) from Nov 1, 2026 to Mar 13, 2027",
   "durations_minutes": {
-   "mlb": 158,
+   "mlb": 164,
    "nfl": 192,
    "ncaa": 204,
    "mls": 120
@@ -18,16 +18,17 @@
    "mlb",
    "mls",
    "ncaa",
-   "nfl"
+   "nfl",
+   "nfl_all"
   ],
   "totals": {
    "mlb_games": 778,
    "mlb_postseason_tbd": 55,
-   "local_games": 60,
+   "local_games": 61,
    "nfl_reg_games": 272,
    "nfl_pre_games": 49,
    "nfl_all_tbd_days": 8,
-   "conditional_days": 21
+   "conditional_days": 20
   }
  },
  "days": [
@@ -277,9 +278,9 @@
    "blocked": [
     {
      "start": 727,
-     "end": 1278,
+     "end": 1284,
      "start_t": "12:07 PM",
-     "end_t": "9:18 PM"
+     "end_t": "9:24 PM"
     }
    ],
    "free": [
@@ -291,14 +292,14 @@
      "minutes": 727
     },
     {
-     "start": 1278,
+     "start": 1284,
      "end": 1440,
-     "start_t": "9:18 PM",
+     "start_t": "9:24 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 162
+     "minutes": 156
     }
    ],
-   "free_minutes": 889,
+   "free_minutes": 883,
    "game_count": 16,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -539,15 +540,15 @@
    "blocked": [
     {
      "start": 635,
-     "end": 948,
+     "end": 954,
      "start_t": "10:35 AM",
-     "end_t": "3:48 PM"
+     "end_t": "3:54 PM"
     },
     {
      "start": 980,
-     "end": 1138,
+     "end": 1144,
      "start_t": "4:20 PM",
-     "end_t": "6:58 PM"
+     "end_t": "7:04 PM"
     }
    ],
    "free": [
@@ -559,21 +560,21 @@
      "minutes": 635
     },
     {
-     "start": 948,
+     "start": 954,
      "end": 980,
-     "start_t": "3:48 PM",
+     "start_t": "3:54 PM",
      "end_t": "4:20 PM",
-     "minutes": 32
+     "minutes": 26
     },
     {
-     "start": 1138,
+     "start": 1144,
      "end": 1440,
-     "start_t": "6:58 PM",
+     "start_t": "7:04 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 302
+     "minutes": 296
     }
    ],
-   "free_minutes": 969,
+   "free_minutes": 957,
    "game_count": 15,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -709,9 +710,9 @@
    "blocked": [
     {
      "start": 940,
-     "end": 1278,
+     "end": 1284,
      "start_t": "3:40 PM",
-     "end_t": "9:18 PM"
+     "end_t": "9:24 PM"
     }
    ],
    "free": [
@@ -723,14 +724,14 @@
      "minutes": 940
     },
     {
-     "start": 1278,
+     "start": 1284,
      "end": 1440,
-     "start_t": "9:18 PM",
+     "start_t": "9:24 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 162
+     "minutes": 156
     }
    ],
-   "free_minutes": 1102,
+   "free_minutes": 1096,
    "game_count": 8,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -971,9 +972,9 @@
    "blocked": [
     {
      "start": 935,
-     "end": 1278,
+     "end": 1284,
      "start_t": "3:35 PM",
-     "end_t": "9:18 PM"
+     "end_t": "9:24 PM"
     }
    ],
    "free": [
@@ -985,14 +986,14 @@
      "minutes": 935
     },
     {
-     "start": 1278,
+     "start": 1284,
      "end": 1440,
-     "start_t": "9:18 PM",
+     "start_t": "9:24 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 162
+     "minutes": 156
     }
    ],
-   "free_minutes": 1097,
+   "free_minutes": 1091,
    "game_count": 15,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -1233,15 +1234,15 @@
    "blocked": [
     {
      "start": 670,
-     "end": 888,
+     "end": 894,
      "start_t": "11:10 AM",
-     "end_t": "2:48 PM"
+     "end_t": "2:54 PM"
     },
     {
      "start": 935,
-     "end": 1278,
+     "end": 1284,
      "start_t": "3:35 PM",
-     "end_t": "9:18 PM"
+     "end_t": "9:24 PM"
     }
    ],
    "free": [
@@ -1253,21 +1254,21 @@
      "minutes": 670
     },
     {
-     "start": 888,
+     "start": 894,
      "end": 935,
-     "start_t": "2:48 PM",
+     "start_t": "2:54 PM",
      "end_t": "3:35 PM",
-     "minutes": 47
+     "minutes": 41
     },
     {
-     "start": 1278,
+     "start": 1284,
      "end": 1440,
-     "start_t": "9:18 PM",
+     "start_t": "9:24 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 162
+     "minutes": 156
     }
    ],
-   "free_minutes": 879,
+   "free_minutes": 867,
    "game_count": 15,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -1457,15 +1458,16 @@
      "start_pt": null,
      "start_min": null,
      "info_only": true,
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     }
    ],
    "blocked": [
     {
      "start": 575,
-     "end": 1278,
+     "end": 1284,
      "start_t": "9:35 AM",
-     "end_t": "9:18 PM"
+     "end_t": "9:24 PM"
     }
    ],
    "free": [
@@ -1477,14 +1479,14 @@
      "minutes": 575
     },
     {
-     "start": 1278,
+     "start": 1284,
      "end": 1440,
-     "start_t": "9:18 PM",
+     "start_t": "9:24 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 162
+     "minutes": 156
     }
    ],
-   "free_minutes": 737,
+   "free_minutes": 731,
    "game_count": 11,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -1725,9 +1727,9 @@
    "blocked": [
     {
      "start": 940,
-     "end": 1313,
+     "end": 1319,
      "start_t": "3:40 PM",
-     "end_t": "9:53 PM"
+     "end_t": "9:59 PM"
     }
    ],
    "free": [
@@ -1739,14 +1741,14 @@
      "minutes": 940
     },
     {
-     "start": 1313,
+     "start": 1319,
      "end": 1440,
-     "start_t": "9:53 PM",
+     "start_t": "9:59 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 127
+     "minutes": 121
     }
    ],
-   "free_minutes": 1067,
+   "free_minutes": 1061,
    "game_count": 15,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -1987,9 +1989,9 @@
    "blocked": [
     {
      "start": 725,
-     "end": 1288,
+     "end": 1294,
      "start_t": "12:05 PM",
-     "end_t": "9:28 PM"
+     "end_t": "9:34 PM"
     }
    ],
    "free": [
@@ -2001,14 +2003,14 @@
      "minutes": 725
     },
     {
-     "start": 1288,
+     "start": 1294,
      "end": 1440,
-     "start_t": "9:28 PM",
+     "start_t": "9:34 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 152
+     "minutes": 146
     }
    ],
-   "free_minutes": 877,
+   "free_minutes": 871,
    "game_count": 15,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -2249,15 +2251,15 @@
    "blocked": [
     {
      "start": 555,
-     "end": 948,
+     "end": 954,
      "start_t": "9:15 AM",
-     "end_t": "3:48 PM"
+     "end_t": "3:54 PM"
     },
     {
      "start": 1040,
-     "end": 1198,
+     "end": 1204,
      "start_t": "5:20 PM",
-     "end_t": "7:58 PM"
+     "end_t": "8:04 PM"
     }
    ],
    "free": [
@@ -2269,21 +2271,21 @@
      "minutes": 555
     },
     {
-     "start": 948,
+     "start": 954,
      "end": 1040,
-     "start_t": "3:48 PM",
+     "start_t": "3:54 PM",
      "end_t": "5:20 PM",
-     "minutes": 92
+     "minutes": 86
     },
     {
-     "start": 1198,
+     "start": 1204,
      "end": 1440,
-     "start_t": "7:58 PM",
+     "start_t": "8:04 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 242
+     "minutes": 236
     }
    ],
-   "free_minutes": 889,
+   "free_minutes": 877,
    "game_count": 15,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -2449,9 +2451,9 @@
    "blocked": [
     {
      "start": 967,
-     "end": 1308,
+     "end": 1314,
      "start_t": "4:07 PM",
-     "end_t": "9:48 PM"
+     "end_t": "9:54 PM"
     }
    ],
    "free": [
@@ -2463,14 +2465,14 @@
      "minutes": 967
     },
     {
-     "start": 1308,
+     "start": 1314,
      "end": 1440,
-     "start_t": "9:48 PM",
+     "start_t": "9:54 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 132
+     "minutes": 126
     }
    ],
-   "free_minutes": 1099,
+   "free_minutes": 1093,
    "game_count": 10,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -2711,9 +2713,9 @@
    "blocked": [
     {
      "start": 940,
-     "end": 1308,
+     "end": 1314,
      "start_t": "3:40 PM",
-     "end_t": "9:48 PM"
+     "end_t": "9:54 PM"
     }
    ],
    "free": [
@@ -2725,14 +2727,14 @@
      "minutes": 940
     },
     {
-     "start": 1308,
+     "start": 1314,
      "end": 1440,
-     "start_t": "9:48 PM",
+     "start_t": "9:54 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 132
+     "minutes": 126
     }
    ],
-   "free_minutes": 1072,
+   "free_minutes": 1066,
    "game_count": 15,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -2973,9 +2975,9 @@
    "blocked": [
     {
      "start": 640,
-     "end": 1308,
+     "end": 1314,
      "start_t": "10:40 AM",
-     "end_t": "9:48 PM"
+     "end_t": "9:54 PM"
     }
    ],
    "free": [
@@ -2987,14 +2989,14 @@
      "minutes": 640
     },
     {
-     "start": 1308,
+     "start": 1314,
      "end": 1440,
-     "start_t": "9:48 PM",
+     "start_t": "9:54 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 132
+     "minutes": 126
     }
    ],
-   "free_minutes": 772,
+   "free_minutes": 766,
    "game_count": 15,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -3123,6 +3125,7 @@
      "source": "https://www.49ers.com/schedule/",
      "kickoff_source": "ESPN event 401874392 date 2026-08-14T01:00Z = 18:00 PDT Aug 13",
      "flag": "",
+     "priority": true,
      "start_min": 1080,
      "pt_date": "2026-08-13"
     },
@@ -3169,7 +3172,8 @@
      "start_pt": null,
      "start_min": null,
      "info_only": true,
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-08-13",
@@ -3184,7 +3188,8 @@
      "start_pt": null,
      "start_min": null,
      "info_only": true,
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-08-13",
@@ -3199,7 +3204,8 @@
      "start_pt": null,
      "start_min": null,
      "info_only": true,
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-08-13",
@@ -3214,7 +3220,8 @@
      "start_pt": null,
      "start_min": null,
      "info_only": true,
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-08-13",
@@ -3229,7 +3236,8 @@
      "start_pt": null,
      "start_min": null,
      "info_only": true,
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-08-13",
@@ -3244,21 +3252,23 @@
      "start_pt": null,
      "start_min": null,
      "info_only": true,
-     "is_sf": true
+     "is_sf": true,
+     "priority": true,
+     "dedup": true
     }
    ],
    "blocked": [
     {
      "start": 610,
-     "end": 943,
+     "end": 949,
      "start_t": "10:10 AM",
-     "end_t": "3:43 PM"
+     "end_t": "3:49 PM"
     },
     {
      "start": 990,
-     "end": 1308,
+     "end": 1314,
      "start_t": "4:30 PM",
-     "end_t": "9:48 PM"
+     "end_t": "9:54 PM"
     }
    ],
    "free": [
@@ -3270,25 +3280,25 @@
      "minutes": 610
     },
     {
-     "start": 943,
+     "start": 949,
      "end": 990,
-     "start_t": "3:43 PM",
+     "start_t": "3:49 PM",
      "end_t": "4:30 PM",
-     "minutes": 47
+     "minutes": 41
     },
     {
-     "start": 1308,
+     "start": 1314,
      "end": 1440,
-     "start_t": "9:48 PM",
+     "start_t": "9:54 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 132
+     "minutes": 126
     }
    ],
-   "free_minutes": 789,
+   "free_minutes": 777,
    "game_count": 10,
    "nfl_all_count": 0,
    "tbd_count": 0,
-   "has_priority": false,
+   "has_priority": true,
    "has_sf": true
   },
   {
@@ -3519,7 +3529,8 @@
      "start_pt": null,
      "start_min": null,
      "info_only": true,
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-08-14",
@@ -3534,7 +3545,8 @@
      "start_pt": null,
      "start_min": null,
      "info_only": true,
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-08-14",
@@ -3549,21 +3561,22 @@
      "start_pt": null,
      "start_min": null,
      "info_only": true,
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     }
    ],
    "blocked": [
     {
      "start": 680,
-     "end": 838,
+     "end": 844,
      "start_t": "11:20 AM",
-     "end_t": "1:58 PM"
+     "end_t": "2:04 PM"
     },
     {
      "start": 910,
-     "end": 1313,
+     "end": 1319,
      "start_t": "3:10 PM",
-     "end_t": "9:53 PM"
+     "end_t": "9:59 PM"
     }
    ],
    "free": [
@@ -3575,21 +3588,21 @@
      "minutes": 680
     },
     {
-     "start": 838,
+     "start": 844,
      "end": 910,
-     "start_t": "1:58 PM",
+     "start_t": "2:04 PM",
      "end_t": "3:10 PM",
-     "minutes": 72
+     "minutes": 66
     },
     {
-     "start": 1313,
+     "start": 1319,
      "end": 1440,
-     "start_t": "9:53 PM",
+     "start_t": "9:59 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 127
+     "minutes": 121
     }
    ],
-   "free_minutes": 879,
+   "free_minutes": 867,
    "game_count": 14,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -3852,7 +3865,8 @@
      "start_pt": null,
      "start_min": null,
      "info_only": true,
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-08-15",
@@ -3867,7 +3881,8 @@
      "start_pt": null,
      "start_min": null,
      "info_only": true,
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-08-15",
@@ -3882,7 +3897,8 @@
      "start_pt": null,
      "start_min": null,
      "info_only": true,
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-08-15",
@@ -3897,7 +3913,8 @@
      "start_pt": null,
      "start_min": null,
      "info_only": true,
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-08-15",
@@ -3912,7 +3929,8 @@
      "start_pt": null,
      "start_min": null,
      "info_only": true,
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-08-15",
@@ -3927,7 +3945,8 @@
      "start_pt": null,
      "start_min": null,
      "info_only": true,
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-08-15",
@@ -3942,7 +3961,8 @@
      "start_pt": null,
      "start_min": null,
      "info_only": true,
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     }
    ],
    "blocked": [
@@ -4210,15 +4230,15 @@
    "blocked": [
     {
      "start": 555,
-     "end": 948,
+     "end": 954,
      "start_t": "9:15 AM",
-     "end_t": "3:48 PM"
+     "end_t": "3:54 PM"
     },
     {
      "start": 980,
-     "end": 1138,
+     "end": 1144,
      "start_t": "4:20 PM",
-     "end_t": "6:58 PM"
+     "end_t": "7:04 PM"
     }
    ],
    "free": [
@@ -4230,21 +4250,21 @@
      "minutes": 555
     },
     {
-     "start": 948,
+     "start": 954,
      "end": 980,
-     "start_t": "3:48 PM",
+     "start_t": "3:54 PM",
      "end_t": "4:20 PM",
-     "minutes": 32
+     "minutes": 26
     },
     {
-     "start": 1138,
+     "start": 1144,
      "end": 1440,
-     "start_t": "6:58 PM",
+     "start_t": "7:04 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 302
+     "minutes": 296
     }
    ],
-   "free_minutes": 889,
+   "free_minutes": 877,
    "game_count": 15,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -4425,15 +4445,15 @@
    "blocked": [
     {
      "start": 640,
-     "end": 798,
+     "end": 804,
      "start_t": "10:40 AM",
-     "end_t": "1:18 PM"
+     "end_t": "1:24 PM"
     },
     {
      "start": 905,
-     "end": 1218,
+     "end": 1224,
      "start_t": "3:05 PM",
-     "end_t": "8:18 PM"
+     "end_t": "8:24 PM"
     }
    ],
    "free": [
@@ -4445,21 +4465,21 @@
      "minutes": 640
     },
     {
-     "start": 798,
+     "start": 804,
      "end": 905,
-     "start_t": "1:18 PM",
+     "start_t": "1:24 PM",
      "end_t": "3:05 PM",
-     "minutes": 107
+     "minutes": 101
     },
     {
-     "start": 1218,
+     "start": 1224,
      "end": 1440,
-     "start_t": "8:18 PM",
+     "start_t": "8:24 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 222
+     "minutes": 216
     }
    ],
-   "free_minutes": 969,
+   "free_minutes": 957,
    "game_count": 11,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -4700,9 +4720,9 @@
    "blocked": [
     {
      "start": 935,
-     "end": 1218,
+     "end": 1224,
      "start_t": "3:35 PM",
-     "end_t": "8:18 PM"
+     "end_t": "8:24 PM"
     }
    ],
    "free": [
@@ -4714,14 +4734,14 @@
      "minutes": 935
     },
     {
-     "start": 1218,
+     "start": 1224,
      "end": 1440,
-     "start_t": "8:18 PM",
+     "start_t": "8:24 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 222
+     "minutes": 216
     }
    ],
-   "free_minutes": 1157,
+   "free_minutes": 1151,
    "game_count": 15,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -5155,7 +5175,9 @@
      "start_pt": "19:00",
      "start_min": 1140,
      "start_et": "22:00",
-     "is_sf": true
+     "is_sf": true,
+     "priority": true,
+     "dedup": true
     },
     {
      "date": "2026-08-20",
@@ -5169,6 +5191,7 @@
      "source": "https://www.49ers.com/schedule/",
      "kickoff_source": "chargers.com news 2026-08-17 'Los Angeles Chargers vs. San Francisco 49ers: Where to Watch': \"Kickoff is set for 7 p.m. (PT)\"; corroborated by sofi.com event page (Kick Off: 7:00 PM, startDate 2026-08-20T19:00:00-07:00). RESOLVED 2026-09-11 (49ers.com shows the final without a time).",
      "flag": "",
+     "priority": true,
      "start_min": 1140,
      "pt_date": "2026-08-20"
     },
@@ -5185,15 +5208,16 @@
      "start_pt": null,
      "start_min": null,
      "info_only": true,
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     }
    ],
    "blocked": [
     {
      "start": 580,
-     "end": 828,
+     "end": 834,
      "start_t": "9:40 AM",
-     "end_t": "1:48 PM"
+     "end_t": "1:54 PM"
     },
     {
      "start": 935,
@@ -5211,11 +5235,11 @@
      "minutes": 580
     },
     {
-     "start": 828,
+     "start": 834,
      "end": 935,
-     "start_t": "1:48 PM",
+     "start_t": "1:54 PM",
      "end_t": "3:35 PM",
-     "minutes": 107
+     "minutes": 101
     },
     {
      "start": 1332,
@@ -5225,9 +5249,9 @@
      "minutes": 108
     }
    ],
-   "free_minutes": 795,
+   "free_minutes": 789,
    "game_count": 10,
-   "nfl_all_count": 1,
+   "nfl_all_count": 0,
    "tbd_count": 0,
    "has_priority": true,
    "has_sf": true
@@ -5475,7 +5499,8 @@
      "start_pt": null,
      "start_min": null,
      "info_only": true,
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-08-21",
@@ -5490,7 +5515,8 @@
      "start_pt": null,
      "start_min": null,
      "info_only": true,
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-08-21",
@@ -5505,15 +5531,16 @@
      "start_pt": null,
      "start_min": null,
      "info_only": true,
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     }
    ],
    "blocked": [
     {
      "start": 790,
-     "end": 1308,
+     "end": 1314,
      "start_t": "1:10 PM",
-     "end_t": "9:48 PM"
+     "end_t": "9:54 PM"
     }
    ],
    "free": [
@@ -5525,14 +5552,14 @@
      "minutes": 790
     },
     {
-     "start": 1308,
+     "start": 1314,
      "end": 1440,
-     "start_t": "9:48 PM",
+     "start_t": "9:54 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 132
+     "minutes": 126
     }
    ],
-   "free_minutes": 922,
+   "free_minutes": 916,
    "game_count": 15,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -5795,7 +5822,8 @@
      "start_pt": null,
      "start_min": null,
      "info_only": true,
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-08-22",
@@ -5810,7 +5838,8 @@
      "start_pt": null,
      "start_min": null,
      "info_only": true,
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-08-22",
@@ -5825,7 +5854,8 @@
      "start_pt": null,
      "start_min": null,
      "info_only": true,
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-08-22",
@@ -5840,7 +5870,8 @@
      "start_pt": null,
      "start_min": null,
      "info_only": true,
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-08-22",
@@ -5855,7 +5886,8 @@
      "start_pt": null,
      "start_min": null,
      "info_only": true,
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-08-22",
@@ -5870,7 +5902,8 @@
      "start_pt": null,
      "start_min": null,
      "info_only": true,
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-08-22",
@@ -5885,7 +5918,8 @@
      "start_pt": null,
      "start_min": null,
      "info_only": true,
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-08-22",
@@ -5900,7 +5934,8 @@
      "start_pt": null,
      "start_min": null,
      "info_only": true,
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-08-22",
@@ -5915,7 +5950,8 @@
      "start_pt": null,
      "start_min": null,
      "info_only": true,
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-08-22",
@@ -5930,7 +5966,8 @@
      "start_pt": null,
      "start_min": null,
      "info_only": true,
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     }
    ],
    "blocked": [
@@ -6207,21 +6244,22 @@
      "start_pt": null,
      "start_min": null,
      "info_only": true,
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     }
    ],
    "blocked": [
     {
      "start": 635,
-     "end": 953,
+     "end": 959,
      "start_t": "10:35 AM",
-     "end_t": "3:53 PM"
+     "end_t": "3:59 PM"
     },
     {
      "start": 970,
-     "end": 1128,
+     "end": 1134,
      "start_t": "4:10 PM",
-     "end_t": "6:48 PM"
+     "end_t": "6:54 PM"
     }
    ],
    "free": [
@@ -6233,21 +6271,21 @@
      "minutes": 635
     },
     {
-     "start": 953,
+     "start": 959,
      "end": 970,
-     "start_t": "3:53 PM",
+     "start_t": "3:59 PM",
      "end_t": "4:10 PM",
-     "minutes": 17
+     "minutes": 11
     },
     {
-     "start": 1128,
+     "start": 1134,
      "end": 1440,
-     "start_t": "6:48 PM",
+     "start_t": "6:54 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 312
+     "minutes": 306
     }
    ],
-   "free_minutes": 964,
+   "free_minutes": 952,
    "game_count": 15,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -6413,9 +6451,9 @@
    "blocked": [
     {
      "start": 940,
-     "end": 1283,
+     "end": 1289,
      "start_t": "3:40 PM",
-     "end_t": "9:23 PM"
+     "end_t": "9:29 PM"
     }
    ],
    "free": [
@@ -6427,14 +6465,14 @@
      "minutes": 940
     },
     {
-     "start": 1283,
+     "start": 1289,
      "end": 1440,
-     "start_t": "9:23 PM",
+     "start_t": "9:29 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 157
+     "minutes": 151
     }
    ],
-   "free_minutes": 1097,
+   "free_minutes": 1091,
    "game_count": 10,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -6675,9 +6713,9 @@
    "blocked": [
     {
      "start": 940,
-     "end": 1283,
+     "end": 1289,
      "start_t": "3:40 PM",
-     "end_t": "9:23 PM"
+     "end_t": "9:29 PM"
     }
    ],
    "free": [
@@ -6689,14 +6727,14 @@
      "minutes": 940
     },
     {
-     "start": 1283,
+     "start": 1289,
      "end": 1440,
-     "start_t": "9:23 PM",
+     "start_t": "9:29 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 157
+     "minutes": 151
     }
    ],
-   "free_minutes": 1097,
+   "free_minutes": 1091,
    "game_count": 15,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -6937,9 +6975,9 @@
    "blocked": [
     {
      "start": 610,
-     "end": 1243,
+     "end": 1249,
      "start_t": "10:10 AM",
-     "end_t": "8:43 PM"
+     "end_t": "8:49 PM"
     }
    ],
    "free": [
@@ -6951,14 +6989,14 @@
      "minutes": 610
     },
     {
-     "start": 1243,
+     "start": 1249,
      "end": 1440,
-     "start_t": "8:43 PM",
+     "start_t": "8:49 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 197
+     "minutes": 191
     }
    ],
-   "free_minutes": 807,
+   "free_minutes": 801,
    "game_count": 15,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -7073,7 +7111,9 @@
      "start_pt": "17:00",
      "start_min": 1020,
      "start_et": "20:00",
-     "is_sf": true
+     "is_sf": true,
+     "priority": true,
+     "dedup": true
     },
     {
      "date": "2026-08-27",
@@ -7087,6 +7127,7 @@
      "source": "https://www.49ers.com/schedule/",
      "kickoff_source": "raiders.com video page 2026-08-27: 'Kickoff is at 5:00 p.m PT'; corroborated by silverandblackpride.com ('Kickoff is at 5 p.m. PT') and yahoo/The Big Lead (8:00 PM ET). RESOLVED 2026-09-11 (49ers.com shows the final without a time).",
      "flag": "",
+     "priority": true,
      "start_min": 1020,
      "pt_date": "2026-08-27"
     },
@@ -7118,7 +7159,8 @@
      "start_pt": null,
      "start_min": null,
      "info_only": true,
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-08-27",
@@ -7133,7 +7175,8 @@
      "start_pt": null,
      "start_min": null,
      "info_only": true,
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-08-27",
@@ -7148,21 +7191,22 @@
      "start_pt": null,
      "start_min": null,
      "info_only": true,
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     }
    ],
    "blocked": [
     {
      "start": 605,
-     "end": 833,
+     "end": 839,
      "start_t": "10:05 AM",
-     "end_t": "1:53 PM"
+     "end_t": "1:59 PM"
     },
     {
      "start": 965,
-     "end": 1283,
+     "end": 1289,
      "start_t": "4:05 PM",
-     "end_t": "9:23 PM"
+     "end_t": "9:29 PM"
     }
    ],
    "free": [
@@ -7174,23 +7218,23 @@
      "minutes": 605
     },
     {
-     "start": 833,
+     "start": 839,
      "end": 965,
-     "start_t": "1:53 PM",
+     "start_t": "1:59 PM",
      "end_t": "4:05 PM",
-     "minutes": 132
+     "minutes": 126
     },
     {
-     "start": 1283,
+     "start": 1289,
      "end": 1440,
-     "start_t": "9:23 PM",
+     "start_t": "9:29 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 157
+     "minutes": 151
     }
    ],
-   "free_minutes": 894,
+   "free_minutes": 882,
    "game_count": 8,
-   "nfl_all_count": 1,
+   "nfl_all_count": 0,
    "tbd_count": 0,
    "has_priority": true,
    "has_sf": true
@@ -7438,7 +7482,8 @@
      "start_pt": null,
      "start_min": null,
      "info_only": true,
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-08-28",
@@ -7453,7 +7498,8 @@
      "start_pt": null,
      "start_min": null,
      "info_only": true,
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-08-28",
@@ -7468,7 +7514,8 @@
      "start_pt": null,
      "start_min": null,
      "info_only": true,
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-08-28",
@@ -7483,7 +7530,8 @@
      "start_pt": null,
      "start_min": null,
      "info_only": true,
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-08-28",
@@ -7498,7 +7546,8 @@
      "start_pt": null,
      "start_min": null,
      "info_only": true,
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-08-28",
@@ -7513,7 +7562,8 @@
      "start_pt": null,
      "start_min": null,
      "info_only": true,
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-08-28",
@@ -7528,7 +7578,8 @@
      "start_pt": null,
      "start_min": null,
      "info_only": true,
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-08-28",
@@ -7543,7 +7594,8 @@
      "start_pt": null,
      "start_min": null,
      "info_only": true,
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-08-28",
@@ -7558,7 +7610,8 @@
      "start_pt": null,
      "start_min": null,
      "info_only": true,
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-08-28",
@@ -7573,21 +7626,22 @@
      "start_pt": null,
      "start_min": null,
      "info_only": true,
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     }
    ],
    "blocked": [
     {
      "start": 680,
-     "end": 838,
+     "end": 844,
      "start_t": "11:20 AM",
-     "end_t": "1:58 PM"
+     "end_t": "2:04 PM"
     },
     {
      "start": 940,
-     "end": 1313,
+     "end": 1319,
      "start_t": "3:40 PM",
-     "end_t": "9:53 PM"
+     "end_t": "9:59 PM"
     }
    ],
    "free": [
@@ -7599,21 +7653,21 @@
      "minutes": 680
     },
     {
-     "start": 838,
+     "start": 844,
      "end": 940,
-     "start_t": "1:58 PM",
+     "start_t": "2:04 PM",
      "end_t": "3:40 PM",
-     "minutes": 102
+     "minutes": 96
     },
     {
-     "start": 1313,
+     "start": 1319,
      "end": 1440,
-     "start_t": "9:53 PM",
+     "start_t": "9:59 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 127
+     "minutes": 121
     }
    ],
-   "free_minutes": 909,
+   "free_minutes": 897,
    "game_count": 15,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -7920,7 +7974,8 @@
      "start_pt": null,
      "start_min": null,
      "info_only": true,
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-08-29",
@@ -7935,21 +7990,22 @@
      "start_pt": null,
      "start_min": null,
      "info_only": true,
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     }
    ],
    "blocked": [
     {
      "start": 605,
-     "end": 948,
+     "end": 954,
      "start_t": "10:05 AM",
-     "end_t": "3:48 PM"
+     "end_t": "3:54 PM"
     },
     {
      "start": 960,
-     "end": 1305,
+     "end": 1311,
      "start_t": "4:00 PM",
-     "end_t": "9:45 PM"
+     "end_t": "9:51 PM"
     }
    ],
    "free": [
@@ -7961,21 +8017,21 @@
      "minutes": 605
     },
     {
-     "start": 948,
+     "start": 954,
      "end": 960,
-     "start_t": "3:48 PM",
+     "start_t": "3:54 PM",
      "end_t": "4:00 PM",
-     "minutes": 12
+     "minutes": 6
     },
     {
-     "start": 1305,
+     "start": 1311,
      "end": 1440,
-     "start_t": "9:45 PM",
+     "start_t": "9:51 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 135
+     "minutes": 129
     }
    ],
-   "free_minutes": 752,
+   "free_minutes": 740,
    "game_count": 19,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -8201,15 +8257,15 @@
    "blocked": [
     {
      "start": 555,
-     "end": 945,
+     "end": 951,
      "start_t": "9:15 AM",
-     "end_t": "3:45 PM"
+     "end_t": "3:51 PM"
     },
     {
      "start": 980,
-     "end": 1138,
+     "end": 1144,
      "start_t": "4:20 PM",
-     "end_t": "6:58 PM"
+     "end_t": "7:04 PM"
     }
    ],
    "free": [
@@ -8221,21 +8277,21 @@
      "minutes": 555
     },
     {
-     "start": 945,
+     "start": 951,
      "end": 980,
-     "start_t": "3:45 PM",
+     "start_t": "3:51 PM",
      "end_t": "4:20 PM",
-     "minutes": 35
+     "minutes": 29
     },
     {
-     "start": 1138,
+     "start": 1144,
      "end": 1440,
-     "start_t": "6:58 PM",
+     "start_t": "7:04 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 302
+     "minutes": 296
     }
    ],
-   "free_minutes": 892,
+   "free_minutes": 880,
    "game_count": 14,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -8431,9 +8487,9 @@
    "blocked": [
     {
      "start": 905,
-     "end": 1278,
+     "end": 1284,
      "start_t": "3:05 PM",
-     "end_t": "9:18 PM"
+     "end_t": "9:24 PM"
     }
    ],
    "free": [
@@ -8445,14 +8501,14 @@
      "minutes": 905
     },
     {
-     "start": 1278,
+     "start": 1284,
      "end": 1440,
-     "start_t": "9:18 PM",
+     "start_t": "9:24 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 162
+     "minutes": 156
     }
    ],
-   "free_minutes": 1067,
+   "free_minutes": 1061,
    "game_count": 12,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -8693,9 +8749,9 @@
    "blocked": [
     {
      "start": 940,
-     "end": 1308,
+     "end": 1314,
      "start_t": "3:40 PM",
-     "end_t": "9:48 PM"
+     "end_t": "9:54 PM"
     }
    ],
    "free": [
@@ -8707,14 +8763,14 @@
      "minutes": 940
     },
     {
-     "start": 1308,
+     "start": 1314,
      "end": 1440,
-     "start_t": "9:48 PM",
+     "start_t": "9:54 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 132
+     "minutes": 126
     }
    ],
-   "free_minutes": 1072,
+   "free_minutes": 1066,
    "game_count": 15,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -8955,9 +9011,9 @@
    "blocked": [
     {
      "start": 580,
-     "end": 1308,
+     "end": 1314,
      "start_t": "9:40 AM",
-     "end_t": "9:48 PM"
+     "end_t": "9:54 PM"
     }
    ],
    "free": [
@@ -8969,14 +9025,14 @@
      "minutes": 580
     },
     {
-     "start": 1308,
+     "start": 1314,
      "end": 1440,
-     "start_t": "9:48 PM",
+     "start_t": "9:54 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 132
+     "minutes": 126
     }
    ],
-   "free_minutes": 712,
+   "free_minutes": 706,
    "game_count": 15,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -9127,15 +9183,15 @@
    "blocked": [
     {
      "start": 575,
-     "end": 828,
+     "end": 834,
      "start_t": "9:35 AM",
-     "end_t": "1:48 PM"
+     "end_t": "1:54 PM"
     },
     {
      "start": 975,
-     "end": 1308,
+     "end": 1314,
      "start_t": "4:15 PM",
-     "end_t": "9:48 PM"
+     "end_t": "9:54 PM"
     }
    ],
    "free": [
@@ -9147,21 +9203,21 @@
      "minutes": 575
     },
     {
-     "start": 828,
+     "start": 834,
      "end": 975,
-     "start_t": "1:48 PM",
+     "start_t": "1:54 PM",
      "end_t": "4:15 PM",
-     "minutes": 147
+     "minutes": 141
     },
     {
-     "start": 1308,
+     "start": 1314,
      "end": 1440,
-     "start_t": "9:48 PM",
+     "start_t": "9:54 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 132
+     "minutes": 126
     }
    ],
-   "free_minutes": 854,
+   "free_minutes": 842,
    "game_count": 9,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -9432,15 +9488,15 @@
    "blocked": [
     {
      "start": 670,
-     "end": 828,
+     "end": 834,
      "start_t": "11:10 AM",
-     "end_t": "1:48 PM"
+     "end_t": "1:54 PM"
     },
     {
      "start": 910,
-     "end": 1308,
+     "end": 1314,
      "start_t": "3:10 PM",
-     "end_t": "9:48 PM"
+     "end_t": "9:54 PM"
     }
    ],
    "free": [
@@ -9452,21 +9508,21 @@
      "minutes": 670
     },
     {
-     "start": 828,
+     "start": 834,
      "end": 910,
-     "start_t": "1:48 PM",
+     "start_t": "1:54 PM",
      "end_t": "3:10 PM",
-     "minutes": 82
+     "minutes": 76
     },
     {
-     "start": 1308,
+     "start": 1314,
      "end": 1440,
-     "start_t": "9:48 PM",
+     "start_t": "9:54 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 132
+     "minutes": 126
     }
    ],
-   "free_minutes": 884,
+   "free_minutes": 872,
    "game_count": 17,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -9995,15 +10051,15 @@
    "blocked": [
     {
      "start": 550,
-     "end": 1078,
+     "end": 1084,
      "start_t": "9:10 AM",
-     "end_t": "5:58 PM"
+     "end_t": "6:04 PM"
     },
     {
      "start": 1150,
-     "end": 1308,
+     "end": 1314,
      "start_t": "7:10 PM",
-     "end_t": "9:48 PM"
+     "end_t": "9:54 PM"
     }
    ],
    "free": [
@@ -10015,21 +10071,21 @@
      "minutes": 550
     },
     {
-     "start": 1078,
+     "start": 1084,
      "end": 1150,
-     "start_t": "5:58 PM",
+     "start_t": "6:04 PM",
      "end_t": "7:10 PM",
-     "minutes": 72
+     "minutes": 66
     },
     {
-     "start": 1308,
+     "start": 1314,
      "end": 1440,
-     "start_t": "9:48 PM",
+     "start_t": "9:54 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 132
+     "minutes": 126
     }
    ],
-   "free_minutes": 754,
+   "free_minutes": 742,
    "game_count": 15,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -10210,15 +10266,15 @@
    "blocked": [
     {
      "start": 605,
-     "end": 1008,
+     "end": 1014,
      "start_t": "10:05 AM",
-     "end_t": "4:48 PM"
+     "end_t": "4:54 PM"
     },
     {
      "start": 1030,
-     "end": 1303,
+     "end": 1309,
      "start_t": "5:10 PM",
-     "end_t": "9:43 PM"
+     "end_t": "9:49 PM"
     }
    ],
    "free": [
@@ -10230,21 +10286,21 @@
      "minutes": 605
     },
     {
-     "start": 1008,
+     "start": 1014,
      "end": 1030,
-     "start_t": "4:48 PM",
+     "start_t": "4:54 PM",
      "end_t": "5:10 PM",
-     "minutes": 22
+     "minutes": 16
     },
     {
-     "start": 1303,
+     "start": 1309,
      "end": 1440,
-     "start_t": "9:43 PM",
+     "start_t": "9:49 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 137
+     "minutes": 131
     }
    ],
-   "free_minutes": 764,
+   "free_minutes": 752,
    "game_count": 11,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -10485,9 +10541,9 @@
    "blocked": [
     {
      "start": 935,
-     "end": 1308,
+     "end": 1314,
      "start_t": "3:35 PM",
-     "end_t": "9:48 PM"
+     "end_t": "9:54 PM"
     }
    ],
    "free": [
@@ -10499,14 +10555,14 @@
      "minutes": 935
     },
     {
-     "start": 1308,
+     "start": 1314,
      "end": 1440,
-     "start_t": "9:48 PM",
+     "start_t": "9:54 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 132
+     "minutes": 126
     }
    ],
-   "free_minutes": 1067,
+   "free_minutes": 1061,
    "game_count": 15,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -10741,7 +10797,8 @@
      "result": "SEA 13-10",
      "review": "https://www.pro-football-reference.com/boxscores/20260909sea.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-09-09",
@@ -10774,9 +10831,9 @@
    "blocked": [
     {
      "start": 610,
-     "end": 1308,
+     "end": 1314,
      "start_t": "10:10 AM",
-     "end_t": "9:48 PM"
+     "end_t": "9:54 PM"
     }
    ],
    "free": [
@@ -10788,15 +10845,15 @@
      "minutes": 610
     },
     {
-     "start": 1308,
+     "start": 1314,
      "end": 1440,
-     "start_t": "9:48 PM",
+     "start_t": "9:54 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 132
+     "minutes": 126
     }
    ],
-   "free_minutes": 742,
-   "game_count": 16,
+   "free_minutes": 736,
+   "game_count": 17,
    "nfl_all_count": 1,
    "tbd_count": 0,
    "has_priority": true,
@@ -10895,7 +10952,9 @@
      "result": "SFO 27-7 (Melbourne Cricket Ground)",
      "review": "https://www.pro-football-reference.com/boxscores/20260910ram.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": true
+     "is_sf": true,
+     "priority": true,
+     "dedup": true
     },
     {
      "date": "2026-09-10",
@@ -10909,6 +10968,7 @@
      "source": "https://www.49ers.com/schedule/",
      "kickoff_source": "49ers.com lists 'Thu 09/10 - 5:35 PM PDT'",
      "flag": "INTERNATIONAL GAME: listed as a 49ers HOME game but played at the Melbourne Cricket Ground, not Levi's Stadium.",
+     "priority": true,
      "start_min": 1055,
      "pt_date": "2026-09-10"
     }
@@ -10916,15 +10976,15 @@
    "blocked": [
     {
      "start": 555,
-     "end": 763,
+     "end": 769,
      "start_t": "9:15 AM",
-     "end_t": "12:43 PM"
+     "end_t": "12:49 PM"
     },
     {
      "start": 790,
-     "end": 948,
+     "end": 954,
      "start_t": "1:10 PM",
-     "end_t": "3:48 PM"
+     "end_t": "3:54 PM"
     },
     {
      "start": 965,
@@ -10942,18 +11002,18 @@
      "minutes": 555
     },
     {
-     "start": 763,
+     "start": 769,
      "end": 790,
-     "start_t": "12:43 PM",
+     "start_t": "12:49 PM",
      "end_t": "1:10 PM",
-     "minutes": 27
+     "minutes": 21
     },
     {
-     "start": 948,
+     "start": 954,
      "end": 965,
-     "start_t": "3:48 PM",
+     "start_t": "3:54 PM",
      "end_t": "4:05 PM",
-     "minutes": 17
+     "minutes": 11
     },
     {
      "start": 1247,
@@ -10963,11 +11023,11 @@
      "minutes": 193
     }
    ],
-   "free_minutes": 792,
+   "free_minutes": 780,
    "game_count": 6,
-   "nfl_all_count": 1,
+   "nfl_all_count": 0,
    "tbd_count": 0,
-   "has_priority": false,
+   "has_priority": true,
    "has_sf": true
   },
   {
@@ -11204,15 +11264,15 @@
    "blocked": [
     {
      "start": 680,
-     "end": 838,
+     "end": 844,
      "start_t": "11:20 AM",
-     "end_t": "1:58 PM"
+     "end_t": "2:04 PM"
     },
     {
      "start": 940,
-     "end": 1313,
+     "end": 1319,
      "start_t": "3:40 PM",
-     "end_t": "9:53 PM"
+     "end_t": "9:59 PM"
     }
    ],
    "free": [
@@ -11224,21 +11284,21 @@
      "minutes": 680
     },
     {
-     "start": 838,
+     "start": 844,
      "end": 940,
-     "start_t": "1:58 PM",
+     "start_t": "2:04 PM",
      "end_t": "3:40 PM",
-     "minutes": 102
+     "minutes": 96
     },
     {
-     "start": 1313,
+     "start": 1319,
      "end": 1440,
-     "start_t": "9:53 PM",
+     "start_t": "9:59 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 127
+     "minutes": 121
     }
    ],
-   "free_minutes": 909,
+   "free_minutes": 897,
    "game_count": 15,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -11567,7 +11627,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20260913pit.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-09-13",
@@ -11582,7 +11643,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20260913htx.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-09-13",
@@ -11597,7 +11659,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20260913car.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-09-13",
@@ -11612,7 +11675,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20260913jax.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-09-13",
@@ -11627,7 +11691,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20260913det.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-09-13",
@@ -11642,7 +11707,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20260913oti.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-09-13",
@@ -11657,7 +11723,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20260913clt.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-09-13",
@@ -11672,7 +11739,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20260913cin.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-09-13",
@@ -11882,7 +11950,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20260913sdg.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-09-13",
@@ -11897,7 +11966,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20260913min.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-09-13",
@@ -11912,7 +11982,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20260913rai.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-09-13",
@@ -11927,7 +11998,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20260913phi.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-09-13",
@@ -11957,21 +12029,16 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20260913nyg.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     }
    ],
    "blocked": [
     {
      "start": 550,
-     "end": 948,
+     "end": 1232,
      "start_t": "9:10 AM",
-     "end_t": "3:48 PM"
-    },
-    {
-     "start": 980,
-     "end": 1138,
-     "start_t": "4:20 PM",
-     "end_t": "6:58 PM"
+     "end_t": "8:32 PM"
     }
    ],
    "free": [
@@ -11983,22 +12050,15 @@
      "minutes": 550
     },
     {
-     "start": 948,
-     "end": 980,
-     "start_t": "3:48 PM",
-     "end_t": "4:20 PM",
-     "minutes": 32
-    },
-    {
-     "start": 1138,
+     "start": 1232,
      "end": 1440,
-     "start_t": "6:58 PM",
+     "start_t": "8:32 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 302
+     "minutes": 208
     }
    ],
-   "free_minutes": 884,
-   "game_count": 15,
+   "free_minutes": 758,
+   "game_count": 28,
    "nfl_all_count": 13,
    "tbd_count": 0,
    "has_priority": true,
@@ -12127,7 +12187,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20260914kan.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-09-14",
@@ -12178,9 +12239,9 @@
    "blocked": [
     {
      "start": 940,
-     "end": 1278,
+     "end": 1284,
      "start_t": "3:40 PM",
-     "end_t": "9:18 PM"
+     "end_t": "9:24 PM"
     }
    ],
    "free": [
@@ -12192,15 +12253,15 @@
      "minutes": 940
     },
     {
-     "start": 1278,
+     "start": 1284,
      "end": 1440,
-     "start_t": "9:18 PM",
+     "start_t": "9:24 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 162
+     "minutes": 156
     }
    ],
-   "free_minutes": 1102,
-   "game_count": 10,
+   "free_minutes": 1096,
+   "game_count": 11,
    "nfl_all_count": 1,
    "tbd_count": 0,
    "has_priority": true,
@@ -12440,9 +12501,9 @@
    "blocked": [
     {
      "start": 940,
-     "end": 1278,
+     "end": 1284,
      "start_t": "3:40 PM",
-     "end_t": "9:18 PM"
+     "end_t": "9:24 PM"
     }
    ],
    "free": [
@@ -12454,14 +12515,14 @@
      "minutes": 940
     },
     {
-     "start": 1278,
+     "start": 1284,
      "end": 1440,
-     "start_t": "9:18 PM",
+     "start_t": "9:24 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 162
+     "minutes": 156
     }
    ],
-   "free_minutes": 1102,
+   "free_minutes": 1096,
    "game_count": 15,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -12702,15 +12763,15 @@
    "blocked": [
     {
      "start": 610,
-     "end": 885,
+     "end": 891,
      "start_t": "10:10 AM",
-     "end_t": "2:45 PM"
+     "end_t": "2:51 PM"
     },
     {
      "start": 940,
-     "end": 1278,
+     "end": 1284,
      "start_t": "3:40 PM",
-     "end_t": "9:18 PM"
+     "end_t": "9:24 PM"
     }
    ],
    "free": [
@@ -12722,21 +12783,21 @@
      "minutes": 610
     },
     {
-     "start": 885,
+     "start": 891,
      "end": 940,
-     "start_t": "2:45 PM",
+     "start_t": "2:51 PM",
      "end_t": "3:40 PM",
-     "minutes": 55
+     "minutes": 49
     },
     {
-     "start": 1278,
+     "start": 1284,
      "end": 1440,
-     "start_t": "9:18 PM",
+     "start_t": "9:24 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 162
+     "minutes": 156
     }
    ],
-   "free_minutes": 827,
+   "free_minutes": 815,
    "game_count": 15,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -12881,7 +12942,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20260917buf.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-09-17",
@@ -12902,15 +12964,15 @@
    "blocked": [
     {
      "start": 575,
-     "end": 888,
+     "end": 894,
      "start_t": "9:35 AM",
-     "end_t": "2:48 PM"
+     "end_t": "2:54 PM"
     },
     {
      "start": 975,
-     "end": 1276,
+     "end": 1282,
      "start_t": "4:15 PM",
-     "end_t": "9:16 PM"
+     "end_t": "9:22 PM"
     }
    ],
    "free": [
@@ -12922,22 +12984,22 @@
      "minutes": 575
     },
     {
-     "start": 888,
+     "start": 894,
      "end": 975,
-     "start_t": "2:48 PM",
+     "start_t": "2:54 PM",
      "end_t": "4:15 PM",
-     "minutes": 87
+     "minutes": 81
     },
     {
-     "start": 1276,
+     "start": 1282,
      "end": 1440,
-     "start_t": "9:16 PM",
+     "start_t": "9:22 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 164
+     "minutes": 158
     }
    ],
-   "free_minutes": 826,
-   "game_count": 9,
+   "free_minutes": 814,
+   "game_count": 10,
    "nfl_all_count": 1,
    "tbd_count": 0,
    "has_priority": true,
@@ -13177,9 +13239,9 @@
    "blocked": [
     {
      "start": 940,
-     "end": 1313,
+     "end": 1319,
      "start_t": "3:40 PM",
-     "end_t": "9:53 PM"
+     "end_t": "9:59 PM"
     }
    ],
    "free": [
@@ -13191,14 +13253,14 @@
      "minutes": 940
     },
     {
-     "start": 1313,
+     "start": 1319,
      "end": 1440,
-     "start_t": "9:53 PM",
+     "start_t": "9:59 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 127
+     "minutes": 121
     }
    ],
-   "free_minutes": 1067,
+   "free_minutes": 1061,
    "game_count": 15,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -13481,9 +13543,9 @@
    "blocked": [
     {
      "start": 750,
-     "end": 1276,
+     "end": 1282,
      "start_t": "12:30 PM",
-     "end_t": "9:16 PM"
+     "end_t": "9:22 PM"
     }
    ],
    "free": [
@@ -13495,14 +13557,14 @@
      "minutes": 750
     },
     {
-     "start": 1276,
+     "start": 1282,
      "end": 1440,
-     "start_t": "9:16 PM",
+     "start_t": "9:22 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 164
+     "minutes": 158
     }
    ],
-   "free_minutes": 914,
+   "free_minutes": 908,
    "game_count": 18,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -13527,7 +13589,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20260920atl.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-09-20",
@@ -13542,7 +13605,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20260920htx.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-09-20",
@@ -13557,7 +13621,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20260920tam.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-09-20",
@@ -13572,7 +13637,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20260920nyj.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-09-20",
@@ -13587,7 +13653,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20260920chi.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-09-20",
@@ -13602,7 +13669,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20260920rav.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-09-20",
@@ -13617,7 +13685,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20260920oti.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-09-20",
@@ -13632,7 +13701,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20260920nwe.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-09-20",
@@ -13797,7 +13867,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20260920den.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-09-20",
@@ -13812,7 +13883,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20260920sdg.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-09-20",
@@ -13887,7 +13959,9 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20260920sfo.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": true
+     "is_sf": true,
+     "priority": true,
+     "dedup": true
     },
     {
      "date": "2026-09-20",
@@ -13902,7 +13976,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20260920crd.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-09-20",
@@ -13917,7 +13992,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20260920dal.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-09-20",
@@ -13931,6 +14007,7 @@
      "source": "https://www.49ers.com/schedule/",
      "kickoff_source": "",
      "flag": "",
+     "priority": true,
      "start_min": 805,
      "pt_date": "2026-09-20"
     },
@@ -13962,36 +14039,37 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20260920kan.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     }
    ],
    "blocked": [
     {
-     "start": 610,
-     "end": 1138,
-     "start_t": "10:10 AM",
-     "end_t": "6:58 PM"
+     "start": 600,
+     "end": 1232,
+     "start_t": "10:00 AM",
+     "end_t": "8:32 PM"
     }
    ],
    "free": [
     {
      "start": 0,
-     "end": 610,
+     "end": 600,
      "start_t": "12:00 AM",
-     "end_t": "10:10 AM",
-     "minutes": 610
+     "end_t": "10:00 AM",
+     "minutes": 600
     },
     {
-     "start": 1138,
+     "start": 1232,
      "end": 1440,
-     "start_t": "6:58 PM",
+     "start_t": "8:32 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 302
+     "minutes": 208
     }
    ],
-   "free_minutes": 912,
-   "game_count": 16,
-   "nfl_all_count": 14,
+   "free_minutes": 808,
+   "game_count": 29,
+   "nfl_all_count": 13,
    "tbd_count": 0,
    "has_priority": true,
    "has_sf": true
@@ -14044,7 +14122,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20260921ram.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-09-21",
@@ -14065,15 +14144,9 @@
    "blocked": [
     {
      "start": 935,
-     "end": 1098,
+     "end": 1289,
      "start_t": "3:35 PM",
-     "end_t": "6:18 PM"
-    },
-    {
-     "start": 1125,
-     "end": 1283,
-     "start_t": "6:45 PM",
-     "end_t": "9:23 PM"
+     "end_t": "9:29 PM"
     }
    ],
    "free": [
@@ -14085,22 +14158,15 @@
      "minutes": 935
     },
     {
-     "start": 1098,
-     "end": 1125,
-     "start_t": "6:18 PM",
-     "end_t": "6:45 PM",
-     "minutes": 27
-    },
-    {
-     "start": 1283,
+     "start": 1289,
      "end": 1440,
-     "start_t": "9:23 PM",
+     "start_t": "9:29 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 157
+     "minutes": 151
     }
    ],
-   "free_minutes": 1119,
-   "game_count": 3,
+   "free_minutes": 1086,
+   "game_count": 4,
    "nfl_all_count": 1,
    "tbd_count": 0,
    "has_priority": true,
@@ -14355,15 +14421,15 @@
    "blocked": [
     {
      "start": 605,
-     "end": 763,
+     "end": 769,
      "start_t": "10:05 AM",
-     "end_t": "12:43 PM"
+     "end_t": "12:49 PM"
     },
     {
      "start": 935,
-     "end": 1308,
+     "end": 1314,
      "start_t": "3:35 PM",
-     "end_t": "9:48 PM"
+     "end_t": "9:54 PM"
     }
    ],
    "free": [
@@ -14375,21 +14441,21 @@
      "minutes": 605
     },
     {
-     "start": 763,
+     "start": 769,
      "end": 935,
-     "start_t": "12:43 PM",
+     "start_t": "12:49 PM",
      "end_t": "3:35 PM",
-     "minutes": 172
+     "minutes": 166
     },
     {
-     "start": 1308,
+     "start": 1314,
      "end": 1440,
-     "start_t": "9:48 PM",
+     "start_t": "9:54 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 132
+     "minutes": 126
     }
    ],
-   "free_minutes": 909,
+   "free_minutes": 897,
    "game_count": 16,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -14630,15 +14696,15 @@
    "blocked": [
     {
      "start": 610,
-     "end": 923,
+     "end": 929,
      "start_t": "10:10 AM",
-     "end_t": "3:23 PM"
+     "end_t": "3:29 PM"
     },
     {
      "start": 935,
-     "end": 1308,
+     "end": 1314,
      "start_t": "3:35 PM",
-     "end_t": "9:48 PM"
+     "end_t": "9:54 PM"
     }
    ],
    "free": [
@@ -14650,21 +14716,21 @@
      "minutes": 610
     },
     {
-     "start": 923,
+     "start": 929,
      "end": 935,
-     "start_t": "3:23 PM",
+     "start_t": "3:29 PM",
      "end_t": "3:35 PM",
-     "minutes": 12
+     "minutes": 6
     },
     {
-     "start": 1308,
+     "start": 1314,
      "end": 1440,
-     "start_t": "9:48 PM",
+     "start_t": "9:54 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 132
+     "minutes": 126
     }
    ],
-   "free_minutes": 754,
+   "free_minutes": 742,
    "game_count": 15,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -14824,7 +14890,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20260924gnb.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-09-24",
@@ -14875,15 +14942,15 @@
    "blocked": [
     {
      "start": 575,
-     "end": 888,
+     "end": 894,
      "start_t": "9:35 AM",
-     "end_t": "2:48 PM"
+     "end_t": "2:54 PM"
     },
     {
      "start": 905,
-     "end": 1308,
+     "end": 1314,
      "start_t": "3:05 PM",
-     "end_t": "9:48 PM"
+     "end_t": "9:54 PM"
     }
    ],
    "free": [
@@ -14895,22 +14962,22 @@
      "minutes": 575
     },
     {
-     "start": 888,
+     "start": 894,
      "end": 905,
-     "start_t": "2:48 PM",
+     "start_t": "2:54 PM",
      "end_t": "3:05 PM",
-     "minutes": 17
+     "minutes": 11
     },
     {
-     "start": 1308,
+     "start": 1314,
      "end": 1440,
-     "start_t": "9:48 PM",
+     "start_t": "9:54 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 132
+     "minutes": 126
     }
    ],
-   "free_minutes": 724,
-   "game_count": 12,
+   "free_minutes": 712,
+   "game_count": 13,
    "nfl_all_count": 1,
    "tbd_count": 0,
    "has_priority": true,
@@ -15454,9 +15521,9 @@
    "blocked": [
     {
      "start": 610,
-     "end": 948,
+     "end": 954,
      "start_t": "10:10 AM",
-     "end_t": "3:48 PM"
+     "end_t": "3:54 PM"
     },
     {
      "start": 970,
@@ -15474,11 +15541,11 @@
      "minutes": 610
     },
     {
-     "start": 948,
+     "start": 954,
      "end": 970,
-     "start_t": "3:48 PM",
+     "start_t": "3:54 PM",
      "end_t": "4:10 PM",
-     "minutes": 22
+     "minutes": 16
     },
     {
      "start": 1374,
@@ -15488,7 +15555,7 @@
      "minutes": 66
     }
    ],
-   "free_minutes": 698,
+   "free_minutes": 692,
    "game_count": 17,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -15513,7 +15580,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20260927cle.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-09-27",
@@ -15528,7 +15596,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20260927pit.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-09-27",
@@ -15543,7 +15612,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20260927clt.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-09-27",
@@ -15558,7 +15628,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20260927mia.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-09-27",
@@ -15573,7 +15644,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20260927jax.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-09-27",
@@ -15588,7 +15660,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20260927det.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-09-27",
@@ -15603,7 +15676,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20260927nyg.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-09-27",
@@ -15618,7 +15692,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20260927buf.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-09-27",
@@ -15633,7 +15708,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20260927was.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-09-27",
@@ -15873,7 +15949,9 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20260927sfo.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": true
+     "is_sf": true,
+     "priority": true,
+     "dedup": true
     },
     {
      "date": "2026-09-27",
@@ -15888,7 +15966,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20260927tam.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-09-27",
@@ -15902,6 +15981,7 @@
      "source": "https://www.49ers.com/schedule/",
      "kickoff_source": "",
      "flag": "",
+     "priority": true,
      "start_min": 785,
      "pt_date": "2026-09-27"
     },
@@ -15918,7 +15998,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20260927nor.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-09-27",
@@ -15933,7 +16014,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20260927dal.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-09-27",
@@ -15948,36 +16030,50 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20260927den.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     }
    ],
    "blocked": [
     {
-     "start": 725,
-     "end": 977,
-     "start_t": "12:05 PM",
-     "end_t": "4:17 PM"
+     "start": 600,
+     "end": 997,
+     "start_t": "10:00 AM",
+     "end_t": "4:37 PM"
+    },
+    {
+     "start": 1040,
+     "end": 1232,
+     "start_t": "5:20 PM",
+     "end_t": "8:32 PM"
     }
    ],
    "free": [
     {
      "start": 0,
-     "end": 725,
+     "end": 600,
      "start_t": "12:00 AM",
-     "end_t": "12:05 PM",
-     "minutes": 725
+     "end_t": "10:00 AM",
+     "minutes": 600
     },
     {
-     "start": 977,
+     "start": 997,
+     "end": 1040,
+     "start_t": "4:37 PM",
+     "end_t": "5:20 PM",
+     "minutes": 43
+    },
+    {
+     "start": 1232,
      "end": 1440,
-     "start_t": "4:17 PM",
+     "start_t": "8:32 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 463
+     "minutes": 208
     }
    ],
-   "free_minutes": 1188,
-   "game_count": 16,
-   "nfl_all_count": 14,
+   "free_minutes": 851,
+   "game_count": 29,
+   "nfl_all_count": 13,
    "tbd_count": 0,
    "has_priority": true,
    "has_sf": true
@@ -15985,7 +16081,7 @@
   {
    "date": "2026-09-28",
    "weekday": "Mon",
-   "status": "FREE",
+   "status": "PARTIAL",
    "games": [
     {
      "date": "2026-09-28",
@@ -16000,21 +16096,36 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20260928chi.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     }
    ],
-   "blocked": [],
+   "blocked": [
+    {
+     "start": 1035,
+     "end": 1227,
+     "start_t": "5:15 PM",
+     "end_t": "8:27 PM"
+    }
+   ],
    "free": [
     {
      "start": 0,
-     "end": 1440,
+     "end": 1035,
      "start_t": "12:00 AM",
+     "end_t": "5:15 PM",
+     "minutes": 1035
+    },
+    {
+     "start": 1227,
+     "end": 1440,
+     "start_t": "8:27 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 1440
+     "minutes": 213
     }
    ],
-   "free_minutes": 1440,
-   "game_count": 0,
+   "free_minutes": 1248,
+   "game_count": 1,
    "nfl_all_count": 1,
    "tbd_count": 0,
    "has_priority": false,
@@ -16102,7 +16213,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261001cle.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-01",
@@ -16114,18 +16226,32 @@
      "source": "mlb_2026_postseason_tbd.txt"
     }
    ],
-   "blocked": [],
+   "blocked": [
+    {
+     "start": 1035,
+     "end": 1227,
+     "start_t": "5:15 PM",
+     "end_t": "8:27 PM"
+    }
+   ],
    "free": [
     {
      "start": 0,
-     "end": 1440,
+     "end": 1035,
      "start_t": "12:00 AM",
+     "end_t": "5:15 PM",
+     "minutes": 1035
+    },
+    {
+     "start": 1227,
+     "end": 1440,
+     "start_t": "8:27 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 1440
+     "minutes": 213
     }
    ],
-   "free_minutes": 1440,
-   "game_count": 0,
+   "free_minutes": 1248,
+   "game_count": 1,
    "nfl_all_count": 1,
    "tbd_count": 4,
    "has_priority": false,
@@ -16156,7 +16282,7 @@
   {
    "date": "2026-10-03",
    "weekday": "Sat",
-   "status": "PARTIAL",
+   "status": "UNCONFIRMED",
    "games": [
     {
      "date": "2026-10-03",
@@ -16230,7 +16356,7 @@
   {
    "date": "2026-10-04",
    "weekday": "Sun",
-   "status": "PARTIAL",
+   "status": "UNCONFIRMED",
    "games": [
     {
      "date": "2026-10-04",
@@ -16245,7 +16371,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261004was.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-04",
@@ -16260,7 +16387,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261004nyg.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-04",
@@ -16275,7 +16403,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261004htx.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-04",
@@ -16290,7 +16419,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261004tam.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-04",
@@ -16305,7 +16435,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261004cin.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-04",
@@ -16320,7 +16451,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261004buf.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-04",
@@ -16335,7 +16467,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261004chi.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-04",
@@ -16350,7 +16483,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261004rav.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-04",
@@ -16365,7 +16499,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261004phi.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-04",
@@ -16380,7 +16515,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261004min.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-04",
@@ -16395,7 +16531,9 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261004sfo.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": true
+     "is_sf": true,
+     "priority": true,
+     "dedup": true
     },
     {
      "date": "2026-10-04",
@@ -16410,7 +16548,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261004rai.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-04",
@@ -16425,7 +16564,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261004sea.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-04",
@@ -16439,6 +16579,7 @@
      "source": "https://www.49ers.com/schedule/",
      "kickoff_source": "",
      "flag": "",
+     "priority": true,
      "start_min": 805,
      "pt_date": "2026-10-04"
     },
@@ -16455,7 +16596,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261004car.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-04",
@@ -16469,33 +16611,59 @@
    ],
    "blocked": [
     {
-     "start": 805,
+     "start": 390,
+     "end": 582,
+     "start_t": "6:30 AM",
+     "end_t": "9:42 AM"
+    },
+    {
+     "start": 600,
      "end": 997,
-     "start_t": "1:25 PM",
+     "start_t": "10:00 AM",
      "end_t": "4:37 PM"
+    },
+    {
+     "start": 1040,
+     "end": 1232,
+     "start_t": "5:20 PM",
+     "end_t": "8:32 PM"
     }
    ],
    "free": [
     {
      "start": 0,
-     "end": 805,
+     "end": 390,
      "start_t": "12:00 AM",
-     "end_t": "1:25 PM",
-     "minutes": 805
+     "end_t": "6:30 AM",
+     "minutes": 390
+    },
+    {
+     "start": 582,
+     "end": 600,
+     "start_t": "9:42 AM",
+     "end_t": "10:00 AM",
+     "minutes": 18
     },
     {
      "start": 997,
-     "end": 1440,
+     "end": 1040,
      "start_t": "4:37 PM",
+     "end_t": "5:20 PM",
+     "minutes": 43
+    },
+    {
+     "start": 1232,
+     "end": 1440,
+     "start_t": "8:32 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 443
+     "minutes": 208
     }
    ],
-   "free_minutes": 1248,
-   "game_count": 1,
-   "nfl_all_count": 14,
+   "free_minutes": 659,
+   "game_count": 14,
+   "nfl_all_count": 13,
    "tbd_count": 4,
-   "has_priority": false,
+   "has_priority": true,
    "has_sf": true
   },
   {
@@ -16516,7 +16684,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261005nor.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-05",
@@ -16528,18 +16697,32 @@
      "source": "mlb_2026_postseason_tbd.txt"
     }
    ],
-   "blocked": [],
+   "blocked": [
+    {
+     "start": 1035,
+     "end": 1227,
+     "start_t": "5:15 PM",
+     "end_t": "8:27 PM"
+    }
+   ],
    "free": [
     {
      "start": 0,
-     "end": 1440,
+     "end": 1035,
      "start_t": "12:00 AM",
+     "end_t": "5:15 PM",
+     "minutes": 1035
+    },
+    {
+     "start": 1227,
+     "end": 1440,
+     "start_t": "8:27 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 1440
+     "minutes": 213
     }
    ],
-   "free_minutes": 1440,
-   "game_count": 0,
+   "free_minutes": 1248,
+   "game_count": 1,
    "nfl_all_count": 1,
    "tbd_count": 2,
    "has_priority": false,
@@ -16627,7 +16810,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261008dal.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-08",
@@ -16639,18 +16823,32 @@
      "source": "mlb_2026_postseason_tbd.txt"
     }
    ],
-   "blocked": [],
+   "blocked": [
+    {
+     "start": 1035,
+     "end": 1227,
+     "start_t": "5:15 PM",
+     "end_t": "8:27 PM"
+    }
+   ],
    "free": [
     {
      "start": 0,
-     "end": 1440,
+     "end": 1035,
      "start_t": "12:00 AM",
+     "end_t": "5:15 PM",
+     "minutes": 1035
+    },
+    {
+     "start": 1227,
+     "end": 1440,
+     "start_t": "8:27 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 1440
+     "minutes": 213
     }
    ],
-   "free_minutes": 1440,
-   "game_count": 0,
+   "free_minutes": 1248,
+   "game_count": 1,
    "nfl_all_count": 1,
    "tbd_count": 2,
    "has_priority": false,
@@ -16691,7 +16889,7 @@
   {
    "date": "2026-10-10",
    "weekday": "Sat",
-   "status": "PARTIAL",
+   "status": "UNCONFIRMED",
    "games": [
     {
      "date": "2026-10-10",
@@ -16791,7 +16989,7 @@
   {
    "date": "2026-10-11",
    "weekday": "Sun",
-   "status": "PARTIAL",
+   "status": "UNCONFIRMED",
    "games": [
     {
      "date": "2026-10-11",
@@ -16806,7 +17004,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261011jax.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-11",
@@ -16821,7 +17020,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261011mia.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-11",
@@ -16836,7 +17036,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261011nyj.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-11",
@@ -16851,7 +17052,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261011pit.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-11",
@@ -16866,7 +17068,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261011oti.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-11",
@@ -16881,7 +17084,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261011nor.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-11",
@@ -16896,7 +17100,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261011was.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-11",
@@ -16911,7 +17116,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261011nwe.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-11",
@@ -16926,7 +17132,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261011sdg.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-11",
@@ -16941,7 +17148,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261011gnb.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-11",
@@ -16956,7 +17164,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261011crd.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-11",
@@ -16971,7 +17180,9 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261011sea.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": true
+     "is_sf": true,
+     "priority": true,
+     "dedup": true
     },
     {
      "date": "2026-10-11",
@@ -16985,6 +17196,7 @@
      "source": "https://www.49ers.com/schedule/",
      "kickoff_source": "",
      "flag": "",
+     "priority": true,
      "start_min": 805,
      "pt_date": "2026-10-11"
     },
@@ -17001,7 +17213,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261011atl.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-11",
@@ -17015,33 +17228,59 @@
    ],
    "blocked": [
     {
-     "start": 805,
+     "start": 390,
+     "end": 582,
+     "start_t": "6:30 AM",
+     "end_t": "9:42 AM"
+    },
+    {
+     "start": 600,
      "end": 997,
-     "start_t": "1:25 PM",
+     "start_t": "10:00 AM",
      "end_t": "4:37 PM"
+    },
+    {
+     "start": 1040,
+     "end": 1232,
+     "start_t": "5:20 PM",
+     "end_t": "8:32 PM"
     }
    ],
    "free": [
     {
      "start": 0,
-     "end": 805,
+     "end": 390,
      "start_t": "12:00 AM",
-     "end_t": "1:25 PM",
-     "minutes": 805
+     "end_t": "6:30 AM",
+     "minutes": 390
+    },
+    {
+     "start": 582,
+     "end": 600,
+     "start_t": "9:42 AM",
+     "end_t": "10:00 AM",
+     "minutes": 18
     },
     {
      "start": 997,
-     "end": 1440,
+     "end": 1040,
      "start_t": "4:37 PM",
+     "end_t": "5:20 PM",
+     "minutes": 43
+    },
+    {
+     "start": 1232,
+     "end": 1440,
+     "start_t": "8:32 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 443
+     "minutes": 208
     }
    ],
-   "free_minutes": 1248,
-   "game_count": 1,
-   "nfl_all_count": 13,
+   "free_minutes": 659,
+   "game_count": 13,
+   "nfl_all_count": 12,
    "tbd_count": 1,
-   "has_priority": false,
+   "has_priority": true,
    "has_sf": true
   },
   {
@@ -17062,7 +17301,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261012ram.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-12",
@@ -17074,18 +17314,32 @@
      "source": "mlb_2026_postseason_tbd.txt"
     }
    ],
-   "blocked": [],
+   "blocked": [
+    {
+     "start": 1035,
+     "end": 1227,
+     "start_t": "5:15 PM",
+     "end_t": "8:27 PM"
+    }
+   ],
    "free": [
     {
      "start": 0,
-     "end": 1440,
+     "end": 1035,
      "start_t": "12:00 AM",
+     "end_t": "5:15 PM",
+     "minutes": 1035
+    },
+    {
+     "start": 1227,
+     "end": 1440,
+     "start_t": "8:27 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 1440
+     "minutes": 213
     }
    ],
-   "free_minutes": 1440,
-   "game_count": 0,
+   "free_minutes": 1248,
+   "game_count": 1,
    "nfl_all_count": 1,
    "tbd_count": 2,
    "has_priority": false,
@@ -17126,7 +17380,7 @@
   {
    "date": "2026-10-14",
    "weekday": "Wed",
-   "status": "PARTIAL",
+   "status": "UNCONFIRMED",
    "games": [
     {
      "date": "2026-10-14",
@@ -17199,7 +17453,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261015den.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-15",
@@ -17211,18 +17466,32 @@
      "source": "mlb_2026_postseason_tbd.txt"
     }
    ],
-   "blocked": [],
+   "blocked": [
+    {
+     "start": 1035,
+     "end": 1227,
+     "start_t": "5:15 PM",
+     "end_t": "8:27 PM"
+    }
+   ],
    "free": [
     {
      "start": 0,
-     "end": 1440,
+     "end": 1035,
      "start_t": "12:00 AM",
+     "end_t": "5:15 PM",
+     "minutes": 1035
+    },
+    {
+     "start": 1227,
+     "end": 1440,
+     "start_t": "8:27 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 1440
+     "minutes": 213
     }
    ],
-   "free_minutes": 1440,
-   "game_count": 0,
+   "free_minutes": 1248,
+   "game_count": 1,
    "nfl_all_count": 1,
    "tbd_count": 2,
    "has_priority": false,
@@ -17263,7 +17532,7 @@
   {
    "date": "2026-10-17",
    "weekday": "Sat",
-   "status": "PARTIAL",
+   "status": "UNCONFIRMED",
    "games": [
     {
      "date": "2026-10-17",
@@ -17366,7 +17635,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261018jax.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-18",
@@ -17381,7 +17651,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261018phi.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-18",
@@ -17396,7 +17667,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261018atl.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-18",
@@ -17411,7 +17683,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261018nyg.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-18",
@@ -17426,7 +17699,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261018nwe.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-18",
@@ -17441,7 +17715,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261018clt.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-18",
@@ -17456,7 +17731,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261018tam.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-18",
@@ -17471,7 +17747,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261018cle.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-18",
@@ -17486,7 +17763,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261018ram.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-18",
@@ -17501,7 +17779,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261018rai.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-18",
@@ -17516,7 +17795,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261018kan.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-18",
@@ -17531,7 +17811,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261018gnb.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-18",
@@ -17543,18 +17824,58 @@
      "source": "mlb_2026_postseason_tbd.txt"
     }
    ],
-   "blocked": [],
+   "blocked": [
+    {
+     "start": 390,
+     "end": 582,
+     "start_t": "6:30 AM",
+     "end_t": "9:42 AM"
+    },
+    {
+     "start": 600,
+     "end": 997,
+     "start_t": "10:00 AM",
+     "end_t": "4:37 PM"
+    },
+    {
+     "start": 1040,
+     "end": 1232,
+     "start_t": "5:20 PM",
+     "end_t": "8:32 PM"
+    }
+   ],
    "free": [
     {
      "start": 0,
-     "end": 1440,
+     "end": 390,
      "start_t": "12:00 AM",
+     "end_t": "6:30 AM",
+     "minutes": 390
+    },
+    {
+     "start": 582,
+     "end": 600,
+     "start_t": "9:42 AM",
+     "end_t": "10:00 AM",
+     "minutes": 18
+    },
+    {
+     "start": 997,
+     "end": 1040,
+     "start_t": "4:37 PM",
+     "end_t": "5:20 PM",
+     "minutes": 43
+    },
+    {
+     "start": 1232,
+     "end": 1440,
+     "start_t": "8:32 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 1440
+     "minutes": 208
     }
    ],
-   "free_minutes": 1440,
-   "game_count": 0,
+   "free_minutes": 659,
+   "game_count": 12,
    "nfl_all_count": 12,
    "tbd_count": 1,
    "has_priority": false,
@@ -17563,7 +17884,7 @@
   {
    "date": "2026-10-19",
    "weekday": "Mon",
-   "status": "PARTIAL",
+   "status": "UNCONFIRMED",
    "games": [
     {
      "date": "2026-10-19",
@@ -17578,7 +17899,9 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261019sfo.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": true
+     "is_sf": true,
+     "priority": true,
+     "dedup": true
     },
     {
      "date": "2026-10-19",
@@ -17592,6 +17915,7 @@
      "source": "https://www.49ers.com/schedule/",
      "kickoff_source": "",
      "flag": "MONDAY game (Week 6 is Mon 10/19, not a Sunday).",
+     "priority": true,
      "start_min": 1035,
      "pt_date": "2026-10-19"
     },
@@ -17631,9 +17955,9 @@
    ],
    "free_minutes": 1248,
    "game_count": 1,
-   "nfl_all_count": 1,
+   "nfl_all_count": 0,
    "tbd_count": 2,
-   "has_priority": false,
+   "has_priority": true,
    "has_sf": true
   },
   {
@@ -17693,7 +18017,7 @@
   {
    "date": "2026-10-22",
    "weekday": "Thu",
-   "status": "FREE",
+   "status": "PARTIAL",
    "games": [
     {
      "date": "2026-10-22",
@@ -17708,21 +18032,36 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261022chi.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     }
    ],
-   "blocked": [],
+   "blocked": [
+    {
+     "start": 1035,
+     "end": 1227,
+     "start_t": "5:15 PM",
+     "end_t": "8:27 PM"
+    }
+   ],
    "free": [
     {
      "start": 0,
-     "end": 1440,
+     "end": 1035,
      "start_t": "12:00 AM",
+     "end_t": "5:15 PM",
+     "minutes": 1035
+    },
+    {
+     "start": 1227,
+     "end": 1440,
+     "start_t": "8:27 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 1440
+     "minutes": 213
     }
    ],
-   "free_minutes": 1440,
-   "game_count": 0,
+   "free_minutes": 1248,
+   "game_count": 1,
    "nfl_all_count": 1,
    "tbd_count": 0,
    "has_priority": false,
@@ -17731,7 +18070,7 @@
   {
    "date": "2026-10-23",
    "weekday": "Fri",
-   "status": "PARTIAL",
+   "status": "UNCONFIRMED",
    "games": [
     {
      "date": "2026-10-23",
@@ -17792,7 +18131,7 @@
   {
    "date": "2026-10-24",
    "weekday": "Sat",
-   "status": "PARTIAL",
+   "status": "UNCONFIRMED",
    "games": [
     {
      "date": "2026-10-24",
@@ -17879,7 +18218,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261025nor.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-25",
@@ -17894,7 +18234,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261025rav.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-25",
@@ -17909,7 +18250,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261025oti.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-25",
@@ -17924,7 +18266,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261025min.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-25",
@@ -17939,7 +18282,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261025nyj.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-25",
@@ -17954,7 +18298,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261025htx.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-25",
@@ -17969,7 +18314,9 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261025atl.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": true
+     "is_sf": true,
+     "priority": true,
+     "dedup": true
     },
     {
      "date": "2026-10-25",
@@ -17984,7 +18331,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261025car.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-25",
@@ -17998,6 +18346,7 @@
      "source": "https://www.49ers.com/schedule/",
      "kickoff_source": "",
      "flag": "UNUSUAL 10:00 AM PDT kickoff (1:00 PM ET) per official club schedule.",
+     "priority": true,
      "start_min": 600,
      "pt_date": "2026-10-25"
     },
@@ -18014,7 +18363,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261025crd.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-25",
@@ -18029,7 +18379,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261025det.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-25",
@@ -18044,7 +18395,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261025rai.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-25",
@@ -18059,38 +18411,65 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261025sea.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     }
    ],
    "blocked": [
     {
+     "start": 390,
+     "end": 582,
+     "start_t": "6:30 AM",
+     "end_t": "9:42 AM"
+    },
+    {
      "start": 600,
-     "end": 792,
+     "end": 997,
      "start_t": "10:00 AM",
-     "end_t": "1:12 PM"
+     "end_t": "4:37 PM"
+    },
+    {
+     "start": 1040,
+     "end": 1232,
+     "start_t": "5:20 PM",
+     "end_t": "8:32 PM"
     }
    ],
    "free": [
     {
      "start": 0,
-     "end": 600,
+     "end": 390,
      "start_t": "12:00 AM",
-     "end_t": "10:00 AM",
-     "minutes": 600
+     "end_t": "6:30 AM",
+     "minutes": 390
     },
     {
-     "start": 792,
+     "start": 582,
+     "end": 600,
+     "start_t": "9:42 AM",
+     "end_t": "10:00 AM",
+     "minutes": 18
+    },
+    {
+     "start": 997,
+     "end": 1040,
+     "start_t": "4:37 PM",
+     "end_t": "5:20 PM",
+     "minutes": 43
+    },
+    {
+     "start": 1232,
      "end": 1440,
-     "start_t": "1:12 PM",
+     "start_t": "8:32 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 648
+     "minutes": 208
     }
    ],
-   "free_minutes": 1248,
-   "game_count": 1,
-   "nfl_all_count": 12,
+   "free_minutes": 659,
+   "game_count": 12,
+   "nfl_all_count": 11,
    "tbd_count": 0,
-   "has_priority": false,
+   "has_priority": true,
    "has_sf": true
   },
   {
@@ -18111,7 +18490,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261026phi.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-10-26",
@@ -18123,18 +18503,32 @@
      "source": "mlb_2026_postseason_tbd.txt"
     }
    ],
-   "blocked": [],
+   "blocked": [
+    {
+     "start": 1035,
+     "end": 1227,
+     "start_t": "5:15 PM",
+     "end_t": "8:27 PM"
+    }
+   ],
    "free": [
     {
      "start": 0,
-     "end": 1440,
+     "end": 1035,
      "start_t": "12:00 AM",
+     "end_t": "5:15 PM",
+     "minutes": 1035
+    },
+    {
+     "start": 1227,
+     "end": 1440,
+     "start_t": "8:27 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 1440
+     "minutes": 213
     }
    ],
-   "free_minutes": 1440,
-   "game_count": 0,
+   "free_minutes": 1248,
+   "game_count": 1,
    "nfl_all_count": 1,
    "tbd_count": 1,
    "has_priority": false,
@@ -18175,7 +18569,7 @@
   {
    "date": "2026-10-28",
    "weekday": "Wed",
-   "status": "PARTIAL",
+   "status": "UNCONFIRMED",
    "games": [
     {
      "date": "2026-10-28",
@@ -18234,7 +18628,7 @@
   {
    "date": "2026-10-29",
    "weekday": "Thu",
-   "status": "FREE",
+   "status": "PARTIAL",
    "games": [
     {
      "date": "2026-10-29",
@@ -18249,21 +18643,36 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261029gnb.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     }
    ],
-   "blocked": [],
+   "blocked": [
+    {
+     "start": 1035,
+     "end": 1227,
+     "start_t": "5:15 PM",
+     "end_t": "8:27 PM"
+    }
+   ],
    "free": [
     {
      "start": 0,
-     "end": 1440,
+     "end": 1035,
      "start_t": "12:00 AM",
+     "end_t": "5:15 PM",
+     "minutes": 1035
+    },
+    {
+     "start": 1227,
+     "end": 1440,
+     "start_t": "8:27 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 1440
+     "minutes": 213
     }
    ],
-   "free_minutes": 1440,
-   "game_count": 0,
+   "free_minutes": 1248,
+   "game_count": 1,
    "nfl_all_count": 1,
    "tbd_count": 0,
    "has_priority": false,
@@ -18377,7 +18786,7 @@
   {
    "date": "2026-11-01",
    "weekday": "Sun",
-   "status": "FREE",
+   "status": "PARTIAL",
    "games": [
     {
      "date": "2026-11-01",
@@ -18392,7 +18801,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261101tam.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-01",
@@ -18407,7 +18817,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261101pit.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-01",
@@ -18422,7 +18833,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261101jax.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-01",
@@ -18437,7 +18849,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261101dal.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-01",
@@ -18452,7 +18865,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261101det.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-01",
@@ -18467,7 +18881,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261101cin.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-01",
@@ -18482,7 +18897,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261101nyj.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-01",
@@ -18497,7 +18913,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261101buf.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-01",
@@ -18512,7 +18929,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261101ram.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-01",
@@ -18527,7 +18945,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261101den.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-01",
@@ -18542,7 +18961,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261101mia.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-01",
@@ -18557,21 +18977,49 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261101was.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     }
    ],
-   "blocked": [],
+   "blocked": [
+    {
+     "start": 600,
+     "end": 997,
+     "start_t": "10:00 AM",
+     "end_t": "4:37 PM"
+    },
+    {
+     "start": 1040,
+     "end": 1232,
+     "start_t": "5:20 PM",
+     "end_t": "8:32 PM"
+    }
+   ],
    "free": [
     {
      "start": 0,
-     "end": 1440,
+     "end": 600,
      "start_t": "12:00 AM",
+     "end_t": "10:00 AM",
+     "minutes": 600
+    },
+    {
+     "start": 997,
+     "end": 1040,
+     "start_t": "4:37 PM",
+     "end_t": "5:20 PM",
+     "minutes": 43
+    },
+    {
+     "start": 1232,
+     "end": 1440,
+     "start_t": "8:32 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 1440
+     "minutes": 208
     }
    ],
-   "free_minutes": 1440,
-   "game_count": 0,
+   "free_minutes": 851,
+   "game_count": 12,
    "nfl_all_count": 12,
    "tbd_count": 0,
    "has_priority": false,
@@ -18580,7 +19028,7 @@
   {
    "date": "2026-11-02",
    "weekday": "Mon",
-   "status": "FREE",
+   "status": "PARTIAL",
    "games": [
     {
      "date": "2026-11-02",
@@ -18595,21 +19043,36 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261102sea.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     }
    ],
-   "blocked": [],
+   "blocked": [
+    {
+     "start": 1035,
+     "end": 1227,
+     "start_t": "5:15 PM",
+     "end_t": "8:27 PM"
+    }
+   ],
    "free": [
     {
      "start": 0,
-     "end": 1440,
+     "end": 1035,
      "start_t": "12:00 AM",
+     "end_t": "5:15 PM",
+     "minutes": 1035
+    },
+    {
+     "start": 1227,
+     "end": 1440,
+     "start_t": "8:27 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 1440
+     "minutes": 213
     }
    ],
-   "free_minutes": 1440,
-   "game_count": 0,
+   "free_minutes": 1248,
+   "game_count": 1,
    "nfl_all_count": 1,
    "tbd_count": 0,
    "has_priority": false,
@@ -18662,7 +19125,7 @@
   {
    "date": "2026-11-05",
    "weekday": "Thu",
-   "status": "FREE",
+   "status": "PARTIAL",
    "games": [
     {
      "date": "2026-11-05",
@@ -18677,21 +19140,36 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261105rav.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     }
    ],
-   "blocked": [],
+   "blocked": [
+    {
+     "start": 1035,
+     "end": 1227,
+     "start_t": "5:15 PM",
+     "end_t": "8:27 PM"
+    }
+   ],
    "free": [
     {
      "start": 0,
-     "end": 1440,
+     "end": 1035,
      "start_t": "12:00 AM",
+     "end_t": "5:15 PM",
+     "minutes": 1035
+    },
+    {
+     "start": 1227,
+     "end": 1440,
+     "start_t": "8:27 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 1440
+     "minutes": 213
     }
    ],
-   "free_minutes": 1440,
-   "game_count": 0,
+   "free_minutes": 1248,
+   "game_count": 1,
    "nfl_all_count": 1,
    "tbd_count": 0,
    "has_priority": false,
@@ -18722,34 +19200,51 @@
   {
    "date": "2026-11-07",
    "weekday": "Sat",
-   "status": "UNCONFIRMED",
+   "status": "PARTIAL",
    "games": [
     {
      "date": "2026-11-07",
      "sport": "mls",
-     "start_pt": null,
-     "start_min": null,
-     "tbd_count": 1,
-     "label": "[conditional] MLS Decision Day - SJ regular-season game only if the club's final match was postponed to this matchday",
-     "conditional": true,
-     "source": "mls_2026_playoffs_conditional.txt",
-     "review": "https://www.mlssoccer.com/playoffs/2025/news/audi-2026-mls-cup-playoffs-key-dates-schedule-information"
+     "label": "Earthquakes at Minnesota United FC",
+     "ha": "away",
+     "start_pt": "16:00",
+     "phase": "MLS Regular Season (Decision Day)",
+     "venue": "Allianz Field, Saint Paul MN",
+     "source": "https://www.sjearthquakes.com/news/news-earthquakes-announce-2026-major-league-soccer-schedule",
+     "kickoff_source": "Official SJ Earthquakes 2026 schedule release (Nov 20, 2025): '34 \u00b7 Saturday, Nov. 7, 2026 \u00b7 Minnesota United FC \u00b7 Away \u00b7 4:00 PM \u00b7 Apple'. This is the regular-season finale (Decision Day, all 30 clubs). Corroborated by seatgeek.com/san-jose-earthquakes-tickets/schedule (Allianz Field, Saint Paul).",
+     "flag": "ADDED 2026-09-11: the Decision Day finale at Minnesota (4:00 PM PT, game 34/34) was missing from the earlier PDF transcription which ended at the Oct 31 home finale. It is a real scheduled game, NOT conditional.",
+     "start_min": 960,
+     "pt_date": "2026-11-07"
     }
    ],
-   "blocked": [],
+   "blocked": [
+    {
+     "start": 960,
+     "end": 1080,
+     "start_t": "4:00 PM",
+     "end_t": "6:00 PM"
+    }
+   ],
    "free": [
     {
      "start": 0,
-     "end": 1440,
+     "end": 960,
      "start_t": "12:00 AM",
+     "end_t": "4:00 PM",
+     "minutes": 960
+    },
+    {
+     "start": 1080,
+     "end": 1440,
+     "start_t": "6:00 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 1440
+     "minutes": 360
     }
    ],
-   "free_minutes": 1440,
-   "game_count": 0,
+   "free_minutes": 1320,
+   "game_count": 1,
    "nfl_all_count": 0,
-   "tbd_count": 1,
+   "tbd_count": 0,
    "has_priority": false,
    "has_sf": false
   },
@@ -18771,7 +19266,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261108atl.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-08",
@@ -18786,7 +19282,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261108nor.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-08",
@@ -18801,7 +19298,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261108clt.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-08",
@@ -18816,7 +19314,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261108car.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-08",
@@ -18831,7 +19330,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261108mia.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-08",
@@ -18846,7 +19346,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261108phi.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-08",
@@ -18861,7 +19362,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261108kan.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-08",
@@ -18876,7 +19378,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261108was.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-08",
@@ -18891,7 +19394,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261108sdg.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-08",
@@ -18906,7 +19410,9 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261108sfo.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": true
+     "is_sf": true,
+     "priority": true,
+     "dedup": true
     },
     {
      "date": "2026-11-08",
@@ -18919,6 +19425,7 @@
      "kickoff_source": "",
      "flag": "",
      "source": "https://www.49ers.com/schedule/",
+     "priority": true,
      "start_min": 785,
      "pt_date": "2026-11-08"
     },
@@ -18935,7 +19442,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261108sea.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-08",
@@ -18950,7 +19458,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261108nwe.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-08",
@@ -18965,44 +19474,71 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261108chi.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     }
    ],
    "blocked": [
     {
-     "start": 785,
-     "end": 977,
-     "start_t": "1:05 PM",
-     "end_t": "4:17 PM"
+     "start": 390,
+     "end": 582,
+     "start_t": "6:30 AM",
+     "end_t": "9:42 AM"
+    },
+    {
+     "start": 600,
+     "end": 997,
+     "start_t": "10:00 AM",
+     "end_t": "4:37 PM"
+    },
+    {
+     "start": 1040,
+     "end": 1232,
+     "start_t": "5:20 PM",
+     "end_t": "8:32 PM"
     }
    ],
    "free": [
     {
      "start": 0,
-     "end": 785,
+     "end": 390,
      "start_t": "12:00 AM",
-     "end_t": "1:05 PM",
-     "minutes": 785
+     "end_t": "6:30 AM",
+     "minutes": 390
     },
     {
-     "start": 977,
+     "start": 582,
+     "end": 600,
+     "start_t": "9:42 AM",
+     "end_t": "10:00 AM",
+     "minutes": 18
+    },
+    {
+     "start": 997,
+     "end": 1040,
+     "start_t": "4:37 PM",
+     "end_t": "5:20 PM",
+     "minutes": 43
+    },
+    {
+     "start": 1232,
      "end": 1440,
-     "start_t": "4:17 PM",
+     "start_t": "8:32 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 463
+     "minutes": 208
     }
    ],
-   "free_minutes": 1248,
-   "game_count": 1,
-   "nfl_all_count": 13,
+   "free_minutes": 659,
+   "game_count": 13,
+   "nfl_all_count": 12,
    "tbd_count": 0,
-   "has_priority": false,
+   "has_priority": true,
    "has_sf": true
   },
   {
    "date": "2026-11-09",
    "weekday": "Mon",
-   "status": "FREE",
+   "status": "PARTIAL",
    "games": [
     {
      "date": "2026-11-09",
@@ -19017,21 +19553,36 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261109min.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     }
    ],
-   "blocked": [],
+   "blocked": [
+    {
+     "start": 1035,
+     "end": 1227,
+     "start_t": "5:15 PM",
+     "end_t": "8:27 PM"
+    }
+   ],
    "free": [
     {
      "start": 0,
-     "end": 1440,
+     "end": 1035,
      "start_t": "12:00 AM",
+     "end_t": "5:15 PM",
+     "minutes": 1035
+    },
+    {
+     "start": 1227,
+     "end": 1440,
+     "start_t": "8:27 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 1440
+     "minutes": 213
     }
    ],
-   "free_minutes": 1440,
-   "game_count": 0,
+   "free_minutes": 1248,
+   "game_count": 1,
    "nfl_all_count": 1,
    "tbd_count": 0,
    "has_priority": false,
@@ -19084,7 +19635,7 @@
   {
    "date": "2026-11-12",
    "weekday": "Thu",
-   "status": "FREE",
+   "status": "PARTIAL",
    "games": [
     {
      "date": "2026-11-12",
@@ -19099,21 +19650,36 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261112nyg.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     }
    ],
-   "blocked": [],
+   "blocked": [
+    {
+     "start": 1035,
+     "end": 1227,
+     "start_t": "5:15 PM",
+     "end_t": "8:27 PM"
+    }
+   ],
    "free": [
     {
      "start": 0,
-     "end": 1440,
+     "end": 1035,
      "start_t": "12:00 AM",
+     "end_t": "5:15 PM",
+     "minutes": 1035
+    },
+    {
+     "start": 1227,
+     "end": 1440,
+     "start_t": "8:27 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 1440
+     "minutes": 213
     }
    ],
-   "free_minutes": 1440,
-   "game_count": 0,
+   "free_minutes": 1248,
+   "game_count": 1,
    "nfl_all_count": 1,
    "tbd_count": 0,
    "has_priority": false,
@@ -19212,7 +19778,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261115det.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-15",
@@ -19227,7 +19794,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261115nyj.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-15",
@@ -19242,7 +19810,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261115nor.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-15",
@@ -19257,7 +19826,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261115cle.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-15",
@@ -19272,7 +19842,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261115oti.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-15",
@@ -19287,7 +19858,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261115atl.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-15",
@@ -19302,7 +19874,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261115clt.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-15",
@@ -19317,7 +19890,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261115gnb.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-15",
@@ -19332,7 +19906,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261115crd.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-15",
@@ -19347,7 +19922,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261115rai.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-15",
@@ -19362,7 +19938,9 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261115dal.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": true
+     "is_sf": true,
+     "priority": true,
+     "dedup": true
     },
     {
      "date": "2026-11-15",
@@ -19375,6 +19953,7 @@
      "kickoff_source": "",
      "flag": "",
      "source": "https://www.49ers.com/schedule/",
+     "priority": true,
      "start_min": 805,
      "pt_date": "2026-11-15"
     },
@@ -19391,44 +19970,71 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261115cin.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     }
    ],
    "blocked": [
     {
-     "start": 805,
+     "start": 390,
+     "end": 582,
+     "start_t": "6:30 AM",
+     "end_t": "9:42 AM"
+    },
+    {
+     "start": 600,
      "end": 997,
-     "start_t": "1:25 PM",
+     "start_t": "10:00 AM",
      "end_t": "4:37 PM"
+    },
+    {
+     "start": 1040,
+     "end": 1232,
+     "start_t": "5:20 PM",
+     "end_t": "8:32 PM"
     }
    ],
    "free": [
     {
      "start": 0,
-     "end": 805,
+     "end": 390,
      "start_t": "12:00 AM",
-     "end_t": "1:25 PM",
-     "minutes": 805
+     "end_t": "6:30 AM",
+     "minutes": 390
+    },
+    {
+     "start": 582,
+     "end": 600,
+     "start_t": "9:42 AM",
+     "end_t": "10:00 AM",
+     "minutes": 18
     },
     {
      "start": 997,
-     "end": 1440,
+     "end": 1040,
      "start_t": "4:37 PM",
+     "end_t": "5:20 PM",
+     "minutes": 43
+    },
+    {
+     "start": 1232,
+     "end": 1440,
+     "start_t": "8:32 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 443
+     "minutes": 208
     }
    ],
-   "free_minutes": 1248,
-   "game_count": 1,
-   "nfl_all_count": 12,
+   "free_minutes": 659,
+   "game_count": 12,
+   "nfl_all_count": 11,
    "tbd_count": 0,
-   "has_priority": false,
+   "has_priority": true,
    "has_sf": true
   },
   {
    "date": "2026-11-16",
    "weekday": "Mon",
-   "status": "FREE",
+   "status": "PARTIAL",
    "games": [
     {
      "date": "2026-11-16",
@@ -19443,21 +20049,36 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261116rav.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     }
    ],
-   "blocked": [],
+   "blocked": [
+    {
+     "start": 1035,
+     "end": 1227,
+     "start_t": "5:15 PM",
+     "end_t": "8:27 PM"
+    }
+   ],
    "free": [
     {
      "start": 0,
-     "end": 1440,
+     "end": 1035,
      "start_t": "12:00 AM",
+     "end_t": "5:15 PM",
+     "minutes": 1035
+    },
+    {
+     "start": 1227,
+     "end": 1440,
+     "start_t": "8:27 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 1440
+     "minutes": 213
     }
    ],
-   "free_minutes": 1440,
-   "game_count": 0,
+   "free_minutes": 1248,
+   "game_count": 1,
    "nfl_all_count": 1,
    "tbd_count": 0,
    "has_priority": false,
@@ -19522,7 +20143,7 @@
   {
    "date": "2026-11-19",
    "weekday": "Thu",
-   "status": "FREE",
+   "status": "PARTIAL",
    "games": [
     {
      "date": "2026-11-19",
@@ -19537,21 +20158,36 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261119htx.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     }
    ],
-   "blocked": [],
+   "blocked": [
+    {
+     "start": 1035,
+     "end": 1227,
+     "start_t": "5:15 PM",
+     "end_t": "8:27 PM"
+    }
+   ],
    "free": [
     {
      "start": 0,
-     "end": 1440,
+     "end": 1035,
      "start_t": "12:00 AM",
+     "end_t": "5:15 PM",
+     "minutes": 1035
+    },
+    {
+     "start": 1227,
+     "end": 1440,
+     "start_t": "8:27 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 1440
+     "minutes": 213
     }
    ],
-   "free_minutes": 1440,
-   "game_count": 0,
+   "free_minutes": 1248,
+   "game_count": 1,
    "nfl_all_count": 1,
    "tbd_count": 0,
    "has_priority": false,
@@ -19674,7 +20310,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261122kan.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-22",
@@ -19689,7 +20326,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261122nyg.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-22",
@@ -19704,7 +20342,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261122buf.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-22",
@@ -19719,7 +20358,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261122chi.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-22",
@@ -19734,7 +20374,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261122dal.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-22",
@@ -19749,7 +20390,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261122car.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-22",
@@ -19764,7 +20406,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261122det.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-22",
@@ -19779,7 +20422,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261122sdg.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-22",
@@ -19794,7 +20438,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261122phi.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-22",
@@ -19809,7 +20454,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261122den.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-22",
@@ -19824,7 +20470,9 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261122sfo.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": true
+     "is_sf": true,
+     "priority": true,
+     "dedup": true
     },
     {
      "date": "2026-11-22",
@@ -19837,11 +20485,18 @@
      "kickoff_source": "",
      "flag": "MEXICO CITY GAME: Played at Estadio Banorte, not Levi's Stadium.",
      "source": "https://www.49ers.com/schedule/",
+     "priority": true,
      "start_min": 1040,
      "pt_date": "2026-11-22"
     }
    ],
    "blocked": [
+    {
+     "start": 600,
+     "end": 997,
+     "start_t": "10:00 AM",
+     "end_t": "4:37 PM"
+    },
     {
      "start": 1040,
      "end": 1232,
@@ -19852,10 +20507,17 @@
    "free": [
     {
      "start": 0,
-     "end": 1040,
+     "end": 600,
      "start_t": "12:00 AM",
+     "end_t": "10:00 AM",
+     "minutes": 600
+    },
+    {
+     "start": 997,
+     "end": 1040,
+     "start_t": "4:37 PM",
      "end_t": "5:20 PM",
-     "minutes": 1040
+     "minutes": 43
     },
     {
      "start": 1232,
@@ -19865,17 +20527,17 @@
      "minutes": 208
     }
    ],
-   "free_minutes": 1248,
-   "game_count": 1,
-   "nfl_all_count": 11,
+   "free_minutes": 851,
+   "game_count": 11,
+   "nfl_all_count": 10,
    "tbd_count": 0,
-   "has_priority": false,
+   "has_priority": true,
    "has_sf": true
   },
   {
    "date": "2026-11-23",
    "weekday": "Mon",
-   "status": "FREE",
+   "status": "PARTIAL",
    "games": [
     {
      "date": "2026-11-23",
@@ -19890,21 +20552,36 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261123was.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     }
    ],
-   "blocked": [],
+   "blocked": [
+    {
+     "start": 1035,
+     "end": 1227,
+     "start_t": "5:15 PM",
+     "end_t": "8:27 PM"
+    }
+   ],
    "free": [
     {
      "start": 0,
-     "end": 1440,
+     "end": 1035,
      "start_t": "12:00 AM",
+     "end_t": "5:15 PM",
+     "minutes": 1035
+    },
+    {
+     "start": 1227,
+     "end": 1440,
+     "start_t": "8:27 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 1440
+     "minutes": 213
     }
    ],
-   "free_minutes": 1440,
-   "game_count": 0,
+   "free_minutes": 1248,
+   "game_count": 1,
    "nfl_all_count": 1,
    "tbd_count": 0,
    "has_priority": false,
@@ -19962,7 +20639,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261125ram.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-25",
@@ -19976,18 +20654,32 @@
      "review": "https://www.mlssoccer.com/playoffs/2025/news/audi-2026-mls-cup-playoffs-key-dates-schedule-information"
     }
    ],
-   "blocked": [],
+   "blocked": [
+    {
+     "start": 1020,
+     "end": 1212,
+     "start_t": "5:00 PM",
+     "end_t": "8:12 PM"
+    }
+   ],
    "free": [
     {
      "start": 0,
-     "end": 1440,
+     "end": 1020,
      "start_t": "12:00 AM",
+     "end_t": "5:00 PM",
+     "minutes": 1020
+    },
+    {
+     "start": 1212,
+     "end": 1440,
+     "start_t": "8:12 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 1440
+     "minutes": 228
     }
    ],
-   "free_minutes": 1440,
-   "game_count": 0,
+   "free_minutes": 1248,
+   "game_count": 1,
    "nfl_all_count": 1,
    "tbd_count": 1,
    "has_priority": false,
@@ -19996,7 +20688,7 @@
   {
    "date": "2026-11-26",
    "weekday": "Thu",
-   "status": "FREE",
+   "status": "PARTIAL",
    "games": [
     {
      "date": "2026-11-26",
@@ -20011,7 +20703,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261126det.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-26",
@@ -20026,7 +20719,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261126dal.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-26",
@@ -20041,21 +20735,62 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261126buf.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     }
    ],
-   "blocked": [],
+   "blocked": [
+    {
+     "start": 600,
+     "end": 792,
+     "start_t": "10:00 AM",
+     "end_t": "1:12 PM"
+    },
+    {
+     "start": 810,
+     "end": 1002,
+     "start_t": "1:30 PM",
+     "end_t": "4:42 PM"
+    },
+    {
+     "start": 1040,
+     "end": 1232,
+     "start_t": "5:20 PM",
+     "end_t": "8:32 PM"
+    }
+   ],
    "free": [
     {
      "start": 0,
-     "end": 1440,
+     "end": 600,
      "start_t": "12:00 AM",
+     "end_t": "10:00 AM",
+     "minutes": 600
+    },
+    {
+     "start": 792,
+     "end": 810,
+     "start_t": "1:12 PM",
+     "end_t": "1:30 PM",
+     "minutes": 18
+    },
+    {
+     "start": 1002,
+     "end": 1040,
+     "start_t": "4:42 PM",
+     "end_t": "5:20 PM",
+     "minutes": 38
+    },
+    {
+     "start": 1232,
+     "end": 1440,
+     "start_t": "8:32 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 1440
+     "minutes": 208
     }
    ],
-   "free_minutes": 1440,
-   "game_count": 0,
+   "free_minutes": 864,
+   "game_count": 3,
    "nfl_all_count": 3,
    "tbd_count": 0,
    "has_priority": false,
@@ -20064,7 +20799,7 @@
   {
    "date": "2026-11-27",
    "weekday": "Fri",
-   "status": "FREE",
+   "status": "PARTIAL",
    "games": [
     {
      "date": "2026-11-27",
@@ -20079,21 +20814,36 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261127pit.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     }
    ],
-   "blocked": [],
+   "blocked": [
+    {
+     "start": 720,
+     "end": 912,
+     "start_t": "12:00 PM",
+     "end_t": "3:12 PM"
+    }
+   ],
    "free": [
     {
      "start": 0,
-     "end": 1440,
+     "end": 720,
      "start_t": "12:00 AM",
+     "end_t": "12:00 PM",
+     "minutes": 720
+    },
+    {
+     "start": 912,
+     "end": 1440,
+     "start_t": "3:12 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 1440
+     "minutes": 528
     }
    ],
-   "free_minutes": 1440,
-   "game_count": 0,
+   "free_minutes": 1248,
+   "game_count": 1,
    "nfl_all_count": 1,
    "tbd_count": 0,
    "has_priority": false,
@@ -20166,7 +20916,7 @@
   {
    "date": "2026-11-29",
    "weekday": "Sun",
-   "status": "PARTIAL",
+   "status": "UNCONFIRMED",
    "games": [
     {
      "date": "2026-11-29",
@@ -20181,7 +20931,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261129min.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-29",
@@ -20196,7 +20947,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261129cin.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-29",
@@ -20211,7 +20963,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261129clt.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-29",
@@ -20226,7 +20979,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261129mia.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-29",
@@ -20241,7 +20995,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261129cle.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-29",
@@ -20256,7 +21011,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261129htx.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-29",
@@ -20271,7 +21027,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261129jax.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-29",
@@ -20286,7 +21043,9 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261129sfo.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": true
+     "is_sf": true,
+     "priority": true,
+     "dedup": true
     },
     {
      "date": "2026-11-29",
@@ -20301,7 +21060,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261129crd.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-29",
@@ -20314,6 +21074,7 @@
      "kickoff_source": "RESOLVED 2026-09-11: seahawks.com official 2026 schedule release: 'Week 12: at San Francisco 49ers, November 29, 1:25 p.m., FOX'; levisstadium.com event page '1:25 pm (PT)'; league table 4:25 PM ET. Earlier value 1:05 PM PT was a mis-transcription of the club page.",
      "flag": "CORRECTED 2026-09-11: kickoff 1:25 PM PT (FOX window), not 1:05 PM PT - three sources agree.",
      "source": "https://www.49ers.com/schedule/",
+     "priority": true,
      "start_min": 805,
      "pt_date": "2026-11-29"
     },
@@ -20330,7 +21091,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261129sdg.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-11-29",
@@ -20346,39 +21108,52 @@
    ],
    "blocked": [
     {
-     "start": 805,
+     "start": 600,
      "end": 997,
-     "start_t": "1:25 PM",
+     "start_t": "10:00 AM",
      "end_t": "4:37 PM"
+    },
+    {
+     "start": 1040,
+     "end": 1232,
+     "start_t": "5:20 PM",
+     "end_t": "8:32 PM"
     }
    ],
    "free": [
     {
      "start": 0,
-     "end": 805,
+     "end": 600,
      "start_t": "12:00 AM",
-     "end_t": "1:25 PM",
-     "minutes": 805
+     "end_t": "10:00 AM",
+     "minutes": 600
     },
     {
      "start": 997,
-     "end": 1440,
+     "end": 1040,
      "start_t": "4:37 PM",
+     "end_t": "5:20 PM",
+     "minutes": 43
+    },
+    {
+     "start": 1232,
+     "end": 1440,
+     "start_t": "8:32 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 443
+     "minutes": 208
     }
    ],
-   "free_minutes": 1248,
-   "game_count": 1,
-   "nfl_all_count": 10,
+   "free_minutes": 851,
+   "game_count": 10,
+   "nfl_all_count": 9,
    "tbd_count": 1,
-   "has_priority": false,
+   "has_priority": true,
    "has_sf": true
   },
   {
    "date": "2026-11-30",
    "weekday": "Mon",
-   "status": "FREE",
+   "status": "PARTIAL",
    "games": [
     {
      "date": "2026-11-30",
@@ -20393,21 +21168,36 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261130tam.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     }
    ],
-   "blocked": [],
+   "blocked": [
+    {
+     "start": 1035,
+     "end": 1227,
+     "start_t": "5:15 PM",
+     "end_t": "8:27 PM"
+    }
+   ],
    "free": [
     {
      "start": 0,
-     "end": 1440,
+     "end": 1035,
      "start_t": "12:00 AM",
+     "end_t": "5:15 PM",
+     "minutes": 1035
+    },
+    {
+     "start": 1227,
+     "end": 1440,
+     "start_t": "8:27 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 1440
+     "minutes": 213
     }
    ],
-   "free_minutes": 1440,
-   "game_count": 0,
+   "free_minutes": 1248,
+   "game_count": 1,
    "nfl_all_count": 1,
    "tbd_count": 0,
    "has_priority": false,
@@ -20484,7 +21274,7 @@
   {
    "date": "2026-12-03",
    "weekday": "Thu",
-   "status": "FREE",
+   "status": "PARTIAL",
    "games": [
     {
      "date": "2026-12-03",
@@ -20499,21 +21289,36 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261203ram.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     }
    ],
-   "blocked": [],
+   "blocked": [
+    {
+     "start": 1035,
+     "end": 1227,
+     "start_t": "5:15 PM",
+     "end_t": "8:27 PM"
+    }
+   ],
    "free": [
     {
      "start": 0,
-     "end": 1440,
+     "end": 1035,
      "start_t": "12:00 AM",
+     "end_t": "5:15 PM",
+     "minutes": 1035
+    },
+    {
+     "start": 1227,
+     "end": 1440,
+     "start_t": "8:27 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 1440
+     "minutes": 213
     }
    ],
-   "free_minutes": 1440,
-   "game_count": 0,
+   "free_minutes": 1248,
+   "game_count": 1,
    "nfl_all_count": 1,
    "tbd_count": 0,
    "has_priority": false,
@@ -20589,7 +21394,7 @@
   {
    "date": "2026-12-06",
    "weekday": "Sun",
-   "status": "PARTIAL",
+   "status": "UNCONFIRMED",
    "games": [
     {
      "date": "2026-12-06",
@@ -20604,7 +21409,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261206cle.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-12-06",
@@ -20619,7 +21425,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261206atl.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-12-06",
@@ -20634,7 +21441,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261206nor.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-12-06",
@@ -20649,7 +21457,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261206chi.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-12-06",
@@ -20664,7 +21473,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261206tam.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-12-06",
@@ -20679,7 +21489,9 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261206nyg.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": true
+     "is_sf": true,
+     "priority": true,
+     "dedup": true
     },
     {
      "date": "2026-12-06",
@@ -20694,7 +21506,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261206oti.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-12-06",
@@ -20707,6 +21520,7 @@
      "kickoff_source": "RESOLVED 2026-09-11: league table + schedule trackers all list 1:00 PM ET (= 10:00 AM PT) for SF at NYG, FOX; nfl-schedule.com shows '1:00 PM ET 1:00 PM ET'. Earlier value 12:00 PM PT was a mis-transcription.",
      "flag": "CORRECTED 2026-09-11: kickoff 10:00 AM PT (1:00 PM ET), not 12:00 PM PT - no 3:00 PM ET slot exists; sources agree on 1:00 PM ET.",
      "source": "https://www.49ers.com/schedule/",
+     "priority": true,
      "start_min": 600,
      "pt_date": "2026-12-06"
     },
@@ -20723,7 +21537,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261206den.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-12-06",
@@ -20738,7 +21553,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261206crd.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-12-06",
@@ -20753,7 +21569,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261206nwe.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-12-06",
@@ -20768,7 +21585,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261206min.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-12-06",
@@ -20783,7 +21601,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261206pit.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-12-06",
@@ -20800,9 +21619,15 @@
    "blocked": [
     {
      "start": 600,
-     "end": 792,
+     "end": 997,
      "start_t": "10:00 AM",
-     "end_t": "1:12 PM"
+     "end_t": "4:37 PM"
+    },
+    {
+     "start": 1040,
+     "end": 1232,
+     "start_t": "5:20 PM",
+     "end_t": "8:32 PM"
     }
    ],
    "free": [
@@ -20814,24 +21639,31 @@
      "minutes": 600
     },
     {
-     "start": 792,
+     "start": 997,
+     "end": 1040,
+     "start_t": "4:37 PM",
+     "end_t": "5:20 PM",
+     "minutes": 43
+    },
+    {
+     "start": 1232,
      "end": 1440,
-     "start_t": "1:12 PM",
+     "start_t": "8:32 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 648
+     "minutes": 208
     }
    ],
-   "free_minutes": 1248,
-   "game_count": 1,
-   "nfl_all_count": 12,
+   "free_minutes": 851,
+   "game_count": 12,
+   "nfl_all_count": 11,
    "tbd_count": 1,
-   "has_priority": false,
+   "has_priority": true,
    "has_sf": true
   },
   {
    "date": "2026-12-07",
    "weekday": "Mon",
-   "status": "FREE",
+   "status": "PARTIAL",
    "games": [
     {
      "date": "2026-12-07",
@@ -20846,21 +21678,36 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261207sea.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     }
    ],
-   "blocked": [],
+   "blocked": [
+    {
+     "start": 1035,
+     "end": 1227,
+     "start_t": "5:15 PM",
+     "end_t": "8:27 PM"
+    }
+   ],
    "free": [
     {
      "start": 0,
-     "end": 1440,
+     "end": 1035,
      "start_t": "12:00 AM",
+     "end_t": "5:15 PM",
+     "minutes": 1035
+    },
+    {
+     "start": 1227,
+     "end": 1440,
+     "start_t": "8:27 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 1440
+     "minutes": 213
     }
    ],
-   "free_minutes": 1440,
-   "game_count": 0,
+   "free_minutes": 1248,
+   "game_count": 1,
    "nfl_all_count": 1,
    "tbd_count": 0,
    "has_priority": false,
@@ -20913,7 +21760,7 @@
   {
    "date": "2026-12-10",
    "weekday": "Thu",
-   "status": "FREE",
+   "status": "PARTIAL",
    "games": [
     {
      "date": "2026-12-10",
@@ -20928,21 +21775,36 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261210nwe.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     }
    ],
-   "blocked": [],
+   "blocked": [
+    {
+     "start": 1035,
+     "end": 1227,
+     "start_t": "5:15 PM",
+     "end_t": "8:27 PM"
+    }
+   ],
    "free": [
     {
      "start": 0,
-     "end": 1440,
+     "end": 1035,
      "start_t": "12:00 AM",
+     "end_t": "5:15 PM",
+     "minutes": 1035
+    },
+    {
+     "start": 1227,
+     "end": 1440,
+     "start_t": "8:27 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 1440
+     "minutes": 213
     }
    ],
-   "free_minutes": 1440,
-   "game_count": 0,
+   "free_minutes": 1248,
+   "game_count": 1,
    "nfl_all_count": 1,
    "tbd_count": 0,
    "has_priority": false,
@@ -21034,7 +21896,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261213cle.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-12-13",
@@ -21049,7 +21912,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261213mia.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-12-13",
@@ -21064,7 +21928,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261213phi.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-12-13",
@@ -21079,7 +21944,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261213nyj.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-12-13",
@@ -21094,7 +21960,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261213was.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-12-13",
@@ -21109,7 +21976,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261213car.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-12-13",
@@ -21124,7 +21992,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261213det.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-12-13",
@@ -21139,7 +22008,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261213rav.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-12-13",
@@ -21154,7 +22024,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261213rai.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-12-13",
@@ -21169,7 +22040,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261213cin.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-12-13",
@@ -21184,7 +22056,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261213sea.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-12-13",
@@ -21199,7 +22072,9 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261213sfo.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": true
+     "is_sf": true,
+     "priority": true,
+     "dedup": true
     },
     {
      "date": "2026-12-13",
@@ -21212,6 +22087,7 @@
      "kickoff_source": "",
      "flag": "",
      "source": "https://www.49ers.com/schedule/",
+     "priority": true,
      "start_min": 805,
      "pt_date": "2026-12-13"
     },
@@ -21228,44 +22104,58 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261213gnb.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     }
    ],
    "blocked": [
     {
-     "start": 805,
+     "start": 600,
      "end": 997,
-     "start_t": "1:25 PM",
+     "start_t": "10:00 AM",
      "end_t": "4:37 PM"
+    },
+    {
+     "start": 1040,
+     "end": 1232,
+     "start_t": "5:20 PM",
+     "end_t": "8:32 PM"
     }
    ],
    "free": [
     {
      "start": 0,
-     "end": 805,
+     "end": 600,
      "start_t": "12:00 AM",
-     "end_t": "1:25 PM",
-     "minutes": 805
+     "end_t": "10:00 AM",
+     "minutes": 600
     },
     {
      "start": 997,
-     "end": 1440,
+     "end": 1040,
      "start_t": "4:37 PM",
+     "end_t": "5:20 PM",
+     "minutes": 43
+    },
+    {
+     "start": 1232,
+     "end": 1440,
+     "start_t": "8:32 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 443
+     "minutes": 208
     }
    ],
-   "free_minutes": 1248,
-   "game_count": 1,
-   "nfl_all_count": 13,
+   "free_minutes": 851,
+   "game_count": 13,
+   "nfl_all_count": 12,
    "tbd_count": 0,
-   "has_priority": false,
+   "has_priority": true,
    "has_sf": true
   },
   {
    "date": "2026-12-14",
    "weekday": "Mon",
-   "status": "FREE",
+   "status": "PARTIAL",
    "games": [
     {
      "date": "2026-12-14",
@@ -21280,21 +22170,36 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261214jax.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     }
    ],
-   "blocked": [],
+   "blocked": [
+    {
+     "start": 1035,
+     "end": 1227,
+     "start_t": "5:15 PM",
+     "end_t": "8:27 PM"
+    }
+   ],
    "free": [
     {
      "start": 0,
-     "end": 1440,
+     "end": 1035,
      "start_t": "12:00 AM",
+     "end_t": "5:15 PM",
+     "minutes": 1035
+    },
+    {
+     "start": 1227,
+     "end": 1440,
+     "start_t": "8:27 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 1440
+     "minutes": 213
     }
    ],
-   "free_minutes": 1440,
-   "game_count": 0,
+   "free_minutes": 1248,
+   "game_count": 1,
    "nfl_all_count": 1,
    "tbd_count": 0,
    "has_priority": false,
@@ -21362,7 +22267,9 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261217sdg.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": true
+     "is_sf": true,
+     "priority": true,
+     "dedup": true
     },
     {
      "date": "2026-12-17",
@@ -21376,6 +22283,7 @@
      "flag": "CORRECTED 2026-09-11: was listed as 20:15 PT (that is the scheduled END time / the ET kickoff); actual kickoff 5:15 PM PT per chargers.com + sofi.com.",
      "source": "https://www.49ers.com/schedule/",
      "tv": "Prime Video (TNF)",
+     "priority": true,
      "start_min": 1035,
      "pt_date": "2026-12-17"
     }
@@ -21406,9 +22314,9 @@
    ],
    "free_minutes": 1248,
    "game_count": 1,
-   "nfl_all_count": 1,
+   "nfl_all_count": 0,
    "tbd_count": 0,
-   "has_priority": false,
+   "has_priority": true,
    "has_sf": true
   },
   {
@@ -21474,7 +22382,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261219phi.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-12-19",
@@ -21489,7 +22398,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261219buf.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-12-19",
@@ -21503,18 +22413,45 @@
      "review": "https://www.espn.com/college-football/story/_/id/48958840/2026-college-football-playoff-bowl-schedule-46-games"
     }
    ],
-   "blocked": [],
+   "blocked": [
+    {
+     "start": 840,
+     "end": 1032,
+     "start_t": "2:00 PM",
+     "end_t": "5:12 PM"
+    },
+    {
+     "start": 1040,
+     "end": 1232,
+     "start_t": "5:20 PM",
+     "end_t": "8:32 PM"
+    }
+   ],
    "free": [
     {
      "start": 0,
-     "end": 1440,
+     "end": 840,
      "start_t": "12:00 AM",
+     "end_t": "2:00 PM",
+     "minutes": 840
+    },
+    {
+     "start": 1032,
+     "end": 1040,
+     "start_t": "5:12 PM",
+     "end_t": "5:20 PM",
+     "minutes": 8
+    },
+    {
+     "start": 1232,
+     "end": 1440,
+     "start_t": "8:32 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 1440
+     "minutes": 208
     }
    ],
-   "free_minutes": 1440,
-   "game_count": 0,
+   "free_minutes": 1056,
+   "game_count": 2,
    "nfl_all_count": 2,
    "tbd_count": 1,
    "has_priority": false,
@@ -21523,7 +22460,7 @@
   {
    "date": "2026-12-20",
    "weekday": "Sun",
-   "status": "FREE",
+   "status": "PARTIAL",
    "games": [
     {
      "date": "2026-12-20",
@@ -21538,7 +22475,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261220was.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-12-20",
@@ -21553,7 +22491,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261220car.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-12-20",
@@ -21568,7 +22507,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261220nyg.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-12-20",
@@ -21583,7 +22523,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261220oti.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-12-20",
@@ -21598,7 +22539,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261220htx.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-12-20",
@@ -21613,7 +22555,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261220gnb.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-12-20",
@@ -21628,7 +22571,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261220tam.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-12-20",
@@ -21643,7 +22587,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261220pit.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-12-20",
@@ -21658,7 +22603,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261220crd.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-12-20",
@@ -21673,7 +22619,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261220ram.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-12-20",
@@ -21688,7 +22635,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261220rai.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-12-20",
@@ -21703,21 +22651,49 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261220min.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     }
    ],
-   "blocked": [],
+   "blocked": [
+    {
+     "start": 600,
+     "end": 997,
+     "start_t": "10:00 AM",
+     "end_t": "4:37 PM"
+    },
+    {
+     "start": 1040,
+     "end": 1232,
+     "start_t": "5:20 PM",
+     "end_t": "8:32 PM"
+    }
+   ],
    "free": [
     {
      "start": 0,
-     "end": 1440,
+     "end": 600,
      "start_t": "12:00 AM",
+     "end_t": "10:00 AM",
+     "minutes": 600
+    },
+    {
+     "start": 997,
+     "end": 1040,
+     "start_t": "4:37 PM",
+     "end_t": "5:20 PM",
+     "minutes": 43
+    },
+    {
+     "start": 1232,
+     "end": 1440,
+     "start_t": "8:32 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 1440
+     "minutes": 208
     }
    ],
-   "free_minutes": 1440,
-   "game_count": 0,
+   "free_minutes": 851,
+   "game_count": 12,
    "nfl_all_count": 12,
    "tbd_count": 0,
    "has_priority": false,
@@ -21726,7 +22702,7 @@
   {
    "date": "2026-12-21",
    "weekday": "Mon",
-   "status": "FREE",
+   "status": "PARTIAL",
    "games": [
     {
      "date": "2026-12-21",
@@ -21741,21 +22717,36 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261221kan.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     }
    ],
-   "blocked": [],
+   "blocked": [
+    {
+     "start": 1035,
+     "end": 1227,
+     "start_t": "5:15 PM",
+     "end_t": "8:27 PM"
+    }
+   ],
    "free": [
     {
      "start": 0,
-     "end": 1440,
+     "end": 1035,
      "start_t": "12:00 AM",
+     "end_t": "5:15 PM",
+     "minutes": 1035
+    },
+    {
+     "start": 1227,
+     "end": 1440,
+     "start_t": "8:27 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 1440
+     "minutes": 213
     }
    ],
-   "free_minutes": 1440,
-   "game_count": 0,
+   "free_minutes": 1248,
+   "game_count": 1,
    "nfl_all_count": 1,
    "tbd_count": 0,
    "has_priority": false,
@@ -21808,7 +22799,7 @@
   {
    "date": "2026-12-24",
    "weekday": "Thu",
-   "status": "FREE",
+   "status": "PARTIAL",
    "games": [
     {
      "date": "2026-12-24",
@@ -21823,21 +22814,36 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261224phi.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     }
    ],
-   "blocked": [],
+   "blocked": [
+    {
+     "start": 1035,
+     "end": 1227,
+     "start_t": "5:15 PM",
+     "end_t": "8:27 PM"
+    }
+   ],
    "free": [
     {
      "start": 0,
-     "end": 1440,
+     "end": 1035,
      "start_t": "12:00 AM",
+     "end_t": "5:15 PM",
+     "minutes": 1035
+    },
+    {
+     "start": 1227,
+     "end": 1440,
+     "start_t": "8:27 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 1440
+     "minutes": 213
     }
    ],
-   "free_minutes": 1440,
-   "game_count": 0,
+   "free_minutes": 1248,
+   "game_count": 1,
    "nfl_all_count": 1,
    "tbd_count": 0,
    "has_priority": false,
@@ -21846,7 +22852,7 @@
   {
    "date": "2026-12-25",
    "weekday": "Fri",
-   "status": "FREE",
+   "status": "PARTIAL",
    "games": [
     {
      "date": "2026-12-25",
@@ -21861,7 +22867,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261225chi.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-12-25",
@@ -21876,7 +22883,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261225den.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-12-25",
@@ -21891,21 +22899,62 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261225sea.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     }
    ],
-   "blocked": [],
+   "blocked": [
+    {
+     "start": 600,
+     "end": 792,
+     "start_t": "10:00 AM",
+     "end_t": "1:12 PM"
+    },
+    {
+     "start": 810,
+     "end": 1002,
+     "start_t": "1:30 PM",
+     "end_t": "4:42 PM"
+    },
+    {
+     "start": 1035,
+     "end": 1227,
+     "start_t": "5:15 PM",
+     "end_t": "8:27 PM"
+    }
+   ],
    "free": [
     {
      "start": 0,
-     "end": 1440,
+     "end": 600,
      "start_t": "12:00 AM",
+     "end_t": "10:00 AM",
+     "minutes": 600
+    },
+    {
+     "start": 792,
+     "end": 810,
+     "start_t": "1:12 PM",
+     "end_t": "1:30 PM",
+     "minutes": 18
+    },
+    {
+     "start": 1002,
+     "end": 1035,
+     "start_t": "4:42 PM",
+     "end_t": "5:15 PM",
+     "minutes": 33
+    },
+    {
+     "start": 1227,
+     "end": 1440,
+     "start_t": "8:27 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 1440
+     "minutes": 213
     }
    ],
-   "free_minutes": 1440,
-   "game_count": 0,
+   "free_minutes": 864,
+   "game_count": 3,
    "nfl_all_count": 3,
    "tbd_count": 0,
    "has_priority": false,
@@ -21951,7 +23000,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261227pit.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-12-27",
@@ -21966,7 +23016,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261227clt.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-12-27",
@@ -21981,7 +23032,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261227rav.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-12-27",
@@ -21996,7 +23048,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261227nor.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-12-27",
@@ -22011,7 +23064,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261227nyj.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-12-27",
@@ -22026,7 +23080,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261227mia.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-12-27",
@@ -22041,7 +23096,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261227atl.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-12-27",
@@ -22056,7 +23112,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261227min.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-12-27",
@@ -22071,7 +23128,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261227rai.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2026-12-27",
@@ -22086,7 +23144,9 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261227kan.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": true
+     "is_sf": true,
+     "priority": true,
+     "dedup": true
     },
     {
      "date": "2026-12-27",
@@ -22099,6 +23159,7 @@
      "kickoff_source": "",
      "flag": "",
      "source": "https://www.49ers.com/schedule/",
+     "priority": true,
      "start_min": 805,
      "pt_date": "2026-12-27"
     },
@@ -22115,44 +23176,58 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261227dal.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     }
    ],
    "blocked": [
     {
-     "start": 805,
+     "start": 600,
      "end": 997,
-     "start_t": "1:25 PM",
+     "start_t": "10:00 AM",
      "end_t": "4:37 PM"
+    },
+    {
+     "start": 1040,
+     "end": 1232,
+     "start_t": "5:20 PM",
+     "end_t": "8:32 PM"
     }
    ],
    "free": [
     {
      "start": 0,
-     "end": 805,
+     "end": 600,
      "start_t": "12:00 AM",
-     "end_t": "1:25 PM",
-     "minutes": 805
+     "end_t": "10:00 AM",
+     "minutes": 600
     },
     {
      "start": 997,
-     "end": 1440,
+     "end": 1040,
      "start_t": "4:37 PM",
+     "end_t": "5:20 PM",
+     "minutes": 43
+    },
+    {
+     "start": 1232,
+     "end": 1440,
+     "start_t": "8:32 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 443
+     "minutes": 208
     }
    ],
-   "free_minutes": 1248,
-   "game_count": 1,
-   "nfl_all_count": 11,
+   "free_minutes": 851,
+   "game_count": 11,
+   "nfl_all_count": 10,
    "tbd_count": 0,
-   "has_priority": false,
+   "has_priority": true,
    "has_sf": true
   },
   {
    "date": "2026-12-28",
    "weekday": "Mon",
-   "status": "FREE",
+   "status": "PARTIAL",
    "games": [
     {
      "date": "2026-12-28",
@@ -22167,21 +23242,36 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261228det.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     }
    ],
-   "blocked": [],
+   "blocked": [
+    {
+     "start": 1035,
+     "end": 1227,
+     "start_t": "5:15 PM",
+     "end_t": "8:27 PM"
+    }
+   ],
    "free": [
     {
      "start": 0,
-     "end": 1440,
+     "end": 1035,
      "start_t": "12:00 AM",
+     "end_t": "5:15 PM",
+     "minutes": 1035
+    },
+    {
+     "start": 1227,
+     "end": 1440,
+     "start_t": "8:27 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 1440
+     "minutes": 213
     }
    ],
-   "free_minutes": 1440,
-   "game_count": 0,
+   "free_minutes": 1248,
+   "game_count": 1,
    "nfl_all_count": 1,
    "tbd_count": 0,
    "has_priority": false,
@@ -22246,7 +23336,7 @@
   {
    "date": "2026-12-31",
    "weekday": "Thu",
-   "status": "FREE",
+   "status": "PARTIAL",
    "games": [
     {
      "date": "2026-12-31",
@@ -22261,21 +23351,36 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20261231cin.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     }
    ],
-   "blocked": [],
+   "blocked": [
+    {
+     "start": 1035,
+     "end": 1227,
+     "start_t": "5:15 PM",
+     "end_t": "8:27 PM"
+    }
+   ],
    "free": [
     {
      "start": 0,
-     "end": 1440,
+     "end": 1035,
      "start_t": "12:00 AM",
+     "end_t": "5:15 PM",
+     "minutes": 1035
+    },
+    {
+     "start": 1227,
+     "end": 1440,
+     "start_t": "8:27 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 1440
+     "minutes": 213
     }
    ],
-   "free_minutes": 1440,
-   "game_count": 0,
+   "free_minutes": 1248,
+   "game_count": 1,
    "nfl_all_count": 1,
    "tbd_count": 0,
    "has_priority": false,
@@ -22355,7 +23460,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20270103mia.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2027-01-03",
@@ -22370,7 +23476,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20270103cle.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2027-01-03",
@@ -22385,7 +23492,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20270103nwe.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2027-01-03",
@@ -22400,7 +23508,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20270103sdg.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2027-01-03",
@@ -22415,7 +23524,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20270103nyj.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2027-01-03",
@@ -22430,7 +23540,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20270103atl.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2027-01-03",
@@ -22445,7 +23556,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20270103dal.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2027-01-03",
@@ -22460,7 +23572,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20270103oti.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2027-01-03",
@@ -22475,7 +23588,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20270103tam.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2027-01-03",
@@ -22490,7 +23604,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20270103car.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2027-01-03",
@@ -22505,7 +23620,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20270103jax.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2027-01-03",
@@ -22520,7 +23636,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20270103crd.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2027-01-03",
@@ -22535,7 +23652,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20270103chi.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2027-01-03",
@@ -22550,7 +23668,9 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20270103sfo.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": true
+     "is_sf": true,
+     "priority": true,
+     "dedup": true
     },
     {
      "date": "2027-01-03",
@@ -22563,11 +23683,18 @@
      "kickoff_source": "",
      "flag": "",
      "source": "https://www.49ers.com/schedule/",
+     "priority": true,
      "start_min": 1040,
      "pt_date": "2027-01-03"
     }
    ],
    "blocked": [
+    {
+     "start": 600,
+     "end": 997,
+     "start_t": "10:00 AM",
+     "end_t": "4:37 PM"
+    },
     {
      "start": 1040,
      "end": 1232,
@@ -22578,10 +23705,17 @@
    "free": [
     {
      "start": 0,
-     "end": 1040,
+     "end": 600,
      "start_t": "12:00 AM",
+     "end_t": "10:00 AM",
+     "minutes": 600
+    },
+    {
+     "start": 997,
+     "end": 1040,
+     "start_t": "4:37 PM",
      "end_t": "5:20 PM",
-     "minutes": 1040
+     "minutes": 43
     },
     {
      "start": 1232,
@@ -22591,17 +23725,17 @@
      "minutes": 208
     }
    ],
-   "free_minutes": 1248,
-   "game_count": 1,
-   "nfl_all_count": 14,
+   "free_minutes": 851,
+   "game_count": 14,
+   "nfl_all_count": 13,
    "tbd_count": 0,
-   "has_priority": false,
+   "has_priority": true,
    "has_sf": true
   },
   {
    "date": "2027-01-04",
    "weekday": "Mon",
-   "status": "FREE",
+   "status": "PARTIAL",
    "games": [
     {
      "date": "2027-01-04",
@@ -22616,21 +23750,36 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20270104gnb.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     }
    ],
-   "blocked": [],
+   "blocked": [
+    {
+     "start": 1035,
+     "end": 1227,
+     "start_t": "5:15 PM",
+     "end_t": "8:27 PM"
+    }
+   ],
    "free": [
     {
      "start": 0,
-     "end": 1440,
+     "end": 1035,
      "start_t": "12:00 AM",
+     "end_t": "5:15 PM",
+     "minutes": 1035
+    },
+    {
+     "start": 1227,
+     "end": 1440,
+     "start_t": "8:27 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 1440
+     "minutes": 213
     }
    ],
-   "free_minutes": 1440,
-   "game_count": 0,
+   "free_minutes": 1248,
+   "game_count": 1,
    "nfl_all_count": 1,
    "tbd_count": 0,
    "has_priority": false,
@@ -22764,7 +23913,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20270110car.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2027-01-10",
@@ -22779,7 +23929,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20270110min.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2027-01-10",
@@ -22794,7 +23945,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20270110cin.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2027-01-10",
@@ -22809,7 +23961,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20270110was.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2027-01-10",
@@ -22824,7 +23977,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20270110gnb.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2027-01-10",
@@ -22839,7 +23993,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20270110clt.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2027-01-10",
@@ -22854,7 +24009,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20270110nwe.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2027-01-10",
@@ -22869,7 +24025,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20270110buf.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2027-01-10",
@@ -22884,7 +24041,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20270110htx.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2027-01-10",
@@ -22899,7 +24057,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20270110nyg.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2027-01-10",
@@ -22914,7 +24073,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20270110rav.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2027-01-10",
@@ -22929,7 +24089,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20270110kan.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2027-01-10",
@@ -22944,7 +24105,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20270110den.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2027-01-10",
@@ -22959,7 +24121,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20270110ram.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2027-01-10",
@@ -22974,7 +24137,9 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20270110crd.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": true
+     "is_sf": true,
+     "priority": true,
+     "dedup": true
     },
     {
      "date": "2027-01-10",
@@ -22989,7 +24154,8 @@
      "result": "",
      "review": "https://www.pro-football-reference.com/boxscores/20270110nor.htm",
      "source": "nfl_2026_pfr_regseason.txt",
-     "is_sf": false
+     "is_sf": false,
+     "priority": false
     },
     {
      "date": "2027-01-10",
@@ -23002,25 +24168,40 @@
      "kickoff_source": "49ers.com 'Sun 01/10 - TBD' (fetched 2026-09-11); PFR league table: 1:00 PM ET",
      "flag": "KICKOFF TIME TBD on 49ers.com (Week 18 flex). NOTE: the league-wide schedule table (https://www.pro-football-reference.com/years/2026/games.htm, fetched 2026-09-11) lists 1:00 PM ET = 10:00 AM PT for ALL 16 Week-18 games (simultaneous kickoff). Kept TBD until the official club page confirms; re-check before Dec 2026.",
      "source": "https://www.49ers.com/schedule/",
+     "priority": true,
      "start_min": null,
      "pt_date": "2027-01-10"
     }
    ],
-   "blocked": [],
+   "blocked": [
+    {
+     "start": 600,
+     "end": 792,
+     "start_t": "10:00 AM",
+     "end_t": "1:12 PM"
+    }
+   ],
    "free": [
     {
      "start": 0,
-     "end": 1440,
+     "end": 600,
      "start_t": "12:00 AM",
+     "end_t": "10:00 AM",
+     "minutes": 600
+    },
+    {
+     "start": 792,
+     "end": 1440,
+     "start_t": "1:12 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 1440
+     "minutes": 648
     }
    ],
-   "free_minutes": 1440,
-   "game_count": 0,
-   "nfl_all_count": 16,
+   "free_minutes": 1248,
+   "game_count": 15,
+   "nfl_all_count": 15,
    "tbd_count": 1,
-   "has_priority": false,
+   "has_priority": true,
    "has_sf": true
   },
   {
@@ -24432,6 +25613,10 @@
    "msg": "2026-10-31 Earthquakes vs Real Salt Lake: KICKOFF TIME TBD - official PDF prints 'TBD' for this match."
   },
   {
+   "kind": "IRREGULARITY",
+   "msg": "2026-11-07 Earthquakes at Minnesota United FC: ADDED 2026-09-11: the Decision Day finale at Minnesota (4:00 PM PT, game 34/34) was missing from the earlier PDF transcription which ended at the Oct 31 home finale. It is a real scheduled game, NOT conditional."
+  },
+  {
    "kind": "TBD_TIME",
    "msg": "2026-10-31 Cal at NC State: kickoff time TBD/unconfirmed"
   },
@@ -24541,7 +25726,7 @@
   },
   {
    "kind": "FLEX_WINDOW",
-   "msg": "207 league-wide NFL games after 2026-09-11 sit in the Sunday 1:00 PM / 4:05 PM / 4:25 PM ET windows and can still be moved by NFL flex scheduling; times as printed by the source on 2026-09-11. Thursday/Sunday/Monday night, international and Saturday games are locked. This does not affect the 49ers blocking rows (those come from 49ers.com)."
+   "msg": "207 league-wide NFL games after 2026-09-11 sit in the Sunday 1:00 PM / 4:05 PM / 4:25 PM ET windows and can still be moved by NFL flex scheduling; times as printed by the source on 2026-09-11. Thursday/Sunday/Monday night, international and Saturday games are locked. Because ALL league-wide NFL games now block free time, a flex move will shift the affected day's free windows - re-run the build after each Tuesday flex announcement."
   },
   {
    "kind": "SCOPE_NOTE",

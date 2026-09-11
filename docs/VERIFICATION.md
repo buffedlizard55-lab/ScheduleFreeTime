@@ -24,6 +24,25 @@ free-window from these files and prints the arithmetic checks quoted here.
 | CFP / ACC 2026-27 | ESPN's official CFP schedule article (`espn.com/college-football/story/_/id/48958840/...`) | First round Dec 18–19, QFs Dec 30 + Jan 1, SFs Jan 14–15, **National Championship Mon Jan 25, 2027** (Allegiant, Las Vegas). ACC title game Sat Dec 5, 2026. Added as Stanford/Cal-conditional markers. |
 | MLB out-of-window boundary | `https://www.mlb.com/press-release/press-release-mlb-announces-2027-spring-training-schedule` (Sep 4, 2026) | MLB's official bracket calendar has no 2026 games after Oct 31 - so **Nov 1, 2026 - Feb 18, 2027 is confirmed MLB-free**. The one real MLB activity inside the window is **2027 Spring Training starting Fri Feb 19, 2027** (out of scope per "MLB 2026 regular+postseason"; flagged in the build, not blocked). |
 
+### 2026-09-11 pass #2 — blocking-rule correction + independent re-verification (this session)
+
+| Check | Method | Result |
+|---|---|---|
+| **Blocking rule (the reported bug)** | The all-NFL layer was display-only, so the site reported free time on days when non-49ers NFL games were on air. | **FIXED**: `BLOCKING_SPORTS` now includes `nfl_all`; every tracked league blocks. Fully-free days 87 -> 62. A full NFL+MLB Sunday (e.g. 2026-09-13) now blocks 9:10 AM-8:32 PM PT instead of showing "free". |
+| MLB Sep 10-12 | Live `statsapi.mlb.com/api/v1/schedule?...` fetched this session | **15 + 5 + 15 games match** the raw files on date, UTC minute and team ids (independent re-check of the earlier 35/35 pass). |
+| MLB postseason, all 28 dates | Live API `startDate=2026-09-28&endDate=2026-11-01` fetched this session | **28/28 dates match** `data/raw/mlb_2026_postseason_tbd.txt` exactly (Sep 29 - Oct 31, 1-4 games/day, every row `startTimeTBD=true`, placeholder `07:33:00Z` + placeholder team ids 4944-4947 / 4612-4619 / 5525-5533 / 2710-2711). Sep 28 confirmed as an off day. |
+| 49ers full schedule | nfl-sports.com, nflplayoffpass.com, footballnationusa.com, usagametime.com (all fetched this session) | **18/18 timed rows match** `games_local.json` (Wk1 5:35 PM PT Melbourne, Wk6 Mon 5:15 PM PT, Wk7 10:00 AM PT, Wk9 1:05, Wk10 1:25, Wk11 5:20 Mexico City, Wk12 1:25, Wk13 10:00 AM, Wk15 Thu 5:15 PM, Wk16 1:25, Wk17 5:20). The three prior corrections (Nov 29 1:25, Dec 6 10:00 AM, Dec 17 5:15 PM) are reconfirmed; Wk18 stays TBD on the club page. |
+| NFL Week 1 + Week 12 (Thanksgiving) | nfl.com "2026 NFL Schedule Announced", SI, CBS, nflplayoffpass | Week 1 (16 games: Sep 9 SEA-NE opener, Sep 10 SFO-LAR Melbourne, Sep 14 DEN-KAN MNF) and Week 12 (Nov 25 GNB-LAR 8 PM ET; Nov 26 CHI-DET 1 PM / PHI-DAL 4:30 PM / KAN-BUF 8:20 PM; Nov 27 DEN-PIT 3 PM; Nov 29 SEA-SFO 4:25 PM) **match the raw file row-for-row**. |
+| Stanford (12 games) | gostanford.com official release (2026-01-26) + Wikipedia + 247sports | **12/12 dates/opponents match**; set kickoffs match (Aug 29 4:00 PM, Sep 4 6:00 PM, Sep 19 1:00 PM, Sep 26 7:30 PM, Oct 10 12:30 PM, Oct 17 4:30 PM, Oct 23 7:30 PM PT). |
+| Cal (12 games) | calbears.com + Wikipedia + sportsbrackets + CBS | **12/12 dates/opponents match**; set kickoffs match (Sep 5 7:30 PM, Sep 12 12:30 PM, Sep 19 12:30 PM, Sep 25 7:30 PM, Oct 3 12:30 PM PT). |
+| **Earthquakes (17 games)** | sjearthquakes.com official 2026 schedule release + ESPN + Wikipedia | **17/17 in-window games match — and this pass found the repo was missing the Nov 7 Decision Day finale @ Minnesota United (4:00 PM PT, game 34/34)**, which had been mis-labelled "conditional". ADDED to `games_local.json`; the conditional Nov 7 row was removed. |
+| Durations | BetMGM (2026-08-31), SBJ (2026-04-29), Under Armour, sportssurge | MLB default updated 158 -> **164 min (2:44, 2026 season)**; NFL 192 / NCAA 204 / MLS 120 reconfirmed. |
+
+Caveat: the Wikipedia Earthquakes page prints several kickoffs that differ from the club's own
+release (e.g. Sep 9 as 5:30 PM, Sep 26 as 4:00 PM, Oct 10 as 5:30 PM). The repo keeps the official
+club-release times (7:30 PM / 7:30 PM / 6:30 PM PT) which ESPN also matches; Wikipedia's rows appear
+to carry stale/placeholder times and are NOT used.
+
 ### 2026-08-28 pass (still valid for Aug-Sep data)
 
 | Check | Method | Result |
@@ -64,7 +83,7 @@ Defaults shipped by `scripts/build.py` (the UI inputs are editable):
 
 | League | Default | Source |
 |---|---|---|
-| MLB | **158 min** = 2:38 | Official: MLB press release Sep 29, 2025 ("average game time 2:38 for the 2025 season") `https://www.mlb.com/press-release/press-release-mlb-attendance-reaches-71-4-million-three-straight-years-of-growth-for-first-time-since-2007`; ESPN corroboration `https://www.espn.com/mlb/story/_/id/46422703/...`. 2026 in progress runs ~2:43–2:44 (`https://sports.betmgm.com/en/blog/mlb/average-game-time-in-mlb-bm23/` Aug 31, 2026; SBJ Apr 29, 2026) - within the error bar; use the UI input if you want 164. |
+| MLB | **164 min** = 2:44 | 2026 season average. `https://sports.betmgm.com/en/blog/mlb/average-game-time-in-mlb-bm23/` (Aug 31, 2026: "MLB's average game time for the 2026 season is two hours and 44 minutes"); SBJ `https://www.sportsbusinessjournal.com/Articles/2026/04/29/mlb-pace-of-play-slows-game-lengths-rise-despite-pitch-timer/` (first 421 games: 2:43). MLB's official 2025 final was 2:38 (`https://www.mlb.com/press-release/press-release-mlb-attendance-reaches-71-4-million-three-straight-years-of-growth-for-first-time-since-2007`). Postseason runs ~3:04-3:15 but postseason rows are TBD and do not block. |
 | NFL (also applied to the All-NFL layer) | **192 min** = 3:12 | Widely reported average incl. 12-min halftime, timeouts, reviews: `https://underarmour.com/en-us/t/playbooks/football/the-real-length-of-a-football-game/` ("in 2025, NFL games averaged three hours and 12 minutes"), `https://sportssurge.alibaba.com/football/how-long-is-an-average-football-game` (Nielsen & NFL statistics). Secondary: `https://www.theringer.com/2024-09-05/nfl/...` uses 3:15 as a modeling assumption. Super Bowl days in our data are placeholders, so ceremonial extra length (~3:45) does not affect windows. |
 | NCAA (Stanford/Cal) | **204 min** = 3:24 | Same sportssurge/lines tables ("college averages 3:24 with 20-min halftimes"); Under Armour says 3:27 for 2025 - we ship 3:24 and let you edit. |
 | MLS (Earthquakes) | **120 min** = 2:00 | `https://www.tickpick.com/blog/how-long-are-mls-games/`, `https://authoritysoccer.com/how-long-are-mls-games-and-seasons/` (90 min + ~15-min halftime + stoppage). Playoffs may run over 2:00 with extra time - conditional days are not blocked anyway. |
@@ -75,8 +94,27 @@ researched figures above; set the UI inputs back to 150/180+ to compare.
 ## 3. Irregularities flagged for your review
 
 The build re-emits all of these as machine-readable `flags` in `data/processed/free_time.json`
-and `schedules.md`. Status counts with the current data: 212 days in window -> 87 FREE,
-78 PARTIAL, 47 UNCONFIRMED, 0 FULLY BOOKED; ~90 flags.
+and `schedules.md`. Status counts with the current data (2026-09-11 pass #2): 212 days in window ->
+**62 FREE, 92 PARTIAL, 58 UNCONFIRMED, 0 FULLY BOOKED**; ~91 flags. (The drop from 87 FREE is the
+blocking-rule fix — non-49ers NFL days no longer report free time.)
+
+### Fixed / changed in the 2026-09-11 pass #2
+
+- **FIXED — all-NFL was non-blocking.** The reported bug ("it says I have free time on days when
+  there are football games on") was exactly this: the league-wide NFL table was display-only.
+  `BLOCKING_SPORTS` now includes `nfl_all`, so all 272 regular-season games, the preseason rows
+  that have a published time, and the postseason/pro-bowl placeholder days (via UNCONFIRMED) all
+  count against free time. The old "block all-NFL" opt-in toggle was removed from the UI.
+- **FIXED — missing Earthquakes Decision Day finale.** The club's 2026 schedule release lists game
+  34/34 as **Sat Nov 7, 2026 @ Minnesota United, 4:00 PM PT** (Decision Day). The repo's PDF
+  transcription had ended at the Oct 31 home finale and mis-labelled Nov 7 as "conditional".
+  Added to `games_local.json`; removed the conditional Nov 7 row.
+- **CHANGED — MLB duration default** 158 -> 164 min (2:44, the 2026 season average) per §2.
+- **KNOWN GAP (unchanged) — non-49ers preseason kickoff times.** The PFR preseason table prints no
+  kickoff times, so ~47 non-SF preseason games remain `info_only` (listed, never blocking, never
+  marked UNCONFIRMED). Those games are all in the past (Aug 2026), so they do not affect future
+  free time, but August's free windows ignore them. To close the gap, transcribe nfl.com preseason
+  scores pages into `data/raw/nfl_2026_pfr_preseason.txt` and re-run.
 
 1. **TBD_TIME (42)** - every unconfirmed kickoff: MLB's 55 postseason placeholders; Earthquakes Oct 31
    (kickoff TBD in club PDF); Stanford Oct 3 @Wake + Oct 31 @Louisville + Nov 14/21/28; Cal's four
@@ -108,8 +146,10 @@ and `schedules.md`. Status counts with the current data: 212 days in window -> 8
    by the build so nobody "fixes" them into winners.
 10. **Doubleheaders (5)** - MLB days where the same matchup appears twice on one `officialDate` (split
     nights/rescheduled); both rows block, so the merged window is still correct.
-11. **Earthquakes vs Decision Day** - SJ's club PDF ends Oct 31 while MLS's regular season runs to
-    Decision Day **Nov 7** (all 30 clubs): SJ games only on that day if postponed. Marked conditional.
+11. **Earthquakes vs Decision Day (RESOLVED 2026-09-11 pass #2)** - the club's official release lists
+    the Decision Day finale **@ Minnesota United, Sat Nov 7, 2026, 4:00 PM PT** as game 34/34. This was
+    missing from the earlier PDF transcription (which ended Oct 31) and is now a real blocking game.
+    Remaining playoff windows (Nov 18 - Dec 18) stay conditional on SJ qualifying.
 12. **Stanford/Cal bowls are deliberately NOT day-marked** - bowls (Dec 12 - Jan 1) are assigned after
     Selection Day Dec 6, 2026; the README tells you to re-run the build afterwards. Same for any
     Stanford/Cal CFP appearance beyond the conditional markers we do list.
