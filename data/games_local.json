@@ -1,7 +1,7 @@
 {
  "_provenance": {
   "fetched_at_utc": "2026-09-11",
-  "note": "Full 2026-08-01..2027-02-28 coverage. 2026-09-11 pass: 49ers Wks 9-18 (49ers.com + PFR league-table cross-check), Stanford/Cal November games added (official club releases; kickoff TBA), the two missing 49ers preseason kickoff times resolved from official chargers.com/sofi.com/raiders.com pages, nfl.com by-week links on all SF rows.",
+  "note": "Full 2026-08-01..2027-02-28 coverage. 2026-09-11 pass: 49ers Wks 9-18 (49ers.com + PFR league-table cross-check), Stanford/Cal November games added (official club releases; kickoff TBA), the two missing 49ers preseason kickoff times resolved from official chargers.com/sofi.com/raiders.com pages, nfl.com by-week links on all SF rows. 2026-09-11 pass #2: added the missing Earthquakes Decision Day finale 2026-11-07 @ Minnesota United (4:00 PM PT) from the official club release; Earthquakes in-window total is now 17 games.",
   "sources": {
    "nfl_49ers": "https://www.49ers.com/schedule/",
    "mls_sj_earthquakes": "https://images.mlssoccer.com/image/upload/v1766018474/assets/sje/schedule/2026%20Schedule.pdf",
@@ -507,6 +507,18 @@
    "venue": "PayPal Park",
    "source": "https://images.mlssoccer.com/image/upload/v1766018474/assets/sje/schedule/2026%20Schedule.pdf",
    "flag": "KICKOFF TIME TBD - official PDF prints 'TBD' for this match."
+  },
+  {
+   "date": "2026-11-07",
+   "sport": "mls",
+   "label": "Earthquakes at Minnesota United FC",
+   "ha": "away",
+   "start_pt": "16:00",
+   "phase": "MLS Regular Season (Decision Day)",
+   "venue": "Allianz Field, Saint Paul MN",
+   "source": "https://www.sjearthquakes.com/news/news-earthquakes-announce-2026-major-league-soccer-schedule",
+   "kickoff_source": "Official SJ Earthquakes 2026 schedule release (Nov 20, 2025): '34 · Saturday, Nov. 7, 2026 · Minnesota United FC · Away · 4:00 PM · Apple'. This is the regular-season finale (Decision Day, all 30 clubs). Corroborated by seatgeek.com/san-jose-earthquakes-tickets/schedule (Allianz Field, Saint Paul).",
+   "flag": "ADDED 2026-09-11: the Decision Day finale at Minnesota (4:00 PM PT, game 34/34) was missing from the earlier PDF transcription which ended at the Oct 31 home finale. It is a real scheduled game, NOT conditional."
   },
   {
    "date": "2026-10-31",
