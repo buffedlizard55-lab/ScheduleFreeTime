@@ -1,0 +1,102 @@
+# Westwood One Sports — 2026 NFL national radio broadcasts (Sep 14, 2026 - Jan 10, 2027).
+# Transcribed 2026-09-14 from the official schedule page (Upcoming tab):
+#   https://www.westwoodonesports.com/nfl-schedule/
+# Bay Area carriage: San Francisco affiliate is KNBR-AM / KNBR-FM / KTCT-AM
+#   (westwoodonesports.com/station-finder NFL table; KNBR-FM Wikipedia: "Both stations are
+#   the San Francisco affiliates for Westwood One Sports"). NOTE the station-finder caveat:
+#   "Because of local blackouts and/or programming conflicts, not every affiliate can air
+#   every Westwood One Sports broadcast" - a 49ers noon game on KNBR could pre-empt a WWO
+#   broadcast; flagged in docs.
+# AIR times below are EASTERN as printed (pregame-show start, NOT kickoff). Kickoff per the
+# league schedule (data/raw/nfl_2026_pfr_regseason.txt): MNF air 7:00 PM ET -> 8:15 PM ET
+# kickoff; SNF air 7:30 PM ET -> 8:20 PM ET kickoff; TNF air 7:30 PM ET -> 8:15 PM ET kickoff;
+# international air 9:15 AM ET -> 9:30 AM ET kickoff; Thanksgiving/Christmas/Saturday airs
+# run 15-30 min before kickoff. The build cross-checks every matchup+date against the
+# league-wide NFL table and flags any mismatch; matched games get wwo=true (radio badge).
+# Past broadcasts (before Sep 14, not on the Upcoming tab):
+#   - Sep 9 NFL Kickoff NWE@SEA aired on WWO per the Cumulus press release 2026-09-09
+#     ("starting Wednesday, September 9 ... New England Patriots vs. the Seattle Seahawks").
+#   - Sep 10 SFO@LAR Melbourne + Sep 13 SNF DAL@NYG: presumed per WWO's pattern (all
+#     primetime + all 8 internationals carried) but NOT individually verified - the Past tab
+#     is JS-driven and not fetchable; flagged PAST_UNVERIFIED, not marked wwo.
+# Format: date|airET(HH:MM 24h, - if TBA)|away|home|slot|eventId|note
+# (away/home use PFR-style abbrs; TBA rows keep matchup as TBA/TBA with the air time.)
+2026-09-09|19:00|NWE|SEA|NFL Kickoff|press-release|from Cumulus press release 2026-09-09 (past, verified via press release only)
+2026-09-14|19:00|DEN|KC|MNF|548429|Kevin Harlan & Kurt Warner
+2026-09-17|19:30|DET|BUF|TNF|548433|Kevin Kugler & Ross Tucker
+2026-09-20|19:30|IND|KC|SNF|548493|Ryan Radtke & Mike Golic
+2026-09-21|19:00|NYG|LAR|MNF|548530|Kevin Harlan & Kurt Warner
+2026-09-24|19:30|ATL|GB|TNF|548553|Kevin Kugler & Derek Rackley
+2026-09-27|19:30|RAM|DEN|SNF|548494|Ryan Radtke & Mike Golic
+2026-09-28|19:00|PHI|CHI|MNF|548532|Kevin Harlan & Kurt Warner
+2026-10-01|19:30|PIT|CLE|TNF|548554|
+2026-10-04|09:15|IND|WAS|London|548485|Tottenham Hotspur Stadium
+2026-10-04|19:30|DET|CAR|SNF|548495|
+2026-10-05|19:00|ATL|NO|MNF|548535|
+2026-10-08|19:30|TB|DAL|TNF|548556|
+2026-10-11|09:15|PHI|JAX|London|548486|Tottenham Hotspur Stadium
+2026-10-11|19:30|BAL|ATL|SNF|548496|
+2026-10-12|19:00|BUF|LAR|MNF|548537|
+2026-10-15|19:30|SEA|DEN|TNF|548557|
+2026-10-18|09:15|HTX|JAX|London|548487|Wembley Stadium
+2026-10-18|19:30|DAL|GB|SNF|548497|
+2026-10-19|19:00|WAS|SF|MNF|548538|Levi's Stadium
+2026-10-22|19:30|NE|CHI|TNF|548558|
+2026-10-25|09:15|PIT|NO|Paris|548488|Stade de France
+2026-10-25|19:30|KC|SEA|SNF|548498|
+2026-10-26|19:00|DAL|PHI|MNF|548539|
+2026-10-29|19:30|CAR|GB|TNF|548560|
+2026-11-01|19:30|PHI|WAS|SNF|548499|
+2026-11-02|19:00|CHI|SEA|MNF|548540|
+2026-11-05|19:30|JAX|BAL|TNF|548561|
+2026-11-08|09:15|CIN|ATL|Madrid|548489|Bernabeu, Madrid
+2026-11-08|19:30|TB|CHI|SNF|548500|
+2026-11-09|19:00|BUF|MIN|MNF|548541|
+2026-11-12|19:30|WAS|NYG|TNF|548562|
+2026-11-15|09:15|NE|DET|Munich|548490|Allianz Arena, Munich
+2026-11-15|19:30|PIT|CIN|SNF|548501|
+2026-11-16|19:00|LAC|BAL|MNF|548542|
+2026-11-19|19:30|IND|HTX|TNF|548564|
+2026-11-22|19:30|MIN|SF|Mexico City|548491|Estadio Azteca; 49ers home game
+2026-11-23|19:00|CIN|WAS|MNF|548543|
+2026-11-25|19:30|GB|LAR|Thanksgiving Wed|548511|
+2026-11-26|12:30|CHI|DET|Thanksgiving|548512|
+2026-11-26|16:15|PHI|DAL|Thanksgiving|548513|
+2026-11-26|20:00|KC|BUF|Thanksgiving|548514|
+2026-11-27|14:30|DEN|PIT|Black Friday|548515|
+2026-11-29|19:30|NE|LAC|SNF|548502|
+2026-11-30|19:00|CAR|TB|MNF|548544|
+2026-12-03|19:30|KC|LAR|TNF|548566|
+2026-12-06|19:30|HTX|PIT|SNF|548503|
+2026-12-07|19:00|DAL|SEA|MNF|548545|
+2026-12-10|19:30|MIN|NE|TNF|548567|
+2026-12-13|19:30|BUF|GB|SNF|548505|
+2026-12-14|19:00|PIT|JAX|MNF|548546|
+2026-12-17|19:30|SF|LAC|TNF|548568|SoFi Stadium
+2026-12-19|16:30|SEA|PHI|Sat Wk15|548517|
+2026-12-19|20:00|CHI|BUF|Sat Wk15|548518|
+2026-12-20|19:30|DET|MIN|SNF|548506|
+2026-12-21|19:00|NE|KC|MNF|548548|
+2026-12-24|19:30|HTX|PHI|TNF|548569|
+2026-12-25|12:30|GB|CHI|Christmas|548528|
+2026-12-25|16:15|BUF|DEN|Christmas|548531|
+2026-12-25|20:00|LAR|SEA|Christmas|548534|
+2026-12-26|16:00|TBA|TBA|Sat Wk16|548519|matchup TBA (Saturday flex/selection)
+2026-12-26|20:00|TBA|TBA|Sat Wk16|548520|matchup TBA (Saturday flex/selection)
+2026-12-27|19:30|JAX|DAL|SNF|548507|
+2026-12-28|19:00|NYG|DET|MNF|548550|
+2026-12-31|19:30|BAL|CIN|TNF|548570|
+2027-01-02|16:00|TBA|TBA|Sat Wk17|548521|matchup TBA (Saturday flex/selection)
+2027-01-02|20:00|TBA|TBA|Sat Wk17|548522|matchup TBA (Saturday flex/selection)
+2027-01-03|19:30|PHI|SF|SNF|548509|Levi's Stadium
+2027-01-04|19:00|HTX|GB|MNF|548552|
+2027-01-09|12:30|TBA|TBA|Sat Wk18|548523|matchup TBA (Week 18 selection)
+2027-01-09|16:15|TBA|TBA|Sat Wk18|548524|matchup TBA (Week 18 selection)
+2027-01-09|20:00|TBA|TBA|Sat Wk18|548526|matchup TBA (Week 18 selection)
+2027-01-10|19:30|TBA|TBA|SNF Wk18|548510|matchup TBA (flex-selected SNF)
+# TOTAL: 73 rows = 65 with matchups (incl. Sep 9 Kickoff from press release) + 8 TBA placeholders.
+# IRREGULARITY (flagged in build): WWO's 2026 package is "eight International Games" but the
+# league scheduled NINE (Sep 10 Melbourne, Sep 27 Rio, Oct 4/11/18 London, Oct 25 Paris,
+# Nov 8 Madrid, Nov 15 Munich, Nov 22 Mexico City). The Sep 27 Rio game (BAL@DAL 4:25 PM ET)
+# does NOT appear on the WWO schedule page - presumed NOT carried; all other 8 are listed
+# (Sep 10 Melbourne presumed past-carried, unverified - see header).

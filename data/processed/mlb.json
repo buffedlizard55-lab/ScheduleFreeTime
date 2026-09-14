@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated_utc": "2026-09-11",
+  "generated_utc": "2026-09-14",
   "window": {
    "start": "2026-08-01",
    "end": "2027-02-28"
@@ -10,16 +10,21 @@
    "mlb": 164,
    "nfl": 192,
    "ncaa": 204,
-   "mls": 120
+   "mls": 120,
+   "nba": 138,
+   "nhl": 150
   },
   "pre_buffer_minutes": 0,
   "post_buffer_minutes": 0,
   "blocking_sports": [
    "mlb",
    "mls",
+   "nba",
    "ncaa",
+   "ncaaw",
    "nfl",
-   "nfl_all"
+   "nfl_all",
+   "nhl"
   ],
   "totals": {
    "mlb_games": 778,
@@ -28,7 +33,13 @@
    "nfl_reg_games": 272,
    "nfl_pre_games": 49,
    "nfl_all_tbd_days": 8,
-   "conditional_days": 20
+   "conditional_days": 20,
+   "nba_games": 63,
+   "nhl_games": 68,
+   "wwo_nfl_matched": 65,
+   "wwo_nfl_total": 65,
+   "wwo_nfl_tba": 8,
+   "wwo_ncaaf": 10
   }
  },
  "games": [

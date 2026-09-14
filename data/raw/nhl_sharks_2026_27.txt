@@ -1,0 +1,86 @@
+# San Jose Sharks 2026-27 — preseason + regular season (in-window: Sep 20, 2026 - Feb 28, 2027).
+# Transcribed 2026-09-14 from the rendered ESPN team schedule pages (times EASTERN as printed):
+#   https://www.espn.com/nhl/team/schedule/_/name/sj/san-jose-sharks               (preseason)
+#   https://www.espn.com/nhl/team/schedule/_/name/sj/season/2027/seasontype/2      (regular season)
+# Cross-checks:
+#   - ESPN gameIds kept per row for per-game review: https://www.espn.com/nhl/game/_/gameId/<id>/
+#   - Season opener Oct 1 vs FLA 10:00 PM ET matches the ESPN API event 401891823 (2026-10-02T02:00Z).
+#   - Oct 1/3/5/8/10/13/15 rows match sportsmediawatch.com Sharks TV schedule exactly.
+#   - All 7 back-to-backs so far match the r/SanJoseSharks 2026-27 schedule thread
+#     (Nov 27-28, Dec 3-4, Dec 8-9, Dec 28-29, Jan 1-2, Jan 8-9, Jan 13-14).
+#   - Radio: 98.5 KFOX (KUFX-FM) flagship "broadcast live and in their entirety, all regular season
+#     and Stanley Cup Playoff Sharks contests, as well as SELECT preseason games"
+#     (nhl.com/sharks multi-year extension). Regular-season rows block; preseason rows are
+#     info-only (which "select" games air is unspecified - flagged).
+# Format: phase|date|timeET(HH:MM 24h)|away|home|espnGameId|note
+# ET->PT is exactly -3h for every date in this file (both zones shift DST on Nov 1, 2026 together).
+PRE|2026-09-20|16:00|SJ|ANA|401879368|preseason; info-only (select games air, unspecified which)
+PRE|2026-09-22|22:00|VGK|SJ|401879413|preseason; info-only
+PRE|2026-09-24|22:00|ANA|SJ|401879370|preseason; info-only
+PRE|2026-09-26|22:00|SJ|VGK|401879414|preseason; info-only
+REG|2026-10-01|22:00|FLA|SJ|401891823|season opener, SAP Center; ESPN API 2026-10-02T02:00Z
+REG|2026-10-03|22:00|LA|SJ|401892441|SAP Center
+REG|2026-10-05|20:00|SJ|DAL|401892448|@ American Airlines Center
+REG|2026-10-08|20:00|SJ|STL|401891825|ESPN+
+REG|2026-10-10|16:00|EDM|SJ|401892471|Saturday matinee 4 PM ET
+REG|2026-10-13|23:00|BOS|SJ|401892503|late 11 PM ET start
+REG|2026-10-15|20:00|SJ|NSH|401892513|@ Bridgestone Arena
+REG|2026-10-17|19:00|SJ|DET|401892525|@ Little Caesars Arena
+REG|2026-10-19|19:30|SJ|TOR|401892537|@ Scotiabank Arena
+REG|2026-10-20|19:00|SJ|MTL|401892539|back-to-back (Oct 19-20)
+REG|2026-10-22|19:00|SJ|OTT|401892554|@ Canadian Tire Centre
+REG|2026-10-24|19:00|SJ|BOS|401892568|@ TD Garden
+REG|2026-10-27|22:30|BUF|SJ|401892595|ESPN
+REG|2026-10-29|22:00|VAN|SJ|401892610|SAP Center
+REG|2026-10-31|16:00|OTT|SJ|401892619|Saturday matinee 4 PM ET
+REG|2026-11-02|21:00|CGY|SJ|401892632|SAP Center
+REG|2026-11-04|22:00|SJ|LA|401892646|TNT/truTV
+REG|2026-11-06|20:00|SJ|MIN|401892660|@ Grand Casino Arena
+REG|2026-11-07|20:00|SJ|DAL|401892669|back-to-back (Nov 6-7)
+REG|2026-11-09|22:00|NYI|SJ|401892682|SAP Center
+REG|2026-11-11|22:00|PIT|SJ|401892695|SAP Center
+REG|2026-11-14|21:00|SJ|UTAH|401892718|@ Delta Center (Utah Mammoth)
+REG|2026-11-15|21:00|NSH|SJ|401892725|back-to-back (Nov 14-15)
+REG|2026-11-17|22:00|CGY|SJ|401892738|SAP Center
+REG|2026-11-21|22:00|SEA|SJ|401892767|SAP Center
+REG|2026-11-23|22:00|MIN|SJ|401892779|SAP Center
+REG|2026-11-25|22:00|SJ|ANA|401892793|Thanksgiving eve @ Honda Center
+REG|2026-11-27|16:00|VGK|SJ|401892805|Black Friday matinee 4 PM ET
+REG|2026-11-28|21:00|SJ|COL|401892820|back-to-back (Nov 27-28)
+REG|2026-12-01|19:30|SJ|NJ|401892832|ESPN+
+REG|2026-12-03|19:00|SJ|NYR|401892846|@ Madison Square Garden
+REG|2026-12-04|19:00|SJ|NYI|401892855|back-to-back (Dec 3-4)
+REG|2026-12-06|15:00|SJ|PIT|401892871|Sunday matinee 3 PM ET
+REG|2026-12-08|22:00|SEA|SJ|401892890|SAP Center
+REG|2026-12-09|21:30|SJ|LA|401892893|back-to-back (Dec 8-9); TNT/truTV
+REG|2026-12-11|22:00|LA|SJ|401892908|SAP Center
+REG|2026-12-14|22:00|VAN|SJ|401892930|SAP Center
+REG|2026-12-16|22:00|SJ|VGK|401892945|TNT/truTV
+REG|2026-12-19|22:00|SJ|VAN|401892969|@ Rogers Arena
+REG|2026-12-22|21:40|SJ|SEA|401892992|odd :40 start as printed (flagged for review)
+REG|2026-12-26|22:00|VGK|SJ|401893004|day after Christmas
+REG|2026-12-28|19:30|SJ|WPG|401893017|@ Canada Life Centre
+REG|2026-12-29|20:00|SJ|CGY|401893025|back-to-back (Dec 28-29)
+REG|2027-01-01|16:00|PHI|SJ|401893045|New Year's Day matinee 4 PM ET
+REG|2027-01-02|19:00|TOR|SJ|401893055|back-to-back (Jan 1-2)
+REG|2027-01-04|22:00|NJ|SJ|401893072|SAP Center
+REG|2027-01-06|22:00|DAL|SJ|401893085|SAP Center
+REG|2027-01-08|22:00|WSH|SJ|401893100|SAP Center
+REG|2027-01-09|22:00|NYR|SJ|401893113|back-to-back (Jan 8-9)
+REG|2027-01-13|21:00|SJ|EDM|401893133|@ Rogers Place
+REG|2027-01-14|20:00|SJ|CGY|401893142|back-to-back (Jan 13-14)
+REG|2027-01-16|22:00|SJ|SEA|401893163|@ Climate Pledge Arena
+REG|2027-01-18|16:00|UTAH|SJ|401893173|MLK Day matinee 4 PM ET
+REG|2027-01-23|22:00|EDM|SJ|401893215|SAP Center
+REG|2027-01-28|22:00|NSH|SJ|401893252|SAP Center
+REG|2027-01-30|16:00|CHI|SJ|401893259|Saturday matinee 4 PM ET
+REG|2027-02-10|22:00|CHI|SJ|401893294|TNT/truTV; after 10-day gap Jan 31-Feb 9 (flagged: no game listed)
+REG|2027-02-13|16:00|DET|SJ|401893306|Saturday matinee 4 PM ET
+REG|2027-02-15|19:30|WPG|SJ|401893327|SAP Center
+REG|2027-02-19|19:00|SJ|WSH|401893353|@ Capital One Arena
+REG|2027-02-21|18:00|SJ|FLA|401893371|@ Amerant Bank Arena; early 6 PM ET start
+REG|2027-02-23|19:00|SJ|TB|401893383|@ Benchmark International Arena
+REG|2027-02-25|19:00|SJ|CAR|401893397|@ Lenovo Center
+REG|2027-02-27|19:00|SJ|PHI|401893414|@ Xfinity Mobile Arena
+# IN-WINDOW TOTAL: 4 preseason + 64 regular-season = 68 rows (season continues Mar 1 - Apr 2027, out of window).
+# Cross-check: Mar 5-6 back-to-back on the same ESPN page matches the r/SanJoseSharks schedule thread.

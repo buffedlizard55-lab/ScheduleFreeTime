@@ -1,0 +1,77 @@
+# Golden State Warriors 2026-27 — preseason + regular season (in-window: Oct 4, 2026 - Feb 28, 2027).
+# Transcribed 2026-09-14 from the rendered ESPN team schedule pages (times EASTERN as printed):
+#   https://www.espn.com/nba/team/schedule/_/name/gs/golden-state-warriors            (preseason)
+#   https://www.espn.com/nba/team/schedule/_/name/gs/season/2027/seasontype/2          (regular season)
+# Cross-checks:
+#   - ESPN gameIds kept per row for per-game review: https://www.espn.com/nba/game/_/gameId/<id>/
+#   - Preseason opener Oct 4 @ LAC 7:00 PM ET matches the ESPN API event 401918010 (2026-10-04T23:00Z).
+#   - Radio: ALL preseason + regular season + playoff games air on 95.7 The Game KGMZ-FM
+#     (insideRadio 2025-09: "carrying all preseason and regular season games ... ninth consecutive year";
+#     KGMZ-FM Wikipedia: flagship station for the Warriors). So every row below blocks.
+# Format: phase|date|timeET(HH:MM 24h)|away|home|espnGameId|note
+# ET->PT is exactly -3h for every date in this file (both zones shift DST on Nov 1, 2026 together).
+PRE|2026-10-04|19:00|GS|LAC|401918010|@ Intuit Dome; ESPN API 2026-10-04T23:00Z
+PRE|2026-10-06|22:00|LAL|GS|401898390|Chase Center
+PRE|2026-10-07|22:00|GS|POR|401914129|@ Moda Center
+PRE|2026-10-10|20:30|SAC|GS|401898399|Chase Center
+PRE|2026-10-13|22:00|LAL|GS|401898718|NEUTRAL SITE: tickets link is Golden 1 Center Sacramento (flagged)
+PRE|2026-10-16|22:00|POR|GS|401898409|Chase Center
+REG|2026-10-21|22:00|GS|LAL|401909092|opening week @ Crypto.com Arena
+REG|2026-10-23|22:00|MEM|GS|401909850|home opener, Chase Center
+REG|2026-10-24|22:00|GS|PHX|401909860|NBA TV
+REG|2026-10-26|22:00|GS|DEN|401909876|NBCSN
+REG|2026-10-28|20:00|GS|MIN|401909888|@ Target Center
+REG|2026-10-30|22:00|LAL|GS|401909285|Prime Video
+REG|2026-11-01|20:30|LAC|GS|401909905|Chase Center
+REG|2026-11-02|22:00|PHX|GS|401909919|back-to-back (Nov 1-2)
+REG|2026-11-05|22:00|MIA|GS|401909937|NBA TV
+REG|2026-11-07|20:30|ORL|GS|401909942|Chase Center
+REG|2026-11-09|22:00|NO|GS|401909959|NBA TV
+REG|2026-11-11|21:30|GS|HOU|401909974|ESPN
+REG|2026-11-13|21:30|GS|SA|401909302|Prime Video
+REG|2026-11-16|20:00|GS|NO|401910000|@ Smoothie King Center
+REG|2026-11-18|21:30|GS|DAL|401910016|ESPN
+REG|2026-11-19|20:00|GS|MEM|401910019|back-to-back (Nov 18-19)
+REG|2026-11-22|20:30|BOS|GS|401910035|Chase Center
+REG|2026-11-25|22:00|SAC|GS|401909324|Thanksgiving eve
+REG|2026-11-27|21:30|GS|POR|401909336|Black Friday
+REG|2026-11-29|20:30|LAC|GS|401910059|Chase Center
+REG|2026-12-01|23:00|UTAH|GS|401910075|NBC; late 11 PM ET tip
+REG|2026-12-12|20:00|GS|CLE|401910093|after 10-day gap Dec 2-11 (NBA Cup window; no Warriors game listed - flagged)
+REG|2026-12-14|20:00|GS|MEM|401910110|@ FedExForum
+REG|2026-12-16|19:00|GS|IND|401910120|@ Gainbridge Fieldhouse
+REG|2026-12-18|19:30|GS|TOR|401910139|@ Scotiabank Arena
+REG|2026-12-20|20:00|GS|MIL|401910157|@ Fiserv Forum
+REG|2026-12-22|22:30|DAL|GS|401910171|NBC
+REG|2026-12-23|22:30|GS|LAC|401910186|back-to-back (Dec 22-23)
+REG|2026-12-25|22:30|DEN|GS|401909101|CHRISTMAS DAY, ESPN/ABC
+REG|2026-12-27|20:30|MIN|GS|401910204|Chase Center
+REG|2026-12-28|21:00|GS|PHX|401910209|back-to-back (Dec 27-28)
+REG|2026-12-30|22:00|HOU|GS|401910225|NBA TV
+REG|2027-01-02|20:30|BKN|GS|401910248|Chase Center
+REG|2027-01-06|22:00|NY|GS|401910278|ESPN
+REG|2027-01-07|22:00|DET|GS|401910288|back-to-back (Jan 6-7)
+REG|2027-01-09|20:30|CHI|GS|401910302|Chase Center
+REG|2027-01-12|23:00|SAC|GS|401910326|NBC; late 11 PM ET tip
+REG|2027-01-13|22:00|CHA|GS|401910332|back-to-back (Jan 12-13)
+REG|2027-01-15|19:00|GS|ATL|401910343|@ State Farm Arena
+REG|2027-01-17|18:00|GS|MIA|401910362|@ Kaseya Center; early 6 PM ET tip
+REG|2027-01-19|19:00|GS|ORL|401910368|@ Kia Center
+REG|2027-01-21|22:00|LAL|GS|401910388|Prime Video
+REG|2027-01-22|22:00|MIL|GS|401910397|back-to-back (Jan 21-22)
+REG|2027-01-24|20:30|OKC|GS|401910412|NBC
+REG|2027-01-27|22:00|GS|POR|401910436|@ Moda Center
+REG|2027-01-28|21:00|GS|UTAH|401910443|back-to-back (Jan 27-28)
+REG|2027-01-30|17:30|SA|GS|401910453|ESPN; early 5:30 PM ET tip
+REG|2027-02-01|22:00|SA|GS|401910473|NBCSN
+REG|2027-02-03|22:30|GS|LAC|401910487|@ Intuit Dome
+REG|2027-02-05|19:00|GS|CHA|401910499|@ Spectrum Center
+REG|2027-02-07|15:00|GS|DET|401910514|NBA TV; Sunday matinee 3 PM ET
+REG|2027-02-09|20:00|GS|CHI|401910532|@ United Center
+REG|2027-02-10|19:30|GS|BOS|401910541|back-to-back (Feb 9-10); ESPN
+REG|2027-02-13|20:30|GS|NY|401910566|ESPN; @ Madison Square Garden
+REG|2027-02-15|19:30|IND|GS|401909480|NBCSN
+REG|2027-02-17|22:00|NO|GS|401910593|Chase Center
+REG|2027-02-25|22:00|DAL|GS|401910608|Prime Video; after 7-day All-Star break Feb 18-24 (flagged: no game listed)
+# IN-WINDOW TOTAL: 6 preseason + 57 regular-season = 63 rows (season continues Mar 1 - Apr 2027, out of window).
+# Cross-check: Mar 1/2/4/7 rows on the same ESPN page match sportsbrackets.net Warriors March table exactly.
