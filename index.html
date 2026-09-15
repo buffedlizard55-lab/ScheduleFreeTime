@@ -53,6 +53,7 @@ h3{font-size:17px;margin:0 0 8px}
 .b-FREE{background:#d7f3e7;color:#0a5a41}
 .b-PARTIAL{background:#fff0d4;color:#8a5300}
 .b-UNCONFIRMED{background:#fbe0d4;color:#8a3c1f}
+.b-NOT{background:#f6d6d6;color:#8c1d1d;border:1px dashed #c96}
 .b-FULLY{background:#f6d6d6;color:#8c1d1d}
 .badge-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:4px}
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0 0}
@@ -63,6 +64,7 @@ h3{font-size:17px;margin:0 0 8px}
 .tl-wrap{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:16px}
 .tl{position:relative;height:46px;border-radius:9px;background:linear-gradient(90deg,#eef1f4,#e7ecef);border:1px solid var(--line);overflow:hidden}
 .tl .blk{position:absolute;top:0;bottom:0;background:var(--busy);opacity:.88;border-left:1px solid #fff}
+.tl .blk.est{background:repeating-linear-gradient(45deg,#c03a3a,#c03a3a 5px,#eb9d9d 5px,#eb9d9d 10px);opacity:.95}
 .tl .fr{position:absolute;top:0;bottom:0;background:var(--free);opacity:.24}
 .tl .now{position:absolute;top:0;bottom:0;width:2px;background:var(--accent2);z-index:3}
 .ticks{display:flex;justify-content:space-between;color:var(--mut);font-size:11px;margin-top:8px}
@@ -79,6 +81,7 @@ th{color:var(--mut);font-size:11px;text-transform:uppercase;letter-spacing:.06em
 tr:last-child td{border-bottom:none}
 .tag{display:inline-block;padding:2px 8px;border-radius:6px;font-size:10.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase}
 .t-mlb{background:#e4eefb;color:#1c4f8c}.t-nfl{background:#fbe3e3;color:#7a2020}.t-mls{background:#e2f4ec;color:#136449}.t-ncaa{background:#f7ecda;color:#7a5411}.t-nfl_all{background:#efe6f7;color:#59306e}.t-nba{background:#e8f0fe;color:#174ea6}.t-nhl{background:#e6f4f1;color:#0b5c4d}.t-ncaaw{background:#f3e8fd;color:#6b3fa0}.tag.ghost{opacity:.75}
+.tag.est{background:#ffe3c2;color:#8a4d00}.tag.official{background:#dcf1e6;color:#0a5a41}
 .hi{color:var(--hi);font-weight:800}
 .muted{color:var(--mut)}
 /* calendar */
@@ -90,6 +93,8 @@ tr:last-child td{border-bottom:none}
 .cell .m{font-size:9.5px;color:var(--mut);margin-top:2px}
 .cell.free{background:#e9f7f1;border-color:#9ed6c0}.cell.part{background:#fdf3df;border-color:#e6c887}
 .cell.unc{background:#fbebe4;border-color:#e0af98}.cell.booked{background:#f9dede;border-color:#d79a9a}
+.cell.notf{background:repeating-linear-gradient(45deg,#f9dede,#f9dede 7px,#fdeeee 7px,#fdeeee 14px);border-color:#d79a9a}
+.cell.notf .m{color:#8c1d1d;font-weight:700}
 .cell.sel{outline:2px solid var(--accent);outline-offset:2px}
 .cell.out{opacity:.28;cursor:default}
 .cell.today::after{content:"";position:absolute;bottom:3px;width:14px;height:2px;background:var(--accent2);border-radius:2px}
@@ -150,13 +155,17 @@ footer .container{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-betw
          postseason, Pro Bowl, Super Bowl), the <b>San Jose Earthquakes</b>, <b>Stanford</b> football,
          <b>Cal</b> football, <b>Warriors</b> basketball, <b>Sharks</b> hockey, or the
          <b>Westwood One</b> NCAA football radio showcase. 📻 marks the games on national radio in the
-         Bay Area (KNBR). Everything is shown in <b>America/Los_Angeles</b> for
+         Bay Area (KNBR). If a game is definitely happening but its kickoff is still TBD — every NFL
+         playoff game, the late-season Saturday doubleheaders, Week 18 — the day is marked
+         <b>NOT FREE — TIME TBD</b> and clearly-labeled <b>estimated</b> windows block the time until
+         the real kickoff is announced. Everything is shown in <b>America/Los_Angeles</b> for
          <b>Aug 1, 2026 – Feb 28, 2027</b>.</p>
     </div>
     <div class="legend" aria-label="Status legend">
       <span class="leg"><span class="dot"></span> Fully free</span>
       <span class="leg"><span class="dot amber"></span> Partial</span>
       <span class="leg"><span class="dot red"></span> Busy all day</span>
+      <span class="leg"><span class="dot red" style="border-radius:2px;background:repeating-linear-gradient(45deg,#c03a3a,#c03a3a 4px,#eb9d9d 4px,#eb9d9d 8px)"></span> Not free — time TBD</span>
       <span class="leg"><span class="dot unc"></span> Unconfirmed</span>
     </div>
     <div class="stats" id="stats"></div>
@@ -171,7 +180,7 @@ footer .container{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-betw
       </div>
       <div class="btn-group" role="group" aria-label="Day navigation">
         <button class="btn" id="prevD" aria-label="Previous day">&#8592; Previous</button>
-        <button class="btn primary" id="todayD" aria-label="Go to the snapshot day">Today</button>
+        <button class="btn primary" id="todayD" aria-label="Go to today (clamped to the schedule window)">Today</button>
         <button class="btn" id="nextD" aria-label="Next day">Next &#8594;</button>
       </div>
     </div>
@@ -202,9 +211,11 @@ footer .container{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-betw
       <div class="cal" id="cal"></div>
       <p class="cal-note"><span style="color:var(--free);font-weight:800">&#9632;</span> fully free &nbsp;
         <span style="color:var(--warn);font-weight:800">&#9632;</span> partial &nbsp;
-        <span style="color:var(--busy);font-weight:800">&#9632;</span> unconfirmed / booked &nbsp;
+        <span style="color:var(--busy);font-weight:800">&#9632;</span> fully booked &nbsp;
+        <span style="color:var(--busy);font-weight:800;background:repeating-linear-gradient(45deg,#c03a3a,#c03a3a 3px,#eb9d9d 3px,#eb9d9d 6px)">&#9632;</span> not free, time TBD &nbsp;
+        <span style="color:var(--unc);font-weight:800">&#9632;</span> unconfirmed (conditional) &nbsp;
         <span style="color:var(--accent2);font-weight:800">&#9642;</span> snapshot day &nbsp;
-        <span style="color:var(--hi);font-weight:800">&#9733;</span> Giants, Athletics or 49ers play.</p>
+        <span style="color:var(--hi);font-weight:800">&#9733;</span> Giants, Athletics, 49ers, Warriors, Sharks or a Westwood One broadcast.</p>
     </section>
 
     <section class="card" id="settings" aria-labelledby="setHeading">
@@ -233,9 +244,13 @@ footer .container{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-betw
         </div>
       </div>
       <div class="callout">Defaults are researched league averages (MLB 2:44, NFL 3:12, NCAA 3:24, MLS 2:00,
-        NBA 2:18, NHL 2:30). They're editable above. Every game with a TBD kickoff is shown but never fabricates a window —
-        those days are labeled <b>UNCONFIRMED</b> until the time is announced. See
-        <a href="#sources">Sources &amp; verification</a> for the links.</div>
+        NBA 2:18, NHL 2:30; the Super Bowl blocks 3:45). They're editable above. A day on which any
+        tracked game will definitely be played but has no official kickoff yet (NFL playoffs,
+        late-season Saturdays, Week 18, MLB postseason, some Stanford/Cal games) is <b>NOT FREE — TIME TBD</b>:
+        where a documented pattern exists (2025-26 playoff kickoffs, WWO air times, the league's
+        standard windows) an <b>EST</b>-tagged estimated window blocks the time; otherwise no free time
+        is asserted at all. Days with only conditional playoff possibilities stay <b>UNCONFIRMED</b>.
+        See <a href="#sources">Sources &amp; verification</a> for the links.</div>
     </section>
   </div>
 
@@ -264,20 +279,20 @@ footer .container{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-betw
             <tr><td>Warriors 2026-27 (63 games, 95.7 The Game)</td><td><a target="_blank" rel="noopener" href="https://www.espn.com/nba/team/schedule/_/name/gs/season/2027/seasontype/2">ESPN &mdash; regular season</a> &middot; <a target="_blank" rel="noopener" href="https://www.espn.com/nba/team/schedule/_/name/gs/golden-state-warriors">ESPN &mdash; preseason</a> &middot; flagship: <a target="_blank" rel="noopener" href="https://www.insideradio.com/free/nba-s-warriors-95-7-the-game-extend-flagship-partnership/article_8c79d479-424c-408d-9753-f353f7e18a57.html">insideRadio</a></td></tr>
             <tr><td>Sharks 2026-27 (68 games, 98.5 KFOX)</td><td><a target="_blank" rel="noopener" href="https://www.espn.com/nhl/team/schedule/_/name/sj/season/2027/seasontype/2">ESPN &mdash; regular season</a> &middot; <a target="_blank" rel="noopener" href="https://www.espn.com/nhl/team/schedule/_/name/sj/san-jose-sharks">ESPN &mdash; preseason</a> &middot; flagship: <a target="_blank" rel="noopener" href="https://www.nhl.com/sharks/news/sharks-and-kfox-announce-multi-year-extension/c-782397">nhl.com/sharks</a></td></tr>
             <tr><td>Westwood One NFL (65 broadcasts + 8 TBA, Bay Area: KNBR)</td><td><a target="_blank" rel="noopener" href="https://www.westwoodonesports.com/nfl-schedule/">westwoodonesports.com &mdash; NFL schedule</a> &middot; <a target="_blank" rel="noopener" href="https://www.westwoodonesports.com/station-finder/">station finder (SF: KNBR/KTCT)</a></td></tr>
-            <tr><td>Westwood One NCAA football (10 Saturday broadcasts)</td><td><a target="_blank" rel="noopener" href="https://www.westwoodonesports.com/ncaa-football/">westwoodonesports.com &mdash; NCAA football</a></td></tr>
-            <tr><td>All-NFL regular season (272) + preseason (49)</td><td><a target="_blank" rel="noopener" href="https://www.pro-football-reference.com/years/2026/games.htm">PFR league week-by-week table</a> &middot; <a target="_blank" rel="noopener" href="https://www.pro-football-reference.com/years/2026/preseason.htm">PFR preseason</a> &middot; official by-week pages: <a target="_blank" rel="noopener" href="https://www.nfl.com/schedules/2026/by-week/week-9">nfl.com week 9</a></td></tr>
-            <tr><td>NFL postseason / Super Bowl LXI (Feb 14, 2027, SoFi)</td><td><a target="_blank" rel="noopener" href="https://www.nfl.com/news/los-angeles-to-host-super-bowl-lxi-in-2027">nfl.com &mdash; LA to host SB LXI</a> &middot; <a target="_blank" rel="noopener" href="https://www.lasec.net/los-angeles-region-to-host-super-bowl-lxi-in-2027-welcoming-the-nfls-biggest-stage-for-the-second-time-this-decade-to-sofi-stadium/">LA host committee</a></td></tr>
+            <tr><td>Westwood One NCAA football (10 Saturday broadcasts, kickoffs where announced)</td><td><a target="_blank" rel="noopener" href="https://www.westwoodonesports.com/ncaa-football/">westwoodonesports.com &mdash; NCAA football</a> &middot; LSU@Ole Miss 9/19 7:30 PM ET: <a target="_blank" rel="noopener" href="https://olemisssports.com/news/2026/8/21/football-espn-college-gameday-coming-to-ole-miss-on-september-19">olemisssports.com</a> &middot; Oklahoma@Georgia 9/26 3:30 PM ET: <a target="_blank" rel="noopener" href="https://www.si.com/college/georgia/football/breaking-georgia-football-gets-major-news-about-oklahoma-sooners-matchup-01m2gjtnqmfd">SI/Covers (SEC announcement)</a> &middot; Florida@Georgia 10/31 3:30 PM ET: <a target="_blank" rel="noopener" href="https://gafljax.com/faq/">gafljax.com FAQ (official)</a> &middot; Oregon@Ohio State 11/7 3:30 PM ET (reported): <a target="_blank" rel="noopener" href="https://www.oregonlive.com/ducks/2026/09/kickoff-time-tv-channel-reportedly-set-for-oregon-football-vs-ohio-state.html">oregonlive (The Athletic)</a> &middot; Michigan@Oregon 11/14 date: <a target="_blank" rel="noopener" href="https://goducks.com/game-center/24386">goducks.com game center</a></td></tr>
+            <tr><td>All-NFL regular season (272) + preseason (49, all with kickoff times)</td><td><a target="_blank" rel="noopener" href="https://www.pro-football-reference.com/years/2026/games.htm">PFR league week-by-week table</a> &middot; <a target="_blank" rel="noopener" href="https://www.pro-football-reference.com/years/2026/preseason.htm">PFR preseason</a> &middot; preseason kickoff times: <a target="_blank" rel="noopener" href="https://www.sportingnews.com/us/nfl/news/nfl-preseason-schedule-2026-times-tv-channels-streams-watch/c2141fa9adb0a760d8d02485">Sporting News full preseason schedule</a> (cross-checked vs <a target="_blank" rel="noopener" href="https://sports.yahoo.com/articles/2026-nfl-preseason-week-1-120031757.html">Yahoo</a>, <a target="_blank" rel="noopener" href="https://www.foxnews.com/sports/2026-nfl-preseason-week-1-schedule-dates-times-tv-channels-how-to-watch">Fox News</a>, <a target="_blank" rel="noopener" href="https://www.cabletv.com/sports/watch-nfl-preseason">CableTV</a>) &middot; Week 18 officially TBD: <a target="_blank" rel="noopener" href="https://www.nfl.com/schedules/2026/by-week/week-18">nfl.com week 18</a> &middot; no Saturday games Dec 26 / Jan 2: <a target="_blank" rel="noopener" href="https://www.nfl.com/schedules/2026/by-week/week-16">nfl.com week 16</a>, <a target="_blank" rel="noopener" href="https://www.nfl.com/schedules/2026/by-week/week-17">week 17</a></td></tr>
+            <tr><td>NFL postseason dates + Super Bowl LXI (official 3:30 PM PT kickoff)</td><td><a target="_blank" rel="noopener" href="https://www.espn.com/nfl/game/_/gameId/401873270/tbd-tbd">ESPN event 401873270 &mdash; SB LXI, Feb 14 2027 6:30 PM ET (official)</a> &middot; <a target="_blank" rel="noopener" href="https://www.globenewswire.com/news-release/2026/09/09/3358684/9032/en/cumulus-media-s-westwood-one-official-network-audio-partner-of-the-nfl-celebrates-40th-consecutive-season-and-reveals-2026-nfl-lineup-and-programming-highlights-from-nfl-kickoff-to.html">Cumulus press release 9/9/26: every postseason game on Westwood One</a> &middot; round dates verified on ESPN's feed (WC <a target="_blank" rel="noopener" href="https://www.espn.com/nfl/game/_/gameId/401872910/tbd-tbd">Jan 16</a>, <a target="_blank" rel="noopener" href="https://www.espn.com/nfl/game/_/gameId/401872912/tbd-tbd">Jan 17</a>, <a target="_blank" rel="noopener" href="https://www.espn.com/nfl/game/_/gameId/401872915/tbd-tbd">Jan 18</a>, Div <a target="_blank" rel="noopener" href="https://www.espn.com/nfl/game/_/gameId/401872916/tbd-tbd">Jan 23</a>, CC <a target="_blank" rel="noopener" href="https://www.espn.com/nfl/game/_/gameId/401872920/tbd-tbd">Jan 31</a>) &middot; estimated window pattern: <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/2025%E2%80%9326_NFL_playoffs">2025-26 postseason kickoffs (Wikipedia)</a> &middot; Pro Bowl date conflict: <a target="_blank" rel="noopener" href="https://nflplayoffpass.com/super-bowl-2027/">nflplayoffpass (Feb 9)</a> vs <a target="_blank" rel="noopener" href="https://www.sportbusy.com/events/pro-bowl-2027/">sportbusy (Feb 7)</a> &mdash; both days flagged &middot; SB length: <a target="_blank" rel="noopener" href="https://bolavip.com/en/nfl/super-bowl-timeouts-length-duration-breaks">~3h45m (bolavip)</a></td></tr>
             <tr><td>MLS playoff windows (SJ conditional)</td><td><a target="_blank" rel="noopener" href="https://www.mlssoccer.com/playoffs/2025/news/audi-2026-mls-cup-playoffs-key-dates-schedule-information">mlssoccer.com &mdash; 2026 playoffs key dates</a></td></tr>
             <tr><td>CFP / ACC 2026-27 dates</td><td><a target="_blank" rel="noopener" href="https://www.espn.com/college-football/story/_/id/48958840/2026-college-football-playoff-bowl-schedule-46-games">ESPN CFP schedule article</a></td></tr>
             <tr><td>MLB 2027 spring training (out of scope, flagged)</td><td><a target="_blank" rel="noopener" href="https://www.mlb.com/press-release/press-release-mlb-announces-2027-spring-training-schedule">MLB press release &mdash; ST opens Feb 19, 2027</a></td></tr>
             <tr><td>MLB average length (2026 = 2:44 default)</td><td><a target="_blank" rel="noopener" href="https://sports.betmgm.com/en/blog/mlb/average-game-time-in-mlb-bm23/">BetMGM: 2026 avg 2:44</a> &middot; <a target="_blank" rel="noopener" href="https://www.sportsbusinessjournal.com/Articles/2026/04/29/mlb-pace-of-play-slows-game-lengths-rise-despite-pitch-timer/">SBJ: 2026 2:43 thru first 421 games</a> &middot; <a target="_blank" rel="noopener" href="https://www.mlb.com/press-release/press-release-mlb-attendance-reaches-71-4-million-three-straight-years-of-growth-for-first-time-since-2007">MLB PR: 2025 final 2:38</a></td></tr>
             <tr><td>NBA average length (2:18 default)</td><td><a target="_blank" rel="noopener" href="https://www.alibaba.com/product-insights/how-long-is-the-average-basketball-game-2026-guide.html">2025-26 measured 2:18:32</a> &middot; <a target="_blank" rel="noopener" href="https://sportsgeardaily.com/basketball/how-long-are-basketball-games">SportsGearDaily: ~2:15 avg</a></td></tr>
             <tr><td>NHL average length (2:30 default)</td><td><a target="_blank" rel="noopener" href="https://nhltraderumorstalk.com/how-long-is-a-hockey-game">~2:20&ndash;2:40 range, ~2.5h typical</a> &middot; <a target="_blank" rel="noopener" href="https://icehockeyguide.com/hockey-game-length/">IceHockeyGuide: 2.5&ndash;3h incl. intermissions</a></td></tr>
-            <tr><td>Bay Area radio flagships</td><td>Giants: KNBR 680/104.5 (flagship since 1979) &middot; 49ers: KSAN 107.7 + KNBR &middot; Stanford: KNBR/KTCT 1050 (<a target="_blank" rel="noopener" href="https://gostanford.com/news/2026/07/30/2026-football-radio-broadcast-team-announced">gostanford.com</a>) &middot; Cal: KGO 810 (<a target="_blank" rel="noopener" href="https://bearinsider.com/s/2255/cal-extends-partnership-with-kgo-radio">47th yr in 2020; current flagship unverified &mdash; flagged</a>) &middot; Earthquakes: KSFO 810 (<a target="_blank" rel="noopener" href="https://www.sjearthquakes.com/news/news-earthquakes-announce-radio-stations-for-2026-mls-season">sjearthquakes.com</a>)</td></tr>
+            <tr><td>Bay Area radio flagships</td><td>Giants: KNBR 680/104.5 (flagship since 1979) &middot; 49ers: KSAN 107.7 + KNBR &middot; Stanford: KNBR/KTCT 1050 (<a target="_blank" rel="noopener" href="https://gostanford.com/news/2026/07/30/2026-football-radio-broadcast-team-announced">gostanford.com</a>) &middot; Cal: KGO 810 (<a target="_blank" rel="noopener" href="https://bearinsider.com/s/2255/cal-extends-partnership-with-kgo-radio">47th yr in 2020; current flagship unverified &mdash; flagged</a>) &middot; Athletics: KSTE 650 Sacramento + A's Cast/iHeart, KNEW 910 in the network (<a target="_blank" rel="noopener" href="https://www.sacbee.com/sports/article300334119.html">Sacramento Bee, Feb 2025</a>; the A's left Bay Area flagship KTRB 860 in 2024) &middot; Earthquakes: KSFO 810 (<a target="_blank" rel="noopener" href="https://www.sjearthquakes.com/news/news-earthquakes-announce-radio-stations-for-2026-mls-season">sjearthquakes.com</a>)</td></tr>
           </tbody>
         </table>
       </div>
-      <div class="callout"><b>Verification note:</b> re-checked against primary sources on <b>2026-09-14</b>.
+      <div class="callout"><b>Verification note:</b> re-checked against primary sources on <b>2026-09-15</b> (MLB Stats API Sep 26-29 boundary query; Westwood One NFL page row-for-row; nfl.com weeks 16-18 pages; ESPN postseason events incl. the official Super Bowl kickoff; Sporting News preseason times; WWO college kickoffs; MLB postseason placeholders confirmed TBD).
         All 65 Westwood One NFL broadcasts match the league table by date + matchup (plus 8 TBA placeholders);
         the 63 Warriors and 68 Sharks games match ESPN's rendered schedules row-for-row with per-game review
         links; earlier checks still hold (MLB Sep 10&ndash;12 35/35, all 28 postseason dates TBD, 272 NFL rows at
@@ -298,9 +313,11 @@ footer .container{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-betw
 const DUR={mlb:164,nfl:192,ncaa:204,mls:120,nba:138,nhl:150};   // researched averages (docs/VERIFICATION.md)
 const LG={mlb:true,nfl:true,mls:true,ncaa:true,nfl_all:true,nba:true,nhl:true,ncaaw:true};   // league toggles (show + count)
 const BLOCK={mlb:true,nfl:true,mls:true,ncaa:true,nfl_all:true,nba:true,nhl:true,ncaaw:true}; // every tracked league blocks free time
-const SNAPSHOT=new Date(2026,8,14);           // dataset snapshot / last verification day (2026-09-14)
+const SNAPSHOT=new Date(2026,8,15);           // dataset snapshot / last verification day (2026-09-15)
 const WIN_S=new Date(2026,7,1), WIN_E=new Date(2027,2,28);
-let DATA=null, BYDATE={}, CUR=new Date(SNAPSHOT), MONTH=new Date(2026,7,1);
+const REAL_TODAY=new Date();                   // actual current date (Today button + marker)
+const clampToday=()=>{const t=REAL_TODAY;return t<WIN_S?new Date(WIN_S):(t>WIN_E?new Date(WIN_E):new Date(t));};
+let DATA=null, BYDATE={}, STATUS={}, CUR=clampToday(), MONTH=new Date(CUR.getFullYear(),CUR.getMonth(),1);
 const pad=n=>String(n).padStart(2,'0');
 const key=d=>`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
 const shift=(d,n)=>{const x=new Date(d);x.setDate(x.getDate()+n);return x;};
@@ -312,7 +329,7 @@ function dayGames(ds){
   return (BYDATE[ds]||[]).filter(g=>LG[g.sport]&&!g.dedup).sort((a,b)=>(a.start_min??9999)-(b.start_min??9999));
 }
 function windows(gs){
-  const blocks=gs.filter(isBlocking).map(g=>[g.start_min,g.start_min+dur(g.sport)]).sort((a,b)=>a[0]-b[0]);
+  const blocks=gs.filter(isBlocking).map(g=>[g.start_min,g.start_min+(g.dur_override||dur(g.sport))]).sort((a,b)=>a[0]-b[0]);
   const merged=[];
   for(const[s,e]of blocks){
     if(merged.length&&s<=merged[merged.length-1][1]) merged[merged.length-1][1]=Math.max(merged[merged.length-1][1],e);
@@ -335,11 +352,13 @@ function renderStats(){
     `<div class="stat"><b>${tt.nba_games}</b><span>Warriors (NBA, 95.7 The Game)</span></div>`+
     `<div class="stat"><b>${tt.nhl_games}</b><span>Sharks (NHL, 98.5 KFOX)</span></div>`+
     `<div class="stat"><b>${tt.wwo_nfl_matched}</b><span>Westwood One NFL radio games</span></div>`+
+    `<div class="stat"><b>${(tt.nfl_window_rows||0)}</b><span>NFL TBD windows blocked (every playoff game + SB)</span></div>`+
+    `<div class="stat"><b>${days.filter(d=>d.status==='NOT FREE — TIME TBD').length}</b><span>Not-free days (time TBD)</span></div>`+
     `<div class="stat"><b>${freeCount}</b><span>Fully free days</span></div>`+
     `<div class="stat"><b>${DATA.flags.length}</b><span>Flags raised</span></div>`;
   document.getElementById('meta').innerHTML=
     `Snapshot <b>${DATA.meta.generated_utc}</b><br>`+
-    `${totalGames} tracked games &middot; ${DATA.meta.totals.mlb_postseason_tbd} postseason TBD<br>`+
+    `${totalGames} tracked entries &middot; ${DATA.meta.totals.mlb_postseason_tbd} MLB postseason TBD &middot; ${(DATA.meta.totals.nfl_windows_estimated||0)+ (DATA.meta.totals.nfl_windows_official||0)} NFL TBD windows<br>`+
     `All times <b>America/Los_Angeles</b>`;
 }
 function renderCal(){
@@ -355,18 +374,20 @@ function renderCal(){
     const e=document.createElement('div');e.className='cell';
     const gs=dayGames(ds);
     const {merged,free}=windows(gs);
-    const tbd=gs.filter(g=>g.start_min==null&&!g.info_only&&!g.dedup).length;
+    const st=STATUS[ds]||'FREE';
     const fm=free.reduce((a,b)=>a+b[1]-b[0],0);
     if(!inWin){e.classList.add('out');}
-    else if(tbd)e.classList.add('unc');
+    else if(st==='NOT FREE — TIME TBD')e.classList.add('notf');
+    else if(st==='UNCONFIRMED')e.classList.add('unc');
     else if(!merged.length)e.classList.add('free');
     else if(fm===0)e.classList.add('booked');
     else e.classList.add('part');
     if(ds===key(CUR))e.classList.add('sel');
-    if(ds===key(SNAPSHOT))e.classList.add('today');
-    e.innerHTML=`<div class="n">${d}</div><div class="m">${!inWin?'out':tbd?'tbd':(merged.length?Math.round(fm/60)+'h free':'free')}</div>`+
+    if(ds===key(clampToday()))e.classList.add('today');
+    if(ds===key(SNAPSHOT))e.title='Data snapshot / last verification day: '+key(SNAPSHOT);
+    e.innerHTML=`<div class="n">${d}</div><div class="m">${!inWin?'out':st==='NOT FREE — TIME TBD'?'not free':st==='UNCONFIRMED'?'unconfirmed':(merged.length?Math.round(fm/60)+'h free':'free')}</div>`+
       (gs.some(g=>g.priority)?'<div class="star">&#9733;</div>':'');
-    if(inWin){e.tabIndex=0;e.setAttribute('role','button');e.setAttribute('aria-label',`${dt.toLocaleDateString('en-US')} - ${Math.round(fm/60)} hours free`);e.onclick=()=>{CUR=dt;renderDay();renderCal();};
+    if(inWin){e.tabIndex=0;e.setAttribute('role','button');e.setAttribute('aria-label',`${dt.toLocaleDateString('en-US')} - ${st}`);e.onclick=()=>{CUR=dt;renderDay();renderCal();};
       e.onkeydown=ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();e.click();}};}
     c.appendChild(e);
   }
@@ -375,32 +396,41 @@ function renderDay(){
   const ds=key(CUR);
   document.getElementById('dLabel').textContent=CUR.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});
   const gs=dayGames(ds), {merged,free}=windows(gs);
-  const tbd=gs.filter(g=>g.start_min==null&&!g.info_only);
+  const tbd=gs.filter(g=>g.start_min==null&&!g.info_only&&!g.conditional);
+  const est=gs.filter(g=>g.estimated&&g.start_min!=null);
+  const cond=gs.filter(g=>g.conditional);
   const fm=free.reduce((a,b)=>a+b[1]-b[0],0);
-  let st='UNCONFIRMED';
-  if(!tbd.length){
-    if(!merged.length)st='FREE';
-    else if(fm===0)st='FULLY BOOKED';
-    else st='PARTIAL';
-  }
+  let st=STATUS[ds]||(tbd.length||est.length?'NOT FREE — TIME TBD':(cond.length?'UNCONFIRMED':(!merged.length?'FREE':(fm===0?'FULLY BOOKED':'PARTIAL'))));
   document.getElementById('dBadge').innerHTML=
-    `<span class="badge b-${st.split(' ')[0]}">${st}</span> <span class="sub">${gs.length} game(s) &middot; ${Math.floor(fm/60)}h ${fm%60}m free${tbd.length?' (provisional)':''}</span>`;
+    `<span class="badge b-${st.split(' ')[0]}">${st}</span> <span class="sub">${gs.length} game(s) &middot; ${Math.floor(fm/60)}h ${fm%60}m free${(tbd.length||est.length)?' (provisional)':''}</span>`;
   const tl=document.getElementById('tl');tl.innerHTML='';
   free.forEach(([s,e])=>{const d=document.createElement('div');d.className='fr';d.style.left=(s/1440*100)+'%';d.style.width=((e-s)/1440*100)+'%';tl.appendChild(d);});
   merged.forEach(([s,e])=>{const d=document.createElement('div');d.className='blk';d.style.left=(Math.max(s,0)/1440*100)+'%';d.style.width=((Math.min(e,1440)-Math.max(s,0))/1440*100)+'%';d.title='Games on: '+fmt(s)+' - '+fmt(e);tl.appendChild(d);});
-  document.getElementById('freeList').innerHTML=
-    '<h3>Free windows (no game on)</h3><div class="fw">'+
-    (free.length?free.map(([s,e])=>`<div><b>${fmt(s)} &ndash; ${fmt(e)}</b><small>${Math.floor((e-s)/60)}h ${(e-s)%60}m free</small></div>`).join('')
-      :'<div class="empty">No free time on this day.</div>')+'</div>'+
-    (tbd.length?`<div class="callout"><b>Unconfirmed:</b> ${tbd.length} game(s) on this day have no announced start time, so they are NOT blocking the windows above. Treat this day's free time as provisional.</div>`:'');
+  // estimated windows: hatched overlay (clearly not official times)
+  est.forEach(g=>{const s=g.start_min,e=g.start_min+(g.dur_override||dur(g.sport));const d=document.createElement('div');d.className='blk est';d.style.left=(Math.max(s,0)/1440*100)+'%';d.style.width=((Math.min(e,1440)-Math.max(s,0))/1440*100)+'%';d.title='ESTIMATED window: '+fmt(s)+' - '+fmt(e)+' (kickoff TBD)';tl.appendChild(d);});
+  let fl='';
+  if(st==='NOT FREE — TIME TBD'&&est.length===0){
+    fl='<h3>Free windows (no game on)</h3>'+
+       `<div class="callout"><b>&#9888; Free time NOT available on this day.</b> ${tbd.length} game(s) will be played/aired but have no announced start time, and no reliable window can be estimated yet — do not plan around the free time. Announcements: MLB posts postseason times ~1 week out; the NFL posts Wk-18 and playoff kickoffs after the Jan 3 slate.</div>`;
+  }else{
+    fl='<h3>Free windows (no game on)'+((tbd.length||est.length)?' — PROVISIONAL':'')+'</h3><div class="fw">'+
+      (free.length?free.map(([s,e])=>`<div><b>${fmt(s)} &ndash; ${fmt(e)}</b><small>${Math.floor((e-s)/60)}h ${(e-s)%60}m free</small></div>`).join('')
+        :'<div class="empty">No free time on this day.</div>')+'</div>';
+    if(est.length)fl+=`<div class="callout"><b>&#9888; Free time NOT available — kickoff(s) still TBD.</b> ${est.length} estimated window(s) (hatched on the timeline, labeled EST in the table) are blocked using documented patterns (${est.some(g=>g.sport==='nfl_all')?'2025-26 NFL postseason kickoffs, the league&rsquo;s standard Saturday windows, and Westwood One&rsquo;s air times':''}${est.some(g=>g.sport==='ncaaw')?'the WWO college showcase&rsquo;s 3:30/7:30 PM ET windows':''}). The real windows will replace them once times are official.</div>`;
+    else if(tbd.length)fl+=`<div class="callout"><b>&#9888; Provisional:</b> ${tbd.length} game(s) on this day have no announced start time, so they do not block a specific window yet. Treat this day's free time as provisional.</div>`;
+  }
+  if(cond.length)fl+=`<div class="callout"><b>Conditional:</b> ${cond.length} possible playoff/qualification event(s) (MLS playoffs / ACC / CFP) would add games if Stanford, Cal or the Earthquakes qualify — those days are UNCONFIRMED.</div>`;
+  document.getElementById('freeList').innerHTML=fl;
   const tb=document.getElementById('games');tb.innerHTML='';
   if(!gs.length)tb.innerHTML='<tr><td colspan="5" class="empty">No games from the tracked leagues.</td></tr>';
   gs.forEach(g=>{
-    const end=g.start_min!=null?fmt(g.start_min+dur(g.sport)):'TBD';
+    const end=g.start_min!=null?fmt(g.start_min+(g.dur_override||dur(g.sport))):'TBD';
+    const estTag=g.estimated?' <span class="tag est" title="Estimated window — kickoff still TBD; derived from a documented pattern (see Sources &amp; verification)">EST</span>':'';
+    const offTag=g.official?' <span class="tag official" title="Officially announced kickoff">official</span>':'';
     tb.insertAdjacentHTML('beforeend',
-      `<tr><td>${g.start_pt?g.start_pt+' PT':'<b class="hi">TBD</b>'}</td>`+
-      `<td><span class="tag t-${g.sport}">${{mls:'MLS',ncaa:'NCAA',nfl_all:'NFL',nba:'NBA',nhl:'NHL',ncaaw:'NCAAF'}[g.sport]||g.sport.toUpperCase()}</span>${g.priority?' <span class="hi">&#9733;</span>':''}${g.wwo?` <span title="Westwood One national radio (Bay Area: KNBR) — ${g.wwo_slot||''}">&#128225;</span>':''}${g.sport==='ncaaw'?' <span title="Westwood One national radio (Bay Area: KNBR)">&#128225;</span>':''}${g.conditional?' <span class="tag" style="background:#efe9f2;color:#59306e">conditional</span>':''}${g.info_only?' <span class="muted" style="font-size:10px">(listed only)</span>':''}</td>`+
-      `<td>${g.label}${g.phase?` <span class="muted">(${g.phase})</span>`:''}${g.result?` <span class="muted">&ndash; ${g.result}</span>`:''}${g.flag?`<div class="flag" style="margin-top:4px"><b>&#9888;</b> ${g.flag}</div>`:''}</td>`+
+      `<tr><td>${g.start_pt&&g.start_pt!=='TBD'?g.start_pt+' PT':'<b class="hi">TBD</b>'}</td>`+
+      `<td><span class="tag t-${g.sport}">${{mls:'MLS',ncaa:'NCAA',nfl_all:'NFL',nba:'NBA',nhl:'NHL',ncaaw:'NCAAF'}[g.sport]||g.sport.toUpperCase()}</span>${g.priority?' <span class="hi">&#9733;</span>':''}${g.wwo?` <span title="Westwood One national radio (Bay Area: KNBR) — ${g.wwo_slot||''}">&#128225;</span>`:''}${g.sport==='ncaaw'?' <span title="Westwood One national radio (Bay Area: KNBR)">&#128225;</span>':''}${estTag}${offTag}${g.conditional?' <span class="tag" style="background:#efe9f2;color:#59306e">conditional</span>':''}${g.info_only?' <span class="muted" style="font-size:10px">(listed only)</span>':''}</td>`+
+      `<td>${g.label}${g.phase?` <span class="muted">(${g.phase})</span>`:''}${g.result?` <span class="muted">&ndash; ${g.result}</span>`:''}${g.note?`<div class="muted" style="font-size:11px">${g.note}</div>`:''}${g.flag?`<div class="flag" style="margin-top:4px"><b>&#9888;</b> ${g.flag}</div>`:''}</td>`+
       `<td>${end}</td>`+
       `<td class="muted" style="font-size:11.5px">${g.review?`<a href="${g.review}" target="_blank" rel="noopener">review</a> &middot; `:''}${(g.source||'').replace(/^.*\//,'')}</td></tr>`);
   });
@@ -421,11 +451,11 @@ async function boot(){
       '<code>python3 -m http.server 8000</code>, then open the printed URL.</div>';
     return;
   }
-  DATA.days.forEach(d=>BYDATE[d.date]=d.games);
+  DATA.days.forEach(d=>{BYDATE[d.date]=d.games;STATUS[d.date]=d.status;});
   renderStats();renderFlags();renderCal();renderDay();
   document.getElementById('prevD').onclick=()=>{const n=shift(CUR,-1);if(n>=WIN_S){CUR=n;MONTH=new Date(CUR);renderCal();renderDay();}};
   document.getElementById('nextD').onclick=()=>{const n=shift(CUR,1);if(n<=WIN_E){CUR=n;MONTH=new Date(CUR);renderCal();renderDay();}};
-  document.getElementById('todayD').onclick=()=>{CUR=new Date(SNAPSHOT);MONTH=new Date(CUR);renderCal();renderDay();};
+  document.getElementById('todayD').onclick=()=>{CUR=clampToday();MONTH=new Date(CUR.getFullYear(),CUR.getMonth(),1);renderCal();renderDay();};
   document.getElementById('prevM').onclick=()=>{MONTH=new Date(MONTH.getFullYear(),MONTH.getMonth()-1,1);renderCal();};
   document.getElementById('nextM').onclick=()=>{MONTH=new Date(MONTH.getFullYear(),MONTH.getMonth()+1,1);renderCal();};
   document.querySelectorAll('input[data-lg]').forEach(i=>i.onchange=()=>{LG[i.dataset.lg]=i.checked;renderCal();renderDay();});

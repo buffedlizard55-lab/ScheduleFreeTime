@@ -6,6 +6,24 @@
 #   https://www.pro-football-reference.com/boxscores/<id>.htm
 # Times are Eastern Time as printed by the source (ET->PT conversion is -3h for every date
 # in the season: both zones shift DST on the same days).
+# 2026-09-15 CORRECTION — Week 18: the PFR table prints all 16 Wk-18 games as
+# "Sunday Jan 10, 1:00 PM ET", but the official nfl.com week-18 page lists every game
+# as date/time TBD (https://www.nfl.com/schedules/2026/by-week/week-18), and Westwood
+# One's schedule page already reserves a Saturday TRIPLEHEADER on Jan 9 (air 12:30 /
+# 4:15 / 8:00 PM ET) plus a flex-selected Sunday-night game Jan 10. The 16 Wk-18 rows
+# are therefore stored with timeET=TBD (matchups + Jan 10 Sunday date kept); the day's
+# blocking uses the estimated window in data/raw/nfl_2027_postseason_tbd.txt until the
+# league announces actual times (after the Jan 3 slate). Three of these 16 games are
+# expected to move to Saturday Jan 9 and one into the SNF window.
+# 2026-09-15 VERIFICATION — weeks 2-17 re-verified live against official sources:
+# nfl.com by-week pages week-16 (https://www.nfl.com/schedules/2026/by-week/week-16:
+# Dec 24 TNF HOU@PHI 8:15p, Dec 25 GB@CHI 1:00p / BUF@DEN 4:30p / LAR@SEA 8:15p,
+# Dec 27 slate incl. SF@KC 4:25p, SNF JAX@DAL 8:20p, Dec 28 MNF NYG@DET 8:15p) and
+# week-17 (Dec 31 TNF BAL@CIN 8:15p, Jan 3 Sunday slate); the Westwood One schedule
+# page re-fetched 2026-09-15 matches every dated broadcast transcribed from it (65
+# matchups, air times, slots, event ids) through Jan 10; no flex changes since
+# 2026-09-11 (NFL Sunday flex starts at Week 5; first flex-eligible announcements
+# come ~Sep 22 for Week 7).
 # Cross-checked 2026-09-11 against:
 #   - official 49ers club schedule (all 10 SF games in Aug1-Oct31+Nov-Jan window: matchup/date/time match)
 #   - official nfl.com week-1 page (https://www.nfl.com/schedules/2026/by-week/week-1: Sep 9/10 finals + Sep 13 1:00 slate)
@@ -269,19 +287,19 @@
 17|2027-01-03|16:25|DET|CHI|20270103chi|
 17|2027-01-03|20:20|PHI|SFO|20270103sfo|
 17|2027-01-04|20:15|HTX|GNB|20270104gnb|
-18|2027-01-10|13:00|ATL|CAR|20270110car|
-18|2027-01-10|13:00|CHI|MIN|20270110min|
-18|2027-01-10|13:00|CLE|CIN|20270110cin|
-18|2027-01-10|13:00|DAL|WAS|20270110was|
-18|2027-01-10|13:00|DET|GNB|20270110gnb|
-18|2027-01-10|13:00|JAX|CLT|20270110clt|
-18|2027-01-10|13:00|MIA|NWE|20270110nwe|
-18|2027-01-10|13:00|NYJ|BUF|20270110buf|
-18|2027-01-10|13:00|OTI|HTX|20270110htx|
-18|2027-01-10|13:00|PHI|NYG|20270110nyg|
-18|2027-01-10|13:00|PIT|RAV|20270110rav|
-18|2027-01-10|13:00|RAI|KAN|20270110kan|
-18|2027-01-10|13:00|SDG|DEN|20270110den|
-18|2027-01-10|13:00|SEA|LAR|20270110ram|
-18|2027-01-10|13:00|SFO|CRD|20270110crd|
-18|2027-01-10|13:00|TAM|NOR|20270110nor|
+18|2027-01-10|TBD|ATL|CAR|20270110car|
+18|2027-01-10|TBD|CHI|MIN|20270110min|
+18|2027-01-10|TBD|CLE|CIN|20270110cin|
+18|2027-01-10|TBD|DAL|WAS|20270110was|
+18|2027-01-10|TBD|DET|GNB|20270110gnb|
+18|2027-01-10|TBD|JAX|CLT|20270110clt|
+18|2027-01-10|TBD|MIA|NWE|20270110nwe|
+18|2027-01-10|TBD|NYJ|BUF|20270110buf|
+18|2027-01-10|TBD|OTI|HTX|20270110htx|
+18|2027-01-10|TBD|PHI|NYG|20270110nyg|
+18|2027-01-10|TBD|PIT|RAV|20270110rav|
+18|2027-01-10|TBD|RAI|KAN|20270110kan|
+18|2027-01-10|TBD|SDG|DEN|20270110den|
+18|2027-01-10|TBD|SEA|LAR|20270110ram|
+18|2027-01-10|TBD|SFO|CRD|20270110crd|
+18|2027-01-10|TBD|TAM|NOR|20270110nor|

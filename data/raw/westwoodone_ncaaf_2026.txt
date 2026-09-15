@@ -1,23 +1,52 @@
 # Westwood One Sports — 2026 NCAA football national radio broadcasts (Saturday showcase).
-# Transcribed 2026-09-14 from the official page:
+# Transcribed 2026-09-14 from the official page, RE-VERIFIED + kickoff times added 2026-09-15:
 #   https://www.westwoodonesports.com/ncaa-football/
 # Bay Area carriage: KNBR family carries Westwood One Sports in San Francisco
 # (station-finder NFL table lists KNBR-AM/FM + KTCT-AM; KNBR-FM Wikipedia confirms the
 # stations are "the San Francisco affiliates for Westwood One Sports" generally; the page's
 # own caveat - local conflicts can pre-empt any given broadcast - applies).
-# Most air times are officially "Air time TBD" - those rows never fabricate a window; they
-# mark the day UNCONFIRMED per the honesty rule. Two rows carry times (Sep 19, Oct 31).
-# Format: date|airET(HH:MM 24h, - if TBD)|away|home|eventId|note
-2026-09-19|19:00|LSU|Ole Miss|557127|Vaught Hemingway Stadium; Danny Reed & Derek Rackley
-2026-09-26|-|Oklahoma|Georgia|557136|Sanford Stadium; air time TBD
-2026-10-03|-|Notre Dame|North Carolina|557137|Kenan Stadium; air time TBD
-2026-10-10|-|Indiana|Nebraska|557139|Memorial Stadium Lincoln; air time TBD
-2026-10-17|-|Penn State|Michigan|557140|Michigan Stadium; air time TBD
-2026-10-24|-|Ole Miss|Texas|557141|DKR-Texas Memorial Stadium; air time TBD
-2026-10-31|15:00|Florida|Georgia|557129|Mercedes-Benz Stadium Atlanta (neutral); 3:00 PM ET
-2026-11-07|-|Oregon|Ohio State|557143|Ohio Stadium; air time TBD
-2026-11-14|-|Michigan|Oregon|557144|Autzen Stadium; page shows date range NOV 14 - NOV 21 (ambiguous; kept Nov 14 + flagged)
-2026-11-21|-|LSU|Tennessee|557145|Neyland Stadium; air time TBD
-# TOTAL: 10 rows, 2 with air times + 8 TBD.
-# NOTE: none of these involve Stanford or Cal; they are tracked ONLY as Bay Area national-radio
-# broadcasts (new sport id `ncaaw` in the build), separate from the Stanford/Cal `ncaa` rows.
+# Per the 2026-09-15 pass, every WWO-covered game blocks free time regardless of whether
+# the air time is announced. KICKOFF times (block start) now come from official
+# conference/club announcements where they exist:
+#   Sep 19 LSU@Ole Miss     7:30 PM ET (6:30 PM CT) ABC - olemissports.com game note +
+#                           fox.com/sports listing; WWO air 7:00 PM ET (pregame).
+#   Sep 26 Oklahoma@Georgia 3:30 PM ET ESPN/ABC - SEC Week-4 announcement Sep 14, 2026
+#                           (si.com/college/georgia + yahoo.com articles).
+#   Oct 31 Florida@Georgia  3:30 PM ET ABC (Mercedes-Benz Stadium, Atlanta - game moved
+#                           from Jacksonville during EverBank construction) - official
+#                           gafljax.com FAQ + ajc.com, June 11 2026; WWO air 3:00 PM ET.
+#   Nov  7 Oregon@Ohio St.  REPORTED 3:30 PM ET on CBS (The Athletic via si.com and
+#                           oregonlive.com; official announcement expected Oct 26).
+#                           Treated as an estimated slot until official.
+#   Nov 14 Michigan@Oregon  date CONFIRMED Sat Nov 14, Autzen Stadium (goducks.com game
+#                           center); kickoff still TBD. The WWO page's "NOV 14 - NOV 21"
+#                           date range is resolved to Nov 14.
+# Kickoffs still TBD (Oct 3 ND@UNC, Oct 10 IND@NEB, Oct 17 PSU@MICH, Oct 24 MISS@TEX,
+# Nov 21 LSU@TEN - ESPN/Big Ten/SEC listings show TBD as of 2026-09-15) block TWO
+# ESTIMATED showcase slots (3:30 PM ET = 12:30 PM PT and 7:30 PM ET = 4:30 PM PT),
+# the two windows WWO's showcase actually uses (observed 2026: 3:30 and 7:30 PM ET
+# kickoffs; WWO air times 3:00/7:00 PM ET). Re-check weekly - conferences announce
+# 6-12 days out.
+# Format: date|kickoffPT(HH:MM 24h, EST-<HH:MM> for an estimated slot, TBD = no slot known)|dur_min|away|home|eventId|note
+2026-09-19|16:30|204|LSU|Ole Miss|557127|kickoff 7:30 PM ET ABC (olemissports.com); WWO air 7:00 PM ET; Danny Reed & Derek Rackley
+2026-09-26|12:30|204|Oklahoma|Georgia|557136|kickoff 3:30 PM ET ESPN/ABC (SEC announcement 2026-09-14); WWO air TBD; Sanford Stadium
+2026-10-03|EST-12:30|204|Notre Dame|North Carolina|557137|kickoff TBD (ESPN) - estimated showcase slot 3:30 PM ET; Kenan Stadium
+2026-10-03|EST-16:30|204|Notre Dame|North Carolina|557137|kickoff TBD - estimated showcase slot 7:30 PM ET (second possible window)
+2026-10-10|EST-12:30|204|Indiana|Nebraska|557139|kickoff TBD (The Athletic) - estimated showcase slot 3:30 PM ET; Memorial Stadium Lincoln
+2026-10-10|EST-16:30|204|Indiana|Nebraska|557139|kickoff TBD - estimated showcase slot 7:30 PM ET (second possible window)
+2026-10-17|EST-12:30|204|Penn State|Michigan|557140|kickoff TBA (foxsports.com Big Ten schedule) - estimated showcase slot 3:30 PM ET; Michigan Stadium
+2026-10-17|EST-16:30|204|Penn State|Michigan|557140|kickoff TBA - estimated showcase slot 7:30 PM ET (second possible window)
+2026-10-24|EST-12:30|204|Ole Miss|Texas|557141|kickoff TBD (SEC announces 6-12 days out) - estimated showcase slot 3:30 PM ET; DKR-Texas Memorial Stadium
+2026-10-24|EST-16:30|204|Ole Miss|Texas|557141|kickoff TBD - estimated showcase slot 7:30 PM ET (second possible window)
+2026-10-31|12:30|204|Florida|Georgia|557129|kickoff 3:30 PM ET ABC (gafljax.com FAQ + ajc.com); WWO air 3:00 PM ET; Mercedes-Benz Stadium Atlanta (neutral; EverBank construction)
+2026-11-07|EST-12:30|204|Oregon|Ohio State|557143|REPORTED 3:30 PM ET on CBS (The Athletic via si.com/oregonlive.com; official Oct 26) - Ohio Stadium
+2026-11-14|EST-12:30|204|Michigan|Oregon|557144|kickoff TBD; date confirmed Sat Nov 14 (goducks.com) - estimated showcase slot 3:30 PM ET; Autzen Stadium
+2026-11-14|EST-16:30|204|Michigan|Oregon|557144|kickoff TBD - estimated showcase slot 7:30 PM ET (second possible window); Autzen Stadium
+2026-11-21|EST-12:30|204|LSU|Tennessee|557145|kickoff TBD (SEC) - estimated showcase slot 3:30 PM ET; Neyland Stadium
+2026-11-21|EST-16:30|204|LSU|Tennessee|557145|kickoff TBD - estimated showcase slot 7:30 PM ET (second possible window); Neyland Stadium
+# TOTAL: 10 WWO broadcasts / 16 rows = 4 with confirmed or reported kickoffs
+# (Sep 19, Sep 26, Oct 31, Nov 7-reported) + 6 with two ESTIMATED showcase slots each
+# (Oct 3, Oct 10, Oct 17, Oct 24, Nov 14, Nov 21; the Nov 14 date was ambiguous on
+# the WWO page, now resolved to Nov 14 via goducks.com).
+# None of these involve Stanford or Cal; they are tracked ONLY as Bay Area national-radio
+# broadcasts (sport id `ncaaw` in the build), separate from the Stanford/Cal `ncaa` rows.

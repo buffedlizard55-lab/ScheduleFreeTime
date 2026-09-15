@@ -11,26 +11,36 @@ data/games_local.json, then:
   5. regenerates schedules.md (the full master list),
   6. prints a verification report and flags every irregularity it finds.
 
-Blocking rule (user spec, corrected 2026-09-11, extended 2026-09-14): a day is busy
-around EVERY game the site tracks - any MLB game (ALL 30 clubs, regular season +
-postseason 2026), ALL NFL games (all 32 clubs: preseason, regular season,
-postseason, Pro Bowl, Super Bowl - TBD until confirmed), San Jose Earthquakes
-games, Stanford football games, Cal football games, Golden State Warriors games
-(NBA, 95.7 The Game flagship), San Jose Sharks games (NHL, 98.5 KFOX flagship)
-and the Westwood One national-radio NCAA football showcase (Bay Area: KNBR).
-(Earlier builds listed the all-NFL layer as display-only, which wrongly reported
-free time on days when non-49ers NFL games were on air. That is fixed here.)
-"Conditional" rows (MLS playoff days if SJ qualifies, ACC/CFP/bowl days if
-Stanford or Cal qualify) never block; they mark a day UNCONFIRMED so free time
-is honestly labeled, not asserted. Games with a TBD kickoff never fabricate a
-window - they mark the day UNCONFIRMED until confirmed. Westwood One NFL rows do
-not duplicate the league table: each WWO broadcast is cross-checked against the
-matching all-NFL row and marked wwo=true (national-radio badge).
+Blocking rule (user spec, corrected 2026-09-11, extended 2026-09-14 and 2026-09-15): a
+day is busy around EVERY game the site tracks - any MLB game (ALL 30 clubs, regular
+season + postseason 2026), ALL NFL games (all 32 clubs: preseason, regular season,
+postseason, Pro Bowl, Super Bowl - TBD until confirmed), San Jose Earthquakes games,
+Stanford football games, Cal football games, Golden State Warriors games (NBA, 95.7 The
+Game flagship), San Jose Sharks games (NHL, 98.5 KFOX flagship) and the Westwood One
+national-radio NCAA football showcase (Bay Area: KNBR).
+(Fix history: the all-NFL layer was display-only until 2026-09-11 - it wrongly reported
+free time on days when non-49ers NFL games were on air. On 2026-09-15 the rule was
+extended again: every game broadcast by Westwood One - which per the Cumulus press
+release includes EVERY postseason game, the Super Bowl and the late-season Saturday
+doubleheaders/tripleheader - marks its day "free time NOT available" even when the
+kickoff is still TBD: the day gets a NOT FREE - TIME TBD status and, where the window
+is predictable from documented patterns, an ESTIMATED blocking window that is labeled
+as an estimate everywhere. Week 18's PFR "Sunday 1:00 PM" times were placeholders and
+are now stored as TBD exactly as nfl.com prints them; the 49 preseason games now carry
+kickoff times and block.)
+
+"Conditional" rows (MLS playoff days if SJ qualifies, ACC/CFP/bowl days if Stanford or
+Cal qualify) never block; they mark a day UNCONFIRMED so free time is honestly labeled,
+not asserted. Games with a TBD kickoff that have no predictable window (MLB postseason
+placeholders, individual Stanford/Cal/Earthquakes TBD games) never fabricate a window -
+they mark the day NOT FREE - TIME TBD. Westwood One NFL rows do not duplicate the league
+table: each WWO broadcast is cross-checked against the matching all-NFL row and marked
+wwo=true (national-radio badge).
 
 
 No manual input: run `python3 scripts/build.py`.
 """
-import json, os, sys, glob
+import json, os, re, subprocess, sys, glob
 from datetime import date, datetime, timedelta, timezone
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -167,20 +177,31 @@ def load_nfl_all():
             continue
         wk, dt, t_et, aw, hm, box, res = (line.split("|") + [""])[:7]
         y, m, dd = map(int, dt.split("-"))
-        et_h, et_m = map(int, t_et.split(":"))
-        # ET->PT is exactly -3h for every NFL 2026-27 date (both zones change DST together)
-        pt_dt = datetime(y, m, dd, et_h, et_m) - timedelta(hours=3)
-        assert pt_dt.date() == date(y, m, dd), f"{dt}: PT date crossed midnight, check transcription"
         aw2, hm2 = ABBR_ALIAS.get(aw, aw), ABBR_ALIAS.get(hm, hm)
-        games.append({"date": dt, "sport": "nfl_all", "week": f"Wk {wk}",
-                      "start_pt": pt_dt.strftime("%H:%M"), "start_min": pt_dt.hour*60 + pt_dt.minute,
-                      "start_et": t_et, "away": aw2, "home": hm2,
-                      "label": f"{NFL_TEAM_NAMES[aw2]} at {NFL_TEAM_NAMES[hm2]}",
-                      "result": res.replace(" FINAL", "") if res else "",
-                      "review": f"https://www.pro-football-reference.com/boxscores/{box}.htm",
-                      "source": "nfl_2026_pfr_regseason.txt",
-                      "is_sf": "SF" in (aw2, hm2),
-                      "priority": "SF" in (aw2, hm2)})
+        rec = {"date": dt, "sport": "nfl_all", "week": f"Wk {wk}",
+               "away": aw2, "home": hm2,
+               "label": f"{NFL_TEAM_NAMES[aw2]} at {NFL_TEAM_NAMES[hm2]}",
+               "result": res.replace(" FINAL", "") if res else "",
+               "review": f"https://www.pro-football-reference.com/boxscores/{box}.htm",
+               "source": "nfl_2026_pfr_regseason.txt",
+               "is_sf": "SF" in (aw2, hm2),
+               "priority": "SF" in (aw2, hm2)}
+        if t_et in ("TBD", "-"):
+            # Wk 18: nfl.com officially lists every game as TBD; PFR's 1:00 PM ET is a
+            # placeholder. Real game, no time -> NOT FREE day + estimated Sunday windows
+            # from data/raw/nfl_2027_postseason_tbd.txt (see file header for sources).
+            rec["start_pt"] = "TBD"; rec["start_min"] = None; rec["tbd_time"] = True
+            if t_et == "TBD":
+                rec["note"] = "nfl.com lists all Week 18 games as TBD (PFR's 1:00 PM ET was a placeholder)"
+        else:
+            et_h, et_m = map(int, t_et.split(":"))
+            # ET->PT is exactly -3h for every NFL 2026-27 date (both zones change DST together)
+            pt_dt = datetime(y, m, dd, et_h, et_m) - timedelta(hours=3)
+            assert pt_dt.date() == date(y, m, dd), f"{dt}: PT date crossed midnight, check transcription"
+            rec["start_pt"] = pt_dt.strftime("%H:%M")
+            rec["start_min"] = pt_dt.hour*60 + pt_dt.minute
+            rec["start_et"] = t_et
+        games.append(rec)
     # preseason: wk|date|timeET|away|home|score|note  (times mostly not printed on the source)
     path = os.path.join(RAW, "nfl_2026_pfr_preseason.txt")
     for line in open(path):
@@ -205,17 +226,41 @@ def load_nfl_all():
         rec["is_sf"] = "SF" in (rec["away"], rec["home"])
         rec["priority"] = rec["is_sf"]
         games.append(rec)
-    # NFL postseason / pro bowl / super bowl placeholder rows (never block; mark UNCONFIRMED)
+    # NFL postseason / Pro Bowl / Super Bowl / late-season Saturday TBD windows.
+    # New format (2026-09-15): date|kickoffPT|dur_min|status(OFFICIAL/EST/CONFLICT)|count|label|review
+    # OFFICIAL rows (Super Bowl LXI, 3:30 PM PT per ESPN event 401873270) block as real
+    # games; EST/CONFLICT rows block as clearly-labeled ESTIMATED windows derived from
+    # documented patterns (2025-26 postseason actuals, WWO air times, the league's
+    # standard Saturday windows). Per the Cumulus 2026-09-09 press release every one of
+    # these broadcasts airs on Westwood One national radio -> wwo badge + priority.
     path = os.path.join(RAW, "nfl_2027_postseason_tbd.txt")
+    n_windows = n_est = n_official = 0
     for line in open(path):
         line = line.strip()
         if not line or line.startswith("#"):
             continue
-        rnd, dt, n, label = line.split("|")
-        games.append({"date": dt, "sport": "nfl_all", "week": rnd, "start_pt": None, "start_min": None,
-                      "tbd_count": int(n), "label": label, "conditional": True,
-                      "source": "nfl_2027_postseason_tbd.txt",
-                      "review": "https://www.nfl.com/schedules/2026/"})
+        dt, kick, dur, status, cnt, label, review = (line.split("|") + [""])[:7]
+        y, m, dd = map(int, dt.split("-"))
+        h, mi = map(int, kick.split(":"))
+        start_min = h * 60 + mi
+        assert 0 <= start_min < 1440 and 30 <= int(dur) <= 300, f"bad window row: {line}"
+        rec = {"date": dt, "sport": "nfl_all", "week": "Post",
+               "start_pt": kick, "start_min": start_min, "dur_override": int(dur),
+               "away": "TBD", "home": "TBD", "label": label,
+               "review": review, "source": "nfl_2027_postseason_tbd.txt",
+               "wwo": True, "wwo_slot": "Westwood One (national radio)",
+               "is_sf": False, "priority": True}
+        if status == "OFFICIAL":
+            rec["official"] = True
+            n_official += 1
+        else:
+            rec["estimated"] = True
+            rec["est_kind"] = status
+            n_est += 1
+        if int(cnt):
+            rec["tbd_count"] = int(cnt)
+        n_windows += 1
+        games.append(rec)
     return games
 
 # --- other sports (blocking: 49ers 'nfl', Earthquakes 'mls', Stanford/Cal 'ncaa')
@@ -305,34 +350,52 @@ def load_nba_nhl():
     return games
 
 # --- Westwood One NCAA football showcase (national radio, Bay Area: KNBR) ----
+# New format (2026-09-15): date|kickoffPT(HH:MM, EST-<HH:MM> = estimated slot)|dur_min|
+# away|home|eventId|note. Confirmed kickoffs block from kickoff; TBD kickoffs block two
+# ESTIMATED showcase slots (3:30 / 7:30 PM ET = 12:30 / 4:30 PM PT) - the two windows
+# the WWO showcase actually uses in 2026 (observed kickoffs Sep 19 7:30 PM ET and
+# Oct 31 3:30 PM ET; Nov 7 reported 3:30 PM ET).
 def load_wwo_ncaaf():
     games = []
     path = os.path.join(RAW, "westwoodone_ncaaf_2026.txt")
+    seen_slots = {}
     for ln, line in enumerate(open(path), 1):
         line = line.strip()
         if not line or line.startswith("#"):
             continue
-        dt, air_et, aw, hm, eid, note = (line.split("|") + [""])[:6]
+        dt, kick, dur, aw, hm, eid, note = (line.split("|") + [""])[:7]
         rec = {"date": dt, "sport": "ncaaw", "away": aw, "home": hm,
                "label": f"Westwood One: {aw} at {hm}",
                "priority": True, "source": "westwoodone_ncaaf_2026.txt",
-               "review": f"https://www.westwoodonesports.com/events/{eid}"}
-        if air_et != "-":
-            y, m, dd = map(int, dt.split("-"))
-            et_h, et_m = map(int, air_et.split(":"))
-            pt_dt = datetime(y, m, dd, et_h, et_m) - timedelta(hours=3)
-            rec["start_pt"] = pt_dt.strftime("%H:%M")
-            rec["start_min"] = pt_dt.hour * 60 + pt_dt.minute
-            rec["start_et"] = air_et
-            rec["note"] = "WWO air time (pregame-show start); blocks from air time"
+               "review": f"https://www.westwoodonesports.com/events/{eid}",
+               "wwo": True, "wwo_slot": "Westwood One (national radio)"}
+        if int(dur):
+            rec["dur_override"] = int(dur)
+        if kick.startswith("EST-"):
+            h, mi = map(int, kick[4:].split(":"))
+            rec["start_pt"] = kick[4:]
+            rec["start_min"] = h * 60 + mi
+            rec["estimated"] = True
+            k = (dt, aw, hm)
+            seen_slots[k] = seen_slots.get(k, 0) + 1
+            if seen_slots[k] == 1:
+                flag("ESTIMATED_SLOT",
+                     f"{dt} Westwood One: {aw} at {hm}: kickoff still TBD - blocking BOTH estimated "
+                     f"showcase windows (3:30 / 7:30 PM ET = 12:30 / 4:30 PM PT). Day is NOT FREE; "
+                     f"replace with the real kickoff when the conference announces it (6-12 days out).")
+        elif kick and kick != "TBD":
+            h, mi = map(int, kick.split(":"))
+            rec["start_pt"] = kick
+            rec["start_min"] = h * 60 + mi
         else:
             rec["start_pt"] = None
             rec["start_min"] = None
-            flag("TBD_TIME", f"{dt} Westwood One: {aw} at {hm}: air time officially TBD - day UNCONFIRMED")
+            flag("TBD_TIME", f"{dt} Westwood One: {aw} at {hm}: no kickoff and no slot known - day NOT FREE, no window")
         if note:
-            rec["flag"] = note
-            if "ambiguous" in note:
-                flag("IRREGULARITY", f"{dt} Westwood One: {aw} at {hm}: {note}")
+            rec["note"] = note
+            if "REPORTED" in note:
+                flag("REPORTED_NOT_OFFICIAL", f"{dt} Westwood One: {aw} at {hm}: kickoff 3:30 PM ET is "
+                     f"REPORTED (The Athletic via si.com/oregonlive.com) - official announcement expected Oct 26.")
         games.append(rec)
     return games
 
@@ -456,16 +519,65 @@ def main():
         if n > 1:
             flag("DOUBLEHEADER", f"{d}: {TEAMS[a]['abbr']} @ {TEAMS[h]['abbr']} appears {n}x (doubleheader)")
 
-    # future Sunday-window NFL games may still flex
+    # future Sunday-window NFL games may still flex (Wk 18 rows are TBD and excluded)
     flex = sum(1 for g in nfl_all if g.get("start_min") is not None
-               and g["date"] > TODAY.isoformat() and g["start_et"] in ("13:00", "16:05", "16:25"))
+               and g["date"] > TODAY.isoformat() and g.get("start_et") in ("13:00", "16:05", "16:25"))
     if flex:
         flag("FLEX_WINDOW",
              f"{flex} league-wide NFL games after {TODAY.isoformat()} sit in the Sunday 1:00 PM / 4:05 PM / "
-             f"4:25 PM ET windows and can still be moved by NFL flex scheduling; times as printed by the "
-             f"source on 2026-09-11. Thursday/Sunday/Monday night, international and Saturday games are "
-             f"locked. Because ALL league-wide NFL games now block free time, a flex move will shift the "
-             f"affected day's free windows - re-run the build after each Tuesday flex announcement.")
+             f"4:25 PM ET windows and can still be moved by NFL flex scheduling (flex begins Week 5; times "
+             f"as printed by the source on 2026-09-11 and re-verified 2026-09-15 vs the WWO page + nfl.com "
+             f"week pages - no changes found). Thursday/Sunday/Monday night, international and scheduled "
+             f"Saturday games are locked. Because ALL league-wide NFL games block free time, a flex move "
+             f"shifts the affected day's free windows - re-run the build after each Tuesday announcement.")
+
+    # ---- 2026-09-15 pass flags -------------------------------------------------
+    flag("WK18_TBD",
+         "All 16 Week 18 games (Sun Jan 10, 2027) are officially date/time TBD on nfl.com "
+         "(https://www.nfl.com/schedules/2026/by-week/week-18); PFR's printed 'Sunday 1:00 PM ET' was a "
+         "placeholder and is no longer used. The day is NOT FREE with three ESTIMATED Sunday windows "
+         "(1:00 / 4:25 PM ET + the flex-selected SNF 8:20 PM ET, WWO event 548510). Westwood One also "
+         "carries a Saturday TRIPLEHEADER on Jan 9 (air 12:30 / 4:15 / 8:00 PM ET): three Wk-18 games "
+         "will move there - blocked as estimated windows 10:00 AM / 1:30 / 5:15 PM PT.")
+    flag("SAT_WINDOWS",
+         "Late-season Saturday TBD windows: WWO sells a Wk16 Saturday doubleheader on Sat Dec 26, 2026 "
+         "(events 548519/548520) and a Wk17 doubleheader on Sat Jan 2, 2027 (events 548521/548522), but "
+         "nfl.com/ESPN currently list ZERO games on those dates - the matchups are picked in-season and "
+         "TWO games each will move off the Dec 27 / Jan 3 Sunday slates. Estimated windows 1:30 & 5:15 PM "
+         "PT are blocked on both days; re-run the build after the league names the Saturday games.")
+    flag("POSTSEASON_WWO",
+         "Westwood One airs EVERY NFL postseason game + Super Bowl LXI (Cumulus press release 2026-09-09) "
+         "in the Bay Area on KNBR/KTCT - so Wild Card (Jan 16-18), Divisional (Jan 23-24), Conference "
+         "Championships (Jan 31) and Super Bowl Sunday (Feb 14, 2027) are all NOT FREE. Kickoffs are not "
+         "official yet: estimated windows use the 2025-26 postseason pattern (WC Sat 4:30/8:00 PM ET, "
+         "WC Sun 1:00/4:30/8:15, WC Mon 8:15, Div 4:30/8:20 & 3:00/6:30, CC 3:00/6:30 - "
+         "https://en.wikipedia.org/wiki/2025%E2%80%9326_NFL_playoffs). Dates verified against ESPN's live "
+         "event feed (2/3/1 WC games, 2+2 Div, 2 CC placeholder events).")
+    flag("SB_OFFICIAL",
+         "Super Bowl LXI kickoff is OFFICIAL: Sun Feb 14, 2027, 6:30 PM ET / 3:30 PM PT at SoFi Stadium "
+         "(ESPN event 401873270, status detail 'Sun, February 14th at 6:30 PM EST'; ESPN/ABC TV, Westwood "
+         "One radio - Harlan & Warner). Blocks 3:30-7:15 PM PT using the researched ~3h45m Super Bowl "
+         "broadcast length (bolavip.com/en/nfl/super-bowl-timeouts-length-duration-breaks).")
+    flag("PROBOWL_CONFLICT",
+         "2027 Pro Bowl Games date is UNRESOLVED: nflplayoffpass.com (updated Sep 9, 2026) says Tuesday "
+         "Feb 9, 8:00 PM ET at SoFi on ESPN (moved into Super Bowl week); sportbusy.com says Sunday Feb 7. "
+         "ESPN's calendar puts Pro Bowl week Feb 3-9 but no event exists on either date yet. BOTH days "
+         "carry an estimated window and are flagged - remove the loser when the NFL announces.")
+    flag("PRESEASON_TIMES",
+         "2026-09-15: kickoff times for ALL 49 preseason games added from Sporting News' full preseason "
+         "TV schedule (cross-checked vs Yahoo/Fox News/CableTV week-1 listings and vs the officially "
+         "sourced 49ers times). Preseason games now block free time in August; the previous build left "
+         "~47 of them info-only, which understated August busy time.")
+    flag("VERIFIED_PASS",
+         "2026-09-15 re-verification: (1) MLB Stats API live query Sep 26-29 confirms the regular season "
+         "ends Sun Sep 27 (15 games), Sep 28 is an off day, and the postseason starts Tue Sep 29 with 4 "
+         "Wild Card placeholder games at 07:33Z (times TBD) - the raw files match. (2) The Westwood One "
+         "NFL schedule page re-fetched and every dated broadcast matches the transcription (65 + 8 TBA). "
+         "(3) nfl.com by-week pages for weeks 16/17/18 checked: Wk16 = Dec 24 TNF + Dec 25 tripleheader + "
+         "Dec 27 slate + Dec 28 MNF (no Dec 26 games), Wk17 = Dec 31 + Jan 3 + Jan 4 (no Jan 2 games), "
+         "Wk18 = all TBD. (4) ESPN postseason placeholder events verified on Jan 16 (2), Jan 17 (3), "
+         "Jan 18 (1), Jan 23 (2), Jan 31 (NFC + AFC championships), Feb 14 (SB, official time). "
+         "(5) 2025-26 playoff kickoff pattern sourced (Wikipedia).")
 
     # NBA / NHL schedule-shape notes (confirmed gaps, not missing rows)
     flag("SCHEDULE_GAP", "Warriors: no game Dec 2-11, 2026 (10 days, NBA Cup window) and none "
@@ -483,9 +595,10 @@ def main():
          "Nov 1, 2026 - Feb 28, 2027 EXCEPT 2027 Spring Training, which opens Fri Feb 19, 2027 (all 30 "
          "clubs) per MLB's press release of Sep 4, 2026 - out of scope per spec (2026 season only) and "
          "NOT blocked; re-run after the 2027 ST schedule files publish if you want them included.")
-    flag("VERIFIED_PASS", "2026-09-11: MLB Stats API re-query for 2026-09-10/11/12 matched the raw file "
-         "35/35 games (dates, times, team ids). The 'sparse' Tue/Thu slate days (5 games on Sep 10, "
-         "3 on Sep 21) are genuine scheduled light days, not data gaps.")
+    flag("VERIFIED_PASS_2026_09_11", "Superseded-pass note kept for the audit trail: 2026-09-11 MLB Stats "
+         "API re-query for 2026-09-10/11/12 matched the raw file 35/35 games (dates, times, team ids). "
+         "The 'sparse' Tue/Thu slate days (5 games on Sep 10, 3 on Sep 21) are genuine scheduled light "
+         "days, not data gaps.")
 
     days = []
     d = START
@@ -498,7 +611,7 @@ def main():
         for g in blocking:
             if g.get("start_min") is None:
                 continue
-            dur = DUR_OF(g["sport"])
+            dur = g.get("dur_override", DUR_OF(g["sport"]))
             blocks.append([g["start_min"] - PRE_BUFFER, g["start_min"] + dur + POST_BUFFER])
         blocks.sort()
         merged = []
@@ -510,14 +623,25 @@ def main():
         fw = free_windows(merged)
         # blocking already contains nfl_all now (and excludes dedup'd rows), so no
         # separate + nfla term is needed (that double-counted the all-NFL layer).
+        # Real TBD games: scheduled games that WILL be played but have no announced
+        # kickoff (Week 18, MLB postseason placeholders, individual Stanford/Cal/
+        # Earthquakes/49ers TBD rows). NOT info_only and NOT conditional.
         tbd = [g for g in blocking
-               if g.get("start_min") is None and not g.get("info_only")]
+               if g.get("start_min") is None and not g.get("info_only") and not g.get("conditional")]
         tbd_n = len([g for g in tbd if not g.get("tbd_count")]) + sum(g.get("tbd_count", 0) for g in tbd)
-        # Honesty rule: if ANY scheduled game that day still has a TBD kickoff (or a
-        # conditional playoff/qualification marker exists), the day's free time cannot be
-        # asserted - label it UNCONFIRMED even when other games have known times. Known
-        # windows are still computed and shown (provisionally) in the UI, but never asserted.
-        if tbd_n:
+        est_n = len([g for g in blocking if g.get("start_min") is not None and g.get("estimated")])
+        cond_n = len([g for g in todays if g.get("conditional")])
+        # Status model (2026-09-15, per the user's rule that any Westwood One-covered /
+        # tracked game means free time NOT available):
+        #   NOT FREE - TIME TBD : a tracked game will definitely be played/aired but its
+        #                          kickoff (or matchup) is not official yet. Estimated
+        #                          windows block where a documented pattern exists; the
+        #                          computed free windows are PROVISIONAL, never asserted.
+        #   UNCONFIRMED         : only conditional markers (MLS/ACC/CFP qualification).
+        #   FREE / PARTIAL / FULLY BOOKED : all games have known times.
+        if tbd_n or est_n:
+            status = "NOT FREE — TIME TBD"
+        elif cond_n:
             status = "UNCONFIRMED"
         elif not blocks:
             status = "FREE"
@@ -535,19 +659,23 @@ def main():
             "game_count": len([g for g in blocking if g.get("start_min") is not None]),
             "nfl_all_count": len([g for g in nfla if g.get("start_min") is not None and not g.get("dedup")]),
             "tbd_count": tbd_n,
+            "estimated_count": est_n,
+            "conditional_count": cond_n,
             "has_priority": any(g.get("priority") for g in todays),
             "has_sf": any(g.get("is_sf") for g in nfla) or any(g["sport"]=="nfl" for g in blocking),
         })
         for g in tbd:
             if g.get("tbd_count"):
                 continue
-            flag("UNBLOCKED_TBD", f"{ds}: '{g['label']}' has no confirmed start time so it does NOT "
-                                  f"block any time - the day's free windows may be overstated.")
+            flag("UNBLOCKED_TBD", f"{ds}: '{g['label']}' has no confirmed start time - the day is "
+                                  f"marked NOT FREE (TIME TBD) and its free windows (if any are shown) "
+                                  f"are provisional; the game itself does not block a specific window yet.")
         d += timedelta(days=1)
 
     os.makedirs(OUT, exist_ok=True)
     reg = [g for g in nfl_all if g["week"].startswith("Wk")]
     pre = [g for g in nfl_all if g["week"].startswith("Pre")]
+    post_windows = [g for g in nfl_all if g["week"] == "Post"]
     nba = [g for g in nba_nhl if g["sport"] == "nba"]
     nhl = [g for g in nba_nhl if g["sport"] == "nhl"]
     meta = {
@@ -559,11 +687,18 @@ def main():
                    "mlb_postseason_tbd": sum(g.get("tbd_count", 0) for g in mlb),
                    "local_games": len(local),
                    "nfl_reg_games": len(reg), "nfl_pre_games": len(pre),
+                   "nfl_reg_tbd_games": len([g for g in reg if g.get("tbd_time")]),
+                   "nfl_window_rows": len(post_windows),
+                   "nfl_windows_estimated": len([g for g in post_windows if g.get("estimated")]),
+                   "nfl_windows_official": len([g for g in post_windows if g.get("official")]),
                    "nfl_all_tbd_days": len({g["date"] for g in nfl_all if g.get("conditional")}),
                    "conditional_days": len({g["date"] for g in cond}),
                    "nba_games": len(nba), "nhl_games": len(nhl),
                    "wwo_nfl_matched": wwo_matched, "wwo_nfl_total": wwo_total,
-                   "wwo_nfl_tba": len(wwo_tba), "wwo_ncaaf": len(wwo_ncaaf)},
+                   "wwo_nfl_tba": len(wwo_tba),
+                   "wwo_ncaaf": len({(g["date"], g["away"], g["home"]) for g in wwo_ncaaf}),
+                   "wwo_ncaaf_rows": len(wwo_ncaaf),
+                   "wwo_ncaaf_est_rows": len([g for g in wwo_ncaaf if g.get("estimated")])},
     }
     json.dump({"meta": meta, "games": mlb}, open(os.path.join(OUT, "mlb.json"), "w"), indent=1)
     json.dump({"meta": meta, "days": days, "flags": flags}, open(os.path.join(OUT, "free_time.json"), "w"), indent=1)
@@ -576,7 +711,12 @@ def main():
     print(f"MLB postseason TBD: {meta['totals']['mlb_postseason_tbd']} games (times/teams unconfirmed)")
     print(f"49ers/Quakes/NCAA : {len(local)} blocking games (+{len(cond)} conditional day markers)")
     print(f"NFL league-wide   : {len(reg)} regular-season games + {len(pre)} preseason games "
-          f"(ALL now block; 49ers rows dedup against the club list in games_local.json)")
+          f"(ALL block; 49ers rows dedup against the club list in games_local.json)")
+    print(f"NFL Wk18 TBD      : {meta['totals']['nfl_reg_tbd_games']} Wk-18 games stored TBD (nfl.com official); "
+          f"estimated Sunday windows applied")
+    print(f"NFL TBD windows   : {len(post_windows)} window rows "
+          f"({meta['totals']['nfl_windows_official']} OFFICIAL, "
+          f"{meta['totals']['nfl_windows_estimated']} ESTIMATED: postseason + Sat Dec 26/Jan 2/Jan 9 + Wk18 + Pro Bowl)")
     print(f"Warriors (NBA)    : {len(nba)} games "
           f"({len([g for g in nba if g['phase']=='Preseason'])} pre + "
           f"{len([g for g in nba if g['phase']=='Regular Season'])} reg; all block on 95.7 The Game)")
@@ -585,9 +725,10 @@ def main():
           f"{len([g for g in nhl if g['phase']=='Regular Season'])} reg blocking on 98.5 KFOX)")
     print(f"Westwood One NFL  : {wwo_matched}/{wwo_total} broadcasts matched to league rows "
           f"+ {len(wwo_tba)} TBA placeholders (marked wwo, Bay Area: KNBR)")
-    print(f"Westwood One NCAAF: {len(wwo_ncaaf)} broadcasts "
-          f"({len([g for g in wwo_ncaaf if g['start_min'] is not None])} timed, "
-          f"{len([g for g in wwo_ncaaf if g['start_min'] is None])} TBD)")
+    print(f"Westwood One NCAAF: {meta['totals']['wwo_ncaaf']} broadcasts / {len(wwo_ncaaf)} rows "
+          f"({len([g for g in wwo_ncaaf if g['start_min'] is not None and not g.get('estimated')])} confirmed kickoff, "
+          f"{len([g for g in wwo_ncaaf if g.get('estimated')])} estimated showcase slots (incl. Nov 7 reported-not-official), "
+          f"{len([g for g in wwo_ncaaf if g['start_min'] is None])} no window)")
 
     # NFL arithmetic checks
     ok = True
@@ -595,8 +736,8 @@ def main():
         ok = False; print(f"!! Warriors count {len(nba)} != 63 (6 pre + 57 reg expected)")
     if len(nhl) != 68:
         ok = False; print(f"!! Sharks count {len(nhl)} != 68 (4 pre + 64 reg expected)")
-    if len(wwo_ncaaf) != 10:
-        ok = False; print(f"!! WWO NCAAF count {len(wwo_ncaaf)} != 10")
+    if len(wwo_ncaaf) != 16 or meta["totals"]["wwo_ncaaf"] != 10:
+        ok = False; print(f"!! WWO NCAAF count {len(wwo_ncaaf)} rows / {meta['totals']['wwo_ncaaf']} broadcasts != 16/10")
     if wwo_matched != wwo_total:
         ok = False; print(f"!! WWO NFL matched {wwo_matched}/{wwo_total} (see IRREGULARITY flags)")
     if len(reg) != 272:
@@ -630,8 +771,9 @@ def main():
     only_all = sorted(d_ for d_, t in sf_all if not any(dl == d_ for dl, _ in sf_local))
     print(f"49ers cross-check : {len(match)}/{len(sf_all)} league rows match club rows exactly; "
           f"club rows w/o league-time match: {only_local or 'none'} | league rows w/o club match: {only_all or 'none'}")
-    # expected non-matches: 2027-01-10 (club TBD vs league 10:00 PT, flagged separately) and
-    # 2026-08-13 (preseason league row has no printed time; club time came from ESPN event data)
+    # expected non-matches: 2027-01-10 (both club and league rows are now TBD - Wk 18 games
+    # have no official time yet, so no timed row to match) and 2026-08-13 (preseason league
+    # row time added from Sporting News 21:00 ET = 18:00 PT; club time from ESPN event data)
     if set(only_local) - {'2027-01-10', '2026-08-13'}:
         flag("IRREGULARITY", f"49ers rows whose times disagree between 49ers.com and the league table: {only_local}")
     if only_all:
@@ -656,8 +798,10 @@ def main():
     print(f"MLB starts <6AM PT: {len(early)}  {[g['date'] for g in early][:5]}")
     fully_free = [x for x in days if x["status"] == "FREE"]
     unconf = [x for x in days if x["status"] == "UNCONFIRMED"]
+    notfree_tbd = [x for x in days if x["status"] == "NOT FREE — TIME TBD"]
     print(f"Days fully FREE   : {len(fully_free)}")
-    print(f"Days UNCONFIRMED  : {len(unconf)}")
+    print(f"Days NOT FREE(TBD): {len(notfree_tbd)} (game will play/air, kickoff TBD or estimated windows)")
+    print(f"Days UNCONFIRMED  : {len(unconf)} (conditional playoff/qualification markers only)")
     no_free = [x for x in days if x["status"] == "FULLY BOOKED"]
     print(f"Days FULLY BOOKED : {len(no_free)}")
     partial = [x for x in days if x["status"] == "PARTIAL"]
@@ -669,6 +813,28 @@ def main():
         kinds[f["kind"]] = kinds.get(f["kind"], 0) + 1
     print(f"  by kind         : {kinds}")
     print(f"Verification checks: {'PASS' if ok else 'SEE !! LINES ABOVE'}")
+
+    # ---- index.html JS syntax check (added 2026-09-15) --------------------------
+    # The 2026-09-14 deploy shipped a fatal JS syntax error (a missing closing backtick
+    # in the games-table template literal) that made the whole site load no data.
+    # Parse the inline script with node --check when node is available.
+    html = open(os.path.join(ROOT, "index.html")).read()
+    m = re.search(r"<script>([\s\S]*)</script>", html)
+    js_path = os.path.join(ROOT, "data", "processed", "_app_check.js")
+    if m:
+        open(js_path, "w").write(m.group(1))
+        try:
+            subprocess.run(["node", "--check", js_path], check=True, capture_output=True)
+            print("index.html JS   : syntax OK (node --check)")
+        except FileNotFoundError:
+            print("index.html JS   : node not installed - SKIPPED syntax check (install node!)")
+        except subprocess.CalledProcessError as e:
+            ok = False
+            print("!! index.html inline JavaScript has a SYNTAX ERROR - the deployed site would show no data:")
+            print("   " + e.stderr.decode()[:800].replace("\n", "\n   "))
+        finally:
+            if os.path.exists(js_path):
+                os.remove(js_path)
 
     write_markdown(days, meta, flags, mlb, nfl_all, local, cond, per, nba_nhl, wwo_ncaaf)
     return days, flags
@@ -689,20 +855,29 @@ def write_markdown(days, meta, flags, mlb, nfl_all, local, cond, per, nba_nhl, w
       f"**{t['local_games']}** blocking 49ers / Earthquakes / Stanford / Cal games, "
       f"**{t['nba_games']} Warriors (NBA)** + **{t['nhl_games']} Sharks (NHL)** games, "
       f"**{t['nfl_reg_games']} + {t['nfl_pre_games']} league-wide NFL games** (all block; "
-      f"{t['wwo_nfl_matched']} carry the Westwood One national-radio badge), "
+      f"{t['wwo_nfl_matched']} carry the Westwood One national-radio badge; all "
+      f"{t['nfl_pre_games']} preseason games now have kickoff times), "
       f"**{t['wwo_ncaaf']} Westwood One NCAA football broadcasts**, "
-      f"**{t['nfl_all_tbd_days']} NFL postseason/pro-bowl placeholder days**, "
+      f"**{t['nfl_window_rows']} NFL TBD/estimated broadcast windows** "
+      f"({t['nfl_windows_official']} official incl. Super Bowl LXI, "
+      f"{t['nfl_windows_estimated']} estimated: every playoff game + Sat Dec 26 / Jan 2 / "
+      f"Jan 9 + Wk-18 Sunday + Pro Bowl), "
       f"**{t['conditional_days']} conditional playoff/ACC/CFP day markers**.")
     A(f"- Average durations used to block time: MLB {meta['durations_minutes']['mlb']}m, "
       f"NFL {meta['durations_minutes']['nfl']}m, NCAA {meta['durations_minutes']['ncaa']}m, "
       f"MLS {meta['durations_minutes']['mls']}m, NBA {meta['durations_minutes']['nba']}m, "
       f"NHL {meta['durations_minutes']['nhl']}m (research sources in docs/VERIFICATION.md; "
-      f"the UI lets you change them and recompute).")
+      f"the UI lets you change them and recompute). The Super Bowl blocks 225m "
+      f"(~3h45m researched broadcast length); the Pro Bowl flag-football game 120m.")
     A(f"- Free-time rule: a game blocks if it is in ANY tracked league - MLB (any club, incl. "
       f"postseason), NFL (all 32 clubs: preseason, regular season, postseason, Pro Bowl, "
       f"Super Bowl - TBD until confirmed), Earthquakes, Stanford, Cal, Warriors (NBA), "
-      f"Sharks (NHL) or the Westwood One NCAA football showcase. Games with a TBD kickoff "
-      f"never fabricate a window; they mark the day UNCONFIRMED.")
+      f"Sharks (NHL) or the Westwood One NCAA football showcase. A day on which any tracked "
+      f"game WILL be played/aired but its kickoff is not official is marked **NOT FREE - TIME "
+      f"TBD**: estimated windows (clearly labeled, from documented 2025-26 postseason / "
+      f"WWO-air-time / league-window patterns) block where predictable, and any free windows "
+      f"shown for such a day are PROVISIONAL. Days carrying only conditional "
+      f"qualification markers (MLS playoffs, ACC/CFP/bowls) stay UNCONFIRMED.")
     A("")
     A("## High-priority clubs: San Francisco Giants + Athletics + 49ers + Warriors + Sharks")
     A("")
@@ -725,8 +900,9 @@ def write_markdown(days, meta, flags, mlb, nfl_all, local, cond, per, nba_nhl, w
         A(f"| {g['date']} | {st} | {g['label']} | {g.get('phase','')} |")
     A("")
     A(f"49ers: {len([g for g in local if g['sport'] == 'nfl'])} games in window (preseason + regular "
-      f"season). 49ers playoff games would fall on the Jan/Feb NFL postseason placeholder days and "
-      f"are non-blocking only because their date/time is TBD (flagged UNCONFIRMED).")
+      f"season; the Week 18 game @ Arizona is officially TBD along with every other Wk-18 game). "
+      f"49ers playoff games would fall on the Jan/Feb postseason days, which are already NOT FREE "
+      f"with estimated windows because Westwood One airs every playoff game.")
     A("")
     A("### Warriors (NBA, every game - all on 95.7 The Game)")
     A("")
@@ -754,19 +930,31 @@ def write_markdown(days, meta, flags, mlb, nfl_all, local, cond, per, nba_nhl, w
     A("## All-NFL, every game (league-wide; BLOCKS free time)")
     A("")
     A("Regular season from the official week-by-week table "
-      "(https://www.pro-football-reference.com/years/2026/games.htm, fetched 2026-09-11); "
-      "preseason from https://www.pro-football-reference.com/years/2026/preseason.htm; postseason "
-      "rows are round-date placeholders. Kickoff in both ET (source) and PT. Times after 2026-09-11 "
-      "are subject to NFL flex scheduling for Sunday-window games. Every row with a kickoff time "
-      "blocks free time; rows with no time (preseason info-only, postseason/pro-bowl placeholders) "
-      "mark the day UNCONFIRMED instead of asserting free time.")
+      "(https://www.pro-football-reference.com/years/2026/games.htm, fetched 2026-09-11, weeks 2-17 "
+      "re-verified 2026-09-15 vs nfl.com + the WWO page); preseason matchups from "
+      "https://www.pro-football-reference.com/years/2026/preseason.htm with kickoff times from "
+      "Sporting News' full preseason schedule (cross-checked vs Yahoo/Fox News/CableTV, and vs the "
+      "officially sourced 49ers times). Week 18 is stored as TBD exactly as nfl.com prints it. "
+      "Postseason/Saturday window rows (marked 'estimated window' / 'official') come from "
+      "data/raw/nfl_2027_postseason_tbd.txt - dates verified against ESPN's live event feed, "
+      "windows estimated from the 2025-26 postseason pattern and WWO air times, Super Bowl LXI "
+      "kickoff OFFICIAL via ESPN event 401873270. Times after 2026-09-15 are subject to NFL flex "
+      "scheduling for Sunday-window games. Every row with a kickoff time blocks free time; TBD "
+      "rows and estimated windows mark the day NOT FREE - TIME TBD instead of asserting free time.")
     A("")
     A("| Date | PT | ET | Game | Status | Review link |")
     A("|---|---|---|---|---|---|")
     for g in sorted(nfl_all, key=lambda x: (x["date"], x.get("start_min") is None, x.get("start_min") or 0)):
-        pt = g.get("start_pt") + " PT" if g.get("start_pt") else "**TBD**"
+        pt = (g.get("start_pt") + " PT") if g.get("start_pt") and g.get("start_pt") != "TBD" else "**TBD**"
         et = g.get("start_et", "-")
-        st = g.get("result") or ("TBD-placeholder" if g.get("conditional") else "scheduled")
+        if g.get("official"):
+            st = g.get("result") or "official kickoff (ESPN)"
+        elif g.get("estimated"):
+            st = "estimated window - NOT FREE"
+        elif g.get("tbd_time"):
+            st = g.get("result") or "TBD kickoff (nfl.com)"
+        else:
+            st = g.get("result") or "scheduled"
         radio = f" 📻 WWO {g['wwo_slot']}" if g.get("wwo") else ""
         A(f"| {g['date']} ({g['week']}) | {pt} | {et} ET | {g['label']}{radio} | {st} | [box]({g.get('review','')}) |")
     A("")
@@ -776,11 +964,14 @@ def write_markdown(days, meta, flags, mlb, nfl_all, local, cond, per, nba_nhl, w
       "Sep 27 Rio game - see the WWO_RIO_EXCLUDED flag), Thanksgiving + Black Friday + Christmas, "
       "late-season Saturday games, every playoff game and Super Bowl LXI air nationally on Westwood "
       "One and in the Bay Area on KNBR (subject to WWO's own pre-emption caveat for local conflicts). "
-      "WWO NFL broadcasts do NOT add rows: the matching league-table rows above carry the 📻 badge. "
-      "WWO air times are the pregame-show start (MNF 7:00 PM ET, SNF/TNF 7:30 PM ET, internationals "
-      "9:15 AM ET); blocking always uses the league kickoff + the 192-min NFL average. "
+      "WWO NFL broadcasts do NOT duplicate the league rows: the matching league-table rows carry the "
+      "📻 badge, and the TBD Saturday/Week-18/postseason broadcasts block through the estimated "
+      "window rows above. WWO air times are the pregame-show start (MNF 7:00 PM ET, SNF/TNF 7:30 PM "
+      "ET, internationals 9:15 AM ET); blocking always uses the league kickoff + the 192-min NFL "
+      "average (225 min for the Super Bowl). "
       "Source for every broadcast: https://www.westwoodonesports.com/nfl-schedule/ (transcribed "
-      "2026-09-14 into data/raw/westwoodone_nfl_2026.txt; per-event links below).")
+      "2026-09-14 into data/raw/westwoodone_nfl_2026.txt, re-verified row-for-row 2026-09-15; "
+      "per-event links below).")
     A("")
     A("| Date | PT kickoff | Game | WWO slot | WWO event |")
     A("|---|---|---|---|---|")
@@ -790,12 +981,17 @@ def write_markdown(days, meta, flags, mlb, nfl_all, local, cond, per, nba_nhl, w
     A("")
     A("### Westwood One NCAA football showcase (Saturdays; blocks free time)")
     A("")
-    A("| Date | PT air | Game | Air time | Review |")
+    A("| Date | PT block start | Game | Kickoff status | Review |")
     A("|---|---|---|---|---|")
-    for g in sorted(wwo_ncaaf, key=lambda x: x["date"]):
-        pt = g.get("start_pt") + " PT" if g.get("start_pt") else "**TBD**"
-        A(f"| {g['date']} | {pt} | {g['label']} | {'announced' if g.get('start_pt') else 'TBD - day UNCONFIRMED'} | "
-          f"[event]({g['review']}) |")
+    for g in sorted(wwo_ncaaf, key=lambda x: (x["date"], x.get("start_min") or 0)):
+        pt = (g.get("start_pt") + " PT") if g.get("start_pt") and g.get("start_pt") != "TBD" else "**TBD**"
+        if g.get("estimated"):
+            ks = "TBD - estimated showcase slot (day NOT FREE)"
+        elif g.get("start_pt"):
+            ks = "confirmed/reported kickoff"
+        else:
+            ks = "TBD - no window"
+        A(f"| {g['date']} | {pt} | {g['label']} | {ks} | [event]({g['review']}) |")
     A("")
     A("## Conditional days (unconfirmed; never block)")
     A("")
@@ -803,9 +999,10 @@ def write_markdown(days, meta, flags, mlb, nfl_all, local, cond, per, nba_nhl, w
       "2026 decides it; SJ's Decision Day match itself is a real scheduled game in games_local.json). "
       "ACC/CFP days apply to Stanford or Cal only if they qualify. Bowl games for Stanford/Cal could "
       "fall on any bowl date Dec 12, 2026 - Jan 1, 2027 once selected on Dec 6 - not day-marked; "
-      "re-run the build after Dec 7, 2026 for those. NFL postseason rows above are placeholders until "
-      "seeds are set (games may include the 49ers); they mark their days UNCONFIRMED because kickoff "
-      "times are TBD - once times are announced, add them and re-run.")
+      "re-run the build after Dec 7, 2026 for those. (The NFL postseason days, by contrast, are NOT "
+      "conditional - Westwood One airs every playoff game regardless of who plays, so those days are "
+      "already NOT FREE with estimated windows; once real kickoffs are announced, replace the "
+      "estimates and re-run.)")
     A("")
     A("| Date | League | Conditional entry |")
     A("|---|---|---|")
@@ -818,10 +1015,12 @@ def write_markdown(days, meta, flags, mlb, nfl_all, local, cond, per, nba_nhl, w
     A("|---|---|---|---|---|---|---|---|")
     for x in days:
         fw = "; ".join(f"{w['start_t']}-{w['end_t']}" for w in x["free"]) or "none"
-        if x["status"] == "UNCONFIRMED":
-            fw = f"UNCONFIRMED - {x['tbd_count']} game(s) with no announced start time"
+        if x["status"] == "NOT FREE — TIME TBD":
+            fw = f"NOT AVAILABLE - {x['tbd_count']} TBD game(s) + {x['estimated_count']} estimated window(s); provisional windows: {fw}"
+        elif x["status"] == "UNCONFIRMED":
+            fw = f"UNCONFIRMED - conditional marker(s); windows not asserted"
         A(f"| {x['date']} | {x['weekday']} | {x['status']} | {x['game_count']} | {x['nfl_all_count']} | {fw} | "
-          f"{x['free_minutes']} | {'YES' if x['tbd_count'] else ''} |")
+          f"{x['free_minutes']} | {'YES' if x['tbd_count'] or x['estimated_count'] else ''} |")
     A("")
     A("## Every MLB game, by date (all 30 clubs)")
     A("")
