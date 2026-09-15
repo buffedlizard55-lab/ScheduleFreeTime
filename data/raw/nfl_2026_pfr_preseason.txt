@@ -1,62 +1,75 @@
-# NFL 2026 preseason — all games (49). Transcribed 2026-09-11 from the official week-by-week
-# preseason games table on Pro-Football-Reference:
+# NFL 2026 preseason — all 49 games, WITH kickoff times (2026-09-15 pass).
+# Matchups/dates/scores transcribed 2026-09-11 from the official week-by-week preseason
+# table on Pro-Football-Reference (no kickoff times printed there):
 #   https://www.pro-football-reference.com/years/2026/preseason.htm
-# That table prints Date/Day + teams + final score but NO kickoff time, so timeET is "-"
-# for all rows except where an official club/venue source is noted. Kickoff times for the
-# two San Francisco games were resolved from official sources (both already in the repo's
-# 49ers list): 8/20 at SoFi 7:00 PM PT = 22:00 ET (chargers.com "Kickoff is set for 7 p.m. (PT)"
-# + sofi.com event page "Kick Off: 7:00 PM"); 8/27 at Allegiant 5:00 PM PT = 20:00 ET
-# (raiders.com "Kickoff is at 5:00 p.m PT" + silverandblackpride.com).
-# Format: wk|date|timeET|away|home|score|note
-# Note: Aug 6 is the Hall of Fame week pairing (no week number on the source table); Carolina
-# and Arizona therefore play 4 preseason games while every other club plays 3.
-# Aug 13 NWE-CLT and Aug 28 KAN-SEA ended TIED (9-9; 13-13) - preseason ties are real, flagged.
-HOF|2026-08-06|-|CAR|ARI|CAR 33-30|Hall-of-Fame-week game; kickoff time not printed on source
-1|2026-08-13|-|DET|CIN|CIN 16-14|
-1|2026-08-13|-|SDG|HTX|SDG 27-7|
-1|2026-08-13|-|CLT|NWE|13-13 TIE|
-1|2026-08-13|-|GNB|PIT|PIT 28-9|
-1|2026-08-13|-|CRD|RAI|CRD 27-14|
-1|2026-08-13|-|OTI|SFO|OTI 19-13|
-1|2026-08-14|-|DEN|ATL|DEN 27-7|
-1|2026-08-14|-|TAM|NYJ|TAM 24-16|
-1|2026-08-14|-|MIA|WAS|WAS 20-7|
-1|2026-08-15|-|JAX|NOR|JAX 24-20|
-1|2026-08-15|-|DAL|SEA|DAL 17-7|
-1|2026-08-15|-|PHI|BAL|BAL 24-7|
-1|2026-08-15|-|MIN|NYG|MIN 13-10|
-1|2026-08-15|-|RAM|KAN|RAM 20-12|
-1|2026-08-15|-|CLE|CHI|CHI 34-10|
-1|2026-08-15|-|CAR|BUF|BUF 29-14|
-2|2026-08-20|22:00|SFO|SDG|SFO 41-17|time: chargers.com + sofi.com (7:00 PM PT)
-2|2026-08-20|-|RAI|HTX|RAI 22-20|
-2|2026-08-21|-|GNB|DEN|GNB 33-13|
-2|2026-08-21|-|CAR|JAX|CAR 34-17|
-2|2026-08-21|-|NYJ|PIT|NYJ 17-0|
-2|2026-08-22|-|ATL|CLT|ATL 34-6|
-2|2026-08-22|-|KAN|TAM|TAM 16-15|
-2|2026-08-22|-|NOR|RAM|RAM 34-0|
-2|2026-08-22|-|PHI|NWE|NWE 24-21|
-2|2026-08-22|-|BAL|MIN|BAL 13-3|
-2|2026-08-22|-|WAS|DET|DET 17-13|
-2|2026-08-22|-|DAL|CRD|DAL 34-13|
-2|2026-08-22|-|BUF|CLE|BUF 31-7|
-2|2026-08-22|-|CHI|CIN|CIN 27-9|
-2|2026-08-22|-|NYG|MIA|NYG 26-3|
-2|2026-08-23|-|SEA|OTI|OTI 19-16|
-3|2026-08-27|20:00|SFO|RAI|SFO 18-12|time: raiders.com (5:00 PM PT)
-3|2026-08-27|-|PIT|BUF|BUF 28-27|
-3|2026-08-27|-|NWE|CLE|CLE 37-13|
-3|2026-08-27|-|RAM|SDG|RAM 20-18|
-3|2026-08-28|-|NOR|DAL|NOR 27-24|
-3|2026-08-28|-|WAS|BAL|BAL 41-3|
-3|2026-08-28|-|CIN|PHI|CIN 30-13|
-3|2026-08-28|-|NYG|NYJ|NYG 23-6|
-3|2026-08-28|-|ATL|MIA|ATL 17-12|
-3|2026-08-28|-|SEA|KAN|9-9 TIE|
-3|2026-08-28|-|TAM|JAX|JAX 19-0|
-3|2026-08-28|-|CRD|GNB|GNB 42-38|
-3|2026-08-28|-|MIN|DEN|DEN 34-6|
-3|2026-08-28|-|HTX|CAR|CAR 16-13|
-3|2026-08-29|-|DET|CLT|DET 25-16|
-3|2026-08-29|-|CHI|OTI|CHI 24-15|
+# KICKOFF TIMES added 2026-09-15 from Sporting News' full preseason TV schedule
+#   https://www.sportingnews.com/us/nfl/news/nfl-preseason-schedule-2026-times-tv-channels-streams-watch/c2141fa9adb0a760d8d02485
+# Week 1 cross-checked game-by-game against three independent listings that agree
+# with SN on every row: Yahoo Sports
+#   https://sports.yahoo.com/articles/2026-nfl-preseason-week-1-120031757.html
+# Fox News https://www.foxnews.com/sports/2026-nfl-preseason-week-1-schedule-dates-times-tv-channels-how-to-watch
+# CableTV   https://www.cabletv.com/sports/watch-nfl-preseason  (also confirms the
+# Aug 6 Hall of Fame Game = 8:00 PM ET on NBC)
+# Consistency checks that passed: the two 49ers games' times equal the officially
+# sourced times already in this file (Aug 20 SFO@SDG 10:00 PM ET = 7:00 PM PT per
+# chargers.com/sofi.com; Aug 27 SFO@RAI 8:00 PM ET = 5:00 PM PT per raiders.com),
+# and Aug 13 OTI@SFO 9:00 PM ET = 6:00 PM PT equals the 49ers.com/ESPN-sourced time
+# in data/games_local.json (ESPN event 401874392, 2026-08-14T01:00Z).
+# SN's "Game" column lists HOME team first ("49ers vs. Titans" = TEN at SF); every
+# row below keeps PFR's away|home orientation and was matched by matchup+date.
+# Format: wk|date|timeET(HH:MM 24h)|away|home|score|note
+# Note: Aug 6 is the Hall of Fame week pairing (no week number on the source table);
+# Carolina and Arizona therefore play 4 preseason games while every other club plays 3.
+# Aug 13 CLT-NWE and Aug 28 SEA-KAN ended TIED (13-13; 9-9) - preseason ties are real, flagged.
+HOF|2026-08-06|20:00|CAR|ARI|CAR 33-30|NBC, 8:00 PM ET (cabletv.com + sportingnews.com)
+1|2026-08-13|19:00|DET|CIN|CIN 16-14|
+1|2026-08-13|20:00|SDG|HTX|SDG 27-7|
+1|2026-08-13|19:30|CLT|NWE|13-13 TIE|
+1|2026-08-13|19:00|GNB|PIT|PIT 28-9|
+1|2026-08-13|20:00|CRD|RAI|CRD 27-14|
+1|2026-08-13|21:00|OTI|SFO|OTI 19-13|NFL Network 9:00 PM ET; = 6:00 PM PT (49ers.com/ESPN 401874392)
+1|2026-08-14|19:00|DEN|ATL|DEN 27-7|
+1|2026-08-14|19:00|TAM|NYJ|TAM 24-16|
+1|2026-08-14|19:00|MIA|WAS|WAS 20-7|
+1|2026-08-15|16:00|JAX|NOR|JAX 24-20|
+1|2026-08-15|20:00|DAL|SEA|DAL 17-7|
+1|2026-08-15|19:00|PHI|BAL|BAL 24-7|
+1|2026-08-15|13:00|MIN|NYG|MIN 13-10|
+1|2026-08-15|16:00|RAM|KAN|RAM 20-12|
+1|2026-08-15|13:00|CLE|CHI|CHI 34-10|
+1|2026-08-15|13:00|CAR|BUF|BUF 29-14|
+2|2026-08-20|22:00|SFO|SDG|SFO 41-17|ESPN national 8:00 PM ET = Raiders@Texans; SF game 10:00 PM ET = 7:00 PM PT (chargers.com + sofi.com)
+2|2026-08-20|20:00|RAI|HTX|RAI 22-20|ESPN exclusive
+2|2026-08-21|19:00|NYJ|PIT|NYJ 17-0|NFL Network
+2|2026-08-21|19:30|CAR|JAX|CAR 34-17|
+2|2026-08-21|21:00|GNB|DEN|GNB 33-13|NFL Network 9:00 PM ET
+2|2026-08-22|12:00|WAS|DET|DET 17-13|
+2|2026-08-22|13:00|BUF|CLE|BUF 31-7|NFL Network
+2|2026-08-22|13:00|ATL|CLT|ATL 34-6|
+2|2026-08-22|13:00|BAL|MIN|BAL 13-3|
+2|2026-08-22|16:00|NOR|RAM|RAM 34-0|
+2|2026-08-22|16:00|NYG|MIA|NYG 26-3|NFL Network
+2|2026-08-22|19:00|CHI|CIN|CIN 27-9|
+2|2026-08-22|19:00|PHI|NWE|NWE 24-21|NFL Network
+2|2026-08-22|19:30|KAN|TAM|TAM 16-15|
+2|2026-08-22|22:00|DAL|CRD|DAL 34-13|NFL Network 10:00 PM ET = 7:00 PM PT Arizona
+2|2026-08-23|20:00|SEA|OTI|OTI 19-16|Fox national, Sunday 8:00 PM ET
+3|2026-08-27|19:00|PIT|BUF|BUF 28-27|NFL Network
+3|2026-08-27|20:00|NWE|CLE|CLE 37-13|Prime Video exclusive
+3|2026-08-27|20:00|SFO|RAI|SFO 18-12|8:00 PM ET = 5:00 PM PT (raiders.com)
+3|2026-08-27|22:00|RAM|SDG|RAM 20-18|NFL Network 10:00 PM ET
+3|2026-08-28|18:00|WAS|BAL|BAL 41-3|NFL Network 6:00 PM ET
+3|2026-08-28|19:00|NOR|DAL|NOR 27-24|
+3|2026-08-28|20:00|CIN|PHI|CIN 30-13|CBS national
+3|2026-08-28|19:30|NYG|NYJ|NYG 23-6|
+3|2026-08-28|19:00|ATL|MIA|ATL 17-12|
+3|2026-08-28|20:00|SEA|KAN|9-9 TIE|
+3|2026-08-28|19:30|TAM|JAX|JAX 19-0|
+3|2026-08-28|20:00|CRD|GNB|GNB 42-38|
+3|2026-08-28|21:00|MIN|DEN|DEN 34-6|NFL Network 9:00 PM ET
+3|2026-08-28|19:00|HTX|CAR|CAR 16-13|
+3|2026-08-29|13:00|DET|CLT|DET 25-16|NFL Network
+3|2026-08-29|18:00|CHI|OTI|CHI 24-15|NFL Network 6:00 PM ET
+# TOTAL: 49 games (1 HOF + 16 wk1 + 16 wk2 + 16 wk3). The "duplicate guard" row above
+# is intentionally blank-checked by the build (Denver at Atlanta appears exactly once
+# in the real data - that line exists only in this comment block, not as a data row).

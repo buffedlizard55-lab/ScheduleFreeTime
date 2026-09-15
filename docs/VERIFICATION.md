@@ -8,7 +8,30 @@ free-window from these files and prints the arithmetic checks quoted here.
 
 ## 0. Independent re-verification passes
 
-### 2026-09-14 pass (Westwood One + Bay Area radio + Warriors/Sharks; current snapshot)
+### 2026-09-15 pass (football-TBD blocking fix + live re-verification; CURRENT snapshot)
+
+Triggered by the user's bug report: *the site showed free time on days when football games
+are on.* Root causes found and fixed (see §3 "Added 2026-09-15"):
+
+| Check | Method | Result |
+|---|---|---|
+| **Deployed-site JS** ⚠⚠ | `gh api repos/.../contents/index.html?ref=main` → `node --check` on the inline script | **The deployed `main` (merge 2446f62) shipped a fatal JavaScript syntax error** — a missing closing backtick in the games-table template literal (`${g.wwo?`…never closed). The whole app failed to boot, so the deployed page showed the static skeleton with NO data. Fixed in this pass; `build.py` now runs `node --check` on `index.html` every build so a broken script can never ship silently again. |
+| WWO package scope (postseason) | Cumulus press release 2026-09-09 (globenewswire.com, fetched live) | "**…eight International Games, late-season Saturday games, and every NFL postseason game, culminating with Super Bowl LXI on February 14, 2027, at SoFi Stadium**." → every playoff day must be NOT FREE. Kevin Harlan & Kurt Warner call MNF + SB LXI. |
+| WWO page re-fetch | `westwoodonesports.com/nfl-schedule/` re-read (all 4 chunks) | Every dated broadcast matches the 2026-09-14 transcription row-for-row (date, matchup, air time, slot, event id): 65 dated + 8 TBA. Upcoming list now starts Sep 17 (Sep 14 MNF past). No changes since the last pass. |
+| Late-season Saturdays ⚠ | nfl.com by-week pages (week-16, week-17, week-18 read in full) + ESPN scoreboard API (dates=20261226 / 20270102 / 20270109) | **nfl.com and ESPN list ZERO games on Sat Dec 26, Sat Jan 2 and Sat Jan 9** — but WWO sells a Wk16 doubleheader (Dec 26, events 548519/548520, air 4:00/8:00 PM ET), a Wk17 doubleheader (Jan 2, 548521/548522) and a Wk18 **tripleheader** (Jan 9, 548523/548524/548526, air 12:30/4:15/8:00 PM ET). The matchups are picked in-season (2+2 games move off the Dec 27/Jan 3 Sunday slates; 3 Wk-18 games move to Jan 9 + 1 to SNF). → both days now block with ESTIMATED windows 1:30/5:15 PM PT (standard Saturday windows; Wk15 2026 anchor: air 4:30→kick 5:00 PM ET, air 8:00→kick 8:20 PM ET). |
+| Week 18 placeholder times ⚠ | `nfl.com/schedules/2026/by-week/week-18` read in full | **All 16 Wk-18 games are officially date/time TBD** (e.g. 49ers at Cardinals shows "TBD / TBD"). PFR's printed "Sunday 1:00 PM ET" was a placeholder; all 16 rows re-stored as TBD. Jan 10 blocks with three ESTIMATED Sunday windows (1:00 / 4:25 PM ET + flex SNF 8:20 PM ET, WWO event 548510). |
+| NFL postseason dates | ESPN scoreboard API per date (placeholder events exist on exactly these dates) | **Jan 16 = 2 games** (401872910/11), **Jan 17 = 3** (401872912+), **Jan 18 = 1** (401872915), **Jan 23 = 2** (401872916/17), **Jan 24 = 2** (round dates per nfl-schedule.com + ESPN Div window), **Jan 31 = 2** (401872920 NFC + 401872921 AFC). All TBD times → estimated windows. |
+| Super Bowl LXI kickoff | ESPN event 401873270 (fetched live) | **OFFICIAL: Sun Feb 14, 2027, 6:30 PM ET = 3:30 PM PT, SoFi Stadium** ("timeValid": true, detail "Sun, February 14th at 6:30 PM EST", ESPN/ABC broadcast). Blocks 3:30–7:15 PM PT using the researched ~3h45m SB broadcast length (bolavip: "average broadcast length of a Super Bowl settles around 3 hours 40–45 minutes"). |
+| Estimated-window basis | 2025–26 postseason actuals (Wikipedia "2025–26 NFL playoffs", schedule table read) | WC Sat 4:30 + 8:00 PM ET; WC Sun 1:00 / 4:30 / 8:15; WC Mon 8:15; Div Sat 4:30 + 8:20; Div Sun 3:00 + 6:30; CC Sun 3:00 + 6:30; SB 6:30 PM ET. These patterns drive the EST-tagged windows (kickoff pattern identical since 2021's 14-team format). |
+| Pro Bowl 2027 ⚠ | re-checked: no ESPN event exists on Feb 7 or Feb 9; ESPN season calendar places Pro Bowl week Feb 3–9 | Still unresolved. nflplayoffpass.com (updated Sep 9, 2026; specific: "moved into Super Bowl week for the first time… Tuesday, February 9, 2027… 8:00 PM ET on ESPN") vs sportbusy.com (Feb 7). **Both days now block with an estimated window** (Feb 7 ~12:00–2:00 PM PT, Feb 9 ~5:00–7:00 PM PT, 120-min flag game) and both are flagged; remove the loser when the NFL announces. |
+| NFL preseason kickoff times | Sporting News full preseason TV schedule (read in full) + week-1 cross-checks: Yahoo Sports, Fox News, CableTV (all agree on every Week-1 row) + the two officially sourced 49ers times (chargers.com/sofi.com 7:00 PM PT; raiders.com 5:00 PM PT) + HOF game 8:00 PM ET on NBC | **All 49 preseason kickoff times added** (Aug 6 HOF 8:00 PM ET; Wk1 Aug 13–15; Wk2 Aug 20–23; Wk3 Aug 27–29). Consistency checks passed (49ers' three games match club-sourced times exactly; SN's "Home vs Away" orientation mapped to PFR's away|home per row). Preseason now blocks in August. |
+| MLB season/postseason boundary | Live Stats API query `startDate=2026-09-26&endDate=2026-09-29&fields=…gameType…` | **Sep 26: 15 "R" games; Sep 27: 15 "R" games (regular season ends); Sep 28: zero games (off day); Sep 29: four "F" Wild Card placeholders at 07:33Z with placeholder team ids 4944–4947 (times TBD)** — matches the raw files exactly. |
+| WWO college kickoffs | SEC/Big Ten/club announcements (all fetched live 2026-09-15) | Sep 19 LSU@Ole Miss **7:30 PM ET** (olemissports.com "6:30 p.m. CT on ABC"); Sep 26 Oklahoma@Georgia **3:30 PM ET** (SEC announcement Sep 14, si.com/college/georgia + Yahoo); Oct 31 Florida@Georgia **3:30 PM ET, ABC, Mercedes-Benz Stadium Atlanta** (official gafljax.com FAQ + ajc.com — game moved from Jacksonville during EverBank construction); Nov 7 Oregon@Ohio State **REPORTED 3:30 PM ET on CBS** (The Athletic via si.com + oregonlive.com; official announcement expected Oct 26 — stored as an estimated slot until then); Nov 14 Michigan@Oregon **date confirmed Sat Nov 14** at Autzen (goducks.com game-center 24386; resolves the WWO page's "NOV 14 – NOV 21" range), kickoff TBD. Oct 3 ND@UNC, Oct 10 IND@NEB, Oct 17 PSU@MICH, Oct 24 MISS@TEX, Nov 21 LSU@TEN still TBD in conference/ESPN listings → each blocks BOTH estimated showcase windows (3:30 / 7:30 PM ET = 12:30 / 4:30 PM PT — the two windows WWO's showcase actually uses in 2026). |
+| A's radio (documentation) | mlb.com press release 2023 (KTRB), sacbee.com Feb 2025, mercurynews 2019 | A's left Bay Area flagship KTRB 860 (2024); since the West Sacramento move games air on **KSTE 650 AM Sacramento ("Talk 650") + A's Cast on iHeart**, with **KNEW 910** among network affiliates. The A's remain a high-priority club per spec (they already star); no blocking change. |
+| Reg-season freshness | WWO page (weeks 2–5 entries) vs league table; nfl.com week-16/17 pages vs table rows | No flex/time changes since 2026-09-11 (Sunday flex starts Week 5; first flex-eligible Tuesday announcements come ~Sep 22 for Week 7). Dec 27 SF@KC 4:25 PM CBS confirmed on nfl.com. |
+| **Status model change** | user spec: "any games that are covered on this site should be marked as free time not available" | New day status **NOT FREE — TIME TBD** (red, hatched) for days where a tracked game definitely plays/airs but the kickoff is unofficial: 44 days (NFL playoff days, Sat Dec 26/Jan 2/Jan 9, Wk-18 Sunday, Pro Bowl candidates, MLB postseason dates, WWO college TBD days, Stanford/Cal/Quakes TBD-game days). Free windows on those days are labeled PROVISIONAL and EST windows are hatched + EST-tagged; when a TBD game has no predictable window (e.g. MLB postseason) NO free time is asserted at all. UNCONFIRMED (orange) is now reserved for conditional-qualification days only (MLS playoffs, ACC/CFP/bowls): 18 days. Totals: 22 FREE / 128 PARTIAL / 44 NOT FREE–TBD / 18 UNCONFIRMED / 0 FULLY BOOKED. |
+
+### 2026-09-14 pass (Westwood One + Bay Area radio + Warriors/Sharks; previous snapshot)
 
 | Check | Method | Result |
 |---|---|---|
@@ -78,7 +101,9 @@ to carry stale/placeholder times and are NOT used.
 |---|---|---|
 | MLB, all 30 clubs | `https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-08-01&endDate=2026-09-09&fields=...` (+ Sep / postseason variants, in raw-file headers) | Every `officialDate`, `gameDate` (UTC) and away/home `team.id`; converted to America/Los_Angeles by `scripts/build.py`. |
 | 49ers | `https://www.49ers.com/schedule/` | Full 2026 schedule incl. preseason; 1:1 matchup/date/time; W9–W18 cross-checked vs PFR league table. |
-| NFL all 32 clubs | `https://www.pro-football-reference.com/years/2026/games.htm` + `.../preseason.htm`; official by-week pages `https://www.nfl.com/schedules/2026/by-week/week-9` | Week, date, kickoff ET, away, home, boxscore link (also encodes the home designation), result for played games. |
+| NFL all 32 clubs | `https://www.pro-football-reference.com/years/2026/games.htm` + `.../preseason.htm`; official by-week pages `https://www.nfl.com/schedules/2026/by-week/week-9` (wk 16/17/18 read 2026-09-15); preseason kickoff times via `sportingnews.com/us/nfl/news/nfl-preseason-schedule-2026-times-tv-channels-streams-watch/c2141fa9adb0a760d8d02485` (cross-checked Yahoo/Fox/CableTV) | Week, date, kickoff ET, away, home, boxscore link (also encodes the home designation), result for played games. Wk 18 stored TBD (nfl.com official). |
+| NFL postseason + late-season Saturday windows | `data/raw/nfl_2027_postseason_tbd.txt` (fully re-written 2026-09-15): ESPN placeholder events 401872910–921 (dates) + 401873270 (SB LXI, OFFICIAL 3:30 PM PT); Cumulus press release 2026-09-09 (every postseason game on WWO); WWO events 548510/519/520/521/522/523/524/526 (Saturday slots + air times); 2025–26 pattern from `en.wikipedia.org/wiki/2025–26_NFL_playoffs`; SB length ~3h45m per `bolavip.com/en/nfl/super-bowl-timeouts-length-duration-breaks` | 25 window rows (1 OFFICIAL + 24 ESTIMATED) blocking every playoff day, Sat Dec 26 / Jan 2 / Jan 9, the Wk-18 Sunday windows and both Pro Bowl candidate dates. |
+| WWO NCAA football kickoffs | `olemisssports.com` (Sep 19 6:30 PM CT), SEC announcement via `si.com/college/georgia` + Yahoo (Sep 26 3:30 PM ET), `gafljax.com/faq` + `ajc.com` (Oct 31 3:30 PM ET, Atlanta), The Athletic via `si.com`/`oregonlive.com` (Nov 7 3:30 PM ET, reported), `goducks.com/game-center/24386` (Nov 14 date) | Kickoffs for 3 confirmed + 1 reported WWO showcase games; the 6 still-TBD games block two estimated showcase slots each (12:30 / 4:30 PM PT). |
 | San Jose Earthquakes | `https://images.mlssoccer.com/image/upload/v1766018474/assets/sje/schedule/2026%20Schedule.pdf` + `https://www.sjearthquakes.com/schedule` | All 16 games in window (Sep 15 listed "9AM PT"). |
 | Stanford football | `https://gostanford.com/sports/football/schedule` (+ `https://gostanford.com/news/2026/1/26/complete-2026-schedule-unveiled`); November rows via wikipedia/247sports/on3 (see §0) | 12 games; times where announced; Nov rows TBD. |
 | Cal football | `https://calbears.com/sports/football/schedule` + official release `https://calbears.com/news/2026/1/26/california-football-announces-2026-schedule.aspx` ("All kickoff times will be announced at a later date") | 12 games; Nov 14/21/28 TBD. |
@@ -126,7 +151,38 @@ and `schedules.md`. Status counts with the current data (2026-09-14 pass): 212 d
 **22 FREE, 130 PARTIAL, 60 UNCONFIRMED, 0 FULLY BOOKED**; 120 flags. (The drop from 62 FREE is the
 Warriors + Sharks evening slate - most Nov-Feb weeknights now have a Bay Area radio game on.)
 
-### Added / changed in the 2026-09-14 pass
+### Added / changed in the 2026-09-15 pass (current)
+
+- **FIXED — deployed-site JavaScript was fatally broken.** The `main` branch (merge 2446f62)
+  shipped `index.html` with a missing closing backtick inside the games-table template literal,
+  so the entire app failed to parse: no data loaded, no calendar, no day view. This was the
+  primary reason the site misbehaved for the user. Fixed; `build.py` now syntax-checks the
+  inline script with `node --check` on every run and fails the verification report on error.
+- **FIXED — NFL postseason days showed ~24h free time.** Westwood One airs *every* postseason
+  game (Cumulus 2026-09-09 release), so Wild Card (Jan 16–18), Divisional (Jan 23–24),
+  Conference Championships (Jan 31) and Super Bowl Sunday (Feb 14) are now **NOT FREE** with
+  EST-tagged estimated windows from the 2025–26 kickoff pattern; the Super Bowl has an
+  OFFICIAL 3:30 PM PT kickoff (ESPN 401873270) and blocks 3:30–7:15 PM PT (225 min).
+- **FIXED — late-season Saturdays (Dec 26, Jan 2, Jan 9) had no games at all.** WWO's
+  doubleheader/doubleheader/tripleheader placeholders are now blocking estimated windows
+  (1:30/5:15 PM PT; Jan 9 also 10:00 AM PT). The matchups will be picked in-season; re-run then.
+- **FIXED — Week 18's "Sunday 1:00 PM ET" was a PFR placeholder.** nfl.com officially lists all
+  16 games TBD; the rows are re-stored as TBD and Jan 10 blocks via three estimated Sunday
+  windows (1:00/4:25 PM ET + flex SNF 8:20 PM ET). The 49ers' Wk-18 row (@ARI) is TBD on both
+  club and league sides now (cross-check 19/19 timed + the one expected TBD non-match).
+- **FIXED — 47 of 49 preseason games had no kickoff times and never blocked.** All 49 times
+  added from Sporting News (cross-checked vs Yahoo/Fox/CableTV and the officially sourced
+  49ers times). August days now block correctly (e.g. Sat Aug 15: NFL preseason 10:00 AM–9:00 PM
+  PT windows now block in addition to MLB).
+- **FIXED — WWO college-football TBD days showed free time.** Confirmed kickoffs added where
+  announced (Sep 19 7:30 PM ET, Sep 26 3:30 PM ET, Oct 31 3:30 PM ET; Nov 7 3:30 PM ET
+  reported); the still-TBD games block both estimated showcase windows (12:30/4:30 PM PT).
+- **CHANGED — day-status model** per the user's rule: NOT FREE — TIME TBD (44 days) vs
+  UNCONFIRMED for conditional-only days (18). See the 2026-09-15 pass table.
+- **DOCUMENTED — A's radio** (KSTE 650 Sacramento + A's Cast, KNEW 910 affiliate; KTRB era
+  ended 2024) and the Pro Bowl date conflict now blocks BOTH candidate dates (Feb 7 + Feb 9).
+
+### Added / changed in the 2026-09-14 pass (previous)
 
 - **ADDED — Warriors (NBA) + Sharks (NHL) as high-priority blocking leagues.** 63 + 68 games
   from ESPN's rendered team pages with per-game review links; 65/65 WWO NFL broadcasts matched.
@@ -221,10 +277,18 @@ Warriors + Sharks evening slate - most Nov-Feb weeknights now have a Bay Area ra
   halftime-overrun are not modelled except via the average duration (editable). Buffers default to 0.
 * Durations are averages; real games run -30/+60 min (extra innings, overtime, weather delay). For past
   dates you can measure the true overlap from the `result` fields we transcribed for played NFL games.
-* Times after the 2026-09-11 snapshot can still move (MLB rain postponements, NFL flex, CFP/bowl
+* **Estimated windows are estimates.** NFL postseason/Saturday/Wk-18 windows and the WWO college
+  showcase slots use documented patterns (2025–26 kickoffs, WWO air times, league windows), not
+  official 2026-27 times. They are hatched + EST-tagged everywhere and are replaced by real times
+  as soon as they are announced (postseason after the Jan 3, 2027 slate; Wk-16/17 Saturday
+  matchups mid-December; Wk-18 after Jan 3; college kickoffs 6–12 days before each game).
+* The Pro Bowl date is genuinely unresolved (Feb 7 vs Feb 9, 2027): BOTH candidate days block
+  with estimated windows and both carry flags. Remove the loser once the NFL announces.
+* Times after the 2026-09-15 snapshot can still move (MLB rain postponements, NFL flex, CFP/bowl
   selections, MLS rescheduling). Re-run `scripts/build.py` against fresh raw files to refresh; the build
   prints the arithmetic so silent drift shows up as a failed check.
 * MLB rows carry Stats-API `gamePk` only in the raw headers (the file rows use team ids); per-game review
   links for MLB are derivable as `https://mlb.com/statsapi` queries shown in the raw headers.
 * The ESPN scoreboard JSON for a full week is ~25 chunks (odds/tickets embedded); the rendered
   week-by-week pages (nfl.com by-week, PFR tables) were used instead and agree wherever sampled.
+  ESPN's API rejects date ranges through the fetch proxy used here (single-date queries only).

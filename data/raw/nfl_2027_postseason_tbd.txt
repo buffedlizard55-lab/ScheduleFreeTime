@@ -1,31 +1,91 @@
-# NFL 2026 postseason — round dates only; matchups and kickoff times are TBD until the
-# conference championship games are decided. Placeholder rows so the calendar shows these
-# days as "unconfirmed". Sources (fetched 2026-09-11):
-#   - https://www.nfl.com/news/los-angeles-to-host-super-bowl-lxi-in-2027  (official: SB LXI at SoFi)
-#   - https://www.lasec.net/los-angeles-region-to-host-super-bowl-lxi-in-2027-welcoming-the-nfls-biggest-stage-for-the-second-time-this-decade-to-sofi-stadium/
-#       "...will be played at SoFi Stadium on February 14, 2027" (official host committee)
-#   - https://www.nfl-schedule.com/blog/2026-2027-nfl-playoff-schedule "round dates are official":
-#       Wild Card Jan 16-18, 2027 | Divisional Jan 23-24 | Conference Champ Jan 31 | Super Bowl LXI Feb 14
-#   - FOX Sports league schedule nav agrees (https://www.foxsports.com/nfl/schedule):
-#       Wild Card Jan 16-18, Div Jan 23-24, Conf Champ Jan 31, Super Bowl Feb 14
-# PRO BOWL CONFLICT (unresolved, kept as UNCONFIRMED placeholder): sources disagree on the
-#   2027 Pro Bowl Games date - nflplayoffpass.com says Tue Feb 9, 2027 8:00 PM ET at SoFi
-#   ("moved into Super Bowl week for the first time"); sportbusy.com says Sun Feb 7, 2027 at
-#   SoFi; ESPN's season calendar places the Pro Bowl week as Feb 3-9, 2027. No official NFL
-#   announcement is available to the fetch proxy yet. Listed on Feb 9 with the conflict
-#   flagged; do not assert free time that day.
-# Blocking rule (corrected 2026-09-11): ALL NFL games block free time. These postseason
-# rows have no kickoff time yet, so they do NOT fabricate a window - they mark their day
-# UNCONFIRMED. Once the league publishes the per-game times (after the final regular-season
-# Sunday, Jan 10, 2027), fill in the times and re-run scripts/build.py to make them block.
-# Format: round|date|games|label
-WC1|2027-01-16|2|Wild Card (Sat slot) - matchups/time TBD
-WC2|2027-01-17|3|Wild Card (Sun slot) - matchups/time TBD
-WC3|2027-01-18|1|Wild Card (Mon slot) - matchups/time TBD
-DIV|2027-01-23|2|Divisional round (Sat) - matchups/time TBD
-DIV|2027-01-24|2|Divisional round (Sun) - matchups/time TBD
-CC|2027-01-31|2|AFC & NFC Championship Games - matchups/time TBD
-SB|2027-02-14|1|Super Bowl LXI - SoFi Stadium, Inglewood CA; expected 6:30 PM ET kickoff (PST)
-PRO|2027-02-09|1|NFL Pro Bowl Games (all-star, flag football) - DATE UNRESOLVED: Feb 7 (sportbusy) vs Feb 9 (nflplayoffpass), see header
-# Round game counts follow the standard 14-team bracket: 6 WC (2/3/1), 4 Div, 2 CC, 1 SB.
-# Per-game start times become official after the final regular-season Sunday (Jan 10, 2027).
+# NFL postseason + Pro Bowl + late-season Saturday TBD windows (2026-27 season).
+# REWRITTEN 2026-09-15. Every game here is on Westwood One national radio (Bay Area:
+# KNBR/KTCT per the station finder) - Cumulus press release 2026-09-09:
+# "The 2026 Westwood One NFL schedule includes ... eight International Games,
+# late-season Saturday games, and every NFL postseason game, culminating with
+# Super Bowl LXI on February 14, 2027, at SoFi Stadium in Inglewood, CA."
+#   https://www.globenewswire.com/news-release/2026/09/09/3358684/9032/en/cumulus-media-s-westwood-one-official-network-audio-partner-of-the-nfl-celebrates-40th-consecutive-season-and-reveals-2026-nfl-lineup-and-programming-highlights-from-nfl-kickoff-to.html
+#
+# DATES verified 2026-09-15 against ESPN's live event feed (placeholder events with
+# teams TBD exist on exactly these dates; Super Bowl LXI event 401873270 has an
+# OFFICIAL kickoff):
+#   Jan 16  Wild Card Sat  - 2 games  https://www.espn.com/nfl/game/_/gameId/401872910/tbd-tbd (+401872911)
+#   Jan 17  Wild Card Sun  - 3 games  https://www.espn.com/nfl/game/_/gameId/401872912/tbd-tbd (+401872913, +1)
+#   Jan 18  Wild Card Mon  - 1 game   https://www.espn.com/nfl/game/_/gameId/401872915/tbd-tbd
+#   Jan 23  Divisional Sat - 2 games  https://www.espn.com/nfl/game/_/gameId/401872916/tbd-tbd (+401872917)
+#   Jan 24  Divisional Sun - 2 games  (nfl-schedule.com round dates + ESPN Div window Jan 20-26;
+#                                     2025-26 pattern: 3:00 & 6:30 PM ET)
+#   Jan 31  Conf Champ Sun - 2 games  https://www.espn.com/nfl/game/_/gameId/401872920/tbd-tbd (NFC)
+#                                     + https://www.espn.com/nfl/game/_/gameId/401872921/tbd-tbd (AFC)
+#   Feb 14  Super Bowl LXI - 1 game, OFFICIAL 6:30 PM ET / 3:30 PM PT kickoff, SoFi Stadium
+#                                     https://www.espn.com/nfl/game/_/gameId/401873270/tbd-tbd
+#                                     (status detail: "Sun, February 14th at 6:30 PM EST")
+#
+# ESTIMATED kickoff windows (status=EST) use the most recent postseason (2025-26,
+# https://en.wikipedia.org/wiki/2025%E2%80%9326_NFL_playoffs) as the pattern:
+#   WC Sat 4:30 & 8:00 PM ET | WC Sun 1:00 / 4:30 / 8:15 PM ET | WC Mon 8:15 PM ET
+#   Div Sat 4:30 & 8:20 PM ET | Div Sun 3:00 & 6:30 PM ET
+#   CC Sun 3:00 & 6:30 PM ET  | Super Bowl 6:30 PM ET (official for 2027)
+# The 2026-27 league has NOT published per-game times yet; estimates are labeled as
+# such everywhere in the app and are replaced by real times after the Jan 3, 2027
+# slate (re-run scripts/build.py then).
+#
+# LATE-SEASON SATURDAYS (status=EST): Westwood One sells a Wk16 Saturday DOUBLEHEADER
+# on Dec 26 (air 4:00/8:00 PM ET, events 548519/548520), a Wk17 doubleheader on Jan 2
+# (air 4:00/8:00 PM ET, events 548521/548522) and a Wk18 Saturday TRIPLEHEADER on
+# Jan 9 (air 12:30/4:15/8:00 PM ET, events 548523/548524/548526) - but nfl.com and
+# ESPN currently list ZERO games on those dates: the matchups are selected in-season
+# (2 games each move off the Dec 27 / Jan 3 Sunday slates; 3 of the 16 Wk-18 games
+# move to Jan 9 and 1 to the Jan 10 SNF window). Estimated kickoffs use the league's
+# standard Saturday windows, anchored by the one 2026 Saturday doubleheader already
+# officially scheduled (Dec 19: air 4:30->kick 5:00 PM ET, air 8:00->kick 8:20 PM ET)
+# and the WWO air times above: 4:30 / 8:15 PM ET for doubleheaders, 1:00 / 4:30 /
+# 8:15 PM ET for the Jan 9 tripleheader.
+#
+# PRO BOWL (status=CONFLICT): no official NFL date yet. nflplayoffpass.com (updated
+# Sep 9, 2026) says the Pro Bowl Games move INTO Super Bowl week for the first time:
+# Tuesday Feb 9, 2027, 8:00 PM ET at SoFi, live on ESPN. sportbusy.com says Sunday
+# Feb 7, 2027. ESPN's season calendar places Pro Bowl week Feb 3-9. Because the date
+# is unresolved, BOTH candidate days carry an estimated window and the conflict is
+# flagged; remove the losing day once the NFL announces.
+#   https://nflplayoffpass.com/super-bowl-2027/  |  https://www.sportbusy.com/events/pro-bowl-2027/
+#
+# Wk18 SUNDAY (status=EST): all 16 games are TBD on nfl.com (see the raw regular-
+# season file header). Typical Wk-18 Sunday = 1:00 PM ET window (most games), 4:25 PM
+# ET window, and the flex-selected SNF 8:20 PM ET. Estimated as three window blocks.
+#
+# Durations: NFL games use the researched 192-min average; the SUPER BOWL uses 225
+# min (3h45m) per bolavip's 2026 measurement of typical SB broadcast length
+#   https://bolavip.com/en/nfl/super-bowl-timeouts-length-duration-breaks
+# The Pro Bowl flag-football game uses 120 min.
+#
+# Format: date|kickoffPT(HH:MM)|dur_min|status(OFFICIAL/EST/CONFLICT)|count|label|review
+# One row per estimated/official broadcast window (status != OFFICIAL rows are
+# clearly labeled ESTIMATED in every output).
+2027-01-16|13:30|192|EST|2|Wild Card Saturday - 2 games, matchups & times TBD (2025-26 pattern: 4:30 PM ET)|https://www.espn.com/nfl/game/_/gameId/401872910/tbd-tbd
+2027-01-16|17:00|192|EST|2|Wild Card Saturday - 2 games, matchups & times TBD (2025-26 pattern: 8:00 PM ET)|https://www.espn.com/nfl/game/_/gameId/401872911/tbd-tbd
+2027-01-17|10:00|192|EST|3|Wild Card Sunday - 3 games, times TBD (2025-26 pattern: 1:00 PM ET)|https://www.espn.com/nfl/game/_/gameId/401872912/tbd-tbd
+2027-01-17|13:30|192|EST|3|Wild Card Sunday - 3 games, times TBD (2025-26 pattern: 4:30 PM ET)|https://www.espn.com/nfl/game/_/gameId/401872913/tbd-tbd
+2027-01-17|17:15|192|EST|3|Wild Card Sunday - 3 games, times TBD (2025-26 pattern: 8:15 PM ET)|https://www.nfl.com/schedules/2026/
+2027-01-18|17:15|192|EST|1|Wild Card Monday - 1 game, time TBD (2025-26 pattern: 8:15 PM ET)|https://www.espn.com/nfl/game/_/gameId/401872915/tbd-tbd
+2027-01-23|13:30|192|EST|2|Divisional Saturday - 2 games, times TBD (2025-26 pattern: 4:30 PM ET)|https://www.espn.com/nfl/game/_/gameId/401872916/tbd-tbd
+2027-01-23|17:20|192|EST|2|Divisional Saturday - 2 games, times TBD (2025-26 pattern: 8:20 PM ET)|https://www.espn.com/nfl/game/_/gameId/401872917/tbd-tbd
+2027-01-24|12:00|192|EST|2|Divisional Sunday - 2 games, times TBD (2025-26 pattern: 3:00 PM ET)|https://www.nfl.com/schedules/2026/
+2027-01-24|15:30|192|EST|2|Divisional Sunday - 2 games, times TBD (2025-26 pattern: 6:30 PM ET)|https://www.nfl.com/schedules/2026/
+2027-01-31|12:00|192|EST|2|Conference Championships - 2 games, times TBD (2025-26 pattern: 3:00 PM ET)|https://www.espn.com/nfl/game/_/gameId/401872920/tbd-tbd
+2027-01-31|15:30|192|EST|2|Conference Championships - 2 games, times TBD (2025-26 pattern: 6:30 PM ET)|https://www.espn.com/nfl/game/_/gameId/401872921/tbd-tbd
+2027-02-07|12:00|120|CONFLICT|1|NFL Pro Bowl Games (all-star) - DATE UNRESOLVED: sportbusy says Sun Feb 7 (3:00 PM ET assumed); nflplayoffpass says Tue Feb 9|https://www.sportbusy.com/events/pro-bowl-2027/
+2027-02-09|17:00|120|CONFLICT|1|NFL Pro Bowl Games (all-star) - DATE UNRESOLVED: nflplayoffpass says Tue Feb 9, 8:00 PM ET on ESPN; sportbusy says Sun Feb 7|https://nflplayoffpass.com/super-bowl-2027/
+2027-02-14|15:30|225|OFFICIAL|1|Super Bowl LXI - SoFi Stadium, Inglewood CA - OFFICIAL kickoff 6:30 PM ET / 3:30 PM PT (ESPN event 401873270); ~3h45m broadcast|https://www.espn.com/nfl/game/_/gameId/401873270/tbd-tbd
+2026-12-26|13:30|192|EST|1|NFL Wk16 Saturday doubleheader - matchup TBD (WWO events 548519/548520; est. 4:30 PM ET window)|https://www.westwoodonesports.com/events/548519
+2026-12-26|17:15|192|EST|1|NFL Wk16 Saturday doubleheader - matchup TBD (WWO event 548520; est. 8:15 PM ET window)|https://www.westwoodonesports.com/events/548520
+2027-01-02|13:30|192|EST|1|NFL Wk17 Saturday doubleheader - matchup TBD (WWO event 548521; est. 4:30 PM ET window)|https://www.westwoodonesports.com/events/548521
+2027-01-02|17:15|192|EST|1|NFL Wk17 Saturday doubleheader - matchup TBD (WWO event 548522; est. 8:15 PM ET window)|https://www.westwoodonesports.com/events/548522
+2027-01-09|10:00|192|EST|1|NFL Wk18 Saturday tripleheader - matchup TBD (WWO event 548523; est. 1:00 PM ET window)|https://www.westwoodonesports.com/events/548523
+2027-01-09|13:30|192|EST|1|NFL Wk18 Saturday tripleheader - matchup TBD (WWO event 548524; est. 4:30 PM ET window)|https://www.westwoodonesports.com/events/548524
+2027-01-09|17:15|192|EST|1|NFL Wk18 Saturday tripleheader - matchup TBD (WWO event 548526; est. 8:15 PM ET window)|https://www.westwoodonesports.com/events/548526
+2027-01-10|10:00|192|EST|0|NFL Wk18 Sunday early window - the 16 Wk18 games are all TBD on nfl.com (est. 1:00 PM ET window; games counted on the league rows)|https://www.nfl.com/schedules/2026/by-week/week-18
+2027-01-10|13:25|192|EST|0|NFL Wk18 Sunday afternoon window - times TBD (est. 4:25 PM ET window)|https://www.nfl.com/schedules/2026/by-week/week-18
+2027-01-10|17:20|192|EST|0|NFL Wk18 Sunday Night Football - flex-selected, teams/time TBD (WWO event 548510; est. 8:20 PM ET)|https://www.westwoodonesports.com/events/548510
+# TOTAL: 23 window rows = 12 postseason (2+3+1+2+2+2 incl. SB official) + 2 Pro Bowl
+# candidates + 7 late-season Saturday + 3 Wk-18 Sunday windows.

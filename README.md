@@ -16,13 +16,20 @@ A moment counts as *busy* if any of these is on air:
 The Giants, Athletics, 49ers, Warriors and Sharks are flagged **high priority** (★), but every
 other game in the leagues above still blocks. 📻 marks the games on Westwood One national radio
 in the Bay Area (KNBR 680 AM / 104.5 FM): all 65 dated NFL broadcasts were matched 65/65 against
-the league table. Everything is shown in **America/Los_Angeles** time (PDT through
-Oct 31, 2026, then PST) for **Aug 1, 2026 – Feb 28, 2027**.
+the league table, and per the Cumulus press release (Sep 9, 2026) WWO also airs the **late-season
+Saturday games and every NFL postseason game** through Super Bowl LXI. Everything is shown in
+**America/Los_Angeles** time (PDT through Oct 31, 2026, then PST) for **Aug 1, 2026 – Feb 28,
+2027**.
 
 Times you won't see yet are shown as **TBD until confirmed** — that includes the MLB postseason
 and NFL postseason kickoffs, NFL flex windows, MLS playoff days that depend on San Jose
-qualifying, and any Stanford/Cal postseason. A day with any unconfirmed game is labeled
-**UNCONFIRMED** rather than asserting a free-time window that might be wrong.
+qualifying, and any Stanford/Cal postseason. Per the site's rule (2026-09-15), a day on which a
+tracked game will definitely be played or aired without an official kickoff is **NOT FREE —
+TIME TBD**: where a documented pattern exists (2025-26 NFL playoff kickoffs, the league's
+standard Saturday windows, Westwood One air times) a clearly-labeled **estimated window**
+(hatched on the timeline, EST tag in the tables) blocks the time; otherwise no free time is
+asserted at all. Super Bowl LXI's 3:30 PM PT kickoff is official (ESPN event 401873270).
+Days that depend on a team qualifying (MLS playoffs, ACC/CFP/bowls) stay **UNCONFIRMED**.
 
 ## Run it
 
@@ -39,8 +46,9 @@ straight off the filesystem will not work.
 * **Scoreboard day view** — Yesterday / Today / Tomorrow buttons (or the ← → arrow keys), a
   24-hour timeline with red blocks where games are on and green bands where you are free, and
   the exact free windows: `12:00 AM – 10:05 AM (10h 5m)`, `3:54 PM – 4:00 PM (0h 6m)`, ...
-* **Month calendar** — every day colour-coded fully-free / partial / booked / unconfirmed,
-  with free hours per cell and a ★ on days the Giants or Athletics play.
+* **Month calendar** — every day colour-coded fully-free / partial / booked / not-free-TBD /
+  unconfirmed, with free hours per cell and a ★ on high-priority days (Giants, Athletics,
+  49ers, Warriors, Sharks, Westwood One broadcasts).
 * **League toggles and editable durations** — turn a league off (it stops both showing and
   blocking), change an average game length, and every day recomputes instantly.
 * **Flag panel** — every irregularity the pipeline found, grouped by type.
@@ -100,6 +108,13 @@ The build prints a verification report (per-team game counts, doubleheaders, day
 games, days that are fully booked, flag totals) — read it before trusting a refresh.
 Things that should be re-run later: after MLB's Oct 2026 playoff seeding is set (bracket times),
 after NFL flex schedule drops (Tuesdays), after Decision Day Nov 7, 2026 (Earthquakes), after
-bowl selection Sun Dec 6, 2026 (Stanford/Cal bowl games are deliberately not day-marked),
-after Westwood One names its 8 TBA matchups (Dec 26 / Jan 2 / Jan 9 / Jan 10), and after any
-NBA/NHL postponement (re-transcribe the ESPN team pages).
+bowl selection Sun Dec 6, 2026 (Stanford/Cal bowl games are deliberately not day-marked), when
+the league names the Wk-16/17 Saturday matchups (mid-December — replace the estimated Dec 26 /
+Jan 2 windows with real games), after the Jan 3, 2027 slate (real Wk-18 and playoff kickoffs
+replace the estimated windows), when college conferences announce the remaining WWO kickoff
+times (6-12 days before each game), when the NFL settles the Pro Bowl date (Feb 7 vs Feb 9 —
+remove the losing day), and after any NBA/NHL postponement (re-transcribe the ESPN team pages).
+
+The build also syntax-checks `index.html`'s inline script with `node --check` — the 2026-09-14
+deploy shipped a broken script that made the whole site load no data, so that check now prints
+in the verification report (and fails it on error).

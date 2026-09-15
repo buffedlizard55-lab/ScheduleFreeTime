@@ -1,6 +1,14 @@
 # Westwood One Sports — 2026 NFL national radio broadcasts (Sep 14, 2026 - Jan 10, 2027).
 # Transcribed 2026-09-14 from the official schedule page (Upcoming tab):
 #   https://www.westwoodonesports.com/nfl-schedule/
+# RE-VERIFIED 2026-09-15: the page was re-fetched and every dated broadcast listed
+# matches this file row-for-row (date, matchup, air time, slot, event id) - 65 dated
+# rows + 8 TBA. The page's Upcoming list now starts at Sep 17 (Sep 14 MNF is past).
+# The Cumulus press release of 2026-09-09 confirms the package scope: NFL Kickoff,
+# MNF/SNF/TNF, Thanksgiving, Black Friday, Christmas, EIGHT International Games,
+# LATE-SEASON SATURDAY GAMES, and EVERY NFL POSTSEASON GAME through Super Bowl LXI
+# (Feb 14, 2027, SoFi). The late-season Saturday + postseason coverage is what the
+# estimated windows in data/raw/nfl_2027_postseason_tbd.txt block.
 # Bay Area carriage: San Francisco affiliate is KNBR-AM / KNBR-FM / KTCT-AM
 #   (westwoodonesports.com/station-finder NFL table; KNBR-FM Wikipedia: "Both stations are
 #   the San Francisco affiliates for Westwood One Sports"). NOTE the station-finder caveat:

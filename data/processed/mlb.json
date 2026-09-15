@@ -32,14 +32,20 @@
    "local_games": 61,
    "nfl_reg_games": 272,
    "nfl_pre_games": 49,
-   "nfl_all_tbd_days": 8,
+   "nfl_reg_tbd_games": 16,
+   "nfl_window_rows": 25,
+   "nfl_windows_estimated": 24,
+   "nfl_windows_official": 1,
+   "nfl_all_tbd_days": 0,
    "conditional_days": 20,
    "nba_games": 63,
    "nhl_games": 68,
    "wwo_nfl_matched": 65,
    "wwo_nfl_total": 65,
    "wwo_nfl_tba": 8,
-   "wwo_ncaaf": 10
+   "wwo_ncaaf": 10,
+   "wwo_ncaaf_rows": 16,
+   "wwo_ncaaf_est_rows": 13
   }
  },
  "games": [
