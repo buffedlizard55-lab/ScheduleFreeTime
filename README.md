@@ -9,9 +9,14 @@ A moment counts as *busy* if any of these is on air:
 * **San Jose Earthquakes**
 * **Stanford** NCAA football
 * **Cal** NCAA football
+* **Golden State Warriors** (NBA — every game is on 95.7 The Game)
+* **San Jose Sharks** (NHL — every regular-season game is on 98.5 KFOX)
+* **Westwood One NCAA football showcase** (national radio, Bay Area: KNBR)
 
-The Giants, Athletics and 49ers are flagged **high priority** (★), but every other game in the
-leagues above still blocks. Everything is shown in **America/Los_Angeles** time (PDT through
+The Giants, Athletics, 49ers, Warriors and Sharks are flagged **high priority** (★), but every
+other game in the leagues above still blocks. 📻 marks the games on Westwood One national radio
+in the Bay Area (KNBR 680 AM / 104.5 FM): all 65 dated NFL broadcasts were matched 65/65 against
+the league table. Everything is shown in **America/Los_Angeles** time (PDT through
 Oct 31, 2026, then PST) for **Aug 1, 2026 – Feb 28, 2027**.
 
 Times you won't see yet are shown as **TBD until confirmed** — that includes the MLB postseason
@@ -46,8 +51,10 @@ straight off the filesystem will not work.
 |---|---|---|
 | MLB | 164 min (2:44) | 2026 season average (BetMGM 8/31/26: 2:44; SBJ 4/29/26: 2:43 thru first 421 games). MLB's official 2025 final was 2:38 |
 | NFL (49ers and All-NFL) | 192 min (3:12) | Nielsen/league-wide reporting of 3:12 avg incl. 12-min halftime & stoppages |
-| NCAA (Stanford/Cal) | 204 min (3:24) | 2025-data averages 3:24–3:27, 20-min halftimes |
+| NCAA (Stanford/Cal + WWO showcase) | 204 min (3:24) | 2025-data averages 3:24–3:27, 20-min halftimes |
 | MLS (Earthquakes) | 120 min (2:00) | 90 min + ~15-min halftime + stoppage |
+| NBA (Warriors) | 138 min (2:18) | 2025-26 measured avg 2:18:32 tip-to-buzzer; guides converge ~2:15 |
+| NHL (Sharks) | 150 min (2:30) | Midpoint of reported 2:20–2:40 range (~2.5h typical, two 18-min intermissions) |
 
 Citations in `docs/VERIFICATION.md` §2; the UI inputs are editable if you prefer different
 assumptions (e.g. your original 150-min MLB / 180-min NFL guesses).
@@ -65,6 +72,10 @@ No manual entry anywhere. The pipeline reads hand-transcribed, source-attributed
 | `data/raw/nfl_2026_pfr_regseason.txt` | **all 272 league-wide NFL regular-season games** (PFR league table, cross-checked vs nfl.com + 49ers.com) |
 | `data/raw/nfl_2026_pfr_preseason.txt` | all 49 preseason games (times only where official sources publish one) |
 | `data/raw/nfl_2027_postseason_tbd.txt` | WC Jan 16–18 / Div Jan 23–24 / CC Jan 31 / **Super Bowl LXI Feb 14, 2027 SoFi** + Pro Bowl Feb 9⚠(date conflict) |
+| `data/raw/nba_warriors_2026_27.txt` | 63 Warriors games (6 pre + 57 reg, ESPN rendered pages, per-game review links) |
+| `data/raw/nhl_sharks_2026_27.txt` | 68 Sharks games (4 pre info-only + 64 reg, ESPN rendered pages, per-game review links) |
+| `data/raw/westwoodone_nfl_2026.txt` | 65 WWO NFL broadcasts + 8 TBA placeholders (matched 65/65 vs the league table) |
+| `data/raw/westwoodone_ncaaf_2026.txt` | 10 WWO NCAA football Saturday broadcasts (2 timed, 8 TBD) |
 | `data/raw/mls_2026_playoffs_conditional.txt` | MLS playoff windows (Nov 18 – Dec 18) as SJ-conditional UNCONFIRMED days |
 | `data/raw/ncaa_2026_postseason_conditional.txt` | ACC title game Dec 5 + CFP days Dec 18 – Jan 25 (Stanford/Cal-conditional) |
 | `data/games_local.json` | 49ers (20 games), Earthquakes (17 games incl. the Nov 7 Decision Day finale), Stanford (12), Cal (12) — with a source URL per game |
@@ -74,10 +85,12 @@ No manual entry anywhere. The pipeline reads hand-transcribed, source-attributed
 (incl. the 2026-09-11 passes: MLB re-matched against the live Stats API, 272-game/17-per-team
 NFL checks, the 49ers/Stanford/Cal/Earthquakes schedules matched to their official releases, and
 three 49ers kickoff-time **corrections** — Dec 17 TNF = 5:15 PM PT, Nov 29 vs SEA = 1:25 PM PT,
-Dec 6 at NYG = 10:00 AM PT), the researched durations with citations, and every irregularity
-found. `schedules.md` is generated (do not hand-edit) and contains the full master list: every
-game of every tracked league, the All-NFL list with ET+PT times, the day-by-day free windows, and
-the flag list.
+Dec 6 at NYG = 10:00 AM PT — plus the 2026-09-14 pass: 65/65 Westwood One NFL broadcasts matched
+to the league table, 63 Warriors + 68 Sharks games transcribed from ESPN with per-game review
+links, and the Bay Area radio flagship per team documented), the researched durations with
+citations, and every irregularity found. `schedules.md` is generated (do not hand-edit) and
+contains the full master list: every game of every tracked league, the All-NFL list with ET+PT
+times, the Westwood One radio tables, the day-by-day free windows, and the flag list.
 
 ## Rebuilding the data
 
@@ -87,4 +100,6 @@ The build prints a verification report (per-team game counts, doubleheaders, day
 games, days that are fully booked, flag totals) — read it before trusting a refresh.
 Things that should be re-run later: after MLB's Oct 2026 playoff seeding is set (bracket times),
 after NFL flex schedule drops (Tuesdays), after Decision Day Nov 7, 2026 (Earthquakes), after
-bowl selection Sun Dec 6, 2026 (Stanford/Cal bowl games are deliberately not day-marked).
+bowl selection Sun Dec 6, 2026 (Stanford/Cal bowl games are deliberately not day-marked),
+after Westwood One names its 8 TBA matchups (Dec 26 / Jan 2 / Jan 9 / Jan 10), and after any
+NBA/NHL postponement (re-transcribe the ESPN team pages).

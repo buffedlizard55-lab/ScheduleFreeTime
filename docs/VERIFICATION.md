@@ -8,7 +8,23 @@ free-window from these files and prints the arithmetic checks quoted here.
 
 ## 0. Independent re-verification passes
 
-### 2026-09-11 pass (current data snapshot)
+### 2026-09-14 pass (Westwood One + Bay Area radio + Warriors/Sharks; current snapshot)
+
+| Check | Method | Result |
+|---|---|---|
+| WWO NFL transcription | `https://www.westwoodonesports.com/nfl-schedule/` Upcoming tab, all 4 page chunks read | **73 rows** (65 with matchups + 8 TBA) with air times, slots and event ids. Air times are pregame-show starts, not kickoffs (MNF 7:00 PM, SNF/TNF 7:30 PM, internationals 9:15 AM ET) - blocking still uses league kickoff + 192 min. |
+| WWO NFL vs league table | build cross-check on date + away + home (alias-normalized) | **65/65 match**; matched rows carry the 📻 badge. 8 TBA rows (Dec 26 x2, Jan 2 x2, Jan 9 x3, Jan 10 SNF) are info-only placeholders - the underlying Saturday/Week-18 games already block via the league table. |
+| WWO internationals ⚠ | page vs the league's 9 international games | 7 upcoming listed (Oct 4/11/18, Oct 25 Paris, Nov 8 Madrid, Nov 15 Munich, Nov 22 Mexico City); Sep 10 Melbourne presumed past-carried (unverified); **Sep 27 Rio (BAL@DAL 4:25 PM ET) is NOT on the WWO page** - WWO's package is "eight International Games" per its own press release, so Rio is presumed not carried (still blocks as an NFL game). |
+| WWO past broadcasts | Cumulus press release 2026-09-09 | Sep 9 Kickoff (NWE@SEA) verified and marked; Sep 10 Melbourne + Sep 13 SNF (DAL@NYG) presumed per pattern but the Past tab is JS-driven and unfetchable - deliberately NOT marked (flagged). |
+| WWO NCAA football | `https://www.westwoodonesports.com/ncaa-football/` | **10 Saturday broadcasts**, 2 with air times (Sep 19 7 PM, Oct 31 3 PM ET), 8 officially TBD -> UNCONFIRMED days. Michigan@Oregon shows date range "NOV 14 - NOV 21" - kept Nov 14 + flagged. |
+| WWO other properties | us-soccer, golf, ncaa-mcws, ncaa-basketball pages (all read) | All show **"No upcoming events"**; the Masters, College World Series, Frozen Four and March Madness all fall outside Aug-Feb anyway. Nothing else to track in-window. |
+| Bay Area WWO carriage | station-finder NFL table + KNBR-FM Wikipedia | SF affiliate = **KNBR-AM / KNBR-FM / KTCT-AM**. WWO's own caveat applies: local conflicts (e.g. a 49ers noon game on KNBR) can pre-empt any broadcast. |
+| Warriors 2026-27 | ESPN rendered preseason page + regular-season page (`seasontype/2`, 5 chunks) | **63 rows (6 pre + 57 reg)** with per-game ESPN gameIds. Opener cross-checked vs ESPN API event 401918010 (2026-10-04T23:00Z = 7 PM ET ✓); March rows match the sportsbrackets.net March table. Flagship: 95.7 The Game carries ALL games (insideRadio 2025-09) -> all block. |
+| Sharks 2026-27 | ESPN rendered preseason page + regular-season page (6 chunks) + ESPN API event 401891823 | **68 rows (4 pre + 64 reg)** with per-game gameIds. Oct 1/3/5/8/10/13/15 match sportsmediawatch exactly; all 7 in-window back-to-backs match the r/SanJoseSharks schedule thread. Flagship: 98.5 KFOX carries all regular-season games (nhl.com) -> reg blocks; preseason is "select" (unspecified) -> info-only. |
+| NBA/NHL durations | product-insights 2026 guide (NBA dashboard audit), sportsgeardaily, nhltraderumorstalk, icehockeyguide | NBA **138 min (2:18)** from the measured 2025-26 avg 2:18:32; NHL **150 min (2:30)** midpoint of the 2:20-2:40 range. See §2. |
+| Bay Area radio landscape | flagship source per team (see §1) | Giants KNBR 680/104.5; 49ers KSAN 107.7 + KNBR; Stanford KNBR/KTCT 1050 (gostanford.com 2026-07-30); Earthquakes KSFO 810 (sjearthquakes.com); Warriors 95.7; Sharks KFOX 98.5. **Cal's current flagship is uncertain** (KGO 810's 2022 format change; KNBR aired at least one 2025 Cal game) - flagged, does not affect blocking. |
+
+### 2026-09-11 pass (superseded snapshot)
 
 | Check | Method | Result |
 |---|---|---|
@@ -70,6 +86,11 @@ to carry stale/placeholder times and are NOT used.
 | MLS postseason | `https://www.mlssoccer.com/playoffs/2025/news/audi-2026-mls-cup-playoffs-key-dates-schedule-information` | Key dates -> conditional day markers. |
 | CFP | `https://www.espn.com/college-football/story/_/id/48958840/2026-college-football-playoff-bowl-schedule-46-games` | 2026-27 CFP + bowl calendar -> conditional markers. |
 | MLB 2027 ST boundary | `https://www.mlb.com/press-release/press-release-mlb-announces-2027-spring-training-schedule` | Scope note flag only. |
+| Warriors 2026-27 | `https://www.espn.com/nba/team/schedule/_/name/gs/season/2027/seasontype/2` + `.../name/gs/golden-state-warriors` (preseason) | 63 games; per-game review `https://www.espn.com/nba/game/_/gameId/<id>/x`. Flagship proof: `https://www.insideradio.com/free/nba-s-warriors-95-7-the-game-extend-flagship-partnership/article_8c79d479-424c-408d-9753-f353f7e18a57.html` |
+| Sharks 2026-27 | `https://www.espn.com/nhl/team/schedule/_/name/sj/season/2027/seasontype/2` + `.../name/sj/san-jose-sharks` (preseason) | 68 games; per-game review `https://www.espn.com/nhl/game/_/gameId/<id>/x`. Flagship proof: `https://www.nhl.com/sharks/news/sharks-and-kfox-announce-multi-year-extension/c-782397` |
+| Westwood One NFL | `https://www.westwoodonesports.com/nfl-schedule/` (+ `.../station-finder/` for Bay Area carriage) | 65 broadcasts + 8 TBA; per-event review `https://www.westwoodonesports.com/events/<id>`. Kickoff proof: Cumulus press release 2026-09-09 (globenewswire). |
+| Westwood One NCAAF | `https://www.westwoodonesports.com/ncaa-football/` | 10 Saturday broadcasts; per-event review links. |
+| Bay Area radio flagships | `https://gostanford.com/news/2026/07/30/2026-football-radio-broadcast-team-announced` (Stanford/KNBR-1050), `https://www.sjearthquakes.com/news/news-earthquakes-announce-radio-stations-for-2026-mls-season` (Quakes/KSFO-810), `https://bearinsider.com/s/2255/cal-extends-partnership-with-kgo-radio` (Cal/KGO-810, 2020 - current status uncertain, flagged) | Proves which station carries which team; see §3 item 19. |
 
 ### Cross-checks performed
 1. **MLB totals**: 417 + 361 = **778 games / 58 dates**; each of the 30 clubs 51–53 games (mean 51.9) -
@@ -92,6 +113,8 @@ Defaults shipped by `scripts/build.py` (the UI inputs are editable):
 | NFL (also applied to the All-NFL layer) | **192 min** = 3:12 | Widely reported average incl. 12-min halftime, timeouts, reviews: `https://underarmour.com/en-us/t/playbooks/football/the-real-length-of-a-football-game/` ("in 2025, NFL games averaged three hours and 12 minutes"), `https://sportssurge.alibaba.com/football/how-long-is-an-average-football-game` (Nielsen & NFL statistics). Secondary: `https://www.theringer.com/2024-09-05/nfl/...` uses 3:15 as a modeling assumption. Super Bowl days in our data are placeholders, so ceremonial extra length (~3:45) does not affect windows. |
 | NCAA (Stanford/Cal) | **204 min** = 3:24 | Same sportssurge/lines tables ("college averages 3:24 with 20-min halftimes"); Under Armour says 3:27 for 2025 - we ship 3:24 and let you edit. |
 | MLS (Earthquakes) | **120 min** = 2:00 | `https://www.tickpick.com/blog/how-long-are-mls-games/`, `https://authoritysoccer.com/how-long-are-mls-games-and-seasons/` (90 min + ~15-min halftime + stoppage). Playoffs may run over 2:00 with extra time - conditional days are not blocked anyway. |
+| NBA (Warriors) | **138 min** = 2:18 | Measured 2025-26 average **2:18:32** tip-to-buzzer (`https://www.alibaba.com/product-insights/how-long-is-the-average-basketball-game-2026-guide.html`, citing the NBA official game-ops dashboard + broadcast-timing audits; includes 15-min halftime, 20+ timeouts). Secondary: `https://sportsgeardaily.com/basketball/how-long-are-basketball-games` (~2:15 avg; stabilized 2:10-2:14 over five seasons). |
+| NHL (Sharks) | **150 min** = 2:30 | Midpoint of the reported **2:20-2:40** range: `https://nhltraderumorstalk.com/how-long-is-a-hockey-game` ("averages roughly 2h20 to 2h40"; 60 min play + two 18-min intermissions + TV timeouts); `https://icehockeyguide.com/hockey-game-length/` ("typically 2.5 to 3 hours" incl. intermissions/stoppages/OT). |
 
 Original user guidance ("MLB ~150 min; football 180 + 15–30 halftime") is superseded by the
 researched figures above; set the UI inputs back to 150/180+ to compare.
@@ -99,9 +122,23 @@ researched figures above; set the UI inputs back to 150/180+ to compare.
 ## 3. Irregularities flagged for your review
 
 The build re-emits all of these as machine-readable `flags` in `data/processed/free_time.json`
-and `schedules.md`. Status counts with the current data (2026-09-11 pass #2): 212 days in window ->
-**62 FREE, 92 PARTIAL, 58 UNCONFIRMED, 0 FULLY BOOKED**; ~91 flags. (The drop from 87 FREE is the
-blocking-rule fix — non-49ers NFL days no longer report free time.)
+and `schedules.md`. Status counts with the current data (2026-09-14 pass): 212 days in window ->
+**22 FREE, 130 PARTIAL, 60 UNCONFIRMED, 0 FULLY BOOKED**; 120 flags. (The drop from 62 FREE is the
+Warriors + Sharks evening slate - most Nov-Feb weeknights now have a Bay Area radio game on.)
+
+### Added / changed in the 2026-09-14 pass
+
+- **ADDED — Warriors (NBA) + Sharks (NHL) as high-priority blocking leagues.** 63 + 68 games
+  from ESPN's rendered team pages with per-game review links; 65/65 WWO NFL broadcasts matched.
+- **ADDED — Westwood One layers.** NFL broadcasts badge the matching league rows (📻); the NCAA
+  football showcase (10 Saturdays) blocks as its own league (8 TBD -> UNCONFIRMED days).
+- **ADDED — NBA 138 min / NHL 150 min durations** (researched, §2); UI inputs editable.
+- **KNOWN GAP (new) — WWO TBA matchups.** Dec 26 (x2), Jan 2 (x2), Jan 9 (x3) and Jan 10 SNF are
+  announced by WWO with "Teams TBA". The underlying games already block via the league table, but
+  re-transcribe `data/raw/westwoodone_nfl_2026.txt` once WWO names them.
+- **KNOWN GAP (new) — Cal radio flagship uncertain.** KGO 810 AM carried Cal for 47 years through
+  2020, but KGO changed format in Oct 2022 and KNBR aired at least one 2025 Cal game. No 2026
+  flagship announcement was reachable. Flagged; blocking is unaffected (Cal games block regardless).
 
 ### Fixed / changed in the 2026-09-11 pass #2
 
@@ -164,6 +201,19 @@ blocking-rule fix — non-49ers NFL days no longer report free time.)
     All-NFL display layer matches `schedules.md`.
 14. **Preseason times not transcribed for ~47 non-SF games** - the official PFR preseason table prints no
     kickoff times; those rows are display-only ("info_only"), never blocking, never set UNCONFIRMED.
+15. **WWO_RIO_EXCLUDED** - Sep 27 BAL@DAL (Rio, 4:25 PM ET) is absent from the WWO page: 8 of 9
+    internationals carried. Re-check if WWO adds it.
+16. **WWO_TBA / WWO_PAST_UNVERIFIED / WWO_PREEMPTION** - 8 TBA matchups (re-check Dec/Jan); Sep 10
+    Melbourne + Sep 13 SNF presumed but unverified (not badged); KNBR can pre-empt any WWO feed.
+17. **SCHEDULE_GAP (2)** - Warriors idle Dec 2-11 (NBA Cup window) + Feb 18-24 (All-Star break);
+    Sharks idle Jan 31-Feb 9. Confirmed ESPN gaps, not missing rows. Cup/All-Star games don't block.
+18. **ODD_START + NEUTRAL_SITE** - Sharks Dec 22 @SEA 9:40 PM ET kept as printed; Warriors Oct 13
+    preseason vs LAL is at Golden 1 Center Sacramento (neutral).
+19. **Cal flagship uncertain** - see "Added / changed" above. Stanford (KNBR/KTCT 1050) and
+    Earthquakes (KSFO 810) flagships are confirmed by 2026 club announcements.
+20. **PRESEASON_INFO_ONLY (4)** - Sharks Sep 20/22/24/26: KFOX carries only "select" preseason
+    games (unspecified which), so all four are listed but never block. Warriors preseason all
+    blocks (95.7 carries "all preseason and regular season games").
 
 ## 4. Known limitations (stated plainly)
 

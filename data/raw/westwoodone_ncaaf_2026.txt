@@ -1,0 +1,23 @@
+# Westwood One Sports — 2026 NCAA football national radio broadcasts (Saturday showcase).
+# Transcribed 2026-09-14 from the official page:
+#   https://www.westwoodonesports.com/ncaa-football/
+# Bay Area carriage: KNBR family carries Westwood One Sports in San Francisco
+# (station-finder NFL table lists KNBR-AM/FM + KTCT-AM; KNBR-FM Wikipedia confirms the
+# stations are "the San Francisco affiliates for Westwood One Sports" generally; the page's
+# own caveat - local conflicts can pre-empt any given broadcast - applies).
+# Most air times are officially "Air time TBD" - those rows never fabricate a window; they
+# mark the day UNCONFIRMED per the honesty rule. Two rows carry times (Sep 19, Oct 31).
+# Format: date|airET(HH:MM 24h, - if TBD)|away|home|eventId|note
+2026-09-19|19:00|LSU|Ole Miss|557127|Vaught Hemingway Stadium; Danny Reed & Derek Rackley
+2026-09-26|-|Oklahoma|Georgia|557136|Sanford Stadium; air time TBD
+2026-10-03|-|Notre Dame|North Carolina|557137|Kenan Stadium; air time TBD
+2026-10-10|-|Indiana|Nebraska|557139|Memorial Stadium Lincoln; air time TBD
+2026-10-17|-|Penn State|Michigan|557140|Michigan Stadium; air time TBD
+2026-10-24|-|Ole Miss|Texas|557141|DKR-Texas Memorial Stadium; air time TBD
+2026-10-31|15:00|Florida|Georgia|557129|Mercedes-Benz Stadium Atlanta (neutral); 3:00 PM ET
+2026-11-07|-|Oregon|Ohio State|557143|Ohio Stadium; air time TBD
+2026-11-14|-|Michigan|Oregon|557144|Autzen Stadium; page shows date range NOV 14 - NOV 21 (ambiguous; kept Nov 14 + flagged)
+2026-11-21|-|LSU|Tennessee|557145|Neyland Stadium; air time TBD
+# TOTAL: 10 rows, 2 with air times + 8 TBD.
+# NOTE: none of these involve Stanford or Cal; they are tracked ONLY as Bay Area national-radio
+# broadcasts (new sport id `ncaaw` in the build), separate from the Stanford/Cal `ncaa` rows.
