@@ -77,6 +77,40 @@ straight off the filesystem will not work.
 Citations in `docs/VERIFICATION.md` §2; the UI inputs are editable if you prefer different
 assumptions (e.g. your original 150-min MLB / 180-min NFL guesses).
 
+## Bay Area radio research (new 2026-09-17)
+
+Every team above is on Bay Area radio — verified line-by-line with official sources:
+
+* **Giants:** KNBR 680 AM / 104.5 FM — flagship since 1979 — [KNBR (AM)](https://en.wikipedia.org/wiki/KNBR_(AM)), [KNBR-FM](https://en.wikipedia.org/wiki/KNBR-FM)
+* **49ers:** KSAN 107.7 FM + KNBR 680/104.5 FM — [49ers.com/schedule](https://www.49ers.com/schedule/)
+* **Warriors:** 95.7 The Game (KGMZ-FM) — all preseason + regular season — [KTVU](https://www.ktvu.com/sports/warriors-switching-radio-partners-to-95-7-the-game), [Inside Radio](https://www.insideradio.com/free/nba-s-warriors-95-7-the-game-extend-flagship-partnership/article_8c79d479-424c-408d-9753-f353f7e18a57.html)
+* **Valkyries:** 95.7 The Game (home games over air, all on Audacy app) — [Audacy Inc press](https://audacyinc.com/press/95-7-the-game-will-be-the-valkyries-flagship-radio-station/)
+* **Sharks:** 98.5 KFOX (KUFX-FM) flagship 2000-2021, now Sharks Audio Network — [East Bay Times](https://www.eastbaytimes.com/2005/09/28/sharks-announce-radio-network/), [Mercury News](https://www.mercurynews.com/2021/01/07/san-jose-sharks-move-all-audio-broadcasts-online-end-20-year-relationship-with-kfox/)
+* **Earthquakes:** KSFO 810 AM / KZSF 1370 AM — [sjearthquakes.com 2026 release](https://www.sjearthquakes.com/news/news-earthquakes-announce-radio-stations-for-2026-mls-season)
+* **Stanford:** KNBR/KTCT 1050 AM — [gostanford.com 2026 broadcast team](https://gostanford.com/news/2026/07/30/2026-football-radio-broadcast-team-announced)
+* **Cal:** KSFO 810 AM in 2026 (KGO 810 AM for 47 years through 2020) — [calbears.com/schedule/2026](https://calbears.com/sports/football/schedule/2026), [bearinsider.com KGO extension](https://bearinsider.com/s/2255/cal-extends-partnership-with-kgo-radio)
+* **Westwood One NFL + NCAAF:** Bay Area affiliate KNBR 680/104.5 — [KNBR (AM)](https://en.wikipedia.org/wiki/KNBR_(AM)), [Cumulus press release Sep 9 2026](https://www.globenewswire.com/news-release/2026/09/09/3358684/9032/en/cumulus-media-s-westwood-one-official-network-audio-partner-of-the-nfl-celebrates-40th-consecutive-season-and-reveals-2026-nfl-lineup-and-programming-highlights-from-nfl-kickoff-to.html) — 65/65 NFL broadcasts matched, 10 NCAAF Saturdays
+
+Full citations in `docs/BAY_AREA_RADIO_RESEARCH.md` and `docs/VERIFICATION.md` §1.
+
+## Duration research (new 2026-09-17)
+
+Every average duration is researched with official sources — see `docs/DURATION_RESEARCH_2026.md` for line-by-line citations:
+
+* MLB 2:44 — [BetMGM](https://sports.betmgm.com/en/blog/mlb/average-game-time-in-mlb-bm23/), [SBJ](https://www.sportsbusinessjournal.com/Articles/2026/07/14/mlb-game-duration-up-for-the-second-straight-year/)
+* NFL 3:12 — [SportsSurge](https://sportssurge.alibaba.com/football/how-long-is-an-average-football-game), [Under Armour](https://www.underarmour.com/en-us/t/playbooks/football/the-real-length-of-a-football-game/)
+* NCAA 3:24-3:26 — [SportsEnthusiasts final 3:26](https://sportsenthusiasts.net/2025/08/27/college-football-game-length-in-2025/), [SportsGearDaily table 3:24](https://sportsgeardaily.com/football/how-long-are-football-games)
+* MLS ~2:00 — [MLS Multiplex](https://mlsmultiplex.com/2017/01/23/mls-101-explaining-regular-season-match/)
+* NBA 2:18:32 measured — [Alibaba 2026 Guide](https://www.alibaba.com/product-insights/how-long-is-the-average-basketball-game-2026-guide.html)
+* NHL ~2:30 — [SHOC](https://shoc.com/blogs/chalk-talk/how-long-is-a-nhl-hockey-game)
+* WNBA ~2:05 — [SportsMonkie](https://sportsmonkie.com/how-long-are-wnba-games/), [GameTimeHero 1:45-2h](https://www.gametimehero.com/blog/how-long-is-a-wnba-game)
+
+All are editable in the UI sidebar.
+
+## Limitations and next steps
+
+See `docs/LIMITATIONS_AND_NEXT_STEPS.md` for known limitations (estimated windows, flex, Pro Bowl conflict, conditional days) and a checklist of what to re-run when official times drop.
+
 ## Data provenance
 
 No manual entry anywhere. The pipeline reads hand-transcribed, source-attributed files:
