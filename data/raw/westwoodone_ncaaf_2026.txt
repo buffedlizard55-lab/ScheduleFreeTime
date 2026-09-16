@@ -27,7 +27,27 @@
 # the two windows WWO's showcase actually uses (observed 2026: 3:30 and 7:30 PM ET
 # kickoffs; WWO air times 3:00/7:00 PM ET). Re-check weekly - conferences announce
 # 6-12 days out.
-# Format: date|kickoffPT(HH:MM 24h, EST-<HH:MM> for an estimated slot, TBD = no slot known)|dur_min|away|home|eventId|note
+# CORRECTION 2026-09-16 (pass B): the page's main widget only renders the FIRST 10
+# events, and the 2026-09-14 transcription captured only those 10. The widget's own
+# "More" endpoint (fetched live 2026-09-16, full list ends "No more events"):
+#   https://www.westwoodonesports.com/more/eventGrid?id=47030&range=current&offset=0&limit=20&timezone=America/New_York&widgetTitle=Upcoming+NCAA+Football+Broadcasts
+# shows the complete 2026 list = 13 broadcasts. THREE ADDITIONAL WWO BROADCASTS ADDED:
+#   Nov 28 Michigan@Ohio State  557131  WWO air 11:30 AM ET; OFFICIAL kickoff 12:00 PM ET
+#           FOX (University of Michigan announcement 2026-05-11 + Big Ten TV schedule):
+#           sports.yahoo.com/articles/michigan-vs-ohio-state-2026-220423699.html,
+#           on3.com/sites/the-knight-report/news/big-ten-releases-television-schedule-kickoff-times-for-2026-football-season/,
+#           dispatch.com 2026-05-11. 12:00 PM ET = 09:00 PT (PDT).
+#   Dec  5 SEC Championship     557146  WWO air 3:30 PM ET; OFFICIAL kickoff 4:00 PM ET
+#           ABC (SEC Commissioner Chuck Dunlap 2026-05-12: x.com/SEC_Chuck/status/2054313616988324108;
+#           SEC release via al.com/sec/2026/05/sec-announces-early-season-football-kickoff-times-tv-info-for-2026.html,
+#           fbschedules.com). 4:00 PM ET = 13:00 PT (PST); Mercedes-Benz Stadium, Atlanta.
+#   Dec 12 Army vs Navy         557132  WWO grid air 2:00 PM ET (long pregame); OFFICIAL
+#           kickoff 3:00 PM ET CBS (goarmywestpoint.com 2026-05-27 + navysports.com/AAC
+#           2026-05-27 + sportingnews.com tickets article). 3:00 PM ET = 12:00 PT (PST);
+#           MetLife Stadium. IRREGULARITY: WWO's own event page prints the window
+#           "3:30 PM - 7:30 PM EST" which conflicts with the grid's 2:00 PM ET air time;
+#           the official CBS kickoff (3:00 PM ET) is authoritative - flagged in the build.
+# Format: date|kickoffPT(HH:MM 24h, EST-<HH:MM> for an estimated slot, TBD = no slot known)|dur_min|away|home|eventId|note|customlabel(optional)
 2026-09-19|16:30|204|LSU|Ole Miss|557127|kickoff 7:30 PM ET ABC (olemissports.com); WWO air 7:00 PM ET; Danny Reed & Derek Rackley
 2026-09-26|12:30|204|Oklahoma|Georgia|557136|kickoff 3:30 PM ET ESPN/ABC (SEC announcement 2026-09-14); WWO air TBD; Sanford Stadium
 2026-10-03|EST-12:30|204|Notre Dame|North Carolina|557137|kickoff TBD (ESPN) - estimated showcase slot 3:30 PM ET; Kenan Stadium
@@ -44,9 +64,15 @@
 2026-11-14|EST-16:30|204|Michigan|Oregon|557144|kickoff TBD - estimated showcase slot 7:30 PM ET (second possible window); Autzen Stadium
 2026-11-21|EST-12:30|204|LSU|Tennessee|557145|kickoff TBD (SEC) - estimated showcase slot 3:30 PM ET; Neyland Stadium
 2026-11-21|EST-16:30|204|LSU|Tennessee|557145|kickoff TBD - estimated showcase slot 7:30 PM ET (second possible window); Neyland Stadium
-# TOTAL: 10 WWO broadcasts / 16 rows = 4 with confirmed or reported kickoffs
-# (Sep 19, Sep 26, Oct 31, Nov 7-reported) + 6 with two ESTIMATED showcase slots each
-# (Oct 3, Oct 10, Oct 17, Oct 24, Nov 14, Nov 21; the Nov 14 date was ambiguous on
-# the WWO page, now resolved to Nov 14 via goducks.com).
+2026-11-28|09:00|204|Michigan|Ohio State|557131|kickoff 12:00 PM ET FOX (official: Michigan announcement 2026-05-11 + Big Ten TV schedule); WWO air 11:30 AM ET; Ohio Stadium
+2026-12-05|13:00|204|SEC|Championship|557146|kickoff 4:00 PM ET ABC (SEC official 2026-05-12); WWO air 3:30 PM ET; Mercedes-Benz Stadium Atlanta|Westwood One: 2026 SEC Championship Game
+2026-12-12|12:00|204|Army|Navy|557132|kickoff 3:00 PM ET CBS (Army/Navy official 2026-05-27); WWO grid air 2:00 PM ET (long pregame); WWO event window 3:30-7:30 PM EST conflicts with grid air - official CBS time authoritative; MetLife Stadium|Westwood One: 127th Army-Navy Game
+# TOTAL: 13 WWO broadcasts / 19 rows = 7 with confirmed or reported kickoffs
+# (Sep 19, Sep 26, Oct 31, Nov 7-reported, Nov 28, Dec 5, Dec 12) + 6 with two
+# ESTIMATED showcase slots each (Oct 3, Oct 10, Oct 17, Oct 24, Nov 14, Nov 21; the
+# Nov 14 date was ambiguous on the WWO page, now resolved to Nov 14 via goducks.com).
+# The Nov 28 / Dec 5 / Dec 12 rows were missing from the 2026-09-14 transcription
+# because the page widget truncates at 10 events; added 2026-09-16 (pass B) from the
+# widget's full eventGrid list (see header).
 # None of these involve Stanford or Cal; they are tracked ONLY as Bay Area national-radio
 # broadcasts (sport id `ncaaw` in the build), separate from the Stanford/Cal `ncaa` rows.

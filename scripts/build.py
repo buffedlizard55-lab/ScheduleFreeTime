@@ -420,10 +420,14 @@ def load_wnba():
 
 # --- Westwood One NCAA football showcase (national radio, Bay Area: KNBR) ----
 # New format (2026-09-15): date|kickoffPT(HH:MM, EST-<HH:MM> = estimated slot)|dur_min|
-# away|home|eventId|note. Confirmed kickoffs block from kickoff; TBD kickoffs block two
-# ESTIMATED showcase slots (3:30 / 7:30 PM ET = 12:30 / 4:30 PM PT) - the two windows
-# the WWO showcase actually uses in 2026 (observed kickoffs Sep 19 7:30 PM ET and
-# Oct 31 3:30 PM ET; Nov 7 reported 3:30 PM ET).
+# away|home|eventId|note[|customlabel]. Confirmed kickoffs block from kickoff; TBD
+# kickoffs block two ESTIMATED showcase slots (3:30 / 7:30 PM ET = 12:30 / 4:30 PM PT)
+# - the two windows the WWO showcase actually uses in 2026 (observed kickoffs Sep 19
+# 7:30 PM ET and Oct 31 3:30 PM ET; Nov 7 reported 3:30 PM ET).
+# 2026-09-16 (pass B): the page widget only renders its FIRST 10 events; the complete
+# 2026 list (13 broadcasts) comes from the widget's eventGrid endpoint. The three
+# later events (Nov 28 Michigan@Ohio State, Dec 5 SEC Championship, Dec 12 Army-Navy)
+# were missing until this correction - see the raw-file header for the URLs.
 def load_wwo_ncaaf():
     games = []
     path = os.path.join(RAW, "westwoodone_ncaaf_2026.txt")
@@ -432,9 +436,9 @@ def load_wwo_ncaaf():
         line = line.strip()
         if not line or line.startswith("#"):
             continue
-        dt, kick, dur, aw, hm, eid, note = (line.split("|") + [""])[:7]
+        dt, kick, dur, aw, hm, eid, note, custom = (line.split("|") + [""] * 8)[:8]
         rec = {"date": dt, "sport": "ncaaw", "away": aw, "home": hm,
-               "label": f"Westwood One: {aw} at {hm}",
+               "label": custom or f"Westwood One: {aw} at {hm}",
                "priority": True, "source": "westwoodone_ncaaf_2026.txt",
                "review": f"https://www.westwoodonesports.com/events/{eid}",
                "wwo": True, "wwo_slot": "Westwood One (national radio)"}
@@ -466,6 +470,26 @@ def load_wwo_ncaaf():
                 flag("REPORTED_NOT_OFFICIAL", f"{dt} Westwood One: {aw} at {hm}: kickoff 3:30 PM ET is "
                      f"REPORTED (The Athletic via si.com/oregonlive.com) - official announcement expected Oct 26.")
         games.append(rec)
+    # 2026-09-16 (pass B): the WWO page widget truncates at 10 events; the complete list
+    # (eventGrid endpoint, ends "No more events") has 13 broadcasts. The three beyond
+    # the first ten are added now (see raw-file header for the official kickoff sources).
+    late = [g for g in games if g["date"] in ("2026-11-28", "2026-12-05", "2026-12-12")]
+    if len(late) == 3:
+        flag("WWO_NCAAF_EXPANDED",
+             "CORRECTION 2026-09-16: the Westwood One NCAA football page's widget only renders its "
+             "first 10 events, so the 2026-09-14 transcription missed 3 broadcasts. The widget's own "
+             "eventGrid endpoint (westwoodonesports.com/more/eventGrid?id=47030..., fetched live "
+             "2026-09-16; the list ends 'No more events') shows 13 total: added Nov 28 Michigan@Ohio "
+             "State (kickoff 12:00 PM ET FOX, official), Dec 5 SEC Championship (kickoff 4:00 PM ET "
+             "ABC, SEC official) and Dec 12 Army vs Navy (kickoff 3:00 PM ET CBS, official). These "
+             "three days now block and assert NO free time.")
+    if any(g["date"] == "2026-12-12" for g in games):
+        flag("IRREGULARITY",
+             "2026-12-12 Army vs Navy (WWO event 557132): WWO's own data conflicts - the schedule "
+             "grid prints air time 2:00 PM ET while the event page prints the window '3:30 PM - "
+             "7:30 PM EST'. The official CBS kickoff (3:00 PM ET per goarmywestpoint.com / "
+             "navysports.com, 2026-05-27) is used as authoritative; the 2:00 PM ET air time is a "
+             "long pregame show. Re-check when WWO updates the listing.")
     return games
 
 # --- Westwood One NFL: cross-check vs the league table, mark wwo=true --------
@@ -685,6 +709,28 @@ def main():
          "placeholder games (the 2026-08-28 transcription had 4); the postseason placeholder total is "
          "therefore 53, not 55. All other 27 postseason dates are unchanged and every date stays "
          "'NOT FREE - TIME TBD'. Raw file updated; see the file header for the exact query.")
+    flag("VERIFIED_PASS_2026_09_16_B",
+         "2026-09-16 pass B (this session): (1) WWO NFL page re-fetched live - the page renders two "
+         "lists; combined they hold all 71 upcoming events and every one matches the transcription at "
+         "event-id level (63 remaining dated matchups + 8 TBA; the Sep 14 MNF 548429 moved to the "
+         "Past tab as it is now in the past). Zero deltas. (2) WWO NCAAF page re-fetched: the widget "
+         "shows only 10 events, but the widget's own eventGrid endpoint (id=47030, list ends 'No more "
+         "events' at offset 20) holds the complete 2026 list = 13 broadcasts - three were missing and "
+         "are added: Nov 28 Michigan@Ohio State (official 12:00 PM ET FOX), Dec 5 SEC Championship "
+         "(official 4:00 PM ET ABC, SEC), Dec 12 Army vs Navy (official 3:00 PM ET CBS). (3) WWO U.S. "
+         "Soccer page: 'No upcoming events'. (4) Bay Area radio sweep: no further in-window live "
+         "Bay Area radio sport found (NWSL Deltas have no verifiable Bay Area radio flagship; NWSL "
+         "radio is SiriusXM national). (5) Fixed the remaining part of the reported bug: NOT FREE-TBD "
+         "and UNCONFIRMED days no longer assert any free time (see FREE_TIME_NOT_ASSERTED).")
+    flag("FREE_TIME_NOT_ASSERTED",
+         "RULE CHANGE 2026-09-16 (pass B) - the second half of the reported bug 'the site says I have "
+         "free time on days when there are football games on'. Days with status NOT FREE - TIME TBD or "
+         "UNCONFIRMED no longer report ANY free windows or free minutes: free=[] and free_minutes=0 in "
+         "free_time.json (the arithmetic windows are kept in `provisional_free` for reference only), "
+         "the UI draws no green free bands and shows no 'Xh Ym free' on them, and the day-by-day "
+         "table prints Free min = 0, which means 'not asserted', not 'free'. Estimated windows still "
+         "block their times; PARTIAL/FREE days with fully-official kickoffs still report their exact "
+         "free gaps as before.")
     flag("VERIFIED_PASS_2026_09_11", "Superseded-pass note kept for the audit trail: 2026-09-11 MLB Stats "
          "API re-query for 2026-09-10/11/12 matched the raw file 35/35 games (dates, times, team ids). "
          "The 'sparse' Tue/Thu slate days (5 games on Sep 10, 3 on Sep 21) are genuine scheduled light "
@@ -739,13 +785,32 @@ def main():
             status = "FULLY BOOKED"
         else:
             status = "PARTIAL"
+        # Free-time assertion rule (2026-09-16 pass B, per the user's rule "any games that
+        # are covered on this site should be marked as free time NOT available"): a day
+        # whose status is NOT FREE - TIME TBD (a tracked game will definitely play/air but
+        # its kickoff is not official) or UNCONFIRMED (conditional markers may add games)
+        # asserts NO free time at all. The arithmetic free windows are still computed and
+        # kept in `provisional_free` for reference ONLY - they are never presented to the
+        # user as free time (no green bands, no "Xh Ym free", Free min = 0 in the table).
+        # This is the second part of the fix for the reported bug "the site says I have
+        # free time on days when there are football games on": the first part (2026-09-15)
+        # introduced the NOT FREE - TIME TBD status, but the data/UI still reported
+        # windows + free minutes on those days.
+        if status in ("NOT FREE — TIME TBD", "UNCONFIRMED"):
+            free_out, free_min_out, prov_out = [], 0, \
+                [{"start": s, "end": e, "start_t": fmt(s), "end_t": fmt(e), "minutes": e - s} for s, e in fw]
+        else:
+            free_out, free_min_out, prov_out = \
+                [{"start": s, "end": e, "start_t": fmt(s), "end_t": fmt(e), "minutes": e - s} for s, e in fw], \
+                sum(e - s for s, e in fw), []
         days.append({
             "date": ds, "weekday": d.strftime("%a"), "status": status,
             "games": [dict(g) for g in
                       sorted(todays, key=lambda x: (x.get("start_min") is None, x.get("start_min") or 0))],
             "blocked": [{"start": s, "end": e, "start_t": fmt(s), "end_t": fmt(e)} for s, e in merged],
-            "free": [{"start": s, "end": e, "start_t": fmt(s), "end_t": fmt(e), "minutes": e - s} for s, e in fw],
-            "free_minutes": sum(e - s for s, e in fw),
+            "free": free_out,
+            "free_minutes": free_min_out,
+            "provisional_free": prov_out,
             "game_count": len([g for g in blocking if g.get("start_min") is not None]),
             "nfl_all_count": len([g for g in nfla if g.get("start_min") is not None and not g.get("dedup")]),
             "tbd_count": tbd_n,
@@ -838,8 +903,8 @@ def main():
     if len(wnba_games) != 16 or meta["totals"]["wnba_blocking"] != 9:
         ok = False; print(f"!! Valkyries count {len(wnba_games)} (expect 16) / blocking "
                           f"{meta['totals']['wnba_blocking']} (expect 9)")
-    if len(wwo_ncaaf) != 16 or meta["totals"]["wwo_ncaaf"] != 10:
-        ok = False; print(f"!! WWO NCAAF count {len(wwo_ncaaf)} rows / {meta['totals']['wwo_ncaaf']} broadcasts != 16/10")
+    if len(wwo_ncaaf) != 19 or meta["totals"]["wwo_ncaaf"] != 13:
+        ok = False; print(f"!! WWO NCAAF count {len(wwo_ncaaf)} rows / {meta['totals']['wwo_ncaaf']} broadcasts != 19/13")
     if wwo_matched != wwo_total:
         ok = False; print(f"!! WWO NFL matched {wwo_matched}/{wwo_total} (see IRREGULARITY flags)")
     if len(reg) != 272:
@@ -909,6 +974,10 @@ def main():
     partial = [x for x in days if x["status"] == "PARTIAL"]
     print(f"Days PARTIAL      : {len(partial)}; avg free on those days "
           f"{sum(x['free_minutes'] for x in partial)/max(1,len(partial)):.0f} min")
+    not_asserted = [x for x in days if x["status"] in ("NOT FREE — TIME TBD", "UNCONFIRMED")]
+    print(f"NO free time asserted on {len(not_asserted)} days "
+          f"({len(notfree_tbd)} NOT FREE-TBD + {len(unconf)} UNCONFIRMED) - the site reports no free "
+          f"windows and 0 free minutes there (user rule: WWO-covered / TBD days are NOT free)")
     print(f"Flags raised      : {len(flags)}")
     kinds = {}
     for f in flags:
@@ -978,9 +1047,10 @@ def write_markdown(days, meta, flags, mlb, nfl_all, local, cond, per, nba_nhl, w
       f"Sharks (NHL) or the Westwood One NCAA football showcase. A day on which any tracked "
       f"game WILL be played/aired but its kickoff is not official is marked **NOT FREE - TIME "
       f"TBD**: estimated windows (clearly labeled, from documented 2025-26 postseason / "
-      f"WWO-air-time / league-window patterns) block where predictable, and any free windows "
-      f"shown for such a day are PROVISIONAL. Days carrying only conditional "
-      f"qualification markers (MLS playoffs, ACC/CFP/bowls) stay UNCONFIRMED.")
+      f"WWO-air-time / league-window patterns) block where predictable, and **no free time is "
+      f"asserted or reported on that day at all** (Free min = 0 means 'not asserted', not "
+      f"'free'). Days carrying only conditional qualification markers (MLS playoffs, "
+      f"ACC/CFP/bowls) stay UNCONFIRMED and likewise assert no free time.")
     A("")
     A("## High-priority clubs: San Francisco Giants + Athletics + 49ers + Warriors + Sharks")
     A("")
@@ -1127,11 +1197,19 @@ def write_markdown(days, meta, flags, mlb, nfl_all, local, cond, per, nba_nhl, w
     for x in days:
         fw = "; ".join(f"{w['start_t']}-{w['end_t']}" for w in x["free"]) or "none"
         if x["status"] == "NOT FREE — TIME TBD":
-            fw = f"NOT AVAILABLE - {x['tbd_count']} TBD game(s) + {x['estimated_count']} estimated window(s); provisional windows: {fw}"
+            fw = (f"NOT AVAILABLE - {x['tbd_count']} TBD game(s) + {x['estimated_count']} estimated "
+                  f"window(s); free time NOT asserted")
         elif x["status"] == "UNCONFIRMED":
-            fw = f"UNCONFIRMED - conditional marker(s); windows not asserted"
+            fw = "NOT ASSERTED - conditional marker(s) may add games; free time NOT asserted"
         A(f"| {x['date']} | {x['weekday']} | {x['status']} | {x['game_count']} | {x['nfl_all_count']} | {fw} | "
           f"{x['free_minutes']} | {'YES' if x['tbd_count'] or x['estimated_count'] else ''} |")
+    A("")
+    A("Legend for the Free min column: **0 on a NOT FREE - TIME TBD or UNCONFIRMED day means 'free time")
+    A("not asserted', not 'free'**. On those days a tracked game will definitely be played/aired (its")
+    A("kickoff or matchup is not official yet) or a conditional playoff/qualification event may add a")
+    A("game, so the site reports NO free windows there - per the rule that any covered game means free")
+    A("time NOT available. The arithmetic windows are kept in `provisional_free` in")
+    A("`data/processed/free_time.json` for reference only and never shown as free time.")
     A("")
     A("## Every MLB game, by date (all 30 clubs)")
     A("")

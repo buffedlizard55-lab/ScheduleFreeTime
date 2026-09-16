@@ -106,7 +106,7 @@ for d in days:
             merged[-1][1] = max(merged[-1][1], e)
         else:
             merged.append([s, e])
-    # free windows, recomputed independently
+    # free windows, recomputed independently (arithmetic windows of the day)
     free, cur = [], 0
     for s, e in merged:
         if s > cur:
@@ -114,15 +114,8 @@ for d in days:
         cur = max(cur, e)
     if cur < 1440:
         free.append((cur, 1440))
-    if [(f["start"], f["end"]) for f in d["free"]] != free:
-        bad_free.append(ds)
     if [(b["start"], b["end"]) for b in d["blocked"]] != [tuple(m) for m in merged]:
         bad_overlap.append(ds)
-    total = sum(e - s for s, e in free) + sum(e - s for s, e in merged)
-    if total != 1440:
-        bad_part.append(f"{ds}={total}")
-    if d["free_minutes"] != sum(e - s for s, e in free):
-        bad_free.append(ds + "/minutes")
     # status model
     tbd = [g for g in gs if g.get("start_min") is None and not g.get("info_only")
            and not g.get("conditional")]
@@ -141,6 +134,27 @@ for d in days:
         want = "PARTIAL"
     if d["status"] != want:
         bad_status.append(f"{ds}: {d['status']} != {want}")
+    # free-time assertion rule (2026-09-16 pass B): NOT FREE - TIME TBD and UNCONFIRMED
+    # days assert NO free time - stored free must be [] with 0 minutes, and the
+    # arithmetic windows must be preserved in `provisional_free`. Asserted days must
+    # store the arithmetic windows in `free` (and no provisional_free).
+    prov = [(p["start"], p["end"]) for p in d.get("provisional_free", [])]
+    if want in ("NOT FREE — TIME TBD", "UNCONFIRMED"):
+        if d["free"] != [] or d["free_minutes"] != 0:
+            bad_free.append(ds + "/asserted-but-not-free")
+        if prov != free:
+            bad_free.append(ds + "/provisional")
+        total = sum(e - s for s, e in prov) + sum(e - s for s, e in merged)
+    else:
+        if [(f["start"], f["end"]) for f in d["free"]] != free:
+            bad_free.append(ds)
+        if prov:
+            bad_free.append(ds + "/provisional-on-asserted-day")
+        if d["free_minutes"] != sum(e - s for s, e in free):
+            bad_free.append(ds + "/minutes")
+        total = sum(e - s for s, e in free) + sum(e - s for s, e in merged)
+    if total != 1440:
+        bad_part.append(f"{ds}={total}")
 
 check(not bad_free, "2. recomputed free windows == stored (all 212 days)", str(bad_free[:6]))
 check(not bad_overlap, "3. stored blocked list == recomputed merge", str(bad_overlap[:6]))

@@ -48,8 +48,8 @@
    "wwo_nfl_matched": 65,
    "wwo_nfl_total": 65,
    "wwo_nfl_tba": 8,
-   "wwo_ncaaf": 10,
-   "wwo_ncaaf_rows": 16,
+   "wwo_ncaaf": 13,
+   "wwo_ncaaf_rows": 19,
    "wwo_ncaaf_est_rows": 13
   }
  },
@@ -322,6 +322,7 @@
     }
    ],
    "free_minutes": 883,
+   "provisional_free": [],
    "game_count": 16,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -612,6 +613,7 @@
     }
    ],
    "free_minutes": 926,
+   "provisional_free": [],
    "game_count": 16,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -771,6 +773,7 @@
     }
    ],
    "free_minutes": 1096,
+   "provisional_free": [],
    "game_count": 8,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -1048,6 +1051,7 @@
     }
    ],
    "free_minutes": 1091,
+   "provisional_free": [],
    "game_count": 16,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -1325,6 +1329,7 @@
     }
    ],
    "free_minutes": 867,
+   "provisional_free": [],
    "game_count": 15,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -1545,6 +1550,7 @@
     }
    ],
    "free_minutes": 731,
+   "provisional_free": [],
    "game_count": 12,
    "nfl_all_count": 1,
    "tbd_count": 0,
@@ -1822,6 +1828,7 @@
     }
    ],
    "free_minutes": 1061,
+   "provisional_free": [],
    "game_count": 16,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -2086,6 +2093,7 @@
     }
    ],
    "free_minutes": 871,
+   "provisional_free": [],
    "game_count": 15,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -2376,6 +2384,7 @@
     }
    ],
    "free_minutes": 797,
+   "provisional_free": [],
    "game_count": 16,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -2565,6 +2574,7 @@
     }
    ],
    "free_minutes": 1093,
+   "provisional_free": [],
    "game_count": 10,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -2829,6 +2839,7 @@
     }
    ],
    "free_minutes": 1066,
+   "provisional_free": [],
    "game_count": 15,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -3106,6 +3117,7 @@
     }
    ],
    "free_minutes": 766,
+   "provisional_free": [],
    "game_count": 16,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -3406,6 +3418,7 @@
     }
    ],
    "free_minutes": 747,
+   "provisional_free": [],
    "game_count": 15,
    "nfl_all_count": 5,
    "tbd_count": 0,
@@ -3716,6 +3729,7 @@
     }
    ],
    "free_minutes": 867,
+   "provisional_free": [],
    "game_count": 17,
    "nfl_all_count": 3,
    "tbd_count": 0,
@@ -4105,6 +4119,7 @@
     }
    ],
    "free_minutes": 750,
+   "provisional_free": [],
    "game_count": 23,
    "nfl_all_count": 7,
    "tbd_count": 0,
@@ -4382,6 +4397,7 @@
     }
    ],
    "free_minutes": 877,
+   "provisional_free": [],
    "game_count": 15,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -4612,6 +4628,7 @@
     }
    ],
    "free_minutes": 916,
+   "provisional_free": [],
    "game_count": 12,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -4876,6 +4893,7 @@
     }
    ],
    "free_minutes": 1151,
+   "provisional_free": [],
    "game_count": 15,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -5165,6 +5183,7 @@
     }
    ],
    "free_minutes": 725,
+   "provisional_free": [],
    "game_count": 17,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -5401,6 +5420,7 @@
     }
    ],
    "free_minutes": 789,
+   "provisional_free": [],
    "game_count": 11,
    "nfl_all_count": 1,
    "tbd_count": 0,
@@ -5726,6 +5746,7 @@
     }
    ],
    "free_minutes": 916,
+   "provisional_free": [],
    "game_count": 19,
    "nfl_all_count": 3,
    "tbd_count": 0,
@@ -6163,6 +6184,7 @@
     }
    ],
    "free_minutes": 648,
+   "provisional_free": [],
    "game_count": 26,
    "nfl_all_count": 10,
    "tbd_count": 0,
@@ -6456,6 +6478,7 @@
     }
    ],
    "free_minutes": 874,
+   "provisional_free": [],
    "game_count": 16,
    "nfl_all_count": 1,
    "tbd_count": 0,
@@ -6658,6 +6681,7 @@
     }
    ],
    "free_minutes": 1091,
+   "provisional_free": [],
    "game_count": 11,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -6922,6 +6946,7 @@
     }
    ],
    "free_minutes": 1091,
+   "provisional_free": [],
    "game_count": 15,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -7199,6 +7224,7 @@
     }
    ],
    "free_minutes": 801,
+   "provisional_free": [],
    "game_count": 16,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -7450,6 +7476,7 @@
     }
    ],
    "free_minutes": 834,
+   "provisional_free": [],
    "game_count": 12,
    "nfl_all_count": 3,
    "tbd_count": 0,
@@ -7887,6 +7914,7 @@
     }
    ],
    "free_minutes": 857,
+   "provisional_free": [],
    "game_count": 25,
    "nfl_all_count": 10,
    "tbd_count": 0,
@@ -8240,6 +8268,7 @@
     }
    ],
    "free_minutes": 729,
+   "provisional_free": [],
    "game_count": 21,
    "nfl_all_count": 2,
    "tbd_count": 0,
@@ -8515,6 +8544,7 @@
     }
    ],
    "free_minutes": 860,
+   "provisional_free": [],
    "game_count": 15,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -8734,6 +8764,7 @@
     }
    ],
    "free_minutes": 1061,
+   "provisional_free": [],
    "game_count": 12,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -8998,6 +9029,7 @@
     }
    ],
    "free_minutes": 1066,
+   "provisional_free": [],
    "game_count": 15,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -9262,6 +9294,7 @@
     }
    ],
    "free_minutes": 706,
+   "provisional_free": [],
    "game_count": 15,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -9449,6 +9482,7 @@
     }
    ],
    "free_minutes": 842,
+   "provisional_free": [],
    "game_count": 9,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -9756,6 +9790,7 @@
     }
    ],
    "free_minutes": 872,
+   "provisional_free": [],
    "game_count": 17,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -10046,6 +10081,7 @@
     }
    ],
    "free_minutes": 856,
+   "provisional_free": [],
    "game_count": 17,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -10323,6 +10359,7 @@
     }
    ],
    "free_minutes": 742,
+   "provisional_free": [],
    "game_count": 15,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -10540,6 +10577,7 @@
     }
    ],
    "free_minutes": 752,
+   "provisional_free": [],
    "game_count": 11,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -10804,6 +10842,7 @@
     }
    ],
    "free_minutes": 1061,
+   "provisional_free": [],
    "game_count": 15,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -11099,6 +11138,7 @@
     }
    ],
    "free_minutes": 736,
+   "provisional_free": [],
    "game_count": 17,
    "nfl_all_count": 1,
    "tbd_count": 0,
@@ -11272,6 +11312,7 @@
     }
    ],
    "free_minutes": 780,
+   "provisional_free": [],
    "game_count": 6,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -11549,6 +11590,7 @@
     }
    ],
    "free_minutes": 897,
+   "provisional_free": [],
    "game_count": 15,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -11840,6 +11882,7 @@
     }
    ],
    "free_minutes": 760,
+   "provisional_free": [],
    "game_count": 17,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -12312,6 +12355,7 @@
     }
    ],
    "free_minutes": 758,
+   "provisional_free": [],
    "game_count": 28,
    "nfl_all_count": 13,
    "tbd_count": 0,
@@ -12520,6 +12564,7 @@
     }
    ],
    "free_minutes": 1096,
+   "provisional_free": [],
    "game_count": 11,
    "nfl_all_count": 1,
    "tbd_count": 0,
@@ -12784,6 +12829,7 @@
     }
    ],
    "free_minutes": 1096,
+   "provisional_free": [],
    "game_count": 15,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -13061,6 +13107,7 @@
     }
    ],
    "free_minutes": 815,
+   "provisional_free": [],
    "game_count": 15,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -13267,6 +13314,7 @@
     }
    ],
    "free_minutes": 814,
+   "provisional_free": [],
    "game_count": 10,
    "nfl_all_count": 1,
    "tbd_count": 0,
@@ -13544,6 +13592,7 @@
     }
    ],
    "free_minutes": 1061,
+   "provisional_free": [],
    "game_count": 16,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -13879,6 +13928,7 @@
     }
    ],
    "free_minutes": 908,
+   "provisional_free": [],
    "game_count": 20,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -14403,6 +14453,7 @@
     }
    ],
    "free_minutes": 808,
+   "provisional_free": [],
    "game_count": 30,
    "nfl_all_count": 13,
    "tbd_count": 0,
@@ -14506,6 +14557,7 @@
     }
    ],
    "free_minutes": 1086,
+   "provisional_free": [],
    "game_count": 4,
    "nfl_all_count": 1,
    "tbd_count": 0,
@@ -14827,6 +14879,7 @@
     }
    ],
    "free_minutes": 897,
+   "provisional_free": [],
    "game_count": 18,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -15104,6 +15157,7 @@
     }
    ],
    "free_minutes": 742,
+   "provisional_free": [],
    "game_count": 15,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -15384,6 +15438,7 @@
     }
    ],
    "free_minutes": 712,
+   "provisional_free": [],
    "game_count": 15,
    "nfl_all_count": 1,
    "tbd_count": 0,
@@ -15662,6 +15717,7 @@
     }
    ],
    "free_minutes": 1006,
+   "provisional_free": [],
    "game_count": 16,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -15999,6 +16055,7 @@
     }
    ],
    "free_minutes": 692,
+   "provisional_free": [],
    "game_count": 19,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -16509,7 +16566,9 @@
      "end_t": "8:32 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 600,
@@ -16532,7 +16591,6 @@
      "minutes": 208
     }
    ],
-   "free_minutes": 851,
    "game_count": 29,
    "nfl_all_count": 13,
    "tbd_count": 1,
@@ -16591,6 +16649,7 @@
     }
    ],
    "free_minutes": 1248,
+   "provisional_free": [],
    "game_count": 1,
    "nfl_all_count": 1,
    "tbd_count": 0,
@@ -16628,7 +16687,9 @@
     }
    ],
    "blocked": [],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 1440,
@@ -16637,7 +16698,6 @@
      "minutes": 1440
     }
    ],
-   "free_minutes": 1440,
    "game_count": 0,
    "nfl_all_count": 0,
    "tbd_count": 5,
@@ -16675,7 +16735,9 @@
     }
    ],
    "blocked": [],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 1440,
@@ -16684,7 +16746,6 @@
      "minutes": 1440
     }
    ],
-   "free_minutes": 1440,
    "game_count": 0,
    "nfl_all_count": 0,
    "tbd_count": 5,
@@ -16761,7 +16822,9 @@
      "end_t": "9:30 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 1035,
@@ -16777,7 +16840,6 @@
      "minutes": 150
     }
    ],
-   "free_minutes": 1185,
    "game_count": 2,
    "nfl_all_count": 1,
    "tbd_count": 4,
@@ -16804,7 +16866,9 @@
     }
    ],
    "blocked": [],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 1440,
@@ -16813,7 +16877,6 @@
      "minutes": 1440
     }
    ],
-   "free_minutes": 1440,
    "game_count": 0,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -16928,7 +16991,9 @@
      "end_t": "9:30 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 750,
@@ -16951,7 +17016,6 @@
      "minutes": 150
     }
    ],
-   "free_minutes": 936,
    "game_count": 4,
    "nfl_all_count": 0,
    "tbd_count": 5,
@@ -17262,7 +17326,9 @@
      "end_t": "8:32 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 390,
@@ -17285,7 +17351,6 @@
      "minutes": 208
     }
    ],
-   "free_minutes": 616,
    "game_count": 15,
    "nfl_all_count": 13,
    "tbd_count": 2,
@@ -17351,7 +17416,9 @@
      "end_t": "8:27 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 1020,
@@ -17367,7 +17434,6 @@
      "minutes": 213
     }
    ],
-   "free_minutes": 1233,
    "game_count": 2,
    "nfl_all_count": 1,
    "tbd_count": 2,
@@ -17414,7 +17480,9 @@
      "end_t": "9:18 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 1140,
@@ -17430,7 +17498,6 @@
      "minutes": 162
     }
    ],
-   "free_minutes": 1302,
    "game_count": 1,
    "nfl_all_count": 0,
    "tbd_count": 2,
@@ -17488,7 +17555,9 @@
      "end_t": "9:18 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 1140,
@@ -17504,7 +17573,6 @@
      "minutes": 162
     }
    ],
-   "free_minutes": 1302,
    "game_count": 1,
    "nfl_all_count": 0,
    "tbd_count": 4,
@@ -17570,7 +17638,9 @@
      "end_t": "8:27 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 1020,
@@ -17586,7 +17656,6 @@
      "minutes": 213
     }
    ],
-   "free_minutes": 1233,
    "game_count": 2,
    "nfl_all_count": 1,
    "tbd_count": 2,
@@ -17622,7 +17691,9 @@
     }
    ],
    "blocked": [],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 1440,
@@ -17631,7 +17702,6 @@
      "minutes": 1440
     }
    ],
-   "free_minutes": 1440,
    "game_count": 0,
    "nfl_all_count": 0,
    "tbd_count": 2,
@@ -17774,7 +17844,9 @@
      "end_t": "8:30 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 750,
@@ -17797,7 +17869,6 @@
      "minutes": 210
     }
    ],
-   "free_minutes": 996,
    "game_count": 6,
    "nfl_all_count": 0,
    "tbd_count": 3,
@@ -18083,7 +18154,9 @@
      "end_t": "8:32 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 390,
@@ -18113,7 +18186,6 @@
      "minutes": 208
     }
    ],
-   "free_minutes": 659,
    "game_count": 13,
    "nfl_all_count": 12,
    "tbd_count": 1,
@@ -18164,7 +18236,9 @@
      "end_t": "8:27 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 1035,
@@ -18180,7 +18254,6 @@
      "minutes": 213
     }
    ],
-   "free_minutes": 1248,
    "game_count": 1,
    "nfl_all_count": 1,
    "tbd_count": 2,
@@ -18242,7 +18315,9 @@
      "end_t": "10:30 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 1140,
@@ -18258,7 +18333,6 @@
      "minutes": 90
     }
    ],
-   "free_minutes": 1230,
    "game_count": 2,
    "nfl_all_count": 0,
    "tbd_count": 1,
@@ -18313,7 +18387,9 @@
      "end_t": "8:30 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 1110,
@@ -18329,7 +18405,6 @@
      "minutes": 210
     }
    ],
-   "free_minutes": 1320,
    "game_count": 1,
    "nfl_all_count": 0,
    "tbd_count": 1,
@@ -18395,7 +18470,9 @@
      "end_t": "8:27 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 1020,
@@ -18411,7 +18488,6 @@
      "minutes": 213
     }
    ],
-   "free_minutes": 1233,
    "game_count": 2,
    "nfl_all_count": 1,
    "tbd_count": 2,
@@ -18458,7 +18534,9 @@
      "end_t": "9:18 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 1140,
@@ -18474,7 +18552,6 @@
      "minutes": 162
     }
    ],
-   "free_minutes": 1302,
    "game_count": 1,
    "nfl_all_count": 0,
    "tbd_count": 2,
@@ -18614,7 +18691,9 @@
      "end_t": "9:30 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 750,
@@ -18637,7 +18716,6 @@
      "minutes": 150
     }
    ],
-   "free_minutes": 906,
    "game_count": 5,
    "nfl_all_count": 0,
    "tbd_count": 2,
@@ -18879,7 +18957,9 @@
      "end_t": "8:32 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 390,
@@ -18909,7 +18989,6 @@
      "minutes": 208
     }
    ],
-   "free_minutes": 659,
    "game_count": 12,
    "nfl_all_count": 12,
    "tbd_count": 1,
@@ -19003,7 +19082,9 @@
      "end_t": "8:27 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 990,
@@ -19019,7 +19100,6 @@
      "minutes": 213
     }
    ],
-   "free_minutes": 1203,
    "game_count": 2,
    "nfl_all_count": 0,
    "tbd_count": 2,
@@ -19066,7 +19146,9 @@
      "end_t": "6:30 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 960,
@@ -19082,7 +19164,6 @@
      "minutes": 330
     }
    ],
-   "free_minutes": 1290,
    "game_count": 1,
    "nfl_all_count": 0,
    "tbd_count": 1,
@@ -19131,7 +19212,9 @@
      "end_t": "9:18 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 1140,
@@ -19147,7 +19230,6 @@
      "minutes": 162
     }
    ],
-   "free_minutes": 1302,
    "game_count": 1,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -19221,6 +19303,7 @@
     }
    ],
    "free_minutes": 1173,
+   "provisional_free": [],
    "game_count": 2,
    "nfl_all_count": 1,
    "tbd_count": 0,
@@ -19293,7 +19376,9 @@
      "end_t": "10:54 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 1140,
@@ -19309,7 +19394,6 @@
      "minutes": 66
     }
    ],
-   "free_minutes": 1206,
    "game_count": 2,
    "nfl_all_count": 0,
    "tbd_count": 1,
@@ -19437,7 +19521,9 @@
      "end_t": "9:18 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 750,
@@ -19460,7 +19546,6 @@
      "minutes": 162
     }
    ],
-   "free_minutes": 918,
    "game_count": 5,
    "nfl_all_count": 0,
    "tbd_count": 2,
@@ -19721,7 +19806,9 @@
      "end_t": "8:32 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 390,
@@ -19751,7 +19838,6 @@
      "minutes": 208
     }
    ],
-   "free_minutes": 659,
    "game_count": 12,
    "nfl_all_count": 11,
    "tbd_count": 0,
@@ -19817,7 +19903,9 @@
      "end_t": "9:18 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 1035,
@@ -19833,7 +19921,6 @@
      "minutes": 162
     }
    ],
-   "free_minutes": 1197,
    "game_count": 2,
    "nfl_all_count": 1,
    "tbd_count": 1,
@@ -19891,7 +19978,9 @@
      "end_t": "10:00 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 1170,
@@ -19907,7 +19996,6 @@
      "minutes": 120
     }
    ],
-   "free_minutes": 1290,
    "game_count": 1,
    "nfl_all_count": 0,
    "tbd_count": 1,
@@ -19973,7 +20061,9 @@
      "end_t": "9:30 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 1020,
@@ -19996,7 +20086,6 @@
      "minutes": 150
     }
    ],
-   "free_minutes": 1182,
    "game_count": 2,
    "nfl_all_count": 0,
    "tbd_count": 1,
@@ -20064,7 +20153,9 @@
      "end_t": "9:30 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 1035,
@@ -20080,7 +20171,6 @@
      "minutes": 150
     }
    ],
-   "free_minutes": 1185,
    "game_count": 2,
    "nfl_all_count": 1,
    "tbd_count": 0,
@@ -20127,7 +20217,9 @@
      "end_t": "9:18 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 1140,
@@ -20143,7 +20235,6 @@
      "minutes": 162
     }
    ],
-   "free_minutes": 1302,
    "game_count": 1,
    "nfl_all_count": 0,
    "tbd_count": 1,
@@ -20258,7 +20349,9 @@
      "end_t": "3:54 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 750,
@@ -20274,7 +20367,6 @@
      "minutes": 486
     }
    ],
-   "free_minutes": 1236,
    "game_count": 2,
    "nfl_all_count": 0,
    "tbd_count": 4,
@@ -20537,6 +20629,7 @@
     }
    ],
    "free_minutes": 851,
+   "provisional_free": [],
    "game_count": 13,
    "nfl_all_count": 12,
    "tbd_count": 0,
@@ -20625,6 +20718,7 @@
     }
    ],
    "free_minutes": 1197,
+   "provisional_free": [],
    "game_count": 3,
    "nfl_all_count": 1,
    "tbd_count": 0,
@@ -20649,6 +20743,7 @@
     }
    ],
    "free_minutes": 1440,
+   "provisional_free": [],
    "game_count": 0,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -20703,6 +20798,7 @@
     }
    ],
    "free_minutes": 1290,
+   "provisional_free": [],
    "game_count": 1,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -20776,6 +20872,7 @@
     }
    ],
    "free_minutes": 1197,
+   "provisional_free": [],
    "game_count": 2,
    "nfl_all_count": 1,
    "tbd_count": 0,
@@ -20830,6 +20927,7 @@
     }
    ],
    "free_minutes": 1290,
+   "provisional_free": [],
    "game_count": 1,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -20919,7 +21017,9 @@
      "end_t": "7:48 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 750,
@@ -20942,7 +21042,6 @@
      "minutes": 252
     }
    ],
-   "free_minutes": 1008,
    "game_count": 4,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -21238,6 +21337,7 @@
     }
    ],
    "free_minutes": 659,
+   "provisional_free": [],
    "game_count": 13,
    "nfl_all_count": 12,
    "tbd_count": 0,
@@ -21326,6 +21426,7 @@
     }
    ],
    "free_minutes": 1185,
+   "provisional_free": [],
    "game_count": 3,
    "nfl_all_count": 1,
    "tbd_count": 0,
@@ -21350,6 +21451,7 @@
     }
    ],
    "free_minutes": 1440,
+   "provisional_free": [],
    "game_count": 0,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -21419,6 +21521,7 @@
     }
    ],
    "free_minutes": 1260,
+   "provisional_free": [],
    "game_count": 2,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -21477,6 +21580,7 @@
     }
    ],
    "free_minutes": 1248,
+   "provisional_free": [],
    "game_count": 1,
    "nfl_all_count": 1,
    "tbd_count": 0,
@@ -21531,6 +21635,7 @@
     }
    ],
    "free_minutes": 1302,
+   "provisional_free": [],
    "game_count": 1,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -21638,7 +21743,9 @@
      "end_t": "8:30 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 750,
@@ -21661,7 +21768,6 @@
      "minutes": 210
     }
    ],
-   "free_minutes": 996,
    "game_count": 3,
    "nfl_all_count": 0,
    "tbd_count": 2,
@@ -21956,6 +22062,7 @@
     }
    ],
    "free_minutes": 659,
+   "provisional_free": [],
    "game_count": 13,
    "nfl_all_count": 11,
    "tbd_count": 0,
@@ -22029,6 +22136,7 @@
     }
    ],
    "free_minutes": 1233,
+   "provisional_free": [],
    "game_count": 2,
    "nfl_all_count": 1,
    "tbd_count": 0,
@@ -22083,6 +22191,7 @@
     }
    ],
    "free_minutes": 1290,
+   "provisional_free": [],
    "game_count": 1,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -22131,7 +22240,9 @@
      "end_t": "8:48 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 1110,
@@ -22147,7 +22258,6 @@
      "minutes": 192
     }
    ],
-   "free_minutes": 1302,
    "game_count": 1,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -22221,6 +22331,7 @@
     }
    ],
    "free_minutes": 1233,
+   "provisional_free": [],
    "game_count": 2,
    "nfl_all_count": 1,
    "tbd_count": 0,
@@ -22247,7 +22358,9 @@
     }
    ],
    "blocked": [],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 1440,
@@ -22256,7 +22369,6 @@
      "minutes": 1440
     }
    ],
-   "free_minutes": 1440,
    "game_count": 0,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -22376,7 +22488,9 @@
      "end_t": "9:30 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 750,
@@ -22399,7 +22513,6 @@
      "minutes": 150
     }
    ],
-   "free_minutes": 936,
    "game_count": 3,
    "nfl_all_count": 0,
    "tbd_count": 1,
@@ -22662,6 +22775,7 @@
     }
    ],
    "free_minutes": 851,
+   "provisional_free": [],
    "game_count": 12,
    "nfl_all_count": 10,
    "tbd_count": 0,
@@ -22735,6 +22849,7 @@
     }
    ],
    "free_minutes": 1185,
+   "provisional_free": [],
    "game_count": 2,
    "nfl_all_count": 1,
    "tbd_count": 0,
@@ -22761,7 +22876,9 @@
     }
    ],
    "blocked": [],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 1440,
@@ -22770,7 +22887,6 @@
      "minutes": 1440
     }
    ],
-   "free_minutes": 1440,
    "game_count": 0,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -22853,7 +22969,9 @@
      "end_t": "9:30 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 1020,
@@ -22869,7 +22987,6 @@
      "minutes": 150
     }
    ],
-   "free_minutes": 1170,
    "game_count": 3,
    "nfl_all_count": 1,
    "tbd_count": 0,
@@ -22992,6 +23109,7 @@
     }
    ],
    "free_minutes": 864,
+   "provisional_free": [],
    "game_count": 3,
    "nfl_all_count": 3,
    "tbd_count": 0,
@@ -23093,6 +23211,7 @@
     }
    ],
    "free_minutes": 1092,
+   "provisional_free": [],
    "game_count": 3,
    "nfl_all_count": 1,
    "tbd_count": 0,
@@ -23106,6 +23225,22 @@
    "weekday": "Sat",
    "status": "NOT FREE \u2014 TIME TBD",
    "games": [
+    {
+     "date": "2026-11-28",
+     "sport": "ncaaw",
+     "away": "Michigan",
+     "home": "Ohio State",
+     "label": "Westwood One: Michigan at Ohio State",
+     "priority": true,
+     "source": "westwoodone_ncaaf_2026.txt",
+     "review": "https://www.westwoodonesports.com/events/557131",
+     "wwo": true,
+     "wwo_slot": "Westwood One (national radio)",
+     "dur_override": 204,
+     "start_pt": "09:00",
+     "start_min": 540,
+     "note": "kickoff 12:00 PM ET FOX (official: Michigan announcement 2026-05-11 + Big Ten TV schedule); WWO air 11:30 AM ET; Ohio Stadium"
+    },
     {
      "date": "2026-11-28",
      "sport": "nhl",
@@ -23165,19 +23300,34 @@
    ],
    "blocked": [
     {
+     "start": 540,
+     "end": 744,
+     "start_t": "9:00 AM",
+     "end_t": "12:24 PM"
+    },
+    {
      "start": 1080,
      "end": 1230,
      "start_t": "6:00 PM",
      "end_t": "8:30 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
-     "end": 1080,
+     "end": 540,
      "start_t": "12:00 AM",
+     "end_t": "9:00 AM",
+     "minutes": 540
+    },
+    {
+     "start": 744,
+     "end": 1080,
+     "start_t": "12:24 PM",
      "end_t": "6:00 PM",
-     "minutes": 1080
+     "minutes": 336
     },
     {
      "start": 1230,
@@ -23187,8 +23337,7 @@
      "minutes": 210
     }
    ],
-   "free_minutes": 1290,
-   "game_count": 1,
+   "game_count": 2,
    "nfl_all_count": 0,
    "tbd_count": 2,
    "estimated_count": 0,
@@ -23421,7 +23570,9 @@
      "end_t": "8:32 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 600,
@@ -23444,7 +23595,6 @@
      "minutes": 208
     }
    ],
-   "free_minutes": 851,
    "game_count": 11,
    "nfl_all_count": 9,
    "tbd_count": 0,
@@ -23503,6 +23653,7 @@
     }
    ],
    "free_minutes": 1248,
+   "provisional_free": [],
    "game_count": 1,
    "nfl_all_count": 1,
    "tbd_count": 0,
@@ -23572,7 +23723,9 @@
      "end_t": "10:18 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 990,
@@ -23595,7 +23748,6 @@
      "minutes": 102
     }
    ],
-   "free_minutes": 1152,
    "game_count": 2,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -23622,7 +23774,9 @@
     }
    ],
    "blocked": [],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 1440,
@@ -23631,7 +23785,6 @@
      "minutes": 1440
     }
    ],
-   "free_minutes": 1440,
    "game_count": 0,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -23705,6 +23858,7 @@
     }
    ],
    "free_minutes": 1173,
+   "provisional_free": [],
    "game_count": 2,
    "nfl_all_count": 1,
    "tbd_count": 0,
@@ -23759,6 +23913,7 @@
     }
    ],
    "free_minutes": 1290,
+   "provisional_free": [],
    "game_count": 1,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -23772,6 +23927,22 @@
    "weekday": "Sat",
    "status": "UNCONFIRMED",
    "games": [
+    {
+     "date": "2026-12-05",
+     "sport": "ncaaw",
+     "away": "SEC",
+     "home": "Championship",
+     "label": "Westwood One: 2026 SEC Championship Game",
+     "priority": true,
+     "source": "westwoodone_ncaaf_2026.txt",
+     "review": "https://www.westwoodonesports.com/events/557146",
+     "wwo": true,
+     "wwo_slot": "Westwood One (national radio)",
+     "dur_override": 204,
+     "start_pt": "13:00",
+     "start_min": 780,
+     "note": "kickoff 4:00 PM ET ABC (SEC official 2026-05-12); WWO air 3:30 PM ET; Mercedes-Benz Stadium Atlanta"
+    },
     {
      "date": "2026-12-05",
      "sport": "mls",
@@ -23795,23 +23966,38 @@
      "review": "https://www.espn.com/college-football/story/_/id/48958840/2026-college-football-playoff-bowl-schedule-46-games"
     }
    ],
-   "blocked": [],
-   "free": [
+   "blocked": [
     {
-     "start": 0,
-     "end": 1440,
-     "start_t": "12:00 AM",
-     "end_t": "12:00 AM (midnight)",
-     "minutes": 1440
+     "start": 780,
+     "end": 984,
+     "start_t": "1:00 PM",
+     "end_t": "4:24 PM"
     }
    ],
-   "free_minutes": 1440,
-   "game_count": 0,
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
+    {
+     "start": 0,
+     "end": 780,
+     "start_t": "12:00 AM",
+     "end_t": "1:00 PM",
+     "minutes": 780
+    },
+    {
+     "start": 984,
+     "end": 1440,
+     "start_t": "4:24 PM",
+     "end_t": "12:00 AM (midnight)",
+     "minutes": 456
+    }
+   ],
+   "game_count": 1,
    "nfl_all_count": 0,
    "tbd_count": 0,
    "estimated_count": 0,
    "conditional_count": 2,
-   "has_priority": false,
+   "has_priority": true,
    "has_sf": false
   },
   {
@@ -24071,7 +24257,9 @@
      "end_t": "8:32 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 600,
@@ -24094,7 +24282,6 @@
      "minutes": 208
     }
    ],
-   "free_minutes": 851,
    "game_count": 13,
    "nfl_all_count": 11,
    "tbd_count": 0,
@@ -24153,6 +24340,7 @@
     }
    ],
    "free_minutes": 1248,
+   "provisional_free": [],
    "game_count": 1,
    "nfl_all_count": 1,
    "tbd_count": 0,
@@ -24207,6 +24395,7 @@
     }
    ],
    "free_minutes": 1290,
+   "provisional_free": [],
    "game_count": 1,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -24261,6 +24450,7 @@
     }
    ],
    "free_minutes": 1290,
+   "provisional_free": [],
    "game_count": 1,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -24319,6 +24509,7 @@
     }
    ],
    "free_minutes": 1248,
+   "provisional_free": [],
    "game_count": 1,
    "nfl_all_count": 1,
    "tbd_count": 0,
@@ -24367,7 +24558,9 @@
      "end_t": "9:30 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 1140,
@@ -24383,7 +24576,6 @@
      "minutes": 150
     }
    ],
-   "free_minutes": 1290,
    "game_count": 1,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -24397,6 +24589,22 @@
    "weekday": "Sat",
    "status": "UNCONFIRMED",
    "games": [
+    {
+     "date": "2026-12-12",
+     "sport": "ncaaw",
+     "away": "Army",
+     "home": "Navy",
+     "label": "Westwood One: 127th Army-Navy Game",
+     "priority": true,
+     "source": "westwoodone_ncaaf_2026.txt",
+     "review": "https://www.westwoodonesports.com/events/557132",
+     "wwo": true,
+     "wwo_slot": "Westwood One (national radio)",
+     "dur_override": 204,
+     "start_pt": "12:00",
+     "start_min": 720,
+     "note": "kickoff 3:00 PM ET CBS (Army/Navy official 2026-05-27); WWO grid air 2:00 PM ET (long pregame); WWO event window 3:30-7:30 PM EST conflicts with grid air - official CBS time authoritative; MetLife Stadium"
+    },
     {
      "date": "2026-12-12",
      "sport": "nba",
@@ -24426,19 +24634,34 @@
    ],
    "blocked": [
     {
+     "start": 720,
+     "end": 924,
+     "start_t": "12:00 PM",
+     "end_t": "3:24 PM"
+    },
+    {
      "start": 1020,
      "end": 1158,
      "start_t": "5:00 PM",
      "end_t": "7:18 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
-     "end": 1020,
+     "end": 720,
      "start_t": "12:00 AM",
+     "end_t": "12:00 PM",
+     "minutes": 720
+    },
+    {
+     "start": 924,
+     "end": 1020,
+     "start_t": "3:24 PM",
      "end_t": "5:00 PM",
-     "minutes": 1020
+     "minutes": 96
     },
     {
      "start": 1158,
@@ -24448,8 +24671,7 @@
      "minutes": 282
     }
    ],
-   "free_minutes": 1302,
-   "game_count": 1,
+   "game_count": 2,
    "nfl_all_count": 0,
    "tbd_count": 0,
    "estimated_count": 0,
@@ -24728,6 +24950,7 @@
     }
    ],
    "free_minutes": 851,
+   "provisional_free": [],
    "game_count": 13,
    "nfl_all_count": 12,
    "tbd_count": 0,
@@ -24816,6 +25039,7 @@
     }
    ],
    "free_minutes": 1170,
+   "provisional_free": [],
    "game_count": 3,
    "nfl_all_count": 1,
    "tbd_count": 0,
@@ -24840,6 +25064,7 @@
     }
    ],
    "free_minutes": 1440,
+   "provisional_free": [],
    "game_count": 0,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -24922,6 +25147,7 @@
     }
    ],
    "free_minutes": 1152,
+   "provisional_free": [],
    "game_count": 2,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -24997,6 +25223,7 @@
     }
    ],
    "free_minutes": 1248,
+   "provisional_free": [],
    "game_count": 1,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -25056,7 +25283,9 @@
      "end_t": "6:48 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 990,
@@ -25072,7 +25301,6 @@
      "minutes": 312
     }
    ],
-   "free_minutes": 1302,
    "game_count": 1,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -25165,7 +25393,9 @@
      "end_t": "9:30 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 840,
@@ -25188,7 +25418,6 @@
      "minutes": 150
     }
    ],
-   "free_minutes": 998,
    "game_count": 3,
    "nfl_all_count": 2,
    "tbd_count": 0,
@@ -25451,6 +25680,7 @@
     }
    ],
    "free_minutes": 831,
+   "provisional_free": [],
    "game_count": 13,
    "nfl_all_count": 12,
    "tbd_count": 0,
@@ -25509,6 +25739,7 @@
     }
    ],
    "free_minutes": 1248,
+   "provisional_free": [],
    "game_count": 1,
    "nfl_all_count": 1,
    "tbd_count": 0,
@@ -25578,6 +25809,7 @@
     }
    ],
    "free_minutes": 1252,
+   "provisional_free": [],
    "game_count": 2,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -25632,6 +25864,7 @@
     }
    ],
    "free_minutes": 1302,
+   "provisional_free": [],
    "game_count": 1,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -25690,6 +25923,7 @@
     }
    ],
    "free_minutes": 1248,
+   "provisional_free": [],
    "game_count": 1,
    "nfl_all_count": 1,
    "tbd_count": 0,
@@ -25827,6 +26061,7 @@
     }
    ],
    "free_minutes": 783,
+   "provisional_free": [],
    "game_count": 4,
    "nfl_all_count": 3,
    "tbd_count": 0,
@@ -25932,7 +26167,9 @@
      "end_t": "9:30 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 810,
@@ -25955,7 +26192,6 @@
      "minutes": 150
     }
    ],
-   "free_minutes": 993,
    "game_count": 3,
    "nfl_all_count": 2,
    "tbd_count": 0,
@@ -26218,6 +26454,7 @@
     }
    ],
    "free_minutes": 851,
+   "provisional_free": [],
    "game_count": 12,
    "nfl_all_count": 10,
    "tbd_count": 0,
@@ -26306,6 +26543,7 @@
     }
    ],
    "free_minutes": 1203,
+   "provisional_free": [],
    "game_count": 3,
    "nfl_all_count": 1,
    "tbd_count": 0,
@@ -26360,6 +26598,7 @@
     }
    ],
    "free_minutes": 1290,
+   "provisional_free": [],
    "game_count": 1,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -26408,7 +26647,9 @@
      "end_t": "9:18 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 1140,
@@ -26424,7 +26665,6 @@
      "minutes": 162
     }
    ],
-   "free_minutes": 1302,
    "game_count": 1,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -26483,6 +26723,7 @@
     }
    ],
    "free_minutes": 1248,
+   "provisional_free": [],
    "game_count": 1,
    "nfl_all_count": 1,
    "tbd_count": 0,
@@ -26531,7 +26772,9 @@
      "end_t": "3:30 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 780,
@@ -26547,7 +26790,6 @@
      "minutes": 510
     }
    ],
-   "free_minutes": 1290,
    "game_count": 1,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -26662,7 +26904,9 @@
      "end_t": "8:27 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 810,
@@ -26678,7 +26922,6 @@
      "minutes": 213
     }
    ],
-   "free_minutes": 1023,
    "game_count": 4,
    "nfl_all_count": 2,
    "tbd_count": 0,
@@ -26974,6 +27217,7 @@
     }
    ],
    "free_minutes": 851,
+   "provisional_free": [],
    "game_count": 14,
    "nfl_all_count": 13,
    "tbd_count": 0,
@@ -27047,6 +27291,7 @@
     }
    ],
    "free_minutes": 1185,
+   "provisional_free": [],
    "game_count": 2,
    "nfl_all_count": 1,
    "tbd_count": 0,
@@ -27071,6 +27316,7 @@
     }
    ],
    "free_minutes": 1440,
+   "provisional_free": [],
    "game_count": 0,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -27140,6 +27386,7 @@
     }
    ],
    "free_minutes": 1290,
+   "provisional_free": [],
    "game_count": 2,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -27194,6 +27441,7 @@
     }
    ],
    "free_minutes": 1302,
+   "provisional_free": [],
    "game_count": 1,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -27248,6 +27496,7 @@
     }
    ],
    "free_minutes": 1290,
+   "provisional_free": [],
    "game_count": 1,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -27405,7 +27654,9 @@
      "end_t": "9:30 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 600,
@@ -27435,7 +27686,6 @@
      "minutes": 150
     }
    ],
-   "free_minutes": 801,
    "game_count": 5,
    "nfl_all_count": 3,
    "tbd_count": 0,
@@ -27826,7 +28076,9 @@
      "end_t": "8:32 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 600,
@@ -27856,7 +28108,6 @@
      "minutes": 208
     }
    ],
-   "free_minutes": 864,
    "game_count": 3,
    "nfl_all_count": 3,
    "tbd_count": 16,
@@ -27881,6 +28132,7 @@
     }
    ],
    "free_minutes": 1440,
+   "provisional_free": [],
    "game_count": 0,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -27935,6 +28187,7 @@
     }
    ],
    "free_minutes": 1302,
+   "provisional_free": [],
    "game_count": 1,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -28004,6 +28257,7 @@
     }
    ],
    "free_minutes": 1242,
+   "provisional_free": [],
    "game_count": 2,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -28052,7 +28306,9 @@
      "end_t": "7:30 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 1020,
@@ -28068,7 +28324,6 @@
      "minutes": 270
     }
    ],
-   "free_minutes": 1290,
    "game_count": 1,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -28117,7 +28372,9 @@
      "end_t": "6:18 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 960,
@@ -28133,7 +28390,6 @@
      "minutes": 342
     }
    ],
-   "free_minutes": 1302,
    "game_count": 1,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -28217,7 +28473,9 @@
      "end_t": "9:30 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 810,
@@ -28240,7 +28498,6 @@
      "minutes": 150
     }
    ],
-   "free_minutes": 978,
    "game_count": 3,
    "nfl_all_count": 2,
    "tbd_count": 0,
@@ -28344,7 +28601,9 @@
      "end_t": "8:27 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 600,
@@ -28367,7 +28626,6 @@
      "minutes": 213
     }
    ],
-   "free_minutes": 831,
    "game_count": 4,
    "nfl_all_count": 3,
    "tbd_count": 0,
@@ -28431,7 +28689,9 @@
      "end_t": "8:27 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 780,
@@ -28454,7 +28714,6 @@
      "minutes": 213
     }
    ],
-   "free_minutes": 1098,
    "game_count": 2,
    "nfl_all_count": 1,
    "tbd_count": 0,
@@ -28509,6 +28768,7 @@
     }
    ],
    "free_minutes": 1302,
+   "provisional_free": [],
    "game_count": 1,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -28533,6 +28793,7 @@
     }
    ],
    "free_minutes": 1440,
+   "provisional_free": [],
    "game_count": 0,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -28587,6 +28848,7 @@
     }
    ],
    "free_minutes": 1302,
+   "provisional_free": [],
    "game_count": 1,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -28641,6 +28903,7 @@
     }
    ],
    "free_minutes": 1302,
+   "provisional_free": [],
    "game_count": 1,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -28724,7 +28987,9 @@
      "end_t": "9:30 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 810,
@@ -28747,7 +29012,6 @@
      "minutes": 150
     }
    ],
-   "free_minutes": 998,
    "game_count": 3,
    "nfl_all_count": 2,
    "tbd_count": 0,
@@ -28831,7 +29095,9 @@
      "end_t": "7:48 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 720,
@@ -28854,7 +29120,6 @@
      "minutes": 252
     }
    ],
-   "free_minutes": 990,
    "game_count": 3,
    "nfl_all_count": 2,
    "tbd_count": 0,
@@ -28881,7 +29146,9 @@
     }
    ],
    "blocked": [],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 1440,
@@ -28890,7 +29157,6 @@
      "minutes": 1440
     }
    ],
-   "free_minutes": 1440,
    "game_count": 0,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -28915,6 +29181,7 @@
     }
    ],
    "free_minutes": 1440,
+   "provisional_free": [],
    "game_count": 0,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -28969,6 +29236,7 @@
     }
    ],
    "free_minutes": 1302,
+   "provisional_free": [],
    "game_count": 1,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -29038,6 +29306,7 @@
     }
    ],
    "free_minutes": 1230,
+   "provisional_free": [],
    "game_count": 2,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -29062,6 +29331,7 @@
     }
    ],
    "free_minutes": 1440,
+   "provisional_free": [],
    "game_count": 0,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -29131,6 +29401,7 @@
     }
    ],
    "free_minutes": 1212,
+   "provisional_free": [],
    "game_count": 2,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -29199,7 +29470,9 @@
      "end_t": "6:42 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 720,
@@ -29222,7 +29495,6 @@
      "minutes": 318
     }
    ],
-   "free_minutes": 1056,
    "game_count": 2,
    "nfl_all_count": 2,
    "tbd_count": 0,
@@ -29277,6 +29549,7 @@
     }
    ],
    "free_minutes": 1302,
+   "provisional_free": [],
    "game_count": 1,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -29301,6 +29574,7 @@
     }
    ],
    "free_minutes": 1440,
+   "provisional_free": [],
    "game_count": 0,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -29355,6 +29629,7 @@
     }
    ],
    "free_minutes": 1302,
+   "provisional_free": [],
    "game_count": 1,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -29379,6 +29654,7 @@
     }
    ],
    "free_minutes": 1440,
+   "provisional_free": [],
    "game_count": 0,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -29433,6 +29709,7 @@
     }
    ],
    "free_minutes": 1302,
+   "provisional_free": [],
    "game_count": 1,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -29457,6 +29734,7 @@
     }
    ],
    "free_minutes": 1440,
+   "provisional_free": [],
    "game_count": 0,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -29514,7 +29792,9 @@
      "end_t": "2:18 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 720,
@@ -29530,7 +29810,6 @@
      "minutes": 582
     }
    ],
-   "free_minutes": 1302,
    "game_count": 2,
    "nfl_all_count": 1,
    "tbd_count": 0,
@@ -29555,6 +29834,7 @@
     }
    ],
    "free_minutes": 1440,
+   "provisional_free": [],
    "game_count": 0,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -29612,7 +29892,9 @@
      "end_t": "7:18 PM"
     }
    ],
-   "free": [
+   "free": [],
+   "free_minutes": 0,
+   "provisional_free": [
     {
      "start": 0,
      "end": 1020,
@@ -29628,7 +29910,6 @@
      "minutes": 282
     }
    ],
-   "free_minutes": 1302,
    "game_count": 2,
    "nfl_all_count": 1,
    "tbd_count": 0,
@@ -29711,6 +29992,7 @@
     }
    ],
    "free_minutes": 1152,
+   "provisional_free": [],
    "game_count": 2,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -29735,6 +30017,7 @@
     }
    ],
    "free_minutes": 1440,
+   "provisional_free": [],
    "game_count": 0,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -29759,6 +30042,7 @@
     }
    ],
    "free_minutes": 1440,
+   "provisional_free": [],
    "game_count": 0,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -29841,6 +30125,7 @@
     }
    ],
    "free_minutes": 1152,
+   "provisional_free": [],
    "game_count": 2,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -29899,6 +30184,7 @@
     }
    ],
    "free_minutes": 1215,
+   "provisional_free": [],
    "game_count": 1,
    "nfl_all_count": 1,
    "tbd_count": 0,
@@ -29968,6 +30254,7 @@
     }
    ],
    "free_minutes": 1290,
+   "provisional_free": [],
    "game_count": 2,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -29992,6 +30279,7 @@
     }
    ],
    "free_minutes": 1440,
+   "provisional_free": [],
    "game_count": 0,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -30046,6 +30334,7 @@
     }
    ],
    "free_minutes": 1302,
+   "provisional_free": [],
    "game_count": 1,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -30070,6 +30359,7 @@
     }
    ],
    "free_minutes": 1440,
+   "provisional_free": [],
    "game_count": 0,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -30124,6 +30414,7 @@
     }
    ],
    "free_minutes": 1290,
+   "provisional_free": [],
    "game_count": 1,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -30148,6 +30439,7 @@
     }
    ],
    "free_minutes": 1440,
+   "provisional_free": [],
    "game_count": 0,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -30202,6 +30494,7 @@
     }
    ],
    "free_minutes": 1290,
+   "provisional_free": [],
    "game_count": 1,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -30226,6 +30519,7 @@
     }
    ],
    "free_minutes": 1440,
+   "provisional_free": [],
    "game_count": 0,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -30280,6 +30574,7 @@
     }
    ],
    "free_minutes": 1290,
+   "provisional_free": [],
    "game_count": 1,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -30304,6 +30599,7 @@
     }
    ],
    "free_minutes": 1440,
+   "provisional_free": [],
    "game_count": 0,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -30386,6 +30682,7 @@
     }
    ],
    "free_minutes": 1152,
+   "provisional_free": [],
    "game_count": 2,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -30410,6 +30707,7 @@
     }
    ],
    "free_minutes": 1440,
+   "provisional_free": [],
    "game_count": 0,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -30464,6 +30762,7 @@
     }
    ],
    "free_minutes": 1290,
+   "provisional_free": [],
    "game_count": 1,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -30488,6 +30787,7 @@
     }
    ],
    "free_minutes": 1440,
+   "provisional_free": [],
    "game_count": 0,
    "nfl_all_count": 0,
    "tbd_count": 0,
@@ -30871,6 +31171,14 @@
    "msg": "2026-11-21 Westwood One: LSU at Tennessee: kickoff still TBD - blocking BOTH estimated showcase windows (3:30 / 7:30 PM ET = 12:30 / 4:30 PM PT). Day is NOT FREE; replace with the real kickoff when the conference announces it (6-12 days out)."
   },
   {
+   "kind": "WWO_NCAAF_EXPANDED",
+   "msg": "CORRECTION 2026-09-16: the Westwood One NCAA football page's widget only renders its first 10 events, so the 2026-09-14 transcription missed 3 broadcasts. The widget's own eventGrid endpoint (westwoodonesports.com/more/eventGrid?id=47030..., fetched live 2026-09-16; the list ends 'No more events') shows 13 total: added Nov 28 Michigan@Ohio State (kickoff 12:00 PM ET FOX, official), Dec 5 SEC Championship (kickoff 4:00 PM ET ABC, SEC official) and Dec 12 Army vs Navy (kickoff 3:00 PM ET CBS, official). These three days now block and assert NO free time."
+  },
+  {
+   "kind": "IRREGULARITY",
+   "msg": "2026-12-12 Army vs Navy (WWO event 557132): WWO's own data conflicts - the schedule grid prints air time 2:00 PM ET while the event page prints the window '3:30 PM - 7:30 PM EST'. The official CBS kickoff (3:00 PM ET per goarmywestpoint.com / navysports.com, 2026-05-27) is used as authoritative; the 2:00 PM ET air time is a long pregame show. Re-check when WWO updates the listing."
+  },
+  {
    "kind": "WWO_RIO_EXCLUDED",
    "msg": "2026-09-27 Ravens @ Cowboys (Rio de Janeiro, 4:25 PM ET) does NOT appear on the Westwood One schedule page: WWO's 2026 package is 'eight International Games' but the league scheduled nine. Presumed NOT on national radio (still blocks as an NFL game)."
   },
@@ -30965,6 +31273,14 @@
   {
    "kind": "MLB_POSTSEASON_CORRECTION",
    "msg": "CORRECTION 2026-09-16: the live MLB Stats API now reports 2026-10-04 as 2 postseason placeholder games (the 2026-08-28 transcription had 4); the postseason placeholder total is therefore 53, not 55. All other 27 postseason dates are unchanged and every date stays 'NOT FREE - TIME TBD'. Raw file updated; see the file header for the exact query."
+  },
+  {
+   "kind": "VERIFIED_PASS_2026_09_16_B",
+   "msg": "2026-09-16 pass B (this session): (1) WWO NFL page re-fetched live - the page renders two lists; combined they hold all 71 upcoming events and every one matches the transcription at event-id level (63 remaining dated matchups + 8 TBA; the Sep 14 MNF 548429 moved to the Past tab as it is now in the past). Zero deltas. (2) WWO NCAAF page re-fetched: the widget shows only 10 events, but the widget's own eventGrid endpoint (id=47030, list ends 'No more events' at offset 20) holds the complete 2026 list = 13 broadcasts - three were missing and are added: Nov 28 Michigan@Ohio State (official 12:00 PM ET FOX), Dec 5 SEC Championship (official 4:00 PM ET ABC, SEC), Dec 12 Army vs Navy (official 3:00 PM ET CBS). (3) WWO U.S. Soccer page: 'No upcoming events'. (4) Bay Area radio sweep: no further in-window live Bay Area radio sport found (NWSL Deltas have no verifiable Bay Area radio flagship; NWSL radio is SiriusXM national). (5) Fixed the remaining part of the reported bug: NOT FREE-TBD and UNCONFIRMED days no longer assert any free time (see FREE_TIME_NOT_ASSERTED)."
+  },
+  {
+   "kind": "FREE_TIME_NOT_ASSERTED",
+   "msg": "RULE CHANGE 2026-09-16 (pass B) - the second half of the reported bug 'the site says I have free time on days when there are football games on'. Days with status NOT FREE - TIME TBD or UNCONFIRMED no longer report ANY free windows or free minutes: free=[] and free_minutes=0 in free_time.json (the arithmetic windows are kept in `provisional_free` for reference only), the UI draws no green free bands and shows no 'Xh Ym free' on them, and the day-by-day table prints Free min = 0, which means 'not asserted', not 'free'. Estimated windows still block their times; PARTIAL/FREE days with fully-official kickoffs still report their exact free gaps as before."
   },
   {
    "kind": "VERIFIED_PASS_2026_09_11",

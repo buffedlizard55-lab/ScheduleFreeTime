@@ -29,9 +29,12 @@ qualifying, and any Stanford/Cal postseason. Per the site's rule (2026-09-15), a
 tracked game will definitely be played or aired without an official kickoff is **NOT FREE —
 TIME TBD**: where a documented pattern exists (2025-26 NFL playoff kickoffs, the league's
 standard Saturday windows, Westwood One air times) a clearly-labeled **estimated window**
-(hatched on the timeline, EST tag in the tables) blocks the time; otherwise no free time is
-asserted at all. Super Bowl LXI's 3:30 PM PT kickoff is official (ESPN event 401873270).
-Days that depend on a team qualifying (MLS playoffs, ACC/CFP/bowls) stay **UNCONFIRMED**.
+(hatched on the timeline, EST tag in the tables) blocks the time, and **no free time is
+reported on the day at all** (the day shows no free windows and 0 free minutes — "0" means
+"not asserted", not "free"; fixed 2026-09-16 pass B after the site was seen reporting free
+time on football days). Super Bowl LXI's 3:30 PM PT kickoff is official (ESPN event 401873270).
+Days that depend on a team qualifying (MLS playoffs, ACC/CFP/bowls) stay **UNCONFIRMED** —
+free time is not asserted there either.
 
 ## Run it
 
@@ -89,7 +92,7 @@ Every team above is on Bay Area radio — verified line-by-line with official so
 * **Earthquakes:** KSFO 810 AM / KZSF 1370 AM — [sjearthquakes.com 2026 release](https://www.sjearthquakes.com/news/news-earthquakes-announce-radio-stations-for-2026-mls-season)
 * **Stanford:** KNBR/KTCT 1050 AM — [gostanford.com 2026 broadcast team](https://gostanford.com/news/2026/07/30/2026-football-radio-broadcast-team-announced)
 * **Cal:** KSFO 810 AM in 2026 (KGO 810 AM for 47 years through 2020) — [calbears.com/schedule/2026](https://calbears.com/sports/football/schedule/2026), [bearinsider.com KGO extension](https://bearinsider.com/s/2255/cal-extends-partnership-with-kgo-radio)
-* **Westwood One NFL + NCAAF:** Bay Area affiliate KNBR 680/104.5 — [KNBR (AM)](https://en.wikipedia.org/wiki/KNBR_(AM)), [Cumulus press release Sep 9 2026](https://www.globenewswire.com/news-release/2026/09/09/3358684/9032/en/cumulus-media-s-westwood-one-official-network-audio-partner-of-the-nfl-celebrates-40th-consecutive-season-and-reveals-2026-nfl-lineup-and-programming-highlights-from-nfl-kickoff-to.html) — 65/65 NFL broadcasts matched, 10 NCAAF Saturdays
+* **Westwood One NFL + NCAAF:** Bay Area affiliate KNBR 680/104.5 — [KNBR (AM)](https://en.wikipedia.org/wiki/KNBR_(AM)), [Cumulus press release Sep 9 2026](https://www.globenewswire.com/news-release/2026/09/09/3358684/9032/en/cumulus-media-s-westwood-one-official-network-audio-partner-of-the-nfl-celebrates-40th-consecutive-season-and-reveals-2026-nfl-lineup-and-programming-highlights-from-nfl-kickoff-to.html) — 65/65 NFL broadcasts matched, 13 NCAAF broadcasts (10 Saturday showcases + Nov 28 Michigan@Ohio State, Dec 5 SEC Championship, Dec 12 Army–Navy — the page widget truncates at 10 events; the full list comes from its eventGrid endpoint, verified 2026-09-16 pass B)
 
 Full citations in `docs/BAY_AREA_RADIO_RESEARCH.md` and `docs/VERIFICATION.md` §1.
 
@@ -129,7 +132,7 @@ No manual entry anywhere. The pipeline reads hand-transcribed, source-attributed
 | `data/raw/wnba_valkyries_2026.txt` | 16 Valkyries games in window (9 blocking on 95.7 The Game, 7 Audacy-app-only) + 3 playoff TBD rows (berth clinched 2026-08-17) |
 | `data/raw/wnba_2026_playoffs_conditional.txt` | WNBA playoff round dates (Sep 27 – Oct 31) that depend on series outcomes |
 | `data/raw/westwoodone_nfl_2026.txt` | 65 WWO NFL broadcasts + 8 TBA placeholders (matched 65/65 vs the league table) |
-| `data/raw/westwoodone_ncaaf_2026.txt` | 10 WWO NCAA football Saturday broadcasts (2 timed, 8 TBD) |
+| `data/raw/westwoodone_ncaaf_2026.txt` | 13 WWO NCAA football broadcasts / 19 rows (7 with confirmed-or-reported official kickoffs incl. Nov 28 / Dec 5 / Dec 12; 12 estimated showcase slots for the 6 still-TBD Saturdays) — full list via the page's eventGrid endpoint (the widget truncates at 10) |
 | `data/raw/mls_2026_playoffs_conditional.txt` | MLS playoff windows (Nov 18 – Dec 18) as SJ-conditional UNCONFIRMED days |
 | `data/raw/ncaa_2026_postseason_conditional.txt` | ACC title game Dec 5 + CFP days Dec 18 – Jan 25 (Stanford/Cal-conditional) |
 | `data/games_local.json` | 49ers (20 games), Earthquakes (17 games incl. the Nov 7 Decision Day finale), Stanford (12), Cal (12) — with a source URL per game |
