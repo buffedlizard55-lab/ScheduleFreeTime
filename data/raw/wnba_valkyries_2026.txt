@@ -1,0 +1,62 @@
+# Golden State Valkyries (WNBA) - 2026 regular season games inside the window + the
+# 2026 playoff window (the Valkyries are IN the playoffs - see below).
+#
+# SOURCE OF RECORD, regular season (date, opponent, PT time AND the radio column):
+#   Official club release "Golden State Valkyries Announce Local Television and Radio
+#   Broadcast Schedule", 2026-04-25 (Golden State Valkyries / CBS Bay Area / Audacy),
+#   as published by OurSports Central:
+#   https://www.oursportscentral.com/services/releases/goldn-state-valkyries-announce-local-television-and-radio-broadcast-schedule/n-6353443
+#   -> "all Valkyries games streaming live on the Audacy App, and select contests set to
+#      air on 95.7 The Game".  Kevin Danna (play-by-play) + Sophia Jones (analyst).
+#   Flagship proof (original multi-year Audacy deal, 2025-05-14):
+#   https://audacyinc.com/press/95-7-the-game-will-be-the-valkyries-flagship-radio-station/
+#   https://www.insideradio.com/free/san-francisco-s-kgmz-new-flagship-station-for-wnba-s-golden-state-valkyries/article_30683008-63c2-4b58-9f62-1cdb03c449a4.html
+#
+# PLAYOFF STATUS (why the playoffs block): the Valkyries CLINCHED a 2026 playoff berth on
+#   2026-08-17 - official club release
+#   https://valkyries.wnba.com/news/valkyries-clinch-postseason-berth-for-second-straight-season
+#   ("The WNBA Playoffs begin Sunday, September 27 with the best-of-three First Round
+#     (1-1-1 format). The Semifinals will be a best-of-five (2-2-1), and the WNBA Finals
+#     will be a best-of-seven (2-2-1-1-1). Golden State currently occupies the No. 2 seed").
+#   Round dates: ESPN, "WNBA playoffs schedule 2026: Dates released for postseason",
+#   2026-09-09 - https://www.espn.com/wnba/story/_/id/49882118/wnba-playoffs-2026-schedule-games-first-round-semifinals-finals-scores-results-news-highlights
+#   -> First round opens Sun Sep 27 (four Game 1s), Game 2s Tue Sep 29 / Wed Sep 30,
+#      Game 3s (if needed) Thu Oct 1 / Fri Oct 2; Semifinals open Sun Oct 4 (G2 Oct 7,
+#      G3 Oct 9, G4 Oct 11, G5 Oct 14); Finals open Sat Oct 17, last possible date Oct 31.
+#   The Valkyries' seed is not final (2nd in the West as of 2026-09-16), so WHICH of the
+#   Sep 29 / Sep 30 Game-2 dates is theirs is unconfirmed -> both are blocked and flagged.
+#   Game 3s and everything after the first round depend on series outcomes -> those dates
+#   are CONDITIONAL markers (data/raw/wnba_2026_playoffs_conditional.txt), never asserted.
+#
+# BLOCKING RULE (mirrors the Sharks' "select preseason games" rule): only the games whose
+#   radio column is 95.7 The Game (KGMZ-FM, Bay Area, over the air) block free time and
+#   are flagged high-priority; the away games carried ONLY on the Audacy app are listed
+#   info-only. All four of the Valkyries' remaining regular-season games (Sep 18-24) and
+#   every playoff game are on 95.7 per the club.
+#
+# FORMAT: phase|date|timePT(HHMM, or TBD)|ha(H/A)|opponent|radio(957|audacy)|note
+REG|2026-08-02|17:30|H|Toronto Tempo|957|official 2026 broadcast schedule (club release 2026-04-25)
+REG|2026-08-04|19:00|H|Toronto Tempo|957|official 2026 broadcast schedule (club release 2026-04-25)
+REG|2026-08-07|18:30|A|Dallas Wings|audacy|Audacy App only (not on 95.7) - info-only
+REG|2026-08-09|16:00|A|Los Angeles Sparks|audacy|Audacy App only (not on 95.7) - info-only
+REG|2026-08-12|19:00|H|Chicago Sky|957|official 2026 broadcast schedule (club release 2026-04-25)
+REG|2026-08-17|19:00|H|Dallas Wings|957|playoff berth clinched this night (club release 2026-08-17)
+REG|2026-08-19|19:00|H|Minnesota Lynx|957|official 2026 broadcast schedule (club release 2026-04-25)
+REG|2026-08-21|16:30|A|Chicago Sky|audacy|Audacy App only (not on 95.7) - info-only
+REG|2026-08-24|17:00|A|Minnesota Lynx|audacy|Audacy App only (not on 95.7) - info-only
+REG|2026-08-26|16:00|A|Connecticut Sun|audacy|Audacy App only (not on 95.7) - info-only
+REG|2026-08-27|17:00|A|New York Liberty|audacy|Audacy App only (not on 95.7) - info-only
+REG|2026-08-30|16:00|A|Portland Fire|audacy|Audacy App only (not on 95.7) - info-only; last game before the FIBA World Cup break
+REG|2026-09-18|19:00|H|Portland Fire|957|season resumes after the FIBA World Cup break (Aug 31 - Sep 16)
+REG|2026-09-19|18:00|H|Seattle Storm|957|official 2026 broadcast schedule (club release 2026-04-25)
+REG|2026-09-22|19:00|A|Portland Fire|957|road game but still on 95.7 The Game per the club's radio column
+REG|2026-09-24|19:00|A|Los Angeles Sparks|957|regular-season finale
+POST|2026-09-27|TBD|-|First Round Game 1|-|playoffs open Sun Sep 27 (ESPN 2026-09-09); Valkyries clinched 2026-08-17; start time TBA
+POST|2026-09-29|TBD|-|First Round Game 2|-|Game 2 window for the first round is Tue Sep 29 OR Wed Sep 30 (ESPN 2026-09-09); both dates blocked, flagged
+POST|2026-09-30|TBD|-|First Round Game 2|-|Game 2 window for the first round is Tue Sep 29 OR Wed Sep 30 (ESPN 2026-09-09); both dates blocked, flagged
+# TOTAL: 16 regular-season games in window (12 in August, 4 in September) + 3 playoff TBD rows.
+# 9 of the 16 regular-season games air on 95.7 The Game and block (5 in August, all 4 in
+# September); 7 are Audacy-app-only (info-only).
+# NOTE (flagged): the radio carriage of playoff games is not published per game; the club's
+#   partnership covers "all games on the Audacy App, home games on 95.7", so playoff home
+#   games are certain and road playoff games are presumed - re-check when the bracket posts.

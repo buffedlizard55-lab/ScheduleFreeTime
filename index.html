@@ -80,7 +80,7 @@ th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--line);vertic
 th{color:var(--mut);font-size:11px;text-transform:uppercase;letter-spacing:.06em}
 tr:last-child td{border-bottom:none}
 .tag{display:inline-block;padding:2px 8px;border-radius:6px;font-size:10.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase}
-.t-mlb{background:#e4eefb;color:#1c4f8c}.t-nfl{background:#fbe3e3;color:#7a2020}.t-mls{background:#e2f4ec;color:#136449}.t-ncaa{background:#f7ecda;color:#7a5411}.t-nfl_all{background:#efe6f7;color:#59306e}.t-nba{background:#e8f0fe;color:#174ea6}.t-nhl{background:#e6f4f1;color:#0b5c4d}.t-ncaaw{background:#f3e8fd;color:#6b3fa0}.tag.ghost{opacity:.75}
+.t-mlb{background:#e4eefb;color:#1c4f8c}.t-nfl{background:#fbe3e3;color:#7a2020}.t-mls{background:#e2f4ec;color:#136449}.t-ncaa{background:#f7ecda;color:#7a5411}.t-nfl_all{background:#efe6f7;color:#59306e}.t-nba{background:#e8f0fe;color:#174ea6}.t-nhl{background:#e6f4f1;color:#0b5c4d}.t-ncaaw{background:#f3e8fd;color:#6b3fa0}.t-wnba{background:#fdeef4;color:#8c2a5b}.tag.ghost{opacity:.75}
 .tag.est{background:#ffe3c2;color:#8a4d00}.tag.official{background:#dcf1e6;color:#0a5a41}
 .hi{color:var(--hi);font-weight:800}
 .muted{color:var(--mut)}
@@ -153,7 +153,7 @@ footer .container{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-betw
       <p>A time counts as <b>busy</b> if any of these is on air: <b>any MLB game</b> (all 30 clubs,
          regular season + postseason), <b>any NFL game</b> (all 32 clubs — preseason, regular season,
          postseason, Pro Bowl, Super Bowl), the <b>San Jose Earthquakes</b>, <b>Stanford</b> football,
-         <b>Cal</b> football, <b>Warriors</b> basketball, <b>Sharks</b> hockey, or the
+         <b>Cal</b> football, <b>Warriors</b> basketball, <b>Sharks</b> hockey, the <b>Valkyries</b> (WNBA), or the
          <b>Westwood One</b> NCAA football radio showcase. 📻 marks the games on national radio in the
          Bay Area (KNBR). If a game is definitely happening but its kickoff is still TBD — every NFL
          playoff game, the late-season Saturday doubleheaders, Week 18 — the day is marked
@@ -179,9 +179,9 @@ footer .container{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-betw
         <div class="badge-row"><span id="dBadge"></span></div>
       </div>
       <div class="btn-group" role="group" aria-label="Day navigation">
-        <button class="btn" id="prevD" aria-label="Previous day">&#8592; Previous</button>
+        <button class="btn" id="prevD" aria-label="Previous day (yesterday)">&#8592; Yesterday</button>
         <button class="btn primary" id="todayD" aria-label="Go to today (clamped to the schedule window)">Today</button>
-        <button class="btn" id="nextD" aria-label="Next day">Next &#8594;</button>
+        <button class="btn" id="nextD" aria-label="Next day (tomorrow)">Tomorrow &#8594;</button>
       </div>
     </div>
     <div class="tl-wrap">
@@ -231,6 +231,7 @@ footer .container{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-betw
           <label class="toggle-row"><input type="checkbox" data-lg="nfl_all" checked> All-NFL games (all 32 clubs — blocks; playoffs, Pro Bowl &amp; Super Bowl TBD until confirmed)</label>
           <label class="toggle-row"><input type="checkbox" data-lg="nba" checked> Warriors NBA (high priority, 95.7 The Game)</label>
           <label class="toggle-row"><input type="checkbox" data-lg="nhl" checked> Sharks NHL (high priority, 98.5 KFOX)</label>
+          <label class="toggle-row"><input type="checkbox" data-lg="wnba" checked> Valkyries WNBA (high priority, 95.7 The Game)</label>
           <label class="toggle-row"><input type="checkbox" data-lg="ncaaw" checked> Westwood One NCAA football showcase (KNBR)</label>
         </div>
         <div>
@@ -241,10 +242,11 @@ footer .container{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-betw
           <label class="toggle-row">MLS <input type="number" id="d_mls" value="120" min="30" step="5"></label>
           <label class="toggle-row">NBA <input type="number" id="d_nba" value="138" min="30" step="5"></label>
           <label class="toggle-row">NHL <input type="number" id="d_nhl" value="150" min="30" step="5"></label>
+          <label class="toggle-row">WNBA <input type="number" id="d_wnba" value="125" min="30" step="5"></label>
         </div>
       </div>
       <div class="callout">Defaults are researched league averages (MLB 2:44, NFL 3:12, NCAA 3:24, MLS 2:00,
-        NBA 2:18, NHL 2:30; the Super Bowl blocks 3:45). They're editable above. A day on which any
+        NBA 2:18, NHL 2:30, WNBA 2:05; the Super Bowl blocks 3:45). They're editable above. A day on which any
         tracked game will definitely be played but has no official kickoff yet (NFL playoffs,
         late-season Saturdays, Week 18, MLB postseason, some Stanford/Cal games) is <b>NOT FREE — TIME TBD</b>:
         where a documented pattern exists (2025-26 playoff kickoffs, WWO air times, the league's
@@ -278,6 +280,7 @@ footer .container{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-betw
             <tr><td>Cal 2026 football</td><td><a target="_blank" rel="noopener" href="https://calbears.com/sports/football/schedule">calbears.com schedule</a></td></tr>
             <tr><td>Warriors 2026-27 (63 games, 95.7 The Game)</td><td><a target="_blank" rel="noopener" href="https://www.espn.com/nba/team/schedule/_/name/gs/season/2027/seasontype/2">ESPN &mdash; regular season</a> &middot; <a target="_blank" rel="noopener" href="https://www.espn.com/nba/team/schedule/_/name/gs/golden-state-warriors">ESPN &mdash; preseason</a> &middot; flagship: <a target="_blank" rel="noopener" href="https://www.insideradio.com/free/nba-s-warriors-95-7-the-game-extend-flagship-partnership/article_8c79d479-424c-408d-9753-f353f7e18a57.html">insideRadio</a></td></tr>
             <tr><td>Sharks 2026-27 (68 games, 98.5 KFOX)</td><td><a target="_blank" rel="noopener" href="https://www.espn.com/nhl/team/schedule/_/name/sj/season/2027/seasontype/2">ESPN &mdash; regular season</a> &middot; <a target="_blank" rel="noopener" href="https://www.espn.com/nhl/team/schedule/_/name/sj/san-jose-sharks">ESPN &mdash; preseason</a> &middot; flagship: <a target="_blank" rel="noopener" href="https://www.nhl.com/sharks/news/sharks-and-kfox-announce-multi-year-extension/c-782397">nhl.com/sharks</a></td></tr>
+            <tr><td>Valkyries 2026 (WNBA, 16 games in window + playoffs)</td><td><a target="_blank" rel="noopener" href="https://www.oursportscentral.com/services/releases/goldn-state-valkyries-announce-local-television-and-radio-broadcast-schedule/n-6353443">official club broadcast schedule (2026-04-25: date, PT time, radio column)</a> &middot; <a target="_blank" rel="noopener" href="https://audacyinc.com/press/95-7-the-game-will-be-the-valkyries-flagship-radio-station/">95.7 The Game flagship (Audacy)</a> &middot; playoff berth clinched 2026-08-17: <a target="_blank" rel="noopener" href="https://valkyries.wnba.com/news/valkyries-clinch-postseason-berth-for-second-straight-season">valkyries.wnba.com</a> &middot; playoff round dates: <a target="_blank" rel="noopener" href="https://www.espn.com/wnba/story/_/id/49882118/wnba-playoffs-2026-schedule-games-first-round-semifinals-finals-scores-results-news-highlights">ESPN (2026-09-09)</a></td></tr>
             <tr><td>Westwood One NFL (65 broadcasts + 8 TBA, Bay Area: KNBR)</td><td><a target="_blank" rel="noopener" href="https://www.westwoodonesports.com/nfl-schedule/">westwoodonesports.com &mdash; NFL schedule</a> &middot; <a target="_blank" rel="noopener" href="https://www.westwoodonesports.com/station-finder/">station finder (SF: KNBR/KTCT)</a></td></tr>
             <tr><td>Westwood One NCAA football (10 Saturday broadcasts, kickoffs where announced)</td><td><a target="_blank" rel="noopener" href="https://www.westwoodonesports.com/ncaa-football/">westwoodonesports.com &mdash; NCAA football</a> &middot; LSU@Ole Miss 9/19 7:30 PM ET: <a target="_blank" rel="noopener" href="https://olemisssports.com/news/2026/8/21/football-espn-college-gameday-coming-to-ole-miss-on-september-19">olemisssports.com</a> &middot; Oklahoma@Georgia 9/26 3:30 PM ET: <a target="_blank" rel="noopener" href="https://www.si.com/college/georgia/football/breaking-georgia-football-gets-major-news-about-oklahoma-sooners-matchup-01m2gjtnqmfd">SI/Covers (SEC announcement)</a> &middot; Florida@Georgia 10/31 3:30 PM ET: <a target="_blank" rel="noopener" href="https://gafljax.com/faq/">gafljax.com FAQ (official)</a> &middot; Oregon@Ohio State 11/7 3:30 PM ET (reported): <a target="_blank" rel="noopener" href="https://www.oregonlive.com/ducks/2026/09/kickoff-time-tv-channel-reportedly-set-for-oregon-football-vs-ohio-state.html">oregonlive (The Athletic)</a> &middot; Michigan@Oregon 11/14 date: <a target="_blank" rel="noopener" href="https://goducks.com/game-center/24386">goducks.com game center</a></td></tr>
             <tr><td>All-NFL regular season (272) + preseason (49, all with kickoff times)</td><td><a target="_blank" rel="noopener" href="https://www.pro-football-reference.com/years/2026/games.htm">PFR league week-by-week table</a> &middot; <a target="_blank" rel="noopener" href="https://www.pro-football-reference.com/years/2026/preseason.htm">PFR preseason</a> &middot; preseason kickoff times: <a target="_blank" rel="noopener" href="https://www.sportingnews.com/us/nfl/news/nfl-preseason-schedule-2026-times-tv-channels-streams-watch/c2141fa9adb0a760d8d02485">Sporting News full preseason schedule</a> (cross-checked vs <a target="_blank" rel="noopener" href="https://sports.yahoo.com/articles/2026-nfl-preseason-week-1-120031757.html">Yahoo</a>, <a target="_blank" rel="noopener" href="https://www.foxnews.com/sports/2026-nfl-preseason-week-1-schedule-dates-times-tv-channels-how-to-watch">Fox News</a>, <a target="_blank" rel="noopener" href="https://www.cabletv.com/sports/watch-nfl-preseason">CableTV</a>) &middot; Week 18 officially TBD: <a target="_blank" rel="noopener" href="https://www.nfl.com/schedules/2026/by-week/week-18">nfl.com week 18</a> &middot; no Saturday games Dec 26 / Jan 2: <a target="_blank" rel="noopener" href="https://www.nfl.com/schedules/2026/by-week/week-16">nfl.com week 16</a>, <a target="_blank" rel="noopener" href="https://www.nfl.com/schedules/2026/by-week/week-17">week 17</a></td></tr>
@@ -288,11 +291,11 @@ footer .container{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-betw
             <tr><td>MLB average length (2026 = 2:44 default)</td><td><a target="_blank" rel="noopener" href="https://sports.betmgm.com/en/blog/mlb/average-game-time-in-mlb-bm23/">BetMGM: 2026 avg 2:44</a> &middot; <a target="_blank" rel="noopener" href="https://www.sportsbusinessjournal.com/Articles/2026/04/29/mlb-pace-of-play-slows-game-lengths-rise-despite-pitch-timer/">SBJ: 2026 2:43 thru first 421 games</a> &middot; <a target="_blank" rel="noopener" href="https://www.mlb.com/press-release/press-release-mlb-attendance-reaches-71-4-million-three-straight-years-of-growth-for-first-time-since-2007">MLB PR: 2025 final 2:38</a></td></tr>
             <tr><td>NBA average length (2:18 default)</td><td><a target="_blank" rel="noopener" href="https://www.alibaba.com/product-insights/how-long-is-the-average-basketball-game-2026-guide.html">2025-26 measured 2:18:32</a> &middot; <a target="_blank" rel="noopener" href="https://sportsgeardaily.com/basketball/how-long-are-basketball-games">SportsGearDaily: ~2:15 avg</a></td></tr>
             <tr><td>NHL average length (2:30 default)</td><td><a target="_blank" rel="noopener" href="https://nhltraderumorstalk.com/how-long-is-a-hockey-game">~2:20&ndash;2:40 range, ~2.5h typical</a> &middot; <a target="_blank" rel="noopener" href="https://icehockeyguide.com/hockey-game-length/">IceHockeyGuide: 2.5&ndash;3h incl. intermissions</a></td></tr>
-            <tr><td>Bay Area radio flagships</td><td>Giants: KNBR 680/104.5 (flagship since 1979) &middot; 49ers: KSAN 107.7 + KNBR &middot; Stanford: KNBR/KTCT 1050 (<a target="_blank" rel="noopener" href="https://gostanford.com/news/2026/07/30/2026-football-radio-broadcast-team-announced">gostanford.com</a>) &middot; Cal: KGO 810 (<a target="_blank" rel="noopener" href="https://bearinsider.com/s/2255/cal-extends-partnership-with-kgo-radio">47th yr in 2020; current flagship unverified &mdash; flagged</a>) &middot; Athletics: KSTE 650 Sacramento + A's Cast/iHeart, KNEW 910 in the network (<a target="_blank" rel="noopener" href="https://www.sacbee.com/sports/article300334119.html">Sacramento Bee, Feb 2025</a>; the A's left Bay Area flagship KTRB 860 in 2024) &middot; Earthquakes: KSFO 810 (<a target="_blank" rel="noopener" href="https://www.sjearthquakes.com/news/news-earthquakes-announce-radio-stations-for-2026-mls-season">sjearthquakes.com</a>)</td></tr>
+            <tr><td>Bay Area radio flagships</td><td>Giants: KNBR 680/104.5 (flagship since 1979) &middot; 49ers: KSAN 107.7 + KNBR 680/104.5 (weeks 1&ndash;3 were KSFO 810 / KSAN 107.7 per the club page) &middot; Stanford: KNBR/KTCT 1050 (<a target="_blank" rel="noopener" href="https://gostanford.com/news/2026/07/30/2026-football-radio-broadcast-team-announced">gostanford.com</a>) &middot; Cal: KGO 810 (<a target="_blank" rel="noopener" href="https://bearinsider.com/s/2255/cal-extends-partnership-with-kgo-radio">47th yr in 2020; current flagship unverified &mdash; flagged</a>) &middot; Athletics: KSTE 650 Sacramento + A's Cast/iHeart, KNEW 910 in the network (<a target="_blank" rel="noopener" href="https://www.sacbee.com/sports/article300334119.html">Sacramento Bee, Feb 2025</a>; the A's left Bay Area flagship KTRB 860 in 2024) &middot; Earthquakes: KSFO 810 (<a target="_blank" rel="noopener" href="https://www.sjearthquakes.com/news/news-earthquakes-announce-radio-stations-for-2026-mls-season">sjearthquakes.com</a>)</td></tr>
           </tbody>
         </table>
       </div>
-      <div class="callout"><b>Verification note:</b> re-checked against primary sources on <b>2026-09-15</b> (MLB Stats API Sep 26-29 boundary query; Westwood One NFL page row-for-row; nfl.com weeks 16-18 pages; ESPN postseason events incl. the official Super Bowl kickoff; Sporting News preseason times; WWO college kickoffs; MLB postseason placeholders confirmed TBD).
+      <div class="callout"><b>Verification note:</b> re-checked against primary sources on <b>2026-09-16</b> (independent audit script; MLB Stats API per-date counts for Aug 1&ndash;Sep 27 identical on all 58 dates + game-level checks Sep 16&ndash;26; WWO NFL + NCAA football pages re-fetched, zero deltas; NFL week 2 re-checked on nfl.com; every remaining 49ers game re-checked on 49ers.com; Warriors preseason + Oct/Nov and Sharks October re-checked on ESPN; Cal/Stanford/Earthquakes next games re-checked; Valkyries (WNBA) added - 95.7 The Game, playoffs from Sep 27; MLB postseason Oct 4 placeholder corrected 4&nbsp;&rarr;&nbsp;2 games). Earlier: <b>2026-09-15</b> (MLB Stats API Sep 26-29 boundary query; Westwood One NFL page row-for-row; nfl.com weeks 16-18 pages; ESPN postseason events incl. the official Super Bowl kickoff; Sporting News preseason times; WWO college kickoffs; MLB postseason placeholders confirmed TBD).
         All 65 Westwood One NFL broadcasts match the league table by date + matchup (plus 8 TBA placeholders);
         the 63 Warriors and 68 Sharks games match ESPN's rendered schedules row-for-row with per-game review
         links; earlier checks still hold (MLB Sep 10&ndash;12 35/35, all 28 postseason dates TBD, 272 NFL rows at
@@ -310,10 +313,10 @@ footer .container{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-betw
 </footer>
 
 <script>
-const DUR={mlb:164,nfl:192,ncaa:204,mls:120,nba:138,nhl:150};   // researched averages (docs/VERIFICATION.md)
-const LG={mlb:true,nfl:true,mls:true,ncaa:true,nfl_all:true,nba:true,nhl:true,ncaaw:true};   // league toggles (show + count)
-const BLOCK={mlb:true,nfl:true,mls:true,ncaa:true,nfl_all:true,nba:true,nhl:true,ncaaw:true}; // every tracked league blocks free time
-const SNAPSHOT=new Date(2026,8,15);           // dataset snapshot / last verification day (2026-09-15)
+const DUR={mlb:164,nfl:192,ncaa:204,mls:120,nba:138,nhl:150,wnba:125};   // researched averages (docs/VERIFICATION.md)
+const LG={mlb:true,nfl:true,mls:true,ncaa:true,nfl_all:true,nba:true,nhl:true,ncaaw:true,wnba:true};   // league toggles (show + count)
+const BLOCK={mlb:true,nfl:true,mls:true,ncaa:true,nfl_all:true,nba:true,nhl:true,ncaaw:true,wnba:true}; // every tracked league blocks free time
+const SNAPSHOT=new Date(2026,8,16);           // dataset snapshot / last verification day (2026-09-16)
 const WIN_S=new Date(2026,7,1), WIN_E=new Date(2027,2,28);
 const REAL_TODAY=new Date();                   // actual current date (Today button + marker)
 const clampToday=()=>{const t=REAL_TODAY;return t<WIN_S?new Date(WIN_S):(t>WIN_E?new Date(WIN_E):new Date(t));};
@@ -351,6 +354,7 @@ function renderStats(){
     `<div class="stat"><b>${tt.nfl_reg_games+tt.nfl_pre_games}</b><span>All-NFL games (272 reg + 49 pre)</span></div>`+
     `<div class="stat"><b>${tt.nba_games}</b><span>Warriors (NBA, 95.7 The Game)</span></div>`+
     `<div class="stat"><b>${tt.nhl_games}</b><span>Sharks (NHL, 98.5 KFOX)</span></div>`+
+    `<div class="stat"><b>${tt.wnba_games||0}</b><span>Valkyries (WNBA, 95.7 The Game)</span></div>`+
     `<div class="stat"><b>${tt.wwo_nfl_matched}</b><span>Westwood One NFL radio games</span></div>`+
     `<div class="stat"><b>${(tt.nfl_window_rows||0)}</b><span>NFL TBD windows blocked (every playoff game + SB)</span></div>`+
     `<div class="stat"><b>${days.filter(d=>d.status==='NOT FREE — TIME TBD').length}</b><span>Not-free days (time TBD)</span></div>`+
@@ -459,7 +463,7 @@ async function boot(){
   document.getElementById('prevM').onclick=()=>{MONTH=new Date(MONTH.getFullYear(),MONTH.getMonth()-1,1);renderCal();};
   document.getElementById('nextM').onclick=()=>{MONTH=new Date(MONTH.getFullYear(),MONTH.getMonth()+1,1);renderCal();};
   document.querySelectorAll('input[data-lg]').forEach(i=>i.onchange=()=>{LG[i.dataset.lg]=i.checked;renderCal();renderDay();});
-  ['mlb','nfl','ncaa','mls','nba','nhl'].forEach(k=>{document.getElementById('d_'+k).onchange=e=>{DUR[k]=Math.max(30,parseInt(e.target.value)||120);renderCal();renderDay();};});
+  ['mlb','nfl','ncaa','mls','nba','nhl','wnba'].forEach(k=>{document.getElementById('d_'+k).onchange=e=>{DUR[k]=Math.max(30,parseInt(e.target.value)||120);renderCal();renderDay();};});
   document.addEventListener('keydown',e=>{
     if(e.key==='ArrowLeft')document.getElementById('prevD').click();
     if(e.key==='ArrowRight')document.getElementById('nextD').click();});

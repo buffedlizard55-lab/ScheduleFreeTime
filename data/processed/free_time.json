@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated_utc": "2026-09-14",
+  "generated_utc": "2026-09-16",
   "window": {
    "start": "2026-08-01",
    "end": "2027-02-28"
@@ -12,7 +12,8 @@
    "ncaa": 204,
    "mls": 120,
    "nba": 138,
-   "nhl": 150
+   "nhl": 150,
+   "wnba": 125
   },
   "pre_buffer_minutes": 0,
   "post_buffer_minutes": 0,
@@ -24,11 +25,12 @@
    "ncaaw",
    "nfl",
    "nfl_all",
-   "nhl"
+   "nhl",
+   "wnba"
   ],
   "totals": {
    "mlb_games": 778,
-   "mlb_postseason_tbd": 55,
+   "mlb_postseason_tbd": 53,
    "local_games": 61,
    "nfl_reg_games": 272,
    "nfl_pre_games": 49,
@@ -37,9 +39,12 @@
    "nfl_windows_estimated": 24,
    "nfl_windows_official": 1,
    "nfl_all_tbd_days": 0,
-   "conditional_days": 20,
+   "conditional_days": 35,
    "nba_games": 63,
    "nhl_games": 68,
+   "wnba_games": 16,
+   "wnba_blocking": 9,
+   "wnba_playoff_rows": 3,
    "wwo_nfl_matched": 65,
    "wwo_nfl_total": 65,
    "wwo_nfl_tba": 8,
@@ -554,6 +559,19 @@
      "label": "Boston Red Sox @ Los Angeles Dodgers",
      "priority": false,
      "source": "mlb_2026_regseason.txt"
+    },
+    {
+     "date": "2026-08-02",
+     "sport": "wnba",
+     "phase": "Regular Season",
+     "label": "Valkyries vs Toronto Tempo",
+     "priority": true,
+     "source": "wnba_valkyries_2026.txt",
+     "review": "https://www.oursportscentral.com/services/releases/goldn-state-valkyries-announce-local-television-and-radio-broadcast-schedule/n-6353443",
+     "radio": "95.7 The Game (KGMZ-FM)",
+     "start_pt": "17:30",
+     "start_min": 1050,
+     "note": "official 2026 broadcast schedule (club release 2026-04-25)"
     }
    ],
    "blocked": [
@@ -565,9 +583,9 @@
     },
     {
      "start": 980,
-     "end": 1144,
+     "end": 1175,
      "start_t": "4:20 PM",
-     "end_t": "7:04 PM"
+     "end_t": "7:35 PM"
     }
    ],
    "free": [
@@ -586,15 +604,15 @@
      "minutes": 26
     },
     {
-     "start": 1144,
+     "start": 1175,
      "end": 1440,
-     "start_t": "7:04 PM",
+     "start_t": "7:35 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 296
+     "minutes": 265
     }
    ],
-   "free_minutes": 957,
-   "game_count": 15,
+   "free_minutes": 926,
+   "game_count": 16,
    "nfl_all_count": 0,
    "tbd_count": 0,
    "estimated_count": 0,
@@ -990,6 +1008,19 @@
      "label": "Detroit Tigers @ Seattle Mariners",
      "priority": false,
      "source": "mlb_2026_regseason.txt"
+    },
+    {
+     "date": "2026-08-04",
+     "sport": "wnba",
+     "phase": "Regular Season",
+     "label": "Valkyries vs Toronto Tempo",
+     "priority": true,
+     "source": "wnba_valkyries_2026.txt",
+     "review": "https://www.oursportscentral.com/services/releases/goldn-state-valkyries-announce-local-television-and-radio-broadcast-schedule/n-6353443",
+     "radio": "95.7 The Game (KGMZ-FM)",
+     "start_pt": "19:00",
+     "start_min": 1140,
+     "note": "official 2026 broadcast schedule (club release 2026-04-25)"
     }
    ],
    "blocked": [
@@ -1017,7 +1048,7 @@
     }
    ],
    "free_minutes": 1091,
-   "game_count": 15,
+   "game_count": 16,
    "nfl_all_count": 0,
    "tbd_count": 0,
    "estimated_count": 0,
@@ -1694,6 +1725,19 @@
     },
     {
      "date": "2026-08-07",
+     "sport": "wnba",
+     "phase": "Regular Season",
+     "label": "Valkyries at Dallas Wings",
+     "priority": true,
+     "source": "wnba_valkyries_2026.txt",
+     "review": "https://www.oursportscentral.com/services/releases/goldn-state-valkyries-announce-local-television-and-radio-broadcast-schedule/n-6353443",
+     "info_only": true,
+     "start_pt": "18:30",
+     "start_min": 1110,
+     "note": "Audacy App only (not on 95.7) - info-only"
+    },
+    {
+     "date": "2026-08-07",
      "sport": "mlb",
      "start_pt": "18:40",
      "start_min": 1120,
@@ -1778,7 +1822,7 @@
     }
    ],
    "free_minutes": 1061,
-   "game_count": 15,
+   "game_count": 16,
    "nfl_all_count": 0,
    "tbd_count": 0,
    "estimated_count": 0,
@@ -2267,6 +2311,19 @@
     },
     {
      "date": "2026-08-09",
+     "sport": "wnba",
+     "phase": "Regular Season",
+     "label": "Valkyries at Los Angeles Sparks",
+     "priority": true,
+     "source": "wnba_valkyries_2026.txt",
+     "review": "https://www.oursportscentral.com/services/releases/goldn-state-valkyries-announce-local-television-and-radio-broadcast-schedule/n-6353443",
+     "info_only": true,
+     "start_pt": "16:00",
+     "start_min": 960,
+     "note": "Audacy App only (not on 95.7) - info-only"
+    },
+    {
+     "date": "2026-08-09",
      "sport": "mlb",
      "start_pt": "17:20",
      "start_min": 1040,
@@ -2289,9 +2346,9 @@
      "end_t": "3:54 PM"
     },
     {
-     "start": 1040,
+     "start": 960,
      "end": 1204,
-     "start_t": "5:20 PM",
+     "start_t": "4:00 PM",
      "end_t": "8:04 PM"
     }
    ],
@@ -2305,10 +2362,10 @@
     },
     {
      "start": 954,
-     "end": 1040,
+     "end": 960,
      "start_t": "3:54 PM",
-     "end_t": "5:20 PM",
-     "minutes": 86
+     "end_t": "4:00 PM",
+     "minutes": 6
     },
     {
      "start": 1204,
@@ -2318,8 +2375,8 @@
      "minutes": 236
     }
    ],
-   "free_minutes": 877,
-   "game_count": 15,
+   "free_minutes": 797,
+   "game_count": 16,
    "nfl_all_count": 0,
    "tbd_count": 0,
    "estimated_count": 0,
@@ -2982,6 +3039,19 @@
     },
     {
      "date": "2026-08-12",
+     "sport": "wnba",
+     "phase": "Regular Season",
+     "label": "Valkyries vs Chicago Sky",
+     "priority": true,
+     "source": "wnba_valkyries_2026.txt",
+     "review": "https://www.oursportscentral.com/services/releases/goldn-state-valkyries-announce-local-television-and-radio-broadcast-schedule/n-6353443",
+     "radio": "95.7 The Game (KGMZ-FM)",
+     "start_pt": "19:00",
+     "start_min": 1140,
+     "note": "official 2026 broadcast schedule (club release 2026-04-25)"
+    },
+    {
+     "date": "2026-08-12",
      "sport": "mlb",
      "start_pt": "19:10",
      "start_min": 1150,
@@ -3036,7 +3106,7 @@
     }
    ],
    "free_minutes": 766,
-   "game_count": 15,
+   "game_count": 16,
    "nfl_all_count": 0,
    "tbd_count": 0,
    "estimated_count": 0,
@@ -4489,6 +4559,19 @@
      "label": "Los Angeles Dodgers @ Colorado Rockies",
      "priority": false,
      "source": "mlb_2026_regseason.txt"
+    },
+    {
+     "date": "2026-08-17",
+     "sport": "wnba",
+     "phase": "Regular Season",
+     "label": "Valkyries vs Dallas Wings",
+     "priority": true,
+     "source": "wnba_valkyries_2026.txt",
+     "review": "https://www.oursportscentral.com/services/releases/goldn-state-valkyries-announce-local-television-and-radio-broadcast-schedule/n-6353443",
+     "radio": "95.7 The Game (KGMZ-FM)",
+     "start_pt": "19:00",
+     "start_min": 1140,
+     "note": "playoff berth clinched this night (club release 2026-08-17)"
     }
    ],
    "blocked": [
@@ -4500,9 +4583,9 @@
     },
     {
      "start": 905,
-     "end": 1224,
+     "end": 1265,
      "start_t": "3:05 PM",
-     "end_t": "8:24 PM"
+     "end_t": "9:05 PM"
     }
    ],
    "free": [
@@ -4521,15 +4604,15 @@
      "minutes": 101
     },
     {
-     "start": 1224,
+     "start": 1265,
      "end": 1440,
-     "start_t": "8:24 PM",
+     "start_t": "9:05 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 216
+     "minutes": 175
     }
    ],
-   "free_minutes": 957,
-   "game_count": 11,
+   "free_minutes": 916,
+   "game_count": 12,
    "nfl_all_count": 0,
    "tbd_count": 0,
    "estimated_count": 0,
@@ -5033,6 +5116,19 @@
     },
     {
      "date": "2026-08-19",
+     "sport": "wnba",
+     "phase": "Regular Season",
+     "label": "Valkyries vs Minnesota Lynx",
+     "priority": true,
+     "source": "wnba_valkyries_2026.txt",
+     "review": "https://www.oursportscentral.com/services/releases/goldn-state-valkyries-announce-local-television-and-radio-broadcast-schedule/n-6353443",
+     "radio": "95.7 The Game (KGMZ-FM)",
+     "start_pt": "19:00",
+     "start_min": 1140,
+     "note": "official 2026 broadcast schedule (club release 2026-04-25)"
+    },
+    {
+     "date": "2026-08-19",
      "sport": "mls",
      "label": "Earthquakes at LA Galaxy",
      "ha": "away",
@@ -5069,7 +5165,7 @@
     }
    ],
    "free_minutes": 725,
-   "game_count": 16,
+   "game_count": 17,
    "nfl_all_count": 0,
    "tbd_count": 0,
    "estimated_count": 0,
@@ -5442,6 +5538,19 @@
     },
     {
      "date": "2026-08-21",
+     "sport": "wnba",
+     "phase": "Regular Season",
+     "label": "Valkyries at Chicago Sky",
+     "priority": true,
+     "source": "wnba_valkyries_2026.txt",
+     "review": "https://www.oursportscentral.com/services/releases/goldn-state-valkyries-announce-local-television-and-radio-broadcast-schedule/n-6353443",
+     "info_only": true,
+     "start_pt": "16:30",
+     "start_min": 990,
+     "note": "Audacy App only (not on 95.7) - info-only"
+    },
+    {
+     "date": "2026-08-21",
      "sport": "mlb",
      "start_pt": "16:40",
      "start_min": 1000,
@@ -5617,7 +5726,7 @@
     }
    ],
    "free_minutes": 916,
-   "game_count": 18,
+   "game_count": 19,
    "nfl_all_count": 3,
    "tbd_count": 0,
    "estimated_count": 0,
@@ -6422,6 +6531,19 @@
     },
     {
      "date": "2026-08-24",
+     "sport": "wnba",
+     "phase": "Regular Season",
+     "label": "Valkyries at Minnesota Lynx",
+     "priority": true,
+     "source": "wnba_valkyries_2026.txt",
+     "review": "https://www.oursportscentral.com/services/releases/goldn-state-valkyries-announce-local-television-and-radio-broadcast-schedule/n-6353443",
+     "info_only": true,
+     "start_pt": "17:00",
+     "start_min": 1020,
+     "note": "Audacy App only (not on 95.7) - info-only"
+    },
+    {
+     "date": "2026-08-24",
      "sport": "mlb",
      "start_pt": "18:38",
      "start_min": 1118,
@@ -6536,7 +6658,7 @@
     }
    ],
    "free_minutes": 1091,
-   "game_count": 10,
+   "game_count": 11,
    "nfl_all_count": 0,
    "tbd_count": 0,
    "estimated_count": 0,
@@ -6935,6 +7057,19 @@
     },
     {
      "date": "2026-08-26",
+     "sport": "wnba",
+     "phase": "Regular Season",
+     "label": "Valkyries at Connecticut Sun",
+     "priority": true,
+     "source": "wnba_valkyries_2026.txt",
+     "review": "https://www.oursportscentral.com/services/releases/goldn-state-valkyries-announce-local-television-and-radio-broadcast-schedule/n-6353443",
+     "info_only": true,
+     "start_pt": "16:00",
+     "start_min": 960,
+     "note": "Audacy App only (not on 95.7) - info-only"
+    },
+    {
+     "date": "2026-08-26",
      "sport": "mlb",
      "start_pt": "16:05",
      "start_min": 965,
@@ -7064,7 +7199,7 @@
     }
    ],
    "free_minutes": 801,
-   "game_count": 15,
+   "game_count": 16,
    "nfl_all_count": 0,
    "tbd_count": 0,
    "estimated_count": 0,
@@ -7234,6 +7369,19 @@
     },
     {
      "date": "2026-08-27",
+     "sport": "wnba",
+     "phase": "Regular Season",
+     "label": "Valkyries at New York Liberty",
+     "priority": true,
+     "source": "wnba_valkyries_2026.txt",
+     "review": "https://www.oursportscentral.com/services/releases/goldn-state-valkyries-announce-local-television-and-radio-broadcast-schedule/n-6353443",
+     "info_only": true,
+     "start_pt": "17:00",
+     "start_min": 1020,
+     "note": "Audacy App only (not on 95.7) - info-only"
+    },
+    {
+     "date": "2026-08-27",
      "sport": "mlb",
      "start_pt": "18:45",
      "start_min": 1125,
@@ -7302,7 +7450,7 @@
     }
    ],
    "free_minutes": 834,
-   "game_count": 11,
+   "game_count": 12,
    "nfl_all_count": 3,
    "tbd_count": 0,
    "estimated_count": 0,
@@ -8302,6 +8450,19 @@
     },
     {
      "date": "2026-08-30",
+     "sport": "wnba",
+     "phase": "Regular Season",
+     "label": "Valkyries at Portland Fire",
+     "priority": true,
+     "source": "wnba_valkyries_2026.txt",
+     "review": "https://www.oursportscentral.com/services/releases/goldn-state-valkyries-announce-local-television-and-radio-broadcast-schedule/n-6353443",
+     "info_only": true,
+     "start_pt": "16:00",
+     "start_min": 960,
+     "note": "Audacy App only (not on 95.7) - info-only; last game before the FIBA World Cup break"
+    },
+    {
+     "date": "2026-08-30",
      "sport": "mlb",
      "start_pt": "16:20",
      "start_min": 980,
@@ -8324,9 +8485,9 @@
      "end_t": "3:51 PM"
     },
     {
-     "start": 980,
+     "start": 960,
      "end": 1144,
-     "start_t": "4:20 PM",
+     "start_t": "4:00 PM",
      "end_t": "7:04 PM"
     }
    ],
@@ -8340,10 +8501,10 @@
     },
     {
      "start": 951,
-     "end": 980,
+     "end": 960,
      "start_t": "3:51 PM",
-     "end_t": "4:20 PM",
-     "minutes": 29
+     "end_t": "4:00 PM",
+     "minutes": 9
     },
     {
      "start": 1144,
@@ -8353,8 +8514,8 @@
      "minutes": 296
     }
    ],
-   "free_minutes": 880,
-   "game_count": 14,
+   "free_minutes": 860,
+   "game_count": 15,
    "nfl_all_count": 0,
    "tbd_count": 0,
    "estimated_count": 0,
@@ -13331,6 +13492,19 @@
     },
     {
      "date": "2026-09-18",
+     "sport": "wnba",
+     "phase": "Regular Season",
+     "label": "Valkyries vs Portland Fire",
+     "priority": true,
+     "source": "wnba_valkyries_2026.txt",
+     "review": "https://www.oursportscentral.com/services/releases/goldn-state-valkyries-announce-local-television-and-radio-broadcast-schedule/n-6353443",
+     "radio": "95.7 The Game (KGMZ-FM)",
+     "start_pt": "19:00",
+     "start_min": 1140,
+     "note": "season resumes after the FIBA World Cup break (Aug 31 - Sep 16)"
+    },
+    {
+     "date": "2026-09-18",
      "sport": "mlb",
      "start_pt": "19:15",
      "start_min": 1155,
@@ -13370,7 +13544,7 @@
     }
    ],
    "free_minutes": 1061,
-   "game_count": 15,
+   "game_count": 16,
    "nfl_all_count": 0,
    "tbd_count": 0,
    "estimated_count": 0,
@@ -13638,6 +13812,19 @@
     },
     {
      "date": "2026-09-19",
+     "sport": "wnba",
+     "phase": "Regular Season",
+     "label": "Valkyries vs Seattle Storm",
+     "priority": true,
+     "source": "wnba_valkyries_2026.txt",
+     "review": "https://www.oursportscentral.com/services/releases/goldn-state-valkyries-announce-local-television-and-radio-broadcast-schedule/n-6353443",
+     "radio": "95.7 The Game (KGMZ-FM)",
+     "start_pt": "18:00",
+     "start_min": 1080,
+     "note": "official 2026 broadcast schedule (club release 2026-04-25)"
+    },
+    {
+     "date": "2026-09-19",
      "sport": "mlb",
      "start_pt": "18:10",
      "start_min": 1090,
@@ -13692,7 +13879,7 @@
     }
    ],
    "free_minutes": 908,
-   "game_count": 19,
+   "game_count": 20,
    "nfl_all_count": 0,
    "tbd_count": 0,
    "estimated_count": 0,
@@ -14575,6 +14762,19 @@
     },
     {
      "date": "2026-09-22",
+     "sport": "wnba",
+     "phase": "Regular Season",
+     "label": "Valkyries at Portland Fire",
+     "priority": true,
+     "source": "wnba_valkyries_2026.txt",
+     "review": "https://www.oursportscentral.com/services/releases/goldn-state-valkyries-announce-local-television-and-radio-broadcast-schedule/n-6353443",
+     "radio": "95.7 The Game (KGMZ-FM)",
+     "start_pt": "19:00",
+     "start_min": 1140,
+     "note": "road game but still on 95.7 The Game per the club's radio column"
+    },
+    {
+     "date": "2026-09-22",
      "sport": "mlb",
      "start_pt": "19:10",
      "start_min": 1150,
@@ -14627,7 +14827,7 @@
     }
    ],
    "free_minutes": 897,
-   "game_count": 17,
+   "game_count": 18,
    "nfl_all_count": 0,
    "tbd_count": 0,
    "estimated_count": 0,
@@ -15119,6 +15319,19 @@
     },
     {
      "date": "2026-09-24",
+     "sport": "wnba",
+     "phase": "Regular Season",
+     "label": "Valkyries at Los Angeles Sparks",
+     "priority": true,
+     "source": "wnba_valkyries_2026.txt",
+     "review": "https://www.oursportscentral.com/services/releases/goldn-state-valkyries-announce-local-television-and-radio-broadcast-schedule/n-6353443",
+     "radio": "95.7 The Game (KGMZ-FM)",
+     "start_pt": "19:00",
+     "start_min": 1140,
+     "note": "regular-season finale"
+    },
+    {
+     "date": "2026-09-24",
      "sport": "mlb",
      "start_pt": "19:10",
      "start_min": 1150,
@@ -15171,7 +15384,7 @@
     }
    ],
    "free_minutes": 712,
-   "game_count": 14,
+   "game_count": 15,
    "nfl_all_count": 1,
    "tbd_count": 0,
    "estimated_count": 0,
@@ -15797,7 +16010,7 @@
   {
    "date": "2026-09-27",
    "weekday": "Sun",
-   "status": "PARTIAL",
+   "status": "NOT FREE \u2014 TIME TBD",
    "games": [
     {
      "date": "2026-09-27",
@@ -16267,6 +16480,19 @@
      "wwo": true,
      "wwo_slot": "SNF",
      "wwo_event": "https://www.westwoodonesports.com/events/548494"
+    },
+    {
+     "date": "2026-09-27",
+     "sport": "wnba",
+     "phase": "Playoffs",
+     "label": "WNBA playoffs - First Round Game 1",
+     "priority": true,
+     "source": "wnba_valkyries_2026.txt",
+     "review": "https://www.espn.com/wnba/story/_/id/49882118/wnba-playoffs-2026-schedule-games-first-round-semifinals-finals-scores-results-news-highlights",
+     "radio": "presumed 95.7 The Game / Audacy (per-game carriage unpublished)",
+     "start_pt": null,
+     "start_min": null,
+     "note": "playoffs open Sun Sep 27 (ESPN 2026-09-09); Valkyries clinched 2026-08-17; start time TBA"
     }
    ],
    "blocked": [
@@ -16309,7 +16535,7 @@
    "free_minutes": 851,
    "game_count": 29,
    "nfl_all_count": 13,
-   "tbd_count": 0,
+   "tbd_count": 1,
    "estimated_count": 0,
    "conditional_count": 0,
    "has_priority": true,
@@ -16386,6 +16612,19 @@
      "tbd_count": 4,
      "label": "MLB postseason - 4 game(s), teams & times UNCONFIRMED",
      "source": "mlb_2026_postseason_tbd.txt"
+    },
+    {
+     "date": "2026-09-29",
+     "sport": "wnba",
+     "phase": "Playoffs",
+     "label": "WNBA playoffs - First Round Game 2",
+     "priority": true,
+     "source": "wnba_valkyries_2026.txt",
+     "review": "https://www.espn.com/wnba/story/_/id/49882118/wnba-playoffs-2026-schedule-games-first-round-semifinals-finals-scores-results-news-highlights",
+     "radio": "presumed 95.7 The Game / Audacy (per-game carriage unpublished)",
+     "start_pt": null,
+     "start_min": null,
+     "note": "Game 2 window for the first round is Tue Sep 29 OR Wed Sep 30 (ESPN 2026-09-09); both dates blocked, flagged"
     }
    ],
    "blocked": [],
@@ -16401,10 +16640,10 @@
    "free_minutes": 1440,
    "game_count": 0,
    "nfl_all_count": 0,
-   "tbd_count": 4,
+   "tbd_count": 5,
    "estimated_count": 0,
    "conditional_count": 0,
-   "has_priority": false,
+   "has_priority": true,
    "has_sf": false
   },
   {
@@ -16420,6 +16659,19 @@
      "tbd_count": 4,
      "label": "MLB postseason - 4 game(s), teams & times UNCONFIRMED",
      "source": "mlb_2026_postseason_tbd.txt"
+    },
+    {
+     "date": "2026-09-30",
+     "sport": "wnba",
+     "phase": "Playoffs",
+     "label": "WNBA playoffs - First Round Game 2",
+     "priority": true,
+     "source": "wnba_valkyries_2026.txt",
+     "review": "https://www.espn.com/wnba/story/_/id/49882118/wnba-playoffs-2026-schedule-games-first-round-semifinals-finals-scores-results-news-highlights",
+     "radio": "presumed 95.7 The Game / Audacy (per-game carriage unpublished)",
+     "start_pt": null,
+     "start_min": null,
+     "note": "Game 2 window for the first round is Tue Sep 29 OR Wed Sep 30 (ESPN 2026-09-09); both dates blocked, flagged"
     }
    ],
    "blocked": [],
@@ -16435,10 +16687,10 @@
    "free_minutes": 1440,
    "game_count": 0,
    "nfl_all_count": 0,
-   "tbd_count": 4,
+   "tbd_count": 5,
    "estimated_count": 0,
    "conditional_count": 0,
-   "has_priority": false,
+   "has_priority": true,
    "has_sf": false
   },
   {
@@ -16488,6 +16740,17 @@
      "tbd_count": 4,
      "label": "MLB postseason - 4 game(s), teams & times UNCONFIRMED",
      "source": "mlb_2026_postseason_tbd.txt"
+    },
+    {
+     "date": "2026-10-01",
+     "sport": "wnba",
+     "start_pt": null,
+     "start_min": null,
+     "tbd_count": 1,
+     "label": "[conditional] WNBA First Round Game 3 (only if the Valkyries' series is tied 1-1) - ESPN round window",
+     "conditional": true,
+     "source": "wnba_2026_playoffs_conditional.txt",
+     "review": "https://www.espn.com/wnba/story/_/id/49882118/wnba-playoffs-2026-schedule-games-first-round-semifinals-finals-scores-results-news-highlights"
     }
    ],
    "blocked": [
@@ -16519,15 +16782,27 @@
    "nfl_all_count": 1,
    "tbd_count": 4,
    "estimated_count": 0,
-   "conditional_count": 0,
+   "conditional_count": 1,
    "has_priority": true,
    "has_sf": false
   },
   {
    "date": "2026-10-02",
    "weekday": "Fri",
-   "status": "FREE",
-   "games": [],
+   "status": "UNCONFIRMED",
+   "games": [
+    {
+     "date": "2026-10-02",
+     "sport": "wnba",
+     "start_pt": null,
+     "start_min": null,
+     "tbd_count": 1,
+     "label": "[conditional] WNBA First Round Game 3 (only if the Valkyries' series is tied 1-1) - ESPN round window",
+     "conditional": true,
+     "source": "wnba_2026_playoffs_conditional.txt",
+     "review": "https://www.espn.com/wnba/story/_/id/49882118/wnba-playoffs-2026-schedule-games-first-round-semifinals-finals-scores-results-news-highlights"
+    }
+   ],
    "blocked": [],
    "free": [
     {
@@ -16543,7 +16818,7 @@
    "nfl_all_count": 0,
    "tbd_count": 0,
    "estimated_count": 0,
-   "conditional_count": 0,
+   "conditional_count": 1,
    "has_priority": false,
    "has_sf": false
   },
@@ -16957,9 +17232,20 @@
      "sport": "mlb",
      "start_pt": null,
      "start_min": null,
-     "tbd_count": 4,
-     "label": "MLB postseason - 4 game(s), teams & times UNCONFIRMED",
+     "tbd_count": 2,
+     "label": "MLB postseason - 2 game(s), teams & times UNCONFIRMED",
      "source": "mlb_2026_postseason_tbd.txt"
+    },
+    {
+     "date": "2026-10-04",
+     "sport": "wnba",
+     "start_pt": null,
+     "start_min": null,
+     "tbd_count": 1,
+     "label": "[conditional] WNBA Semifinals Game 1 (only if the Valkyries advance) - ESPN round window",
+     "conditional": true,
+     "source": "wnba_2026_playoffs_conditional.txt",
+     "review": "https://www.espn.com/wnba/story/_/id/49882118/wnba-playoffs-2026-schedule-games-first-round-semifinals-finals-scores-results-news-highlights"
     }
    ],
    "blocked": [
@@ -17002,9 +17288,9 @@
    "free_minutes": 616,
    "game_count": 15,
    "nfl_all_count": 13,
-   "tbd_count": 4,
+   "tbd_count": 2,
    "estimated_count": 0,
-   "conditional_count": 0,
+   "conditional_count": 1,
    "has_priority": true,
    "has_sf": true
   },
@@ -17181,6 +17467,17 @@
      "tbd_count": 4,
      "label": "MLB postseason - 4 game(s), teams & times UNCONFIRMED",
      "source": "mlb_2026_postseason_tbd.txt"
+    },
+    {
+     "date": "2026-10-07",
+     "sport": "wnba",
+     "start_pt": null,
+     "start_min": null,
+     "tbd_count": 1,
+     "label": "[conditional] WNBA Semifinals Game 2 (only if the Valkyries advance) - ESPN round window",
+     "conditional": true,
+     "source": "wnba_2026_playoffs_conditional.txt",
+     "review": "https://www.espn.com/wnba/story/_/id/49882118/wnba-playoffs-2026-schedule-games-first-round-semifinals-finals-scores-results-news-highlights"
     }
    ],
    "blocked": [
@@ -17212,7 +17509,7 @@
    "nfl_all_count": 0,
    "tbd_count": 4,
    "estimated_count": 0,
-   "conditional_count": 0,
+   "conditional_count": 1,
    "has_priority": true,
    "has_sf": false
   },
@@ -17311,6 +17608,17 @@
      "tbd_count": 2,
      "label": "MLB postseason - 2 game(s), teams & times UNCONFIRMED",
      "source": "mlb_2026_postseason_tbd.txt"
+    },
+    {
+     "date": "2026-10-09",
+     "sport": "wnba",
+     "start_pt": null,
+     "start_min": null,
+     "tbd_count": 1,
+     "label": "[conditional] WNBA Semifinals Game 3 (only if the Valkyries advance) - ESPN round window",
+     "conditional": true,
+     "source": "wnba_2026_playoffs_conditional.txt",
+     "review": "https://www.espn.com/wnba/story/_/id/49882118/wnba-playoffs-2026-schedule-games-first-round-semifinals-finals-scores-results-news-highlights"
     }
    ],
    "blocked": [],
@@ -17328,7 +17636,7 @@
    "nfl_all_count": 0,
    "tbd_count": 2,
    "estimated_count": 0,
-   "conditional_count": 0,
+   "conditional_count": 1,
    "has_priority": false,
    "has_sf": false
   },
@@ -17742,6 +18050,17 @@
      "tbd_count": 1,
      "label": "MLB postseason - 1 game(s), teams & times UNCONFIRMED",
      "source": "mlb_2026_postseason_tbd.txt"
+    },
+    {
+     "date": "2026-10-11",
+     "sport": "wnba",
+     "start_pt": null,
+     "start_min": null,
+     "tbd_count": 1,
+     "label": "[conditional] WNBA Semifinals Game 4 (only if the Valkyries advance) - ESPN round window",
+     "conditional": true,
+     "source": "wnba_2026_playoffs_conditional.txt",
+     "review": "https://www.espn.com/wnba/story/_/id/49882118/wnba-playoffs-2026-schedule-games-first-round-semifinals-finals-scores-results-news-highlights"
     }
    ],
    "blocked": [
@@ -17799,7 +18118,7 @@
    "nfl_all_count": 12,
    "tbd_count": 1,
    "estimated_count": 0,
-   "conditional_count": 0,
+   "conditional_count": 1,
    "has_priority": true,
    "has_sf": true
   },
@@ -17973,6 +18292,17 @@
      "tbd_count": 1,
      "label": "MLB postseason - 1 game(s), teams & times UNCONFIRMED",
      "source": "mlb_2026_postseason_tbd.txt"
+    },
+    {
+     "date": "2026-10-14",
+     "sport": "wnba",
+     "start_pt": null,
+     "start_min": null,
+     "tbd_count": 1,
+     "label": "[conditional] WNBA Semifinals Game 5 (only if the Valkyries advance) - ESPN round window",
+     "conditional": true,
+     "source": "wnba_2026_playoffs_conditional.txt",
+     "review": "https://www.espn.com/wnba/story/_/id/49882118/wnba-playoffs-2026-schedule-games-first-round-semifinals-finals-scores-results-news-highlights"
     }
    ],
    "blocked": [
@@ -18004,7 +18334,7 @@
    "nfl_all_count": 0,
    "tbd_count": 1,
    "estimated_count": 0,
-   "conditional_count": 0,
+   "conditional_count": 1,
    "has_priority": false,
    "has_sf": false
   },
@@ -18257,6 +18587,17 @@
      "flag": "KICKOFF TIME TBD - no time listed on official Cal schedule.",
      "start_min": null,
      "pt_date": "2026-10-17"
+    },
+    {
+     "date": "2026-10-17",
+     "sport": "wnba",
+     "start_pt": null,
+     "start_min": null,
+     "tbd_count": 1,
+     "label": "[conditional] WNBA Finals Game 1 (only if the Valkyries advance) - ESPN round window",
+     "conditional": true,
+     "source": "wnba_2026_playoffs_conditional.txt",
+     "review": "https://www.espn.com/wnba/story/_/id/49882118/wnba-playoffs-2026-schedule-games-first-round-semifinals-finals-scores-results-news-highlights"
     }
    ],
    "blocked": [
@@ -18301,7 +18642,7 @@
    "nfl_all_count": 0,
    "tbd_count": 2,
    "estimated_count": 2,
-   "conditional_count": 0,
+   "conditional_count": 1,
    "has_priority": true,
    "has_sf": false
   },
@@ -18641,6 +18982,17 @@
      "tbd_count": 2,
      "label": "MLB postseason - 2 game(s), teams & times UNCONFIRMED",
      "source": "mlb_2026_postseason_tbd.txt"
+    },
+    {
+     "date": "2026-10-19",
+     "sport": "wnba",
+     "start_pt": null,
+     "start_min": null,
+     "tbd_count": 1,
+     "label": "[conditional] WNBA Finals game (only if the Valkyries advance) - Finals window Oct 17-31",
+     "conditional": true,
+     "source": "wnba_2026_playoffs_conditional.txt",
+     "review": "https://www.espn.com/wnba/story/_/id/49882118/wnba-playoffs-2026-schedule-games-first-round-semifinals-finals-scores-results-news-highlights"
     }
    ],
    "blocked": [
@@ -18672,7 +19024,7 @@
    "nfl_all_count": 0,
    "tbd_count": 2,
    "estimated_count": 0,
-   "conditional_count": 0,
+   "conditional_count": 1,
    "has_priority": true,
    "has_sf": true
   },
@@ -18742,7 +19094,7 @@
   {
    "date": "2026-10-21",
    "weekday": "Wed",
-   "status": "PARTIAL",
+   "status": "UNCONFIRMED",
    "games": [
     {
      "date": "2026-10-21",
@@ -18758,6 +19110,17 @@
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401909092/x",
      "note": "opening week @ Crypto.com Arena"
+    },
+    {
+     "date": "2026-10-21",
+     "sport": "wnba",
+     "start_pt": null,
+     "start_min": null,
+     "tbd_count": 1,
+     "label": "[conditional] WNBA Finals game (only if the Valkyries advance) - Finals window Oct 17-31",
+     "conditional": true,
+     "source": "wnba_2026_playoffs_conditional.txt",
+     "review": "https://www.espn.com/wnba/story/_/id/49882118/wnba-playoffs-2026-schedule-games-first-round-semifinals-finals-scores-results-news-highlights"
     }
    ],
    "blocked": [
@@ -18789,7 +19152,7 @@
    "nfl_all_count": 0,
    "tbd_count": 0,
    "estimated_count": 0,
-   "conditional_count": 0,
+   "conditional_count": 1,
    "has_priority": true,
    "has_sf": false
   },
@@ -18909,6 +19272,17 @@
      "tbd_count": 1,
      "label": "MLB postseason - 1 game(s), teams & times UNCONFIRMED",
      "source": "mlb_2026_postseason_tbd.txt"
+    },
+    {
+     "date": "2026-10-23",
+     "sport": "wnba",
+     "start_pt": null,
+     "start_min": null,
+     "tbd_count": 1,
+     "label": "[conditional] WNBA Finals game (only if the Valkyries advance) - Finals window Oct 17-31",
+     "conditional": true,
+     "source": "wnba_2026_playoffs_conditional.txt",
+     "review": "https://www.espn.com/wnba/story/_/id/49882118/wnba-playoffs-2026-schedule-games-first-round-semifinals-finals-scores-results-news-highlights"
     }
    ],
    "blocked": [
@@ -18940,7 +19314,7 @@
    "nfl_all_count": 0,
    "tbd_count": 1,
    "estimated_count": 0,
-   "conditional_count": 0,
+   "conditional_count": 1,
    "has_priority": true,
    "has_sf": false
   },
@@ -19098,7 +19472,7 @@
   {
    "date": "2026-10-25",
    "weekday": "Sun",
-   "status": "PARTIAL",
+   "status": "UNCONFIRMED",
    "games": [
     {
      "date": "2026-10-25",
@@ -19314,6 +19688,17 @@
      "wwo": true,
      "wwo_slot": "SNF",
      "wwo_event": "https://www.westwoodonesports.com/events/548498"
+    },
+    {
+     "date": "2026-10-25",
+     "sport": "wnba",
+     "start_pt": null,
+     "start_min": null,
+     "tbd_count": 1,
+     "label": "[conditional] WNBA Finals game (only if the Valkyries advance) - Finals window Oct 17-31",
+     "conditional": true,
+     "source": "wnba_2026_playoffs_conditional.txt",
+     "review": "https://www.espn.com/wnba/story/_/id/49882118/wnba-playoffs-2026-schedule-games-first-round-semifinals-finals-scores-results-news-highlights"
     }
    ],
    "blocked": [
@@ -19371,7 +19756,7 @@
    "nfl_all_count": 11,
    "tbd_count": 0,
    "estimated_count": 0,
-   "conditional_count": 0,
+   "conditional_count": 1,
    "has_priority": true,
    "has_sf": true
   },
@@ -19485,6 +19870,17 @@
      "tbd_count": 1,
      "label": "MLB postseason - 1 game(s), teams & times UNCONFIRMED",
      "source": "mlb_2026_postseason_tbd.txt"
+    },
+    {
+     "date": "2026-10-27",
+     "sport": "wnba",
+     "start_pt": null,
+     "start_min": null,
+     "tbd_count": 1,
+     "label": "[conditional] WNBA Finals game (only if the Valkyries advance) - Finals window Oct 17-31",
+     "conditional": true,
+     "source": "wnba_2026_playoffs_conditional.txt",
+     "review": "https://www.espn.com/wnba/story/_/id/49882118/wnba-playoffs-2026-schedule-games-first-round-semifinals-finals-scores-results-news-highlights"
     }
    ],
    "blocked": [
@@ -19516,7 +19912,7 @@
    "nfl_all_count": 0,
    "tbd_count": 1,
    "estimated_count": 0,
-   "conditional_count": 0,
+   "conditional_count": 1,
    "has_priority": true,
    "has_sf": false
   },
@@ -19612,7 +20008,7 @@
   {
    "date": "2026-10-29",
    "weekday": "Thu",
-   "status": "PARTIAL",
+   "status": "UNCONFIRMED",
    "games": [
     {
      "date": "2026-10-29",
@@ -19647,6 +20043,17 @@
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401892610/x",
      "note": "SAP Center"
+    },
+    {
+     "date": "2026-10-29",
+     "sport": "wnba",
+     "start_pt": null,
+     "start_min": null,
+     "tbd_count": 1,
+     "label": "[conditional] WNBA Finals game (only if the Valkyries advance) - Finals window Oct 17-31",
+     "conditional": true,
+     "source": "wnba_2026_playoffs_conditional.txt",
+     "review": "https://www.espn.com/wnba/story/_/id/49882118/wnba-playoffs-2026-schedule-games-first-round-semifinals-finals-scores-results-news-highlights"
     }
    ],
    "blocked": [
@@ -19678,7 +20085,7 @@
    "nfl_all_count": 1,
    "tbd_count": 0,
    "estimated_count": 0,
-   "conditional_count": 0,
+   "conditional_count": 1,
    "has_priority": true,
    "has_sf": false
   },
@@ -19830,6 +20237,17 @@
      "flag": "KICKOFF TIME TBA per official Stanford schedule.",
      "start_min": null,
      "pt_date": "2026-10-31"
+    },
+    {
+     "date": "2026-10-31",
+     "sport": "wnba",
+     "start_pt": null,
+     "start_min": null,
+     "tbd_count": 1,
+     "label": "[conditional] WNBA Finals Game 7 (last possible date of the 2026 season) - ESPN 2026-09-09",
+     "conditional": true,
+     "source": "wnba_2026_playoffs_conditional.txt",
+     "review": "https://www.espn.com/wnba/story/_/id/49882118/wnba-playoffs-2026-schedule-games-first-round-semifinals-finals-scores-results-news-highlights"
     }
    ],
    "blocked": [
@@ -19861,7 +20279,7 @@
    "nfl_all_count": 0,
    "tbd_count": 4,
    "estimated_count": 0,
-   "conditional_count": 0,
+   "conditional_count": 1,
    "has_priority": true,
    "has_sf": false
   },
@@ -30098,7 +30516,7 @@
   },
   {
    "kind": "TBD_TIME",
-   "msg": "2026-10-04: 4 MLB postseason game(s) have no confirmed time or teams (MLB Stats API returns placeholder 07:33:00Z + placeholder team ids)"
+   "msg": "2026-10-04: 2 MLB postseason game(s) have no confirmed time or teams (MLB Stats API returns placeholder 07:33:00Z + placeholder team ids)"
   },
   {
    "kind": "TBD_TIME",
@@ -30377,6 +30795,50 @@
    "msg": "2026-09-26 San Jose Sharks at Golden Knights: Sharks preseason airs only 'select' games on KFOX (unspecified which) - listed, never blocking."
   },
   {
+   "kind": "PRESEASON_INFO_ONLY",
+   "msg": "2026-08-07 Valkyries at Dallas Wings: carried only on the Audacy app (95.7 The Game's 2026 column for this game does NOT list the over-the-air flagship) - listed, never blocking."
+  },
+  {
+   "kind": "PRESEASON_INFO_ONLY",
+   "msg": "2026-08-09 Valkyries at Los Angeles Sparks: carried only on the Audacy app (95.7 The Game's 2026 column for this game does NOT list the over-the-air flagship) - listed, never blocking."
+  },
+  {
+   "kind": "PRESEASON_INFO_ONLY",
+   "msg": "2026-08-21 Valkyries at Chicago Sky: carried only on the Audacy app (95.7 The Game's 2026 column for this game does NOT list the over-the-air flagship) - listed, never blocking."
+  },
+  {
+   "kind": "PRESEASON_INFO_ONLY",
+   "msg": "2026-08-24 Valkyries at Minnesota Lynx: carried only on the Audacy app (95.7 The Game's 2026 column for this game does NOT list the over-the-air flagship) - listed, never blocking."
+  },
+  {
+   "kind": "PRESEASON_INFO_ONLY",
+   "msg": "2026-08-26 Valkyries at Connecticut Sun: carried only on the Audacy app (95.7 The Game's 2026 column for this game does NOT list the over-the-air flagship) - listed, never blocking."
+  },
+  {
+   "kind": "PRESEASON_INFO_ONLY",
+   "msg": "2026-08-27 Valkyries at New York Liberty: carried only on the Audacy app (95.7 The Game's 2026 column for this game does NOT list the over-the-air flagship) - listed, never blocking."
+  },
+  {
+   "kind": "PRESEASON_INFO_ONLY",
+   "msg": "2026-08-30 Valkyries at Portland Fire: carried only on the Audacy app (95.7 The Game's 2026 column for this game does NOT list the over-the-air flagship) - listed, never blocking."
+  },
+  {
+   "kind": "TBD_TIME",
+   "msg": "2026-09-27 WNBA playoffs - First Round Game 1: WNBA playoff game - the Valkyries clinched 2026-08-17 but the round dates lock in only as the bracket posts"
+  },
+  {
+   "kind": "TBD_TIME",
+   "msg": "2026-09-29 WNBA playoffs - First Round Game 2: WNBA playoff game - the Valkyries clinched 2026-08-17 but the round dates lock in only as the bracket posts"
+  },
+  {
+   "kind": "TBD_TIME",
+   "msg": "2026-09-30 WNBA playoffs - First Round Game 2: WNBA playoff game - the Valkyries clinched 2026-08-17 but the round dates lock in only as the bracket posts"
+  },
+  {
+   "kind": "IRREGULARITY",
+   "msg": "WNBA playoffs: the club's radio partnership covers all games on the Audacy app and home games on 95.7 The Game; per-game playoff radio carriage is not published, so the Sep 27 / Sep 29-30 playoff rows are blocked on the presumption that a Bay Area playoff game airs locally. Re-check when the bracket is published."
+  },
+  {
    "kind": "ESTIMATED_SLOT",
    "msg": "2026-10-03 Westwood One: Notre Dame at North Carolina: kickoff still TBD - blocking BOTH estimated showcase windows (3:30 / 7:30 PM ET = 12:30 / 4:30 PM PT). Day is NOT FREE; replace with the real kickoff when the conference announces it (6-12 days out)."
   },
@@ -30446,7 +30908,7 @@
   },
   {
    "kind": "FLEX_WINDOW",
-   "msg": "179 league-wide NFL games after 2026-09-14 sit in the Sunday 1:00 PM / 4:05 PM / 4:25 PM ET windows and can still be moved by NFL flex scheduling (flex begins Week 5; times as printed by the source on 2026-09-11 and re-verified 2026-09-15 vs the WWO page + nfl.com week pages - no changes found). Thursday/Sunday/Monday night, international and scheduled Saturday games are locked. Because ALL league-wide NFL games block free time, a flex move shifts the affected day's free windows - re-run the build after each Tuesday announcement."
+   "msg": "179 league-wide NFL games after 2026-09-16 sit in the Sunday 1:00 PM / 4:05 PM / 4:25 PM ET windows and can still be moved by NFL flex scheduling (flex begins Week 5; times as printed by the source on 2026-09-11 and re-verified 2026-09-15 vs the WWO page + nfl.com week pages - no changes found). Thursday/Sunday/Monday night, international and scheduled Saturday games are locked. Because ALL league-wide NFL games block free time, a flex move shifts the affected day's free windows - re-run the build after each Tuesday announcement."
   },
   {
    "kind": "WK18_TBD",
@@ -30497,8 +30959,28 @@
    "msg": "MLB: the tracked 2026 season (regular + postseason) ends with the World Series placeholders on 2026-10-31 (last date in the official bracket calendar). No MLB games exist Nov 1, 2026 - Feb 28, 2027 EXCEPT 2027 Spring Training, which opens Fri Feb 19, 2027 (all 30 clubs) per MLB's press release of Sep 4, 2026 - out of scope per spec (2026 season only) and NOT blocked; re-run after the 2027 ST schedule files publish if you want them included."
   },
   {
+   "kind": "VERIFIED_PASS_2026_09_16",
+   "msg": "2026-09-16 independent audit + live re-verification pass: (1) scripts/audit.py (a second, independent implementation) recomputes every day from data/raw/* and matches the generated file on all 212 days (free windows, blocked merges, 24h partition, day status, per-day game census, UTC->PT and ET->PT conversions, priority rules) - AUDIT PASSED. (2) MLB live Stats API check: per-date game counts for 2026-08-01..2026-09-27 are identical to the raw files on all 58 dates (totalGames 778), and game-by-game (time + away/home team ids) spot-checks on Sep 16-26 match exactly. (3) WWO NCAA football page re-fetched: the same 10 broadcasts, zero deltas. (4) WWO NFL page re-fetched (all 4 chunks): every dated broadcast + 8 TBA rows match. (5) Local fixtures spot-checked vs live sources: Cal vs Wagner Sep 19 12:30 PM PT (iheart/ACC Network + visitberkeley '12:30 p.m. PT'), Stanford at Duke Sep 19 1:00 PM PT (= 4 PM ET, fayobserver/Yahoo Sep 14), Earthquakes vs LAFC Sep 19 4:30 PM PT at Levi's (sjearthquakes.com 2026 schedule release + VTA). (6) Pro Bowl 2027 date still unresolved (Feb 7 vs Tue Feb 9) - both candidate days remain blocked and flagged."
+  },
+  {
+   "kind": "MLB_POSTSEASON_CORRECTION",
+   "msg": "CORRECTION 2026-09-16: the live MLB Stats API now reports 2026-10-04 as 2 postseason placeholder games (the 2026-08-28 transcription had 4); the postseason placeholder total is therefore 53, not 55. All other 27 postseason dates are unchanged and every date stays 'NOT FREE - TIME TBD'. Raw file updated; see the file header for the exact query."
+  },
+  {
    "kind": "VERIFIED_PASS_2026_09_11",
    "msg": "Superseded-pass note kept for the audit trail: 2026-09-11 MLB Stats API re-query for 2026-09-10/11/12 matched the raw file 35/35 games (dates, times, team ids). The 'sparse' Tue/Thu slate days (5 games on Sep 10, 3 on Sep 21) are genuine scheduled light days, not data gaps."
+  },
+  {
+   "kind": "UNBLOCKED_TBD",
+   "msg": "2026-09-27: 'WNBA playoffs - First Round Game 1' has no confirmed start time - the day is marked NOT FREE (TIME TBD) and its free windows (if any are shown) are provisional; the game itself does not block a specific window yet."
+  },
+  {
+   "kind": "UNBLOCKED_TBD",
+   "msg": "2026-09-29: 'WNBA playoffs - First Round Game 2' has no confirmed start time - the day is marked NOT FREE (TIME TBD) and its free windows (if any are shown) are provisional; the game itself does not block a specific window yet."
+  },
+  {
+   "kind": "UNBLOCKED_TBD",
+   "msg": "2026-09-30: 'WNBA playoffs - First Round Game 2' has no confirmed start time - the day is marked NOT FREE (TIME TBD) and its free windows (if any are shown) are provisional; the game itself does not block a specific window yet."
   },
   {
    "kind": "UNBLOCKED_TBD",

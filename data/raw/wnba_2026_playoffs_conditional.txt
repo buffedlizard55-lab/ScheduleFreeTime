@@ -1,0 +1,25 @@
+# Golden State Valkyries - 2026 WNBA playoff dates that depend on series outcomes.
+# CONDITIONAL: these never block. They mark the day UNCONFIRMED so free time is labelled,
+# not asserted. Source: ESPN "WNBA playoffs schedule 2026: Dates released for postseason"
+# (2026-09-09) https://www.espn.com/wnba/story/_/id/49882118/wnba-playoffs-2026-schedule-games-first-round-semifinals-finals-scores-results-news-highlights
+# + official club release confirming the Valkyries are IN (clinched 2026-08-17):
+# https://valkyries.wnba.com/news/valkyries-clinch-postseason-berth-for-second-straight-season
+# First round is best-of-three: the Game 3 dates only exist if the series is 1-1.
+# Semifinals (best-of-five, opens Oct 4) and Finals (best-of-seven, opens Oct 17, last
+# possible date Oct 31) only happen if the Valkyries keep winning.
+# Format: date|1|label
+2026-10-01|1|WNBA First Round Game 3 (only if the Valkyries' series is tied 1-1) - ESPN round window
+2026-10-02|1|WNBA First Round Game 3 (only if the Valkyries' series is tied 1-1) - ESPN round window
+2026-10-04|1|WNBA Semifinals Game 1 (only if the Valkyries advance) - ESPN round window
+2026-10-07|1|WNBA Semifinals Game 2 (only if the Valkyries advance) - ESPN round window
+2026-10-09|1|WNBA Semifinals Game 3 (only if the Valkyries advance) - ESPN round window
+2026-10-11|1|WNBA Semifinals Game 4 (only if the Valkyries advance) - ESPN round window
+2026-10-14|1|WNBA Semifinals Game 5 (only if the Valkyries advance) - ESPN round window
+2026-10-17|1|WNBA Finals Game 1 (only if the Valkyries advance) - ESPN round window
+2026-10-19|1|WNBA Finals game (only if the Valkyries advance) - Finals window Oct 17-31
+2026-10-21|1|WNBA Finals game (only if the Valkyries advance) - Finals window Oct 17-31
+2026-10-23|1|WNBA Finals game (only if the Valkyries advance) - Finals window Oct 17-31
+2026-10-25|1|WNBA Finals game (only if the Valkyries advance) - Finals window Oct 17-31
+2026-10-27|1|WNBA Finals game (only if the Valkyries advance) - Finals window Oct 17-31
+2026-10-29|1|WNBA Finals game (only if the Valkyries advance) - Finals window Oct 17-31
+2026-10-31|1|WNBA Finals Game 7 (last possible date of the 2026 season) - ESPN 2026-09-09

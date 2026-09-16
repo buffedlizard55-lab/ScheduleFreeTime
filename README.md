@@ -10,10 +10,12 @@ A moment counts as *busy* if any of these is on air:
 * **Stanford** NCAA football
 * **Cal** NCAA football
 * **Golden State Warriors** (NBA — every game is on 95.7 The Game)
+* **Golden State Valkyries** (WNBA — every game on the Audacy app; the games that air over the
+  air on 95.7 The Game block, the app-only road games are listed info-only)
 * **San Jose Sharks** (NHL — every regular-season game is on 98.5 KFOX)
 * **Westwood One NCAA football showcase** (national radio, Bay Area: KNBR)
 
-The Giants, Athletics, 49ers, Warriors and Sharks are flagged **high priority** (★), but every
+The Giants, Athletics, 49ers, Warriors, Valkyries and Sharks are flagged **high priority** (★), but every
 other game in the leagues above still blocks. 📻 marks the games on Westwood One national radio
 in the Bay Area (KNBR 680 AM / 104.5 FM): all 65 dated NFL broadcasts were matched 65/65 against
 the league table, and per the Cumulus press release (Sep 9, 2026) WWO also airs the **late-season
@@ -35,8 +37,15 @@ Days that depend on a team qualifying (MLS playoffs, ACC/CFP/bowls) stay **UNCON
 
 ```bash
 python3 scripts/build.py      # rebuild data + regenerate schedules.md + print the verification report
+python3 scripts/audit.py      # independent audit: recomputes every day from data/raw/* and diffs
 python3 -m http.server 8000   # then open the printed URL
 ```
+
+`scripts/audit.py` is a deliberately separate implementation (it does not import `build.py`): it
+re-reads the raw transcriptions, recomputes every blocked/free window, the day status, the per-day
+game census, the UTC→PT and ET→PT conversions and the priority flags, and exits non-zero on any
+mismatch. Run it after every build - the 2026-09-16 pass is what caught the MLB postseason
+placeholder change (Oct 4: 4 games → 2).
 
 The page needs HTTP (it fetches `data/processed/free_time.json`); opening `index.html`
 straight off the filesystem will not work.
@@ -63,6 +72,7 @@ straight off the filesystem will not work.
 | MLS (Earthquakes) | 120 min (2:00) | 90 min + ~15-min halftime + stoppage |
 | NBA (Warriors) | 138 min (2:18) | 2025-26 measured avg 2:18:32 tip-to-buzzer; guides converge ~2:15 |
 | NHL (Sharks) | 150 min (2:30) | Midpoint of reported 2:20–2:40 range (~2.5h typical, two 18-min intermissions) |
+| WNBA (Valkyries) | 125 min (2:05) | Midpoint of the reported ~2:00–2:10 range for a WNBA game (40 min of play + 15-min halftime) |
 
 Citations in `docs/VERIFICATION.md` §2; the UI inputs are editable if you prefer different
 assumptions (e.g. your original 150-min MLB / 180-min NFL guesses).
@@ -76,12 +86,14 @@ No manual entry anywhere. The pipeline reads hand-transcribed, source-attributed
 | `data/raw/teams_mlb.json` | all 30 MLB clubs (MLB Stats API) |
 | `data/raw/mlb_2026_regseason.txt` | 417 MLB games, Aug 1–31 |
 | `data/raw/mlb_2026_september.txt` | 361 MLB games, Sep 1–27 |
-| `data/raw/mlb_2026_postseason_tbd.txt` | 55 postseason games, all TBD (official bracket calendar, last date Oct 31) |
+| `data/raw/mlb_2026_postseason_tbd.txt` | 53 postseason games, all TBD (official bracket calendar, last date Oct 31; re-verified 2026-09-16) |
 | `data/raw/nfl_2026_pfr_regseason.txt` | **all 272 league-wide NFL regular-season games** (PFR league table, cross-checked vs nfl.com + 49ers.com) |
 | `data/raw/nfl_2026_pfr_preseason.txt` | all 49 preseason games (times only where official sources publish one) |
 | `data/raw/nfl_2027_postseason_tbd.txt` | WC Jan 16–18 / Div Jan 23–24 / CC Jan 31 / **Super Bowl LXI Feb 14, 2027 SoFi** + Pro Bowl Feb 9⚠(date conflict) |
 | `data/raw/nba_warriors_2026_27.txt` | 63 Warriors games (6 pre + 57 reg, ESPN rendered pages, per-game review links) |
 | `data/raw/nhl_sharks_2026_27.txt` | 68 Sharks games (4 pre info-only + 64 reg, ESPN rendered pages, per-game review links) |
+| `data/raw/wnba_valkyries_2026.txt` | 16 Valkyries games in window (9 blocking on 95.7 The Game, 7 Audacy-app-only) + 3 playoff TBD rows (berth clinched 2026-08-17) |
+| `data/raw/wnba_2026_playoffs_conditional.txt` | WNBA playoff round dates (Sep 27 – Oct 31) that depend on series outcomes |
 | `data/raw/westwoodone_nfl_2026.txt` | 65 WWO NFL broadcasts + 8 TBA placeholders (matched 65/65 vs the league table) |
 | `data/raw/westwoodone_ncaaf_2026.txt` | 10 WWO NCAA football Saturday broadcasts (2 timed, 8 TBD) |
 | `data/raw/mls_2026_playoffs_conditional.txt` | MLS playoff windows (Nov 18 – Dec 18) as SJ-conditional UNCONFIRMED days |
@@ -93,7 +105,11 @@ No manual entry anywhere. The pipeline reads hand-transcribed, source-attributed
 (incl. the 2026-09-11 passes: MLB re-matched against the live Stats API, 272-game/17-per-team
 NFL checks, the 49ers/Stanford/Cal/Earthquakes schedules matched to their official releases, and
 three 49ers kickoff-time **corrections** — Dec 17 TNF = 5:15 PM PT, Nov 29 vs SEA = 1:25 PM PT,
-Dec 6 at NYG = 10:00 AM PT — plus the 2026-09-14 pass: 65/65 Westwood One NFL broadcasts matched
+Dec 6 at NYG = 10:00 AM PT — plus the 2026-09-16 independent-audit pass: 778 MLB games' per-date counts matched the live Stats API on
+all 58 dates with game-level spot checks, the WWO NFL and NCAA-football pages re-verified with zero
+deltas, the postseason placeholder corrected (Oct 4: 4 → 2 games, total 55 → 53), next-game spot
+checks for Cal / Stanford / the Earthquakes, and the Valkyries (WNBA, 95.7 The Game) added; the
+2026-09-14 pass: 65/65 Westwood One NFL broadcasts matched
 to the league table, 63 Warriors + 68 Sharks games transcribed from ESPN with per-game review
 links, and the Bay Area radio flagship per team documented), the researched durations with
 citations, and every irregularity found. `schedules.md` is generated (do not hand-edit) and
