@@ -49,8 +49,8 @@ OUT = os.path.join(ROOT, "data", "processed")
 
 # --- analysis window -------------------------------------------------------
 START, END = date(2026, 8, 1), date(2027, 2, 28)
-TODAY = date(2026, 9, 14)   # date of the 2026-09-14 verification pass
-GENERATED = "2026-09-14"
+TODAY = date(2026, 9, 16)   # date of the 2026-09-16 independent-audit pass
+GENERATED = "2026-09-16"
 # US Pacific in the window: PDT (UTC-7) Mar 8 2026 -> Nov 1 2026; PST (UTC-8)
 # Nov 1 2026 -> Mar 14 2027. DST starts again Mar 14, 2027 (after END).
 PDT = timedelta(hours=-7)
@@ -78,11 +78,15 @@ def pt_offset(d):
 #                guides converge on ~2:15
 #   nhl   150 = 2:30, midpoint of the reported 2:20-2:40 range (~2.5h typical incl.
 #                two 18-min intermissions, media timeouts and stoppages)
-DURATIONS = {"mlb": 164, "nfl": 192, "ncaa": 204, "mls": 120, "nba": 138, "nhl": 150}
+#   wnba  125 = 2:05, midpoint of the reported ~2:00-2:10 range for a WNBA game
+#                (40 min of play + 15-min halftime; basketballgem 2026-05-13 "~2 hr 10 min",
+#                sportsmonkie 2026-07-27 "about two hours", gametimehero 2026-05-02
+#                "1 hour 45 minutes to 2 hours")
+DURATIONS = {"mlb": 164, "nfl": 192, "ncaa": 204, "mls": 120, "nba": 138, "nhl": 150, "wnba": 125}
 DUR_OF = lambda sport: DURATIONS[{"nfl_all": "nfl", "ncaaw": "ncaa"}.get(sport, sport)]
 PRE_BUFFER = 0   # minutes of pre-game coverage counted as busy
 POST_BUFFER = 0  # minutes of post-game coverage counted as busy
-BLOCKING_SPORTS = {"mlb", "nfl", "ncaa", "mls", "nfl_all", "nba", "nhl", "ncaaw"}   # user's free-time rule: every tracked league blocks
+BLOCKING_SPORTS = {"mlb", "nfl", "ncaa", "mls", "nfl_all", "nba", "nhl", "ncaaw", "wnba"}   # user's free-time rule: every tracked league blocks
 NFL_TEAM_NAMES = {
  "ARI":"Cardinals","ATL":"Falcons","BAL":"Ravens","BUF":"Bills","CAR":"Panthers",
  "CHI":"Bears","CIN":"Bengals","CLE":"Browns","DAL":"Cowboys","DEN":"Broncos",
@@ -293,7 +297,8 @@ def load_local():
 def load_conditional():
     games = []
     for fn, sport, tag in (("mls_2026_playoffs_conditional.txt", "mls", "MLS"),
-                           ("ncaa_2026_postseason_conditional.txt", "ncaa", "NCAA")):
+                           ("ncaa_2026_postseason_conditional.txt", "ncaa", "NCAA"),
+                           ("wnba_2026_playoffs_conditional.txt", "wnba", "WNBA")):
         path = os.path.join(RAW, fn)
         if not os.path.exists(path):
             continue
@@ -306,6 +311,9 @@ def load_conditional():
                           "tbd_count": 1, "label": f"[conditional] {label}", "conditional": True,
                           "source": fn, "review": ("https://www.mlssoccer.com/playoffs/2025/news/"
                               "audi-2026-mls-cup-playoffs-key-dates-schedule-information" if tag=="MLS"
+                              else "https://www.espn.com/wnba/story/_/id/49882118/wnba-playoffs-2026-"
+                              "schedule-games-first-round-semifinals-finals-scores-results-news-highlights"
+                              if tag=="WNBA"
                               else "https://www.espn.com/college-football/story/_/id/48958840/"
                               "2026-college-football-playoff-bowl-schedule-46-games")})
     return games
@@ -347,6 +355,67 @@ def load_nba_nhl():
             if note:
                 rec["note"] = note
             games.append(rec)
+    return games
+
+# --- Golden State Valkyries (WNBA, 95.7 The Game in the Bay Area) --------------
+# 95.7 The Game (KGMZ-FM) carries ALL home games over the air plus select road games
+# (all games on the Audacy app). Per the club's official 2026 broadcast schedule, only the
+# rows whose radio column is 95.7 The Game block; the Audacy-app-only road games are
+# info_only (same rule the repo uses for the Sharks' "select" preseason games). The
+# Valkyries CLINCHED a playoff berth on 2026-08-17, so the published playoff dates in the
+# first round block (time TBD) and every later round is a conditional marker.
+def load_wnba():
+    games = []
+    path = os.path.join(RAW, "wnba_valkyries_2026.txt")
+    if not os.path.exists(path):
+        return games
+    for ln, line in enumerate(open(path), 1):
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+        phase, dt, t_pt, ha, opp, radio, note = (line.split("|") + [""])[:7]
+        rec = {"date": dt, "sport": "wnba",
+               "phase": "Regular Season" if phase == "REG" else "Playoffs",
+               "label": (f"Valkyries vs {opp}" if ha == "H" else f"Valkyries at {opp}")
+                        if phase == "REG" else f"WNBA playoffs - {opp}",
+               "priority": True, "source": "wnba_valkyries_2026.txt",
+               "review": ("https://www.oursportscentral.com/services/releases/"
+                          "goldn-state-valkyries-announce-local-television-and-radio-broadcast-schedule/n-6353443"
+                          if phase == "REG" else
+                          "https://www.espn.com/wnba/story/_/id/49882118/wnba-playoffs-2026-schedule-games-"
+                          "first-round-semifinals-finals-scores-results-news-highlights")}
+        if radio == "957":
+            rec["radio"] = "95.7 The Game (KGMZ-FM)"
+        elif phase == "POST":
+            # playoff rows: the club carries every game on the Audacy app and home games on
+            # 95.7; the per-game column is not published yet, so the playoff dates BLOCK
+            # (flagged IRREGULARITY below) rather than being listed-only.
+            rec["radio"] = "presumed 95.7 The Game / Audacy (per-game carriage unpublished)"
+        else:
+            rec["info_only"] = True
+            flag("PRESEASON_INFO_ONLY",
+                 f"{dt} {rec['label']}: carried only on the Audacy app (95.7 The Game's 2026 "
+                 f"column for this game does NOT list the over-the-air flagship) - listed, never blocking.")
+        if t_pt in ("TBD", "", "-"):
+            rec["start_pt"] = "TBD" if phase == "REG" else None
+            rec["start_min"] = None
+            if phase != "REG":
+                flag("TBD_TIME", f"{dt} {rec['label']}: WNBA playoff game - the Valkyries clinched "
+                                 f"2026-08-17 but the round dates lock in only as the bracket posts")
+        else:
+            h, m = map(int, t_pt.split(":"))
+            rec["start_pt"] = t_pt
+            rec["start_min"] = h * 60 + m
+        if note:
+            rec["note"] = note
+        games.append(rec)
+    # playoff radio carriage is not published per game: home playoff games are certain,
+    # road playoff games are presumed (flag only, no data change)
+    if any(g["phase"] == "Playoffs" and not g.get("info_only") for g in games):
+        flag("IRREGULARITY", "WNBA playoffs: the club's radio partnership covers all games on the "
+             "Audacy app and home games on 95.7 The Game; per-game playoff radio carriage is not "
+             "published, so the Sep 27 / Sep 29-30 playoff rows are blocked on the presumption that "
+             "a Bay Area playoff game airs locally. Re-check when the bracket is published.")
     return games
 
 # --- Westwood One NCAA football showcase (national radio, Bay Area: KNBR) ----
@@ -493,6 +562,7 @@ def main():
     local = load_local()
     cond = load_conditional()
     nba_nhl = load_nba_nhl()
+    wnba = load_wnba()
     wwo_ncaaf = load_wwo_ncaaf()
     wwo_matched, wwo_total, wwo_tba = load_wwo_nfl(nfl_all)
     nfl_all = nfl_all + wwo_tba
@@ -506,7 +576,7 @@ def main():
         if g.get("is_sf") and g["date"] in sf_local_dates:
             g["dedup"] = True
 
-    allg = mlb + nfl_all + local + cond + nba_nhl + wwo_ncaaf
+    allg = mlb + nfl_all + local + cond + nba_nhl + wnba + wwo_ncaaf
 
     # doubleheader / duplicate detection (same matchup twice on one official date)
     seen = {}
@@ -595,6 +665,26 @@ def main():
          "Nov 1, 2026 - Feb 28, 2027 EXCEPT 2027 Spring Training, which opens Fri Feb 19, 2027 (all 30 "
          "clubs) per MLB's press release of Sep 4, 2026 - out of scope per spec (2026 season only) and "
          "NOT blocked; re-run after the 2027 ST schedule files publish if you want them included.")
+    # ---- 2026-09-16 independent-audit pass flags -------------------------------
+    flag("VERIFIED_PASS_2026_09_16",
+         "2026-09-16 independent audit + live re-verification pass: (1) scripts/audit.py (a second, "
+         "independent implementation) recomputes every day from data/raw/* and matches the generated "
+         "file on all 212 days (free windows, blocked merges, 24h partition, day status, per-day game "
+         "census, UTC->PT and ET->PT conversions, priority rules) - AUDIT PASSED. (2) MLB live Stats API "
+         "check: per-date game counts for 2026-08-01..2026-09-27 are identical to the raw files on all 58 "
+         "dates (totalGames 778), and game-by-game (time + away/home team ids) spot-checks on Sep 16-26 "
+         "match exactly. (3) WWO NCAA football page re-fetched: the same 10 broadcasts, zero deltas. "
+         "(4) WWO NFL page re-fetched (all 4 chunks): every dated broadcast + 8 TBA rows match. "
+         "(5) Local fixtures spot-checked vs live sources: Cal vs Wagner Sep 19 12:30 PM PT "
+         "(iheart/ACC Network + visitberkeley '12:30 p.m. PT'), Stanford at Duke Sep 19 1:00 PM PT "
+         "(= 4 PM ET, fayobserver/Yahoo Sep 14), Earthquakes vs LAFC Sep 19 4:30 PM PT at Levi's "
+         "(sjearthquakes.com 2026 schedule release + VTA). (6) Pro Bowl 2027 date still unresolved "
+         "(Feb 7 vs Tue Feb 9) - both candidate days remain blocked and flagged.")
+    flag("MLB_POSTSEASON_CORRECTION",
+         "CORRECTION 2026-09-16: the live MLB Stats API now reports 2026-10-04 as 2 postseason "
+         "placeholder games (the 2026-08-28 transcription had 4); the postseason placeholder total is "
+         "therefore 53, not 55. All other 27 postseason dates are unchanged and every date stays "
+         "'NOT FREE - TIME TBD'. Raw file updated; see the file header for the exact query.")
     flag("VERIFIED_PASS_2026_09_11", "Superseded-pass note kept for the audit trail: 2026-09-11 MLB Stats "
          "API re-query for 2026-09-10/11/12 matched the raw file 35/35 games (dates, times, team ids). "
          "The 'sparse' Tue/Thu slate days (5 games on Sep 10, 3 on Sep 21) are genuine scheduled light "
@@ -678,6 +768,8 @@ def main():
     post_windows = [g for g in nfl_all if g["week"] == "Post"]
     nba = [g for g in nba_nhl if g["sport"] == "nba"]
     nhl = [g for g in nba_nhl if g["sport"] == "nhl"]
+    wnba_games = [g for g in wnba if g["phase"] == "Regular Season"]
+    wnba_po = [g for g in wnba if g["phase"] == "Playoffs"]
     meta = {
         "generated_utc": GENERATED, "window": {"start": START.isoformat(), "end": END.isoformat()},
         "timezone": "America/Los_Angeles - PDT (UTC-7) through Oct 31, 2026; PST (UTC-8) from Nov 1, 2026 to Mar 13, 2027",
@@ -694,6 +786,9 @@ def main():
                    "nfl_all_tbd_days": len({g["date"] for g in nfl_all if g.get("conditional")}),
                    "conditional_days": len({g["date"] for g in cond}),
                    "nba_games": len(nba), "nhl_games": len(nhl),
+                   "wnba_games": len(wnba_games),
+                   "wnba_blocking": len([g for g in wnba_games if not g.get("info_only")]),
+                   "wnba_playoff_rows": len(wnba_po),
                    "wwo_nfl_matched": wwo_matched, "wwo_nfl_total": wwo_total,
                    "wwo_nfl_tba": len(wwo_tba),
                    "wwo_ncaaf": len({(g["date"], g["away"], g["home"]) for g in wwo_ncaaf}),
@@ -720,6 +815,10 @@ def main():
     print(f"Warriors (NBA)    : {len(nba)} games "
           f"({len([g for g in nba if g['phase']=='Preseason'])} pre + "
           f"{len([g for g in nba if g['phase']=='Regular Season'])} reg; all block on 95.7 The Game)")
+    print(f"Valkyries (WNBA)  : {len(wnba_games)} regular-season games in window "
+          f"({meta['totals']['wnba_blocking']} on 95.7 The Game = blocking; "
+          f"{len([g for g in wnba_games if g.get('info_only')])} Audacy-app-only = listed) "
+          f"+ {len(wnba_po)} playoff TBD rows (clinched 2026-08-17)")
     print(f"Sharks (NHL)      : {len(nhl)} games "
           f"({len([g for g in nhl if g.get('info_only')])} pre info-only + "
           f"{len([g for g in nhl if g['phase']=='Regular Season'])} reg blocking on 98.5 KFOX)")
@@ -736,6 +835,9 @@ def main():
         ok = False; print(f"!! Warriors count {len(nba)} != 63 (6 pre + 57 reg expected)")
     if len(nhl) != 68:
         ok = False; print(f"!! Sharks count {len(nhl)} != 68 (4 pre + 64 reg expected)")
+    if len(wnba_games) != 16 or meta["totals"]["wnba_blocking"] != 9:
+        ok = False; print(f"!! Valkyries count {len(wnba_games)} (expect 16) / blocking "
+                          f"{meta['totals']['wnba_blocking']} (expect 9)")
     if len(wwo_ncaaf) != 16 or meta["totals"]["wwo_ncaaf"] != 10:
         ok = False; print(f"!! WWO NCAAF count {len(wwo_ncaaf)} rows / {meta['totals']['wwo_ncaaf']} broadcasts != 16/10")
     if wwo_matched != wwo_total:
@@ -836,11 +938,11 @@ def main():
             if os.path.exists(js_path):
                 os.remove(js_path)
 
-    write_markdown(days, meta, flags, mlb, nfl_all, local, cond, per, nba_nhl, wwo_ncaaf)
+    write_markdown(days, meta, flags, mlb, nfl_all, local, cond, per, nba_nhl, wwo_ncaaf, wnba)
     return days, flags
 
 
-def write_markdown(days, meta, flags, mlb, nfl_all, local, cond, per, nba_nhl, wwo_ncaaf):
+def write_markdown(days, meta, flags, mlb, nfl_all, local, cond, per, nba_nhl, wwo_ncaaf, wnba_all=()):
     L = []; A = L.append
     A("# ScheduleFreeTime - Verified Master Schedule (Aug 1, 2026 - Feb 28, 2027)")
     A("")
@@ -857,6 +959,7 @@ def write_markdown(days, meta, flags, mlb, nfl_all, local, cond, per, nba_nhl, w
       f"**{t['nfl_reg_games']} + {t['nfl_pre_games']} league-wide NFL games** (all block; "
       f"{t['wwo_nfl_matched']} carry the Westwood One national-radio badge; all "
       f"{t['nfl_pre_games']} preseason games now have kickoff times), "
+      f"**{t.get('wnba_games',0)} Valkyries (WNBA) games** ({t.get('wnba_blocking',0)} on 95.7 The Game), "
       f"**{t['wwo_ncaaf']} Westwood One NCAA football broadcasts**, "
       f"**{t['nfl_window_rows']} NFL TBD/estimated broadcast windows** "
       f"({t['nfl_windows_official']} official incl. Super Bowl LXI, "
@@ -918,6 +1021,14 @@ def write_markdown(days, meta, flags, mlb, nfl_all, local, cond, per, nba_nhl, w
     for g in sorted([g for g in nba_nhl if g["sport"] == "nhl"], key=lambda x: (x["date"], x["start_min"])):
         A(f"| {g['date']} | {g['start_pt']} PT ({g['start_et']} ET) | {g['label']} | {g['phase']} | "
           f"{'listed only' if g.get('info_only') else 'yes'} | [espn]({g['review']}) |")
+    A("")
+    A("### Golden State Valkyries (WNBA - all games on the Audacy app; 95.7 The Game over the air)")
+    A("")
+    A("| Date | PT start | Game | Phase | Blocks? | Review |")
+    A("|---|---|---|---|---|---|")
+    for g in sorted([g for g in nba_nhl if False] + wnba_all, key=lambda x: (x["date"], x.get("start_min") or 0)):
+        A(f"| {g['date']} | {g.get('start_pt') or '**TBD**'} | {g['label']} | {g['phase']} | "
+          f"{'listed only (Audacy app)' if g.get('info_only') else 'yes (95.7 The Game)'} | [review]({g['review']}) |")
     A("")
     A("## 49ers / Earthquakes / Stanford / Cal - every blocking game")
     A("")

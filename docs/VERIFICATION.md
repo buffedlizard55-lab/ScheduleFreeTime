@@ -8,7 +8,33 @@ free-window from these files and prints the arithmetic checks quoted here.
 
 ## 0. Independent re-verification passes
 
-### 2026-09-15 pass (football-TBD blocking fix + live re-verification; CURRENT snapshot)
+### 2026-09-16 pass (independent audit + full live re-verification; CURRENT snapshot)
+
+Two independent things were done this pass: (a) `scripts/audit.py`, a second implementation that
+re-derives the whole dataset from `data/raw/*` and diffs it against the generated file, and
+(b) a live re-fetch of every source that could have changed since 2026-09-15.
+
+| Source re-checked | What was compared | Result |
+|---|---|---|
+| **Independent auditor** `scripts/audit.py` (new) | Never imports `build.py`; re-reads the raw transcriptions + `games_local.json`; recomputes the merged blocked list, the free windows, the 1440-min partition, the day status, the per-day game census, MLB UTC→PT and NFL ET→PT conversions, the priority rules and the club censuses | **AUDIT PASSED** — 212 days, 1,424 day-view rows: recomputed free windows == stored on every day; blocked merges == stored; free + blocked == 1440 min; status rule matches; census matches league by league; conversions exact. Three audit-side gaps were fixed in the audit itself (MLS/NCAA/WNBA conditional markers and the WWO TBA rows must be counted; team-less MLB postseason placeholders can never carry a club priority flag) — the data was correct in all three cases. |
+| **MLB Stats API (regular season)** | `schedule?sportId=1&startDate=2026-08-01&endDate=2026-09-27&fields=dates,date,totalGames`, plus game-level reads for Sep 16–20 and Sep 22–27 | **58/58 dates match the raw files exactly** (totalGames 778 = 778 transcribed; per-date counts identical date for date, including the light days Sep 10 = 5, Sep 21 = 3, Aug 27 = 7, and the Sep 12/13/19/20 15-game Saturdays/Sundays). Game-level rows (start time + away/home team ids) match for every game on Sep 16–26, including the odd UTC-derived slots 24:05 / 24:10 / 25:38 / 25:40. |
+| **MLB postseason placeholders** | `schedule?...startDate=2026-09-28&endDate=2026-11-10&fields=dates,date,totalGames` + a game-level read | **One change since 2026-08-28: 2026-10-04 now has 2 placeholder games, not 4** → postseason total **53, not 55**. All 27 other dates identical; every date still has placeholder team ids and `T07:33:00Z` placeholder times and still renders as **NOT FREE — TIME TBD**. Raw file corrected; `MLB_POSTSEASON_CORRECTION` flag emitted. |
+| **Westwood One NFL** | `https://www.westwoodonesports.com/nfl-schedule/` all four chunks (chunk 3 = last; page ends in a reCAPTCHA block) | Every dated broadcast and every TBA row matches `data/raw/westwoodone_nfl_2026.txt` at event-id level (Sep 17 548433 … Jan 10 548510, incl. the 8 TBA placeholders). The page's two render lists slice differently between fetches — a fetch artefact, not a data delta. **Zero deltas.** |
+| **Westwood One NCAA football** | `https://www.westwoodonesports.com/ncaa-football/` | Same 10 broadcasts / same event ids: SEP 19 LSU@Ole Miss 557127 (7:00 pm ET, Danny Reed & Derek Rackley), SEP 26 Oklahoma@Georgia 557136 ("3p ET"), OCT 31 Florida@Georgia 557129 ("3:00 pm ET"), the other seven "Air time TBD". WWO lists *air* times, consistently 30 min before the kickoffs stored here. Also noted and deliberately not tracked: event 557048 "Sep 19 UNC Charlotte at Georgia State" appears on the page's schedule API but is **not** a listed national WWO broadcast (no air time, no announcers). **Zero deltas.** |
+| **NFL week 2 (league-wide)** | `https://www.nfl.com/schedules/2026/by-week/week-2` — every listed game and network | All 16 rows match the PFR transcription: TNF Sep 17 8:15 PM; Sun Sep 20 at 1:00 PM (CAR-ATL, NO-BAL, MIN-CHI, CIN-HOU, PIT-NE, GB-NYJ, CLE-TB, PHI-TEN), 4:05 PM (JAX-DEN, LV-LAC), 4:25 PM (SEA-ARI, MIA-SF, WAS-DAL), SNF 8:20 PM (CLT-KAN); MNF Sep 21 8:15 PM (NYG-LAR). |
+| **49ers (club page)** | `https://www.49ers.com/schedule/` — every remaining game with PT time, TV and radio | **All rows match the repo** — Wk2 Sep 20 1:25 PM vs MIA, Wk3 Sep 27 1:05 PM vs ARI, Wk4 Oct 4 1:25 PM vs DEN, Wk5 Oct 11 1:25 PM @SEA, Wk6 Mon Oct 19 5:15 PM vs WAS, Wk7 Oct 25 10:00 AM @ATL, Wk9 Nov 8 1:05 PM vs LV, Wk10 Nov 15 1:25 PM @DAL, Wk11 Nov 22 5:20 PM vs MIN (Estadio Banorte, Mexico City), Wk12 Nov 29 1:25 PM vs SEA, Wk13 Dec 6 10:00 AM @NYG, Wk14 Dec 13 1:25 PM vs LA, Wk15 Thu Dec 17 5:15 PM @LAC, Wk16 Dec 27 1:25 PM @KC, Wk17 Sun Jan 3 5:20 PM vs PHI (NBC flex window, already flagged), **Wk18 TBD @ARI**. Radio per the club: Wk1–3 "KSFO 810 AM / KSAN 107.7 FM", from Wk4 on "KSAN 107.7 FM / KNBR 104.5 FM / 680 AM" — the repo's flagship row now says exactly that. |
+| **Warriors (NBA)** | `https://www.espn.com/nba/team/schedule/_/name/gs/season/2027/seasontype/1` + `/seasontype/2` | Preseason Oct 4 @LAC 10:00 PM ET, Oct 6 vs LAL, Oct 7 @POR, Oct 10 vs SAC, Oct 13 vs LAL (Golden 1 Center — the repo's NEUTRAL SITE flag), Oct 16 vs POR; regular season Oct 21 @LAL (10:00 PM ET) through Nov 19 @MEM — **all 22 rows checked match** the raw file, times included. |
+| **Sharks (NHL)** | `https://www.espn.com/nhl/team/schedule/_/name/sj/season/2027` | Oct 1 vs FLA 10:00 PM ET … Oct 31 vs OTT 4:00 PM ET — **all 15 October rows match** (incl. the Oct 10 4:00 PM matinee and the Oct 13 11:00 PM start). |
+| **Local fixtures (next games)** | Cal vs Wagner Sep 19 12:30 PM PT (`visitberkeley.com`, ACC Network via iHeart); Stanford at Duke Sep 19 1:00 PM PT = 4:00 PM ET (`fayobserver.com`); Earthquakes vs LAFC Sep 19 4:30 PM PT at Levi's (club 2026 schedule release + VTA) | All three match `games_local.json`. (`gostanford.com/sports/football/schedule` still serves the 2025 season through this proxy — the 2026 rows are verified from the two sources above.) |
+| **WNBA Valkyries (new league)** | official club broadcast schedule (2026-04-25), Audacy flagship release, the club's playoff-clinch release (2026-08-17), ESPN's 2026 playoff schedule (2026-09-09), ~2:00–2:10 game-length sources | A Bay Area team on Bay Area radio was missing from the tracker and has been added — see the README/stats panel: 16 in-window regular-season games (9 on 95.7 The Game → blocking + ★; 7 Audacy-app-only → listed info-only), the **playoff berth (clinched 2026-08-17)**, the first-round dates that block (Sep 27; Sep 29 **and** Sep 30, because the club's Game-2 date is one of the two) and every later round as CONDITIONAL markers (Oct 1 → Oct 31). Duration default **125 min (2:05)**. |
+| **Pro Bowl 2027** ⚠ still unresolved | sportbusy.com (Feb 7) vs nflplayoffpass.com (Tue Feb 9, 8:00 PM ET) | No official NFL release found; **both candidate days stay blocked** with estimated windows and the `PROBOWL_CONFLICT` flag. Re-check closer to the date. |
+
+Current status counts (2026-09-16 build): 212 days → **21 fully FREE, 124 PARTIAL, 45 NOT FREE — TIME
+TBD, 22 UNCONFIRMED, 0 FULLY BOOKED**; 149 flags; 172 days contain at least one high-priority game.
+The 2026-09-16 build is the first snapshot where the Valkyries' Sep 27 playoff game (time TBD) turns
+that day NOT FREE — Sep 27 also has the final day of the MLB regular season.
+
+### 2026-09-15 pass (football-TBD blocking fix + live re-verification; previous snapshot)
 
 Triggered by the user's bug report: *the site showed free time on days when football games
 are on.* Root causes found and fixed (see §3 "Added 2026-09-15"):
@@ -112,6 +138,7 @@ to carry stale/placeholder times and are NOT used.
 | CFP | `https://www.espn.com/college-football/story/_/id/48958840/2026-college-football-playoff-bowl-schedule-46-games` | 2026-27 CFP + bowl calendar -> conditional markers. |
 | MLB 2027 ST boundary | `https://www.mlb.com/press-release/press-release-mlb-announces-2027-spring-training-schedule` | Scope note flag only. |
 | Warriors 2026-27 | `https://www.espn.com/nba/team/schedule/_/name/gs/season/2027/seasontype/2` + `.../name/gs/golden-state-warriors` (preseason) | 63 games; per-game review `https://www.espn.com/nba/game/_/gameId/<id>/x`. Flagship proof: `https://www.insideradio.com/free/nba-s-warriors-95-7-the-game-extend-flagship-partnership/article_8c79d479-424c-408d-9753-f353f7e18a57.html` |
+| Valkyries 2026 (WNBA) | `https://www.oursportscentral.com/services/releases/goldn-state-valkyries-announce-local-television-and-radio-broadcast-schedule/n-6353443` (official club release 2026-04-25: date, PT time AND radio column per game) + flagship `https://audacyinc.com/press/95-7-the-game-will-be-the-valkyries-flagship-radio-station/` + playoff clinch `https://valkyries.wnba.com/news/valkyries-clinch-postseason-berth-for-second-straight-season` + round dates `https://www.espn.com/wnba/story/_/id/49882118/wnba-playoffs-2026-schedule-games-first-round-semifinals-finals-scores-results-news-highlights` | 16 regular-season games in window + 3 playoff TBD rows + 15 conditional playoff-day markers |
 | Sharks 2026-27 | `https://www.espn.com/nhl/team/schedule/_/name/sj/season/2027/seasontype/2` + `.../name/sj/san-jose-sharks` (preseason) | 68 games; per-game review `https://www.espn.com/nhl/game/_/gameId/<id>/x`. Flagship proof: `https://www.nhl.com/sharks/news/sharks-and-kfox-announce-multi-year-extension/c-782397` |
 | Westwood One NFL | `https://www.westwoodonesports.com/nfl-schedule/` (+ `.../station-finder/` for Bay Area carriage) | 65 broadcasts + 8 TBA; per-event review `https://www.westwoodonesports.com/events/<id>`. Kickoff proof: Cumulus press release 2026-09-09 (globenewswire). |
 | Westwood One NCAAF | `https://www.westwoodonesports.com/ncaa-football/` | 10 Saturday broadcasts; per-event review links. |
@@ -139,6 +166,7 @@ Defaults shipped by `scripts/build.py` (the UI inputs are editable):
 | NCAA (Stanford/Cal) | **204 min** = 3:24 | Same sportssurge/lines tables ("college averages 3:24 with 20-min halftimes"); Under Armour says 3:27 for 2025 - we ship 3:24 and let you edit. |
 | MLS (Earthquakes) | **120 min** = 2:00 | `https://www.tickpick.com/blog/how-long-are-mls-games/`, `https://authoritysoccer.com/how-long-are-mls-games-and-seasons/` (90 min + ~15-min halftime + stoppage). Playoffs may run over 2:00 with extra time - conditional days are not blocked anyway. |
 | NBA (Warriors) | **138 min** = 2:18 | Measured 2025-26 average **2:18:32** tip-to-buzzer (`https://www.alibaba.com/product-insights/how-long-is-the-average-basketball-game-2026-guide.html`, citing the NBA official game-ops dashboard + broadcast-timing audits; includes 15-min halftime, 20+ timeouts). Secondary: `https://sportsgeardaily.com/basketball/how-long-are-basketball-games` (~2:15 avg; stabilized 2:10-2:14 over five seasons). |
+| WNBA (Valkyries) | **125 min** = 2:05 | Midpoint of the reported range for a WNBA game (40 min of play + 15-min halftime): `https://basketballgem.com/how-long-is-a-basketball-game/` ("~2 hr. 10 min"), `https://sportsmonkie.com/how-long-are-wnba-games/` ("about two hours"), `https://www.gametimehero.com/blog/how-long-is-a-wnba-game` ("1 hour 45 minutes to 2 hours") |
 | NHL (Sharks) | **150 min** = 2:30 | Midpoint of the reported **2:20-2:40** range: `https://nhltraderumorstalk.com/how-long-is-a-hockey-game` ("averages roughly 2h20 to 2h40"; 60 min play + two 18-min intermissions + TV timeouts); `https://icehockeyguide.com/hockey-game-length/` ("typically 2.5 to 3 hours" incl. intermissions/stoppages/OT). |
 
 Original user guidance ("MLB ~150 min; football 180 + 15–30 halftime") is superseded by the
@@ -147,11 +175,37 @@ researched figures above; set the UI inputs back to 150/180+ to compare.
 ## 3. Irregularities flagged for your review
 
 The build re-emits all of these as machine-readable `flags` in `data/processed/free_time.json`
-and `schedules.md`. Status counts with the current data (2026-09-14 pass): 212 days in window ->
-**22 FREE, 130 PARTIAL, 60 UNCONFIRMED, 0 FULLY BOOKED**; 120 flags. (The drop from 62 FREE is the
-Warriors + Sharks evening slate - most Nov-Feb weeknights now have a Bay Area radio game on.)
+and `schedules.md`. Status counts with the current data (**2026-09-16 pass**): 212 days in window ->
+**21 FREE, 124 PARTIAL, 45 NOT FREE - TIME TBD, 22 UNCONFIRMED, 0 FULLY BOOKED**; 149 flags; 172 days
+contain at least one high-priority game. (The drop from 62 FREE two passes ago is the Warriors +
+Sharks + Valkyries evening slate - most Nov-Feb weeknights now have a Bay Area radio game on.)
 
-### Added / changed in the 2026-09-15 pass (current)
+### Added / changed in the 2026-09-16 pass (current)
+
+- **CORRECTED - MLB postseason placeholder count.** The live Stats API now reports **2** games on
+  2026-10-04 (the 2026-08-28 transcription had 4), so the postseason placeholder total is **53**,
+  not 55. No free-time change (the day stays NOT FREE - TIME TBD either way); the raw file, the
+  README totals and the audit were updated, and the `MLB_POSTSEASON_CORRECTION` flag carries the
+  before/after and the URL. Re-check the whole bracket when MLB publishes real times.
+- **ADDED - Golden State Valkyries (WNBA) were missing from the tracker.** A Bay Area team on Bay
+  Area radio: all games on the Audacy app, home games over the air on **95.7 The Game (KGMZ-FM)**.
+  16 in-window regular-season games (9 on 95.7 → blocking + ★; 7 app-only → listed info-only; the
+  split comes straight from the club's own radio column), the clinched playoff berth (2026-08-17),
+  the first-round dates blocked (Sep 27; Sep 29 **and** Sep 30 - the club's Game-2 date is one of
+  the two, so both days say "game will air, time TBD") and all later rounds as CONDITIONAL markers
+  (Oct 1 → Oct 31). Duration default 125 min (2:05).
+- **NOTED - 49ers radio.** The club page lists "KSFO 810 AM / KSAN 107.7 FM" for weeks 1-3 and
+  "KSAN 107.7 FM / KNBR 104.5 FM / 680 AM" from week 4 on; the flagship row and the sources panel
+  now say exactly that. (No blocking change - every NFL game blocks anyway.)
+- **NOTED - WWO page contains one non-national event.** `ncaa-football/` event 557048
+  "Sep 19 UNC Charlotte at Georgia State" has no air time and no announcers - it is not a national
+  Westwood One broadcast and is deliberately not tracked (documented so a reviewer does not read it
+  as a missed row).
+- **RE-VERIFIED (no deltas)** - MLB regular season (58/58 dates, 778 games, game-level checks),
+  WWO NFL page, WWO NCAA football page, NFL week 2, the full 49ers schedule, Warriors preseason +
+  Oct/Nov, Sharks October, and the next Cal / Stanford / Earthquakes games. Table in §0.
+
+### Added / changed in the 2026-09-15 pass (previous)
 
 - **FIXED — deployed-site JavaScript was fatally broken.** The `main` branch (merge 2446f62)
   shipped `index.html` with a missing closing backtick inside the games-table template literal,
@@ -267,12 +321,24 @@ Warriors + Sharks evening slate - most Nov-Feb weeknights now have a Bay Area ra
     preseason vs LAL is at Golden 1 Center Sacramento (neutral).
 19. **Cal flagship uncertain** - see "Added / changed" above. Stanford (KNBR/KTCT 1050) and
     Earthquakes (KSFO 810) flagships are confirmed by 2026 club announcements.
-20. **PRESEASON_INFO_ONLY (4)** - Sharks Sep 20/22/24/26: KFOX carries only "select" preseason
+20. **MLB_POSTSEASON_CORRECTION (new 2026-09-16)** - see "Added / changed" above: 2026-10-04 went
+    from 4 placeholder games to 2, postseason total 53. Day status unchanged.
+21. **WNBA playoff timing/carriage (new 2026-09-16)** - the Valkyries clinched on 2026-08-17, but
+    (a) their first-round Game 2 falls on Tue Sep 29 **or** Wed Sep 30 and the club has not said
+    which, so both days block; (b) per-game playoff radio carriage is not published, so those days
+    block on the presumption that a Bay Area playoff game airs locally (flagged IRREGULARITY);
+    (c) if they lose in the first round, the Oct 1 - Oct 31 conditional markers simply disappear -
+    re-run the build when the bracket and results are known.
+22. **PRESEASON_INFO_ONLY (4)** - Sharks Sep 20/22/24/26: KFOX carries only "select" preseason
     games (unspecified which), so all four are listed but never block. Warriors preseason all
     blocks (95.7 carries "all preseason and regular season games").
 
 ## 4. Known limitations (stated plainly)
 
+* The WNBA (Valkyries) default duration is 125 min, the midpoint of a reported ~2:00-2:10 range -
+  shorter games will over-block slightly; edit it in the sidebar if you want a tighter fit.
+* The Valkyries' playoff rows block **by date** (team qualified) with the start time TBD; the exact
+  tip-off is filled in when the league announces it, and Sep 29/30 double-blocks the Game-2 window.
 * "Free" means **no listed game from the blocking leagues is on air**. Pre-game hype, watch parties and
   halftime-overrun are not modelled except via the average duration (editable). Buffers default to 0.
 * Durations are averages; real games run -30/+60 min (extra innings, overtime, weather delay). For past

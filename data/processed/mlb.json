@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated_utc": "2026-09-14",
+  "generated_utc": "2026-09-16",
   "window": {
    "start": "2026-08-01",
    "end": "2027-02-28"
@@ -12,7 +12,8 @@
    "ncaa": 204,
    "mls": 120,
    "nba": 138,
-   "nhl": 150
+   "nhl": 150,
+   "wnba": 125
   },
   "pre_buffer_minutes": 0,
   "post_buffer_minutes": 0,
@@ -24,11 +25,12 @@
    "ncaaw",
    "nfl",
    "nfl_all",
-   "nhl"
+   "nhl",
+   "wnba"
   ],
   "totals": {
    "mlb_games": 778,
-   "mlb_postseason_tbd": 55,
+   "mlb_postseason_tbd": 53,
    "local_games": 61,
    "nfl_reg_games": 272,
    "nfl_pre_games": 49,
@@ -37,9 +39,12 @@
    "nfl_windows_estimated": 24,
    "nfl_windows_official": 1,
    "nfl_all_tbd_days": 0,
-   "conditional_days": 20,
+   "conditional_days": 35,
    "nba_games": 63,
    "nhl_games": 68,
+   "wnba_games": 16,
+   "wnba_blocking": 9,
+   "wnba_playoff_rows": 3,
    "wwo_nfl_matched": 65,
    "wwo_nfl_total": 65,
    "wwo_nfl_tba": 8,
@@ -90,8 +95,8 @@
    "sport": "mlb",
    "start_pt": null,
    "start_min": null,
-   "tbd_count": 4,
-   "label": "MLB postseason - 4 game(s), teams & times UNCONFIRMED",
+   "tbd_count": 2,
+   "label": "MLB postseason - 2 game(s), teams & times UNCONFIRMED",
    "source": "mlb_2026_postseason_tbd.txt"
   },
   {
