@@ -8,7 +8,34 @@ free-window from these files and prints the arithmetic checks quoted here.
 
 ## 0. Independent re-verification passes
 
-### 2026-09-16 pass (independent audit + full live re-verification; CURRENT snapshot)
+### 2026-09-16 pass B (this session; CURRENT snapshot)
+
+Triggered by the user's repeated bug report: *the site still showed free time on days when
+football games are on.* Live re-verification of everything the user asked to work on
+(Westwood One NFL schedule page, Westwood One NCAAF, and a sweep for other Bay Area radio
+sports) found **three WWO NCAAF broadcasts the repo had never seen** and confirmed the
+remaining part of the bug (the data + UI were still *reporting* free windows/minutes on
+NOT FREE — TIME TBD and UNCONFIRMED days, e.g. 24h "free" on 2026-09-29/30 and 851 free
+minutes on 2026-10-04 despite 13 NFL games).
+
+| Source re-checked | What was compared | Result |
+|---|---|---|
+| **Westwood One NFL** | `https://www.westwoodonesports.com/nfl-schedule/` re-fetched live (all 4 chunks, both rendered lists) | The page renders two lists; combined they hold all **71 upcoming events** and every one matches `data/raw/westwoodone_nfl_2026.txt` at event-id level (date, matchup, air time ET, slot): **63 remaining dated broadcasts + 8 TBA, zero deltas**. The Sep 14 MNF (548429) moved to the Past tab as it is now a past date; the Sep 9 Kickoff remains verified via the Cumulus press release. |
+| **Westwood One NCAA football** ⚠⚠ | `https://www.westwoodonesports.com/ncaa-football/` re-fetched live, **plus the widget's own "More" endpoint** `https://www.westwoodonesports.com/more/eventGrid?id=47030&range=current&offset=0&limit=20&...` (fetched twice: offset 0 and offset 20 = "No more events") | **The main widget only renders the first 10 events, and the 2026-09-14 transcription captured only those 10.** The complete 2026 list has **13 broadcasts**: the known 10 (event ids, dates, air times unchanged — zero deltas) **plus 3 new ones**: **Nov 28 Michigan at Ohio State** (event 557131, WWO air 11:30 AM ET), **Dec 5 SEC Championship** (event 557146, WWO air 3:30 PM ET), **Dec 12 Army vs Navy** (event 557132, WWO grid air 2:00 PM ET). All three now in `data/raw/westwoodone_ncaaf_2026.txt` with **official kickoffs**: Nov 28 **12:00 PM ET FOX** (University of Michigan announcement 2026-05-11 + Big Ten TV schedule: sports.yahoo.com, on3.com, dispatch.com) = 9:00 AM PT; Dec 5 **4:00 PM ET ABC** (SEC official: Commissioner Chuck Dunlap x.com/SEC_Chuck 2026-05-12 + SEC release via al.com + fbschedules.com) = 1:00 PM PT; Dec 12 **3:00 PM ET CBS** (goarmywestpoint.com + navysports.com/AAC 2026-05-27 + sportingnews.com) = 12:00 PM PT. Irregularity flagged: WWO's own data for 557132 conflicts (grid air 2:00 PM ET vs event-page window "3:30 PM – 7:30 PM EST"); the official CBS kickoff is authoritative. **Consequence: Nov 28 / Dec 5 / Dec 12 now block (9:00 AM–12:24 PM / 1:00–4:24 PM / 12:00–5:24 PM PT) and assert no free time** — before this pass the site reported free windows on all three days. |
+| **Westwood One U.S. Soccer** | `https://www.westwoodonesports.com/us-soccer/` re-fetched live (widget id=47032) | "**No upcoming events**" — nothing in-window to track (next WWO soccer content would be out of the Aug–Feb window or unannounced). |
+| **Other Bay Area radio sports sweep** | web searches for in-window live Bay Area radio: NWSL San Francisco Deltas (no verifiable Bay Area radio flagship found — NWSL radio is SiriusXM national, e.g. siriusxm.com/blog/nwsl-championship), USL/others (none in-window) | No further sport to add; the tracked set (MLB all 30, NFL all 32, 49ers, Earthquakes, Stanford, Cal, Warriors, Valkyries, Sharks, WWO NFL + NCAAF) is complete for live Bay Area radio in Aug 2026 – Feb 2027. The 49ers' own Week-2 "Ways to Watch" (49ers.com, 2026-09-15) reconfirms the club radio rows (KSFO/KSAN weeks 1–3). |
+| **The reported bug (second half)** | build.py + index.html + audit.py | **FIXED**: days with status `NOT FREE — TIME TBD` or `UNCONFIRMED` now assert **no free time at all** — `free: []` and `free_minutes: 0` in `free_time.json` (the arithmetic windows are kept in a new `provisional_free` field for reference only), the day-by-day table prints Free min = 0 with a legend ("0 = not asserted, not free"), and the UI draws no green free bands, shows no "Xh Ym free" and a "Free time NOT available / NOT asserted" panel. The independent `scripts/audit.py` now verifies the assertion rule itself (asserted days: stored free == recomputed; not-asserted days: free == [] with the arithmetic preserved in provisional_free). The UI also recomputes each day's status from the currently visible (toggle-aware) games with the same documented rule, so league toggles can never resurrect a stale "free" claim. |
+| **Build + audit** | `python3 scripts/build.py` + `python3 scripts/audit.py` after all changes | Build verification report **PASS** (778 MLB, 272+49 NFL, 65/65 WWO NFL, **13 WWO NCAAF / 19 rows**, 153 flags; `index.html` node --check OK) and **AUDIT PASSED** (212 days, 1427 day-view rows). UI smoke test (inline JS run headless with a DOM shim, driving the real Yesterday/Tomorrow buttons): Sep 29 = NOT FREE, no green bands, "free time NOT available"; Nov 8 = PARTIAL with 4 exact free gaps (unchanged behavior for fully-official days); Nov 28 = NOT FREE with the WWO Michigan@Ohio State row listed; Dec 5 / Dec 12 = UNCONFIRMED, "free time NOT asserted". |
+
+Current status counts (2026-09-16 pass B build): 212 days → **21 fully FREE, 124 PARTIAL,
+45 NOT FREE — TIME TBD, 22 UNCONFIRMED, 0 FULLY BOOKED**; 153 flags; 173 days contain at
+least one high-priority game. **Free time is asserted on only 145 days** (21 FREE + 124
+PARTIAL); the other 67 days report no free time at all. The three new WWO NCAAF days kept
+their existing status (Nov 28 was already NOT FREE via the Stanford/Cal TBD kickoffs;
+Dec 5 / Dec 12 were already UNCONFIRMED via conditional markers) but now additionally block
+their confirmed WWO windows.
+
+### 2026-09-16 pass A (independent audit + full live re-verification)
 
 Two independent things were done this pass: (a) `scripts/audit.py`, a second implementation that
 re-derives the whole dataset from `data/raw/*` and diffs it against the generated file, and
@@ -29,10 +56,10 @@ re-derives the whole dataset from `data/raw/*` and diffs it against the generate
 | **WNBA Valkyries (new league)** | official club broadcast schedule (2026-04-25), Audacy flagship release, the club's playoff-clinch release (2026-08-17), ESPN's 2026 playoff schedule (2026-09-09), ~2:00–2:10 game-length sources | A Bay Area team on Bay Area radio was missing from the tracker and has been added — see the README/stats panel: 16 in-window regular-season games (9 on 95.7 The Game → blocking + ★; 7 Audacy-app-only → listed info-only), the **playoff berth (clinched 2026-08-17)**, the first-round dates that block (Sep 27; Sep 29 **and** Sep 30, because the club's Game-2 date is one of the two) and every later round as CONDITIONAL markers (Oct 1 → Oct 31). Duration default **125 min (2:05)**. |
 | **Pro Bowl 2027** ⚠ still unresolved | sportbusy.com (Feb 7) vs nflplayoffpass.com (Tue Feb 9, 8:00 PM ET) | No official NFL release found; **both candidate days stay blocked** with estimated windows and the `PROBOWL_CONFLICT` flag. Re-check closer to the date. |
 
-Current status counts (2026-09-16 build): 212 days → **21 fully FREE, 124 PARTIAL, 45 NOT FREE — TIME
-TBD, 22 UNCONFIRMED, 0 FULLY BOOKED**; 149 flags; 172 days contain at least one high-priority game.
-The 2026-09-16 build is the first snapshot where the Valkyries' Sep 27 playoff game (time TBD) turns
-that day NOT FREE — Sep 27 also has the final day of the MLB regular season.
+Status counts as of the pass A build (superseded by pass B): 212 days → **21 fully FREE, 124 PARTIAL,
+45 NOT FREE — TIME TBD, 22 UNCONFIRMED, 0 FULLY BOOKED**; 149 flags; 172 days contain at least one
+high-priority game. The pass A build was the first snapshot where the Valkyries' Sep 27 playoff game
+(time TBD) turns that day NOT FREE — Sep 27 also has the final day of the MLB regular season.
 
 ### 2026-09-15 pass (football-TBD blocking fix + live re-verification; previous snapshot)
 
@@ -175,12 +202,37 @@ researched figures above; set the UI inputs back to 150/180+ to compare.
 ## 3. Irregularities flagged for your review
 
 The build re-emits all of these as machine-readable `flags` in `data/processed/free_time.json`
-and `schedules.md`. Status counts with the current data (**2026-09-16 pass**): 212 days in window ->
-**21 FREE, 124 PARTIAL, 45 NOT FREE - TIME TBD, 22 UNCONFIRMED, 0 FULLY BOOKED**; 149 flags; 172 days
-contain at least one high-priority game. (The drop from 62 FREE two passes ago is the Warriors +
-Sharks + Valkyries evening slate - most Nov-Feb weeknights now have a Bay Area radio game on.)
+and `schedules.md`. Status counts with the current data (**2026-09-16 pass B**): 212 days in window ->
+**21 FREE, 124 PARTIAL, 45 NOT FREE - TIME TBD, 22 UNCONFIRMED, 0 FULLY BOOKED**; 153 flags; 173 days
+contain at least one high-priority game. Free time is asserted on only the 145 FREE/PARTIAL days; the
+other 67 days report no free time at all (see item 24). (The drop from 62 FREE two passes ago is the
+Warriors + Sharks + Valkyries evening slate - most Nov-Feb weeknights now have a Bay Area radio game
+on.)
 
-### Added / changed in the 2026-09-16 pass (current)
+### Added / changed in the 2026-09-16 pass B (current)
+
+- **CORRECTED - three Westwood One NCAAF broadcasts were missing.** The NCAAF page's widget renders
+  only its first 10 events; the 2026-09-14 transcription captured only those. The widget's eventGrid
+  endpoint (full list, ends "No more events") shows **13** broadcasts. Added: **Nov 28
+  Michigan at Ohio State** (official 12:00 PM ET FOX = 9:00 AM PT), **Dec 5 SEC Championship**
+  (official 4:00 PM ET ABC = 1:00 PM PT), **Dec 12 Army vs Navy** (official 3:00 PM ET CBS =
+  12:00 PM PT). Flag `WWO_NCAAF_EXPANDED`. All three days now block their windows and assert no
+  free time.
+- **FIXED - the site still reported free time on days when football games are on (second half of
+  the reported bug).** Pass A had introduced the NOT FREE - TIME TBD *status*, but the generated
+  data (Free min up to 1440 on NOT FREE days) and the UI (green bands + "Xh Ym free") still
+  *presented* free time on those days, and UNCONFIRMED days likewise. Now: NOT FREE - TIME TBD and
+  UNCONFIRMED days store `free: []` / `free_minutes: 0` (arithmetic kept in `provisional_free` for
+  reference only), the day-by-day table prints Free min = 0 with a legend, and the UI shows no green
+  bands and a "Free time NOT available / NOT asserted" panel. Flag `FREE_TIME_NOT_ASSERTED`.
+  `scripts/audit.py` independently verifies the assertion rule.
+- **FLAGGED - WWO internal conflict on the 127th Army-Navy Game (event 557132):** grid air time
+  2:00 PM ET vs event-page window "3:30 PM - 7:30 PM EST". Official CBS kickoff 3:00 PM ET used
+  (flag `IRREGULARITY`).
+- **RE-VERIFIED (no deltas) - WWO NFL page** (71/71 upcoming events across both rendered lists),
+  **WWO NCAAF page's known 10 broadcasts**, **WWO U.S. Soccer** ("No upcoming events").
+
+### Added / changed in the 2026-09-16 pass A (previous)
 
 - **CORRECTED - MLB postseason placeholder count.** The live Stats API now reports **2** games on
   2026-10-04 (the 2026-08-28 transcription had 4), so the postseason placeholder total is **53**,
@@ -332,6 +384,17 @@ Sharks + Valkyries evening slate - most Nov-Feb weeknights now have a Bay Area r
 22. **PRESEASON_INFO_ONLY (4)** - Sharks Sep 20/22/24/26: KFOX carries only "select" preseason
     games (unspecified which), so all four are listed but never block. Warriors preseason all
     blocks (95.7 carries "all preseason and regular season games").
+23. **WWO_NCAAF_EXPANDED (new 2026-09-16 pass B)** - the WWO NCAAF page widget truncates at 10
+    events; the complete list (13 broadcasts) comes from its eventGrid endpoint
+    (`westwoodonesports.com/more/eventGrid?id=47030&range=current&offset=0&limit=20&timezone=America/New_York&widgetTitle=Upcoming+NCAA+Football+Broadcasts`).
+    Always re-check that endpoint when re-transcribing the NCAAF file - the first page alone is
+    not the full schedule.
+24. **FREE_TIME_NOT_ASSERTED (new 2026-09-16 pass B)** - rule: any day with status NOT FREE - TIME
+    TBD or UNCONFIRMED reports NO free time (free = [], free_minutes = 0, no green bands, no
+    "Xh Ym free"; Free min = 0 in schedules.md means "not asserted", not "free"). Arithmetic
+    windows are preserved in `provisional_free` for reference only. This is the second half of the
+    fix for the reported bug "the site says I have free time on days when there are football games
+    on"; the first half (pass A / 2026-09-15) added the NOT FREE - TIME TBD status itself.
 
 ## 4. Known limitations (stated plainly)
 

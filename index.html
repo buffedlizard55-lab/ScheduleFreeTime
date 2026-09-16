@@ -157,8 +157,10 @@ footer .container{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-betw
          <b>Westwood One</b> NCAA football radio showcase. 📻 marks the games on national radio in the
          Bay Area (KNBR). If a game is definitely happening but its kickoff is still TBD — every NFL
          playoff game, the late-season Saturday doubleheaders, Week 18 — the day is marked
-         <b>NOT FREE — TIME TBD</b> and clearly-labeled <b>estimated</b> windows block the time until
-         the real kickoff is announced. Everything is shown in <b>America/Los_Angeles</b> for
+         <b>NOT FREE — TIME TBD</b>: clearly-labeled <b>estimated</b> windows block the time where a
+         documented pattern exists, and the site reports <b>no free time at all</b> on that day. Days
+         with only conditional playoff possibilities stay <b>UNCONFIRMED</b> and likewise assert no
+         free time. Everything is shown in <b>America/Los_Angeles</b> for
          <b>Aug 1, 2026 – Feb 28, 2027</b>.</p>
     </div>
     <div class="legend" aria-label="Status legend">
@@ -250,9 +252,10 @@ footer .container{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-betw
         tracked game will definitely be played but has no official kickoff yet (NFL playoffs,
         late-season Saturdays, Week 18, MLB postseason, some Stanford/Cal games) is <b>NOT FREE — TIME TBD</b>:
         where a documented pattern exists (2025-26 playoff kickoffs, WWO air times, the league's
-        standard windows) an <b>EST</b>-tagged estimated window blocks the time; otherwise no free time
-        is asserted at all. Days with only conditional playoff possibilities stay <b>UNCONFIRMED</b>.
-        See <a href="#sources">Sources &amp; verification</a> for the links.</div>
+        standard windows) an <b>EST</b>-tagged estimated window blocks the time, and <b>no free time is
+        reported on that day at all</b> (no free windows, no free minutes — the day is simply not free).
+        Days with only conditional playoff possibilities stay <b>UNCONFIRMED</b> — free time is not
+        asserted there either. See <a href="#sources">Sources &amp; verification</a> for the links.</div>
     </section>
   </div>
 
@@ -295,7 +298,7 @@ footer .container{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-betw
           </tbody>
         </table>
       </div>
-      <div class="callout"><b>Verification note:</b> re-checked against primary sources on <b>2026-09-16</b> (independent audit script; MLB Stats API per-date counts for Aug 1&ndash;Sep 27 identical on all 58 dates + game-level checks Sep 16&ndash;26; WWO NFL + NCAA football pages re-fetched, zero deltas; NFL week 2 re-checked on nfl.com; every remaining 49ers game re-checked on 49ers.com; Warriors preseason + Oct/Nov and Sharks October re-checked on ESPN; Cal/Stanford/Earthquakes next games re-checked; Valkyries (WNBA) added - 95.7 The Game, playoffs from Sep 27; MLB postseason Oct 4 placeholder corrected 4&nbsp;&rarr;&nbsp;2 games). Earlier: <b>2026-09-15</b> (MLB Stats API Sep 26-29 boundary query; Westwood One NFL page row-for-row; nfl.com weeks 16-18 pages; ESPN postseason events incl. the official Super Bowl kickoff; Sporting News preseason times; WWO college kickoffs; MLB postseason placeholders confirmed TBD).
+      <div class="callout"><b>Verification note:</b> <b>2026-09-16 pass B (current):</b> WWO NFL + NCAA football pages re-fetched live; the WWO NCAAF list grew <b>10&nbsp;&rarr;&nbsp;13 broadcasts</b> (the page widget truncates at 10; the widget&rsquo;s eventGrid endpoint shows the full list &mdash; added Nov 28 Michigan@Ohio State, Dec 5 SEC Championship, Dec 12 Army&ndash;Navy, all with official kickoffs); WWO U.S. Soccer = no upcoming events; bug fix: <b>NOT FREE &ndash; TIME TBD and UNCONFIRMED days no longer report any free time</b> (no green bands, no free minutes). <b>2026-09-16 pass A:</b> independent audit script; MLB Stats API per-date counts for Aug 1&ndash;Sep 27 identical on all 58 dates + game-level checks Sep 16&ndash;26; WWO NFL + NCAA football pages re-fetched, zero deltas; NFL week 2 re-checked on nfl.com; every remaining 49ers game re-checked on 49ers.com; Warriors preseason + Oct/Nov and Sharks October re-checked on ESPN; Cal/Stanford/Earthquakes next games re-checked; Valkyries (WNBA) added - 95.7 The Game, playoffs from Sep 27; MLB postseason Oct 4 placeholder corrected 4&nbsp;&rarr;&nbsp;2 games. Earlier: <b>2026-09-15</b> (MLB Stats API Sep 26-29 boundary query; Westwood One NFL page row-for-row; nfl.com weeks 16-18 pages; ESPN postseason events incl. the official Super Bowl kickoff; Sporting News preseason times; WWO college kickoffs; MLB postseason placeholders confirmed TBD).
         All 65 Westwood One NFL broadcasts match the league table by date + matchup (plus 8 TBA placeholders);
         the 63 Warriors and 68 Sharks games match ESPN's rendered schedules row-for-row with per-game review
         links; earlier checks still hold (MLB Sep 10&ndash;12 35/35, all 28 postseason dates TBD, 272 NFL rows at
@@ -406,29 +409,43 @@ function renderDay(){
   document.getElementById('dLabel').textContent=CUR.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'})+` — ${ptLabelFor(CUR)}`;
   const gs=dayGames(ds), {merged,free}=windows(gs);
   const tbd=gs.filter(g=>g.start_min==null&&!g.info_only&&!g.conditional);
+  const tbdN=tbd.reduce((a,g)=>a+(g.tbd_count||1),0);
   const est=gs.filter(g=>g.estimated&&g.start_min!=null);
   const cond=gs.filter(g=>g.conditional);
   const fm=free.reduce((a,b)=>a+b[1]-b[0],0);
-  let st=STATUS[ds]||(tbd.length||est.length?'NOT FREE — TIME TBD':(cond.length?'UNCONFIRMED':(!merged.length?'FREE':(fm===0?'FULLY BOOKED':'PARTIAL'))));
+  // Status is recomputed from the currently visible (toggle-aware) games with the same
+  // documented rule the build uses, so league toggles / duration edits never leave a stale
+  // status or a stale "free time" claim behind.
+  const st=(tbdN||est.length)?'NOT FREE — TIME TBD':(cond.length?'UNCONFIRMED':(!merged.length?'FREE':(fm===0?'FULLY BOOKED':'PARTIAL')));
+  // Free-time assertion rule (2026-09-16 pass B): on NOT FREE - TIME TBD and UNCONFIRMED
+  // days the site reports NO free time at all - no green bands, no "Xh Ym free", no window
+  // list. This is the fix for "the site says I have free time on days when there are
+  // football games on": a WWO-covered / TBD kickoff day is NOT free.
+  const notAsserted=st==='NOT FREE — TIME TBD'||st==='UNCONFIRMED';
   document.getElementById('dBadge').innerHTML=
-    `<span class="badge b-${st.split(' ')[0]}">${st}</span> <span class="sub">${gs.length} game(s) &middot; ${Math.floor(fm/60)}h ${fm%60}m free${(tbd.length||est.length)?' (provisional)':''}</span>`;
+    `<span class="badge b-${st.split(' ')[0]}">${st}</span> <span class="sub">${gs.length} game(s) &middot; `+
+    (notAsserted
+      ? (st==='UNCONFIRMED'?'free time NOT asserted (conditional event(s) may add games)'
+                           :'free time NOT available — no free time is reported on this day')
+      :`${Math.floor(fm/60)}h ${fm%60}m free`)+'</span>';
   const tl=document.getElementById('tl');tl.innerHTML='';
-  free.forEach(([s,e])=>{const d=document.createElement('div');d.className='fr';d.style.left=(s/1440*100)+'%';d.style.width=((e-s)/1440*100)+'%';tl.appendChild(d);});
+  if(!notAsserted)free.forEach(([s,e])=>{const d=document.createElement('div');d.className='fr';d.style.left=(s/1440*100)+'%';d.style.width=((e-s)/1440*100)+'%';tl.appendChild(d);});
   merged.forEach(([s,e])=>{const d=document.createElement('div');d.className='blk';d.style.left=(Math.max(s,0)/1440*100)+'%';d.style.width=((Math.min(e,1440)-Math.max(s,0))/1440*100)+'%';d.title='Games on: '+fmt(s)+' - '+fmt(e);tl.appendChild(d);});
   // estimated windows: hatched overlay (clearly not official times)
   est.forEach(g=>{const s=g.start_min,e=g.start_min+(g.dur_override||dur(g.sport));const d=document.createElement('div');d.className='blk est';d.style.left=(Math.max(s,0)/1440*100)+'%';d.style.width=((Math.min(e,1440)-Math.max(s,0))/1440*100)+'%';d.title='ESTIMATED window: '+fmt(s)+' - '+fmt(e)+' (kickoff TBD)';tl.appendChild(d);});
   let fl='';
-  if(st==='NOT FREE — TIME TBD'&&est.length===0){
+  if(st==='NOT FREE — TIME TBD'){
     fl='<h3>Free windows (no game on)</h3>'+
-       `<div class="callout"><b>&#9888; Free time NOT available on this day.</b> ${tbd.length} game(s) will be played/aired but have no announced start time, and no reliable window can be estimated yet — do not plan around the free time. Announcements: MLB posts postseason times ~1 week out; the NFL posts Wk-18 and playoff kickoffs after the Jan 3 slate.</div>`;
+       `<div class="callout"><b>&#9888; Free time NOT available on this day.</b> ${tbdN} game(s) will be played/aired but their start time(s) are not official yet${est.length?`; ${est.length} estimated window(s) (hatched below, labeled EST in the table) block documented-pattern times`:''} — <b>no free time is reported on this day</b> (per the rule that any covered game means free time NOT available). Real free windows will appear here once kickoff times are announced${tbdN?' (MLB posts postseason times ~1 week out; the NFL posts Wk-18 and playoff kickoffs after the Jan 3 slate)':''}.</div>`;
+    if(est.length)fl+=`<div class="callout">The hatched windows are estimates from documented patterns (${est.some(g=>g.sport==='nfl_all')?'2025-26 NFL postseason kickoffs, the league&rsquo;s standard Saturday windows, and Westwood One&rsquo;s air times':''}${est.some(g=>g.sport==='ncaaw')?'the WWO college showcase&rsquo;s windows':''}) — they block the time until official kickoffs replace them.</div>`;
+  }else if(st==='UNCONFIRMED'){
+    fl='<h3>Free windows (no game on)</h3>'+
+       `<div class="callout"><b>Free time is NOT asserted on this day.</b> ${cond.length} conditional playoff/qualification event(s) (MLS playoffs / ACC / CFP / WNBA later rounds) would add games if Stanford, Cal, the Earthquakes or the Valkyries qualify${merged.length?`, on top of the ${merged.length} confirmed blocking window(s)`:''} — <b>no free time is reported here</b> until the brackets, results and bowl selections are known.</div>`;
   }else{
-    fl='<h3>Free windows (no game on)'+((tbd.length||est.length)?' — PROVISIONAL':'')+'</h3><div class="fw">'+
+    fl='<h3>Free windows (no game on)</h3><div class="fw">'+
       (free.length?free.map(([s,e])=>`<div><b>${fmt(s)} &ndash; ${fmt(e)}</b><small>${Math.floor((e-s)/60)}h ${(e-s)%60}m free</small></div>`).join('')
         :'<div class="empty">No free time on this day.</div>')+'</div>';
-    if(est.length)fl+=`<div class="callout"><b>&#9888; Free time NOT available — kickoff(s) still TBD.</b> ${est.length} estimated window(s) (hatched on the timeline, labeled EST in the table) are blocked using documented patterns (${est.some(g=>g.sport==='nfl_all')?'2025-26 NFL postseason kickoffs, the league&rsquo;s standard Saturday windows, and Westwood One&rsquo;s air times':''}${est.some(g=>g.sport==='ncaaw')?'the WWO college showcase&rsquo;s 3:30/7:30 PM ET windows':''}). The real windows will replace them once times are official.</div>`;
-    else if(tbd.length)fl+=`<div class="callout"><b>&#9888; Provisional:</b> ${tbd.length} game(s) on this day have no announced start time, so they do not block a specific window yet. Treat this day's free time as provisional.</div>`;
   }
-  if(cond.length)fl+=`<div class="callout"><b>Conditional:</b> ${cond.length} possible playoff/qualification event(s) (MLS playoffs / ACC / CFP) would add games if Stanford, Cal or the Earthquakes qualify — those days are UNCONFIRMED.</div>`;
   document.getElementById('freeList').innerHTML=fl;
   const tb=document.getElementById('games');tb.innerHTML='';
   if(!gs.length)tb.innerHTML='<tr><td colspan="5" class="empty">No games from the tracked leagues.</td></tr>';

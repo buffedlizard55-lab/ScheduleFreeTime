@@ -21,7 +21,13 @@ Additional confirmation: Westwood One also carries NCAA Football (national showc
 ### Schedule source
 - Official schedule page: https://www.westwoodonesports.com/nfl-schedule/
 - Transcribed file: `data/raw/westwoodone_nfl_2026.txt` — 65 dated broadcasts (event IDs 548429–548570) + 8 TBA placeholders (Dec 26 x2, Jan 2 x2, Jan 9 x3, Jan 10 SNF). Cross-checked 65/65 against the league-wide NFL table (`data/raw/nfl_2026_pfr_regseason.txt`) — date + matchup exact.
-- NCAA Football showcase: https://www.westwoodonesports.com/ncaa-football/ — 10 Saturday broadcasts transcribed to `data/raw/westwoodone_ncaaf_2026.txt` (event IDs 557127, 557136, 557137, 557139, 557140, 557141, 557129, 557143, 557144, 557145). Two with official air times, eight TBD — verified live 2026-09-16 with zero deltas.
+- NCAA Football showcase: https://www.westwoodonesports.com/ncaa-football/ — **13 broadcasts** transcribed to `data/raw/westwoodone_ncaaf_2026.txt` (19 rows). The page's main widget only renders the **first 10** events; the complete 2026 list comes from the widget's own "More" endpoint (verified live 2026-09-16 pass B; the list ends "No more events"):
+  `https://www.westwoodonesports.com/more/eventGrid?id=47030&range=current&offset=0&limit=20&timezone=America/New_York&widgetTitle=Upcoming+NCAA+Football+Broadcasts`
+  - Original 10 (event IDs 557127, 557136, 557137, 557139, 557140, 557141, 557129, 557143, 557144, 557145): re-verified 2026-09-16 pass B, zero deltas (the Nov 14 Michigan@Oregon row now prints a single date "NOV 14" on the page, confirming the goducks.com resolution).
+  - **3 additional broadcasts found 2026-09-16 pass B** (missing because of the 10-event widget truncation):
+    - **Nov 28, 2026 — Michigan at Ohio State** (event 557131, WWO air 11:30 AM ET). Official kickoff **12:00 PM ET on FOX** = **9:00 AM PT**: University of Michigan announcement (sports.yahoo.com "Michigan vs. Ohio State 2026: Date, Time Announced for 'The Game'", 2026-05-11), Big Ten TV schedule (on3.com "Big Ten releases TV schedule, kickoff times for 2026 football season"), dispatch.com 2026-05-11.
+    - **Dec 5, 2026 — SEC Championship Game** (event 557146, WWO air 3:30 PM ET; Mercedes-Benz Stadium, Atlanta). Official kickoff **4:00 PM ET on ABC** = **1:00 PM PT**: SEC Commissioner Chuck Dunlap (x.com/SEC_Chuck/status/2054313616988324108, 2026-05-12: "air on ABC and kickoff at 4 p.m. ET/3 p.m. CT"), SEC release (al.com/sec, fbschedules.com).
+    - **Dec 12, 2026 — 127th Army vs Navy Game** (event 557132, WWO grid air 2:00 PM ET; MetLife Stadium). Official kickoff **3:00 PM ET on CBS** = **12:00 PM PT**: goarmywestpoint.com + navysports.com (American Conference) 2026-05-27, sportingnews.com. Irregularity flagged: WWO's own event page prints the window "3:30 PM – 7:30 PM EST", conflicting with the grid's 2:00 PM ET air time — the official CBS kickoff is authoritative.
 
 ### Bay Area carriage
 - Station-finder: https://www.westwoodonesports.com/station-finder/ lists San Francisco affiliate as KNBR-AM / KNBR-FM / KTCT-AM.
@@ -112,5 +118,24 @@ UI: `index.html` renders `★` on any day where `has_priority` is true, and `sch
 
 This satisfies the requirement: all games broadcast live over Bay Area radio are high priority and block free time.
 
+## Other sports checked for live Bay Area radio (2026-09-16 pass B)
+
+The user asked to find *any* other sports broadcast live over Bay Area radio. Checked in this
+pass (no hallucinations — only what a fetched source actually says):
+
+| Candidate | What was checked | Result |
+|---|---|---|
+| WWO U.S. Soccer | `https://www.westwoodonesports.com/us-soccer/` fetched live (widget id=47032) | "**No upcoming events**" — no in-window WWO soccer broadcasts. (The 2026 World Cup ended before the window; nothing else listed.) |
+| NWSL San Francisco Deltas | web search for a 2026 Bay Area radio flagship (station names, club releases) | **No verifiable Bay Area radio flagship found.** NWSL radio in general is SiriusXM national (e.g. siriusxm.com/blog/nwsl-championship) — not Bay Area terrestrial radio, and no Deltas-specific over-the-air partner surfaced. **Not tracked**; re-check if the club announces a local radio deal. |
+| USL / other pro soccer in the Bay Area | web search | No in-window, Bay-Area-radio-carrying league found (no verified radio flagship). |
+| 49ers club radio (this week) | 49ers.com "Ways to Watch and Listen: Dolphins vs. 49ers Week 2" (2026-09-15) | Reconfirms the repo's rows: weeks 1–3 on KSFO (810 AM, as the club prints it) / KSAN (107.7 FM), from week 4 on KSAN + KNBR. No change. |
+
+Conclusion: for the window Aug 1, 2026 – Feb 28, 2027, the tracked set (all MLB, all NFL, 49ers,
+Earthquakes, Stanford, Cal, Warriors, Valkyries, Sharks, WWO NFL + WWO NCAAF) covers every sport
+verified as live on Bay Area radio.
+
 ## Verification date
-2026-09-16 independent audit pass + 2026-09-17 web re-verification (this file). All links above were fetched live and match the repo's stored transcriptions.
+2026-09-16 pass A independent audit + pass B live re-verification (this session: WWO NFL / NCAAF /
+U.S. Soccer pages re-fetched, the three missing WWO NCAAF broadcasts added with official kickoff
+sources, other-sports sweep documented). All links above were fetched live and match the repo's
+stored transcriptions.
