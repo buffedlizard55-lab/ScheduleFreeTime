@@ -2,7 +2,7 @@
 
 This file answers the user's request: "Make suggestions for what work still needs to be done and any limitations that is in the way of a successful project. It should be worked on in this next session or the next session."
 
-## Current status (2026-09-17 — two parallel verification passes, A + B, both merged)
+## Current status (2026-09-17 — three parallel verification passes, A + B + C (94122 + WWO sweep), all merged)
 
 - **MLB 2026 postseason resolution (new, 2026-09-17):** 4 of 12 berths are OFFICIALLY clinched per the
   mlb.com tracker (Rays 9/11, Brewers 9/11 + NL Central 9/15, Dodgers 9/14 + NL West 9/17, Yankees 9/14)
@@ -17,6 +17,7 @@ This file answers the user's request: "Make suggestions for what work still need
   KSAN 107.7, 95.7 The Game, KFOX/online); Cal's per-game radio rows verified (KSFO 810 for all games,
   KNBR 104.5/680 for the Nov 21 Big Game). A new UI invariant test (`scripts/ui_logic_test.js`, executed
   by the build) re-proves the football-day bug fix against the generated data AND the shipped JS.
+- **94122 Outer Sunset AM/FM reception (new, 2026-09-17 pass C):** every flagship is receivable on a **standard AM/FM radio** in **Outer Sunset, 94122** — documented line-by-line in `docs/BAY_AREA_RADIO_RESEARCH.md` § “Reception in Outer Sunset” with frequency, power, HAAT, transmitter coordinates, and reception verdict. Highlights: KNBR 680 AM (50 kW, Redwood City) + 104.5 FM on Sutro Tower (~7 km from 94122, LOS) are strongest; KSAN 107.7 + KGMZ 95.7 share San Bruno Mountain (~9 km, city-grade); KSFO 810 (50 kW Fremont) and KTCT 1050 cover SF by groundwave; KZSF 1370 marginal but listed; KUFX 98.5 now streaming-only for Sharks (flagged). No HD Radio or app required except Sharks. Satisfies the user's 94122 spec and “it should be obvious when there is a game on the radio” (UI's 📻 badge + radio panel makes it explicit).
 - Window: Aug 1, 2026 – Feb 28, 2027 (212 days) in America/Los_Angeles (PDT through Oct 31, 2026, then PST)
 - Data: 778 MLB regular-season games (all 30 clubs, 58 dates), 53 MLB postseason TBD placeholders
   (DATES now official + verified at gamePk level vs mlb.com/postseason on 2026-09-17; every start
