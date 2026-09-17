@@ -57,7 +57,11 @@ are clinched** — Rays (9/11), Brewers (9/11; NL Central 9/15), Dodgers (9/14; 
 (Sep 29 – Oct 31): AL (1) Rays vs (4) Yankees, (2) Guardians vs (5) Red Sox, (3) Astros vs (6) White
 Sox; NL (1) Brewers vs (4) Cubs, (2) Dodgers vs (5) Phillies, (3) Braves vs (6) Padres. Projections
 are labeled "as of 2026-09-17, not final" (seeds move through Sep 27), and **all 53 kickoff times
-remain officially TBD** (the Stats API still returns 07:33:00Z placeholders — re-verified 2026-09-17).
+remain officially TBD** (the Stats API still returns 07:33:00Z placeholders — re-verified twice on
+2026-09-17; NBC's own Wild Card explainer also still prints "Times and teams are still TBD").
+**When the field is set (Sep 27–28), run `python3 scripts/fetch_mlb.py`** — it diffs the live API
+against the raw file at gamePk level and prints the exact replacement rows for any game whose time
+became official.
 
 ## Run it
 
@@ -160,6 +164,7 @@ No manual entry anywhere. The pipeline reads hand-transcribed, source-attributed
 | `data/raw/westwoodone_nfl_2026.txt` | 65 WWO NFL broadcasts + 8 TBA placeholders (matched 65/65 vs the league table) |
 | `data/raw/westwoodone_ncaaf_2026.txt` | 13 WWO NCAA football broadcasts / 19 rows (7 with confirmed-or-reported official kickoffs incl. Nov 28 / Dec 5 / Dec 12; 12 estimated showcase slots for the 6 still-TBD Saturdays) — full list via the page's eventGrid endpoint (the widget truncates at 10) |
 | `data/raw/mls_2026_playoffs_conditional.txt` | MLS playoff windows (Nov 18 – Dec 18) as SJ-conditional UNCONFIRMED days |
+| `scripts/fetch_mlb.py` | **new 2026-09-17 pass D:** one-command live re-check of the MLB postseason (gamePk + per-date diff vs the raw file, official-time detection, replacement-row printer, snapshot JSON, offline-safe) |
 | `data/raw/ncaa_2026_postseason_conditional.txt` | ACC title game Dec 5 + CFP days Dec 18 – Jan 25 (Stanford/Cal-conditional) |
 | `data/games_local.json` | 49ers (20 games), Earthquakes (17 games incl. the Nov 7 Decision Day finale), Stanford (12), Cal (12) — with a source URL per game |
 | `data/processed/free_time.json` | generated: per-day windows + flags (consumed by the UI) |

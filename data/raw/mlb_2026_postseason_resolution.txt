@@ -52,3 +52,10 @@ times_status|ALL 53 postseason kickoff times remain OFFICIALLY TBD - the MLB Sta
 source|https://www.mlb.com/news/2026-postseason-teams
 source|https://www.mlb.com/news/mlb-playoff-picture-and-bracket-2026
 source|https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-09-28&endDate=2026-11-10&fields=dates,date,totalGames
+# PASS D re-verification 2026-09-17 (later same day): every source above re-fetched fresh.
+# The clinch tracker and playoff picture show the SAME 4 clinches and the SAME projected
+# bracket (zero changes). The Stats API re-read at gamePk level (all 9 chunks): 53 games /
+# 28 dates, every one startTimeTBD=true with the 07:33:00Z placeholder. NBC's Wild Card
+# explainer (nbc.com/nbc-insider/wild-card-round-mlb-playoffs-explained, Sep 14 2026) also
+# still prints 'Times and teams are still TBD'. No time to resolve yet; re-run
+# scripts/fetch_mlb.py after the field is set Sep 27-28.

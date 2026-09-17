@@ -1,6 +1,10 @@
 # Westwood One Sports — 2026 NCAA football national radio broadcasts (Saturday showcase).
 # Transcribed 2026-09-14 from the official page, RE-VERIFIED + kickoff times added 2026-09-15:
 #   https://www.westwoodonesports.com/ncaa-football/
+# RE-VERIFIED 2026-09-17 pass D: the eventGrid endpoint (id=47030) re-fetched fresh — the
+# same 13 broadcasts / 19 rows, ZERO deltas; grid air times unchanged (Oct 31 3:00pm ET,
+# Nov 28 11:30am ET, Dec 5 3:30pm ET, Dec 12 2:00pm ET; the six TBD Saturdays still print
+# 'Air time TBD'; Sep 26 3:00pm ET unchanged).
 # Bay Area carriage: KNBR family carries Westwood One Sports in San Francisco
 # (station-finder NFL table lists KNBR-AM/FM + KTCT-AM; KNBR-FM Wikipedia confirms the
 # stations are "the San Francisco affiliates for Westwood One Sports" generally; the page's

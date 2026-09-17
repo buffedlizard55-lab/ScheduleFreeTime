@@ -1,5 +1,12 @@
 # MLB 2026 POSTSEASON placeholders - RESOLVED PASS 2026-09-17.
 #
+# RE-VERIFIED 2026-09-17 pass D (independent, all 9 API chunks fetched fresh at gamePk
+# level): 53 games across the same 28 dates, every game still startTimeTBD=true with the
+# 07:33:00Z placeholder - zero drift. mlb.com/postseason re-fetched: every WC + DS gamePk
+# prints 'TBD'. NBC's Wild Card explainer (nbc.com/nbc-insider, Sep 14, 2026) confirms
+# 'Times and teams are still TBD'. scripts/fetch_mlb.py (new) re-checks all of this in
+# one command once the field is set.
+#
 # WHAT IS NOW OFFICIAL (verified 2026-09-17 against https://www.mlb.com/postseason):
 #   - Every date below and the number of games per date: all 28 dates / 53 games match
 #     the official "Tentative 2026 Postseason Schedule" on mlb.com/postseason exactly
