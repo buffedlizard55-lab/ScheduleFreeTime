@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated_utc": "2026-09-16",
+  "generated_utc": "2026-09-17",
   "window": {
    "start": "2026-08-01",
    "end": "2027-02-28"
@@ -51,8 +51,115 @@
    "wwo_nfl_tba": 8,
    "wwo_ncaaf": 13,
    "wwo_ncaaf_rows": 19,
-   "wwo_ncaaf_est_rows": 13
+   "wwo_ncaaf_est_rows": 13,
+   "mlb_clinched": 4,
+   "radio_games": 361
   },
+  "postseason_resolution": {
+   "as_of": "2026-09-17",
+   "clinched": [
+    {
+     "team": "Tampa Bay Rays",
+     "league": "AL East",
+     "date": "2026-09-11",
+     "detail": "clinched playoff spot Sep 11; 1st AL East (4.5 games ahead of NYY)",
+     "url": "https://www.mlb.com/news/2026-postseason-teams"
+    },
+    {
+     "team": "Milwaukee Brewers",
+     "league": "NL Central",
+     "date": "2026-09-15",
+     "detail": "clinched playoff spot Sep 11; won NL Central Sep 15",
+     "url": "https://www.mlb.com/news/2026-postseason-teams"
+    },
+    {
+     "team": "Los Angeles Dodgers",
+     "league": "NL West",
+     "date": "2026-09-17",
+     "detail": "clinched playoff spot Sep 14; won NL West Sep 17",
+     "url": "https://www.mlb.com/news/2026-postseason-teams"
+    },
+    {
+     "team": "New York Yankees",
+     "league": "Wild Card",
+     "date": "2026-09-14",
+     "detail": "clinched playoff spot Sep 14; 1st AL Wild Card (6 games ahead of BOS)",
+     "url": "https://www.mlb.com/news/2026-postseason-teams"
+    }
+   ],
+   "seedings": {
+    "AL": [
+     "Rays (1, AL East)",
+     "Guardians (2, AL Central)",
+     "Astros (3, AL West)",
+     "Yankees (4, Wild Card)",
+     "Red Sox (5, Wild Card)",
+     "White Sox (6, Wild Card)"
+    ],
+    "NL": [
+     "Brewers (1, NL Central)",
+     "Dodgers (2, NL West)",
+     "Braves (3, NL East)",
+     "Cubs (4, Wild Card)",
+     "Phillies (5, Wild Card)",
+     "Padres (6, Wild Card)"
+    ]
+   },
+   "wcr_series": [
+    {
+     "league": "AL",
+     "home": "(1) Rays",
+     "away": "(4) Yankees"
+    },
+    {
+     "league": "AL",
+     "home": "(2) Guardians",
+     "away": "(5) Red Sox"
+    },
+    {
+     "league": "AL",
+     "home": "(3) Astros",
+     "away": "(6) White Sox"
+    },
+    {
+     "league": "NL",
+     "home": "(1) Brewers",
+     "away": "(4) Cubs"
+    },
+    {
+     "league": "NL",
+     "home": "(2) Dodgers",
+     "away": "(5) Phillies"
+    },
+    {
+     "league": "NL",
+     "home": "(3) Braves",
+     "away": "(6) Padres"
+    }
+   ],
+   "races": [
+    "AL Central: Guardians lead White Sox by 0.5",
+    "AL West: Astros and Rangers TIED for the division lead (Astros own the tiebreaker)",
+    "AL Wild Card: White Sox lead Rangers by 1 for the final berth",
+    "NL Wild Card: Padres lead D-backs by 3.5 for the final berth",
+    "AL East: Rays lead Yankees by 4.5",
+    "NL East: Braves lead Phillies by 4.5"
+   ],
+   "times_status": "ALL 53 postseason kickoff times remain OFFICIALLY TBD - the MLB Stats API returns the 07:33:00Z placeholder for every one (re-verified live 2026-09-17); MLB announces postseason times closer to each round (typically ~1 week out).",
+   "sources": [
+    "https://www.mlb.com/news/2026-postseason-teams",
+    "https://www.mlb.com/news/mlb-playoff-picture-and-bracket-2026",
+    "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-09-28&endDate=2026-11-10&fields=dates,date,totalGames"
+   ]
+  },
+  "radio_bay_area": [
+   "KNBR 680 AM / 104.5 FM / KTCT 1050 AM - Westwood One (every primetime NFL game, all 8 WWO internationals, every NFL playoff game, WWO college football) + Giants flagship (since 1979) + 49ers co-flagship + Stanford football + the Nov 21 Big Game (verified 2026-09-17)",
+   "KSFO 810 AM - Earthquakes English flagship (2026) + Cal football (every 2026 game except the Big Game, verified 2026-09-17 on calbears.com)",
+   "KZSF 1370 AM La Kaliente - Earthquakes Spanish-language flagship (2026)",
+   "KSAN 107.7 FM - 49ers co-flagship",
+   "95.7 The Game (KGMZ-FM) - Warriors (all games) + Valkyries (home games over the air, all games on the Audacy app)",
+   "98.5 KFOX - Sharks flagship 2000-2021; Jan 2021 onward all Sharks audio is the Sharks Audio Network (online)"
+  ],
   "mlb_playoff_picture": {
    "as_of": "2026-09-17",
    "clinched": [
@@ -239,7 +346,8 @@
      "source": "https://images.mlssoccer.com/image/upload/v1766018474/assets/sje/schedule/2026%20Schedule.pdf",
      "flag": "",
      "start_min": 990,
-     "pt_date": "2026-08-01"
+     "pt_date": "2026-08-01",
+     "radio": "KSFO 810 AM (English) / KZSF 1370 AM (Spanish)"
     },
     {
      "date": "2026-08-01",
@@ -269,7 +377,8 @@
      "home_id": 135,
      "label": "San Francisco Giants @ San Diego Padres",
      "priority": true,
-     "source": "mlb_2026_regseason.txt"
+     "source": "mlb_2026_regseason.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     },
     {
      "date": "2026-08-01",
@@ -549,7 +658,8 @@
      "home_id": 135,
      "label": "San Francisco Giants @ San Diego Padres",
      "priority": true,
-     "source": "mlb_2026_regseason.txt"
+     "source": "mlb_2026_regseason.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     },
     {
      "date": "2026-08-02",
@@ -720,7 +830,8 @@
      "home_id": 140,
      "label": "San Francisco Giants @ Texas Rangers",
      "priority": true,
-     "source": "mlb_2026_regseason.txt"
+     "source": "mlb_2026_regseason.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     },
     {
      "date": "2026-08-03",
@@ -970,7 +1081,8 @@
      "home_id": 140,
      "label": "San Francisco Giants @ Texas Rangers",
      "priority": true,
-     "source": "mlb_2026_regseason.txt"
+     "source": "mlb_2026_regseason.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     },
     {
      "date": "2026-08-04",
@@ -1128,7 +1240,8 @@
      "home_id": 140,
      "label": "San Francisco Giants @ Texas Rangers",
      "priority": true,
-     "source": "mlb_2026_regseason.txt"
+     "source": "mlb_2026_regseason.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     },
     {
      "date": "2026-08-05",
@@ -1820,7 +1933,8 @@
      "home_id": 137,
      "label": "Detroit Tigers @ San Francisco Giants",
      "priority": true,
-     "source": "mlb_2026_regseason.txt"
+     "source": "mlb_2026_regseason.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     }
    ],
    "blocked": [
@@ -2010,7 +2124,8 @@
      "home_id": 137,
      "label": "Detroit Tigers @ San Francisco Giants",
      "priority": true,
-     "source": "mlb_2026_regseason.txt"
+     "source": "mlb_2026_regseason.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     },
     {
      "date": "2026-08-08",
@@ -2305,7 +2420,8 @@
      "home_id": 137,
      "label": "Detroit Tigers @ San Francisco Giants",
      "priority": true,
-     "source": "mlb_2026_regseason.txt"
+     "source": "mlb_2026_regseason.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     },
     {
      "date": "2026-08-09",
@@ -2551,7 +2667,8 @@
      "home_id": 137,
      "label": "Houston Astros @ San Francisco Giants",
      "priority": true,
-     "source": "mlb_2026_regseason.txt"
+     "source": "mlb_2026_regseason.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     },
     {
      "date": "2026-08-10",
@@ -2816,7 +2933,8 @@
      "home_id": 137,
      "label": "Houston Astros @ San Francisco Giants",
      "priority": true,
-     "source": "mlb_2026_regseason.txt"
+     "source": "mlb_2026_regseason.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     },
     {
      "date": "2026-08-11",
@@ -2946,7 +3064,8 @@
      "home_id": 137,
      "label": "Houston Astros @ San Francisco Giants",
      "priority": true,
-     "source": "mlb_2026_regseason.txt"
+     "source": "mlb_2026_regseason.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     },
     {
      "date": "2026-08-12",
@@ -3367,7 +3486,8 @@
      "flag": "",
      "priority": true,
      "start_min": 1080,
-     "pt_date": "2026-08-13"
+     "pt_date": "2026-08-13",
+     "radio": "KSAN 107.7 FM + KNBR 680/104.5 (weeks 1-3: KSFO 810 AM / KSAN 107.7)"
     },
     {
      "date": "2026-08-13",
@@ -3708,7 +3828,8 @@
      "home_id": 137,
      "label": "Colorado Rockies @ San Francisco Giants",
      "priority": true,
-     "source": "mlb_2026_regseason.txt"
+     "source": "mlb_2026_regseason.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     }
    ],
    "blocked": [
@@ -3901,7 +4022,8 @@
      "home_id": 137,
      "label": "Colorado Rockies @ San Francisco Giants",
      "priority": true,
-     "source": "mlb_2026_regseason.txt"
+     "source": "mlb_2026_regseason.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     },
     {
      "date": "2026-08-15",
@@ -4111,7 +4233,8 @@
      "source": "https://images.mlssoccer.com/image/upload/v1766018474/assets/sje/schedule/2026%20Schedule.pdf",
      "flag": "",
      "start_min": 1170,
-     "pt_date": "2026-08-15"
+     "pt_date": "2026-08-15",
+     "radio": "KSFO 810 AM (English) / KZSF 1370 AM (Spanish)"
     }
    ],
    "blocked": [
@@ -4316,7 +4439,8 @@
      "home_id": 137,
      "label": "Colorado Rockies @ San Francisco Giants",
      "priority": true,
-     "source": "mlb_2026_regseason.txt"
+     "source": "mlb_2026_regseason.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     },
     {
      "date": "2026-08-16",
@@ -4705,7 +4829,8 @@
      "home_id": 114,
      "label": "San Francisco Giants @ Cleveland Guardians",
      "priority": true,
-     "source": "mlb_2026_regseason.txt"
+     "source": "mlb_2026_regseason.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     },
     {
      "date": "2026-08-18",
@@ -5045,7 +5170,8 @@
      "home_id": 114,
      "label": "San Francisco Giants @ Cleveland Guardians",
      "priority": true,
-     "source": "mlb_2026_regseason.txt"
+     "source": "mlb_2026_regseason.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     },
     {
      "date": "2026-08-19",
@@ -5175,7 +5301,8 @@
      "source": "https://images.mlssoccer.com/image/upload/v1766018474/assets/sje/schedule/2026%20Schedule.pdf",
      "flag": "",
      "start_min": 1170,
-     "pt_date": "2026-08-19"
+     "pt_date": "2026-08-19",
+     "radio": "KSFO 810 AM (English) / KZSF 1370 AM (Spanish)"
     }
    ],
    "blocked": [
@@ -5245,7 +5372,8 @@
      "home_id": 114,
      "label": "San Francisco Giants @ Cleveland Guardians",
      "priority": true,
-     "source": "mlb_2026_regseason.txt"
+     "source": "mlb_2026_regseason.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     },
     {
      "date": "2026-08-20",
@@ -5399,7 +5527,8 @@
      "flag": "",
      "priority": true,
      "start_min": 1140,
-     "pt_date": "2026-08-20"
+     "pt_date": "2026-08-20",
+     "radio": "KSAN 107.7 FM + KNBR 680/104.5 (weeks 1-3: KSFO 810 AM / KSAN 107.7)"
     }
    ],
    "blocked": [
@@ -5528,7 +5657,8 @@
      "home_id": 111,
      "label": "San Francisco Giants @ Boston Red Sox",
      "priority": true,
-     "source": "mlb_2026_regseason.txt"
+     "source": "mlb_2026_regseason.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     },
     {
      "date": "2026-08-21",
@@ -6086,7 +6216,8 @@
      "home_id": 111,
      "label": "San Francisco Giants @ Boston Red Sox",
      "priority": true,
-     "source": "mlb_2026_regseason.txt"
+     "source": "mlb_2026_regseason.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     },
     {
      "date": "2026-08-22",
@@ -6176,7 +6307,8 @@
      "source": "https://images.mlssoccer.com/image/upload/v1766018474/assets/sje/schedule/2026%20Schedule.pdf",
      "flag": "",
      "start_min": 1170,
-     "pt_date": "2026-08-22"
+     "pt_date": "2026-08-22",
+     "radio": "KSFO 810 AM (English) / KZSF 1370 AM (Spanish)"
     }
    ],
    "blocked": [
@@ -6366,7 +6498,8 @@
      "home_id": 111,
      "label": "San Francisco Giants @ Boston Red Sox",
      "priority": true,
-     "source": "mlb_2026_regseason.txt"
+     "source": "mlb_2026_regseason.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     },
     {
      "date": "2026-08-23",
@@ -6673,7 +6806,8 @@
      "home_id": 137,
      "label": "Cincinnati Reds @ San Francisco Giants",
      "priority": true,
-     "source": "mlb_2026_regseason.txt"
+     "source": "mlb_2026_regseason.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     }
    ],
    "blocked": [
@@ -6938,7 +7072,8 @@
      "home_id": 137,
      "label": "Cincinnati Reds @ San Francisco Giants",
      "priority": true,
-     "source": "mlb_2026_regseason.txt"
+     "source": "mlb_2026_regseason.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     }
    ],
    "blocked": [
@@ -7023,7 +7158,8 @@
      "home_id": 137,
      "label": "Cincinnati Reds @ San Francisco Giants",
      "priority": true,
-     "source": "mlb_2026_regseason.txt"
+     "source": "mlb_2026_regseason.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     },
     {
      "date": "2026-08-26",
@@ -7411,7 +7547,8 @@
      "flag": "",
      "priority": true,
      "start_min": 1020,
-     "pt_date": "2026-08-27"
+     "pt_date": "2026-08-27",
+     "radio": "KSAN 107.7 FM + KNBR 680/104.5 (weeks 1-3: KSFO 810 AM / KSAN 107.7)"
     },
     {
      "date": "2026-08-27",
@@ -7439,7 +7576,8 @@
      "home_id": 137,
      "label": "Arizona Diamondbacks @ San Francisco Giants",
      "priority": true,
-     "source": "mlb_2026_regseason.txt"
+     "source": "mlb_2026_regseason.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     },
     {
      "date": "2026-08-27",
@@ -7893,7 +8031,8 @@
      "home_id": 137,
      "label": "Arizona Diamondbacks @ San Francisco Giants",
      "priority": true,
-     "source": "mlb_2026_regseason.txt"
+     "source": "mlb_2026_regseason.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     }
    ],
    "blocked": [
@@ -8067,7 +8206,8 @@
      "home_id": 137,
      "label": "Arizona Diamondbacks @ San Francisco Giants",
      "priority": true,
-     "source": "mlb_2026_regseason.txt"
+     "source": "mlb_2026_regseason.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     },
     {
      "date": "2026-08-29",
@@ -8173,7 +8313,8 @@
      "source": "https://gostanford.com/sports/football/schedule",
      "flag": "",
      "start_min": 960,
-     "pt_date": "2026-08-29"
+     "pt_date": "2026-08-29",
+     "radio": "KNBR / KTCT 1050 AM"
     },
     {
      "date": "2026-08-29",
@@ -8215,7 +8356,8 @@
      "source": "https://images.mlssoccer.com/image/upload/v1766018474/assets/sje/schedule/2026%20Schedule.pdf",
      "flag": "",
      "start_min": 1050,
-     "pt_date": "2026-08-29"
+     "pt_date": "2026-08-29",
+     "radio": "KSFO 810 AM (English) / KZSF 1370 AM (Spanish)"
     },
     {
      "date": "2026-08-29",
@@ -8230,7 +8372,8 @@
      "home_id": 137,
      "label": "Arizona Diamondbacks @ San Francisco Giants",
      "priority": true,
-     "source": "mlb_2026_regseason.txt"
+     "source": "mlb_2026_regseason.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     },
     {
      "date": "2026-08-29",
@@ -8591,7 +8734,8 @@
      "home_id": 144,
      "label": "San Francisco Giants @ Atlanta Braves",
      "priority": true,
-     "source": "mlb_2026_regseason.txt"
+     "source": "mlb_2026_regseason.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     },
     {
      "date": "2026-08-31",
@@ -8826,7 +8970,8 @@
      "home_id": 134,
      "label": "San Francisco Giants @ Pittsburgh Pirates",
      "priority": true,
-     "source": "mlb_2026_september.txt"
+     "source": "mlb_2026_september.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     },
     {
      "date": "2026-09-01",
@@ -9166,7 +9311,8 @@
      "home_id": 134,
      "label": "San Francisco Giants @ Pittsburgh Pirates",
      "priority": true,
-     "source": "mlb_2026_september.txt"
+     "source": "mlb_2026_september.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     },
     {
      "date": "2026-09-02",
@@ -9341,7 +9487,8 @@
      "home_id": 134,
      "label": "San Francisco Giants @ Pittsburgh Pirates",
      "priority": true,
-     "source": "mlb_2026_september.txt"
+     "source": "mlb_2026_september.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     },
     {
      "date": "2026-09-03",
@@ -9604,7 +9751,8 @@
      "home_id": 121,
      "label": "San Francisco Giants @ New York Mets",
      "priority": true,
-     "source": "mlb_2026_september.txt"
+     "source": "mlb_2026_september.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     },
     {
      "date": "2026-09-04",
@@ -9724,7 +9872,8 @@
      "source": "https://gostanford.com/sports/football/schedule",
      "flag": "FRIDAY game.",
      "start_min": 1080,
-     "pt_date": "2026-09-04"
+     "pt_date": "2026-09-04",
+     "radio": "KNBR / KTCT 1050 AM"
     },
     {
      "date": "2026-09-04",
@@ -9837,7 +9986,8 @@
      "home_id": 121,
      "label": "San Francisco Giants @ New York Mets",
      "priority": true,
-     "source": "mlb_2026_september.txt"
+     "source": "mlb_2026_september.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     },
     {
      "date": "2026-09-05",
@@ -10029,7 +10179,8 @@
      "source": "https://images.mlssoccer.com/image/upload/v1766018474/assets/sje/schedule/2026%20Schedule.pdf",
      "flag": "",
      "start_min": 1050,
-     "pt_date": "2026-09-05"
+     "pt_date": "2026-09-05",
+     "radio": "KSFO 810 AM (English) / KZSF 1370 AM (Spanish)"
     },
     {
      "date": "2026-09-05",
@@ -10073,7 +10224,8 @@
      "source": "https://calbears.com/sports/football/schedule",
      "flag": "",
      "start_min": 1170,
-     "pt_date": "2026-09-05"
+     "pt_date": "2026-09-05",
+     "radio": "KSFO 810 AM"
     }
    ],
    "blocked": [
@@ -10203,7 +10355,8 @@
      "home_id": 121,
      "label": "San Francisco Giants @ New York Mets",
      "priority": true,
-     "source": "mlb_2026_september.txt"
+     "source": "mlb_2026_september.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     },
     {
      "date": "2026-09-06",
@@ -10526,7 +10679,8 @@
      "home_id": 137,
      "label": "St. Louis Cardinals @ San Francisco Giants",
      "priority": true,
-     "source": "mlb_2026_september.txt"
+     "source": "mlb_2026_september.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     },
     {
      "date": "2026-09-07",
@@ -10819,7 +10973,8 @@
      "home_id": 137,
      "label": "St. Louis Cardinals @ San Francisco Giants",
      "priority": true,
-     "source": "mlb_2026_september.txt"
+     "source": "mlb_2026_september.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     },
     {
      "date": "2026-09-08",
@@ -10919,7 +11074,8 @@
      "home_id": 137,
      "label": "St. Louis Cardinals @ San Francisco Giants",
      "priority": true,
-     "source": "mlb_2026_september.txt"
+     "source": "mlb_2026_september.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     },
     {
      "date": "2026-09-09",
@@ -11103,7 +11259,8 @@
      "start_et": "20:20",
      "wwo": true,
      "wwo_slot": "NFL Kickoff",
-     "wwo_event": "https://www.globenewswire.com/news-release/2026/09/09/3358684/9032/en/cumulus-media-s-westwood-one-official-network-audio-partner-of-the-nfl-celebrates-40th-consecutive-season-and-reveals-2026-nfl-lineup-and-programming-highlights-from-nfl-kickoff-to.html"
+     "wwo_event": "https://www.globenewswire.com/news-release/2026/09/09/3358684/9032/en/cumulus-media-s-westwood-one-official-network-audio-partner-of-the-nfl-celebrates-40th-consecutive-season-and-reveals-2026-nfl-lineup-and-programming-highlights-from-nfl-kickoff-to.html",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-09-09",
@@ -11130,7 +11287,8 @@
      "source": "https://images.mlssoccer.com/image/upload/v1766018474/assets/sje/schedule/2026%20Schedule.pdf",
      "flag": "",
      "start_min": 1170,
-     "pt_date": "2026-09-09"
+     "pt_date": "2026-09-09",
+     "radio": "KSFO 810 AM (English) / KZSF 1370 AM (Spanish)"
     }
    ],
    "blocked": [
@@ -11278,7 +11436,8 @@
      "flag": "INTERNATIONAL GAME: listed as a 49ers HOME game but played at the Melbourne Cricket Ground, not Levi's Stadium.",
      "priority": true,
      "start_min": 1055,
-     "pt_date": "2026-09-10"
+     "pt_date": "2026-09-10",
+     "radio": "KSAN 107.7 FM + KNBR 680/104.5 (weeks 1-3: KSFO 810 AM / KSAN 107.7)"
     }
    ],
    "blocked": [
@@ -11569,7 +11728,8 @@
      "home_id": 137,
      "label": "San Diego Padres @ San Francisco Giants",
      "priority": true,
-     "source": "mlb_2026_september.txt"
+     "source": "mlb_2026_september.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     }
    ],
    "blocked": [
@@ -11696,7 +11856,8 @@
      "source": "https://calbears.com/sports/football/schedule",
      "flag": "",
      "start_min": 750,
-     "pt_date": "2026-09-12"
+     "pt_date": "2026-09-12",
+     "radio": "KSFO 810 AM"
     },
     {
      "date": "2026-09-12",
@@ -11726,7 +11887,8 @@
      "home_id": 137,
      "label": "San Diego Padres @ San Francisco Giants",
      "priority": true,
-     "source": "mlb_2026_september.txt"
+     "source": "mlb_2026_september.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     },
     {
      "date": "2026-09-12",
@@ -11874,7 +12036,8 @@
      "source": "https://images.mlssoccer.com/image/upload/v1766018474/assets/sje/schedule/2026%20Schedule.pdf",
      "flag": "",
      "start_min": 1170,
-     "pt_date": "2026-09-12"
+     "pt_date": "2026-09-12",
+     "radio": "KSFO 810 AM (English) / KZSF 1370 AM (Spanish)"
     }
    ],
    "blocked": [
@@ -12331,7 +12494,8 @@
      "home_id": 137,
      "label": "San Diego Padres @ San Francisco Giants",
      "priority": true,
-     "source": "mlb_2026_september.txt"
+     "source": "mlb_2026_september.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     },
     {
      "date": "2026-09-13",
@@ -12492,7 +12656,8 @@
      "home_id": 138,
      "label": "San Francisco Giants @ St. Louis Cardinals",
      "priority": true,
-     "source": "mlb_2026_september.txt"
+     "source": "mlb_2026_september.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     },
     {
      "date": "2026-09-14",
@@ -12511,7 +12676,8 @@
      "start_et": "20:15",
      "wwo": true,
      "wwo_slot": "MNF",
-     "wwo_event": "https://www.westwoodonesports.com/events/548429"
+     "wwo_event": "https://www.westwoodonesports.com/events/548429",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-09-14",
@@ -12746,7 +12912,8 @@
      "home_id": 138,
      "label": "San Francisco Giants @ St. Louis Cardinals",
      "priority": true,
-     "source": "mlb_2026_september.txt"
+     "source": "mlb_2026_september.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     },
     {
      "date": "2026-09-15",
@@ -12891,7 +13058,8 @@
      "home_id": 138,
      "label": "San Francisco Giants @ St. Louis Cardinals",
      "priority": true,
-     "source": "mlb_2026_september.txt"
+     "source": "mlb_2026_september.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     },
     {
      "date": "2026-09-16",
@@ -13278,7 +13446,8 @@
      "start_et": "20:15",
      "wwo": true,
      "wwo_slot": "TNF",
-     "wwo_event": "https://www.westwoodonesports.com/events/548433"
+     "wwo_event": "https://www.westwoodonesports.com/events/548433",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-09-17",
@@ -13584,7 +13753,8 @@
      "home_id": 119,
      "label": "San Francisco Giants @ Los Angeles Dodgers",
      "priority": true,
-     "source": "mlb_2026_september.txt"
+     "source": "mlb_2026_september.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     }
    ],
    "blocked": [
@@ -13638,7 +13808,8 @@
      "source": "https://calbears.com/sports/football/schedule",
      "flag": "",
      "start_min": 750,
-     "pt_date": "2026-09-19"
+     "pt_date": "2026-09-19",
+     "radio": "KSFO 810 AM"
     },
     {
      "date": "2026-09-19",
@@ -13653,7 +13824,8 @@
      "source": "https://gostanford.com/sports/football/schedule",
      "flag": "",
      "start_min": 780,
-     "pt_date": "2026-09-19"
+     "pt_date": "2026-09-19",
+     "radio": "KNBR / KTCT 1050 AM"
     },
     {
      "date": "2026-09-19",
@@ -13816,7 +13988,8 @@
      "source": "https://images.mlssoccer.com/image/upload/v1766018474/assets/sje/schedule/2026%20Schedule.pdf",
      "flag": "HOME game relocated to Levi's Stadium (not PayPal Park) per official schedule PDF.",
      "start_min": 990,
-     "pt_date": "2026-09-19"
+     "pt_date": "2026-09-19",
+     "radio": "KSFO 810 AM (English) / KZSF 1370 AM (Spanish)"
     },
     {
      "date": "2026-09-19",
@@ -13832,7 +14005,8 @@
      "dur_override": 204,
      "start_pt": "16:30",
      "start_min": 990,
-     "note": "kickoff 7:30 PM ET ABC (olemissports.com); WWO air 7:00 PM ET; Danny Reed & Derek Rackley"
+     "note": "kickoff 7:30 PM ET ABC (olemissports.com); WWO air 7:00 PM ET; Danny Reed & Derek Rackley",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-09-19",
@@ -13905,7 +14079,8 @@
      "home_id": 119,
      "label": "San Francisco Giants @ Los Angeles Dodgers",
      "priority": true,
-     "source": "mlb_2026_september.txt"
+     "source": "mlb_2026_september.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     },
     {
      "date": "2026-09-19",
@@ -14316,7 +14491,8 @@
      "home_id": 119,
      "label": "San Francisco Giants @ Los Angeles Dodgers",
      "priority": true,
-     "source": "mlb_2026_september.txt"
+     "source": "mlb_2026_september.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     },
     {
      "date": "2026-09-20",
@@ -14411,7 +14587,8 @@
      "flag": "",
      "priority": true,
      "start_min": 805,
-     "pt_date": "2026-09-20"
+     "pt_date": "2026-09-20",
+     "radio": "KSAN 107.7 FM + KNBR 680/104.5 (weeks 1-3: KSFO 810 AM / KSAN 107.7) + Westwood One national"
     },
     {
      "date": "2026-09-20",
@@ -14445,7 +14622,8 @@
      "start_et": "20:20",
      "wwo": true,
      "wwo_slot": "SNF",
-     "wwo_event": "https://www.westwoodonesports.com/events/548493"
+     "wwo_event": "https://www.westwoodonesports.com/events/548493",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     }
    ],
    "blocked": [
@@ -14534,7 +14712,8 @@
      "start_et": "20:15",
      "wwo": true,
      "wwo_slot": "MNF",
-     "wwo_event": "https://www.westwoodonesports.com/events/548530"
+     "wwo_event": "https://www.westwoodonesports.com/events/548530",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-09-21",
@@ -14549,7 +14728,8 @@
      "home_id": 137,
      "label": "Minnesota Twins @ San Francisco Giants",
      "priority": true,
-     "source": "mlb_2026_september.txt"
+     "source": "mlb_2026_september.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     }
    ],
    "blocked": [
@@ -14814,7 +14994,8 @@
      "home_id": 137,
      "label": "Minnesota Twins @ San Francisco Giants",
      "priority": true,
-     "source": "mlb_2026_september.txt"
+     "source": "mlb_2026_september.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     },
     {
      "date": "2026-09-22",
@@ -14941,7 +15122,8 @@
      "home_id": 137,
      "label": "Minnesota Twins @ San Francisco Giants",
      "priority": true,
-     "source": "mlb_2026_september.txt"
+     "source": "mlb_2026_september.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     },
     {
      "date": "2026-09-23",
@@ -15343,7 +15525,8 @@
      "start_et": "20:15",
      "wwo": true,
      "wwo_slot": "TNF",
-     "wwo_event": "https://www.westwoodonesports.com/events/548553"
+     "wwo_event": "https://www.westwoodonesports.com/events/548553",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-09-24",
@@ -15695,7 +15878,8 @@
      "home_id": 137,
      "label": "Los Angeles Dodgers @ San Francisco Giants",
      "priority": true,
-     "source": "mlb_2026_september.txt"
+     "source": "mlb_2026_september.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     },
     {
      "date": "2026-09-25",
@@ -15709,7 +15893,8 @@
      "source": "https://calbears.com/sports/football/schedule",
      "flag": "FRIDAY game.",
      "start_min": 1170,
-     "pt_date": "2026-09-25"
+     "pt_date": "2026-09-25",
+     "radio": "KSFO 810 AM"
     }
    ],
    "blocked": [
@@ -15795,7 +15980,8 @@
      "dur_override": 204,
      "start_pt": "12:30",
      "start_min": 750,
-     "note": "kickoff 3:30 PM ET ESPN/ABC (SEC announcement 2026-09-14); WWO air 3:00 PM ET (event grid 2026-09-17, was TBD); Sanford Stadium"
+     "note": "kickoff 3:30 PM ET ESPN/ABC (SEC announcement 2026-09-14); WWO air 3:00 PM ET (event grid 2026-09-17, was TBD); Sanford Stadium",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-09-26",
@@ -15825,7 +16011,8 @@
      "home_id": 137,
      "label": "Los Angeles Dodgers @ San Francisco Giants",
      "priority": true,
-     "source": "mlb_2026_september.txt"
+     "source": "mlb_2026_september.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     },
     {
      "date": "2026-09-26",
@@ -16019,7 +16206,8 @@
      "source": "https://images.mlssoccer.com/image/upload/v1766018474/assets/sje/schedule/2026%20Schedule.pdf",
      "flag": "",
      "start_min": 1170,
-     "pt_date": "2026-09-26"
+     "pt_date": "2026-09-26",
+     "radio": "KSFO 810 AM (English) / KZSF 1370 AM (Spanish)"
     },
     {
      "date": "2026-09-26",
@@ -16034,7 +16222,8 @@
      "source": "https://gostanford.com/sports/football/schedule",
      "flag": "",
      "start_min": 1170,
-     "pt_date": "2026-09-26"
+     "pt_date": "2026-09-26",
+     "radio": "KNBR / KTCT 1050 AM"
     }
    ],
    "blocked": [
@@ -16291,7 +16480,8 @@
      "home_id": 137,
      "label": "Los Angeles Dodgers @ San Francisco Giants",
      "priority": true,
-     "source": "mlb_2026_september.txt"
+     "source": "mlb_2026_september.txt",
+     "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
     },
     {
      "date": "2026-09-27",
@@ -16505,7 +16695,8 @@
      "flag": "",
      "priority": true,
      "start_min": 785,
-     "pt_date": "2026-09-27"
+     "pt_date": "2026-09-27",
+     "radio": "KSAN 107.7 FM + KNBR 680/104.5 (weeks 1-3: KSFO 810 AM / KSAN 107.7) + Westwood One national"
     },
     {
      "date": "2026-09-27",
@@ -16556,7 +16747,8 @@
      "start_et": "20:20",
      "wwo": true,
      "wwo_slot": "SNF",
-     "wwo_event": "https://www.westwoodonesports.com/events/548494"
+     "wwo_event": "https://www.westwoodonesports.com/events/548494",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-09-27",
@@ -16641,7 +16833,8 @@
      "start_et": "20:15",
      "wwo": true,
      "wwo_slot": "MNF",
-     "wwo_event": "https://www.westwoodonesports.com/events/548532"
+     "wwo_event": "https://www.westwoodonesports.com/events/548532",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     }
    ],
    "blocked": [
@@ -16751,7 +16944,8 @@
      "tbd_count": 4,
      "label": "MLB postseason - Wild Card Gm 1 x4 (all four series) (4 game(s), teams & times UNCONFIRMED) [NBC/Peacock/NBCSN]",
      "source": "mlb_2026_postseason_tbd.txt",
-     "review": "https://www.mlb.com/postseason"
+     "review": "https://www.mlb.com/postseason",
+     "playoff_note": "MLB Wild Card Series (best-of-3; 4 series, 4 games each day). RESOLVED as of 2026-09-17 (mlb.com official): 4 of 12 berths clinched - Tampa Bay Rays, Milwaukee Brewers, Los Angeles Dodgers, New York Yankees. Current projected matchups (NOT final; seeds move through Sep 27): AL (1) Rays vs (4) Yankees; AL (2) Guardians vs (5) Red Sox; AL (3) Astros vs (6) White Sox; NL (1) Brewers vs (4) Cubs; NL (2) Dodgers vs (5) Phillies; NL (3) Braves vs (6) Padres. Kickoff times officially TBD (none announced)."
     },
     {
      "date": "2026-09-29",
@@ -16900,7 +17094,8 @@
      "tbd_count": 4,
      "label": "MLB postseason - Wild Card Gm 2 x4 (all four series) (4 game(s), teams & times UNCONFIRMED) [NBC/Peacock/NBCSN]",
      "source": "mlb_2026_postseason_tbd.txt",
-     "review": "https://www.mlb.com/postseason"
+     "review": "https://www.mlb.com/postseason",
+     "playoff_note": "MLB Wild Card Series (best-of-3; 4 series, 4 games each day). RESOLVED as of 2026-09-17 (mlb.com official): 4 of 12 berths clinched - Tampa Bay Rays, Milwaukee Brewers, Los Angeles Dodgers, New York Yankees. Current projected matchups (NOT final; seeds move through Sep 27): AL (1) Rays vs (4) Yankees; AL (2) Guardians vs (5) Red Sox; AL (3) Astros vs (6) White Sox; NL (1) Brewers vs (4) Cubs; NL (2) Dodgers vs (5) Phillies; NL (3) Braves vs (6) Padres. Kickoff times officially TBD (none announced)."
     },
     {
      "date": "2026-09-30",
@@ -17043,7 +17238,8 @@
      "start_et": "20:15",
      "wwo": true,
      "wwo_slot": "TNF",
-     "wwo_event": "https://www.westwoodonesports.com/events/548554"
+     "wwo_event": "https://www.westwoodonesports.com/events/548554",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-10-01",
@@ -17073,7 +17269,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401891823/x",
-     "note": "season opener, SAP Center; ESPN API 2026-10-02T02:00Z"
+     "note": "season opener, SAP Center; ESPN API 2026-10-02T02:00Z",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     },
     {
      "date": "2026-10-01",
@@ -17083,7 +17280,8 @@
      "tbd_count": 4,
      "label": "MLB postseason - Wild Card Gm 3 x4 (if necessary) (4 game(s), teams & times UNCONFIRMED) [NBC/Peacock/NBCSN]",
      "source": "mlb_2026_postseason_tbd.txt",
-     "review": "https://www.mlb.com/postseason"
+     "review": "https://www.mlb.com/postseason",
+     "playoff_note": "MLB Wild Card Series (best-of-3; 4 series, 4 games each day). RESOLVED as of 2026-09-17 (mlb.com official): 4 of 12 berths clinched - Tampa Bay Rays, Milwaukee Brewers, Los Angeles Dodgers, New York Yankees. Current projected matchups (NOT final; seeds move through Sep 27): AL (1) Rays vs (4) Yankees; AL (2) Guardians vs (5) Red Sox; AL (3) Astros vs (6) White Sox; NL (1) Brewers vs (4) Cubs; NL (2) Dodgers vs (5) Phillies; NL (3) Braves vs (6) Padres. Kickoff times officially TBD (none announced)."
     },
     {
      "date": "2026-10-01",
@@ -17213,7 +17411,8 @@
      "source": "https://calbears.com/sports/football/schedule",
      "flag": "",
      "start_min": 750,
-     "pt_date": "2026-10-03"
+     "pt_date": "2026-10-03",
+     "radio": "KSFO 810 AM"
     },
     {
      "date": "2026-10-03",
@@ -17230,7 +17429,8 @@
      "start_pt": "12:30",
      "start_min": 750,
      "estimated": true,
-     "note": "kickoff TBD (ESPN) - estimated showcase slot 3:30 PM ET; Kenan Stadium"
+     "note": "kickoff TBD (ESPN) - estimated showcase slot 3:30 PM ET; Kenan Stadium",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-10-03",
@@ -17277,7 +17477,8 @@
      "start_pt": "16:30",
      "start_min": 990,
      "estimated": true,
-     "note": "kickoff TBD - estimated showcase slot 7:30 PM ET (second possible window)"
+     "note": "kickoff TBD - estimated showcase slot 7:30 PM ET (second possible window)",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-10-03",
@@ -17307,7 +17508,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401892441/x",
-     "note": "SAP Center"
+     "note": "SAP Center",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     },
     {
      "date": "2026-10-03",
@@ -17317,7 +17519,8 @@
      "tbd_count": 4,
      "label": "MLB postseason - Division Series Gm 1 x4 (ALDS TBS / NLDS FOX) (4 game(s), teams & times UNCONFIRMED) [ALDS TBS/truTV/HBO Max; NLDS FOX/FS1]",
      "source": "mlb_2026_postseason_tbd.txt",
-     "review": "https://www.mlb.com/postseason"
+     "review": "https://www.mlb.com/postseason",
+     "playoff_note": "MLB Division Series (best-of-5) - matchups resolve after the Wild Card round (Sep 29 - Oct 1). Clinched as of 2026-09-17: Tampa Bay Rays, Milwaukee Brewers, Los Angeles Dodgers, New York Yankees. Kickoff times officially TBD (none announced)."
     },
     {
      "date": "2026-10-03",
@@ -17331,7 +17534,8 @@
      "source": "https://gostanford.com/sports/football/schedule",
      "flag": "KICKOFF TIME TBA per official Stanford schedule.",
      "start_min": null,
-     "pt_date": "2026-10-03"
+     "pt_date": "2026-10-03",
+     "radio": "KNBR / KTCT 1050 AM"
     }
    ],
    "blocked": [
@@ -17390,7 +17594,8 @@
      "start_et": "09:30",
      "wwo": true,
      "wwo_slot": "London",
-     "wwo_event": "https://www.westwoodonesports.com/events/548485"
+     "wwo_event": "https://www.westwoodonesports.com/events/548485",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-10-04",
@@ -17614,7 +17819,8 @@
      "flag": "",
      "priority": true,
      "start_min": 805,
-     "pt_date": "2026-10-04"
+     "pt_date": "2026-10-04",
+     "radio": "KSAN 107.7 FM + KNBR 680/104.5 (weeks 1-3: KSFO 810 AM / KSAN 107.7) + Westwood One national"
     },
     {
      "date": "2026-10-04",
@@ -17629,7 +17835,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401918010/x",
-     "note": "@ Intuit Dome; ESPN API 2026-10-04T23:00Z"
+     "note": "@ Intuit Dome; ESPN API 2026-10-04T23:00Z",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     },
     {
      "date": "2026-10-04",
@@ -17663,7 +17870,8 @@
      "start_et": "20:20",
      "wwo": true,
      "wwo_slot": "SNF",
-     "wwo_event": "https://www.westwoodonesports.com/events/548495"
+     "wwo_event": "https://www.westwoodonesports.com/events/548495",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-10-04",
@@ -17673,7 +17881,8 @@
      "tbd_count": 2,
      "label": "MLB postseason - NLDS Gm 2 x2 (Sunday pattern) (2 game(s), teams & times UNCONFIRMED) [FOX/FS1/Fox Deportes]",
      "source": "mlb_2026_postseason_tbd.txt",
-     "review": "https://www.mlb.com/postseason"
+     "review": "https://www.mlb.com/postseason",
+     "playoff_note": "MLB Division Series (best-of-5) - matchups resolve after the Wild Card round (Sep 29 - Oct 1). Clinched as of 2026-09-17: Tampa Bay Rays, Milwaukee Brewers, Los Angeles Dodgers, New York Yankees. Kickoff times officially TBD (none announced)."
     },
     {
      "date": "2026-10-04",
@@ -17767,7 +17976,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401892448/x",
-     "note": "@ American Airlines Center"
+     "note": "@ American Airlines Center",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     },
     {
      "date": "2026-10-05",
@@ -17786,7 +17996,8 @@
      "start_et": "20:15",
      "wwo": true,
      "wwo_slot": "MNF",
-     "wwo_event": "https://www.westwoodonesports.com/events/548535"
+     "wwo_event": "https://www.westwoodonesports.com/events/548535",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-10-05",
@@ -17811,7 +18022,8 @@
      "tbd_count": 2,
      "label": "MLB postseason - ALDS Gm 2 x2 (Monday pattern) (2 game(s), teams & times UNCONFIRMED) [TBS/truTV/HBO Max]",
      "source": "mlb_2026_postseason_tbd.txt",
-     "review": "https://www.mlb.com/postseason"
+     "review": "https://www.mlb.com/postseason",
+     "playoff_note": "MLB Division Series (best-of-5) - matchups resolve after the Wild Card round (Sep 29 - Oct 1). Clinched as of 2026-09-17: Tampa Bay Rays, Milwaukee Brewers, Los Angeles Dodgers, New York Yankees. Kickoff times officially TBD (none announced)."
     }
    ],
    "blocked": [
@@ -17896,7 +18108,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401898390/x",
-     "note": "Chase Center"
+     "note": "Chase Center",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     },
     {
      "date": "2026-10-06",
@@ -17906,7 +18119,8 @@
      "tbd_count": 2,
      "label": "MLB postseason - NLDS Gm 3 x2 (Tuesday pattern) (2 game(s), teams & times UNCONFIRMED) [FOX/FS1/Fox Deportes]",
      "source": "mlb_2026_postseason_tbd.txt",
-     "review": "https://www.mlb.com/postseason"
+     "review": "https://www.mlb.com/postseason",
+     "playoff_note": "MLB Division Series (best-of-5) - matchups resolve after the Wild Card round (Sep 29 - Oct 1). Clinched as of 2026-09-17: Tampa Bay Rays, Milwaukee Brewers, Los Angeles Dodgers, New York Yankees. Kickoff times officially TBD (none announced)."
     }
    ],
    "blocked": [
@@ -18034,7 +18248,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401914129/x",
-     "note": "@ Moda Center"
+     "note": "@ Moda Center",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     },
     {
      "date": "2026-10-07",
@@ -18044,7 +18259,8 @@
      "tbd_count": 4,
      "label": "MLB postseason - ALDS Gm 3 x2 + NLDS Gm 4 x2 (Wednesday pattern) (4 game(s), teams & times UNCONFIRMED) [ALDS TBS; NLDS FOX/FS1]",
      "source": "mlb_2026_postseason_tbd.txt",
-     "review": "https://www.mlb.com/postseason"
+     "review": "https://www.mlb.com/postseason",
+     "playoff_note": "MLB Division Series (best-of-5) - matchups resolve after the Wild Card round (Sep 29 - Oct 1). Clinched as of 2026-09-17: Tampa Bay Rays, Milwaukee Brewers, Los Angeles Dodgers, New York Yankees. Kickoff times officially TBD (none announced)."
     },
     {
      "date": "2026-10-07",
@@ -18125,7 +18341,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401891825/x",
-     "note": "ESPN+"
+     "note": "ESPN+",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     },
     {
      "date": "2026-10-08",
@@ -18144,7 +18361,8 @@
      "start_et": "20:15",
      "wwo": true,
      "wwo_slot": "TNF",
-     "wwo_event": "https://www.westwoodonesports.com/events/548556"
+     "wwo_event": "https://www.westwoodonesports.com/events/548556",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-10-08",
@@ -18169,7 +18387,8 @@
      "tbd_count": 2,
      "label": "MLB postseason - ALDS Gm 4 x2 (Thursday pattern) (2 game(s), teams & times UNCONFIRMED) [TBS/truTV/HBO Max]",
      "source": "mlb_2026_postseason_tbd.txt",
-     "review": "https://www.mlb.com/postseason"
+     "review": "https://www.mlb.com/postseason",
+     "playoff_note": "MLB Division Series (best-of-5) - matchups resolve after the Wild Card round (Sep 29 - Oct 1). Clinched as of 2026-09-17: Tampa Bay Rays, Milwaukee Brewers, Los Angeles Dodgers, New York Yankees. Kickoff times officially TBD (none announced)."
     }
    ],
    "blocked": [
@@ -18249,7 +18468,8 @@
      "tbd_count": 2,
      "label": "MLB postseason - NLDS Gm 5 x2 (Friday pattern) (2 game(s), teams & times UNCONFIRMED) [FOX/FS1/Fox Deportes]",
      "source": "mlb_2026_postseason_tbd.txt",
-     "review": "https://www.mlb.com/postseason"
+     "review": "https://www.mlb.com/postseason",
+     "playoff_note": "MLB Division Series (best-of-5) - matchups resolve after the Wild Card round (Sep 29 - Oct 1). Clinched as of 2026-09-17: Tampa Bay Rays, Milwaukee Brewers, Los Angeles Dodgers, New York Yankees. Kickoff times officially TBD (none announced)."
     },
     {
      "date": "2026-10-09",
@@ -18328,7 +18548,8 @@
      "source": "https://gostanford.com/sports/football/schedule",
      "flag": "",
      "start_min": 750,
-     "pt_date": "2026-10-10"
+     "pt_date": "2026-10-10",
+     "radio": "KNBR / KTCT 1050 AM"
     },
     {
      "date": "2026-10-10",
@@ -18345,7 +18566,8 @@
      "start_pt": "12:30",
      "start_min": 750,
      "estimated": true,
-     "note": "kickoff TBD (The Athletic) - estimated showcase slot 3:30 PM ET; Memorial Stadium Lincoln"
+     "note": "kickoff TBD (The Athletic) - estimated showcase slot 3:30 PM ET; Memorial Stadium Lincoln",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-10-10",
@@ -18360,7 +18582,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401892471/x",
-     "note": "Saturday matinee 4 PM ET"
+     "note": "Saturday matinee 4 PM ET",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     },
     {
      "date": "2026-10-10",
@@ -18392,7 +18615,8 @@
      "start_pt": "16:30",
      "start_min": 990,
      "estimated": true,
-     "note": "kickoff TBD - estimated showcase slot 7:30 PM ET (second possible window)"
+     "note": "kickoff TBD - estimated showcase slot 7:30 PM ET (second possible window)",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-10-10",
@@ -18422,7 +18646,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401898399/x",
-     "note": "Chase Center"
+     "note": "Chase Center",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     },
     {
      "date": "2026-10-10",
@@ -18434,7 +18659,8 @@
      "source": "https://images.mlssoccer.com/image/upload/v1766018474/assets/sje/schedule/2026%20Schedule.pdf",
      "flag": "",
      "start_min": 1110,
-     "pt_date": "2026-10-10"
+     "pt_date": "2026-10-10",
+     "radio": "KSFO 810 AM (English) / KZSF 1370 AM (Spanish)"
     },
     {
      "date": "2026-10-10",
@@ -18444,7 +18670,8 @@
      "tbd_count": 2,
      "label": "MLB postseason - ALDS Gm 5 x2 (Saturday pattern) (2 game(s), teams & times UNCONFIRMED) [TBS/truTV/HBO Max]",
      "source": "mlb_2026_postseason_tbd.txt",
-     "review": "https://www.mlb.com/postseason"
+     "review": "https://www.mlb.com/postseason",
+     "playoff_note": "MLB Division Series (best-of-5) - matchups resolve after the Wild Card round (Sep 29 - Oct 1). Clinched as of 2026-09-17: Tampa Bay Rays, Milwaukee Brewers, Los Angeles Dodgers, New York Yankees. Kickoff times officially TBD (none announced)."
     },
     {
      "date": "2026-10-10",
@@ -18458,7 +18685,8 @@
      "source": "https://calbears.com/sports/football/schedule",
      "flag": "KICKOFF TIME TBD - no time listed on official Cal schedule.",
      "start_min": null,
-     "pt_date": "2026-10-10"
+     "pt_date": "2026-10-10",
+     "radio": "KSFO 810 AM"
     }
    ],
    "blocked": [
@@ -18530,7 +18758,8 @@
      "start_et": "09:30",
      "wwo": true,
      "wwo_slot": "London",
-     "wwo_event": "https://www.westwoodonesports.com/events/548486"
+     "wwo_event": "https://www.westwoodonesports.com/events/548486",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-10-11",
@@ -18723,7 +18952,8 @@
      "flag": "",
      "priority": true,
      "start_min": 805,
-     "pt_date": "2026-10-11"
+     "pt_date": "2026-10-11",
+     "radio": "KSAN 107.7 FM + KNBR 680/104.5 (weeks 1-3: KSFO 810 AM / KSAN 107.7) + Westwood One national"
     },
     {
      "date": "2026-10-11",
@@ -18757,7 +18987,8 @@
      "start_et": "20:20",
      "wwo": true,
      "wwo_slot": "SNF",
-     "wwo_event": "https://www.westwoodonesports.com/events/548496"
+     "wwo_event": "https://www.westwoodonesports.com/events/548496",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-10-11",
@@ -18767,7 +18998,8 @@
      "tbd_count": 1,
      "label": "MLB postseason - NLCS Gm 1 (2025 Sunday LCS opener: 8:03 PM ET) (1 game(s), teams & times UNCONFIRMED) [FOX/FS1/Fox Deportes]",
      "source": "mlb_2026_postseason_tbd.txt",
-     "review": "https://www.mlb.com/postseason"
+     "review": "https://www.mlb.com/postseason",
+     "playoff_note": "MLB League Championship Series (best-of-7) - matchups resolve after the Division Series. Kickoff times officially TBD (none announced)."
     },
     {
      "date": "2026-10-11",
@@ -18893,7 +19125,8 @@
      "start_et": "20:15",
      "wwo": true,
      "wwo_slot": "MNF",
-     "wwo_event": "https://www.westwoodonesports.com/events/548537"
+     "wwo_event": "https://www.westwoodonesports.com/events/548537",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-10-12",
@@ -18903,7 +19136,8 @@
      "tbd_count": 2,
      "label": "MLB postseason - ALCS Gm 1 + NLCS Gm 2 (2025 Monday: 5:03 + 8:08 PM ET) (2 game(s), teams & times UNCONFIRMED) [ALCS TBS; NLCS FOX/FS1]",
      "source": "mlb_2026_postseason_tbd.txt",
-     "review": "https://www.mlb.com/postseason"
+     "review": "https://www.mlb.com/postseason",
+     "playoff_note": "MLB League Championship Series (best-of-7) - matchups resolve after the Division Series. Kickoff times officially TBD (none announced)."
     }
    ],
    "blocked": [
@@ -18986,7 +19220,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401898718/x",
-     "note": "NEUTRAL SITE: tickets link is Golden 1 Center Sacramento (flagged)"
+     "note": "NEUTRAL SITE: tickets link is Golden 1 Center Sacramento (flagged)",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     },
     {
      "date": "2026-10-13",
@@ -19001,7 +19236,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401892503/x",
-     "note": "late 11 PM ET start"
+     "note": "late 11 PM ET start",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     },
     {
      "date": "2026-10-13",
@@ -19011,7 +19247,8 @@
      "tbd_count": 1,
      "label": "MLB postseason - ALCS Gm 2 (2025 Tuesday LCS: 8:08 PM ET) (1 game(s), teams & times UNCONFIRMED) [TBS/truTV/HBO Max]",
      "source": "mlb_2026_postseason_tbd.txt",
-     "review": "https://www.mlb.com/postseason"
+     "review": "https://www.mlb.com/postseason",
+     "playoff_note": "MLB League Championship Series (best-of-7) - matchups resolve after the Division Series. Kickoff times officially TBD (none announced)."
     }
    ],
    "blocked": [
@@ -19078,7 +19315,8 @@
      "source": "https://images.mlssoccer.com/image/upload/v1766018474/assets/sje/schedule/2026%20Schedule.pdf",
      "flag": "",
      "start_min": 1110,
-     "pt_date": "2026-10-14"
+     "pt_date": "2026-10-14",
+     "radio": "KSFO 810 AM (English) / KZSF 1370 AM (Spanish)"
     },
     {
      "date": "2026-10-14",
@@ -19088,7 +19326,8 @@
      "tbd_count": 1,
      "label": "MLB postseason - NLCS Gm 3 (2025 mid-series LCS: 5:08 PM ET) (1 game(s), teams & times UNCONFIRMED) [FOX/FS1/Fox Deportes]",
      "source": "mlb_2026_postseason_tbd.txt",
-     "review": "https://www.mlb.com/postseason"
+     "review": "https://www.mlb.com/postseason",
+     "playoff_note": "MLB League Championship Series (best-of-7) - matchups resolve after the Division Series. Kickoff times officially TBD (none announced)."
     },
     {
      "date": "2026-10-14",
@@ -19182,7 +19421,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401892513/x",
-     "note": "@ Bridgestone Arena"
+     "note": "@ Bridgestone Arena",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     },
     {
      "date": "2026-10-15",
@@ -19216,7 +19456,8 @@
      "start_et": "20:15",
      "wwo": true,
      "wwo_slot": "TNF",
-     "wwo_event": "https://www.westwoodonesports.com/events/548557"
+     "wwo_event": "https://www.westwoodonesports.com/events/548557",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-10-15",
@@ -19226,7 +19467,8 @@
      "tbd_count": 2,
      "label": "MLB postseason - NLCS Gm 4 + ALCS Gm 3 (5:08 + 8:08 PM ET pattern) (2 game(s), teams & times UNCONFIRMED) [NLCS FOX/FS1; ALCS TBS]",
      "source": "mlb_2026_postseason_tbd.txt",
-     "review": "https://www.mlb.com/postseason"
+     "review": "https://www.mlb.com/postseason",
+     "playoff_note": "MLB League Championship Series (best-of-7) - matchups resolve after the Division Series. Kickoff times officially TBD (none announced)."
     }
    ],
    "blocked": [
@@ -19324,7 +19566,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401898409/x",
-     "note": "Chase Center"
+     "note": "Chase Center",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     },
     {
      "date": "2026-10-16",
@@ -19334,7 +19577,8 @@
      "tbd_count": 2,
      "label": "MLB postseason - NLCS Gm 5 + ALCS Gm 4 (5:08 + 8:08 PM ET pattern) (2 game(s), teams & times UNCONFIRMED) [NLCS FOX/FS1; ALCS TBS]",
      "source": "mlb_2026_postseason_tbd.txt",
-     "review": "https://www.mlb.com/postseason"
+     "review": "https://www.mlb.com/postseason",
+     "playoff_note": "MLB League Championship Series (best-of-7) - matchups resolve after the Division Series. Kickoff times officially TBD (none announced)."
     }
    ],
    "blocked": [
@@ -19404,7 +19648,8 @@
      "start_pt": "12:30",
      "start_min": 750,
      "estimated": true,
-     "note": "kickoff TBA (foxsports.com Big Ten schedule) - estimated showcase slot 3:30 PM ET; Michigan Stadium"
+     "note": "kickoff TBA (foxsports.com Big Ten schedule) - estimated showcase slot 3:30 PM ET; Michigan Stadium",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-10-17",
@@ -19434,7 +19679,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401892525/x",
-     "note": "@ Little Caesars Arena"
+     "note": "@ Little Caesars Arena",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     },
     {
      "date": "2026-10-17",
@@ -19449,7 +19695,8 @@
      "source": "https://gostanford.com/sports/football/schedule",
      "flag": "",
      "start_min": 990,
-     "pt_date": "2026-10-17"
+     "pt_date": "2026-10-17",
+     "radio": "KNBR / KTCT 1050 AM"
     },
     {
      "date": "2026-10-17",
@@ -19466,7 +19713,8 @@
      "start_pt": "16:30",
      "start_min": 990,
      "estimated": true,
-     "note": "kickoff TBA - estimated showcase slot 7:30 PM ET (second possible window)"
+     "note": "kickoff TBA - estimated showcase slot 7:30 PM ET (second possible window)",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-10-17",
@@ -19479,7 +19727,8 @@
      "source": "https://images.mlssoccer.com/image/upload/v1766018474/assets/sje/schedule/2026%20Schedule.pdf",
      "flag": "",
      "start_min": 1170,
-     "pt_date": "2026-10-17"
+     "pt_date": "2026-10-17",
+     "radio": "KSFO 810 AM (English) / KZSF 1370 AM (Spanish)"
     },
     {
      "date": "2026-10-17",
@@ -19489,7 +19738,8 @@
      "tbd_count": 1,
      "label": "MLB postseason - ALCS Gm 5 (5:08 PM ET pattern) (1 game(s), teams & times UNCONFIRMED) [TBS/truTV/HBO Max]",
      "source": "mlb_2026_postseason_tbd.txt",
-     "review": "https://www.mlb.com/postseason"
+     "review": "https://www.mlb.com/postseason",
+     "playoff_note": "MLB League Championship Series (best-of-7) - matchups resolve after the Division Series. Kickoff times officially TBD (none announced)."
     },
     {
      "date": "2026-10-17",
@@ -19503,7 +19753,8 @@
      "source": "https://calbears.com/sports/football/schedule",
      "flag": "KICKOFF TIME TBD - no time listed on official Cal schedule.",
      "start_min": null,
-     "pt_date": "2026-10-17"
+     "pt_date": "2026-10-17",
+     "radio": "KSFO 810 AM"
     },
     {
      "date": "2026-10-17",
@@ -19573,7 +19824,8 @@
      "start_et": "09:30",
      "wwo": true,
      "wwo_slot": "London",
-     "wwo_event": "https://www.westwoodonesports.com/events/548487"
+     "wwo_event": "https://www.westwoodonesports.com/events/548487",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-10-18",
@@ -19782,7 +20034,8 @@
      "start_et": "20:20",
      "wwo": true,
      "wwo_slot": "SNF",
-     "wwo_event": "https://www.westwoodonesports.com/events/548497"
+     "wwo_event": "https://www.westwoodonesports.com/events/548497",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-10-18",
@@ -19792,7 +20045,8 @@
      "tbd_count": 1,
      "label": "MLB postseason - NLCS Gm 6 (BOTH 2025 options: 2:08 or 5:08 PM ET) (1 game(s), teams & times UNCONFIRMED) [FOX/FS1/Fox Deportes]",
      "source": "mlb_2026_postseason_tbd.txt",
-     "review": "https://www.mlb.com/postseason"
+     "review": "https://www.mlb.com/postseason",
+     "playoff_note": "MLB League Championship Series (best-of-7) - matchups resolve after the Division Series. Kickoff times officially TBD (none announced)."
     }
    ],
    "blocked": [
@@ -19888,7 +20142,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401892537/x",
-     "note": "@ Scotiabank Arena"
+     "note": "@ Scotiabank Arena",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     },
     {
      "date": "2026-10-19",
@@ -19923,7 +20178,8 @@
      "wwo": true,
      "wwo_slot": "MNF",
      "wwo_event": "https://www.westwoodonesports.com/events/548538",
-     "dedup": true
+     "dedup": true,
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-10-19",
@@ -19939,7 +20195,8 @@
      "flag": "MONDAY game (Week 6 is Mon 10/19, not a Sunday).",
      "priority": true,
      "start_min": 1035,
-     "pt_date": "2026-10-19"
+     "pt_date": "2026-10-19",
+     "radio": "KSAN 107.7 FM + KNBR 680/104.5 (weeks 1-3: KSFO 810 AM / KSAN 107.7) + Westwood One national"
     },
     {
      "date": "2026-10-19",
@@ -19949,7 +20206,8 @@
      "tbd_count": 2,
      "label": "MLB postseason - NLCS Gm 7 + ALCS Gm 6 (5:08 + 8:08 PM ET pattern) (2 game(s), teams & times UNCONFIRMED) [NLCS FOX/FS1; ALCS TBS]",
      "source": "mlb_2026_postseason_tbd.txt",
-     "review": "https://www.mlb.com/postseason"
+     "review": "https://www.mlb.com/postseason",
+     "playoff_note": "MLB League Championship Series (best-of-7) - matchups resolve after the Division Series. Kickoff times officially TBD (none announced)."
     },
     {
      "date": "2026-10-19",
@@ -20030,7 +20288,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401892539/x",
-     "note": "back-to-back (Oct 19-20)"
+     "note": "back-to-back (Oct 19-20)",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     },
     {
      "date": "2026-10-20",
@@ -20040,7 +20299,8 @@
      "tbd_count": 1,
      "label": "MLB postseason - ALCS Gm 7 (2025 Gm 7: 5:08 PM ET) (1 game(s), teams & times UNCONFIRMED) [TBS/truTV/HBO Max]",
      "source": "mlb_2026_postseason_tbd.txt",
-     "review": "https://www.mlb.com/postseason"
+     "review": "https://www.mlb.com/postseason",
+     "playoff_note": "MLB League Championship Series (best-of-7) - matchups resolve after the Division Series. Kickoff times officially TBD (none announced)."
     }
    ],
    "blocked": [
@@ -20095,7 +20355,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401909092/x",
-     "note": "opening week @ Crypto.com Arena"
+     "note": "opening week @ Crypto.com Arena",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     },
     {
      "date": "2026-10-21",
@@ -20161,7 +20422,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401892554/x",
-     "note": "@ Canadian Tire Centre"
+     "note": "@ Canadian Tire Centre",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     },
     {
      "date": "2026-10-22",
@@ -20180,7 +20442,8 @@
      "start_et": "20:15",
      "wwo": true,
      "wwo_slot": "TNF",
-     "wwo_event": "https://www.westwoodonesports.com/events/548558"
+     "wwo_event": "https://www.westwoodonesports.com/events/548558",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     }
    ],
    "blocked": [
@@ -20250,7 +20513,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401909850/x",
-     "note": "home opener, Chase Center"
+     "note": "home opener, Chase Center",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     },
     {
      "date": "2026-10-23",
@@ -20265,7 +20529,8 @@
      "source": "https://gostanford.com/sports/football/schedule",
      "flag": "Jan 26 official release said 'Friday Oct 23 OR Saturday Oct 24'; schedule page now lists FRI Oct 23 7:30 PM PDT (resolved).",
      "start_min": 1170,
-     "pt_date": "2026-10-23"
+     "pt_date": "2026-10-23",
+     "radio": "KNBR / KTCT 1050 AM"
     },
     {
      "date": "2026-10-23",
@@ -20275,7 +20540,8 @@
      "tbd_count": 1,
      "label": "MLB postseason - World Series Gm 1 (2025 WS: 8:00 PM ET every game) (1 game(s), teams & times UNCONFIRMED) [FOX/Fox Deportes]",
      "source": "mlb_2026_postseason_tbd.txt",
-     "review": "https://www.mlb.com/postseason"
+     "review": "https://www.mlb.com/postseason",
+     "playoff_note": "MLB World Series (best-of-7) - matchups resolve after the League Championship Series. Kickoff times officially TBD (none announced)."
     },
     {
      "date": "2026-10-23",
@@ -20343,7 +20609,8 @@
      "start_pt": "12:30",
      "start_min": 750,
      "estimated": true,
-     "note": "kickoff TBD (SEC announces 6-12 days out) - estimated showcase slot 3:30 PM ET; DKR-Texas Memorial Stadium"
+     "note": "kickoff TBD (SEC announces 6-12 days out) - estimated showcase slot 3:30 PM ET; DKR-Texas Memorial Stadium",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-10-24",
@@ -20358,7 +20625,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401892568/x",
-     "note": "@ TD Garden"
+     "note": "@ TD Garden",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     },
     {
      "date": "2026-10-24",
@@ -20375,7 +20643,8 @@
      "start_pt": "16:30",
      "start_min": 990,
      "estimated": true,
-     "note": "kickoff TBD - estimated showcase slot 7:30 PM ET (second possible window)"
+     "note": "kickoff TBD - estimated showcase slot 7:30 PM ET (second possible window)",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-10-24",
@@ -20402,7 +20671,8 @@
      "source": "https://images.mlssoccer.com/image/upload/v1766018474/assets/sje/schedule/2026%20Schedule.pdf",
      "flag": "",
      "start_min": 1050,
-     "pt_date": "2026-10-24"
+     "pt_date": "2026-10-24",
+     "radio": "KSFO 810 AM (English) / KZSF 1370 AM (Spanish)"
     },
     {
      "date": "2026-10-24",
@@ -20417,7 +20687,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401909860/x",
-     "note": "NBA TV"
+     "note": "NBA TV",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     },
     {
      "date": "2026-10-24",
@@ -20427,7 +20698,8 @@
      "tbd_count": 1,
      "label": "MLB postseason - World Series Gm 2 (8:00 PM ET pattern) (1 game(s), teams & times UNCONFIRMED) [FOX/Fox Deportes]",
      "source": "mlb_2026_postseason_tbd.txt",
-     "review": "https://www.mlb.com/postseason"
+     "review": "https://www.mlb.com/postseason",
+     "playoff_note": "MLB World Series (best-of-7) - matchups resolve after the League Championship Series. Kickoff times officially TBD (none announced)."
     },
     {
      "date": "2026-10-24",
@@ -20441,7 +20713,8 @@
      "source": "https://calbears.com/sports/football/schedule",
      "flag": "KICKOFF TIME TBD - no time listed on official Cal schedule.",
      "start_min": null,
-     "pt_date": "2026-10-24"
+     "pt_date": "2026-10-24",
+     "radio": "KSFO 810 AM"
     }
    ],
    "blocked": [
@@ -20513,7 +20786,8 @@
      "start_et": "09:30",
      "wwo": true,
      "wwo_slot": "Paris",
-     "wwo_event": "https://www.westwoodonesports.com/events/548488"
+     "wwo_event": "https://www.westwoodonesports.com/events/548488",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-10-25",
@@ -20642,7 +20916,8 @@
      "flag": "UNUSUAL 10:00 AM PDT kickoff (1:00 PM ET) per official club schedule.",
      "priority": true,
      "start_min": 600,
-     "pt_date": "2026-10-25"
+     "pt_date": "2026-10-25",
+     "radio": "KSAN 107.7 FM + KNBR 680/104.5 (weeks 1-3: KSFO 810 AM / KSAN 107.7) + Westwood One national"
     },
     {
      "date": "2026-10-25",
@@ -20709,7 +20984,8 @@
      "start_et": "20:20",
      "wwo": true,
      "wwo_slot": "SNF",
-     "wwo_event": "https://www.westwoodonesports.com/events/548498"
+     "wwo_event": "https://www.westwoodonesports.com/events/548498",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-10-25",
@@ -20820,7 +21096,8 @@
      "start_et": "20:15",
      "wwo": true,
      "wwo_slot": "MNF",
-     "wwo_event": "https://www.westwoodonesports.com/events/548539"
+     "wwo_event": "https://www.westwoodonesports.com/events/548539",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-10-26",
@@ -20835,7 +21112,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401909876/x",
-     "note": "NBCSN"
+     "note": "NBCSN",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     },
     {
      "date": "2026-10-26",
@@ -20845,7 +21123,8 @@
      "tbd_count": 1,
      "label": "MLB postseason - World Series Gm 3 (8:00 PM ET pattern) (1 game(s), teams & times UNCONFIRMED) [FOX/Fox Deportes]",
      "source": "mlb_2026_postseason_tbd.txt",
-     "review": "https://www.mlb.com/postseason"
+     "review": "https://www.mlb.com/postseason",
+     "playoff_note": "MLB World Series (best-of-7) - matchups resolve after the League Championship Series. Kickoff times officially TBD (none announced)."
     }
    ],
    "blocked": [
@@ -20915,7 +21194,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401892595/x",
-     "note": "ESPN"
+     "note": "ESPN",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     },
     {
      "date": "2026-10-27",
@@ -20925,7 +21205,8 @@
      "tbd_count": 1,
      "label": "MLB postseason - World Series Gm 4 (8:00 PM ET pattern) (1 game(s), teams & times UNCONFIRMED) [FOX/Fox Deportes]",
      "source": "mlb_2026_postseason_tbd.txt",
-     "review": "https://www.mlb.com/postseason"
+     "review": "https://www.mlb.com/postseason",
+     "playoff_note": "MLB World Series (best-of-7) - matchups resolve after the League Championship Series. Kickoff times officially TBD (none announced)."
     },
     {
      "date": "2026-10-27",
@@ -21006,7 +21287,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401909888/x",
-     "note": "@ Target Center"
+     "note": "@ Target Center",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     },
     {
      "date": "2026-10-28",
@@ -21019,7 +21301,8 @@
      "source": "https://images.mlssoccer.com/image/upload/v1766018474/assets/sje/schedule/2026%20Schedule.pdf",
      "flag": "",
      "start_min": 1170,
-     "pt_date": "2026-10-28"
+     "pt_date": "2026-10-28",
+     "radio": "KSFO 810 AM (English) / KZSF 1370 AM (Spanish)"
     },
     {
      "date": "2026-10-28",
@@ -21029,7 +21312,8 @@
      "tbd_count": 1,
      "label": "MLB postseason - World Series Gm 5 if necessary (8:00 PM ET pattern) (1 game(s), teams & times UNCONFIRMED) [FOX/Fox Deportes]",
      "source": "mlb_2026_postseason_tbd.txt",
-     "review": "https://www.mlb.com/postseason"
+     "review": "https://www.mlb.com/postseason",
+     "playoff_note": "MLB World Series (best-of-7) - matchups resolve after the League Championship Series. Kickoff times officially TBD (none announced)."
     }
    ],
    "blocked": [
@@ -21088,7 +21372,8 @@
      "start_et": "20:15",
      "wwo": true,
      "wwo_slot": "TNF",
-     "wwo_event": "https://www.westwoodonesports.com/events/548560"
+     "wwo_event": "https://www.westwoodonesports.com/events/548560",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-10-29",
@@ -21103,7 +21388,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401892610/x",
-     "note": "SAP Center"
+     "note": "SAP Center",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     },
     {
      "date": "2026-10-29",
@@ -21184,7 +21470,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401909285/x",
-     "note": "Prime Video"
+     "note": "Prime Video",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     },
     {
      "date": "2026-10-30",
@@ -21194,7 +21481,8 @@
      "tbd_count": 1,
      "label": "MLB postseason - World Series Gm 6 if necessary (8:00 PM ET pattern) (1 game(s), teams & times UNCONFIRMED) [FOX/Fox Deportes]",
      "source": "mlb_2026_postseason_tbd.txt",
-     "review": "https://www.mlb.com/postseason"
+     "review": "https://www.mlb.com/postseason",
+     "playoff_note": "MLB World Series (best-of-7) - matchups resolve after the League Championship Series. Kickoff times officially TBD (none announced)."
     }
    ],
    "blocked": [
@@ -21250,7 +21538,8 @@
      "dur_override": 204,
      "start_pt": "12:30",
      "start_min": 750,
-     "note": "kickoff 3:30 PM ET ABC (gafljax.com FAQ + ajc.com); WWO air 3:00 PM ET; Mercedes-Benz Stadium Atlanta (neutral; EverBank construction)"
+     "note": "kickoff 3:30 PM ET ABC (gafljax.com FAQ + ajc.com); WWO air 3:00 PM ET; Mercedes-Benz Stadium Atlanta (neutral; EverBank construction)",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-10-31",
@@ -21265,7 +21554,22 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401892619/x",
-     "note": "Saturday matinee 4 PM ET"
+     "note": "Saturday matinee 4 PM ET",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
+    },
+    {
+     "date": "2026-10-31",
+     "sport": "mls",
+     "label": "Earthquakes vs Real Salt Lake",
+     "ha": "home",
+     "start_pt": "14:00",
+     "phase": "MLS Regular Season",
+     "venue": "PayPal Park",
+     "source": "https://www.sjearthquakes.com/news/news-earthquakes-announce-radio-stations-for-2026-mls-season",
+     "flag": "CORRECTED 2026-09-17: the transcribed MLS schedule PDF printed TBD for this match, but the club's official 2026 radio release (fetched live 2026-09-17) lists it at 2:00 PM PT - time now official.",
+     "start_min": 840,
+     "pt_date": "2026-10-31",
+     "radio": "KSFO 810 AM (English) / KZSF 1370 AM (Spanish)"
     },
     {
      "date": "2026-10-31",
@@ -21290,20 +21594,8 @@
      "tbd_count": 1,
      "label": "MLB postseason - World Series Gm 7 if necessary (8:00 PM ET pattern) (1 game(s), teams & times UNCONFIRMED) [FOX/Fox Deportes]",
      "source": "mlb_2026_postseason_tbd.txt",
-     "review": "https://www.mlb.com/postseason"
-    },
-    {
-     "date": "2026-10-31",
-     "sport": "mls",
-     "label": "Earthquakes vs Real Salt Lake",
-     "ha": "home",
-     "start_pt": null,
-     "phase": "MLS Regular Season",
-     "venue": "PayPal Park",
-     "source": "https://images.mlssoccer.com/image/upload/v1766018474/assets/sje/schedule/2026%20Schedule.pdf",
-     "flag": "KICKOFF TIME TBD - official PDF prints 'TBD' for this match.",
-     "start_min": null,
-     "pt_date": "2026-10-31"
+     "review": "https://www.mlb.com/postseason",
+     "playoff_note": "MLB World Series (best-of-7) - matchups resolve after the League Championship Series. Kickoff times officially TBD (none announced)."
     },
     {
      "date": "2026-10-31",
@@ -21317,7 +21609,8 @@
      "source": "https://calbears.com/sports/football/schedule",
      "flag": "KICKOFF TIME TBD - no time listed on official Cal schedule.",
      "start_min": null,
-     "pt_date": "2026-10-31"
+     "pt_date": "2026-10-31",
+     "radio": "KSFO 810 AM"
     },
     {
      "date": "2026-10-31",
@@ -21331,7 +21624,8 @@
      "source": "https://gostanford.com/sports/football/schedule",
      "flag": "KICKOFF TIME TBA per official Stanford schedule.",
      "start_min": null,
-     "pt_date": "2026-10-31"
+     "pt_date": "2026-10-31",
+     "radio": "KNBR / KTCT 1050 AM"
     },
     {
      "date": "2026-10-31",
@@ -21348,9 +21642,9 @@
    "blocked": [
     {
      "start": 750,
-     "end": 954,
+     "end": 960,
      "start_t": "12:30 PM",
-     "end_t": "3:54 PM"
+     "end_t": "4:00 PM"
     },
     {
      "start": 1020,
@@ -21370,11 +21664,11 @@
      "minutes": 750
     },
     {
-     "start": 954,
+     "start": 960,
      "end": 1020,
-     "start_t": "3:54 PM",
+     "start_t": "4:00 PM",
      "end_t": "5:00 PM",
-     "minutes": 66
+     "minutes": 60
     },
     {
      "start": 1184,
@@ -21384,9 +21678,9 @@
      "minutes": 256
     }
    ],
-   "game_count": 3,
+   "game_count": 4,
    "nfl_all_count": 0,
-   "tbd_count": 4,
+   "tbd_count": 3,
    "estimated_count": 1,
    "conditional_count": 1,
    "has_priority": true,
@@ -21590,7 +21884,8 @@
      "start_et": "20:20",
      "wwo": true,
      "wwo_slot": "SNF",
-     "wwo_event": "https://www.westwoodonesports.com/events/548499"
+     "wwo_event": "https://www.westwoodonesports.com/events/548499",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-11-01",
@@ -21605,7 +21900,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401909905/x",
-     "note": "Chase Center"
+     "note": "Chase Center",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     }
    ],
    "blocked": [
@@ -21677,7 +21973,8 @@
      "start_et": "20:15",
      "wwo": true,
      "wwo_slot": "MNF",
-     "wwo_event": "https://www.westwoodonesports.com/events/548540"
+     "wwo_event": "https://www.westwoodonesports.com/events/548540",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-11-02",
@@ -21692,7 +21989,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401892632/x",
-     "note": "SAP Center"
+     "note": "SAP Center",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     },
     {
      "date": "2026-11-02",
@@ -21707,7 +22005,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401909919/x",
-     "note": "back-to-back (Nov 1-2)"
+     "note": "back-to-back (Nov 1-2)",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     }
    ],
    "blocked": [
@@ -21787,7 +22086,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401892646/x",
-     "note": "TNT/truTV"
+     "note": "TNT/truTV",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     }
    ],
    "blocked": [
@@ -21846,7 +22146,8 @@
      "start_et": "20:15",
      "wwo": true,
      "wwo_slot": "TNF",
-     "wwo_event": "https://www.westwoodonesports.com/events/548561"
+     "wwo_event": "https://www.westwoodonesports.com/events/548561",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-11-05",
@@ -21861,7 +22162,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401909937/x",
-     "note": "NBA TV"
+     "note": "NBA TV",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     }
    ],
    "blocked": [
@@ -21916,7 +22218,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401892660/x",
-     "note": "@ Grand Casino Arena"
+     "note": "@ Grand Casino Arena",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     }
    ],
    "blocked": [
@@ -21973,7 +22276,8 @@
      "start_pt": "12:30",
      "start_min": 750,
      "estimated": true,
-     "note": "REPORTED 3:30 PM ET on CBS (The Athletic via si.com/oregonlive.com; official Oct 26) - Ohio Stadium"
+     "note": "REPORTED 3:30 PM ET on CBS (The Athletic via si.com/oregonlive.com; official Oct 26) - Ohio Stadium",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-11-07",
@@ -21987,7 +22291,8 @@
      "kickoff_source": "Official SJ Earthquakes 2026 schedule release (Nov 20, 2025): '34 \u00b7 Saturday, Nov. 7, 2026 \u00b7 Minnesota United FC \u00b7 Away \u00b7 4:00 PM \u00b7 Apple'. This is the regular-season finale (Decision Day, all 30 clubs). Corroborated by seatgeek.com/san-jose-earthquakes-tickets/schedule (Allianz Field, Saint Paul).",
      "flag": "ADDED 2026-09-11: the Decision Day finale at Minnesota (4:00 PM PT, game 34/34) was missing from the earlier PDF transcription which ended at the Oct 31 home finale. It is a real scheduled game, NOT conditional.",
      "start_min": 960,
-     "pt_date": "2026-11-07"
+     "pt_date": "2026-11-07",
+     "radio": "KSFO 810 AM (English) / KZSF 1370 AM (Spanish)"
     },
     {
      "date": "2026-11-07",
@@ -22002,7 +22307,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401892669/x",
-     "note": "back-to-back (Nov 6-7)"
+     "note": "back-to-back (Nov 6-7)",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     },
     {
      "date": "2026-11-07",
@@ -22017,7 +22323,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401909942/x",
-     "note": "Chase Center"
+     "note": "Chase Center",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     }
    ],
    "blocked": [
@@ -22089,7 +22396,8 @@
      "start_et": "09:30",
      "wwo": true,
      "wwo_slot": "Madrid",
-     "wwo_event": "https://www.westwoodonesports.com/events/548489"
+     "wwo_event": "https://www.westwoodonesports.com/events/548489",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-11-08",
@@ -22249,7 +22557,8 @@
      "source": "https://www.49ers.com/schedule/",
      "priority": true,
      "start_min": 785,
-     "pt_date": "2026-11-08"
+     "pt_date": "2026-11-08",
+     "radio": "KSAN 107.7 FM + KNBR 680/104.5 (weeks 1-3: KSFO 810 AM / KSAN 107.7) + Westwood One national"
     },
     {
      "date": "2026-11-08",
@@ -22300,7 +22609,8 @@
      "start_et": "20:20",
      "wwo": true,
      "wwo_slot": "SNF",
-     "wwo_event": "https://www.westwoodonesports.com/events/548500"
+     "wwo_event": "https://www.westwoodonesports.com/events/548500",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     }
    ],
    "blocked": [
@@ -22385,7 +22695,8 @@
      "start_et": "20:15",
      "wwo": true,
      "wwo_slot": "MNF",
-     "wwo_event": "https://www.westwoodonesports.com/events/548541"
+     "wwo_event": "https://www.westwoodonesports.com/events/548541",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-11-09",
@@ -22400,7 +22711,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401909959/x",
-     "note": "NBA TV"
+     "note": "NBA TV",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     },
     {
      "date": "2026-11-09",
@@ -22415,7 +22727,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401892682/x",
-     "note": "SAP Center"
+     "note": "SAP Center",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     }
    ],
    "blocked": [
@@ -22495,7 +22808,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401909974/x",
-     "note": "ESPN"
+     "note": "ESPN",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     },
     {
      "date": "2026-11-11",
@@ -22510,7 +22824,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401892695/x",
-     "note": "SAP Center"
+     "note": "SAP Center",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     }
    ],
    "blocked": [
@@ -22569,7 +22884,8 @@
      "start_et": "20:15",
      "wwo": true,
      "wwo_slot": "TNF",
-     "wwo_event": "https://www.westwoodonesports.com/events/548562"
+     "wwo_event": "https://www.westwoodonesports.com/events/548562",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     }
    ],
    "blocked": [
@@ -22624,7 +22940,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401909302/x",
-     "note": "Prime Video"
+     "note": "Prime Video",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     }
    ],
    "blocked": [
@@ -22681,7 +22998,8 @@
      "start_pt": "12:30",
      "start_min": 750,
      "estimated": true,
-     "note": "kickoff TBD; date confirmed Sat Nov 14 (goducks.com) - estimated showcase slot 3:30 PM ET; Autzen Stadium"
+     "note": "kickoff TBD; date confirmed Sat Nov 14 (goducks.com) - estimated showcase slot 3:30 PM ET; Autzen Stadium",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-11-14",
@@ -22698,7 +23016,8 @@
      "start_pt": "16:30",
      "start_min": 990,
      "estimated": true,
-     "note": "kickoff TBD - estimated showcase slot 7:30 PM ET (second possible window); Autzen Stadium"
+     "note": "kickoff TBD - estimated showcase slot 7:30 PM ET (second possible window); Autzen Stadium",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-11-14",
@@ -22713,7 +23032,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401892718/x",
-     "note": "@ Delta Center (Utah Mammoth)"
+     "note": "@ Delta Center (Utah Mammoth)",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     },
     {
      "date": "2026-11-14",
@@ -22728,7 +23048,8 @@
      "kickoff_source": "https://calbears.com/news/2026/1/26/california-football-announces-2026-schedule.aspx (official: 'Nov.14 at Virginia ... All kickoff times will be announced at a later date')",
      "flag": "KICKOFF TIME TBD - announced at a later date per official club release; date/opponent cross-checked via two independent sources 2026-09-11.",
      "start_min": null,
-     "pt_date": "2026-11-14"
+     "pt_date": "2026-11-14",
+     "radio": "KSFO 810 AM"
     },
     {
      "date": "2026-11-14",
@@ -22743,7 +23064,8 @@
      "kickoff_source": "date/opponent: en.wikipedia.org/wiki/2026_Stanford_Cardinal_football_team + 247sports.com + on3.com (May 2026 'times not yet announced' list)",
      "flag": "KICKOFF TIME TBD - announced at a later date per official club release; date/opponent cross-checked via two independent sources 2026-09-11.",
      "start_min": null,
-     "pt_date": "2026-11-14"
+     "pt_date": "2026-11-14",
+     "radio": "KNBR / KTCT 1050 AM"
     }
    ],
    "blocked": [
@@ -22815,7 +23137,8 @@
      "start_et": "09:30",
      "wwo": true,
      "wwo_slot": "Munich",
-     "wwo_event": "https://www.westwoodonesports.com/events/548490"
+     "wwo_event": "https://www.westwoodonesports.com/events/548490",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-11-15",
@@ -22991,7 +23314,8 @@
      "source": "https://www.49ers.com/schedule/",
      "priority": true,
      "start_min": 805,
-     "pt_date": "2026-11-15"
+     "pt_date": "2026-11-15",
+     "radio": "KSAN 107.7 FM + KNBR 680/104.5 (weeks 1-3: KSFO 810 AM / KSAN 107.7) + Westwood One national"
     },
     {
      "date": "2026-11-15",
@@ -23010,7 +23334,8 @@
      "start_et": "20:20",
      "wwo": true,
      "wwo_slot": "SNF",
-     "wwo_event": "https://www.westwoodonesports.com/events/548501"
+     "wwo_event": "https://www.westwoodonesports.com/events/548501",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-11-15",
@@ -23025,7 +23350,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401892725/x",
-     "note": "back-to-back (Nov 14-15)"
+     "note": "back-to-back (Nov 14-15)",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     }
    ],
    "blocked": [
@@ -23106,7 +23432,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401910000/x",
-     "note": "@ Smoothie King Center"
+     "note": "@ Smoothie King Center",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     },
     {
      "date": "2026-11-16",
@@ -23125,7 +23452,8 @@
      "start_et": "20:15",
      "wwo": true,
      "wwo_slot": "MNF",
-     "wwo_event": "https://www.westwoodonesports.com/events/548542"
+     "wwo_event": "https://www.westwoodonesports.com/events/548542",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     }
    ],
    "blocked": [
@@ -23180,7 +23508,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401892738/x",
-     "note": "SAP Center"
+     "note": "SAP Center",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     }
    ],
    "blocked": [
@@ -23235,7 +23564,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401910016/x",
-     "note": "ESPN"
+     "note": "ESPN",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     },
     {
      "date": "2026-11-18",
@@ -23301,7 +23631,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401910019/x",
-     "note": "back-to-back (Nov 18-19)"
+     "note": "back-to-back (Nov 18-19)",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     },
     {
      "date": "2026-11-19",
@@ -23320,7 +23651,8 @@
      "start_et": "20:15",
      "wwo": true,
      "wwo_slot": "TNF",
-     "wwo_event": "https://www.westwoodonesports.com/events/548564"
+     "wwo_event": "https://www.westwoodonesports.com/events/548564",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     }
    ],
    "blocked": [
@@ -23414,7 +23746,8 @@
      "start_pt": "12:30",
      "start_min": 750,
      "estimated": true,
-     "note": "kickoff TBD (SEC) - estimated showcase slot 3:30 PM ET; Neyland Stadium"
+     "note": "kickoff TBD (SEC) - estimated showcase slot 3:30 PM ET; Neyland Stadium",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-11-21",
@@ -23431,7 +23764,8 @@
      "start_pt": "16:30",
      "start_min": 990,
      "estimated": true,
-     "note": "kickoff TBD - estimated showcase slot 7:30 PM ET (second possible window); Neyland Stadium"
+     "note": "kickoff TBD - estimated showcase slot 7:30 PM ET (second possible window); Neyland Stadium",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-11-21",
@@ -23446,7 +23780,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401892767/x",
-     "note": "SAP Center"
+     "note": "SAP Center",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     },
     {
      "date": "2026-11-21",
@@ -23461,7 +23796,8 @@
      "kickoff_source": "https://calbears.com/news/2026/1/26/california-football-announces-2026-schedule.aspx (official: 'the 129th Big Game ... on Nov. 21')",
      "flag": "KICKOFF TIME TBD - announced at a later date per official club release; date/opponent cross-checked via two independent sources 2026-09-11. Same game as the Stanford row above.",
      "start_min": null,
-     "pt_date": "2026-11-21"
+     "pt_date": "2026-11-21",
+     "radio": "KNBR 104.5 FM / 680 AM (129th Big Game - verified 2026-09-17 on calbears.com)"
     },
     {
      "date": "2026-11-21",
@@ -23477,7 +23813,8 @@
      "flag": "KICKOFF TIME TBD - announced at a later date per official club release; date/opponent cross-checked via two independent sources 2026-09-11. Same game as the Cal row below.",
      "start_min": null,
      "pt_date": "2026-11-21",
-     "dedup": true
+     "dedup": true,
+     "radio": "KNBR 104.5 FM / 680 AM (129th Big Game - verified 2026-09-17 on calbears.com)"
     },
     {
      "date": "2026-11-21",
@@ -23721,7 +24058,8 @@
      "wwo": true,
      "wwo_slot": "Mexico City",
      "wwo_event": "https://www.westwoodonesports.com/events/548491",
-     "dedup": true
+     "dedup": true,
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-11-22",
@@ -23736,7 +24074,8 @@
      "source": "https://www.49ers.com/schedule/",
      "priority": true,
      "start_min": 1040,
-     "pt_date": "2026-11-22"
+     "pt_date": "2026-11-22",
+     "radio": "KSAN 107.7 FM + KNBR 680/104.5 (weeks 1-3: KSFO 810 AM / KSAN 107.7) + Westwood One national"
     },
     {
      "date": "2026-11-22",
@@ -23751,7 +24090,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401910035/x",
-     "note": "Chase Center"
+     "note": "Chase Center",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     }
    ],
    "blocked": [
@@ -23823,7 +24163,8 @@
      "start_et": "20:15",
      "wwo": true,
      "wwo_slot": "MNF",
-     "wwo_event": "https://www.westwoodonesports.com/events/548543"
+     "wwo_event": "https://www.westwoodonesports.com/events/548543",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-11-23",
@@ -23838,7 +24179,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401892779/x",
-     "note": "SAP Center"
+     "note": "SAP Center",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     }
    ],
    "blocked": [
@@ -23934,7 +24276,8 @@
      "start_et": "20:00",
      "wwo": true,
      "wwo_slot": "Thanksgiving Wed",
-     "wwo_event": "https://www.westwoodonesports.com/events/548511"
+     "wwo_event": "https://www.westwoodonesports.com/events/548511",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-11-25",
@@ -23949,7 +24292,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401909324/x",
-     "note": "Thanksgiving eve"
+     "note": "Thanksgiving eve",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     },
     {
      "date": "2026-11-25",
@@ -23964,7 +24308,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401892793/x",
-     "note": "Thanksgiving eve @ Honda Center"
+     "note": "Thanksgiving eve @ Honda Center",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     },
     {
      "date": "2026-11-25",
@@ -24034,7 +24379,8 @@
      "start_et": "13:00",
      "wwo": true,
      "wwo_slot": "Thanksgiving",
-     "wwo_event": "https://www.westwoodonesports.com/events/548512"
+     "wwo_event": "https://www.westwoodonesports.com/events/548512",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-11-26",
@@ -24053,7 +24399,8 @@
      "start_et": "16:30",
      "wwo": true,
      "wwo_slot": "Thanksgiving",
-     "wwo_event": "https://www.westwoodonesports.com/events/548513"
+     "wwo_event": "https://www.westwoodonesports.com/events/548513",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-11-26",
@@ -24072,7 +24419,8 @@
      "start_et": "20:20",
      "wwo": true,
      "wwo_slot": "Thanksgiving",
-     "wwo_event": "https://www.westwoodonesports.com/events/548514"
+     "wwo_event": "https://www.westwoodonesports.com/events/548514",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     }
    ],
    "blocked": [
@@ -24157,7 +24505,8 @@
      "start_et": "15:00",
      "wwo": true,
      "wwo_slot": "Black Friday",
-     "wwo_event": "https://www.westwoodonesports.com/events/548515"
+     "wwo_event": "https://www.westwoodonesports.com/events/548515",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-11-27",
@@ -24172,7 +24521,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401892805/x",
-     "note": "Black Friday matinee 4 PM ET"
+     "note": "Black Friday matinee 4 PM ET",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     },
     {
      "date": "2026-11-27",
@@ -24187,7 +24537,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401909336/x",
-     "note": "Black Friday"
+     "note": "Black Friday",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     }
    ],
    "blocked": [
@@ -24256,7 +24607,8 @@
      "dur_override": 204,
      "start_pt": "09:00",
      "start_min": 540,
-     "note": "kickoff 12:00 PM ET FOX (official: Michigan announcement 2026-05-11 + Big Ten TV schedule); WWO air 11:30 AM ET; Ohio Stadium"
+     "note": "kickoff 12:00 PM ET FOX (official: Michigan announcement 2026-05-11 + Big Ten TV schedule); WWO air 11:30 AM ET; Ohio Stadium",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-11-28",
@@ -24271,7 +24623,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401892820/x",
-     "note": "back-to-back (Nov 27-28)"
+     "note": "back-to-back (Nov 27-28)",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     },
     {
      "date": "2026-11-28",
@@ -24286,7 +24639,8 @@
      "kickoff_source": "https://calbears.com/news/2026/1/26/california-football-announces-2026-schedule.aspx (official: 'wrap up the regular season against Pittsburgh at home on Nov. 28')",
      "flag": "KICKOFF TIME TBD - announced at a later date per official club release; date/opponent cross-checked via two independent sources 2026-09-11. Cal also has a BYE on Sat Nov 7; Nov 28 is BOTH teams' regular-season finale.",
      "start_min": null,
-     "pt_date": "2026-11-28"
+     "pt_date": "2026-11-28",
+     "radio": "KSFO 810 AM"
     },
     {
      "date": "2026-11-28",
@@ -24301,7 +24655,8 @@
      "kickoff_source": "date/opponent: en.wikipedia.org/wiki/2026_Stanford_Cardinal_football_team + 247sports.com",
      "flag": "KICKOFF TIME TBD - announced at a later date per official club release; date/opponent cross-checked via two independent sources 2026-09-11. Stanford also has a BYE on Sat Nov 7 (no game that day).",
      "start_min": null,
-     "pt_date": "2026-11-28"
+     "pt_date": "2026-11-28",
+     "radio": "KNBR / KTCT 1050 AM"
     },
     {
      "date": "2026-11-28",
@@ -24525,7 +24880,8 @@
      "source": "https://www.49ers.com/schedule/",
      "priority": true,
      "start_min": 805,
-     "pt_date": "2026-11-29"
+     "pt_date": "2026-11-29",
+     "radio": "KSAN 107.7 FM + KNBR 680/104.5 (weeks 1-3: KSFO 810 AM / KSAN 107.7) + Westwood One national"
     },
     {
      "date": "2026-11-29",
@@ -24544,7 +24900,8 @@
      "start_et": "20:20",
      "wwo": true,
      "wwo_slot": "SNF",
-     "wwo_event": "https://www.westwoodonesports.com/events/548502"
+     "wwo_event": "https://www.westwoodonesports.com/events/548502",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-11-29",
@@ -24559,7 +24916,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401910059/x",
-     "note": "Chase Center"
+     "note": "Chase Center",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     },
     {
      "date": "2026-11-29",
@@ -24642,7 +25000,8 @@
      "start_et": "20:15",
      "wwo": true,
      "wwo_slot": "MNF",
-     "wwo_event": "https://www.westwoodonesports.com/events/548544"
+     "wwo_event": "https://www.westwoodonesports.com/events/548544",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     }
    ],
    "blocked": [
@@ -24697,7 +25056,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401892832/x",
-     "note": "ESPN+"
+     "note": "ESPN+",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     },
     {
      "date": "2026-12-01",
@@ -24712,7 +25072,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401910075/x",
-     "note": "NBC; late 11 PM ET tip"
+     "note": "NBC; late 11 PM ET tip",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     },
     {
      "date": "2026-12-01",
@@ -24828,7 +25189,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401892846/x",
-     "note": "@ Madison Square Garden"
+     "note": "@ Madison Square Garden",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     },
     {
      "date": "2026-12-03",
@@ -24847,7 +25209,8 @@
      "start_et": "20:15",
      "wwo": true,
      "wwo_slot": "TNF",
-     "wwo_event": "https://www.westwoodonesports.com/events/548566"
+     "wwo_event": "https://www.westwoodonesports.com/events/548566",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     }
    ],
    "blocked": [
@@ -24902,7 +25265,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401892855/x",
-     "note": "back-to-back (Dec 3-4)"
+     "note": "back-to-back (Dec 3-4)",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     }
    ],
    "blocked": [
@@ -24958,7 +25322,8 @@
      "dur_override": 204,
      "start_pt": "13:00",
      "start_min": 780,
-     "note": "kickoff 4:00 PM ET ABC (SEC official 2026-05-12); WWO air 3:30 PM ET; Mercedes-Benz Stadium Atlanta"
+     "note": "kickoff 4:00 PM ET ABC (SEC official 2026-05-12); WWO air 3:30 PM ET; Mercedes-Benz Stadium Atlanta",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-12-05",
@@ -25148,7 +25513,8 @@
      "source": "https://www.49ers.com/schedule/",
      "priority": true,
      "start_min": 600,
-     "pt_date": "2026-12-06"
+     "pt_date": "2026-12-06",
+     "radio": "KSAN 107.7 FM + KNBR 680/104.5 (weeks 1-3: KSFO 810 AM / KSAN 107.7) + Westwood One national"
     },
     {
      "date": "2026-12-06",
@@ -25163,7 +25529,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401892871/x",
-     "note": "Sunday matinee 3 PM ET"
+     "note": "Sunday matinee 3 PM ET",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     },
     {
      "date": "2026-12-06",
@@ -25246,7 +25613,8 @@
      "start_et": "20:20",
      "wwo": true,
      "wwo_slot": "SNF",
-     "wwo_event": "https://www.westwoodonesports.com/events/548503"
+     "wwo_event": "https://www.westwoodonesports.com/events/548503",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-12-06",
@@ -25329,7 +25697,8 @@
      "start_et": "20:15",
      "wwo": true,
      "wwo_slot": "MNF",
-     "wwo_event": "https://www.westwoodonesports.com/events/548545"
+     "wwo_event": "https://www.westwoodonesports.com/events/548545",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     }
    ],
    "blocked": [
@@ -25384,7 +25753,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401892890/x",
-     "note": "SAP Center"
+     "note": "SAP Center",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     }
    ],
    "blocked": [
@@ -25439,7 +25809,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401892893/x",
-     "note": "back-to-back (Dec 8-9); TNT/truTV"
+     "note": "back-to-back (Dec 8-9); TNT/truTV",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     }
    ],
    "blocked": [
@@ -25498,7 +25869,8 @@
      "start_et": "20:15",
      "wwo": true,
      "wwo_slot": "TNF",
-     "wwo_event": "https://www.westwoodonesports.com/events/548567"
+     "wwo_event": "https://www.westwoodonesports.com/events/548567",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     }
    ],
    "blocked": [
@@ -25553,7 +25925,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401892908/x",
-     "note": "SAP Center"
+     "note": "SAP Center",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     },
     {
      "date": "2026-12-11",
@@ -25620,7 +25993,8 @@
      "dur_override": 204,
      "start_pt": "12:00",
      "start_min": 720,
-     "note": "kickoff 3:00 PM ET CBS (Army/Navy official 2026-05-27); WWO grid air 2:00 PM ET (long pregame); WWO event window 3:30-7:30 PM EST conflicts with grid air - official CBS time authoritative; MetLife Stadium"
+     "note": "kickoff 3:00 PM ET CBS (Army/Navy official 2026-05-27); WWO grid air 2:00 PM ET (long pregame); WWO event window 3:30-7:30 PM EST conflicts with grid air - official CBS time authoritative; MetLife Stadium",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-12-12",
@@ -25635,7 +26009,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401910093/x",
-     "note": "after 10-day gap Dec 2-11 (NBA Cup window; no Warriors game listed - flagged)"
+     "note": "after 10-day gap Dec 2-11 (NBA Cup window; no Warriors game listed - flagged)",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     },
     {
      "date": "2026-12-12",
@@ -25907,7 +26282,8 @@
      "source": "https://www.49ers.com/schedule/",
      "priority": true,
      "start_min": 805,
-     "pt_date": "2026-12-13"
+     "pt_date": "2026-12-13",
+     "radio": "KSAN 107.7 FM + KNBR 680/104.5 (weeks 1-3: KSFO 810 AM / KSAN 107.7) + Westwood One national"
     },
     {
      "date": "2026-12-13",
@@ -25926,7 +26302,8 @@
      "start_et": "20:20",
      "wwo": true,
      "wwo_slot": "SNF",
-     "wwo_event": "https://www.westwoodonesports.com/events/548505"
+     "wwo_event": "https://www.westwoodonesports.com/events/548505",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     }
    ],
    "blocked": [
@@ -25994,7 +26371,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401910110/x",
-     "note": "@ FedExForum"
+     "note": "@ FedExForum",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     },
     {
      "date": "2026-12-14",
@@ -26013,7 +26391,8 @@
      "start_et": "20:15",
      "wwo": true,
      "wwo_slot": "MNF",
-     "wwo_event": "https://www.westwoodonesports.com/events/548546"
+     "wwo_event": "https://www.westwoodonesports.com/events/548546",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-12-14",
@@ -26028,7 +26407,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401892930/x",
-     "note": "SAP Center"
+     "note": "SAP Center",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     }
    ],
    "blocked": [
@@ -26108,7 +26488,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401910120/x",
-     "note": "@ Gainbridge Fieldhouse"
+     "note": "@ Gainbridge Fieldhouse",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     },
     {
      "date": "2026-12-16",
@@ -26123,7 +26504,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401892945/x",
-     "note": "TNT/truTV"
+     "note": "TNT/truTV",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     }
    ],
    "blocked": [
@@ -26196,7 +26578,8 @@
      "wwo": true,
      "wwo_slot": "TNF",
      "wwo_event": "https://www.westwoodonesports.com/events/548568",
-     "dedup": true
+     "dedup": true,
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-12-17",
@@ -26212,7 +26595,8 @@
      "tv": "Prime Video (TNF)",
      "priority": true,
      "start_min": 1035,
-     "pt_date": "2026-12-17"
+     "pt_date": "2026-12-17",
+     "radio": "KSAN 107.7 FM + KNBR 680/104.5 (weeks 1-3: KSFO 810 AM / KSAN 107.7) + Westwood One national"
     }
    ],
    "blocked": [
@@ -26267,7 +26651,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401910139/x",
-     "note": "@ Scotiabank Arena"
+     "note": "@ Scotiabank Arena",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     },
     {
      "date": "2026-12-18",
@@ -26348,7 +26733,8 @@
      "start_et": "17:00",
      "wwo": true,
      "wwo_slot": "Sat Wk15",
-     "wwo_event": "https://www.westwoodonesports.com/events/548517"
+     "wwo_event": "https://www.westwoodonesports.com/events/548517",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-12-19",
@@ -26367,7 +26753,8 @@
      "start_et": "20:20",
      "wwo": true,
      "wwo_slot": "Sat Wk15",
-     "wwo_event": "https://www.westwoodonesports.com/events/548518"
+     "wwo_event": "https://www.westwoodonesports.com/events/548518",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-12-19",
@@ -26382,7 +26769,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401892969/x",
-     "note": "@ Rogers Arena"
+     "note": "@ Rogers Arena",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     },
     {
      "date": "2026-12-19",
@@ -26637,7 +27025,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401910157/x",
-     "note": "@ Fiserv Forum"
+     "note": "@ Fiserv Forum",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     },
     {
      "date": "2026-12-20",
@@ -26656,7 +27045,8 @@
      "start_et": "20:20",
      "wwo": true,
      "wwo_slot": "SNF",
-     "wwo_event": "https://www.westwoodonesports.com/events/548506"
+     "wwo_event": "https://www.westwoodonesports.com/events/548506",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     }
    ],
    "blocked": [
@@ -26728,7 +27118,8 @@
      "start_et": "20:15",
      "wwo": true,
      "wwo_slot": "MNF",
-     "wwo_event": "https://www.westwoodonesports.com/events/548548"
+     "wwo_event": "https://www.westwoodonesports.com/events/548548",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     }
    ],
    "blocked": [
@@ -26783,7 +27174,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401892992/x",
-     "note": "odd :40 start as printed (flagged for review)"
+     "note": "odd :40 start as printed (flagged for review)",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     },
     {
      "date": "2026-12-22",
@@ -26798,7 +27190,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401910171/x",
-     "note": "NBC"
+     "note": "NBC",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     }
    ],
    "blocked": [
@@ -26853,7 +27246,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401910186/x",
-     "note": "back-to-back (Dec 22-23)"
+     "note": "back-to-back (Dec 22-23)",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     }
    ],
    "blocked": [
@@ -26912,7 +27306,8 @@
      "start_et": "20:15",
      "wwo": true,
      "wwo_slot": "TNF",
-     "wwo_event": "https://www.westwoodonesports.com/events/548569"
+     "wwo_event": "https://www.westwoodonesports.com/events/548569",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     }
    ],
    "blocked": [
@@ -26971,7 +27366,8 @@
      "start_et": "13:00",
      "wwo": true,
      "wwo_slot": "Christmas",
-     "wwo_event": "https://www.westwoodonesports.com/events/548528"
+     "wwo_event": "https://www.westwoodonesports.com/events/548528",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-12-25",
@@ -26990,7 +27386,8 @@
      "start_et": "16:30",
      "wwo": true,
      "wwo_slot": "Christmas",
-     "wwo_event": "https://www.westwoodonesports.com/events/548531"
+     "wwo_event": "https://www.westwoodonesports.com/events/548531",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-12-25",
@@ -27009,7 +27406,8 @@
      "start_et": "20:15",
      "wwo": true,
      "wwo_slot": "Christmas",
-     "wwo_event": "https://www.westwoodonesports.com/events/548534"
+     "wwo_event": "https://www.westwoodonesports.com/events/548534",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-12-25",
@@ -27024,7 +27422,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401909101/x",
-     "note": "CHRISTMAS DAY, ESPN/ABC"
+     "note": "CHRISTMAS DAY, ESPN/ABC",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     }
    ],
    "blocked": [
@@ -27110,7 +27509,8 @@
      "priority": true,
      "estimated": true,
      "est_kind": "EST",
-     "tbd_count": 1
+     "tbd_count": 1,
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-12-26",
@@ -27130,7 +27530,8 @@
      "priority": true,
      "estimated": true,
      "est_kind": "EST",
-     "tbd_count": 1
+     "tbd_count": 1,
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-12-26",
@@ -27145,7 +27546,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401893004/x",
-     "note": "day after Christmas"
+     "note": "day after Christmas",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     },
     {
      "date": "2026-12-26",
@@ -27396,7 +27798,8 @@
      "source": "https://www.49ers.com/schedule/",
      "priority": true,
      "start_min": 805,
-     "pt_date": "2026-12-27"
+     "pt_date": "2026-12-27",
+     "radio": "KSAN 107.7 FM + KNBR 680/104.5 (weeks 1-3: KSFO 810 AM / KSAN 107.7) + Westwood One national"
     },
     {
      "date": "2026-12-27",
@@ -27415,7 +27818,8 @@
      "start_et": "20:20",
      "wwo": true,
      "wwo_slot": "SNF",
-     "wwo_event": "https://www.westwoodonesports.com/events/548507"
+     "wwo_event": "https://www.westwoodonesports.com/events/548507",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-12-27",
@@ -27430,7 +27834,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401910204/x",
-     "note": "Chase Center"
+     "note": "Chase Center",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     }
    ],
    "blocked": [
@@ -27498,7 +27903,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401893017/x",
-     "note": "@ Canada Life Centre"
+     "note": "@ Canada Life Centre",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     },
     {
      "date": "2026-12-28",
@@ -27517,7 +27923,8 @@
      "start_et": "20:15",
      "wwo": true,
      "wwo_slot": "MNF",
-     "wwo_event": "https://www.westwoodonesports.com/events/548550"
+     "wwo_event": "https://www.westwoodonesports.com/events/548550",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2026-12-28",
@@ -27532,7 +27939,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401910209/x",
-     "note": "back-to-back (Dec 27-28)"
+     "note": "back-to-back (Dec 27-28)",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     }
    ],
    "blocked": [
@@ -27587,7 +27995,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401893025/x",
-     "note": "back-to-back (Dec 28-29)"
+     "note": "back-to-back (Dec 28-29)",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     }
    ],
    "blocked": [
@@ -27642,7 +28051,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401910225/x",
-     "note": "NBA TV"
+     "note": "NBA TV",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     },
     {
      "date": "2026-12-30",
@@ -27712,7 +28122,8 @@
      "start_et": "20:15",
      "wwo": true,
      "wwo_slot": "TNF",
-     "wwo_event": "https://www.westwoodonesports.com/events/548570"
+     "wwo_event": "https://www.westwoodonesports.com/events/548570",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     }
    ],
    "blocked": [
@@ -27767,7 +28178,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401893045/x",
-     "note": "New Year's Day matinee 4 PM ET"
+     "note": "New Year's Day matinee 4 PM ET",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     },
     {
      "date": "2027-01-01",
@@ -27838,7 +28250,8 @@
      "priority": true,
      "estimated": true,
      "est_kind": "EST",
-     "tbd_count": 1
+     "tbd_count": 1,
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2027-01-02",
@@ -27853,7 +28266,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401893055/x",
-     "note": "back-to-back (Jan 1-2)"
+     "note": "back-to-back (Jan 1-2)",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     },
     {
      "date": "2027-01-02",
@@ -27873,7 +28287,8 @@
      "priority": true,
      "estimated": true,
      "est_kind": "EST",
-     "tbd_count": 1
+     "tbd_count": 1,
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2027-01-02",
@@ -27888,7 +28303,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401910248/x",
-     "note": "Chase Center"
+     "note": "Chase Center",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     },
     {
      "date": "2027-01-02",
@@ -28178,7 +28594,8 @@
      "wwo": true,
      "wwo_slot": "SNF",
      "wwo_event": "https://www.westwoodonesports.com/events/548509",
-     "dedup": true
+     "dedup": true,
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2027-01-03",
@@ -28193,7 +28610,8 @@
      "source": "https://www.49ers.com/schedule/",
      "priority": true,
      "start_min": 1040,
-     "pt_date": "2027-01-03"
+     "pt_date": "2027-01-03",
+     "radio": "KSAN 107.7 FM + KNBR 680/104.5 (weeks 1-3: KSFO 810 AM / KSAN 107.7) + Westwood One national"
     }
    ],
    "blocked": [
@@ -28265,7 +28683,8 @@
      "start_et": "20:15",
      "wwo": true,
      "wwo_slot": "MNF",
-     "wwo_event": "https://www.westwoodonesports.com/events/548552"
+     "wwo_event": "https://www.westwoodonesports.com/events/548552",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2027-01-04",
@@ -28280,7 +28699,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401893072/x",
-     "note": "SAP Center"
+     "note": "SAP Center",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     }
    ],
    "blocked": [
@@ -28360,7 +28780,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401910278/x",
-     "note": "ESPN"
+     "note": "ESPN",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     },
     {
      "date": "2027-01-06",
@@ -28375,7 +28796,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401893085/x",
-     "note": "SAP Center"
+     "note": "SAP Center",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     }
    ],
    "blocked": [
@@ -28430,7 +28852,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401910288/x",
-     "note": "back-to-back (Jan 6-7)"
+     "note": "back-to-back (Jan 6-7)",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     }
    ],
    "blocked": [
@@ -28485,7 +28908,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401893100/x",
-     "note": "SAP Center"
+     "note": "SAP Center",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     }
    ],
    "blocked": [
@@ -28545,7 +28969,8 @@
      "priority": true,
      "estimated": true,
      "est_kind": "EST",
-     "tbd_count": 1
+     "tbd_count": 1,
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2027-01-09",
@@ -28565,7 +28990,8 @@
      "priority": true,
      "estimated": true,
      "est_kind": "EST",
-     "tbd_count": 1
+     "tbd_count": 1,
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2027-01-09",
@@ -28585,7 +29011,8 @@
      "priority": true,
      "estimated": true,
      "est_kind": "EST",
-     "tbd_count": 1
+     "tbd_count": 1,
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2027-01-09",
@@ -28600,7 +29027,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401910302/x",
-     "note": "Chase Center"
+     "note": "Chase Center",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     },
     {
      "date": "2027-01-09",
@@ -28615,7 +29043,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401893113/x",
-     "note": "back-to-back (Jan 8-9)"
+     "note": "back-to-back (Jan 8-9)",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     },
     {
      "date": "2027-01-09",
@@ -28733,7 +29162,8 @@
      "is_sf": false,
      "priority": true,
      "estimated": true,
-     "est_kind": "EST"
+     "est_kind": "EST",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2027-01-10",
@@ -28752,7 +29182,8 @@
      "is_sf": false,
      "priority": true,
      "estimated": true,
-     "est_kind": "EST"
+     "est_kind": "EST",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2027-01-10",
@@ -28771,7 +29202,8 @@
      "is_sf": false,
      "priority": true,
      "estimated": true,
-     "est_kind": "EST"
+     "est_kind": "EST",
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2027-01-10",
@@ -29070,7 +29502,8 @@
      "source": "https://www.49ers.com/schedule/",
      "priority": true,
      "start_min": null,
-     "pt_date": "2027-01-10"
+     "pt_date": "2027-01-10",
+     "radio": "KSAN 107.7 FM + KNBR 680/104.5 (weeks 1-3: KSFO 810 AM / KSAN 107.7) + Westwood One national"
     }
    ],
    "blocked": [
@@ -29176,7 +29609,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401910326/x",
-     "note": "NBC; late 11 PM ET tip"
+     "note": "NBC; late 11 PM ET tip",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     }
    ],
    "blocked": [
@@ -29231,7 +29665,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401893133/x",
-     "note": "@ Rogers Place"
+     "note": "@ Rogers Place",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     },
     {
      "date": "2027-01-13",
@@ -29246,7 +29681,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401910332/x",
-     "note": "back-to-back (Jan 12-13)"
+     "note": "back-to-back (Jan 12-13)",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     }
    ],
    "blocked": [
@@ -29301,7 +29737,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401893142/x",
-     "note": "back-to-back (Jan 13-14)"
+     "note": "back-to-back (Jan 13-14)",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     },
     {
      "date": "2027-01-14",
@@ -29367,7 +29804,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401910343/x",
-     "note": "@ State Farm Arena"
+     "note": "@ State Farm Arena",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     },
     {
      "date": "2027-01-15",
@@ -29438,7 +29876,8 @@
      "priority": true,
      "estimated": true,
      "est_kind": "EST",
-     "tbd_count": 2
+     "tbd_count": 2,
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2027-01-16",
@@ -29458,7 +29897,8 @@
      "priority": true,
      "estimated": true,
      "est_kind": "EST",
-     "tbd_count": 2
+     "tbd_count": 2,
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2027-01-16",
@@ -29473,7 +29913,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401893163/x",
-     "note": "@ Climate Pledge Arena"
+     "note": "@ Climate Pledge Arena",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     }
    ],
    "blocked": [
@@ -29546,7 +29987,8 @@
      "priority": true,
      "estimated": true,
      "est_kind": "EST",
-     "tbd_count": 3
+     "tbd_count": 3,
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2027-01-17",
@@ -29566,7 +30008,8 @@
      "priority": true,
      "estimated": true,
      "est_kind": "EST",
-     "tbd_count": 3
+     "tbd_count": 3,
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2027-01-17",
@@ -29581,7 +30024,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401910362/x",
-     "note": "@ Kaseya Center; early 6 PM ET tip"
+     "note": "@ Kaseya Center; early 6 PM ET tip",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     },
     {
      "date": "2027-01-17",
@@ -29601,7 +30045,8 @@
      "priority": true,
      "estimated": true,
      "est_kind": "EST",
-     "tbd_count": 3
+     "tbd_count": 3,
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     }
    ],
    "blocked": [
@@ -29669,7 +30114,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401893173/x",
-     "note": "MLK Day matinee 4 PM ET"
+     "note": "MLK Day matinee 4 PM ET",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     },
     {
      "date": "2027-01-18",
@@ -29689,7 +30135,8 @@
      "priority": true,
      "estimated": true,
      "est_kind": "EST",
-     "tbd_count": 1
+     "tbd_count": 1,
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     }
    ],
    "blocked": [
@@ -29757,7 +30204,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401910368/x",
-     "note": "@ Kia Center"
+     "note": "@ Kia Center",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     }
    ],
    "blocked": [
@@ -29837,7 +30285,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401910388/x",
-     "note": "Prime Video"
+     "note": "Prime Video",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     }
    ],
    "blocked": [
@@ -29892,7 +30341,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401910397/x",
-     "note": "back-to-back (Jan 21-22)"
+     "note": "back-to-back (Jan 21-22)",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     }
    ],
    "blocked": [
@@ -29952,7 +30402,8 @@
      "priority": true,
      "estimated": true,
      "est_kind": "EST",
-     "tbd_count": 2
+     "tbd_count": 2,
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2027-01-23",
@@ -29972,7 +30423,8 @@
      "priority": true,
      "estimated": true,
      "est_kind": "EST",
-     "tbd_count": 2
+     "tbd_count": 2,
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2027-01-23",
@@ -29987,7 +30439,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401893215/x",
-     "note": "SAP Center"
+     "note": "SAP Center",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     }
    ],
    "blocked": [
@@ -30060,7 +30513,8 @@
      "priority": true,
      "estimated": true,
      "est_kind": "EST",
-     "tbd_count": 2
+     "tbd_count": 2,
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2027-01-24",
@@ -30080,7 +30534,8 @@
      "priority": true,
      "estimated": true,
      "est_kind": "EST",
-     "tbd_count": 2
+     "tbd_count": 2,
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2027-01-24",
@@ -30095,7 +30550,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401910412/x",
-     "note": "NBC"
+     "note": "NBC",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     }
    ],
    "blocked": [
@@ -30225,7 +30681,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401910436/x",
-     "note": "@ Moda Center"
+     "note": "@ Moda Center",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     }
    ],
    "blocked": [
@@ -30280,7 +30737,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401910443/x",
-     "note": "back-to-back (Jan 27-28)"
+     "note": "back-to-back (Jan 27-28)",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     },
     {
      "date": "2027-01-28",
@@ -30295,7 +30753,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401893252/x",
-     "note": "SAP Center"
+     "note": "SAP Center",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     }
    ],
    "blocked": [
@@ -30375,7 +30834,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401893259/x",
-     "note": "Saturday matinee 4 PM ET"
+     "note": "Saturday matinee 4 PM ET",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     },
     {
      "date": "2027-01-30",
@@ -30390,7 +30850,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401910453/x",
-     "note": "ESPN; early 5:30 PM ET tip"
+     "note": "ESPN; early 5:30 PM ET tip",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     }
    ],
    "blocked": [
@@ -30450,7 +30911,8 @@
      "priority": true,
      "estimated": true,
      "est_kind": "EST",
-     "tbd_count": 2
+     "tbd_count": 2,
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2027-01-31",
@@ -30470,7 +30932,8 @@
      "priority": true,
      "estimated": true,
      "est_kind": "EST",
-     "tbd_count": 2
+     "tbd_count": 2,
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     }
    ],
    "blocked": [
@@ -30538,7 +31001,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401910473/x",
-     "note": "NBCSN"
+     "note": "NBCSN",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     }
    ],
    "blocked": [
@@ -30618,7 +31082,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401910487/x",
-     "note": "@ Intuit Dome"
+     "note": "@ Intuit Dome",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     }
    ],
    "blocked": [
@@ -30698,7 +31163,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401910499/x",
-     "note": "@ Spectrum Center"
+     "note": "@ Spectrum Center",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     }
    ],
    "blocked": [
@@ -30783,7 +31249,8 @@
      "priority": true,
      "estimated": true,
      "est_kind": "CONFLICT",
-     "tbd_count": 1
+     "tbd_count": 1,
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2027-02-07",
@@ -30798,7 +31265,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401910514/x",
-     "note": "NBA TV; Sunday matinee 3 PM ET"
+     "note": "NBA TV; Sunday matinee 3 PM ET",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     }
    ],
    "blocked": [
@@ -30883,7 +31351,8 @@
      "priority": true,
      "estimated": true,
      "est_kind": "CONFLICT",
-     "tbd_count": 1
+     "tbd_count": 1,
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     },
     {
      "date": "2027-02-09",
@@ -30898,7 +31367,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401910532/x",
-     "note": "@ United Center"
+     "note": "@ United Center",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     }
    ],
    "blocked": [
@@ -30953,7 +31423,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401910541/x",
-     "note": "back-to-back (Feb 9-10); ESPN"
+     "note": "back-to-back (Feb 9-10); ESPN",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     },
     {
      "date": "2027-02-10",
@@ -30968,7 +31439,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401893294/x",
-     "note": "TNT/truTV; after 10-day gap Jan 31-Feb 9 (flagged: no game listed)"
+     "note": "TNT/truTV; after 10-day gap Jan 31-Feb 9 (flagged: no game listed)",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     }
    ],
    "blocked": [
@@ -31086,7 +31558,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401893306/x",
-     "note": "Saturday matinee 4 PM ET"
+     "note": "Saturday matinee 4 PM ET",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     },
     {
      "date": "2027-02-13",
@@ -31101,7 +31574,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401910566/x",
-     "note": "ESPN; @ Madison Square Garden"
+     "note": "ESPN; @ Madison Square Garden",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     }
    ],
    "blocked": [
@@ -31173,7 +31647,8 @@
      "is_sf": false,
      "priority": true,
      "official": true,
-     "tbd_count": 1
+     "tbd_count": 1,
+     "radio": "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
     }
    ],
    "blocked": [
@@ -31228,7 +31703,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401909480/x",
-     "note": "NBCSN"
+     "note": "NBCSN",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     },
     {
      "date": "2027-02-15",
@@ -31243,7 +31719,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401893327/x",
-     "note": "SAP Center"
+     "note": "SAP Center",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     }
    ],
    "blocked": [
@@ -31323,7 +31800,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401910593/x",
-     "note": "Chase Center"
+     "note": "Chase Center",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     }
    ],
    "blocked": [
@@ -31403,7 +31881,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401893353/x",
-     "note": "@ Capital One Arena"
+     "note": "@ Capital One Arena",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     }
    ],
    "blocked": [
@@ -31483,7 +31962,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401893371/x",
-     "note": "@ Amerant Bank Arena; early 6 PM ET start"
+     "note": "@ Amerant Bank Arena; early 6 PM ET start",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     }
    ],
    "blocked": [
@@ -31563,7 +32043,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401893383/x",
-     "note": "@ Benchmark International Arena"
+     "note": "@ Benchmark International Arena",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     }
    ],
    "blocked": [
@@ -31643,7 +32124,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401893397/x",
-     "note": "@ Lenovo Center"
+     "note": "@ Lenovo Center",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     },
     {
      "date": "2027-02-25",
@@ -31658,7 +32140,8 @@
      "priority": true,
      "source": "nba_warriors_2026_27.txt",
      "review": "https://www.espn.com/nba/game/_/gameId/401910608/x",
-     "note": "Prime Video; after 7-day All-Star break Feb 18-24 (flagged: no game listed)"
+     "note": "Prime Video; after 7-day All-Star break Feb 18-24 (flagged: no game listed)",
+     "radio": "95.7 The Game (KGMZ-FM) - all games"
     }
    ],
    "blocked": [
@@ -31751,7 +32234,8 @@
      "priority": true,
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401893414/x",
-     "note": "@ Xfinity Mobile Arena"
+     "note": "@ Xfinity Mobile Arena",
+     "radio": "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
     }
    ],
    "blocked": [
@@ -31996,12 +32480,8 @@
    "msg": "2026-10-25 49ers at Atlanta Falcons: UNUSUAL 10:00 AM PDT kickoff (1:00 PM ET) per official club schedule."
   },
   {
-   "kind": "TBD_TIME",
-   "msg": "2026-10-31 Earthquakes vs Real Salt Lake: kickoff time TBD/unconfirmed"
-  },
-  {
    "kind": "IRREGULARITY",
-   "msg": "2026-10-31 Earthquakes vs Real Salt Lake: KICKOFF TIME TBD - official PDF prints 'TBD' for this match."
+   "msg": "2026-10-31 Earthquakes vs Real Salt Lake: CORRECTED 2026-09-17: the transcribed MLS schedule PDF printed TBD for this match, but the club's official 2026 radio release (fetched live 2026-09-17) lists it at 2:00 PM PT - time now official."
   },
   {
    "kind": "IRREGULARITY",
@@ -32233,7 +32713,7 @@
   },
   {
    "kind": "FLEX_WINDOW",
-   "msg": "179 league-wide NFL games after 2026-09-16 sit in the Sunday 1:00 PM / 4:05 PM / 4:25 PM ET windows and can still be moved by NFL flex scheduling (flex begins Week 5; times as printed by the source on 2026-09-11 and re-verified 2026-09-15 vs the WWO page + nfl.com week pages - no changes found). Thursday/Sunday/Monday night, international and scheduled Saturday games are locked. Because ALL league-wide NFL games block free time, a flex move shifts the affected day's free windows - re-run the build after each Tuesday announcement."
+   "msg": "179 league-wide NFL games after 2026-09-17 sit in the Sunday 1:00 PM / 4:05 PM / 4:25 PM ET windows and can still be moved by NFL flex scheduling (flex begins Week 5; times as printed by the source on 2026-09-11 and re-verified 2026-09-15 vs the WWO page + nfl.com week pages - no changes found). Thursday/Sunday/Monday night, international and scheduled Saturday games are locked. Because ALL league-wide NFL games block free time, a flex move shifts the affected day's free windows - re-run the build after each Tuesday announcement."
   },
   {
    "kind": "WK18_TBD",
@@ -32294,6 +32774,22 @@
   {
    "kind": "VERIFIED_PASS_2026_09_16_B",
    "msg": "2026-09-16 pass B (this session): (1) WWO NFL page re-fetched live - the page renders two lists; combined they hold all 71 upcoming events and every one matches the transcription at event-id level (63 remaining dated matchups + 8 TBA; the Sep 14 MNF 548429 moved to the Past tab as it is now in the past). Zero deltas. (2) WWO NCAAF page re-fetched: the widget shows only 10 events, but the widget's own eventGrid endpoint (id=47030, list ends 'No more events' at offset 20) holds the complete 2026 list = 13 broadcasts - three were missing and are added: Nov 28 Michigan@Ohio State (official 12:00 PM ET FOX), Dec 5 SEC Championship (official 4:00 PM ET ABC, SEC), Dec 12 Army vs Navy (official 3:00 PM ET CBS). (3) WWO U.S. Soccer page: 'No upcoming events'. (4) Bay Area radio sweep: no further in-window live Bay Area radio sport found (NWSL Deltas have no verifiable Bay Area radio flagship; NWSL radio is SiriusXM national). (5) Fixed the remaining part of the reported bug: NOT FREE-TBD and UNCONFIRMED days no longer assert any free time (see FREE_TIME_NOT_ASSERTED)."
+  },
+  {
+   "kind": "VERIFIED_PASS_2026_09_17",
+   "msg": "2026-09-17 re-verification pass (this session): (1) WWO NFL schedule page re-fetched live (all 4 chunks): both rendered lists + the 8 TBA slots = 71 upcoming events, every one matching data/raw/westwoodone_nfl_2026.txt at event-id level (incl. Nov 2 CHI@SEA MNF = event 548540, re-confirmed on the page); the Sep 14 MNF (548429) is now in the Past tab as expected; the Sep 27 Rio game still absent (WWO_RIO_EXCLUDED unchanged). Zero deltas. (2) WWO NCAAF complete list re-fetched live via the widget's eventGrid endpoint (id=47030): the same 13 broadcasts, zero deltas (Nov 28 11:30am ET air, Dec 5 3:30pm ET, Dec 12 2:00pm ET air all unchanged). (3) MLB Stats API re-queried live: totalGames=53 across the same 28 postseason dates - zero delta vs data/raw/mlb_2026_postseason_tbd.txt; every placeholder gameDate is still 07:33:00Z (all kickoff times officially TBD). (4) MLB.com official clinch tracker + playoff picture fetched: 4 teams clinched (Rays 9/11, Brewers 9/11 + NL Central 9/15, Dodgers 9/14 + NL West 9/17, Yankees 9/14) - recorded in the NEW file data/raw/mlb_2026_postseason_resolution.txt (clinches are official; the projected bracket is mlb.com's current seeding, not final). (5) Earthquakes official 2026 radio release re-fetched: 16 of 17 in-window games match the repo; ONE correction - Oct 31 vs Real Salt Lake is 2:00 PM PT (the transcribed PDF printed TBD; see MLB_OCT31_QUIKES_2PM). (6) Stanford official schedule re-fetched: 12/12 rows match, including the live TBA status for Oct 3 / Oct 31 / Nov 14 / Nov 21 (Big Game) / Nov 28. (7) Cal official schedule re-fetched: 12/12 rows match, including live no-time status Oct 10 - Nov 28; every game prints 'Radio: KSFO 810 AM' and the Nov 21 Big Game prints 'Radio: KNBR 104.5 FM / 680 AM' (new verified detail, CAL_BIGGAME_KNBR_RADIO). (8) 49ers 20/20 rows consistent with today's sources + the WWO page (MNF Oct 19 WAS@SF, TNF Dec 17 SF@LAC, SNF Jan 3 PHI@SF; the Nov 22 Mexico City game's WWO 7:30pm ET line is the pregame air - official kickoff 8:20 PM ET per the league table). (9) Cumulus press release + KNBR Wikipedia re-fetched: WWO scope (all primetime + 8 internationals + Saturdays + EVERY postseason game + SB LXI) and Bay Area carriage (KNBR family) unchanged. (10) scripts/audit.py re-run: ALL PASS. The new UI invariant test (scripts/ui_logic_test.js, executed by this build) re-proves the football-day bug fix against the generated data AND the shipped index.html code: no day with a tracked football game renders FREE, and no NOT FREE/UNCONFIRMED day asserts free time."
+  },
+  {
+   "kind": "MLB_OCT31_QUIKES_2PM",
+   "msg": "CORRECTION 2026-09-17: the Earthquakes' official 2026 radio release (sjearthquakes.com, fetched live) lists Sat Oct 31 vs Real Salt Lake (home, PayPal Park) at 2:00 PM PT; the transcribed MLS schedule PDF printed TBD for this match. games_local.json updated - the game now blocks 2:00-4:00 PM PT on a day that is already NOT FREE - TIME TBD (Cal @ NC State + Stanford @ Louisville TBD, plus the confirmed WWO Florida@Georgia 12:30-3:34 PM PT block)."
+  },
+  {
+   "kind": "MLB_POSTSEASON_RESOLVED",
+   "msg": "MLB 2026 postseason resolution as of 2026-09-17 (official mlb.com, fetched today): 4 of 12 berths clinched - Rays (AL), Brewers (NL Central), Dodgers (NL West), Yankees (AL). Projected Wild Card matchups (mlb.com playoff picture; NOT final - seeds move through Sep 27): AL (1) Rays vs (4) Yankees, (2) Guardians vs (5) Red Sox, (3) Astros vs (6) White Sox; NL (1) Brewers vs (4) Cubs, (2) Dodgers vs (5) Phillies, (3) Braves vs (6) Padres. ALL 53 kickoff times remain officially TBD (Stats API 07:33:00Z placeholders, re-verified today; MLB releases times closer to each round). The 53 games / 28 dates are unchanged (zero delta). The build attaches these notes to the placeholder rows (playoff_note) and shows the playoff picture in the day view for Sep 29 - Oct 31. Sources: data/raw/mlb_2026_postseason_resolution.txt (with URLs)."
+  },
+  {
+   "kind": "CAL_BIGGAME_KNBR_RADIO",
+   "msg": "VERIFIED 2026-09-17 (calbears.com, per-game radio rows): every 2026 Cal game prints 'Radio: KSFO 810 AM' EXCEPT the Nov 21 129th Big Game, which prints 'Radio: KNBR 104.5 FM / 680 AM'. The radio badges/labels in the UI and schedules.md follow the per-game station."
   },
   {
    "kind": "FREE_TIME_NOT_ASSERTED",
@@ -32358,10 +32854,6 @@
   {
    "kind": "UNBLOCKED_TBD",
    "msg": "2026-10-24: 'Cal at SMU' has no confirmed start time - the day is marked NOT FREE (TIME TBD) and its free windows (if any are shown) are provisional; the game itself does not block a specific window yet."
-  },
-  {
-   "kind": "UNBLOCKED_TBD",
-   "msg": "2026-10-31: 'Earthquakes vs Real Salt Lake' has no confirmed start time - the day is marked NOT FREE (TIME TBD) and its free windows (if any are shown) are provisional; the game itself does not block a specific window yet."
   },
   {
    "kind": "UNBLOCKED_TBD",

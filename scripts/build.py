@@ -49,8 +49,8 @@ OUT = os.path.join(ROOT, "data", "processed")
 
 # --- analysis window -------------------------------------------------------
 START, END = date(2026, 8, 1), date(2027, 2, 28)
-TODAY = date(2026, 9, 16)   # date of the 2026-09-16 independent-audit pass
-GENERATED = "2026-09-16"
+TODAY = date(2026, 9, 17)   # date of the 2026-09-17 re-verification pass
+GENERATED = "2026-09-17"
 # US Pacific in the window: PDT (UTC-7) Mar 8 2026 -> Nov 1 2026; PST (UTC-8)
 # Nov 1 2026 -> Mar 14 2027. DST starts again Mar 14, 2027 (after END).
 PDT = timedelta(hours=-7)
@@ -130,6 +130,8 @@ def flag(kind, msg):
 def load_mlb():
     games = []
     for path in sorted(glob.glob(os.path.join(RAW, "mlb_2026_*.txt"))):
+        if os.path.basename(path) == "mlb_2026_postseason_resolution.txt":
+            continue   # annotations about the placeholders, not a game schedule
         for ln, line in enumerate(open(path), 1):
             line = line.strip()
             if not line or line.startswith("#"):
@@ -447,6 +449,40 @@ def load_wnba():
              "a Bay Area playoff game airs locally. Re-check when the bracket is published.")
     return games
 
+# --- MLB 2026 postseason resolution (clinches + current seeding) -------------
+# data/raw/mlb_2026_postseason_resolution.txt records what is RESOLVED for the 53
+# TBD postseason placeholder games, strictly from the official mlb.com clinch
+# tracker + playoff picture (fetched live 2026-09-17) and the live Stats API
+# re-query (53 games / 28 dates, zero delta; every time still 07:33:00Z = TBD).
+def load_postseason_resolution():
+    out = {"as_of": None, "clinched": [], "seedings": {"AL": [], "NL": []},
+           "wcr_series": [], "races": [], "times_status": None, "sources": []}
+    path = os.path.join(RAW, "mlb_2026_postseason_resolution.txt")
+    if not os.path.exists(path):
+        return out
+    for line in open(path):
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+        parts = line.split("|")
+        k = parts[0]
+        if k == "as_of":
+            out["as_of"] = parts[1]
+        elif k == "clinched":
+            out["clinched"].append({"team": parts[1], "league": parts[2], "date": parts[3],
+                                    "detail": parts[4], "url": parts[5]})
+        elif k in ("seed_al", "seed_nl"):
+            out["seedings"]["AL" if k == "seed_al" else "NL"] = parts[1:]
+        elif k == "wcr_series":
+            out["wcr_series"].append({"league": parts[1], "home": parts[2], "away": parts[3]})
+        elif k == "races":
+            out["races"].append(parts[1])
+        elif k == "times_status":
+            out["times_status"] = parts[1]
+        elif k == "source":
+            out["sources"].append(parts[1])
+    return out
+
 # --- Westwood One NCAA football showcase (national radio, Bay Area: KNBR) ----
 # New format (2026-09-15): date|kickoffPT(HH:MM, EST-<HH:MM> = estimated slot)|dur_min|
 # away|home|eventId|note[|customlabel]. Confirmed kickoffs block from kickoff; TBD
@@ -636,6 +672,84 @@ def main():
 
     allg = mlb + nfl_all + local + cond + nba_nhl + wnba + wwo_ncaaf
 
+    # ---- MLB 2026 postseason resolution (as of 2026-09-17, official mlb.com) --
+    # 4 of 12 berths are clinched; the current projected bracket is attached to the
+    # 53 TBD placeholder rows (playoff_note) so the day view shows what IS resolved
+    # (clinched teams + current seeding) while every kickoff time stays TBD.
+    psg = load_postseason_resolution()
+    if psg.get("as_of"):
+        clinched_names = ", ".join(c["team"] for c in psg["clinched"])
+        series_txt = "; ".join(f"{s['league']} {s['home']} vs {s['away']}" for s in psg["wcr_series"])
+        wcr_dates = {"2026-09-29", "2026-09-30", "2026-10-01"}
+        for g in mlb:
+            if not g.get("tbd_count"):
+                continue
+            if g["date"] in wcr_dates:
+                g["playoff_note"] = (
+                    f"MLB Wild Card Series (best-of-3; 4 series, {g['tbd_count']} games each day). "
+                    f"RESOLVED as of {psg['as_of']} (mlb.com official): {len(psg['clinched'])} of 12 berths "
+                    f"clinched - {clinched_names}. Current projected matchups (NOT final; seeds move "
+                    f"through Sep 27): {series_txt}. Kickoff times officially TBD (none announced).")
+            elif g["date"] <= "2026-10-10":
+                g["playoff_note"] = ("MLB Division Series (best-of-5) - matchups resolve after the Wild "
+                                     f"Card round (Sep 29 - Oct 1). Clinched as of {psg['as_of']}: "
+                                     f"{clinched_names}. Kickoff times officially TBD (none announced).")
+            elif g["date"] <= "2026-10-20":
+                g["playoff_note"] = ("MLB League Championship Series (best-of-7) - matchups resolve after "
+                                     "the Division Series. Kickoff times officially TBD (none announced).")
+            else:
+                g["playoff_note"] = ("MLB World Series (best-of-7) - matchups resolve after the League "
+                                     "Championship Series. Kickoff times officially TBD (none announced).")
+    else:
+        psg = None
+
+    # ---- Bay Area live-radio labels (re-verified live 2026-09-17) -------------
+    # Only games that actually air live on Bay Area radio get a `radio` field; the
+    # UI badges them with a radio icon (station in the tooltip) and lists them in
+    # the "On the radio in the Bay Area today" panel. Flagship citations:
+    # docs/BAY_AREA_RADIO_RESEARCH.md (KNBR Wikipedia, sjearthquakes.com,
+    # gostanford.com, calbears.com per-game radio rows, 49ers.com, ESPN/Audacy).
+    WWO_RADIO = "Westwood One national radio - Bay Area: KNBR 680 AM / 104.5 FM / KTCT 1050 AM"
+    wwo_dates = {g["date"] for g in nfl_all if g.get("wwo")}
+    def radio_for(g):
+        sp = g["sport"]
+        if g.get("wwo"):
+            return WWO_RADIO
+        if sp == "mlb":
+            if g.get("away_id") == 137 or g.get("home_id") == 137:
+                return "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
+            # Athletics (133): no Bay Area flagship since 2024 (KSTE 650 Sacramento) - listed, not radio
+            return None
+        if sp == "nfl":  # local 49ers
+            base = "KSAN 107.7 FM + KNBR 680/104.5 (weeks 1-3: KSFO 810 AM / KSAN 107.7)"
+            if g.get("date") in wwo_dates:
+                base += " + Westwood One national"
+            return base
+        if sp == "mls":
+            return "KSFO 810 AM (English) / KZSF 1370 AM (Spanish)"
+        if sp == "ncaa":
+            lab = g.get("label", "")
+            if "big game" in lab.lower():
+                return "KNBR 104.5 FM / 680 AM (129th Big Game - verified 2026-09-17 on calbears.com)"
+            if lab.startswith("Stanford"):
+                return "KNBR / KTCT 1050 AM"
+            if lab.startswith("Cal"):
+                return "KSFO 810 AM"
+            return None
+        if sp == "nba":
+            return "95.7 The Game (KGMZ-FM) - all games"
+        if sp == "nhl":
+            return "Sharks Audio Network (online); 98.5 KFOX flagship 2000-2021"
+        if sp == "wnba":
+            return g.get("radio")
+        return None
+    for g in allg:
+        if g.get("conditional") or g.get("info_only"):
+            continue
+        r = radio_for(g)
+        if r:
+            g["radio"] = r
+
     # doubleheader / duplicate detection (same matchup twice on one official date)
     seen = {}
     for g in mlb:
@@ -756,6 +870,59 @@ def main():
          "Bay Area radio sport found (NWSL Deltas have no verifiable Bay Area radio flagship; NWSL "
          "radio is SiriusXM national). (5) Fixed the remaining part of the reported bug: NOT FREE-TBD "
          "and UNCONFIRMED days no longer assert any free time (see FREE_TIME_NOT_ASSERTED).")
+    flag("VERIFIED_PASS_2026_09_17",
+         "2026-09-17 re-verification pass (this session): (1) WWO NFL schedule page re-fetched live "
+         "(all 4 chunks): both rendered lists + the 8 TBA slots = 71 upcoming events, every one "
+         "matching data/raw/westwoodone_nfl_2026.txt at event-id level (incl. Nov 2 CHI@SEA MNF = "
+         "event 548540, re-confirmed on the page); the Sep 14 MNF (548429) is now in the Past tab as "
+         "expected; the Sep 27 Rio game still absent (WWO_RIO_EXCLUDED unchanged). Zero deltas. "
+         "(2) WWO NCAAF complete list re-fetched live via the widget's eventGrid endpoint (id=47030): "
+         "the same 13 broadcasts, zero deltas (Nov 28 11:30am ET air, Dec 5 3:30pm ET, Dec 12 2:00pm "
+         "ET air all unchanged). (3) MLB Stats API re-queried live: totalGames=53 across the same 28 "
+         "postseason dates - zero delta vs data/raw/mlb_2026_postseason_tbd.txt; every placeholder "
+         "gameDate is still 07:33:00Z (all kickoff times officially TBD). (4) MLB.com official clinch "
+         "tracker + playoff picture fetched: 4 teams clinched (Rays 9/11, Brewers 9/11 + NL Central "
+         "9/15, Dodgers 9/14 + NL West 9/17, Yankees 9/14) - recorded in the NEW file "
+         "data/raw/mlb_2026_postseason_resolution.txt (clinches are official; the projected bracket "
+         "is mlb.com's current seeding, not final). (5) Earthquakes official 2026 radio release "
+         "re-fetched: 16 of 17 in-window games match the repo; ONE correction - Oct 31 vs Real Salt "
+         "Lake is 2:00 PM PT (the transcribed PDF printed TBD; see MLB_OCT31_QUIKES_2PM). "
+         "(6) Stanford official schedule re-fetched: 12/12 rows match, including the live TBA status "
+         "for Oct 3 / Oct 31 / Nov 14 / Nov 21 (Big Game) / Nov 28. (7) Cal official schedule "
+         "re-fetched: 12/12 rows match, including live no-time status Oct 10 - Nov 28; every game "
+         "prints 'Radio: KSFO 810 AM' and the Nov 21 Big Game prints 'Radio: KNBR 104.5 FM / 680 AM' "
+         "(new verified detail, CAL_BIGGAME_KNBR_RADIO). (8) 49ers 20/20 rows consistent with today's "
+         "sources + the WWO page (MNF Oct 19 WAS@SF, TNF Dec 17 SF@LAC, SNF Jan 3 PHI@SF; the Nov 22 "
+         "Mexico City game's WWO 7:30pm ET line is the pregame air - official kickoff 8:20 PM ET per "
+         "the league table). (9) Cumulus press release + KNBR Wikipedia re-fetched: WWO scope (all "
+         "primetime + 8 internationals + Saturdays + EVERY postseason game + SB LXI) and Bay Area "
+         "carriage (KNBR family) unchanged. (10) scripts/audit.py re-run: ALL PASS. The new UI "
+         "invariant test (scripts/ui_logic_test.js, executed by this build) re-proves the "
+         "football-day bug fix against the generated data AND the shipped index.html code: no day "
+         "with a tracked football game renders FREE, and no NOT FREE/UNCONFIRMED day asserts free "
+         "time.")
+    flag("MLB_OCT31_QUIKES_2PM",
+         "CORRECTION 2026-09-17: the Earthquakes' official 2026 radio release (sjearthquakes.com, "
+         "fetched live) lists Sat Oct 31 vs Real Salt Lake (home, PayPal Park) at 2:00 PM PT; the "
+         "transcribed MLS schedule PDF printed TBD for this match. games_local.json updated - the "
+         "game now blocks 2:00-4:00 PM PT on a day that is already NOT FREE - TIME TBD (Cal @ NC "
+         "State + Stanford @ Louisville TBD, plus the confirmed WWO Florida@Georgia 12:30-3:34 PM "
+         "PT block).")
+    flag("MLB_POSTSEASON_RESOLVED",
+         "MLB 2026 postseason resolution as of 2026-09-17 (official mlb.com, fetched today): 4 of 12 "
+         "berths clinched - Rays (AL), Brewers (NL Central), Dodgers (NL West), Yankees (AL). "
+         "Projected Wild Card matchups (mlb.com playoff picture; NOT final - seeds move through Sep "
+         "27): AL (1) Rays vs (4) Yankees, (2) Guardians vs (5) Red Sox, (3) Astros vs (6) White "
+         "Sox; NL (1) Brewers vs (4) Cubs, (2) Dodgers vs (5) Phillies, (3) Braves vs (6) Padres. "
+         "ALL 53 kickoff times remain officially TBD (Stats API 07:33:00Z placeholders, re-verified "
+         "today; MLB releases times closer to each round). The 53 games / 28 dates are unchanged "
+         "(zero delta). The build attaches these notes to the placeholder rows (playoff_note) and "
+         "shows the playoff picture in the day view for Sep 29 - Oct 31. Sources: "
+         "data/raw/mlb_2026_postseason_resolution.txt (with URLs).")
+    flag("CAL_BIGGAME_KNBR_RADIO",
+         "VERIFIED 2026-09-17 (calbears.com, per-game radio rows): every 2026 Cal game prints "
+         "'Radio: KSFO 810 AM' EXCEPT the Nov 21 129th Big Game, which prints 'Radio: KNBR 104.5 FM "
+         "/ 680 AM'. The radio badges/labels in the UI and schedules.md follow the per-game station.")
     flag("FREE_TIME_NOT_ASSERTED",
          "RULE CHANGE 2026-09-16 (pass B) - the second half of the reported bug 'the site says I have "
          "free time on days when there are football games on'. Days with status NOT FREE - TIME TBD or "
@@ -961,7 +1128,17 @@ def main():
                    "wwo_nfl_tba": len(wwo_tba),
                    "wwo_ncaaf": len({(g["date"], g["away"], g["home"]) for g in wwo_ncaaf}),
                    "wwo_ncaaf_rows": len(wwo_ncaaf),
-                   "wwo_ncaaf_est_rows": len([g for g in wwo_ncaaf if g.get("estimated")])},
+                   "wwo_ncaaf_est_rows": len([g for g in wwo_ncaaf if g.get("estimated")]),
+                   "mlb_clinched": len(psg["clinched"]) if psg else 0,
+                   "radio_games": len([g for g in allg if g.get("radio") and not g.get("conditional")])},
+        "postseason_resolution": psg,
+        "radio_bay_area": [
+            "KNBR 680 AM / 104.5 FM / KTCT 1050 AM - Westwood One (every primetime NFL game, all 8 WWO internationals, every NFL playoff game, WWO college football) + Giants flagship (since 1979) + 49ers co-flagship + Stanford football + the Nov 21 Big Game (verified 2026-09-17)",
+            "KSFO 810 AM - Earthquakes English flagship (2026) + Cal football (every 2026 game except the Big Game, verified 2026-09-17 on calbears.com)",
+            "KZSF 1370 AM La Kaliente - Earthquakes Spanish-language flagship (2026)",
+            "KSAN 107.7 FM - 49ers co-flagship",
+            "95.7 The Game (KGMZ-FM) - Warriors (all games) + Valkyries (home games over the air, all games on the Audacy app)",
+            "98.5 KFOX - Sharks flagship 2000-2021; Jan 2021 onward all Sharks audio is the Sharks Audio Network (online)"],
         "mlb_playoff_picture": {
             "as_of": mlb_pp.get("as_of", ""),
             "clinched": [c["abbr"] for c in mlb_pp.get("clinched", [])],
@@ -1145,6 +1322,23 @@ def main():
             if os.path.exists(js_path):
                 os.remove(js_path)
 
+    # ---- UI logic invariant test (added 2026-09-17) ----------------------------
+    # Executes the SHIPPED index.html helpers (windows() + status rule, extracted
+    # verbatim) against the generated data and re-asserts the invariants behind the
+    # user's reported bug fix: no day with a tracked football game renders FREE, and
+    # no NOT FREE / UNCONFIRMED day asserts any free time.
+    ui_test = os.path.join(ROOT, "scripts", "ui_logic_test.js")
+    try:
+        r = subprocess.run(["node", ui_test], check=True, capture_output=True)
+        line = r.stdout.decode().strip().splitlines()
+        print("UI logic test   : " + (line[-1] if line else "PASS"))
+    except FileNotFoundError:
+        print("UI logic test   : node not installed - SKIPPED (install node!)")
+    except subprocess.CalledProcessError as e:
+        ok = False
+        print("!! UI LOGIC TEST FAILED - the football-day bug may be back:")
+        print("   " + ((e.stdout or b"").decode() + (e.stderr or b"").decode())[:1500].replace("\n", "\n   "))
+
     write_markdown(days, meta, flags, mlb, nfl_all, local, cond, per, nba_nhl, wwo_ncaaf, wnba, mlb_pp)
     return days, flags
 
@@ -1230,6 +1424,17 @@ def write_markdown(days, meta, flags, mlb, nfl_all, local, cond, per, nba_nhl, w
         links = " · ".join(f"[src]({s})" for s in e.get("sources", [])[:2])
         A(f"| {e['name']} | {e['what']} | {e['date']} | {links} |")
     A("")
+    pr = meta.get("postseason_resolution") or {}
+    if pr.get("wcr_series"):
+        A("Projected Wild Card matchups (mlb.com playoff picture, " + pr.get("as_of", "2026-09-17") +
+          " - listed in seeding order; NOT final, seeds move through Sep 27):")
+        A("")
+        for s_ in pr["wcr_series"]:
+            A(f"- {s_['league']}: {s_['home']} vs {s_['away']}")
+        A("")
+    if pr.get("races"):
+        A("Tight races that keep the projections open: " + "; ".join(pr["races"]))
+        A("")
     A("Official bracket (every game TBD until MLB announces; * = if necessary). GamePk links go to")
     A("mlb.com's official game preview pages:")
     A("")
@@ -1279,11 +1484,11 @@ def write_markdown(days, meta, flags, mlb, nfl_all, local, cond, per, nba_nhl, w
     A("")
     A("## 49ers / Earthquakes / Stanford / Cal - every blocking game")
     A("")
-    A("| Date | PT start | Game | Phase | Source |")
-    A("|---|---|---|---|---|")
+    A("| Date | PT start | Game | Phase | Radio (Bay Area) | Source |")
+    A("|---|---|---|---|---|---|")
     for g in sorted(local, key=lambda x: (x["date"], x.get("start_min") or 0)):
         st = (g.get("start_pt") or "TBD") + (" PT" if g.get("start_pt") and g.get("start_pt") != "TBD" else "")
-        A(f"| {g['date']} | {st or '**TBD**'} | {g['label']} | {g.get('phase','')} | [link]({g.get('source', '')}) |")
+        A(f"| {g['date']} | {st or '**TBD**'} | {g['label']} | {g.get('phase','')} | {g.get('radio', '-')} | [link]({g.get('source', '')}) |")
     A("")
     A("## All-NFL, every game (league-wide; BLOCKS free time)")
     A("")

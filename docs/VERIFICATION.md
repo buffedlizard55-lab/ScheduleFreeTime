@@ -8,7 +8,66 @@ free-window from these files and prints the arithmetic checks quoted here.
 
 ## 0. Independent re-verification passes
 
-### 2026-09-17 MLB-postseason-resolution pass (this session; CURRENT snapshot)
+Two independent verification passes ran on 2026-09-17 (pass A in a parallel session, merged via PR #12; pass B in this session). Both are recorded below; their conclusions agree on every overlapping claim (53 games / 28 dates / zero deltas; 4 clinches; all times still TBD).
+
+### 2026-09-17 pass A — full source re-verification + postseason resolution layer (parallel session, merged via PR #12)
+
+Full live re-verification + MLB postseason resolution. Every fetch below happened 2026-09-17:
+
+1. **Westwood One NFL schedule page** (https://www.westwoodonesports.com/nfl-schedule/, all 4 chunks): the
+   page renders two interleaved lists; combined they hold all 71 upcoming events (63 dated matchups + 8 TBA).
+   Every one matches `data/raw/westwoodone_nfl_2026.txt` at event-id level — **zero deltas** (Nov 2 CHI@SEA
+   MNF = event 548540 re-confirmed; the Sep 14 MNF 548429 is now in the Past tab as expected; the Sep 27
+   Rio game remains absent — WWO_RIO_EXCLUDED unchanged).
+2. **Westwood One NCAAF** (https://www.westwoodonesports.com/ncaa-football/ + the widget's eventGrid
+   endpoint id=47030): the complete 13-broadcast list is unchanged — zero deltas (Nov 28 air 11:30am ET,
+   Dec 5 air 3:30pm ET, Dec 12 air 2:00pm ET).
+3. **MLB Stats API** (https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-09-28&endDate=2026-11-10&fields=dates,date,totalGames):
+   totalGames=53 across the same 28 dates — zero delta vs `data/raw/mlb_2026_postseason_tbd.txt`.
+   Every placeholder gameDate is still 07:33:00Z → **all MLB postseason kickoffs remain officially TBD**.
+4. **MLB.com official clinch tracker** (https://www.mlb.com/news/2026-postseason-teams):
+   "So far, four postseason berths are locked":
+   * Tampa Bay Rays (AL) — clinched Sep 11 (1st AL East, 4.5 games ahead of NYY)
+   * Milwaukee Brewers (NL) — clinched Sep 11; won NL Central Sep 15
+   * Los Angeles Dodgers (NL) — clinched Sep 14; won NL West Sep 17
+   * New York Yankees (AL) — clinched Sep 14 (1st AL Wild Card, 6 games ahead of BOS)
+5. **MLB.com playoff picture** (https://www.mlb.com/news/mlb-playoff-picture-and-bracket-2026): current
+   seeding — AL: Rays / Guardians / Astros / Yankees / Red Sox / White Sox; NL: Brewers / Dodgers /
+   Braves / Cubs / Phillies / Padres; WCR begins Sep 29, LDS begins Oct 3; tight races: CLE +0.5 over
+   CHW, HOU/TEX TIED (HOU tiebreaker), TB +4.5 over NYY, CHW +1 over TEX (final AL berth), SD +3.5 over
+   ARI (final NL berth), ATL +4.5 over PHI. → recorded in the NEW `data/raw/mlb_2026_postseason_resolution.txt`
+   (clinches OFFICIAL; projected matchups labeled "as of 2026-09-17, NOT final").
+6. **Earthquakes official 2026 radio release** (https://www.sjearthquakes.com/news/news-earthquakes-announce-radio-stations-for-2026-mls-season):
+   the official 2026 table (17 in-window games) matches `data/games_local.json` 16 of 17; **ONE
+   CORRECTION**: Oct 31 vs Real Salt Lake (home, PayPal Park) is **2:00 PM PT** — the transcribed MLS PDF
+   printed TBD for this match. Row updated (see MLB_OCT31_QUIKES_2PM).
+7. **Stanford official schedule** (https://gostanford.com/sports/football/schedule): 12/12 rows match,
+   including live times (Sep 19 1:00 PM, Sep 26 7:30 PM, Oct 10 12:30 PM, Oct 17 4:30 PM, Oct 23 7:30 PM)
+   and the live TBA status (Oct 3, Oct 31, Nov 14, Nov 21 Big Game, Nov 28).
+8. **Cal official schedule** (https://calbears.com/sports/football/schedule/2026): 12/12 rows match,
+   including live times (Sep 19 12:30 PM, Sep 25 7:30 PM, Oct 3 12:30 PM) and no-time status (Oct 10 –
+   Nov 28). **New verified detail**: every game prints "Radio: KSFO 810 AM" EXCEPT the Nov 21 129th Big
+   Game, which prints "Radio: KNBR 104.5 FM / 680 AM" (see CAL_BIGGAME_KNBR_RADIO).
+9. **49ers**: 20/20 `data/games_local.json` rows consistent with today's sources (club schedule + the WWO
+   page's MNF Oct 19 / TNF Dec 17 / SNF Jan 3 rows + the league table). For the Nov 22 Mexico City game the
+   WWO page's 7:30pm ET line is the pregame air start; the official kickoff is 8:20 PM ET (PFR 20:20 ET =
+   5:20 PM PT, as stored).
+10. **Cumulus press release** (GlobeNewswire 2026-09-09) re-fetched: WWO scope unchanged (all primetime +
+    eight internationals + late-season Saturdays + EVERY postseason game + Super Bowl LXI, Feb 14 2027,
+    SoFi). **KNBR Wikipedia** re-fetched: KNBR 680 AM + 104.5 FM (full-time repeater since 2019) + KTCT
+    1050 AM; Westwood One Sports is an affiliate; Giants/49ers/Stanford games air across the station family.
+11. **Bug fix re-proved with new tooling**: `scripts/ui_logic_test.js` (executed by every build) runs the
+    SHIPPED `windows()` helper + status rule extracted verbatim from `index.html` against the generated
+    data — the shipped rule reproduces the stored status on all 212 days, **no day with a tracked football
+    game renders FREE**, no NOT FREE/UNCONFIRMED day asserts free time, and FREE/PARTIAL days partition 24h
+    exactly. `scripts/audit.py` re-run: ALL PASS.
+
+Result: zero unexplained deltas; one data correction (Earthquakes Oct 31 = 2:00 PM PT); new MLB
+postseason resolution layer (4 clinches + projected bracket; every kickoff time still TBD).
+
+### 2026-09-16 pass B (previous snapshot)
+
+### 2026-09-17 pass B — MLB-postseason-resolution + Westwood One sweep (this session; CURRENT snapshot)
 
 Triggered by the user's request: *resolve some MLB postseason TBD dates and times based on
 teams that have already clinched or official times, and re-verify the Westwood One
@@ -227,13 +286,33 @@ researched figures above; set the UI inputs back to 150/180+ to compare.
 ## 3. Irregularities flagged for your review
 
 The build re-emits all of these as machine-readable `flags` in `data/processed/free_time.json`
-and `schedules.md`. Status counts with the current data (**2026-09-17 pass**): 212 days in window ->
-**21 FREE, 124 PARTIAL, 45 NOT FREE - TIME TBD, 22 UNCONFIRMED, 0 FULLY BOOKED**; 160 flags; 173 days
+and `schedules.md`. Status counts with the current data (**2026-09-17, passes A + B merged**): 212 days in window ->
+**21 FREE, 124 PARTIAL, 45 NOT FREE - TIME TBD, 22 UNCONFIRMED, 0 FULLY BOOKED**; 162 flags; 173 days
 contain at least one high-priority game. Free time is asserted on only the 145 FREE/PARTIAL days; the
 other 67 days report no free time at all (see item 24). (The drop from 62 FREE two passes ago is the
 Warriors + Sharks + Valkyries evening slate - most Nov-Feb weeknights now have a Bay Area radio game
 on.)
 
+### Added / changed in the 2026-09-17 passes (current)
+
+* **MLB_OCT31_QUIKES_2PM** (correction): Earthquakes Oct 31 vs Real Salt Lake is now 2:00 PM PT (official
+  club radio release fetched live 2026-09-17; the transcribed PDF printed TBD). The game blocks
+  2:00-4:00 PM PT on a day that is already NOT FREE (Cal @ NC State + Stanford @ Louisville TBD + the
+  confirmed WWO Florida@Georgia block).
+* **MLB_POSTSEASON_RESOLVED**: 4 of 12 berths clinched (Rays, Brewers, Dodgers, Yankees) and the current
+  projected bracket are recorded in `data/raw/mlb_2026_postseason_resolution.txt`, attached to the 53
+  placeholder rows (playoff_note) and shown in the day view for Sep 29 - Oct 31. Every kickoff time is
+  still officially TBD (Stats API 07:33:00Z placeholders, re-verified live 2026-09-17).
+* **CAL_BIGGAME_KNBR_RADIO**: the Nov 21 129th Big Game prints "Radio: KNBR 104.5 FM / 680 AM" on
+  calbears.com while every other 2026 Cal game prints "Radio: KSFO 810 AM" - the UI badges follow the
+  per-game station.
+* **VERIFIED_PASS_2026_09_17**: the full re-verification log (see §0 above).
+* **UI**: new "📻 On the radio in the Bay Area today" panel in the day view + per-game station badges
+  (a `radio` field on 361 games; stations: KNBR family / KSFO 810 / KZSF 1370 / KSAN 107.7 / 95.7 The
+  Game / KFOX-or-online); new "2026 MLB playoff picture" callout on MLB postseason days; new stat card
+  "MLB 2026 berths clinched".
+
+### Added / changed in the 2026-09-16 pass B (previous)
 ### Added in the 2026-09-17 pass (current)
 
 - **MLB postseason start times: none are official yet.** Verified on the official bracket

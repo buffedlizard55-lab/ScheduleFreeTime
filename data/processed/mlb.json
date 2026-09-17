@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated_utc": "2026-09-16",
+  "generated_utc": "2026-09-17",
   "window": {
    "start": "2026-08-01",
    "end": "2027-02-28"
@@ -51,8 +51,115 @@
    "wwo_nfl_tba": 8,
    "wwo_ncaaf": 13,
    "wwo_ncaaf_rows": 19,
-   "wwo_ncaaf_est_rows": 13
+   "wwo_ncaaf_est_rows": 13,
+   "mlb_clinched": 4,
+   "radio_games": 361
   },
+  "postseason_resolution": {
+   "as_of": "2026-09-17",
+   "clinched": [
+    {
+     "team": "Tampa Bay Rays",
+     "league": "AL East",
+     "date": "2026-09-11",
+     "detail": "clinched playoff spot Sep 11; 1st AL East (4.5 games ahead of NYY)",
+     "url": "https://www.mlb.com/news/2026-postseason-teams"
+    },
+    {
+     "team": "Milwaukee Brewers",
+     "league": "NL Central",
+     "date": "2026-09-15",
+     "detail": "clinched playoff spot Sep 11; won NL Central Sep 15",
+     "url": "https://www.mlb.com/news/2026-postseason-teams"
+    },
+    {
+     "team": "Los Angeles Dodgers",
+     "league": "NL West",
+     "date": "2026-09-17",
+     "detail": "clinched playoff spot Sep 14; won NL West Sep 17",
+     "url": "https://www.mlb.com/news/2026-postseason-teams"
+    },
+    {
+     "team": "New York Yankees",
+     "league": "Wild Card",
+     "date": "2026-09-14",
+     "detail": "clinched playoff spot Sep 14; 1st AL Wild Card (6 games ahead of BOS)",
+     "url": "https://www.mlb.com/news/2026-postseason-teams"
+    }
+   ],
+   "seedings": {
+    "AL": [
+     "Rays (1, AL East)",
+     "Guardians (2, AL Central)",
+     "Astros (3, AL West)",
+     "Yankees (4, Wild Card)",
+     "Red Sox (5, Wild Card)",
+     "White Sox (6, Wild Card)"
+    ],
+    "NL": [
+     "Brewers (1, NL Central)",
+     "Dodgers (2, NL West)",
+     "Braves (3, NL East)",
+     "Cubs (4, Wild Card)",
+     "Phillies (5, Wild Card)",
+     "Padres (6, Wild Card)"
+    ]
+   },
+   "wcr_series": [
+    {
+     "league": "AL",
+     "home": "(1) Rays",
+     "away": "(4) Yankees"
+    },
+    {
+     "league": "AL",
+     "home": "(2) Guardians",
+     "away": "(5) Red Sox"
+    },
+    {
+     "league": "AL",
+     "home": "(3) Astros",
+     "away": "(6) White Sox"
+    },
+    {
+     "league": "NL",
+     "home": "(1) Brewers",
+     "away": "(4) Cubs"
+    },
+    {
+     "league": "NL",
+     "home": "(2) Dodgers",
+     "away": "(5) Phillies"
+    },
+    {
+     "league": "NL",
+     "home": "(3) Braves",
+     "away": "(6) Padres"
+    }
+   ],
+   "races": [
+    "AL Central: Guardians lead White Sox by 0.5",
+    "AL West: Astros and Rangers TIED for the division lead (Astros own the tiebreaker)",
+    "AL Wild Card: White Sox lead Rangers by 1 for the final berth",
+    "NL Wild Card: Padres lead D-backs by 3.5 for the final berth",
+    "AL East: Rays lead Yankees by 4.5",
+    "NL East: Braves lead Phillies by 4.5"
+   ],
+   "times_status": "ALL 53 postseason kickoff times remain OFFICIALLY TBD - the MLB Stats API returns the 07:33:00Z placeholder for every one (re-verified live 2026-09-17); MLB announces postseason times closer to each round (typically ~1 week out).",
+   "sources": [
+    "https://www.mlb.com/news/2026-postseason-teams",
+    "https://www.mlb.com/news/mlb-playoff-picture-and-bracket-2026",
+    "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-09-28&endDate=2026-11-10&fields=dates,date,totalGames"
+   ]
+  },
+  "radio_bay_area": [
+   "KNBR 680 AM / 104.5 FM / KTCT 1050 AM - Westwood One (every primetime NFL game, all 8 WWO internationals, every NFL playoff game, WWO college football) + Giants flagship (since 1979) + 49ers co-flagship + Stanford football + the Nov 21 Big Game (verified 2026-09-17)",
+   "KSFO 810 AM - Earthquakes English flagship (2026) + Cal football (every 2026 game except the Big Game, verified 2026-09-17 on calbears.com)",
+   "KZSF 1370 AM La Kaliente - Earthquakes Spanish-language flagship (2026)",
+   "KSAN 107.7 FM - 49ers co-flagship",
+   "95.7 The Game (KGMZ-FM) - Warriors (all games) + Valkyries (home games over the air, all games on the Audacy app)",
+   "98.5 KFOX - Sharks flagship 2000-2021; Jan 2021 onward all Sharks audio is the Sharks Audio Network (online)"
+  ],
   "mlb_playoff_picture": {
    "as_of": "2026-09-17",
    "clinched": [
@@ -82,7 +189,8 @@
    "tbd_count": 4,
    "label": "MLB postseason - Wild Card Gm 1 x4 (all four series) (4 game(s), teams & times UNCONFIRMED) [NBC/Peacock/NBCSN]",
    "source": "mlb_2026_postseason_tbd.txt",
-   "review": "https://www.mlb.com/postseason"
+   "review": "https://www.mlb.com/postseason",
+   "playoff_note": "MLB Wild Card Series (best-of-3; 4 series, 4 games each day). RESOLVED as of 2026-09-17 (mlb.com official): 4 of 12 berths clinched - Tampa Bay Rays, Milwaukee Brewers, Los Angeles Dodgers, New York Yankees. Current projected matchups (NOT final; seeds move through Sep 27): AL (1) Rays vs (4) Yankees; AL (2) Guardians vs (5) Red Sox; AL (3) Astros vs (6) White Sox; NL (1) Brewers vs (4) Cubs; NL (2) Dodgers vs (5) Phillies; NL (3) Braves vs (6) Padres. Kickoff times officially TBD (none announced)."
   },
   {
    "date": "2026-09-29",
@@ -152,7 +260,8 @@
    "tbd_count": 4,
    "label": "MLB postseason - Wild Card Gm 2 x4 (all four series) (4 game(s), teams & times UNCONFIRMED) [NBC/Peacock/NBCSN]",
    "source": "mlb_2026_postseason_tbd.txt",
-   "review": "https://www.mlb.com/postseason"
+   "review": "https://www.mlb.com/postseason",
+   "playoff_note": "MLB Wild Card Series (best-of-3; 4 series, 4 games each day). RESOLVED as of 2026-09-17 (mlb.com official): 4 of 12 berths clinched - Tampa Bay Rays, Milwaukee Brewers, Los Angeles Dodgers, New York Yankees. Current projected matchups (NOT final; seeds move through Sep 27): AL (1) Rays vs (4) Yankees; AL (2) Guardians vs (5) Red Sox; AL (3) Astros vs (6) White Sox; NL (1) Brewers vs (4) Cubs; NL (2) Dodgers vs (5) Phillies; NL (3) Braves vs (6) Padres. Kickoff times officially TBD (none announced)."
   },
   {
    "date": "2026-09-30",
@@ -222,7 +331,8 @@
    "tbd_count": 4,
    "label": "MLB postseason - Wild Card Gm 3 x4 (if necessary) (4 game(s), teams & times UNCONFIRMED) [NBC/Peacock/NBCSN]",
    "source": "mlb_2026_postseason_tbd.txt",
-   "review": "https://www.mlb.com/postseason"
+   "review": "https://www.mlb.com/postseason",
+   "playoff_note": "MLB Wild Card Series (best-of-3; 4 series, 4 games each day). RESOLVED as of 2026-09-17 (mlb.com official): 4 of 12 berths clinched - Tampa Bay Rays, Milwaukee Brewers, Los Angeles Dodgers, New York Yankees. Current projected matchups (NOT final; seeds move through Sep 27): AL (1) Rays vs (4) Yankees; AL (2) Guardians vs (5) Red Sox; AL (3) Astros vs (6) White Sox; NL (1) Brewers vs (4) Cubs; NL (2) Dodgers vs (5) Phillies; NL (3) Braves vs (6) Padres. Kickoff times officially TBD (none announced)."
   },
   {
    "date": "2026-10-01",
@@ -292,7 +402,8 @@
    "tbd_count": 4,
    "label": "MLB postseason - Division Series Gm 1 x4 (ALDS TBS / NLDS FOX) (4 game(s), teams & times UNCONFIRMED) [ALDS TBS/truTV/HBO Max; NLDS FOX/FS1]",
    "source": "mlb_2026_postseason_tbd.txt",
-   "review": "https://www.mlb.com/postseason"
+   "review": "https://www.mlb.com/postseason",
+   "playoff_note": "MLB Division Series (best-of-5) - matchups resolve after the Wild Card round (Sep 29 - Oct 1). Clinched as of 2026-09-17: Tampa Bay Rays, Milwaukee Brewers, Los Angeles Dodgers, New York Yankees. Kickoff times officially TBD (none announced)."
   },
   {
    "date": "2026-10-03",
@@ -362,7 +473,8 @@
    "tbd_count": 2,
    "label": "MLB postseason - NLDS Gm 2 x2 (Sunday pattern) (2 game(s), teams & times UNCONFIRMED) [FOX/FS1/Fox Deportes]",
    "source": "mlb_2026_postseason_tbd.txt",
-   "review": "https://www.mlb.com/postseason"
+   "review": "https://www.mlb.com/postseason",
+   "playoff_note": "MLB Division Series (best-of-5) - matchups resolve after the Wild Card round (Sep 29 - Oct 1). Clinched as of 2026-09-17: Tampa Bay Rays, Milwaukee Brewers, Los Angeles Dodgers, New York Yankees. Kickoff times officially TBD (none announced)."
   },
   {
    "date": "2026-10-04",
@@ -402,7 +514,8 @@
    "tbd_count": 2,
    "label": "MLB postseason - ALDS Gm 2 x2 (Monday pattern) (2 game(s), teams & times UNCONFIRMED) [TBS/truTV/HBO Max]",
    "source": "mlb_2026_postseason_tbd.txt",
-   "review": "https://www.mlb.com/postseason"
+   "review": "https://www.mlb.com/postseason",
+   "playoff_note": "MLB Division Series (best-of-5) - matchups resolve after the Wild Card round (Sep 29 - Oct 1). Clinched as of 2026-09-17: Tampa Bay Rays, Milwaukee Brewers, Los Angeles Dodgers, New York Yankees. Kickoff times officially TBD (none announced)."
   },
   {
    "date": "2026-10-05",
@@ -442,7 +555,8 @@
    "tbd_count": 2,
    "label": "MLB postseason - NLDS Gm 3 x2 (Tuesday pattern) (2 game(s), teams & times UNCONFIRMED) [FOX/FS1/Fox Deportes]",
    "source": "mlb_2026_postseason_tbd.txt",
-   "review": "https://www.mlb.com/postseason"
+   "review": "https://www.mlb.com/postseason",
+   "playoff_note": "MLB Division Series (best-of-5) - matchups resolve after the Wild Card round (Sep 29 - Oct 1). Clinched as of 2026-09-17: Tampa Bay Rays, Milwaukee Brewers, Los Angeles Dodgers, New York Yankees. Kickoff times officially TBD (none announced)."
   },
   {
    "date": "2026-10-06",
@@ -482,7 +596,8 @@
    "tbd_count": 4,
    "label": "MLB postseason - ALDS Gm 3 x2 + NLDS Gm 4 x2 (Wednesday pattern) (4 game(s), teams & times UNCONFIRMED) [ALDS TBS; NLDS FOX/FS1]",
    "source": "mlb_2026_postseason_tbd.txt",
-   "review": "https://www.mlb.com/postseason"
+   "review": "https://www.mlb.com/postseason",
+   "playoff_note": "MLB Division Series (best-of-5) - matchups resolve after the Wild Card round (Sep 29 - Oct 1). Clinched as of 2026-09-17: Tampa Bay Rays, Milwaukee Brewers, Los Angeles Dodgers, New York Yankees. Kickoff times officially TBD (none announced)."
   },
   {
    "date": "2026-10-07",
@@ -552,7 +667,8 @@
    "tbd_count": 2,
    "label": "MLB postseason - ALDS Gm 4 x2 (Thursday pattern) (2 game(s), teams & times UNCONFIRMED) [TBS/truTV/HBO Max]",
    "source": "mlb_2026_postseason_tbd.txt",
-   "review": "https://www.mlb.com/postseason"
+   "review": "https://www.mlb.com/postseason",
+   "playoff_note": "MLB Division Series (best-of-5) - matchups resolve after the Wild Card round (Sep 29 - Oct 1). Clinched as of 2026-09-17: Tampa Bay Rays, Milwaukee Brewers, Los Angeles Dodgers, New York Yankees. Kickoff times officially TBD (none announced)."
   },
   {
    "date": "2026-10-08",
@@ -592,7 +708,8 @@
    "tbd_count": 2,
    "label": "MLB postseason - NLDS Gm 5 x2 (Friday pattern) (2 game(s), teams & times UNCONFIRMED) [FOX/FS1/Fox Deportes]",
    "source": "mlb_2026_postseason_tbd.txt",
-   "review": "https://www.mlb.com/postseason"
+   "review": "https://www.mlb.com/postseason",
+   "playoff_note": "MLB Division Series (best-of-5) - matchups resolve after the Wild Card round (Sep 29 - Oct 1). Clinched as of 2026-09-17: Tampa Bay Rays, Milwaukee Brewers, Los Angeles Dodgers, New York Yankees. Kickoff times officially TBD (none announced)."
   },
   {
    "date": "2026-10-09",
@@ -632,7 +749,8 @@
    "tbd_count": 2,
    "label": "MLB postseason - ALDS Gm 5 x2 (Saturday pattern) (2 game(s), teams & times UNCONFIRMED) [TBS/truTV/HBO Max]",
    "source": "mlb_2026_postseason_tbd.txt",
-   "review": "https://www.mlb.com/postseason"
+   "review": "https://www.mlb.com/postseason",
+   "playoff_note": "MLB Division Series (best-of-5) - matchups resolve after the Wild Card round (Sep 29 - Oct 1). Clinched as of 2026-09-17: Tampa Bay Rays, Milwaukee Brewers, Los Angeles Dodgers, New York Yankees. Kickoff times officially TBD (none announced)."
   },
   {
    "date": "2026-10-10",
@@ -672,7 +790,8 @@
    "tbd_count": 1,
    "label": "MLB postseason - NLCS Gm 1 (2025 Sunday LCS opener: 8:03 PM ET) (1 game(s), teams & times UNCONFIRMED) [FOX/FS1/Fox Deportes]",
    "source": "mlb_2026_postseason_tbd.txt",
-   "review": "https://www.mlb.com/postseason"
+   "review": "https://www.mlb.com/postseason",
+   "playoff_note": "MLB League Championship Series (best-of-7) - matchups resolve after the Division Series. Kickoff times officially TBD (none announced)."
   },
   {
    "date": "2026-10-11",
@@ -697,7 +816,8 @@
    "tbd_count": 2,
    "label": "MLB postseason - ALCS Gm 1 + NLCS Gm 2 (2025 Monday: 5:03 + 8:08 PM ET) (2 game(s), teams & times UNCONFIRMED) [ALCS TBS; NLCS FOX/FS1]",
    "source": "mlb_2026_postseason_tbd.txt",
-   "review": "https://www.mlb.com/postseason"
+   "review": "https://www.mlb.com/postseason",
+   "playoff_note": "MLB League Championship Series (best-of-7) - matchups resolve after the Division Series. Kickoff times officially TBD (none announced)."
   },
   {
    "date": "2026-10-12",
@@ -737,7 +857,8 @@
    "tbd_count": 1,
    "label": "MLB postseason - ALCS Gm 2 (2025 Tuesday LCS: 8:08 PM ET) (1 game(s), teams & times UNCONFIRMED) [TBS/truTV/HBO Max]",
    "source": "mlb_2026_postseason_tbd.txt",
-   "review": "https://www.mlb.com/postseason"
+   "review": "https://www.mlb.com/postseason",
+   "playoff_note": "MLB League Championship Series (best-of-7) - matchups resolve after the Division Series. Kickoff times officially TBD (none announced)."
   },
   {
    "date": "2026-10-13",
@@ -762,7 +883,8 @@
    "tbd_count": 1,
    "label": "MLB postseason - NLCS Gm 3 (2025 mid-series LCS: 5:08 PM ET) (1 game(s), teams & times UNCONFIRMED) [FOX/FS1/Fox Deportes]",
    "source": "mlb_2026_postseason_tbd.txt",
-   "review": "https://www.mlb.com/postseason"
+   "review": "https://www.mlb.com/postseason",
+   "playoff_note": "MLB League Championship Series (best-of-7) - matchups resolve after the Division Series. Kickoff times officially TBD (none announced)."
   },
   {
    "date": "2026-10-14",
@@ -787,7 +909,8 @@
    "tbd_count": 2,
    "label": "MLB postseason - NLCS Gm 4 + ALCS Gm 3 (5:08 + 8:08 PM ET pattern) (2 game(s), teams & times UNCONFIRMED) [NLCS FOX/FS1; ALCS TBS]",
    "source": "mlb_2026_postseason_tbd.txt",
-   "review": "https://www.mlb.com/postseason"
+   "review": "https://www.mlb.com/postseason",
+   "playoff_note": "MLB League Championship Series (best-of-7) - matchups resolve after the Division Series. Kickoff times officially TBD (none announced)."
   },
   {
    "date": "2026-10-15",
@@ -827,7 +950,8 @@
    "tbd_count": 2,
    "label": "MLB postseason - NLCS Gm 5 + ALCS Gm 4 (5:08 + 8:08 PM ET pattern) (2 game(s), teams & times UNCONFIRMED) [NLCS FOX/FS1; ALCS TBS]",
    "source": "mlb_2026_postseason_tbd.txt",
-   "review": "https://www.mlb.com/postseason"
+   "review": "https://www.mlb.com/postseason",
+   "playoff_note": "MLB League Championship Series (best-of-7) - matchups resolve after the Division Series. Kickoff times officially TBD (none announced)."
   },
   {
    "date": "2026-10-16",
@@ -867,7 +991,8 @@
    "tbd_count": 1,
    "label": "MLB postseason - ALCS Gm 5 (5:08 PM ET pattern) (1 game(s), teams & times UNCONFIRMED) [TBS/truTV/HBO Max]",
    "source": "mlb_2026_postseason_tbd.txt",
-   "review": "https://www.mlb.com/postseason"
+   "review": "https://www.mlb.com/postseason",
+   "playoff_note": "MLB League Championship Series (best-of-7) - matchups resolve after the Division Series. Kickoff times officially TBD (none announced)."
   },
   {
    "date": "2026-10-17",
@@ -892,7 +1017,8 @@
    "tbd_count": 1,
    "label": "MLB postseason - NLCS Gm 6 (BOTH 2025 options: 2:08 or 5:08 PM ET) (1 game(s), teams & times UNCONFIRMED) [FOX/FS1/Fox Deportes]",
    "source": "mlb_2026_postseason_tbd.txt",
-   "review": "https://www.mlb.com/postseason"
+   "review": "https://www.mlb.com/postseason",
+   "playoff_note": "MLB League Championship Series (best-of-7) - matchups resolve after the Division Series. Kickoff times officially TBD (none announced)."
   },
   {
    "date": "2026-10-18",
@@ -932,7 +1058,8 @@
    "tbd_count": 2,
    "label": "MLB postseason - NLCS Gm 7 + ALCS Gm 6 (5:08 + 8:08 PM ET pattern) (2 game(s), teams & times UNCONFIRMED) [NLCS FOX/FS1; ALCS TBS]",
    "source": "mlb_2026_postseason_tbd.txt",
-   "review": "https://www.mlb.com/postseason"
+   "review": "https://www.mlb.com/postseason",
+   "playoff_note": "MLB League Championship Series (best-of-7) - matchups resolve after the Division Series. Kickoff times officially TBD (none announced)."
   },
   {
    "date": "2026-10-19",
@@ -972,7 +1099,8 @@
    "tbd_count": 1,
    "label": "MLB postseason - ALCS Gm 7 (2025 Gm 7: 5:08 PM ET) (1 game(s), teams & times UNCONFIRMED) [TBS/truTV/HBO Max]",
    "source": "mlb_2026_postseason_tbd.txt",
-   "review": "https://www.mlb.com/postseason"
+   "review": "https://www.mlb.com/postseason",
+   "playoff_note": "MLB League Championship Series (best-of-7) - matchups resolve after the Division Series. Kickoff times officially TBD (none announced)."
   },
   {
    "date": "2026-10-20",
@@ -997,7 +1125,8 @@
    "tbd_count": 1,
    "label": "MLB postseason - World Series Gm 1 (2025 WS: 8:00 PM ET every game) (1 game(s), teams & times UNCONFIRMED) [FOX/Fox Deportes]",
    "source": "mlb_2026_postseason_tbd.txt",
-   "review": "https://www.mlb.com/postseason"
+   "review": "https://www.mlb.com/postseason",
+   "playoff_note": "MLB World Series (best-of-7) - matchups resolve after the League Championship Series. Kickoff times officially TBD (none announced)."
   },
   {
    "date": "2026-10-23",
@@ -1022,7 +1151,8 @@
    "tbd_count": 1,
    "label": "MLB postseason - World Series Gm 2 (8:00 PM ET pattern) (1 game(s), teams & times UNCONFIRMED) [FOX/Fox Deportes]",
    "source": "mlb_2026_postseason_tbd.txt",
-   "review": "https://www.mlb.com/postseason"
+   "review": "https://www.mlb.com/postseason",
+   "playoff_note": "MLB World Series (best-of-7) - matchups resolve after the League Championship Series. Kickoff times officially TBD (none announced)."
   },
   {
    "date": "2026-10-24",
@@ -1047,7 +1177,8 @@
    "tbd_count": 1,
    "label": "MLB postseason - World Series Gm 3 (8:00 PM ET pattern) (1 game(s), teams & times UNCONFIRMED) [FOX/Fox Deportes]",
    "source": "mlb_2026_postseason_tbd.txt",
-   "review": "https://www.mlb.com/postseason"
+   "review": "https://www.mlb.com/postseason",
+   "playoff_note": "MLB World Series (best-of-7) - matchups resolve after the League Championship Series. Kickoff times officially TBD (none announced)."
   },
   {
    "date": "2026-10-26",
@@ -1072,7 +1203,8 @@
    "tbd_count": 1,
    "label": "MLB postseason - World Series Gm 4 (8:00 PM ET pattern) (1 game(s), teams & times UNCONFIRMED) [FOX/Fox Deportes]",
    "source": "mlb_2026_postseason_tbd.txt",
-   "review": "https://www.mlb.com/postseason"
+   "review": "https://www.mlb.com/postseason",
+   "playoff_note": "MLB World Series (best-of-7) - matchups resolve after the League Championship Series. Kickoff times officially TBD (none announced)."
   },
   {
    "date": "2026-10-27",
@@ -1097,7 +1229,8 @@
    "tbd_count": 1,
    "label": "MLB postseason - World Series Gm 5 if necessary (8:00 PM ET pattern) (1 game(s), teams & times UNCONFIRMED) [FOX/Fox Deportes]",
    "source": "mlb_2026_postseason_tbd.txt",
-   "review": "https://www.mlb.com/postseason"
+   "review": "https://www.mlb.com/postseason",
+   "playoff_note": "MLB World Series (best-of-7) - matchups resolve after the League Championship Series. Kickoff times officially TBD (none announced)."
   },
   {
    "date": "2026-10-28",
@@ -1122,7 +1255,8 @@
    "tbd_count": 1,
    "label": "MLB postseason - World Series Gm 6 if necessary (8:00 PM ET pattern) (1 game(s), teams & times UNCONFIRMED) [FOX/Fox Deportes]",
    "source": "mlb_2026_postseason_tbd.txt",
-   "review": "https://www.mlb.com/postseason"
+   "review": "https://www.mlb.com/postseason",
+   "playoff_note": "MLB World Series (best-of-7) - matchups resolve after the League Championship Series. Kickoff times officially TBD (none announced)."
   },
   {
    "date": "2026-10-30",
@@ -1147,7 +1281,8 @@
    "tbd_count": 1,
    "label": "MLB postseason - World Series Gm 7 if necessary (8:00 PM ET pattern) (1 game(s), teams & times UNCONFIRMED) [FOX/Fox Deportes]",
    "source": "mlb_2026_postseason_tbd.txt",
-   "review": "https://www.mlb.com/postseason"
+   "review": "https://www.mlb.com/postseason",
+   "playoff_note": "MLB World Series (best-of-7) - matchups resolve after the League Championship Series. Kickoff times officially TBD (none announced)."
   },
   {
    "date": "2026-10-31",
@@ -1342,7 +1477,8 @@
    "home_id": 135,
    "label": "San Francisco Giants @ San Diego Padres",
    "priority": true,
-   "source": "mlb_2026_regseason.txt"
+   "source": "mlb_2026_regseason.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-08-01",
@@ -1582,7 +1718,8 @@
    "home_id": 135,
    "label": "San Francisco Giants @ San Diego Padres",
    "priority": true,
-   "source": "mlb_2026_regseason.txt"
+   "source": "mlb_2026_regseason.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-08-02",
@@ -1687,7 +1824,8 @@
    "home_id": 140,
    "label": "San Francisco Giants @ Texas Rangers",
    "priority": true,
-   "source": "mlb_2026_regseason.txt"
+   "source": "mlb_2026_regseason.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-08-03",
@@ -1897,7 +2035,8 @@
    "home_id": 140,
    "label": "San Francisco Giants @ Texas Rangers",
    "priority": true,
-   "source": "mlb_2026_regseason.txt"
+   "source": "mlb_2026_regseason.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-08-04",
@@ -2002,7 +2141,8 @@
    "home_id": 140,
    "label": "San Francisco Giants @ Texas Rangers",
    "priority": true,
-   "source": "mlb_2026_regseason.txt"
+   "source": "mlb_2026_regseason.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-08-05",
@@ -2572,7 +2712,8 @@
    "home_id": 137,
    "label": "Detroit Tigers @ San Francisco Giants",
    "priority": true,
-   "source": "mlb_2026_regseason.txt"
+   "source": "mlb_2026_regseason.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-08-08",
@@ -2722,7 +2863,8 @@
    "home_id": 137,
    "label": "Detroit Tigers @ San Francisco Giants",
    "priority": true,
-   "source": "mlb_2026_regseason.txt"
+   "source": "mlb_2026_regseason.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-08-08",
@@ -2977,7 +3119,8 @@
    "home_id": 137,
    "label": "Detroit Tigers @ San Francisco Giants",
    "priority": true,
-   "source": "mlb_2026_regseason.txt"
+   "source": "mlb_2026_regseason.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-08-09",
@@ -3157,7 +3300,8 @@
    "home_id": 137,
    "label": "Houston Astros @ San Francisco Giants",
    "priority": true,
-   "source": "mlb_2026_regseason.txt"
+   "source": "mlb_2026_regseason.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-08-10",
@@ -3382,7 +3526,8 @@
    "home_id": 137,
    "label": "Houston Astros @ San Francisco Giants",
    "priority": true,
-   "source": "mlb_2026_regseason.txt"
+   "source": "mlb_2026_regseason.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-08-11",
@@ -3472,7 +3617,8 @@
    "home_id": 137,
    "label": "Houston Astros @ San Francisco Giants",
    "priority": true,
-   "source": "mlb_2026_regseason.txt"
+   "source": "mlb_2026_regseason.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-08-12",
@@ -3967,7 +4113,8 @@
    "home_id": 137,
    "label": "Colorado Rockies @ San Francisco Giants",
    "priority": true,
-   "source": "mlb_2026_regseason.txt"
+   "source": "mlb_2026_regseason.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-08-15",
@@ -4027,7 +4174,8 @@
    "home_id": 137,
    "label": "Colorado Rockies @ San Francisco Giants",
    "priority": true,
-   "source": "mlb_2026_regseason.txt"
+   "source": "mlb_2026_regseason.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-08-15",
@@ -4357,7 +4505,8 @@
    "home_id": 137,
    "label": "Colorado Rockies @ San Francisco Giants",
    "priority": true,
-   "source": "mlb_2026_regseason.txt"
+   "source": "mlb_2026_regseason.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-08-16",
@@ -4627,7 +4776,8 @@
    "home_id": 114,
    "label": "San Francisco Giants @ Cleveland Guardians",
    "priority": true,
-   "source": "mlb_2026_regseason.txt"
+   "source": "mlb_2026_regseason.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-08-18",
@@ -4927,7 +5077,8 @@
    "home_id": 114,
    "label": "San Francisco Giants @ Cleveland Guardians",
    "priority": true,
-   "source": "mlb_2026_regseason.txt"
+   "source": "mlb_2026_regseason.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-08-19",
@@ -5062,7 +5213,8 @@
    "home_id": 114,
    "label": "San Francisco Giants @ Cleveland Guardians",
    "priority": true,
-   "source": "mlb_2026_regseason.txt"
+   "source": "mlb_2026_regseason.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-08-20",
@@ -5227,7 +5379,8 @@
    "home_id": 111,
    "label": "San Francisco Giants @ Boston Red Sox",
    "priority": true,
-   "source": "mlb_2026_regseason.txt"
+   "source": "mlb_2026_regseason.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-08-21",
@@ -5572,7 +5725,8 @@
    "home_id": 111,
    "label": "San Francisco Giants @ Boston Red Sox",
    "priority": true,
-   "source": "mlb_2026_regseason.txt"
+   "source": "mlb_2026_regseason.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-08-22",
@@ -5767,7 +5921,8 @@
    "home_id": 111,
    "label": "San Francisco Giants @ Boston Red Sox",
    "priority": true,
-   "source": "mlb_2026_regseason.txt"
+   "source": "mlb_2026_regseason.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-08-23",
@@ -5992,7 +6147,8 @@
    "home_id": 137,
    "label": "Cincinnati Reds @ San Francisco Giants",
    "priority": true,
-   "source": "mlb_2026_regseason.txt"
+   "source": "mlb_2026_regseason.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-08-25",
@@ -6217,7 +6373,8 @@
    "home_id": 137,
    "label": "Cincinnati Reds @ San Francisco Giants",
    "priority": true,
-   "source": "mlb_2026_regseason.txt"
+   "source": "mlb_2026_regseason.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-08-26",
@@ -6262,7 +6419,8 @@
    "home_id": 137,
    "label": "Cincinnati Reds @ San Francisco Giants",
    "priority": true,
-   "source": "mlb_2026_regseason.txt"
+   "source": "mlb_2026_regseason.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-08-26",
@@ -6547,7 +6705,8 @@
    "home_id": 137,
    "label": "Arizona Diamondbacks @ San Francisco Giants",
    "priority": true,
-   "source": "mlb_2026_regseason.txt"
+   "source": "mlb_2026_regseason.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-08-28",
@@ -6772,7 +6931,8 @@
    "home_id": 137,
    "label": "Arizona Diamondbacks @ San Francisco Giants",
    "priority": true,
-   "source": "mlb_2026_regseason.txt"
+   "source": "mlb_2026_regseason.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-08-29",
@@ -6877,7 +7037,8 @@
    "home_id": 137,
    "label": "Arizona Diamondbacks @ San Francisco Giants",
    "priority": true,
-   "source": "mlb_2026_regseason.txt"
+   "source": "mlb_2026_regseason.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-08-29",
@@ -6997,7 +7158,8 @@
    "home_id": 137,
    "label": "Arizona Diamondbacks @ San Francisco Giants",
    "priority": true,
-   "source": "mlb_2026_regseason.txt"
+   "source": "mlb_2026_regseason.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-08-29",
@@ -7252,7 +7414,8 @@
    "home_id": 144,
    "label": "San Francisco Giants @ Atlanta Braves",
    "priority": true,
-   "source": "mlb_2026_regseason.txt"
+   "source": "mlb_2026_regseason.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-08-31",
@@ -7447,7 +7610,8 @@
    "home_id": 134,
    "label": "San Francisco Giants @ Pittsburgh Pirates",
    "priority": true,
-   "source": "mlb_2026_september.txt"
+   "source": "mlb_2026_september.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-09-01",
@@ -7747,7 +7911,8 @@
    "home_id": 134,
    "label": "San Francisco Giants @ Pittsburgh Pirates",
    "priority": true,
-   "source": "mlb_2026_september.txt"
+   "source": "mlb_2026_september.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-09-02",
@@ -7882,7 +8047,8 @@
    "home_id": 134,
    "label": "San Francisco Giants @ Pittsburgh Pirates",
    "priority": true,
-   "source": "mlb_2026_september.txt"
+   "source": "mlb_2026_september.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-09-03",
@@ -8092,7 +8258,8 @@
    "home_id": 121,
    "label": "San Francisco Giants @ New York Mets",
    "priority": true,
-   "source": "mlb_2026_september.txt"
+   "source": "mlb_2026_september.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-09-04",
@@ -8257,7 +8424,8 @@
    "home_id": 121,
    "label": "San Francisco Giants @ New York Mets",
    "priority": true,
-   "source": "mlb_2026_september.txt"
+   "source": "mlb_2026_september.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-09-05",
@@ -8557,7 +8725,8 @@
    "home_id": 121,
    "label": "San Francisco Giants @ New York Mets",
    "priority": true,
-   "source": "mlb_2026_september.txt"
+   "source": "mlb_2026_september.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-09-06",
@@ -8827,7 +8996,8 @@
    "home_id": 137,
    "label": "St. Louis Cardinals @ San Francisco Giants",
    "priority": true,
-   "source": "mlb_2026_september.txt"
+   "source": "mlb_2026_september.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-09-07",
@@ -9067,7 +9237,8 @@
    "home_id": 137,
    "label": "St. Louis Cardinals @ San Francisco Giants",
    "priority": true,
-   "source": "mlb_2026_september.txt"
+   "source": "mlb_2026_september.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-09-08",
@@ -9127,7 +9298,8 @@
    "home_id": 137,
    "label": "St. Louis Cardinals @ San Francisco Giants",
    "priority": true,
-   "source": "mlb_2026_september.txt"
+   "source": "mlb_2026_september.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-09-09",
@@ -9607,7 +9779,8 @@
    "home_id": 137,
    "label": "San Diego Padres @ San Francisco Giants",
    "priority": true,
-   "source": "mlb_2026_september.txt"
+   "source": "mlb_2026_september.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-09-12",
@@ -9697,7 +9870,8 @@
    "home_id": 137,
    "label": "San Diego Padres @ San Francisco Giants",
    "priority": true,
-   "source": "mlb_2026_september.txt"
+   "source": "mlb_2026_september.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-09-12",
@@ -10057,7 +10231,8 @@
    "home_id": 137,
    "label": "San Diego Padres @ San Francisco Giants",
    "priority": true,
-   "source": "mlb_2026_september.txt"
+   "source": "mlb_2026_september.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-09-14",
@@ -10162,7 +10337,8 @@
    "home_id": 138,
    "label": "San Francisco Giants @ St. Louis Cardinals",
    "priority": true,
-   "source": "mlb_2026_september.txt"
+   "source": "mlb_2026_september.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-09-14",
@@ -10357,7 +10533,8 @@
    "home_id": 138,
    "label": "San Francisco Giants @ St. Louis Cardinals",
    "priority": true,
-   "source": "mlb_2026_september.txt"
+   "source": "mlb_2026_september.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-09-15",
@@ -10462,7 +10639,8 @@
    "home_id": 138,
    "label": "San Francisco Giants @ St. Louis Cardinals",
    "priority": true,
-   "source": "mlb_2026_september.txt"
+   "source": "mlb_2026_september.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-09-16",
@@ -11017,7 +11195,8 @@
    "home_id": 119,
    "label": "San Francisco Giants @ Los Angeles Dodgers",
    "priority": true,
-   "source": "mlb_2026_september.txt"
+   "source": "mlb_2026_september.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-09-19",
@@ -11227,7 +11406,8 @@
    "home_id": 119,
    "label": "San Francisco Giants @ Los Angeles Dodgers",
    "priority": true,
-   "source": "mlb_2026_september.txt"
+   "source": "mlb_2026_september.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-09-19",
@@ -11422,7 +11602,8 @@
    "home_id": 119,
    "label": "San Francisco Giants @ Los Angeles Dodgers",
    "priority": true,
-   "source": "mlb_2026_september.txt"
+   "source": "mlb_2026_september.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-09-20",
@@ -11512,7 +11693,8 @@
    "home_id": 137,
    "label": "Minnesota Twins @ San Francisco Giants",
    "priority": true,
-   "source": "mlb_2026_september.txt"
+   "source": "mlb_2026_september.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-09-22",
@@ -11737,7 +11919,8 @@
    "home_id": 137,
    "label": "Minnesota Twins @ San Francisco Giants",
    "priority": true,
-   "source": "mlb_2026_september.txt"
+   "source": "mlb_2026_september.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-09-22",
@@ -11782,7 +11965,8 @@
    "home_id": 137,
    "label": "Minnesota Twins @ San Francisco Giants",
    "priority": true,
-   "source": "mlb_2026_september.txt"
+   "source": "mlb_2026_september.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-09-23",
@@ -12382,7 +12566,8 @@
    "home_id": 137,
    "label": "Los Angeles Dodgers @ San Francisco Giants",
    "priority": true,
-   "source": "mlb_2026_september.txt"
+   "source": "mlb_2026_september.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-09-26",
@@ -12442,7 +12627,8 @@
    "home_id": 137,
    "label": "Los Angeles Dodgers @ San Francisco Giants",
    "priority": true,
-   "source": "mlb_2026_september.txt"
+   "source": "mlb_2026_september.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-09-26",
@@ -12667,7 +12853,8 @@
    "home_id": 137,
    "label": "Los Angeles Dodgers @ San Francisco Giants",
    "priority": true,
-   "source": "mlb_2026_september.txt"
+   "source": "mlb_2026_september.txt",
+   "radio": "KNBR 680 AM / 104.5 FM (Giants flagship since 1979)"
   },
   {
    "date": "2026-09-27",
