@@ -176,6 +176,8 @@ mlb_ids = set()
 for fn in sorted(os.listdir(RAW)):
     if not fn.startswith("mlb_2026_"):
         continue
+    if fn == "mlb_2026_postseason_resolution.txt":
+        continue   # annotations about the placeholders, not a game schedule
     for parts in read_rows(fn):
         ds, body = parts[0], parts[1]
         if body.startswith("TBDx"):
