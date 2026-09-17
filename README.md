@@ -28,8 +28,18 @@ Everything is shown in
 **America/Los_Angeles** time (PDT through Oct 31, 2026, then PST) for **Aug 1, 2026 – Feb 28,
 2027**.
 
+**MLB postseason 2026 (resolved 2026-09-17):** every date and per-date game count is now verified
+against the official mlb.com/postseason bracket at gamePk level (Wild Card on NBC/Peacock — NBC's
+first postseason baseball in a generation; ALDS/ALCS on TBS; NLDS/NLCS and the World Series on
+FOX). No start time is official yet — all 53 games print TBD — so **54 EST first-pitch windows
+from the actual 2025 postseason pattern** (WC 1:08/3:08/6:08/9:08 PM ET, DS 2:08–9:08 PM ET, LCS
+5:03–8:08 PM ET, WS 8:00 PM ET) block as clearly-labeled estimates. 4 of 12 spots are clinched
+(Rays, Brewers, Dodgers, Yankees — see `data/raw/mlb_2026_playoff_picture.json` with per-claim
+sources), and **the Giants and Athletics are both eliminated — no Bay Area MLB club plays in
+October**; the days still block (all MLB games block).
+
 Times you won't see yet are shown as **TBD until confirmed** — that includes the MLB postseason
-and NFL postseason kickoffs, NFL flex windows, MLS playoff days that depend on San Jose
+start times (dates are official; times drop after the field is set Sep 27–28) and NFL postseason kickoffs, NFL flex windows, MLS playoff days that depend on San Jose
 qualifying, and any Stanford/Cal postseason. Per the site's rule (2026-09-15), a day on which a
 tracked game will definitely be played or aired without an official kickoff is **NOT FREE —
 TIME TBD**: where a documented pattern exists (2025-26 NFL playoff kickoffs, the league's
@@ -105,6 +115,7 @@ Every team above is on Bay Area radio — verified line-by-line with official so
 * **Earthquakes:** KSFO 810 AM / KZSF 1370 AM — [sjearthquakes.com 2026 release](https://www.sjearthquakes.com/news/news-earthquakes-announce-radio-stations-for-2026-mls-season)
 * **Stanford:** KNBR/KTCT 1050 AM — [gostanford.com 2026 broadcast team](https://gostanford.com/news/2026/07/30/2026-football-radio-broadcast-team-announced)
 * **Cal:** KSFO 810 AM in 2026 (KGO 810 AM for 47 years through 2020) — [calbears.com/schedule/2026](https://calbears.com/sports/football/schedule/2026), [bearinsider.com KGO extension](https://bearinsider.com/s/2255/cal-extends-partnership-with-kgo-radio)
+* **Westwood One sweep 2026-09-17:** NFL page re-verified (zero deltas, 65 + 8 TBA); NCAAF grid re-verified (13 broadcasts; Sep 26 air time now 3:00 PM ET); NCAA Basketball / U.S. Soccer / Golf pages all "No upcoming events" — **NFL + NCAA football are the only in-window Westwood One sports**; MCWS/WCWS (June), lacrosse (May) and NCAA hockey (April) fall outside the window
 * **Westwood One NFL + NCAAF:** Bay Area affiliate KNBR 680/104.5 — [KNBR (AM)](https://en.wikipedia.org/wiki/KNBR_(AM)), [Cumulus press release Sep 9 2026](https://www.globenewswire.com/news-release/2026/09/09/3358684/9032/en/cumulus-media-s-westwood-one-official-network-audio-partner-of-the-nfl-celebrates-40th-consecutive-season-and-reveals-2026-nfl-lineup-and-programming-highlights-from-nfl-kickoff-to.html) — 65/65 NFL broadcasts matched, 13 NCAAF broadcasts (10 Saturday showcases + Nov 28 Michigan@Ohio State, Dec 5 SEC Championship, Dec 12 Army–Navy — the page widget truncates at 10 events; the full list comes from its eventGrid endpoint, verified 2026-09-16 pass B)
 
 Full citations in `docs/BAY_AREA_RADIO_RESEARCH.md` and `docs/VERIFICATION.md` §1.
@@ -136,7 +147,8 @@ No manual entry anywhere. The pipeline reads hand-transcribed, source-attributed
 | `data/raw/teams_mlb.json` | all 30 MLB clubs (MLB Stats API) |
 | `data/raw/mlb_2026_regseason.txt` | 417 MLB games, Aug 1–31 |
 | `data/raw/mlb_2026_september.txt` | 361 MLB games, Sep 1–27 |
-| `data/raw/mlb_2026_postseason_tbd.txt` | 53 postseason games, all TBD (official bracket calendar, last date Oct 31; re-verified 2026-09-17 — 53 games / 28 dates, zero delta, every time still 07:33:00Z) |
+| `data/raw/mlb_2026_postseason_tbd.txt` | 53 postseason games, all times TBD — **dates + counts verified at gamePk level vs mlb.com/postseason (2026-09-17; gamePks + TV recorded)** + 54 estimated first-pitch windows (2025 pattern) |
+| `data/raw/mlb_2026_playoff_picture.json` | 2026 clinch/elimination picture with per-claim sources: Rays/Brewers/Dodgers/Yankees clinched; **Giants + Athletics eliminated**; official gamePk bracket |
 | `data/raw/mlb_2026_postseason_resolution.txt` | **new 2026-09-17:** the MLB postseason resolution layer — 4 official clinches (mlb.com tracker) + current projected bracket (mlb.com playoff picture) + times-still-TBD status; attached to the TBD rows as `playoff_note` |
 | `data/raw/nfl_2026_pfr_regseason.txt` | **all 272 league-wide NFL regular-season games** (PFR league table, cross-checked vs nfl.com + 49ers.com) |
 | `data/raw/nfl_2026_pfr_preseason.txt` | all 49 preseason games (times only where official sources publish one) |

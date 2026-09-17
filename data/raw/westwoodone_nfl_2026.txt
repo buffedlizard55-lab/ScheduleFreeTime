@@ -4,6 +4,16 @@
 # RE-VERIFIED 2026-09-15: the page was re-fetched and every dated broadcast listed
 # matches this file row-for-row (date, matchup, air time, slot, event id) - 65 dated
 # rows + 8 TBA. The page's Upcoming list now starts at Sep 17 (Sep 14 MNF is past).
+# RE-VERIFIED 2026-09-17 (all four page chunks, both rendered lists): every dated
+# broadcast + all 8 TBA placeholders still match this file at event-id level - ZERO
+# deltas. Also checked the other Westwood One Sports properties for in-window Bay Area
+# broadcasts (all fetched 2026-09-17): NCAA Basketball
+# (westwoodonesports.com/ncaa-basketball/, grid id 47031) = "No upcoming events" (the
+# WWO college-basketball package is March Madness, outside the Aug-Feb window);
+# U.S. Soccer (westwoodonesports.com/us-soccer/, grid id 47032) = "No upcoming events";
+# Golf (westwoodonesports.com/golf/, grid id 47033) = "No upcoming events" (majors run
+# Apr-Jul, outside the window); NCAA MCWS/WCWS (June), Lacrosse (May) and NCAA Hockey
+# (April) are all outside the Aug 2026 - Feb 2027 window by calendar.
 # The Cumulus press release of 2026-09-09 confirms the package scope: NFL Kickoff,
 # MNF/SNF/TNF, Thanksgiving, Black Friday, Christmas, EIGHT International Games,
 # LATE-SEASON SATURDAY GAMES, and EVERY NFL POSTSEASON GAME through Super Bowl LXI
