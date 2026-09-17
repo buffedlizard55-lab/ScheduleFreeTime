@@ -8,7 +8,30 @@ free-window from these files and prints the arithmetic checks quoted here.
 
 ## 0. Independent re-verification passes
 
-### 2026-09-16 pass B (this session; CURRENT snapshot)
+### 2026-09-17 MLB-postseason-resolution pass (this session; CURRENT snapshot)
+
+Triggered by the user's request: *resolve some MLB postseason TBD dates and times based on
+teams that have already clinched or official times, and re-verify the Westwood One
+properties.* Result: **postseason DATES are now official-and-verified at gamePk level; NO
+start time is official yet (all 53 print TBD on mlb.com/postseason); 4 of 12 team spots
+are clinched; the Giants and Athletics are both ELIMINATED, so no Bay Area MLB club plays
+in October.** 54 clearly-labeled estimated first-pitch windows (documented 2025 pattern)
+now block on the postseason days, which still assert no free time at all.
+
+| Source checked | What was compared | Result |
+|---|---|---|
+| **mlb.com/postseason — official tentative 2026 bracket** (fetched live 2026-09-17, all 3 chunks) | Every series game-by-game: date, game number, if-necessary marker, official gamePk, TV network | **All 28 dates / 53 games match `data/raw/mlb_2026_postseason_tbd.txt` exactly** (12 WC + 20 DS + 14 LCS + 7 WS). Every start time prints **TBD** — no 2026 postseason time is official yet. New data recorded: official gamePks 849799–849851 (each row now carries a `mlb.com/gameday/<pk>/preview` review link) and the new-for-2026 TV split: **Wild Card on NBC/Peacock/NBCSN** (NBC's first postseason baseball in a generation), **ALDS + ALCS on TBS/truTV/HBO Max**, **NLDS + NLCS on FOX/FS1/Fox Deportes**, **World Series on FOX**. Off days inside the span confirmed: Sep 28, Oct 2, Oct 21, Oct 22, Oct 25, Oct 29. |
+| **MLB clinched teams** | [mlb.com postseason-teams tracker](https://www.mlb.com/news/2026-postseason-teams) + [mlb.com playoff picture](https://www.mlb.com/news/mlb-playoff-picture-and-bracket-2026) + [USA Today clinch story](https://www.usatoday.com/story/sports/mlb/rays/2026/09/11/rays-clinch-mlb-playoffs-spot-first-team/91714940007/) + [USA Today clinch roundup](https://www.usatoday.com/story/sports/mlb/2026/09/14/mlb-playoff-clinches-2026-teams-postseason-berths/91757959007/) | **4 of 12 spots clinched**: Rays (Sep 11, first team), Brewers (Sep 11 berth; **NL Central title Sep 15** → guaranteed top-3 NL seed), Dodgers (Sep 14 berth; **NL West title Sep 17** → guaranteed top-3 NL seed), Yankees (Sep 14, at least a wild card). **None has clinched a bye yet** (a bye puts their first game Oct 3+; otherwise they host a Wild Card Series Sep 29–Oct 1). Recorded in `data/raw/mlb_2026_playoff_picture.json` with per-claim sources; annotations only (the 53 placeholder games already block their dates). |
+| **Giants elimination** (RESOLVES a Bay Area TBD) | [Wikipedia 2026 SF Giants season](https://en.wikipedia.org/wiki/2026_San_Francisco_Giants_season), [Yahoo Sports](https://sports.yahoo.com/mlb/article/what-went-wrong-for-the-2026-san-francisco-giants-and-where-do-they-go-from-here-002216535.html), [The Athletic/NYT](https://www.nytimes.com/athletic/7573981/2026/09/08/giants-elimination-win-cardinals/), [FOX Sports: MLB on X](https://x.com/MLBONFOX/status/2097424154463223830) | **The Giants are mathematically eliminated from the 2026 postseason** (60-85 at elimination, tiebreaker procedures, 5th straight miss) → **no Giants game occurs after the regular season ends Sun Sep 27**. ⚠ Date conflict flagged: Wikipedia + Yahoo say Sunday **Sep 6** (loss to the Mets); The Athletic says "Monday night" (**Sep 7**); FOX's Sep 8 post says "eliminated last night". Recorded as `2026-09-06/07` with `MLB_GIANTS_ELIM_DATE_CONFLICT` flag. |
+| **Athletics elimination** (RESOLVES a Bay Area TBD) | [Fox Sports playoff picture 2026-09-15](https://www.foxsports.com/stories/mlb/mlb-postseason-wild-card-playoffs-standings-2026), [SI elimination tracker 2026-09-15](https://www.si.com/fannation/mlb/fastball/news/mlb-playoff-elimination-numbers-mariners-cardinals-orioles-nearing-end-pat3), [Wikipedia 2026 Athletics season](https://en.wikipedia.org/wiki/2026_Athletics_season) | **The Athletics are eliminated** (61-90, 15.5 GB of the third AL wild card with 11 to play at the 2026-09-15 snapshot) → **no A's game after Sep 27**. ⚠ Exact day not pinned by any source (the Wikipedia game log has no dated elimination marker); recorded as "on/before 2026-09-15" with `MLB_ATH_ELIM_DATE_UNPINNED` flag. Other eliminated clubs as of Sep 15: Rockies, Giants, Reds, Mets, Nationals, Angels. |
+| **2025 postseason start-time pattern** (basis for the 54 EST windows) | [ESPN Press Room](https://espnpressroom.com/us/press-releases/2025/09/2025-mlb-wild-card-series-exclusively-on-espn-networks-starts-september-30/), [TODAY](https://www.today.com/news/sports/mlb-playoffs-schedule-wild-card-round-2025-rcna234670), [marca](https://www.marca.com/en/mlb/2025/09/30/68db9fffca4741e3678b4583.html), [abc.com](https://abc.com/news/d737e15e-5169-4002-8faa-158d9e7b5325/category/1138628), [freep.com full tracker](https://www.freep.com/story/sports/mlb/2025/09/30/mlb-playoff-schedule-scores-bracket-2025/86437335007/), [mlb.com DS matchups](https://www.mlb.com/news/mlb-2025-division-series-matchups), [Yahoo ALDS/NLDS](https://sports.yahoo.com/mlb/breaking-news/article/mlb-playoffs-2025-alds-nlds-matchups-schedule-and-start-times-041536222.html), [USA Today ALCS/NLCS](https://www.usatoday.com/story/sports/mlb/playoffs/2025/10/09/alcs-nlcs-teams-mlb-playoff-bracket-schedule/86582138007/), [Dodger Blue NLCS](https://dodgerblue.com/2025-nlcs-schedule-dodgers-vs-brewers-games-start-times/2025/10/12/), [NBC LA World Series](https://www.nbclosangeles.com/mlb/world-series-schedule-start-date-format-2025/3791265/) | Documented actuals: **WC 1:08/3:08/6:08/9:08 PM ET**; **DS Sat 2:08/4:08/6:38/8:38, Sun 4:08/8:03, Mon 6:08/9:08, Tue 4:08/8:08, Wed 3:08/5:08/7:08/9:08, Thu 6:08/9:08, Fri 4:40/8:08, Sat-Gm5 4:38/8:08 PM ET**; **LCS 8:03/5:03/8:08/5:08 PM ET (NLCS Gm6 2:08-or-5:08)**; **WS 8:00 PM ET every game**. ET→PT = −3h on every 2026 postseason date. Mapped to the 2026 calendar per date (round + game count + weekday), producing **54 EST rows** (Oct 18 NLCS Gm6 carries both 2025 options). Every row labeled EST + hatched; the days still assert **no free time**. ⚠ Caveat: the 2026 Wild Card round moves to NBC/Peacock, so exact 2026 times may differ from the ESPN-era pattern — that is why they are estimates. |
+| **Westwood One NFL page** (user's link, re-verified) | `https://www.westwoodonesports.com/nfl-schedule/` re-fetched live 2026-09-17 (all 4 chunks, both rendered lists) | **Zero deltas** vs `data/raw/westwoodone_nfl_2026.txt`: every dated broadcast + all 8 TBA placeholders match at event-id level (Sep 17 DET@BUF through Jan 10 SNF-TBA). Header updated. |
+| **Westwood One NCAA football grid** | eventGrid id=47030 re-fetched at offset 0 **and** offset 20 | **Same 13 broadcasts** (offset 20 = "No more events"), zero deltas. One refinement: **Sep 26 Oklahoma@Georgia WWO air time now printed 3:00 PM ET** (was TBD) — row note updated, official 3:30 PM ET kickoff and the 12:30 PM PT block unchanged. |
+| **Westwood One — other sports sweep** (user's ask: any other sports on Bay Area radio) | [NCAA Basketball](https://www.westwoodonesports.com/ncaa-basketball/) (grid id=47031), [U.S. Soccer](https://www.westwoodonesports.com/us-soccer/) (id=47032), [Golf](https://www.westwoodonesports.com/golf/) (id=47033), plus the site menu (MCWS/WCWS June, Lacrosse May, NCAA Hockey April) | **"No upcoming events" on all three pages** (fetched 2026-09-17). WWO's college-basketball package is March Madness (outside the Aug–Feb window; their news feed confirms April 2026 championship content only), golf majors run Apr–Jul, and MCWS/WCWS/lacrosse/NCAA hockey are outside the window by calendar. **CONCLUSION: NFL + NCAA football remain the only in-window Westwood One sports — both already tracked and high priority.** |
+| **Stanford/Cal basketball radio** (Bay Area radio gap check for next session) | [gostanford.com KNBR-1050 flagship](https://gostanford.com/news/2011/05/03/knbr-1050-named-stanfords-flagship-radio-partner), [gostanford.com radio info](https://gostanford.com/news/2013/04/17/athletics) | **Stanford men's basketball IS on Bay Area over-the-air radio** (Cardinal Sports Network flagship KNBR 1050 AM — "All Regular Season and Post-Season Men's Basketball Games"), in-window Nov 2026–Feb 2027 → **top candidate to add as a blocking league next session** (~30 games, ESPN team-page transcription like the Warriors/Sharks passes). Cal basketball's 2026-27 flagship is NOT yet verified — no announcement found; check calbears.com before adding. Documented in `docs/LIMITATIONS_AND_NEXT_STEPS.md`. |
+| **Build + audit after changes** | `python3 scripts/build.py` + `python3 scripts/audit.py` | Build verification report **PASS** (new checks: 53 postseason games / 28 dates / 54 EST rows / per-date slot==count except Oct 18; postseason rows never high-priority) and **AUDIT PASSED** with four new checks: 11 (53/28 + EST windows == raw slots, blocked, day NOT FREE), 11c (slot counts, Oct 18 exception), 11d (no teams/priority on placeholder rows), 12/12b/12c (playoff picture == raw JSON; Giants + Athletics eliminated in meta; no Giants/A's row on any postseason date). Day view row count 1427 → 1481 (54 EST rows added). `index.html` node --check OK. |
+
+### 2026-09-16 pass B (previous session)
 
 Triggered by the user's repeated bug report: *the site still showed free time on days when
 football games are on.* Live re-verification of everything the user asked to work on
@@ -168,7 +191,9 @@ to carry stale/placeholder times and are NOT used.
 | Valkyries 2026 (WNBA) | `https://www.oursportscentral.com/services/releases/goldn-state-valkyries-announce-local-television-and-radio-broadcast-schedule/n-6353443` (official club release 2026-04-25: date, PT time AND radio column per game) + flagship `https://audacyinc.com/press/95-7-the-game-will-be-the-valkyries-flagship-radio-station/` + playoff clinch `https://valkyries.wnba.com/news/valkyries-clinch-postseason-berth-for-second-straight-season` + round dates `https://www.espn.com/wnba/story/_/id/49882118/wnba-playoffs-2026-schedule-games-first-round-semifinals-finals-scores-results-news-highlights` | 16 regular-season games in window + 3 playoff TBD rows + 15 conditional playoff-day markers |
 | Sharks 2026-27 | `https://www.espn.com/nhl/team/schedule/_/name/sj/season/2027/seasontype/2` + `.../name/sj/san-jose-sharks` (preseason) | 68 games; per-game review `https://www.espn.com/nhl/game/_/gameId/<id>/x`. Flagship proof: `https://www.nhl.com/sharks/news/sharks-and-kfox-announce-multi-year-extension/c-782397` |
 | Westwood One NFL | `https://www.westwoodonesports.com/nfl-schedule/` (+ `.../station-finder/` for Bay Area carriage) | 65 broadcasts + 8 TBA; per-event review `https://www.westwoodonesports.com/events/<id>`. Kickoff proof: Cumulus press release 2026-09-09 (globenewswire). |
-| Westwood One NCAAF | `https://www.westwoodonesports.com/ncaa-football/` | 10 Saturday broadcasts; per-event review links. |
+| Westwood One NCAAF | `https://www.westwoodonesports.com/ncaa-football/` + its eventGrid endpoint (id=47030; the widget renders only 10) | 13 broadcasts / 19 rows (7 confirmed-or-reported kickoffs + 12 estimated showcase slots); per-event review links. |
+| MLB postseason 2026 (resolved pass) | `https://www.mlb.com/postseason` (official tentative bracket, fetched 2026-09-17) | All 28 dates / 53 games at gamePk level (849799-849851) + TV networks; every start time still TBD; 54 estimated first-pitch windows from the documented 2025 pattern (sources in sec. 0, 2026-09-17 pass). |
+| MLB playoff picture 2026 | `data/raw/mlb_2026_playoff_picture.json` (every entry carries its own source links) | 4 clinched (TB Sep 11, MIL Sep 11 + NL Central Sep 15, LAD Sep 14 + NL West Sep 17, NYY Sep 14) + 7 eliminated incl. **Giants (Sep 6/7) and Athletics (on/before Sep 15)** - no Bay Area MLB club in October. |
 | Bay Area radio flagships | `https://gostanford.com/news/2026/07/30/2026-football-radio-broadcast-team-announced` (Stanford/KNBR-1050), `https://www.sjearthquakes.com/news/news-earthquakes-announce-radio-stations-for-2026-mls-season` (Quakes/KSFO-810), `https://bearinsider.com/s/2255/cal-extends-partnership-with-kgo-radio` (Cal/KGO-810, 2020 - current status uncertain, flagged) | Proves which station carries which team; see §3 item 19. |
 
 ### Cross-checks performed
@@ -202,14 +227,36 @@ researched figures above; set the UI inputs back to 150/180+ to compare.
 ## 3. Irregularities flagged for your review
 
 The build re-emits all of these as machine-readable `flags` in `data/processed/free_time.json`
-and `schedules.md`. Status counts with the current data (**2026-09-16 pass B**): 212 days in window ->
-**21 FREE, 124 PARTIAL, 45 NOT FREE - TIME TBD, 22 UNCONFIRMED, 0 FULLY BOOKED**; 153 flags; 173 days
+and `schedules.md`. Status counts with the current data (**2026-09-17 pass**): 212 days in window ->
+**21 FREE, 124 PARTIAL, 45 NOT FREE - TIME TBD, 22 UNCONFIRMED, 0 FULLY BOOKED**; 160 flags; 173 days
 contain at least one high-priority game. Free time is asserted on only the 145 FREE/PARTIAL days; the
 other 67 days report no free time at all (see item 24). (The drop from 62 FREE two passes ago is the
 Warriors + Sharks + Valkyries evening slate - most Nov-Feb weeknights now have a Bay Area radio game
 on.)
 
-### Added / changed in the 2026-09-16 pass B (current)
+### Added in the 2026-09-17 pass (current)
+
+- **MLB postseason start times: none are official yet.** Verified on the official bracket
+  (mlb.com/postseason, fetched 2026-09-17): every one of the 53 games prints TBD. The DATES and
+  per-date game counts are official and now verified at gamePk level; the 54 EST first-pitch windows
+  come from the actual 2025 postseason pattern and are labeled EST everywhere. **The 2026 Wild Card
+  round moves to NBC/Peacock** (from ESPN/ABC in 2025), so 2026 times may differ from the pattern -
+  re-run after the field is set (regular season ends Sun Sep 27, 2026).
+- **Giants elimination-date conflict** (flag `MLB_GIANTS_ELIM_DATE_CONFLICT`): Wikipedia + Yahoo say
+  the Giants were eliminated Sunday Sep 6, 2026 (loss to the Mets); The Athletic says Monday night
+  Sep 7; FOX Sports: MLB's Sep 8 8:37 PM post says "eliminated last night" via tiebreaker
+  procedures. The outcome (eliminated, no October baseball) is certain; only the exact day differs.
+  Recorded as 2026-09-06/07.
+- **Athletics elimination date not pinned** (flag `MLB_ATH_ELIM_DATE_UNPINNED`): Fox Sports and SI
+  both list the A's among eliminated teams in their 2026-09-15 playoff pictures, but no source pins
+  the exact day. Recorded as "on/before 2026-09-15".
+- **NLCS Game 6 double-slot** (2026-10-18): the only postseason game given TWO estimated windows
+  (11:08 AM and 2:08 PM PT) because the 2025 NLCS Game 6 was documented as "2:08 PM or 5:08 PM ET"
+  depending on the ALCS ending in a sweep. All other dates carry exactly one EST slot per game.
+- **Sep 26 WWO air time updated** (Oklahoma@Georgia): the WWO grid now prints air 3:00 PM ET (was
+  TBD since 2026-09-15). Official kickoff 3:30 PM ET unchanged; the block (12:30 PM PT) unchanged.
+
+### Added / changed in the 2026-09-16 pass B (previous pass)
 
 - **CORRECTED - three Westwood One NCAAF broadcasts were missing.** The NCAAF page's widget renders
   only its first 10 events; the 2026-09-14 transcription captured only those. The widget's eventGrid

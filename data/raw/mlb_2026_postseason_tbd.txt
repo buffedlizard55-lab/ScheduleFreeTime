@@ -1,38 +1,112 @@
-# MLB 2026 POSTSEASON placeholders. EVERY game below returned gameDate "T07:33:00Z" (a placeholder, NOT a real
-# start time) and placeholder team ids (4612-4947, 5513-5533, 2710/2711). Times and teams are UNCONFIRMED.
-# Source: https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-09-02&endDate=2026-11-08&fields=dates,date,games,gameDate,teams,away,home,team,id
-# Fetched 2026-08-28. RE-FETCHED + CORRECTED 2026-09-16 (independent audit pass):
-#   the live API now reports totalGames=53 for 2026-09-28..2026-11-10 with the same 28 dates;
-#   the ONLY change vs the August transcription is 2026-10-04: 4 games -> 2 games
-#   (all other 27 dates identical; day remains NOT FREE - TIME TBD either way).
-#   URL: https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-09-28&endDate=2026-11-10&fields=dates,date,totalGames
-# Format: date|TBDxN  (N = number of scheduled postseason games that day)
-# 2026-09-28 has NO games at all (off day between end of regular season and Wild Card round).
-2026-09-29|TBDx4
-2026-09-30|TBDx4
-2026-10-01|TBDx4
-2026-10-03|TBDx4
-2026-10-04|TBDx2
-2026-10-05|TBDx2
-2026-10-06|TBDx2
-2026-10-07|TBDx4
-2026-10-08|TBDx2
-2026-10-09|TBDx2
-2026-10-10|TBDx2
-2026-10-11|TBDx1
-2026-10-12|TBDx2
-2026-10-13|TBDx1
-2026-10-14|TBDx1
-2026-10-15|TBDx2
-2026-10-16|TBDx2
-2026-10-17|TBDx1
-2026-10-18|TBDx1
-2026-10-19|TBDx2
-2026-10-20|TBDx1
-2026-10-23|TBDx1
-2026-10-24|TBDx1
-2026-10-26|TBDx1
-2026-10-27|TBDx1
-2026-10-28|TBDx1
-2026-10-30|TBDx1
-2026-10-31|TBDx1
+# MLB 2026 POSTSEASON placeholders - RESOLVED PASS 2026-09-17.
+#
+# WHAT IS NOW OFFICIAL (verified 2026-09-17 against https://www.mlb.com/postseason):
+#   - Every date below and the number of games per date: all 28 dates / 53 games match
+#     the official "Tentative 2026 Postseason Schedule" on mlb.com/postseason exactly
+#     (the page lists each series game-by-game with an official gamePk + TV network).
+#   - TV networks per round (NEW for 2026 - NBC returns to postseason baseball):
+#       Wild Card (Sep 29-Oct 1)  : NBC / Peacock / NBC Sports Network
+#       ALDS  (Oct 3-10)          : TBS / truTV / HBO Max
+#       NLDS  (Oct 3-9)           : FOX / FS1 / Fox Deportes
+#       NLCS  (Oct 11-19)         : FOX / FS1 / Fox Deportes
+#       ALCS  (Oct 12-20)         : TBS / truTV / HBO Max
+#       World Series (Oct 23-31)  : FOX / Fox Deportes
+#   - Official gamePks (mlb.com/gameday/<pk>/preview), all with start time "TBD":
+#     ALWC-A (ALWC3@AL3):   Gm1 849849 Sep 29 | Gm2 849846 Sep 30 | Gm3 849850 Oct 1*
+#     ALWC-B (ALWC2@AL1):   Gm1 849851 Sep 29 | Gm2 849848 Sep 30 | Gm3 849847 Oct 1*
+#     NLWC-A (NLWC3@NL3):   Gm1 849845 Sep 29 | Gm2 849841 Sep 30 | Gm3 849844 Oct 1*
+#     NLWC-B (NLWC2@NL1):   Gm1 849843 Sep 29 | Gm2 849842 Sep 30 | Gm3 849840 Oct 1*
+#     ALDS-A (AL4/5@ALE1):  Gm1 849835 Oct 3 | Gm2 849839 Oct 5 | Gm3 849838 Oct 7 |
+#                           Gm4 849837 Oct 8* | Gm5 849836 Oct 10*
+#     ALDS-B (AL3/6@AL2):   Gm1 849829 Oct 3 | Gm2 849834 Oct 5 | Gm3 849833 Oct 7 |
+#                           Gm4 849832 Oct 8* | Gm5 849831 Oct 10*
+#     NLDS-A (NL4/5@NL1):   Gm1 849830 Oct 3 | Gm2 849825 Oct 4 | Gm3 849826 Oct 6 |
+#                           Gm4 849827 Oct 7* | Gm5 849824 Oct 9*
+#     NLDS-B (NL3/6@NL2):   Gm1 849828 Oct 3 | Gm2 849823 Oct 4 | Gm3 849819 Oct 6 |
+#                           Gm4 849822 Oct 7* | Gm5 849821 Oct 9*
+#     NLCS:  Gm1 849809 Oct 11 | Gm2 849812 Oct 12 | Gm3 849811 Oct 14 | Gm4 849810 Oct 15 |
+#            Gm5 849808 Oct 16* | Gm6 849806 Oct 18* | Gm7 849807 Oct 19*
+#     ALCS:  Gm1 849820 Oct 12 | Gm2 849813 Oct 13 | Gm3 849818 Oct 15 | Gm4 849817 Oct 16 |
+#            Gm5 849816 Oct 17* | Gm6 849815 Oct 19* | Gm7 849814 Oct 20*
+#     WS:    Gm1 849805 Oct 23 | Gm2 849802 Oct 24 | Gm3 849804 Oct 26 | Gm4 849803 Oct 27 |
+#            Gm5 849799 Oct 28* | Gm6 849801 Oct 30* | Gm7 849800 Oct 31*
+#     (Seed labels are mlb.com's own placeholders - e.g. "ALWC3 @ AL3", "AL4/5 @ ALE1";
+#      the real teams are filled in when the bracket is set.)
+#
+# WHAT IS STILL TBD (as of 2026-09-17): EVERY start time ("TBD" on all 53 games) and
+#   8 of the 12 team slots. MLB announces Wild Card times once the field is set in the
+#   final weekend of the regular season (ends Sun Sep 27) - re-run then. Confirmed
+#   clinchers so far (data/raw/mlb_2026_playoff_picture.json): Rays (Sep 11), Brewers
+#   (Sep 11; NL Central Sep 15), Dodgers (Sep 14; NL West Sep 17), Yankees (Sep 14).
+#   RESOLVED FOR THE BAY AREA: the Giants (eliminated Sep 6-7) and the Athletics
+#   (eliminated by Sep 15) CANNOT appear in the 2026 postseason - no high-priority
+#   Bay Area MLB club plays in October. The days still block (ALL MLB games block).
+#
+# MLB Stats API cross-check (unchanged since the 2026-09-16 pass):
+#   https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-09-28&endDate=2026-11-10&fields=dates,date,totalGames
+#   returns totalGames=53 across the same 28 dates (placeholder gameDate 07:33:00Z,
+#   placeholder team ids 4612-4947/5513-5533/2710-2711).
+#
+# ESTIMATED WINDOWS (field 3, "EST-..."): clearly-labeled estimated first-pitch slots
+#   in PT derived from the DOCUMENTED 2025 postseason pattern (2026 round moves to
+#   NBC/Peacock so exact times may differ - labeled EST everywhere, never official).
+#   ET->PT is exactly -3h for every 2026 postseason date (EDT->PDT through Oct 31).
+#   2025 pattern sources (line-by-line, in docs/VERIFICATION.md sec. 4):
+#     Wild Card days (4 games): 1:08 / 3:08 / 6:08 / 9:08 PM ET
+#       ESPN Press Room schedule (espnpressroom.com 2025-09-30), TODAY (today.com),
+#       marca.com, abc.com - all four 2025 WC days used the same four slots; if fewer
+#       Game 3s are needed marca notes 3:00/7:30 PM ET slots instead.
+#     Division Series:
+#       Sat Gm1 day 2025: 2:08 / 4:08 / 6:38 / 8:38 PM ET (freep.com tracker, mlb.com)
+#       Sun Gm2 day 2025: 4:08 / 8:03 PM ET (mlb.com)
+#       Mon Gm2 day 2025: 6:08 / 9:08 PM ET (mlb.com)
+#       Tue Gm3 day 2025: 4:08 / 8:08 PM ET (freep.com)
+#       Wed 4-game day 2025: 3:08 / 5:08 / 7:08 / 9:08 PM ET (freep.com, yahoo.com)
+#       Thu Gm4 day 2025: 6:08 / 9:08 PM ET (mlb.com, freep.com)
+#       Fri Gm5 day 2025: 4:40 / 8:08 PM ET (freep.com)
+#       Sat Gm5 day 2025: 4:38 / 8:08 PM ET (freep.com)
+#     Championship Series 2025: ALCS Gm1 8:03 PM ET, ALCS Gm2 5:03 PM ET, NLCS Gm1/Gm2
+#       8:08 PM ET, NLCS Gm3+ 5:08 PM ET, NLCS Gm6 2:08-or-5:08 PM ET, Gm7 5:08 PM ET
+#       (usatoday.com, dodgerblue.com, sports.yahoo.com). The two LCS slots used here
+#       for mid-series 2-game days are 5:08 + 8:08 PM ET; Oct 18 (NLCS Gm6) blocks BOTH
+#       documented options (2:08 and 5:08 PM ET) for its single game.
+#     World Series 2025: every game 8:00 PM ET (nbclosangeles.com).
+#   Total: 54 EST rows for 53 games (Oct 18 carries two candidate slots).
+#
+# FORMAT: date|TBDxN|EST-hh:mm,hh:mm,...(PT slots; '-' if none)|round label|TV networks
+# (N = number of scheduled postseason games that day; TBD days are NOT FREE - no free
+#  time is asserted on them; the EST rows only add hatched, clearly-labeled windows.)
+2026-09-29|TBDx4|EST-10:08,12:08,15:08,18:08|Wild Card Gm 1 x4 (all four series)|NBC/Peacock/NBCSN
+2026-09-30|TBDx4|EST-10:08,12:08,15:08,18:08|Wild Card Gm 2 x4 (all four series)|NBC/Peacock/NBCSN
+2026-10-01|TBDx4|EST-10:08,12:08,15:08,18:08|Wild Card Gm 3 x4 (if necessary)|NBC/Peacock/NBCSN
+2026-10-03|TBDx4|EST-11:08,13:08,15:38,17:38|Division Series Gm 1 x4 (ALDS TBS / NLDS FOX)|ALDS TBS/truTV/HBO Max; NLDS FOX/FS1
+2026-10-04|TBDx2|EST-13:08,17:03|NLDS Gm 2 x2 (Sunday pattern)|FOX/FS1/Fox Deportes
+2026-10-05|TBDx2|EST-15:08,18:08|ALDS Gm 2 x2 (Monday pattern)|TBS/truTV/HBO Max
+2026-10-06|TBDx2|EST-13:08,17:08|NLDS Gm 3 x2 (Tuesday pattern)|FOX/FS1/Fox Deportes
+2026-10-07|TBDx4|EST-12:08,14:08,16:08,18:08|ALDS Gm 3 x2 + NLDS Gm 4 x2 (Wednesday pattern)|ALDS TBS; NLDS FOX/FS1
+2026-10-08|TBDx2|EST-15:08,18:08|ALDS Gm 4 x2 (Thursday pattern)|TBS/truTV/HBO Max
+2026-10-09|TBDx2|EST-13:40,17:08|NLDS Gm 5 x2 (Friday pattern)|FOX/FS1/Fox Deportes
+2026-10-10|TBDx2|EST-13:38,17:08|ALDS Gm 5 x2 (Saturday pattern)|TBS/truTV/HBO Max
+2026-10-11|TBDx1|EST-17:03|NLCS Gm 1 (2025 Sunday LCS opener: 8:03 PM ET)|FOX/FS1/Fox Deportes
+2026-10-12|TBDx2|EST-14:03,17:08|ALCS Gm 1 + NLCS Gm 2 (2025 Monday: 5:03 + 8:08 PM ET)|ALCS TBS; NLCS FOX/FS1
+2026-10-13|TBDx1|EST-17:08|ALCS Gm 2 (2025 Tuesday LCS: 8:08 PM ET)|TBS/truTV/HBO Max
+2026-10-14|TBDx1|EST-14:08|NLCS Gm 3 (2025 mid-series LCS: 5:08 PM ET)|FOX/FS1/Fox Deportes
+2026-10-15|TBDx2|EST-14:08,17:08|NLCS Gm 4 + ALCS Gm 3 (5:08 + 8:08 PM ET pattern)|NLCS FOX/FS1; ALCS TBS
+2026-10-16|TBDx2|EST-14:08,17:08|NLCS Gm 5 + ALCS Gm 4 (5:08 + 8:08 PM ET pattern)|NLCS FOX/FS1; ALCS TBS
+2026-10-17|TBDx1|EST-14:08|ALCS Gm 5 (5:08 PM ET pattern)|TBS/truTV/HBO Max
+2026-10-18|TBDx1|EST-11:08,14:08|NLCS Gm 6 (BOTH 2025 options: 2:08 or 5:08 PM ET)|FOX/FS1/Fox Deportes
+2026-10-19|TBDx2|EST-14:08,17:08|NLCS Gm 7 + ALCS Gm 6 (5:08 + 8:08 PM ET pattern)|NLCS FOX/FS1; ALCS TBS
+2026-10-20|TBDx1|EST-14:08|ALCS Gm 7 (2025 Gm 7: 5:08 PM ET)|TBS/truTV/HBO Max
+2026-10-23|TBDx1|EST-17:00|World Series Gm 1 (2025 WS: 8:00 PM ET every game)|FOX/Fox Deportes
+2026-10-24|TBDx1|EST-17:00|World Series Gm 2 (8:00 PM ET pattern)|FOX/Fox Deportes
+2026-10-26|TBDx1|EST-17:00|World Series Gm 3 (8:00 PM ET pattern)|FOX/Fox Deportes
+2026-10-27|TBDx1|EST-17:00|World Series Gm 4 (8:00 PM ET pattern)|FOX/Fox Deportes
+2026-10-28|TBDx1|EST-17:00|World Series Gm 5 if necessary (8:00 PM ET pattern)|FOX/Fox Deportes
+2026-10-30|TBDx1|EST-17:00|World Series Gm 6 if necessary (8:00 PM ET pattern)|FOX/Fox Deportes
+2026-10-31|TBDx1|EST-17:00|World Series Gm 7 if necessary (8:00 PM ET pattern)|FOX/Fox Deportes
+# TOTAL: 28 dates / 53 games (12 WC + 20 DS + 14 LCS + 7 WS) - matches the MLB Stats
+# API totalGames=53 and the mlb.com/postseason bracket page exactly. 2026-09-28 has NO
+# games at all (off day between the end of the regular season and the Wild Card round).
+# Off days with no games: Oct 2, Oct 13 has ALCS only (see row), Oct 21, 22, 25, 29.
+# (Oct 13 IS listed above - ALCS Gm 2. No-game dates inside the postseason span:
+#  Sep 28, Oct 2, Oct 21, Oct 22, Oct 25, Oct 29, Nov 1 onward.)

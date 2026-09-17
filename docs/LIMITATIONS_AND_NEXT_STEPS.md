@@ -2,18 +2,22 @@
 
 This file answers the user's request: "Make suggestions for what work still needs to be done and any limitations that is in the way of a successful project. It should be worked on in this next session or the next session."
 
-## Current status (2026-09-16 pass B)
+## Current status (2026-09-17 MLB-postseason-resolution pass)
 
 - Window: Aug 1, 2026 – Feb 28, 2027 (212 days) in America/Los_Angeles (PDT through Oct 31, 2026, then PST)
-- Data: 778 MLB regular-season games (all 30 clubs, 58 dates), 53 MLB postseason TBD placeholders, 272 NFL regular-season games (all 32 clubs, 17 per team), 49 NFL preseason games (all times transcribed), 25 NFL postseason/Saturday/Wk18 window rows (1 official SB LXI 3:30 PM PT, 24 estimated), 61 local blocking games (49ers 20 incl. 3 preseason, Earthquakes 17 incl. Decision Day finale Nov 7, Stanford 12, Cal 12), 63 Warriors (6 pre + 57 reg), 68 Sharks (4 pre info-only + 64 reg), 16 Valkyries regular season (9 on 95.7 The Game = blocking, 7 Audacy-app-only = info-only) + 3 playoff TBD + 37 conditional day markers (MLS playoffs, ACC/CFP/bowls, WNBA later rounds), 65 Westwood One NFL broadcasts matched 65/65 to league table + 8 TBA placeholders, **13 Westwood One NCAA football broadcasts** (19 rows: 7 with confirmed-or-reported official kickoffs — including the Nov 28 Michigan@Ohio State, Dec 5 SEC Championship and Dec 12 Army-Navy games found in pass B via the page's eventGrid endpoint — and 12 estimated showcase slots for the 6 still-TBD Saturdays).
-- Build: `python3 scripts/build.py` → `data/processed/free_time.json` + `schedules.md` + verification report. `scripts/audit.py` independently recomputes everything and passes (212 days, 1427 day-view rows).
+- Data: 778 MLB regular-season games (all 30 clubs, 58 dates), 53 MLB postseason TBD placeholders
+  (DATES now official + verified at gamePk level vs mlb.com/postseason on 2026-09-17; every start
+  time still TBD; 54 estimated first-pitch windows from the documented 2025 postseason pattern;
+  4 of 12 spots clinched - Rays, Brewers, Dodgers, Yankees; **Giants + Athletics ELIMINATED, so no
+  Bay Area MLB club plays in October**; see data/raw/mlb_2026_playoff_picture.json), 272 NFL regular-season games (all 32 clubs, 17 per team), 49 NFL preseason games (all times transcribed), 25 NFL postseason/Saturday/Wk18 window rows (1 official SB LXI 3:30 PM PT, 24 estimated), 61 local blocking games (49ers 20 incl. 3 preseason, Earthquakes 17 incl. Decision Day finale Nov 7, Stanford 12, Cal 12), 63 Warriors (6 pre + 57 reg), 68 Sharks (4 pre info-only + 64 reg), 16 Valkyries regular season (9 on 95.7 The Game = blocking, 7 Audacy-app-only = info-only) + 3 playoff TBD + 37 conditional day markers (MLS playoffs, ACC/CFP/bowls, WNBA later rounds), 65 Westwood One NFL broadcasts matched 65/65 to league table + 8 TBA placeholders, **13 Westwood One NCAA football broadcasts** (19 rows: 7 with confirmed-or-reported official kickoffs — including the Nov 28 Michigan@Ohio State, Dec 5 SEC Championship and Dec 12 Army-Navy games found in pass B via the page's eventGrid endpoint — and 12 estimated showcase slots for the 6 still-TBD Saturdays).
+- Build: `python3 scripts/build.py` → `data/processed/free_time.json` + `schedules.md` + verification report. `scripts/audit.py` independently recomputes everything and passes (212 days, 1481 day-view rows; new checks 11/11b/11c/11d/12/12b/12c cover the postseason EST windows and the playoff picture).
 - **Free-time rule (fixed in pass B after the user saw free time on football days):** a day whose status is NOT FREE — TIME TBD (a tracked game will definitely play/air, kickoff not official) or UNCONFIRMED (conditional markers) reports **no free time at all** — no free windows, no free minutes (Free min = 0 means "not asserted"), no green bands in the UI. Free time is asserted only on the 145 FREE/PARTIAL days. Status counts: 21 FREE, 124 PARTIAL, 45 NOT FREE — TIME TBD, 22 UNCONFIRMED, 0 FULLY BOOKED; 153 flags.
 - UI: scoreboard day view with Yesterday/Today/Tomorrow buttons (and ← → arrow keys), 24-hour timeline with red blocks (games) and green free bands, exact free windows (e.g. `12:00 AM – 10:05 AM (10h 5m)`), month calendar color-coded fully-free / partial / booked / not-free-TBD / unconfirmed with free hours per cell and ★ on high-priority days, league toggles and editable durations that recompute instantly, flag panel grouping every irregularity.
 - Verification: All sources documented in `docs/VERIFICATION.md` §1 with links for manual review; durations researched in `docs/DURATION_RESEARCH_2026.md`; Bay Area radio research in `docs/BAY_AREA_RADIO_RESEARCH.md`.
 
 ## Known limitations (honest)
 
-1. **Estimated windows are estimates.** NFL postseason/Saturday/Wk18 windows and WWO college showcase slots use documented patterns (2025-26 kickoffs, WWO air times, league Saturday windows), not official 2026-27 times. They are hatched + EST-tagged everywhere and replaced by real times as soon as announced. Re-run after Jan 3, 2027 slate, mid-December Saturday selection, and 6-12 days before each college game.
+1. **Estimated windows are estimates.** NFL postseason/Saturday/Wk18 windows, WWO college showcase slots and - new 2026-09-17 - the 54 MLB postseason first-pitch slots use documented patterns (2025-26 NFL kickoffs, the actual 2025 MLB postseason start times, WWO air times, league Saturday windows), not official 2026-27 times. CAVEAT for MLB: the 2026 Wild Card round moves from ESPN/ABC to NBC/Peacock, so 2026 times may differ from the 2025 pattern. They are hatched + EST-tagged everywhere and replaced by real times as soon as announced. Re-run after Jan 3, 2027 slate, mid-December Saturday selection, and 6-12 days before each college game.
 
 2. **Pro Bowl date conflict.** Feb 7 (sportbusy.com) vs Feb 9, 2027 (nflplayoffpass.com: "moved into Super Bowl week, Tuesday Feb 9, 8 PM ET"). No official NFL release. Both candidate days block with estimated windows and `PROBOWL_CONFLICT` flag. Remove loser once NFL announces.
 
@@ -40,7 +44,7 @@ This file answers the user's request: "Make suggestions for what work still need
 ## What still needs to be done — next session(s)
 
 ### Priority 1 — Refresh when official times drop (no code change, just data)
-- [ ] **After MLB postseason seeding (early Oct 2026):** Re-run MLB Stats API query `schedule?sportId=1&startDate=2026-09-28&endDate=2026-11-10` and replace `data/raw/mlb_2026_postseason_tbd.txt` — 53 placeholder rows become real times/teams. Re-run build.
+- [ ] **PARTIALLY DONE 2026-09-17 - finish after the MLB field is set (Sun Sep 27 -> Mon Sep 28, 2026):** dates + per-date counts + gamePks + TV networks are now official and verified (mlb.com/postseason); 4 of 12 spots clinched (Rays, Brewers, Dodgers, Yankees); Giants + Athletics eliminated. STILL TBD: all 53 start times and 8 team slots. When MLB announces Wild Card times (expected Mon-Tue Sep 28-29), re-run the MLB Stats API query `schedule?sportId=1&startDate=2026-09-28&endDate=2026-11-10`, replace the TBDxN rows with real games (keep the gamePk mapping in the file header), drop the EST rows for dates that become official, and re-run build + audit.
 - [ ] **After NFL flex schedule drops (Tuesdays):** Re-transcribe `data/raw/nfl_2026_pfr_regseason.txt` from PFR + nfl.com by-week pages (esp. weeks 16-18). Re-run build.
 - [ ] **After Decision Day Nov 7, 2026:** If Earthquakes qualify, replace conditional MLS playoff windows (`data/raw/mls_2026_playoffs_conditional.txt`) with real dates/times from mlssoccer.com. If not, conditional markers disappear (day becomes FREE).
 - [ ] **After bowl selection Sun Dec 6, 2026:** Add Stanford/Cal bowl games to `games_local.json` (currently deliberately not day-marked). Re-run build.
@@ -50,6 +54,15 @@ This file answers the user's request: "Make suggestions for what work still need
 - [ ] **When NFL settles Pro Bowl date:** Remove losing day (Feb 7 vs Feb 9) from `nfl_2027_postseason_tbd.txt`.
 
 ### Priority 2 — Close known gaps
+- [ ] **NEW (researched 2026-09-17) — Stanford men's basketball on KNBR 1050 AM:** the Cardinal Sports
+      Network flagship carries ALL regular-season + postseason men's basketball games over the air
+      (gostanford.com: "All Regular Season and Post-Season Men's Basketball Games") — that is ~30
+      in-window games (Nov 2026–Feb 2027) on Bay Area radio that currently do NOT block. Transcribe
+      from ESPN's team schedule pages exactly like the Warriors/Sharks passes (find the 2026-27
+      Stanford MBB schedule URL on espn.com) + gostanford.com game-center times, add as a blocking
+      high-priority league, and extend audit.py. Cal basketball: NO verified 2026-27 flagship found
+      yet (KGO 810 carried Cal for 47 years through 2020; the football schedule page now lists
+      KSFO 810) — verify at calbears.com BEFORE adding; do not assume.
 - [ ] **NBA Cup and All-Star:** Warriors idle Dec 2-11 (NBA Cup window) and Feb 18-24 (All-Star break) — confirmed gaps, not missing rows. If you want Cup knockout or All-Star games to block, add them as conditional or blocking rows (currently deliberately not blocking — no Warriors game).
 - [ ] **NHL postponements:** Re-transcribe ESPN team pages (`/nhl/team/schedule/_/name/sj/season/2027`) if Sharks schedule changes.
 - [ ] **WNBA playoff radio carriage:** Per-game playoff radio carriage not published — currently blocks by date presuming Bay Area playoff game airs locally (flagged IRREGULARITY). Update `data/raw/wnba_valkyries_2026.txt` once club announces per-game radio split.
@@ -71,7 +84,11 @@ This file answers the user's request: "Make suggestions for what work still need
 - [ ] **Automate ESPN NBA/NHL:** ESPN team pages are rendered HTML — scraper for `https://www.espn.com/nba/team/schedule/_/name/gs/season/2027` etc.
 
 ## Suggested next session agenda
-1. Re-run `python3 scripts/build.py` and `python3 scripts/audit.py` — confirm still PASS.
+1. **MLB postseason times drop after Sun Sep 27, 2026 (regular-season finale):** re-fetch
+   mlb.com/postseason + the Stats API and replace the 53 TBDxN rows / 54 EST windows with real
+   games + times (keep the gamePk mapping). This is the single biggest open item. NOTE: the
+   Giants and Athletics are ELIMINATED — October will contain no Bay Area MLB club.
+2. Re-run `python3 scripts/build.py` and `python3 scripts/audit.py` — confirm still PASS.
 2. Check https://www.westwoodonesports.com/nfl-schedule/ and https://www.westwoodonesports.com/ncaa-football/ for any new air times — update raw files if changed. **For NCAAF, always use the widget's eventGrid endpoint** (the page only renders the first 10 events — that truncation is how three broadcasts were missed until 2026-09-16 pass B). For NFL, reconcile the page's two rendered lists (all upcoming events) plus the 8 TBA placeholders at event-id level.
 3. Check 49ers.com/schedule, gostanford.com/sports/football/schedule, calbears.com/sports/football/schedule, sjearthquakes.com/news for any kickoff time announcements (especially the Oct/Nov Stanford + Cal TBDs that make Nov 28 and the other late-season days NOT FREE).
 4. If any new times, replace in `data/raw/` and re-run build — audit should still PASS.

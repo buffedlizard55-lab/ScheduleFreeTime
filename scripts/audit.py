@@ -26,6 +26,11 @@ WHAT IT CHECKS
  8. durations             - documented table == audit table; each game's interval fits its block
  9. priority flags        - Giants/A's/49ers/Quakes/NCAA/radio priority rules
 10. high-priority census  - Giants/A's/49ers counts vs the raw files
+11. MLB postseason        - 2026-09-17 resolved pass: per-date TBDxN counts vs the raw
+                            file, EST estimated-window slots == raw slots (2025 pattern),
+                            53 games / 28 dates, Oct 18 double-slot exception
+12. playoff picture       - meta clinched/eliminated vs data/raw/mlb_2026_playoff_picture.json;
+                            no Giants/Athletics row may exist on any postseason date
 """
 import json, os, re, sys
 from datetime import date, datetime, timedelta, timezone
@@ -171,15 +176,22 @@ raw_rows = {}    # (date, sport) -> list of (label-ish key, start_min or None)
 def add(ds, sport, k, start):
     raw_rows.setdefault((ds, sport), []).append((k, start))
 
-# MLB: date|HHMM-away-home[,...]  or  date|TBDxN
+# MLB: date|HHMM-away-home[,...]  or  date|TBDxN[|EST-hh:mm,hh:mm|round|tv]
 mlb_ids = set()
+mlb_post_tbd = {}    # date -> TBDxN (postseason placeholder games)
+mlb_post_est = {}    # date -> [start_min,...] (estimated 2025-pattern slots, PT)
 for fn in sorted(os.listdir(RAW)):
-    if not fn.startswith("mlb_2026_"):
+    if not fn.startswith("mlb_2026_") or not fn.endswith(".txt"):
         continue
     for parts in read_rows(fn):
         ds, body = parts[0], parts[1]
         if body.startswith("TBDx"):
             add(ds, "mlb", ("postseason", int(body[4:])), None)
+            mlb_post_tbd[ds] = int(body[4:])
+            if len(parts) > 2 and parts[2].startswith("EST-"):
+                for slot in [x for x in parts[2][4:].split(",") if x]:
+                    add(ds, "mlb", ("postseason-est", slot), hhmm_to_min(slot))
+                    mlb_post_est.setdefault(ds, []).append(hhmm_to_min(slot))
             continue
         y, m, dd = map(int, ds.split("-"))
         for item in body.split(","):
@@ -292,6 +304,70 @@ for d in days:
             post_free.append(d["date"] + "/" + d["status"])
 check(not post_free, "9d. postseason placeholder days are NOT FREE and never assert free time",
       str(post_free[:6]))
+
+# ------------------------------------------------- 11. MLB postseason resolved pass (2026-09-17)
+# (a) totals: 53 placeholder games on 28 dates, matching the official mlb.com/postseason
+#     bracket and the Stats API totalGames=53 (see data/raw/mlb_2026_postseason_tbd.txt)
+check(sum(mlb_post_tbd.values()) == 53 and len(mlb_post_tbd) == 28,
+      "11. MLB postseason = 53 TBD games across 28 official dates",
+      f"{sum(mlb_post_tbd.values())} games / {len(mlb_post_tbd)} dates")
+# (b) every postseason day carries its TBDxN marker row AND its raw EST slots, and the
+#     day is NOT FREE - TIME TBD with no asserted free time
+bad_est = []
+for ds in sorted(mlb_post_tbd):
+    d = by_date.get(ds)
+    if not d:
+        bad_est.append(ds + "/missing-day"); continue
+    markers = [g for g in d["games"] if g["sport"] == "mlb" and g.get("tbd_count")]
+    if len(markers) != 1 or markers[0]["tbd_count"] != mlb_post_tbd[ds]:
+        bad_est.append(ds + "/marker")
+    est_rows = sorted(g["start_min"] for g in d["games"]
+                      if g["sport"] == "mlb" and g.get("est_kind") == "MLB-2025-PATTERN")
+    if est_rows != sorted(mlb_post_est.get(ds, [])):
+        bad_est.append(ds + "/est-slots")
+    if d["status"] != "NOT FREE — TIME TBD" or d["free"] != [] or d["free_minutes"] != 0:
+        bad_est.append(ds + "/status")
+    # every EST interval must sit inside the stored blocked windows (164-min MLB duration)
+    for g in d["games"]:
+        if g["sport"] == "mlb" and g.get("est_kind") == "MLB-2025-PATTERN":
+            s0, e0 = g["start_min"], g["start_min"] + 164
+            if not any(b["start"] <= s0 and e0 <= b["end"] for b in d["blocked"]):
+                bad_est.append(f"{ds}/est-{g['start_pt']}-unblocked")
+check(not bad_est, "11b. MLB postseason EST windows == raw slots, blocked + day NOT FREE",
+      str(bad_est[:6]))
+# (c) EST slot count == game count per date, EXCEPT Oct 18 (NLCS Gm6 blocks BOTH 2025
+#     options: 2:08 and 5:08 PM ET); 54 EST rows total for 53 games
+slot_mismatch = {ds: (mlb_post_tbd[ds], len(mlb_post_est.get(ds, [])))
+                 for ds in mlb_post_tbd
+                 if mlb_post_tbd[ds] != len(mlb_post_est.get(ds, [])) and ds != "2026-10-18"}
+check(not slot_mismatch and sum(len(v) for v in mlb_post_est.values()) == 54
+      and len(mlb_post_est.get("2026-10-18", [])) == 2,
+      "11c. EST slot count == TBD game count (54 rows; only Oct 18 double-slotted)",
+      str(slot_mismatch))
+# (d) no postseason row may be flagged high-priority or carry real team ids
+bad_pri = [f"{g['date']}" for d in days for g in d["games"]
+           if g["sport"] == "mlb" and (g.get("tbd_count") or g.get("est_kind") == "MLB-2025-PATTERN")
+           and (g.get("priority") or g.get("away_id") or g.get("home_id"))]
+check(not bad_pri, "11d. postseason rows carry no teams and are never high priority", str(bad_pri[:4]))
+
+# ------------------------------------------------- 12. playoff picture (2026-09-17)
+pp_file = os.path.join(RAW, "mlb_2026_playoff_picture.json")
+pp = json.load(open(pp_file)) if os.path.exists(pp_file) else {}
+pp_meta = meta.get("mlb_playoff_picture", {})
+check(pp.get("clinched") and pp_meta.get("clinched") == [c["abbr"] for c in pp.get("clinched", [])]
+      and len(pp_meta.get("clinched", [])) == 4
+      and not ({"SF", "ATH"} & set(pp_meta.get("clinched", []))),
+      "12. meta playoff picture == raw JSON (4 clinched, no SF/ATH)",
+      str(pp_meta))
+elim = {e["abbr"] for e in pp.get("eliminated", [])}
+check({"SF", "ATH"} <= elim and pp_meta.get("eliminated") == [e["abbr"] for e in pp.get("eliminated", [])],
+      "12b. Giants + Athletics recorded ELIMINATED in meta (no Bay Area club in October)",
+      str(sorted(elim)))
+# structural guarantee: no Giants (137) / Athletics (133) game row on any postseason date
+bay_post = [f"{g['date']} {g.get('label')}" for d in days for g in d["games"]
+            if g["sport"] == "mlb" and g["date"] >= "2026-09-29"
+            and (g.get("away_id") in PRIORITY_MLB_TEAMS or g.get("home_id") in PRIORITY_MLB_TEAMS)]
+check(not bay_post, "12c. no Giants/Athletics row exists on any postseason date", str(bay_post[:4]))
 sf_day = [g["date"] for d in days for g in d["games"] if g["sport"] == "nfl" and not g.get("priority")]
 check(not sf_day, "9b. every 49ers (sport=nfl) row is high priority", str(sf_day[:6]))
 nn = [g["date"] for d in days for g in d["games"]

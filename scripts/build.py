@@ -134,16 +134,45 @@ def load_mlb():
             line = line.strip()
             if not line or line.startswith("#"):
                 continue
-            d, body = line.split("|")
+            parts = (line.split("|") + ["", "", "", ""])[:5]
+            d, body = parts[0], parts[1]
             y, m, dd = map(int, d.split("-"))
             off = pt_offset(date(y, m, dd))
             if body.startswith("TBDx"):
                 n = int(body[4:])
+                round_note, tv_note = parts[3].strip(), parts[4].strip()
+                label = (f"MLB postseason - {round_note} ({n} game(s), teams & times UNCONFIRMED)"
+                         if round_note else
+                         f"MLB postseason - {n} game(s), teams & times UNCONFIRMED")
+                if tv_note:
+                    label += f" [{tv_note}]"
                 games.append({"date": d, "sport": "mlb", "start_pt": None, "start_min": None, "tbd_count": n,
-                              "label": f"MLB postseason - {n} game(s), teams & times UNCONFIRMED",
-                              "source": os.path.basename(path)})
+                              "label": label, "source": os.path.basename(path),
+                              "review": "https://www.mlb.com/postseason"})
                 flag("TBD_TIME", f"{d}: {n} MLB postseason game(s) have no confirmed time or teams "
-                                 f"(MLB Stats API returns placeholder 07:33:00Z + placeholder team ids)")
+                                 f"(mlb.com/postseason prints TBD on every game; the Stats API returns "
+                                 f"placeholder 07:33:00Z + placeholder team ids)")
+                # 2026-09-17 resolved pass: estimated first-pitch slots from the documented
+                # 2025 postseason pattern (see the raw file header for every source). The
+                # EST rows are clearly-labeled estimated windows: they block their slot on
+                # the timeline (hatched + EST tag) but NEVER make the day's time official -
+                # the day stays NOT FREE - TIME TBD and asserts no free time.
+                est_field = parts[2].strip()
+                if est_field.startswith("EST-"):
+                    for slot in [s for s in est_field[4:].split(",") if s]:
+                        if not re.fullmatch(r"\d{2}:\d{2}", slot):
+                            flag("PARSE_ERROR", f"{os.path.basename(path)}:{ln} bad EST slot '{slot}'")
+                            continue
+                        h, mi = int(slot[:2]), int(slot[3:])
+                        games.append({
+                            "date": d, "sport": "mlb", "start_pt": slot, "start_min": h * 60 + mi,
+                            "dur_override": DURATIONS["mlb"], "away": "TBD", "home": "TBD",
+                            "label": (f"MLB postseason {round_note} - ESTIMATED slot {slot} PT "
+                                      f"(2025 pattern)" if round_note else
+                                      f"MLB postseason - ESTIMATED slot {slot} PT (2025 pattern)"),
+                            "estimated": True, "est_kind": "MLB-2025-PATTERN",
+                            "priority": False, "source": os.path.basename(path),
+                            "review": "https://www.mlb.com/postseason"})
                 continue
             for item in body.split(","):
                 hhmm, matchup = item.split(":")
@@ -590,6 +619,11 @@ def main():
     wwo_ncaaf = load_wwo_ncaaf()
     wwo_matched, wwo_total, wwo_tba = load_wwo_nfl(nfl_all)
     nfl_all = nfl_all + wwo_tba
+    # 2026 MLB postseason qualification picture (clinched + eliminated clubs, with
+    # per-claim sources) - annotations only: the 53 postseason placeholder games
+    # already block their dates regardless of who qualifies.
+    pp_path = os.path.join(RAW, "mlb_2026_playoff_picture.json")
+    mlb_pp = json.load(open(pp_path)) if os.path.exists(pp_path) else {"clinched": [], "eliminated": []}
 
     # 49ers appear in BOTH games_local.json (club list = source of truth for
     # kickoff times) and the league-wide NFL table. Keep the club row and drop the
@@ -736,6 +770,74 @@ def main():
          "The 'sparse' Tue/Thu slate days (5 games on Sep 10, 3 on Sep 21) are genuine scheduled light "
          "days, not data gaps.")
 
+    # ---- 2026-09-17 MLB-postseason-resolution / WWO re-verification pass ---------
+    mlb_post_rows = [g for g in mlb if g.get("tbd_count")]
+    mlb_post_n = sum(g["tbd_count"] for g in mlb_post_rows)
+    mlb_est_rows = [g for g in mlb if g.get("estimated") and g.get("est_kind") == "MLB-2025-PATTERN"]
+    flag("MLB_POSTSEASON_OFFICIAL_DATES",
+         f"RESOLVED 2026-09-17 (user request 'resolve MLB postseason TBD dates'): every postseason "
+         f"date and per-date game count is now verified against the OFFICIAL tentative bracket on "
+         f"mlb.com/postseason - all 28 dates / {mlb_post_n} games match the raw file, and each game "
+         f"now has its official gamePk + TV network recorded (Wild Card on NBC/Peacock/NBCSN - NBC's "
+         f"first postseason baseball in a generation; ALDS+ALCS on TBS/truTV/HBO Max; NLDS+NLCS on "
+         f"FOX/FS1; World Series on FOX). Review link on every row: https://www.mlb.com/postseason. "
+         f"START TIMES: every one of the {mlb_post_n} games still prints 'TBD' on the official page - "
+         f"MLB announces Wild Card times once the field is set in the final regular-season weekend "
+         f"(ends Sun Sep 27, 2026). Re-run the build then.")
+    flag("MLB_POSTSEASON_EST_WINDOWS",
+         f"{len(mlb_est_rows)} clearly-labeled ESTIMATED first-pitch windows (hatched, EST tag) now "
+         f"block documented-pattern slots on the MLB postseason days: derived from the ACTUAL 2025 "
+         f"postseason start times - Wild Card 1:08/3:08/6:08/9:08 PM ET (ESPN Press Room, TODAY, "
+         f"marca, abc.com); Division Series 2:08/4:08/6:38/8:38 (Sat), 4:08/8:03 (Sun), 6:08/9:08 "
+         f"(Mon/Thu), 4:08/8:08 (Tue), 3:08/5:08/7:08/9:08 (Wed), 4:40/8:08 (Fri), 4:38/8:08 (Sat) "
+         f"PM ET (freep.com tracker + mlb.com); LCS 8:03/5:03/8:08/5:08 PM ET with NLCS Gm6 at "
+         f"2:08-or-5:08 (usatoday.com, dodgerblue.com, sports.yahoo.com); World Series 8:00 PM ET "
+         f"every game (nbclosangeles.com). CAVEAT: the 2026 Wild Card round moves to NBC/Peacock so "
+         f"exact times may differ from the 2025 ESPN pattern - that is why every slot is labeled EST "
+         f"and the days still assert NO free time.")
+    flag("MLB_CLINCHED_2026",
+         f"MLB playoff picture as of 2026-09-17 (data/raw/mlb_2026_playoff_picture.json, sources on "
+         f"every entry): 4 of 12 spots clinched - Tampa Bay Rays (Sep 11, first team), Milwaukee "
+         f"Brewers (Sep 11; NL Central title Sep 15 - guaranteed a top-3 NL seed), Los Angeles "
+         f"Dodgers (Sep 14; NL West title Sep 17 - guaranteed a top-3 NL seed), New York Yankees "
+         f"(Sep 14, at least a wild card). None of the four has clinched a first-round bye yet "
+         f"(a bye would put their first game on the Division Series dates Oct 3+; otherwise they "
+         f"host a Wild Card Series Sep 29-Oct 1). See mlb.com/news/2026-postseason-teams and "
+         f"mlb.com/news/mlb-playoff-picture-and-bracket-2026.")
+    flag("MLB_ELIMINATED_BAY_AREA",
+         "RESOLVED FOR THE BAY AREA (2026-09-17): the Giants (eliminated Sep 6-7, tiebreaker "
+         "procedures, 5th straight miss - Wikipedia/The Athletic/Yahoo/FOX Sports: MLB) and the "
+         "Athletics (eliminated on/before Sep 15 at 61-90, 15.5 GB - Fox Sports + SI playoff "
+         "picture) CANNOT appear in the 2026 postseason: NO Giants or Athletics games will occur "
+         "after the regular season ends Sun Sep 27. The October postseason days therefore involve "
+         "neither high-priority Bay Area club, but every one of them still blocks (ALL MLB games "
+         "block, and the last regular-season Giants/A's games are Sep 25-27).")
+    flag("MLB_GIANTS_ELIM_DATE_CONFLICT",
+         "IRREGULARITY (Giants elimination date): sources disagree by a day - Wikipedia 2026 Giants "
+         "season + Yahoo Sports say Sunday Sep 6 (loss to the Mets); The Athletic says 'mathematically "
+         "eliminated Monday night' (Sep 7, 60-85 with 17 to play); FOX Sports: MLB's Sep 8 8:37 PM "
+         "post says 'eliminated last night due to tiebreaker procedures'. The loss was Sep 6; the "
+         "tiebreaker elimination registered Sep 7-8. Recorded as 2026-09-06/07; flagged for review.")
+    flag("MLB_ATH_ELIM_DATE_UNPINNED",
+         "IRREGULARITY (Athletics elimination date): Fox Sports and SI both list the A's among "
+         "eliminated teams in their 2026-09-15 playoff-picture pieces, but no source pins the exact "
+         "day (the Wikipedia 2026 Athletics season game log carries no dated elimination marker). "
+         "Recorded as 'on/before 2026-09-15'; flagged for review.")
+    flag("WWO_REVERIFIED_2026_09_17",
+         "Westwood One re-verification 2026-09-17 (per the user's request to work all games "
+         "broadcast on Westwood One in the Bay Area): (1) the NFL schedule page re-fetched live "
+         "(all four chunks, both rendered lists) - every dated broadcast and all 8 TBA placeholders "
+         "match data/raw/westwoodone_nfl_2026.txt at event-id level, ZERO deltas. (2) The NCAA "
+         "football eventGrid (id=47030) re-fetched at both offsets - exactly the same 13 broadcasts "
+         "(offset 20 returns 'No more events'); the Sep 26 Oklahoma@Georgia WWO air time is now "
+         "printed as 3:00 PM ET (was TBD) - note updated, kickoff/block unchanged. (3) NCAA "
+         "Basketball page (id=47031): 'No upcoming events' - the WWO college-basketball package is "
+         "March Madness, outside the Aug-Feb window. (4) U.S. Soccer page (id=47032): 'No upcoming "
+         "events'. (5) Golf page (id=47033): 'No upcoming events' (majors run Apr-Jul). MCWS/WCWS "
+         "(June), Lacrosse (May) and NCAA Hockey (April) are outside the window by calendar. "
+         "CONCLUSION: NFL + NCAA football remain the ONLY in-window Westwood One sports - both "
+         "already tracked, both high priority. KNBR 680/104.5 remains the Bay Area affiliate.")
+
     days = []
     d = START
     while d <= END:
@@ -842,6 +944,7 @@ def main():
         "blocking_sports": sorted(BLOCKING_SPORTS),
         "totals": {"mlb_games": len([g for g in mlb if "away_id" in g]),
                    "mlb_postseason_tbd": sum(g.get("tbd_count", 0) for g in mlb),
+                   "mlb_postseason_est_rows": len(mlb_est_rows),
                    "local_games": len(local),
                    "nfl_reg_games": len(reg), "nfl_pre_games": len(pre),
                    "nfl_reg_tbd_games": len([g for g in reg if g.get("tbd_time")]),
@@ -859,6 +962,12 @@ def main():
                    "wwo_ncaaf": len({(g["date"], g["away"], g["home"]) for g in wwo_ncaaf}),
                    "wwo_ncaaf_rows": len(wwo_ncaaf),
                    "wwo_ncaaf_est_rows": len([g for g in wwo_ncaaf if g.get("estimated")])},
+        "mlb_playoff_picture": {
+            "as_of": mlb_pp.get("as_of", ""),
+            "clinched": [c["abbr"] for c in mlb_pp.get("clinched", [])],
+            "eliminated": [e["abbr"] for e in mlb_pp.get("eliminated", [])],
+            "source_file": "data/raw/mlb_2026_playoff_picture.json",
+        },
     }
     json.dump({"meta": meta, "games": mlb}, open(os.path.join(OUT, "mlb.json"), "w"), indent=1)
     json.dump({"meta": meta, "days": days, "flags": flags}, open(os.path.join(OUT, "free_time.json"), "w"), indent=1)
@@ -868,7 +977,14 @@ def main():
     print(f"Window            : {START} .. {END} ({(END-START).days+1} days), America/Los_Angeles")
     print(f"MLB games parsed  : {meta['totals']['mlb_games']} across "
           f"{len(set(g['date'] for g in mlb if 'away_id' in g))} official dates")
-    print(f"MLB postseason TBD: {meta['totals']['mlb_postseason_tbd']} games (times/teams unconfirmed)")
+    print(f"MLB postseason TBD: {meta['totals']['mlb_postseason_tbd']} games (times/teams unconfirmed; "
+          f"dates + per-date counts verified vs mlb.com/postseason 2026-09-17)")
+    print(f"MLB postseason EST : {len(mlb_est_rows)} estimated window rows from the documented 2025 "
+          f"pattern (WC/DS/LCS/WS actual start times; clearly labeled EST)")
+    print(f"MLB playoff picture: {len(mlb_pp.get('clinched', []))} clinched "
+          f"({', '.join(c['abbr'] for c in mlb_pp.get('clinched', [])) or '-'}), "
+          f"{len(mlb_pp.get('eliminated', []))} eliminated incl. SF+ATH "
+          f"(no Bay Area MLB club in October) - as of {mlb_pp.get('as_of', '-')}")
     print(f"49ers/Quakes/NCAA : {len(local)} blocking games (+{len(cond)} conditional day markers)")
     print(f"NFL league-wide   : {len(reg)} regular-season games + {len(pre)} preseason games "
           f"(ALL block; 49ers rows dedup against the club list in games_local.json)")
@@ -896,6 +1012,28 @@ def main():
 
     # NFL arithmetic checks
     ok = True
+    # MLB postseason arithmetic checks (2026-09-17 resolved pass)
+    if mlb_post_n != 53 or len(mlb_post_rows) != 28:
+        ok = False; print(f"!! MLB postseason {mlb_post_n} games / {len(mlb_post_rows)} dates != 53/28 "
+                          f"(mlb.com/postseason + Stats API both say 53 games on 28 dates)")
+    if len(mlb_est_rows) != 54:
+        ok = False; print(f"!! MLB postseason EST rows {len(mlb_est_rows)} != 54 (53 games + the "
+                          f"two-option NLCS Gm6 slot on Oct 18)")
+    by_post_date = {}
+    for g in mlb:
+        if g.get("tbd_count") or g.get("est_kind") == "MLB-2025-PATTERN":
+            e = by_post_date.setdefault(g["date"], {"n": 0, "est": 0})
+            e["n"] += g.get("tbd_count", 0)
+            e["est"] += 1 if g.get("estimated") else 0
+    bad_est = {d: e for d, e in by_post_date.items()
+               if e["est"] != e["n"] and d != "2026-10-18"}
+    if bad_est:
+        ok = False; print(f"!! MLB postseason EST slot count != game count on: {bad_est} "
+                          f"(only Oct 18 - NLCS Gm6 - may carry two candidate slots)")
+    if by_post_date.get("2026-10-18", {}).get("est") != 2:
+        ok = False; print("!! Oct 18 (NLCS Gm6) should carry exactly 2 EST slots (2:08 or 5:08 PM ET)")
+    if any(g.get("priority") for g in mlb if g.get("est_kind") == "MLB-2025-PATTERN"):
+        ok = False; print("!! MLB postseason EST rows must never be high priority (teams unknown)")
     if len(nba) != 63:
         ok = False; print(f"!! Warriors count {len(nba)} != 63 (6 pre + 57 reg expected)")
     if len(nhl) != 68:
@@ -1007,11 +1145,12 @@ def main():
             if os.path.exists(js_path):
                 os.remove(js_path)
 
-    write_markdown(days, meta, flags, mlb, nfl_all, local, cond, per, nba_nhl, wwo_ncaaf, wnba)
+    write_markdown(days, meta, flags, mlb, nfl_all, local, cond, per, nba_nhl, wwo_ncaaf, wnba, mlb_pp)
     return days, flags
 
 
-def write_markdown(days, meta, flags, mlb, nfl_all, local, cond, per, nba_nhl, wwo_ncaaf, wnba_all=()):
+def write_markdown(days, meta, flags, mlb, nfl_all, local, cond, per, nba_nhl, wwo_ncaaf, wnba_all=(), mlb_pp=None):
+    mlb_pp = mlb_pp or {"clinched": [], "eliminated": [], "official_schedule": {"series": []}}
     L = []; A = L.append
     A("# ScheduleFreeTime - Verified Master Schedule (Aug 1, 2026 - Feb 28, 2027)")
     A("")
@@ -1022,7 +1161,10 @@ def write_markdown(days, meta, flags, mlb, nfl_all, local, cond, per, nba_nhl, w
     A(f"- Timezone: **{meta['timezone']}**")
     t = meta["totals"]
     A(f"- Counts: **{t['mlb_games']} MLB games** (all 30 clubs, regular season), "
-      f"**{t['mlb_postseason_tbd']} MLB postseason games with unconfirmed times**, "
+      f"**{t['mlb_postseason_tbd']} MLB postseason games with unconfirmed times** "
+      f"(dates + per-date counts verified line-by-line vs the official mlb.com/postseason bracket "
+      f"2026-09-17; gamePks + TV networks recorded; **{t.get('mlb_postseason_est_rows',0)} estimated "
+      f"first-pitch windows** from the documented 2025 pattern), "
       f"**{t['local_games']}** blocking 49ers / Earthquakes / Stanford / Cal games, "
       f"**{t['nba_games']} Warriors (NBA)** + **{t['nhl_games']} Sharks (NHL)** games, "
       f"**{t['nfl_reg_games']} + {t['nfl_pre_games']} league-wide NFL games** (all block; "
@@ -1063,6 +1205,41 @@ def write_markdown(days, meta, flags, mlb, nfl_all, local, cond, per, nba_nhl, w
         A(f"| {g['date']} | {g['start_pt']} PT | {g['away']} @ {g['home']}{star} |")
     A("")
     A(f"Giants: {per.get(137)} games in window - Athletics: {per.get(133)} games in window.")
+    A("")
+    A("### MLB postseason picture (as of 2026-09-17) - TBD resolution status")
+    A("")
+    A("Postseason dates are OFFICIAL (verified against the mlb.com/postseason bracket; every game")
+    A("has an official gamePk + TV network). Start times are still TBD on all 53 games, and 8 of the")
+    A("12 team slots are still open. The Giants and Athletics are ELIMINATED - no Bay Area MLB club")
+    A("plays in October - but every postseason date still blocks (all MLB games block).")
+    A("")
+    A("**Clinched (4 of 12 spots):**")
+    A("")
+    A("| Team | Clinched | Date | Notes / review |")
+    A("|---|---|---|---|")
+    for c in mlb_pp.get("clinched", []):
+        note = c.get("also", "")
+        links = " · ".join(f"[src]({s})" for s in c.get("sources", [])[:2])
+        A(f"| {c['name']} | {c['what']} | {c['date']} | {note} {links} |")
+    A("")
+    A("**Eliminated (incl. both Bay Area clubs):**")
+    A("")
+    A("| Team | Status | Date | Review |")
+    A("|---|---|---|---|")
+    for e in mlb_pp.get("eliminated", []):
+        links = " · ".join(f"[src]({s})" for s in e.get("sources", [])[:2])
+        A(f"| {e['name']} | {e['what']} | {e['date']} | {links} |")
+    A("")
+    A("Official bracket (every game TBD until MLB announces; * = if necessary). GamePk links go to")
+    A("mlb.com's official game preview pages:")
+    A("")
+    A("| Series | TV | Game | Date | Official link |")
+    A("|---|---|---|---|---|")
+    for s in mlb_pp.get("official_schedule", {}).get("series", []):
+        for gm in s["games"]:
+            A(f"| {s['name']} | {s['tv']} | Gm {gm['g']}{'*' if gm.get('ifn') else ''} | {gm['date']} | "
+              f"[gamePk {gm['gamepk']}](https://www.mlb.com/gameday/{gm['gamepk']}/preview) |")
+    A("")
     A("")
     A("### 49ers (every game, preseason + regular season)")
     A("")
@@ -1223,7 +1400,11 @@ def write_markdown(days, meta, flags, mlb, nfl_all, local, cond, per, nba_nhl, w
         A(f"### {d} ({len(gs)} game{'s' if len(gs)!=1 else ''})")
         for g in gs:
             if g.get("tbd_count"):
-                A(f"- **TBD** - {g['tbd_count']} MLB postseason game(s); teams and start times unconfirmed")
+                A(f"- **TBD** - {g['tbd_count']} MLB postseason game(s); teams and start times unconfirmed "
+                  f"(official gamePks + TV networks in the playoff-picture table above)")
+                continue
+            if g.get("estimated"):
+                A(f"- ~{g['start_pt']} PT (EST) - {g['label']} - estimated window, clearly NOT an official time")
                 continue
             b = "**" if g.get("priority") else ""
             A(f"- {g['start_pt']} PT - {b}{g['away']} @ {g['home']}{b}")

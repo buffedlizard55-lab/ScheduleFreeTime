@@ -1,0 +1,126 @@
+{
+  "as_of": "2026-09-17",
+  "scope": "2026 MLB postseason qualification picture used to annotate the 53 postseason placeholder games in mlb_2026_postseason_tbd.txt. Snapshot date in as_of; re-verify before each rebuild. Every entry carries its sources for manual review.",
+  "clinched": [
+    {
+      "team_id": 139, "abbr": "TB", "name": "Tampa Bay Rays", "league": "AL",
+      "what": "playoff berth (first MLB team to clinch 2026; at least a wild card)",
+      "date": "2026-09-11",
+      "sources": [
+        "https://www.usatoday.com/story/sports/mlb/rays/2026/09/11/rays-clinch-mlb-playoffs-spot-first-team/91714940007/",
+        "https://www.mlb.com/news/2026-postseason-teams"
+      ]
+    },
+    {
+      "team_id": 158, "abbr": "MIL", "name": "Milwaukee Brewers", "league": "NL",
+      "what": "playoff berth, then NL Central title (guaranteed a top-3 NL seed and at least an NLDS berth; a first-round bye is not yet clinched)",
+      "date": "2026-09-11",
+      "also": "clinched NL Central 2026-09-15",
+      "sources": [
+        "https://www.mlb.com/news/2026-postseason-teams",
+        "https://www.foxsports.com/stories/mlb/mlb-postseason-wild-card-playoffs-standings-2026"
+      ]
+    },
+    {
+      "team_id": 119, "abbr": "LAD", "name": "Los Angeles Dodgers", "league": "NL",
+      "what": "playoff berth, then NL West title (13th NL West title in 14 seasons; guaranteed a top-3 NL seed; bye not yet clinched)",
+      "date": "2026-09-14",
+      "also": "clinched NL West 2026-09-17",
+      "sources": [
+        "https://www.mlb.com/news/2026-postseason-teams",
+        "https://www.mlb.com/news/mlb-playoff-picture-and-bracket-2026"
+      ]
+    },
+    {
+      "team_id": 147, "abbr": "NYY", "name": "New York Yankees", "league": "AL",
+      "what": "playoff berth (at least a wild card; 4.5 games behind Tampa Bay in the AL East as of 2026-09-17)",
+      "date": "2026-09-14",
+      "sources": [
+        "https://www.mlb.com/news/2026-postseason-teams",
+        "https://www.usatoday.com/story/sports/mlb/2026/09/14/mlb-playoff-clinches-2026-teams-postseason-berths/91757959007/"
+      ]
+    }
+  ],
+  "eliminated": [
+    {
+      "team_id": 137, "abbr": "SF", "name": "San Francisco Giants", "league": "NL",
+      "what": "mathematically eliminated from 2026 postseason contention (via tiebreaker procedures) - NO Giants games will appear in the 53 postseason placeholders; 5th straight season without the playoffs",
+      "date": "2026-09-06/07",
+      "note": "ELIMINATION-DATE CONFLICT (flagged): Wikipedia 2026 Giants season says Sep 6 (loss to the Mets); Yahoo Sports says Sunday (Sep 6); The Athletic says 'mathematically eliminated Monday night' (Sep 7, 60-85 with 17 to play); FOX Sports: MLB posted Sep 8 8:37 PM 'eliminated last night' due to tiebreaker procedures. The loss was Sep 6; the tiebreaker-procedure elimination registered Sep 7-8. Exact date flagged for review.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/2026_San_Francisco_Giants_season",
+        "https://sports.yahoo.com/mlb/article/what-went-wrong-for-the-2026-san-francisco-giants-and-where-do-they-go-from-here-002216535.html",
+        "https://www.nytimes.com/athletic/7573981/2026/09/08/giants-elimination-win-cardinals/",
+        "https://x.com/MLBONFOX/status/2097424154463223830"
+      ]
+    },
+    {
+      "team_id": 133, "abbr": "ATH", "name": "Athletics", "league": "AL",
+      "what": "mathematically eliminated from 2026 postseason contention (61-90, 15.5 games out of the third AL wild card with 11 to play as of 2026-09-15) - NO Athletics games in the postseason placeholders",
+      "date": "on/before 2026-09-15",
+      "note": "EXACT DATE NOT PINNED (flagged): both the Fox Sports and SI playoff-picture pieces of 2026-09-15 list the Athletics among the eliminated teams; the Wikipedia 2026 Athletics season game log carries no dated elimination marker. Based on the standings trajectory the elimination fell between ~Sep 8 and Sep 15. Flagged for review.",
+      "sources": [
+        "https://www.foxsports.com/stories/mlb/mlb-postseason-wild-card-playoffs-standings-2026",
+        "https://www.si.com/fannation/mlb/fastball/news/mlb-playoff-elimination-numbers-mariners-cardinals-orioles-nearing-end-pat3",
+        "https://en.wikipedia.org/wiki/2026_Athletics_season"
+      ]
+    },
+    {
+      "team_id": 115, "abbr": "COL", "name": "Colorado Rockies", "league": "NL",
+      "what": "eliminated (first MLB team eliminated in 2026)", "date": "before 2026-09-09",
+      "sources": ["https://sports.yahoo.com/mlb/article/what-went-wrong-for-the-2026-san-francisco-giants-and-where-do-they-go-from-here-002216535.html"]
+    },
+    {
+      "team_id": 113, "abbr": "CIN", "name": "Cincinnati Reds", "league": "NL",
+      "what": "eliminated", "date": "on/before 2026-09-15",
+      "sources": ["https://www.si.com/fannation/mlb/fastball/news/mlb-playoff-elimination-numbers-mariners-cardinals-orioles-nearing-end-pat3"]
+    },
+    {
+      "team_id": 121, "abbr": "NYM", "name": "New York Mets", "league": "NL",
+      "what": "eliminated", "date": "on/before 2026-09-15",
+      "sources": ["https://www.foxsports.com/stories/mlb/mlb-postseason-wild-card-playoffs-standings-2026"]
+    },
+    {
+      "team_id": 120, "abbr": "WSH", "name": "Washington Nationals", "league": "NL",
+      "what": "eliminated", "date": "on/before 2026-09-15",
+      "sources": ["https://www.foxsports.com/stories/mlb/mlb-postseason-wild-card-playoffs-standings-2026"]
+    },
+    {
+      "team_id": 108, "abbr": "LAA", "name": "Los Angeles Angels", "league": "AL",
+      "what": "eliminated (first AL team eliminated, 2026-09-07)", "date": "2026-09-07",
+      "sources": [
+        "https://www.usatoday.com/story/sports/mlb/angels/2026/09/07/los-angeles-angels-eliminated-biggest-questions/91651802007/",
+        "https://www.foxsports.com/stories/mlb/mlb-postseason-wild-card-playoffs-standings-2026"
+      ]
+    }
+  ],
+  "standings_snapshot_note": "As of 2026-09-17 (mlb.com playoff picture): AL East - Rays lead NYY by 4.5; AL Central - Guardians lead CHW by 0.5; AL West - Astros/Rangers tied (HOU owns tiebreaker); AL WC - CHW lead TEX by 1 for the final berth; NL East - Braves lead PHI by 4.5; NL WC - SD lead AZ by 3.5 for the final berth. 4 of 12 spots clinched. Snapshot for context only - not used to block anything (the 53 postseason placeholder games already block their dates).",
+  "standings_snapshot_source": "https://www.mlb.com/news/mlb-playoff-picture-and-bracket-2026",
+  "official_schedule": {
+    "source": "https://www.mlb.com/postseason (Tentative 2026 Postseason Schedule, fetched 2026-09-17; every start time prints TBD; gamePk links are mlb.com/gameday/<pk>/preview)",
+    "series": [
+      {"name": "AL Wild Card A (ALWC3 @ AL3)", "tv": "NBC/Peacock/NBCSN", "games": [
+        {"g": 1, "date": "2026-09-29", "gamepk": 849849}, {"g": 2, "date": "2026-09-30", "gamepk": 849846}, {"g": 3, "date": "2026-10-01", "gamepk": 849850, "ifn": true}]},
+      {"name": "AL Wild Card B (ALWC2 @ AL1)", "tv": "NBC/Peacock/NBCSN", "games": [
+        {"g": 1, "date": "2026-09-29", "gamepk": 849851}, {"g": 2, "date": "2026-09-30", "gamepk": 849848}, {"g": 3, "date": "2026-10-01", "gamepk": 849847, "ifn": true}]},
+      {"name": "NL Wild Card A (NLWC3 @ NL3)", "tv": "NBC/Peacock/NBCSN", "games": [
+        {"g": 1, "date": "2026-09-29", "gamepk": 849845}, {"g": 2, "date": "2026-09-30", "gamepk": 849841}, {"g": 3, "date": "2026-10-01", "gamepk": 849844, "ifn": true}]},
+      {"name": "NL Wild Card B (NLWC2 @ NL1)", "tv": "NBC/Peacock/NBCSN", "games": [
+        {"g": 1, "date": "2026-09-29", "gamepk": 849843}, {"g": 2, "date": "2026-09-30", "gamepk": 849842}, {"g": 3, "date": "2026-10-01", "gamepk": 849840, "ifn": true}]},
+      {"name": "ALDS A (AL4/5 winner @ ALE1)", "tv": "TBS/truTV/HBO Max", "games": [
+        {"g": 1, "date": "2026-10-03", "gamepk": 849835}, {"g": 2, "date": "2026-10-05", "gamepk": 849839}, {"g": 3, "date": "2026-10-07", "gamepk": 849838}, {"g": 4, "date": "2026-10-08", "gamepk": 849837, "ifn": true}, {"g": 5, "date": "2026-10-10", "gamepk": 849836, "ifn": true}]},
+      {"name": "ALDS B (AL3/6 winner @ AL2)", "tv": "TBS/truTV/HBO Max", "games": [
+        {"g": 1, "date": "2026-10-03", "gamepk": 849829}, {"g": 2, "date": "2026-10-05", "gamepk": 849834}, {"g": 3, "date": "2026-10-07", "gamepk": 849833}, {"g": 4, "date": "2026-10-08", "gamepk": 849832, "ifn": true}, {"g": 5, "date": "2026-10-10", "gamepk": 849831, "ifn": true}]},
+      {"name": "NLDS A (NL4/5 winner @ NL1)", "tv": "FOX/FS1/Fox Deportes", "games": [
+        {"g": 1, "date": "2026-10-03", "gamepk": 849830}, {"g": 2, "date": "2026-10-04", "gamepk": 849825}, {"g": 3, "date": "2026-10-06", "gamepk": 849826}, {"g": 4, "date": "2026-10-07", "gamepk": 849827, "ifn": true}, {"g": 5, "date": "2026-10-09", "gamepk": 849824, "ifn": true}]},
+      {"name": "NLDS B (NL3/6 winner @ NL2)", "tv": "FOX/FS1/Fox Deportes", "games": [
+        {"g": 1, "date": "2026-10-03", "gamepk": 849828}, {"g": 2, "date": "2026-10-04", "gamepk": 849823}, {"g": 3, "date": "2026-10-06", "gamepk": 849819}, {"g": 4, "date": "2026-10-07", "gamepk": 849822, "ifn": true}, {"g": 5, "date": "2026-10-09", "gamepk": 849821, "ifn": true}]},
+      {"name": "NLCS", "tv": "FOX/FS1/Fox Deportes", "games": [
+        {"g": 1, "date": "2026-10-11", "gamepk": 849809}, {"g": 2, "date": "2026-10-12", "gamepk": 849812}, {"g": 3, "date": "2026-10-14", "gamepk": 849811}, {"g": 4, "date": "2026-10-15", "gamepk": 849810}, {"g": 5, "date": "2026-10-16", "gamepk": 849808, "ifn": true}, {"g": 6, "date": "2026-10-18", "gamepk": 849806, "ifn": true}, {"g": 7, "date": "2026-10-19", "gamepk": 849807, "ifn": true}]},
+      {"name": "ALCS", "tv": "TBS/truTV/HBO Max", "games": [
+        {"g": 1, "date": "2026-10-12", "gamepk": 849820}, {"g": 2, "date": "2026-10-13", "gamepk": 849813}, {"g": 3, "date": "2026-10-15", "gamepk": 849818}, {"g": 4, "date": "2026-10-16", "gamepk": 849817}, {"g": 5, "date": "2026-10-17", "gamepk": 849816, "ifn": true}, {"g": 6, "date": "2026-10-19", "gamepk": 849815, "ifn": true}, {"g": 7, "date": "2026-10-20", "gamepk": 849814, "ifn": true}]},
+      {"name": "World Series (Low @ High)", "tv": "FOX/Fox Deportes", "games": [
+        {"g": 1, "date": "2026-10-23", "gamepk": 849805}, {"g": 2, "date": "2026-10-24", "gamepk": 849802}, {"g": 3, "date": "2026-10-26", "gamepk": 849804}, {"g": 4, "date": "2026-10-27", "gamepk": 849803}, {"g": 5, "date": "2026-10-28", "gamepk": 849799, "ifn": true}, {"g": 6, "date": "2026-10-30", "gamepk": 849801, "ifn": true}, {"g": 7, "date": "2026-10-31", "gamepk": 849800, "ifn": true}]}
+    ]
+  }
+}

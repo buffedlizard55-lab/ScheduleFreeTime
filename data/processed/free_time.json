@@ -31,6 +31,7 @@
   "totals": {
    "mlb_games": 778,
    "mlb_postseason_tbd": 53,
+   "mlb_postseason_est_rows": 54,
    "local_games": 61,
    "nfl_reg_games": 272,
    "nfl_pre_games": 49,
@@ -51,6 +52,25 @@
    "wwo_ncaaf": 13,
    "wwo_ncaaf_rows": 19,
    "wwo_ncaaf_est_rows": 13
+  },
+  "mlb_playoff_picture": {
+   "as_of": "2026-09-17",
+   "clinched": [
+    "TB",
+    "MIL",
+    "LAD",
+    "NYY"
+   ],
+   "eliminated": [
+    "SF",
+    "ATH",
+    "COL",
+    "CIN",
+    "NYM",
+    "WSH",
+    "LAA"
+   ],
+   "source_file": "data/raw/mlb_2026_playoff_picture.json"
   }
  },
  "days": [
@@ -15775,7 +15795,7 @@
      "dur_override": 204,
      "start_pt": "12:30",
      "start_min": 750,
-     "note": "kickoff 3:30 PM ET ESPN/ABC (SEC announcement 2026-09-14); WWO air TBD; Sanford Stadium"
+     "note": "kickoff 3:30 PM ET ESPN/ABC (SEC announcement 2026-09-14); WWO air 3:00 PM ET (event grid 2026-09-17, was TBD); Sanford Stadium"
     },
     {
      "date": "2026-09-26",
@@ -16666,11 +16686,72 @@
     {
      "date": "2026-09-29",
      "sport": "mlb",
+     "start_pt": "10:08",
+     "start_min": 608,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason Wild Card Gm 1 x4 (all four series) - ESTIMATED slot 10:08 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
+    },
+    {
+     "date": "2026-09-29",
+     "sport": "mlb",
+     "start_pt": "12:08",
+     "start_min": 728,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason Wild Card Gm 1 x4 (all four series) - ESTIMATED slot 12:08 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
+    },
+    {
+     "date": "2026-09-29",
+     "sport": "mlb",
+     "start_pt": "15:08",
+     "start_min": 908,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason Wild Card Gm 1 x4 (all four series) - ESTIMATED slot 15:08 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
+    },
+    {
+     "date": "2026-09-29",
+     "sport": "mlb",
+     "start_pt": "18:08",
+     "start_min": 1088,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason Wild Card Gm 1 x4 (all four series) - ESTIMATED slot 18:08 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
+    },
+    {
+     "date": "2026-09-29",
+     "sport": "mlb",
      "start_pt": null,
      "start_min": null,
      "tbd_count": 4,
-     "label": "MLB postseason - 4 game(s), teams & times UNCONFIRMED",
-     "source": "mlb_2026_postseason_tbd.txt"
+     "label": "MLB postseason - Wild Card Gm 1 x4 (all four series) (4 game(s), teams & times UNCONFIRMED) [NBC/Peacock/NBCSN]",
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
     },
     {
      "date": "2026-09-29",
@@ -16686,22 +16767,62 @@
      "note": "Game 2 window for the first round is Tue Sep 29 OR Wed Sep 30 (ESPN 2026-09-09); both dates blocked, flagged"
     }
    ],
-   "blocked": [],
+   "blocked": [
+    {
+     "start": 608,
+     "end": 892,
+     "start_t": "10:08 AM",
+     "end_t": "2:52 PM"
+    },
+    {
+     "start": 908,
+     "end": 1072,
+     "start_t": "3:08 PM",
+     "end_t": "5:52 PM"
+    },
+    {
+     "start": 1088,
+     "end": 1252,
+     "start_t": "6:08 PM",
+     "end_t": "8:52 PM"
+    }
+   ],
    "free": [],
    "free_minutes": 0,
    "provisional_free": [
     {
      "start": 0,
-     "end": 1440,
+     "end": 608,
      "start_t": "12:00 AM",
+     "end_t": "10:08 AM",
+     "minutes": 608
+    },
+    {
+     "start": 892,
+     "end": 908,
+     "start_t": "2:52 PM",
+     "end_t": "3:08 PM",
+     "minutes": 16
+    },
+    {
+     "start": 1072,
+     "end": 1088,
+     "start_t": "5:52 PM",
+     "end_t": "6:08 PM",
+     "minutes": 16
+    },
+    {
+     "start": 1252,
+     "end": 1440,
+     "start_t": "8:52 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 1440
+     "minutes": 188
     }
    ],
-   "game_count": 0,
+   "game_count": 4,
    "nfl_all_count": 0,
    "tbd_count": 5,
-   "estimated_count": 0,
+   "estimated_count": 4,
    "conditional_count": 0,
    "has_priority": true,
    "has_sf": false
@@ -16714,11 +16835,72 @@
     {
      "date": "2026-09-30",
      "sport": "mlb",
+     "start_pt": "10:08",
+     "start_min": 608,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason Wild Card Gm 2 x4 (all four series) - ESTIMATED slot 10:08 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
+    },
+    {
+     "date": "2026-09-30",
+     "sport": "mlb",
+     "start_pt": "12:08",
+     "start_min": 728,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason Wild Card Gm 2 x4 (all four series) - ESTIMATED slot 12:08 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
+    },
+    {
+     "date": "2026-09-30",
+     "sport": "mlb",
+     "start_pt": "15:08",
+     "start_min": 908,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason Wild Card Gm 2 x4 (all four series) - ESTIMATED slot 15:08 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
+    },
+    {
+     "date": "2026-09-30",
+     "sport": "mlb",
+     "start_pt": "18:08",
+     "start_min": 1088,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason Wild Card Gm 2 x4 (all four series) - ESTIMATED slot 18:08 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
+    },
+    {
+     "date": "2026-09-30",
+     "sport": "mlb",
      "start_pt": null,
      "start_min": null,
      "tbd_count": 4,
-     "label": "MLB postseason - 4 game(s), teams & times UNCONFIRMED",
-     "source": "mlb_2026_postseason_tbd.txt"
+     "label": "MLB postseason - Wild Card Gm 2 x4 (all four series) (4 game(s), teams & times UNCONFIRMED) [NBC/Peacock/NBCSN]",
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
     },
     {
      "date": "2026-09-30",
@@ -16734,22 +16916,62 @@
      "note": "Game 2 window for the first round is Tue Sep 29 OR Wed Sep 30 (ESPN 2026-09-09); both dates blocked, flagged"
     }
    ],
-   "blocked": [],
+   "blocked": [
+    {
+     "start": 608,
+     "end": 892,
+     "start_t": "10:08 AM",
+     "end_t": "2:52 PM"
+    },
+    {
+     "start": 908,
+     "end": 1072,
+     "start_t": "3:08 PM",
+     "end_t": "5:52 PM"
+    },
+    {
+     "start": 1088,
+     "end": 1252,
+     "start_t": "6:08 PM",
+     "end_t": "8:52 PM"
+    }
+   ],
    "free": [],
    "free_minutes": 0,
    "provisional_free": [
     {
      "start": 0,
-     "end": 1440,
+     "end": 608,
      "start_t": "12:00 AM",
+     "end_t": "10:08 AM",
+     "minutes": 608
+    },
+    {
+     "start": 892,
+     "end": 908,
+     "start_t": "2:52 PM",
+     "end_t": "3:08 PM",
+     "minutes": 16
+    },
+    {
+     "start": 1072,
+     "end": 1088,
+     "start_t": "5:52 PM",
+     "end_t": "6:08 PM",
+     "minutes": 16
+    },
+    {
+     "start": 1252,
+     "end": 1440,
+     "start_t": "8:52 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 1440
+     "minutes": 188
     }
    ],
-   "game_count": 0,
+   "game_count": 4,
    "nfl_all_count": 0,
    "tbd_count": 5,
-   "estimated_count": 0,
+   "estimated_count": 4,
    "conditional_count": 0,
    "has_priority": true,
    "has_sf": false
@@ -16759,6 +16981,51 @@
    "weekday": "Thu",
    "status": "NOT FREE \u2014 TIME TBD",
    "games": [
+    {
+     "date": "2026-10-01",
+     "sport": "mlb",
+     "start_pt": "10:08",
+     "start_min": 608,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason Wild Card Gm 3 x4 (if necessary) - ESTIMATED slot 10:08 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
+    },
+    {
+     "date": "2026-10-01",
+     "sport": "mlb",
+     "start_pt": "12:08",
+     "start_min": 728,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason Wild Card Gm 3 x4 (if necessary) - ESTIMATED slot 12:08 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
+    },
+    {
+     "date": "2026-10-01",
+     "sport": "mlb",
+     "start_pt": "15:08",
+     "start_min": 908,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason Wild Card Gm 3 x4 (if necessary) - ESTIMATED slot 15:08 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
+    },
     {
      "date": "2026-10-01",
      "sport": "nfl_all",
@@ -16777,6 +17044,21 @@
      "wwo": true,
      "wwo_slot": "TNF",
      "wwo_event": "https://www.westwoodonesports.com/events/548554"
+    },
+    {
+     "date": "2026-10-01",
+     "sport": "mlb",
+     "start_pt": "18:08",
+     "start_min": 1088,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason Wild Card Gm 3 x4 (if necessary) - ESTIMATED slot 18:08 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
     },
     {
      "date": "2026-10-01",
@@ -16799,8 +17081,9 @@
      "start_pt": null,
      "start_min": null,
      "tbd_count": 4,
-     "label": "MLB postseason - 4 game(s), teams & times UNCONFIRMED",
-     "source": "mlb_2026_postseason_tbd.txt"
+     "label": "MLB postseason - Wild Card Gm 3 x4 (if necessary) (4 game(s), teams & times UNCONFIRMED) [NBC/Peacock/NBCSN]",
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
     },
     {
      "date": "2026-10-01",
@@ -16816,9 +17099,15 @@
    ],
    "blocked": [
     {
-     "start": 1035,
+     "start": 608,
+     "end": 892,
+     "start_t": "10:08 AM",
+     "end_t": "2:52 PM"
+    },
+    {
+     "start": 908,
      "end": 1290,
-     "start_t": "5:15 PM",
+     "start_t": "3:08 PM",
      "end_t": "9:30 PM"
     }
    ],
@@ -16827,10 +17116,17 @@
    "provisional_free": [
     {
      "start": 0,
-     "end": 1035,
+     "end": 608,
      "start_t": "12:00 AM",
-     "end_t": "5:15 PM",
-     "minutes": 1035
+     "end_t": "10:08 AM",
+     "minutes": 608
+    },
+    {
+     "start": 892,
+     "end": 908,
+     "start_t": "2:52 PM",
+     "end_t": "3:08 PM",
+     "minutes": 16
     },
     {
      "start": 1290,
@@ -16840,10 +17136,10 @@
      "minutes": 150
     }
    ],
-   "game_count": 2,
+   "game_count": 6,
    "nfl_all_count": 1,
    "tbd_count": 4,
-   "estimated_count": 0,
+   "estimated_count": 4,
    "conditional_count": 1,
    "has_priority": true,
    "has_sf": false
@@ -16892,6 +17188,21 @@
    "games": [
     {
      "date": "2026-10-03",
+     "sport": "mlb",
+     "start_pt": "11:08",
+     "start_min": 668,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason Division Series Gm 1 x4 (ALDS TBS / NLDS FOX) - ESTIMATED slot 11:08 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
+    },
+    {
+     "date": "2026-10-03",
      "sport": "ncaa",
      "label": "Cal at UNLV",
      "team": "Cal",
@@ -16923,6 +17234,36 @@
     },
     {
      "date": "2026-10-03",
+     "sport": "mlb",
+     "start_pt": "13:08",
+     "start_min": 788,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason Division Series Gm 1 x4 (ALDS TBS / NLDS FOX) - ESTIMATED slot 13:08 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
+    },
+    {
+     "date": "2026-10-03",
+     "sport": "mlb",
+     "start_pt": "15:38",
+     "start_min": 938,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason Division Series Gm 1 x4 (ALDS TBS / NLDS FOX) - ESTIMATED slot 15:38 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
+    },
+    {
+     "date": "2026-10-03",
      "sport": "ncaaw",
      "away": "Notre Dame",
      "home": "North Carolina",
@@ -16937,6 +17278,21 @@
      "start_min": 990,
      "estimated": true,
      "note": "kickoff TBD - estimated showcase slot 7:30 PM ET (second possible window)"
+    },
+    {
+     "date": "2026-10-03",
+     "sport": "mlb",
+     "start_pt": "17:38",
+     "start_min": 1058,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason Division Series Gm 1 x4 (ALDS TBS / NLDS FOX) - ESTIMATED slot 17:38 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
     },
     {
      "date": "2026-10-03",
@@ -16959,8 +17315,9 @@
      "start_pt": null,
      "start_min": null,
      "tbd_count": 4,
-     "label": "MLB postseason - 4 game(s), teams & times UNCONFIRMED",
-     "source": "mlb_2026_postseason_tbd.txt"
+     "label": "MLB postseason - Division Series Gm 1 x4 (ALDS TBS / NLDS FOX) (4 game(s), teams & times UNCONFIRMED) [ALDS TBS/truTV/HBO Max; NLDS FOX/FS1]",
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
     },
     {
      "date": "2026-10-03",
@@ -16979,15 +17336,9 @@
    ],
    "blocked": [
     {
-     "start": 750,
-     "end": 954,
-     "start_t": "12:30 PM",
-     "end_t": "3:54 PM"
-    },
-    {
-     "start": 990,
+     "start": 668,
      "end": 1290,
-     "start_t": "4:30 PM",
+     "start_t": "11:08 AM",
      "end_t": "9:30 PM"
     }
    ],
@@ -16996,17 +17347,10 @@
    "provisional_free": [
     {
      "start": 0,
-     "end": 750,
+     "end": 668,
      "start_t": "12:00 AM",
-     "end_t": "12:30 PM",
-     "minutes": 750
-    },
-    {
-     "start": 954,
-     "end": 990,
-     "start_t": "3:54 PM",
-     "end_t": "4:30 PM",
-     "minutes": 36
+     "end_t": "11:08 AM",
+     "minutes": 668
     },
     {
      "start": 1290,
@@ -17016,10 +17360,10 @@
      "minutes": 150
     }
    ],
-   "game_count": 4,
+   "game_count": 8,
    "nfl_all_count": 0,
    "tbd_count": 5,
-   "estimated_count": 2,
+   "estimated_count": 6,
    "conditional_count": 0,
    "has_priority": true,
    "has_sf": false
@@ -17194,6 +17538,21 @@
     },
     {
      "date": "2026-10-04",
+     "sport": "mlb",
+     "start_pt": "13:08",
+     "start_min": 788,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason NLDS Gm 2 x2 (Sunday pattern) - ESTIMATED slot 13:08 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
+    },
+    {
+     "date": "2026-10-04",
      "sport": "nfl_all",
      "week": "Wk 4",
      "away": "DEN",
@@ -17274,6 +17633,21 @@
     },
     {
      "date": "2026-10-04",
+     "sport": "mlb",
+     "start_pt": "17:03",
+     "start_min": 1023,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason NLDS Gm 2 x2 (Sunday pattern) - ESTIMATED slot 17:03 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
+    },
+    {
+     "date": "2026-10-04",
      "sport": "nfl_all",
      "week": "Wk 4",
      "away": "DET",
@@ -17297,8 +17671,9 @@
      "start_pt": null,
      "start_min": null,
      "tbd_count": 2,
-     "label": "MLB postseason - 2 game(s), teams & times UNCONFIRMED",
-     "source": "mlb_2026_postseason_tbd.txt"
+     "label": "MLB postseason - NLDS Gm 2 x2 (Sunday pattern) (2 game(s), teams & times UNCONFIRMED) [FOX/FS1/Fox Deportes]",
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
     },
     {
      "date": "2026-10-04",
@@ -17351,10 +17726,10 @@
      "minutes": 208
     }
    ],
-   "game_count": 15,
+   "game_count": 17,
    "nfl_all_count": 13,
    "tbd_count": 2,
-   "estimated_count": 0,
+   "estimated_count": 2,
    "conditional_count": 1,
    "has_priority": true,
    "has_sf": true
@@ -17364,6 +17739,21 @@
    "weekday": "Mon",
    "status": "NOT FREE \u2014 TIME TBD",
    "games": [
+    {
+     "date": "2026-10-05",
+     "sport": "mlb",
+     "start_pt": "15:08",
+     "start_min": 908,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason ALDS Gm 2 x2 (Monday pattern) - ESTIMATED slot 15:08 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
+    },
     {
      "date": "2026-10-05",
      "sport": "nhl",
@@ -17401,19 +17791,35 @@
     {
      "date": "2026-10-05",
      "sport": "mlb",
+     "start_pt": "18:08",
+     "start_min": 1088,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason ALDS Gm 2 x2 (Monday pattern) - ESTIMATED slot 18:08 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
+    },
+    {
+     "date": "2026-10-05",
+     "sport": "mlb",
      "start_pt": null,
      "start_min": null,
      "tbd_count": 2,
-     "label": "MLB postseason - 2 game(s), teams & times UNCONFIRMED",
-     "source": "mlb_2026_postseason_tbd.txt"
+     "label": "MLB postseason - ALDS Gm 2 x2 (Monday pattern) (2 game(s), teams & times UNCONFIRMED) [TBS/truTV/HBO Max]",
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
     }
    ],
    "blocked": [
     {
-     "start": 1020,
-     "end": 1227,
-     "start_t": "5:00 PM",
-     "end_t": "8:27 PM"
+     "start": 908,
+     "end": 1252,
+     "start_t": "3:08 PM",
+     "end_t": "8:52 PM"
     }
    ],
    "free": [],
@@ -17421,23 +17827,23 @@
    "provisional_free": [
     {
      "start": 0,
-     "end": 1020,
+     "end": 908,
      "start_t": "12:00 AM",
-     "end_t": "5:00 PM",
-     "minutes": 1020
+     "end_t": "3:08 PM",
+     "minutes": 908
     },
     {
-     "start": 1227,
+     "start": 1252,
      "end": 1440,
-     "start_t": "8:27 PM",
+     "start_t": "8:52 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 213
+     "minutes": 188
     }
    ],
-   "game_count": 2,
+   "game_count": 4,
    "nfl_all_count": 1,
    "tbd_count": 2,
-   "estimated_count": 0,
+   "estimated_count": 2,
    "conditional_count": 0,
    "has_priority": true,
    "has_sf": false
@@ -17447,6 +17853,36 @@
    "weekday": "Tue",
    "status": "NOT FREE \u2014 TIME TBD",
    "games": [
+    {
+     "date": "2026-10-06",
+     "sport": "mlb",
+     "start_pt": "13:08",
+     "start_min": 788,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason NLDS Gm 3 x2 (Tuesday pattern) - ESTIMATED slot 13:08 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
+    },
+    {
+     "date": "2026-10-06",
+     "sport": "mlb",
+     "start_pt": "17:08",
+     "start_min": 1028,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason NLDS Gm 3 x2 (Tuesday pattern) - ESTIMATED slot 17:08 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
+    },
     {
      "date": "2026-10-06",
      "sport": "nba",
@@ -17468,15 +17904,22 @@
      "start_pt": null,
      "start_min": null,
      "tbd_count": 2,
-     "label": "MLB postseason - 2 game(s), teams & times UNCONFIRMED",
-     "source": "mlb_2026_postseason_tbd.txt"
+     "label": "MLB postseason - NLDS Gm 3 x2 (Tuesday pattern) (2 game(s), teams & times UNCONFIRMED) [FOX/FS1/Fox Deportes]",
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
     }
    ],
    "blocked": [
     {
-     "start": 1140,
+     "start": 788,
+     "end": 952,
+     "start_t": "1:08 PM",
+     "end_t": "3:52 PM"
+    },
+    {
+     "start": 1028,
      "end": 1278,
-     "start_t": "7:00 PM",
+     "start_t": "5:08 PM",
      "end_t": "9:18 PM"
     }
    ],
@@ -17485,10 +17928,17 @@
    "provisional_free": [
     {
      "start": 0,
-     "end": 1140,
+     "end": 788,
      "start_t": "12:00 AM",
-     "end_t": "7:00 PM",
-     "minutes": 1140
+     "end_t": "1:08 PM",
+     "minutes": 788
+    },
+    {
+     "start": 952,
+     "end": 1028,
+     "start_t": "3:52 PM",
+     "end_t": "5:08 PM",
+     "minutes": 76
     },
     {
      "start": 1278,
@@ -17498,10 +17948,10 @@
      "minutes": 162
     }
    ],
-   "game_count": 1,
+   "game_count": 3,
    "nfl_all_count": 0,
    "tbd_count": 2,
-   "estimated_count": 0,
+   "estimated_count": 2,
    "conditional_count": 0,
    "has_priority": true,
    "has_sf": false
@@ -17511,6 +17961,66 @@
    "weekday": "Wed",
    "status": "NOT FREE \u2014 TIME TBD",
    "games": [
+    {
+     "date": "2026-10-07",
+     "sport": "mlb",
+     "start_pt": "12:08",
+     "start_min": 728,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason ALDS Gm 3 x2 + NLDS Gm 4 x2 (Wednesday pattern) - ESTIMATED slot 12:08 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
+    },
+    {
+     "date": "2026-10-07",
+     "sport": "mlb",
+     "start_pt": "14:08",
+     "start_min": 848,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason ALDS Gm 3 x2 + NLDS Gm 4 x2 (Wednesday pattern) - ESTIMATED slot 14:08 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
+    },
+    {
+     "date": "2026-10-07",
+     "sport": "mlb",
+     "start_pt": "16:08",
+     "start_min": 968,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason ALDS Gm 3 x2 + NLDS Gm 4 x2 (Wednesday pattern) - ESTIMATED slot 16:08 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
+    },
+    {
+     "date": "2026-10-07",
+     "sport": "mlb",
+     "start_pt": "18:08",
+     "start_min": 1088,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason ALDS Gm 3 x2 + NLDS Gm 4 x2 (Wednesday pattern) - ESTIMATED slot 18:08 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
+    },
     {
      "date": "2026-10-07",
      "sport": "nba",
@@ -17532,8 +18042,9 @@
      "start_pt": null,
      "start_min": null,
      "tbd_count": 4,
-     "label": "MLB postseason - 4 game(s), teams & times UNCONFIRMED",
-     "source": "mlb_2026_postseason_tbd.txt"
+     "label": "MLB postseason - ALDS Gm 3 x2 + NLDS Gm 4 x2 (Wednesday pattern) (4 game(s), teams & times UNCONFIRMED) [ALDS TBS; NLDS FOX/FS1]",
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
     },
     {
      "date": "2026-10-07",
@@ -17549,9 +18060,9 @@
    ],
    "blocked": [
     {
-     "start": 1140,
+     "start": 728,
      "end": 1278,
-     "start_t": "7:00 PM",
+     "start_t": "12:08 PM",
      "end_t": "9:18 PM"
     }
    ],
@@ -17560,10 +18071,10 @@
    "provisional_free": [
     {
      "start": 0,
-     "end": 1140,
+     "end": 728,
      "start_t": "12:00 AM",
-     "end_t": "7:00 PM",
-     "minutes": 1140
+     "end_t": "12:08 PM",
+     "minutes": 728
     },
     {
      "start": 1278,
@@ -17573,10 +18084,10 @@
      "minutes": 162
     }
    ],
-   "game_count": 1,
+   "game_count": 5,
    "nfl_all_count": 0,
    "tbd_count": 4,
-   "estimated_count": 0,
+   "estimated_count": 4,
    "conditional_count": 1,
    "has_priority": true,
    "has_sf": false
@@ -17586,6 +18097,21 @@
    "weekday": "Thu",
    "status": "NOT FREE \u2014 TIME TBD",
    "games": [
+    {
+     "date": "2026-10-08",
+     "sport": "mlb",
+     "start_pt": "15:08",
+     "start_min": 908,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason ALDS Gm 4 x2 (Thursday pattern) - ESTIMATED slot 15:08 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
+    },
     {
      "date": "2026-10-08",
      "sport": "nhl",
@@ -17623,19 +18149,35 @@
     {
      "date": "2026-10-08",
      "sport": "mlb",
+     "start_pt": "18:08",
+     "start_min": 1088,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason ALDS Gm 4 x2 (Thursday pattern) - ESTIMATED slot 18:08 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
+    },
+    {
+     "date": "2026-10-08",
+     "sport": "mlb",
      "start_pt": null,
      "start_min": null,
      "tbd_count": 2,
-     "label": "MLB postseason - 2 game(s), teams & times UNCONFIRMED",
-     "source": "mlb_2026_postseason_tbd.txt"
+     "label": "MLB postseason - ALDS Gm 4 x2 (Thursday pattern) (2 game(s), teams & times UNCONFIRMED) [TBS/truTV/HBO Max]",
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
     }
    ],
    "blocked": [
     {
-     "start": 1020,
-     "end": 1227,
-     "start_t": "5:00 PM",
-     "end_t": "8:27 PM"
+     "start": 908,
+     "end": 1252,
+     "start_t": "3:08 PM",
+     "end_t": "8:52 PM"
     }
    ],
    "free": [],
@@ -17643,23 +18185,23 @@
    "provisional_free": [
     {
      "start": 0,
-     "end": 1020,
+     "end": 908,
      "start_t": "12:00 AM",
-     "end_t": "5:00 PM",
-     "minutes": 1020
+     "end_t": "3:08 PM",
+     "minutes": 908
     },
     {
-     "start": 1227,
+     "start": 1252,
      "end": 1440,
-     "start_t": "8:27 PM",
+     "start_t": "8:52 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 213
+     "minutes": 188
     }
    ],
-   "game_count": 2,
+   "game_count": 4,
    "nfl_all_count": 1,
    "tbd_count": 2,
-   "estimated_count": 0,
+   "estimated_count": 2,
    "conditional_count": 0,
    "has_priority": true,
    "has_sf": false
@@ -17672,11 +18214,42 @@
     {
      "date": "2026-10-09",
      "sport": "mlb",
+     "start_pt": "13:40",
+     "start_min": 820,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason NLDS Gm 5 x2 (Friday pattern) - ESTIMATED slot 13:40 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
+    },
+    {
+     "date": "2026-10-09",
+     "sport": "mlb",
+     "start_pt": "17:08",
+     "start_min": 1028,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason NLDS Gm 5 x2 (Friday pattern) - ESTIMATED slot 17:08 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
+    },
+    {
+     "date": "2026-10-09",
+     "sport": "mlb",
      "start_pt": null,
      "start_min": null,
      "tbd_count": 2,
-     "label": "MLB postseason - 2 game(s), teams & times UNCONFIRMED",
-     "source": "mlb_2026_postseason_tbd.txt"
+     "label": "MLB postseason - NLDS Gm 5 x2 (Friday pattern) (2 game(s), teams & times UNCONFIRMED) [FOX/FS1/Fox Deportes]",
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
     },
     {
      "date": "2026-10-09",
@@ -17690,22 +18263,49 @@
      "review": "https://www.espn.com/wnba/story/_/id/49882118/wnba-playoffs-2026-schedule-games-first-round-semifinals-finals-scores-results-news-highlights"
     }
    ],
-   "blocked": [],
+   "blocked": [
+    {
+     "start": 820,
+     "end": 984,
+     "start_t": "1:40 PM",
+     "end_t": "4:24 PM"
+    },
+    {
+     "start": 1028,
+     "end": 1192,
+     "start_t": "5:08 PM",
+     "end_t": "7:52 PM"
+    }
+   ],
    "free": [],
    "free_minutes": 0,
    "provisional_free": [
     {
      "start": 0,
-     "end": 1440,
+     "end": 820,
      "start_t": "12:00 AM",
+     "end_t": "1:40 PM",
+     "minutes": 820
+    },
+    {
+     "start": 984,
+     "end": 1028,
+     "start_t": "4:24 PM",
+     "end_t": "5:08 PM",
+     "minutes": 44
+    },
+    {
+     "start": 1192,
+     "end": 1440,
+     "start_t": "7:52 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 1440
+     "minutes": 248
     }
    ],
-   "game_count": 0,
+   "game_count": 2,
    "nfl_all_count": 0,
    "tbd_count": 2,
-   "estimated_count": 0,
+   "estimated_count": 2,
    "conditional_count": 1,
    "has_priority": false,
    "has_sf": false
@@ -17764,6 +18364,21 @@
     },
     {
      "date": "2026-10-10",
+     "sport": "mlb",
+     "start_pt": "13:38",
+     "start_min": 818,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason ALDS Gm 5 x2 (Saturday pattern) - ESTIMATED slot 13:38 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
+    },
+    {
+     "date": "2026-10-10",
      "sport": "ncaaw",
      "away": "Indiana",
      "home": "Nebraska",
@@ -17778,6 +18393,21 @@
      "start_min": 990,
      "estimated": true,
      "note": "kickoff TBD - estimated showcase slot 7:30 PM ET (second possible window)"
+    },
+    {
+     "date": "2026-10-10",
+     "sport": "mlb",
+     "start_pt": "17:08",
+     "start_min": 1028,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason ALDS Gm 5 x2 (Saturday pattern) - ESTIMATED slot 17:08 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
     },
     {
      "date": "2026-10-10",
@@ -17812,8 +18442,9 @@
      "start_pt": null,
      "start_min": null,
      "tbd_count": 2,
-     "label": "MLB postseason - 2 game(s), teams & times UNCONFIRMED",
-     "source": "mlb_2026_postseason_tbd.txt"
+     "label": "MLB postseason - ALDS Gm 5 x2 (Saturday pattern) (2 game(s), teams & times UNCONFIRMED) [TBS/truTV/HBO Max]",
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
     },
     {
      "date": "2026-10-10",
@@ -17833,9 +18464,9 @@
    "blocked": [
     {
      "start": 750,
-     "end": 954,
+     "end": 982,
      "start_t": "12:30 PM",
-     "end_t": "3:54 PM"
+     "end_t": "4:22 PM"
     },
     {
      "start": 990,
@@ -17855,11 +18486,11 @@
      "minutes": 750
     },
     {
-     "start": 954,
+     "start": 982,
      "end": 990,
-     "start_t": "3:54 PM",
+     "start_t": "4:22 PM",
      "end_t": "4:30 PM",
-     "minutes": 36
+     "minutes": 8
     },
     {
      "start": 1230,
@@ -17869,10 +18500,10 @@
      "minutes": 210
     }
    ],
-   "game_count": 6,
+   "game_count": 8,
    "nfl_all_count": 0,
    "tbd_count": 3,
-   "estimated_count": 2,
+   "estimated_count": 4,
    "conditional_count": 0,
    "has_priority": true,
    "has_sf": false
@@ -18096,6 +18727,21 @@
     },
     {
      "date": "2026-10-11",
+     "sport": "mlb",
+     "start_pt": "17:03",
+     "start_min": 1023,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason NLCS Gm 1 (2025 Sunday LCS opener: 8:03 PM ET) - ESTIMATED slot 17:03 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
+    },
+    {
+     "date": "2026-10-11",
      "sport": "nfl_all",
      "week": "Wk 5",
      "away": "BAL",
@@ -18119,8 +18765,9 @@
      "start_pt": null,
      "start_min": null,
      "tbd_count": 1,
-     "label": "MLB postseason - 1 game(s), teams & times UNCONFIRMED",
-     "source": "mlb_2026_postseason_tbd.txt"
+     "label": "MLB postseason - NLCS Gm 1 (2025 Sunday LCS opener: 8:03 PM ET) (1 game(s), teams & times UNCONFIRMED) [FOX/FS1/Fox Deportes]",
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
     },
     {
      "date": "2026-10-11",
@@ -18148,9 +18795,9 @@
      "end_t": "4:37 PM"
     },
     {
-     "start": 1040,
+     "start": 1023,
      "end": 1232,
-     "start_t": "5:20 PM",
+     "start_t": "5:03 PM",
      "end_t": "8:32 PM"
     }
    ],
@@ -18173,10 +18820,10 @@
     },
     {
      "start": 997,
-     "end": 1040,
+     "end": 1023,
      "start_t": "4:37 PM",
-     "end_t": "5:20 PM",
-     "minutes": 43
+     "end_t": "5:03 PM",
+     "minutes": 26
     },
     {
      "start": 1232,
@@ -18186,10 +18833,10 @@
      "minutes": 208
     }
    ],
-   "game_count": 13,
+   "game_count": 14,
    "nfl_all_count": 12,
    "tbd_count": 1,
-   "estimated_count": 0,
+   "estimated_count": 1,
    "conditional_count": 1,
    "has_priority": true,
    "has_sf": true
@@ -18199,6 +18846,36 @@
    "weekday": "Mon",
    "status": "NOT FREE \u2014 TIME TBD",
    "games": [
+    {
+     "date": "2026-10-12",
+     "sport": "mlb",
+     "start_pt": "14:03",
+     "start_min": 843,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason ALCS Gm 1 + NLCS Gm 2 (2025 Monday: 5:03 + 8:08 PM ET) - ESTIMATED slot 14:03 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
+    },
+    {
+     "date": "2026-10-12",
+     "sport": "mlb",
+     "start_pt": "17:08",
+     "start_min": 1028,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason ALCS Gm 1 + NLCS Gm 2 (2025 Monday: 5:03 + 8:08 PM ET) - ESTIMATED slot 17:08 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
+    },
     {
      "date": "2026-10-12",
      "sport": "nfl_all",
@@ -18224,15 +18901,22 @@
      "start_pt": null,
      "start_min": null,
      "tbd_count": 2,
-     "label": "MLB postseason - 2 game(s), teams & times UNCONFIRMED",
-     "source": "mlb_2026_postseason_tbd.txt"
+     "label": "MLB postseason - ALCS Gm 1 + NLCS Gm 2 (2025 Monday: 5:03 + 8:08 PM ET) (2 game(s), teams & times UNCONFIRMED) [ALCS TBS; NLCS FOX/FS1]",
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
     }
    ],
    "blocked": [
     {
-     "start": 1035,
+     "start": 843,
+     "end": 1007,
+     "start_t": "2:03 PM",
+     "end_t": "4:47 PM"
+    },
+    {
+     "start": 1028,
      "end": 1227,
-     "start_t": "5:15 PM",
+     "start_t": "5:08 PM",
      "end_t": "8:27 PM"
     }
    ],
@@ -18241,10 +18925,17 @@
    "provisional_free": [
     {
      "start": 0,
-     "end": 1035,
+     "end": 843,
      "start_t": "12:00 AM",
-     "end_t": "5:15 PM",
-     "minutes": 1035
+     "end_t": "2:03 PM",
+     "minutes": 843
+    },
+    {
+     "start": 1007,
+     "end": 1028,
+     "start_t": "4:47 PM",
+     "end_t": "5:08 PM",
+     "minutes": 21
     },
     {
      "start": 1227,
@@ -18254,10 +18945,10 @@
      "minutes": 213
     }
    ],
-   "game_count": 1,
+   "game_count": 3,
    "nfl_all_count": 1,
    "tbd_count": 2,
-   "estimated_count": 0,
+   "estimated_count": 2,
    "conditional_count": 0,
    "has_priority": false,
    "has_sf": false
@@ -18267,6 +18958,21 @@
    "weekday": "Tue",
    "status": "NOT FREE \u2014 TIME TBD",
    "games": [
+    {
+     "date": "2026-10-13",
+     "sport": "mlb",
+     "start_pt": "17:08",
+     "start_min": 1028,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason ALCS Gm 2 (2025 Tuesday LCS: 8:08 PM ET) - ESTIMATED slot 17:08 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
+    },
     {
      "date": "2026-10-13",
      "sport": "nba",
@@ -18303,15 +19009,16 @@
      "start_pt": null,
      "start_min": null,
      "tbd_count": 1,
-     "label": "MLB postseason - 1 game(s), teams & times UNCONFIRMED",
-     "source": "mlb_2026_postseason_tbd.txt"
+     "label": "MLB postseason - ALCS Gm 2 (2025 Tuesday LCS: 8:08 PM ET) (1 game(s), teams & times UNCONFIRMED) [TBS/truTV/HBO Max]",
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
     }
    ],
    "blocked": [
     {
-     "start": 1140,
+     "start": 1028,
      "end": 1350,
-     "start_t": "7:00 PM",
+     "start_t": "5:08 PM",
      "end_t": "10:30 PM"
     }
    ],
@@ -18320,10 +19027,10 @@
    "provisional_free": [
     {
      "start": 0,
-     "end": 1140,
+     "end": 1028,
      "start_t": "12:00 AM",
-     "end_t": "7:00 PM",
-     "minutes": 1140
+     "end_t": "5:08 PM",
+     "minutes": 1028
     },
     {
      "start": 1350,
@@ -18333,10 +19040,10 @@
      "minutes": 90
     }
    ],
-   "game_count": 2,
+   "game_count": 3,
    "nfl_all_count": 0,
    "tbd_count": 1,
-   "estimated_count": 0,
+   "estimated_count": 1,
    "conditional_count": 0,
    "has_priority": true,
    "has_sf": false
@@ -18346,6 +19053,21 @@
    "weekday": "Wed",
    "status": "NOT FREE \u2014 TIME TBD",
    "games": [
+    {
+     "date": "2026-10-14",
+     "sport": "mlb",
+     "start_pt": "14:08",
+     "start_min": 848,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason NLCS Gm 3 (2025 mid-series LCS: 5:08 PM ET) - ESTIMATED slot 14:08 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
+    },
     {
      "date": "2026-10-14",
      "sport": "mls",
@@ -18364,8 +19086,9 @@
      "start_pt": null,
      "start_min": null,
      "tbd_count": 1,
-     "label": "MLB postseason - 1 game(s), teams & times UNCONFIRMED",
-     "source": "mlb_2026_postseason_tbd.txt"
+     "label": "MLB postseason - NLCS Gm 3 (2025 mid-series LCS: 5:08 PM ET) (1 game(s), teams & times UNCONFIRMED) [FOX/FS1/Fox Deportes]",
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
     },
     {
      "date": "2026-10-14",
@@ -18381,6 +19104,12 @@
    ],
    "blocked": [
     {
+     "start": 848,
+     "end": 1012,
+     "start_t": "2:08 PM",
+     "end_t": "4:52 PM"
+    },
+    {
      "start": 1110,
      "end": 1230,
      "start_t": "6:30 PM",
@@ -18392,10 +19121,17 @@
    "provisional_free": [
     {
      "start": 0,
-     "end": 1110,
+     "end": 848,
      "start_t": "12:00 AM",
+     "end_t": "2:08 PM",
+     "minutes": 848
+    },
+    {
+     "start": 1012,
+     "end": 1110,
+     "start_t": "4:52 PM",
      "end_t": "6:30 PM",
-     "minutes": 1110
+     "minutes": 98
     },
     {
      "start": 1230,
@@ -18405,10 +19141,10 @@
      "minutes": 210
     }
    ],
-   "game_count": 1,
+   "game_count": 2,
    "nfl_all_count": 0,
    "tbd_count": 1,
-   "estimated_count": 0,
+   "estimated_count": 1,
    "conditional_count": 1,
    "has_priority": false,
    "has_sf": false
@@ -18418,6 +19154,21 @@
    "weekday": "Thu",
    "status": "NOT FREE \u2014 TIME TBD",
    "games": [
+    {
+     "date": "2026-10-15",
+     "sport": "mlb",
+     "start_pt": "14:08",
+     "start_min": 848,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason NLCS Gm 4 + ALCS Gm 3 (5:08 + 8:08 PM ET pattern) - ESTIMATED slot 14:08 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
+    },
     {
      "date": "2026-10-15",
      "sport": "nhl",
@@ -18432,6 +19183,21 @@
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401892513/x",
      "note": "@ Bridgestone Arena"
+    },
+    {
+     "date": "2026-10-15",
+     "sport": "mlb",
+     "start_pt": "17:08",
+     "start_min": 1028,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason NLCS Gm 4 + ALCS Gm 3 (5:08 + 8:08 PM ET pattern) - ESTIMATED slot 17:08 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
     },
     {
      "date": "2026-10-15",
@@ -18458,11 +19224,18 @@
      "start_pt": null,
      "start_min": null,
      "tbd_count": 2,
-     "label": "MLB postseason - 2 game(s), teams & times UNCONFIRMED",
-     "source": "mlb_2026_postseason_tbd.txt"
+     "label": "MLB postseason - NLCS Gm 4 + ALCS Gm 3 (5:08 + 8:08 PM ET pattern) (2 game(s), teams & times UNCONFIRMED) [NLCS FOX/FS1; ALCS TBS]",
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
     }
    ],
    "blocked": [
+    {
+     "start": 848,
+     "end": 1012,
+     "start_t": "2:08 PM",
+     "end_t": "4:52 PM"
+    },
     {
      "start": 1020,
      "end": 1227,
@@ -18475,10 +19248,17 @@
    "provisional_free": [
     {
      "start": 0,
-     "end": 1020,
+     "end": 848,
      "start_t": "12:00 AM",
+     "end_t": "2:08 PM",
+     "minutes": 848
+    },
+    {
+     "start": 1012,
+     "end": 1020,
+     "start_t": "4:52 PM",
      "end_t": "5:00 PM",
-     "minutes": 1020
+     "minutes": 8
     },
     {
      "start": 1227,
@@ -18488,10 +19268,10 @@
      "minutes": 213
     }
    ],
-   "game_count": 2,
+   "game_count": 4,
    "nfl_all_count": 1,
    "tbd_count": 2,
-   "estimated_count": 0,
+   "estimated_count": 2,
    "conditional_count": 0,
    "has_priority": true,
    "has_sf": false
@@ -18501,6 +19281,36 @@
    "weekday": "Fri",
    "status": "NOT FREE \u2014 TIME TBD",
    "games": [
+    {
+     "date": "2026-10-16",
+     "sport": "mlb",
+     "start_pt": "14:08",
+     "start_min": 848,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason NLCS Gm 5 + ALCS Gm 4 (5:08 + 8:08 PM ET pattern) - ESTIMATED slot 14:08 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
+    },
+    {
+     "date": "2026-10-16",
+     "sport": "mlb",
+     "start_pt": "17:08",
+     "start_min": 1028,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason NLCS Gm 5 + ALCS Gm 4 (5:08 + 8:08 PM ET pattern) - ESTIMATED slot 17:08 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
+    },
     {
      "date": "2026-10-16",
      "sport": "nba",
@@ -18522,15 +19332,22 @@
      "start_pt": null,
      "start_min": null,
      "tbd_count": 2,
-     "label": "MLB postseason - 2 game(s), teams & times UNCONFIRMED",
-     "source": "mlb_2026_postseason_tbd.txt"
+     "label": "MLB postseason - NLCS Gm 5 + ALCS Gm 4 (5:08 + 8:08 PM ET pattern) (2 game(s), teams & times UNCONFIRMED) [NLCS FOX/FS1; ALCS TBS]",
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
     }
    ],
    "blocked": [
     {
-     "start": 1140,
+     "start": 848,
+     "end": 1012,
+     "start_t": "2:08 PM",
+     "end_t": "4:52 PM"
+    },
+    {
+     "start": 1028,
      "end": 1278,
-     "start_t": "7:00 PM",
+     "start_t": "5:08 PM",
      "end_t": "9:18 PM"
     }
    ],
@@ -18539,10 +19356,17 @@
    "provisional_free": [
     {
      "start": 0,
-     "end": 1140,
+     "end": 848,
      "start_t": "12:00 AM",
-     "end_t": "7:00 PM",
-     "minutes": 1140
+     "end_t": "2:08 PM",
+     "minutes": 848
+    },
+    {
+     "start": 1012,
+     "end": 1028,
+     "start_t": "4:52 PM",
+     "end_t": "5:08 PM",
+     "minutes": 16
     },
     {
      "start": 1278,
@@ -18552,10 +19376,10 @@
      "minutes": 162
     }
    ],
-   "game_count": 1,
+   "game_count": 3,
    "nfl_all_count": 0,
    "tbd_count": 2,
-   "estimated_count": 0,
+   "estimated_count": 2,
    "conditional_count": 0,
    "has_priority": true,
    "has_sf": false
@@ -18581,6 +19405,21 @@
      "start_min": 750,
      "estimated": true,
      "note": "kickoff TBA (foxsports.com Big Ten schedule) - estimated showcase slot 3:30 PM ET; Michigan Stadium"
+    },
+    {
+     "date": "2026-10-17",
+     "sport": "mlb",
+     "start_pt": "14:08",
+     "start_min": 848,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason ALCS Gm 5 (5:08 PM ET pattern) - ESTIMATED slot 14:08 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
     },
     {
      "date": "2026-10-17",
@@ -18648,8 +19487,9 @@
      "start_pt": null,
      "start_min": null,
      "tbd_count": 1,
-     "label": "MLB postseason - 1 game(s), teams & times UNCONFIRMED",
-     "source": "mlb_2026_postseason_tbd.txt"
+     "label": "MLB postseason - ALCS Gm 5 (5:08 PM ET pattern) (1 game(s), teams & times UNCONFIRMED) [TBS/truTV/HBO Max]",
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
     },
     {
      "date": "2026-10-17",
@@ -18680,14 +19520,8 @@
    "blocked": [
     {
      "start": 750,
-     "end": 954,
-     "start_t": "12:30 PM",
-     "end_t": "3:54 PM"
-    },
-    {
-     "start": 960,
      "end": 1290,
-     "start_t": "4:00 PM",
+     "start_t": "12:30 PM",
      "end_t": "9:30 PM"
     }
    ],
@@ -18702,13 +19536,6 @@
      "minutes": 750
     },
     {
-     "start": 954,
-     "end": 960,
-     "start_t": "3:54 PM",
-     "end_t": "4:00 PM",
-     "minutes": 6
-    },
-    {
      "start": 1290,
      "end": 1440,
      "start_t": "9:30 PM",
@@ -18716,10 +19543,10 @@
      "minutes": 150
     }
    ],
-   "game_count": 5,
+   "game_count": 6,
    "nfl_all_count": 0,
    "tbd_count": 2,
-   "estimated_count": 2,
+   "estimated_count": 3,
    "conditional_count": 1,
    "has_priority": true,
    "has_sf": false
@@ -18862,6 +19689,21 @@
     },
     {
      "date": "2026-10-18",
+     "sport": "mlb",
+     "start_pt": "11:08",
+     "start_min": 668,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason NLCS Gm 6 (BOTH 2025 options: 2:08 or 5:08 PM ET) - ESTIMATED slot 11:08 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
+    },
+    {
+     "date": "2026-10-18",
      "sport": "nfl_all",
      "week": "Wk 6",
      "away": "ARI",
@@ -18910,6 +19752,21 @@
     },
     {
      "date": "2026-10-18",
+     "sport": "mlb",
+     "start_pt": "14:08",
+     "start_min": 848,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason NLCS Gm 6 (BOTH 2025 options: 2:08 or 5:08 PM ET) - ESTIMATED slot 14:08 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
+    },
+    {
+     "date": "2026-10-18",
      "sport": "nfl_all",
      "week": "Wk 6",
      "away": "DAL",
@@ -18933,8 +19790,9 @@
      "start_pt": null,
      "start_min": null,
      "tbd_count": 1,
-     "label": "MLB postseason - 1 game(s), teams & times UNCONFIRMED",
-     "source": "mlb_2026_postseason_tbd.txt"
+     "label": "MLB postseason - NLCS Gm 6 (BOTH 2025 options: 2:08 or 5:08 PM ET) (1 game(s), teams & times UNCONFIRMED) [FOX/FS1/Fox Deportes]",
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
     }
    ],
    "blocked": [
@@ -18946,9 +19804,9 @@
     },
     {
      "start": 600,
-     "end": 997,
+     "end": 1012,
      "start_t": "10:00 AM",
-     "end_t": "4:37 PM"
+     "end_t": "4:52 PM"
     },
     {
      "start": 1040,
@@ -18975,11 +19833,11 @@
      "minutes": 18
     },
     {
-     "start": 997,
+     "start": 1012,
      "end": 1040,
-     "start_t": "4:37 PM",
+     "start_t": "4:52 PM",
      "end_t": "5:20 PM",
-     "minutes": 43
+     "minutes": 28
     },
     {
      "start": 1232,
@@ -18989,10 +19847,10 @@
      "minutes": 208
     }
    ],
-   "game_count": 12,
+   "game_count": 14,
    "nfl_all_count": 12,
    "tbd_count": 1,
-   "estimated_count": 0,
+   "estimated_count": 2,
    "conditional_count": 0,
    "has_priority": false,
    "has_sf": false
@@ -19002,6 +19860,21 @@
    "weekday": "Mon",
    "status": "NOT FREE \u2014 TIME TBD",
    "games": [
+    {
+     "date": "2026-10-19",
+     "sport": "mlb",
+     "start_pt": "14:08",
+     "start_min": 848,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason NLCS Gm 7 + ALCS Gm 6 (5:08 + 8:08 PM ET pattern) - ESTIMATED slot 14:08 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
+    },
     {
      "date": "2026-10-19",
      "sport": "nhl",
@@ -19016,6 +19889,21 @@
      "source": "nhl_sharks_2026_27.txt",
      "review": "https://www.espn.com/nhl/game/_/gameId/401892537/x",
      "note": "@ Scotiabank Arena"
+    },
+    {
+     "date": "2026-10-19",
+     "sport": "mlb",
+     "start_pt": "17:08",
+     "start_min": 1028,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason NLCS Gm 7 + ALCS Gm 6 (5:08 + 8:08 PM ET pattern) - ESTIMATED slot 17:08 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
     },
     {
      "date": "2026-10-19",
@@ -19059,8 +19947,9 @@
      "start_pt": null,
      "start_min": null,
      "tbd_count": 2,
-     "label": "MLB postseason - 2 game(s), teams & times UNCONFIRMED",
-     "source": "mlb_2026_postseason_tbd.txt"
+     "label": "MLB postseason - NLCS Gm 7 + ALCS Gm 6 (5:08 + 8:08 PM ET pattern) (2 game(s), teams & times UNCONFIRMED) [NLCS FOX/FS1; ALCS TBS]",
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
     },
     {
      "date": "2026-10-19",
@@ -19076,9 +19965,9 @@
    ],
    "blocked": [
     {
-     "start": 990,
+     "start": 848,
      "end": 1227,
-     "start_t": "4:30 PM",
+     "start_t": "2:08 PM",
      "end_t": "8:27 PM"
     }
    ],
@@ -19087,10 +19976,10 @@
    "provisional_free": [
     {
      "start": 0,
-     "end": 990,
+     "end": 848,
      "start_t": "12:00 AM",
-     "end_t": "4:30 PM",
-     "minutes": 990
+     "end_t": "2:08 PM",
+     "minutes": 848
     },
     {
      "start": 1227,
@@ -19100,10 +19989,10 @@
      "minutes": 213
     }
    ],
-   "game_count": 2,
+   "game_count": 4,
    "nfl_all_count": 0,
    "tbd_count": 2,
-   "estimated_count": 0,
+   "estimated_count": 2,
    "conditional_count": 1,
    "has_priority": true,
    "has_sf": true
@@ -19113,6 +20002,21 @@
    "weekday": "Tue",
    "status": "NOT FREE \u2014 TIME TBD",
    "games": [
+    {
+     "date": "2026-10-20",
+     "sport": "mlb",
+     "start_pt": "14:08",
+     "start_min": 848,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason ALCS Gm 7 (2025 Gm 7: 5:08 PM ET) - ESTIMATED slot 14:08 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
+    },
     {
      "date": "2026-10-20",
      "sport": "nhl",
@@ -19134,15 +20038,16 @@
      "start_pt": null,
      "start_min": null,
      "tbd_count": 1,
-     "label": "MLB postseason - 1 game(s), teams & times UNCONFIRMED",
-     "source": "mlb_2026_postseason_tbd.txt"
+     "label": "MLB postseason - ALCS Gm 7 (2025 Gm 7: 5:08 PM ET) (1 game(s), teams & times UNCONFIRMED) [TBS/truTV/HBO Max]",
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
     }
    ],
    "blocked": [
     {
-     "start": 960,
+     "start": 848,
      "end": 1110,
-     "start_t": "4:00 PM",
+     "start_t": "2:08 PM",
      "end_t": "6:30 PM"
     }
    ],
@@ -19151,10 +20056,10 @@
    "provisional_free": [
     {
      "start": 0,
-     "end": 960,
+     "end": 848,
      "start_t": "12:00 AM",
-     "end_t": "4:00 PM",
-     "minutes": 960
+     "end_t": "2:08 PM",
+     "minutes": 848
     },
     {
      "start": 1110,
@@ -19164,10 +20069,10 @@
      "minutes": 330
     }
    ],
-   "game_count": 1,
+   "game_count": 2,
    "nfl_all_count": 0,
    "tbd_count": 1,
-   "estimated_count": 0,
+   "estimated_count": 1,
    "conditional_count": 0,
    "has_priority": true,
    "has_sf": false
@@ -19319,6 +20224,21 @@
    "games": [
     {
      "date": "2026-10-23",
+     "sport": "mlb",
+     "start_pt": "17:00",
+     "start_min": 1020,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason World Series Gm 1 (2025 WS: 8:00 PM ET every game) - ESTIMATED slot 17:00 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
+    },
+    {
+     "date": "2026-10-23",
      "sport": "nba",
      "start_pt": "19:00",
      "start_min": 1140,
@@ -19353,8 +20273,9 @@
      "start_pt": null,
      "start_min": null,
      "tbd_count": 1,
-     "label": "MLB postseason - 1 game(s), teams & times UNCONFIRMED",
-     "source": "mlb_2026_postseason_tbd.txt"
+     "label": "MLB postseason - World Series Gm 1 (2025 WS: 8:00 PM ET every game) (1 game(s), teams & times UNCONFIRMED) [FOX/Fox Deportes]",
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
     },
     {
      "date": "2026-10-23",
@@ -19370,9 +20291,9 @@
    ],
    "blocked": [
     {
-     "start": 1140,
+     "start": 1020,
      "end": 1374,
-     "start_t": "7:00 PM",
+     "start_t": "5:00 PM",
      "end_t": "10:54 PM"
     }
    ],
@@ -19381,10 +20302,10 @@
    "provisional_free": [
     {
      "start": 0,
-     "end": 1140,
+     "end": 1020,
      "start_t": "12:00 AM",
-     "end_t": "7:00 PM",
-     "minutes": 1140
+     "end_t": "5:00 PM",
+     "minutes": 1020
     },
     {
      "start": 1374,
@@ -19394,10 +20315,10 @@
      "minutes": 66
     }
    ],
-   "game_count": 2,
+   "game_count": 3,
    "nfl_all_count": 0,
    "tbd_count": 1,
-   "estimated_count": 0,
+   "estimated_count": 1,
    "conditional_count": 1,
    "has_priority": true,
    "has_sf": false
@@ -19458,6 +20379,21 @@
     },
     {
      "date": "2026-10-24",
+     "sport": "mlb",
+     "start_pt": "17:00",
+     "start_min": 1020,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason World Series Gm 2 (8:00 PM ET pattern) - ESTIMATED slot 17:00 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
+    },
+    {
+     "date": "2026-10-24",
      "sport": "mls",
      "label": "Earthquakes at FC Dallas",
      "ha": "away",
@@ -19489,8 +20425,9 @@
      "start_pt": null,
      "start_min": null,
      "tbd_count": 1,
-     "label": "MLB postseason - 1 game(s), teams & times UNCONFIRMED",
-     "source": "mlb_2026_postseason_tbd.txt"
+     "label": "MLB postseason - World Series Gm 2 (8:00 PM ET pattern) (1 game(s), teams & times UNCONFIRMED) [FOX/Fox Deportes]",
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
     },
     {
      "date": "2026-10-24",
@@ -19546,10 +20483,10 @@
      "minutes": 162
     }
    ],
-   "game_count": 5,
+   "game_count": 6,
    "nfl_all_count": 0,
    "tbd_count": 2,
-   "estimated_count": 2,
+   "estimated_count": 3,
    "conditional_count": 0,
    "has_priority": true,
    "has_sf": false
@@ -19853,6 +20790,21 @@
    "games": [
     {
      "date": "2026-10-26",
+     "sport": "mlb",
+     "start_pt": "17:00",
+     "start_min": 1020,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason World Series Gm 3 (8:00 PM ET pattern) - ESTIMATED slot 17:00 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
+    },
+    {
+     "date": "2026-10-26",
      "sport": "nfl_all",
      "week": "Wk 7",
      "away": "DAL",
@@ -19891,15 +20843,16 @@
      "start_pt": null,
      "start_min": null,
      "tbd_count": 1,
-     "label": "MLB postseason - 1 game(s), teams & times UNCONFIRMED",
-     "source": "mlb_2026_postseason_tbd.txt"
+     "label": "MLB postseason - World Series Gm 3 (8:00 PM ET pattern) (1 game(s), teams & times UNCONFIRMED) [FOX/Fox Deportes]",
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
     }
    ],
    "blocked": [
     {
-     "start": 1035,
+     "start": 1020,
      "end": 1278,
-     "start_t": "5:15 PM",
+     "start_t": "5:00 PM",
      "end_t": "9:18 PM"
     }
    ],
@@ -19908,10 +20861,10 @@
    "provisional_free": [
     {
      "start": 0,
-     "end": 1035,
+     "end": 1020,
      "start_t": "12:00 AM",
-     "end_t": "5:15 PM",
-     "minutes": 1035
+     "end_t": "5:00 PM",
+     "minutes": 1020
     },
     {
      "start": 1278,
@@ -19921,10 +20874,10 @@
      "minutes": 162
     }
    ],
-   "game_count": 2,
+   "game_count": 3,
    "nfl_all_count": 1,
    "tbd_count": 1,
-   "estimated_count": 0,
+   "estimated_count": 1,
    "conditional_count": 0,
    "has_priority": true,
    "has_sf": false
@@ -19934,6 +20887,21 @@
    "weekday": "Tue",
    "status": "NOT FREE \u2014 TIME TBD",
    "games": [
+    {
+     "date": "2026-10-27",
+     "sport": "mlb",
+     "start_pt": "17:00",
+     "start_min": 1020,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason World Series Gm 4 (8:00 PM ET pattern) - ESTIMATED slot 17:00 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
+    },
     {
      "date": "2026-10-27",
      "sport": "nhl",
@@ -19955,8 +20923,9 @@
      "start_pt": null,
      "start_min": null,
      "tbd_count": 1,
-     "label": "MLB postseason - 1 game(s), teams & times UNCONFIRMED",
-     "source": "mlb_2026_postseason_tbd.txt"
+     "label": "MLB postseason - World Series Gm 4 (8:00 PM ET pattern) (1 game(s), teams & times UNCONFIRMED) [FOX/Fox Deportes]",
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
     },
     {
      "date": "2026-10-27",
@@ -19972,9 +20941,9 @@
    ],
    "blocked": [
     {
-     "start": 1170,
+     "start": 1020,
      "end": 1320,
-     "start_t": "7:30 PM",
+     "start_t": "5:00 PM",
      "end_t": "10:00 PM"
     }
    ],
@@ -19983,10 +20952,10 @@
    "provisional_free": [
     {
      "start": 0,
-     "end": 1170,
+     "end": 1020,
      "start_t": "12:00 AM",
-     "end_t": "7:30 PM",
-     "minutes": 1170
+     "end_t": "5:00 PM",
+     "minutes": 1020
     },
     {
      "start": 1320,
@@ -19996,10 +20965,10 @@
      "minutes": 120
     }
    ],
-   "game_count": 1,
+   "game_count": 2,
    "nfl_all_count": 0,
    "tbd_count": 1,
-   "estimated_count": 0,
+   "estimated_count": 1,
    "conditional_count": 1,
    "has_priority": true,
    "has_sf": false
@@ -20009,6 +20978,21 @@
    "weekday": "Wed",
    "status": "NOT FREE \u2014 TIME TBD",
    "games": [
+    {
+     "date": "2026-10-28",
+     "sport": "mlb",
+     "start_pt": "17:00",
+     "start_min": 1020,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason World Series Gm 5 if necessary (8:00 PM ET pattern) - ESTIMATED slot 17:00 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
+    },
     {
      "date": "2026-10-28",
      "sport": "nba",
@@ -20043,21 +21027,16 @@
      "start_pt": null,
      "start_min": null,
      "tbd_count": 1,
-     "label": "MLB postseason - 1 game(s), teams & times UNCONFIRMED",
-     "source": "mlb_2026_postseason_tbd.txt"
+     "label": "MLB postseason - World Series Gm 5 if necessary (8:00 PM ET pattern) (1 game(s), teams & times UNCONFIRMED) [FOX/Fox Deportes]",
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
     }
    ],
    "blocked": [
     {
      "start": 1020,
-     "end": 1158,
-     "start_t": "5:00 PM",
-     "end_t": "7:18 PM"
-    },
-    {
-     "start": 1170,
      "end": 1290,
-     "start_t": "7:30 PM",
+     "start_t": "5:00 PM",
      "end_t": "9:30 PM"
     }
    ],
@@ -20072,13 +21051,6 @@
      "minutes": 1020
     },
     {
-     "start": 1158,
-     "end": 1170,
-     "start_t": "7:18 PM",
-     "end_t": "7:30 PM",
-     "minutes": 12
-    },
-    {
      "start": 1290,
      "end": 1440,
      "start_t": "9:30 PM",
@@ -20086,10 +21058,10 @@
      "minutes": 150
     }
    ],
-   "game_count": 2,
+   "game_count": 3,
    "nfl_all_count": 0,
    "tbd_count": 1,
-   "estimated_count": 0,
+   "estimated_count": 1,
    "conditional_count": 0,
    "has_priority": true,
    "has_sf": false
@@ -20186,6 +21158,21 @@
    "games": [
     {
      "date": "2026-10-30",
+     "sport": "mlb",
+     "start_pt": "17:00",
+     "start_min": 1020,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason World Series Gm 6 if necessary (8:00 PM ET pattern) - ESTIMATED slot 17:00 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
+    },
+    {
+     "date": "2026-10-30",
      "sport": "nba",
      "start_pt": "19:00",
      "start_min": 1140,
@@ -20205,15 +21192,16 @@
      "start_pt": null,
      "start_min": null,
      "tbd_count": 1,
-     "label": "MLB postseason - 1 game(s), teams & times UNCONFIRMED",
-     "source": "mlb_2026_postseason_tbd.txt"
+     "label": "MLB postseason - World Series Gm 6 if necessary (8:00 PM ET pattern) (1 game(s), teams & times UNCONFIRMED) [FOX/Fox Deportes]",
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
     }
    ],
    "blocked": [
     {
-     "start": 1140,
+     "start": 1020,
      "end": 1278,
-     "start_t": "7:00 PM",
+     "start_t": "5:00 PM",
      "end_t": "9:18 PM"
     }
    ],
@@ -20222,10 +21210,10 @@
    "provisional_free": [
     {
      "start": 0,
-     "end": 1140,
+     "end": 1020,
      "start_t": "12:00 AM",
-     "end_t": "7:00 PM",
-     "minutes": 1140
+     "end_t": "5:00 PM",
+     "minutes": 1020
     },
     {
      "start": 1278,
@@ -20235,10 +21223,10 @@
      "minutes": 162
     }
    ],
-   "game_count": 1,
+   "game_count": 2,
    "nfl_all_count": 0,
    "tbd_count": 1,
-   "estimated_count": 0,
+   "estimated_count": 1,
    "conditional_count": 0,
    "has_priority": true,
    "has_sf": false
@@ -20282,11 +21270,27 @@
     {
      "date": "2026-10-31",
      "sport": "mlb",
+     "start_pt": "17:00",
+     "start_min": 1020,
+     "dur_override": 164,
+     "away": "TBD",
+     "home": "TBD",
+     "label": "MLB postseason World Series Gm 7 if necessary (8:00 PM ET pattern) - ESTIMATED slot 17:00 PT (2025 pattern)",
+     "estimated": true,
+     "est_kind": "MLB-2025-PATTERN",
+     "priority": false,
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
+    },
+    {
+     "date": "2026-10-31",
+     "sport": "mlb",
      "start_pt": null,
      "start_min": null,
      "tbd_count": 1,
-     "label": "MLB postseason - 1 game(s), teams & times UNCONFIRMED",
-     "source": "mlb_2026_postseason_tbd.txt"
+     "label": "MLB postseason - World Series Gm 7 if necessary (8:00 PM ET pattern) (1 game(s), teams & times UNCONFIRMED) [FOX/Fox Deportes]",
+     "source": "mlb_2026_postseason_tbd.txt",
+     "review": "https://www.mlb.com/postseason"
     },
     {
      "date": "2026-10-31",
@@ -20347,6 +21351,12 @@
      "end": 954,
      "start_t": "12:30 PM",
      "end_t": "3:54 PM"
+    },
+    {
+     "start": 1020,
+     "end": 1184,
+     "start_t": "5:00 PM",
+     "end_t": "7:44 PM"
     }
    ],
    "free": [],
@@ -20361,16 +21371,23 @@
     },
     {
      "start": 954,
-     "end": 1440,
+     "end": 1020,
      "start_t": "3:54 PM",
+     "end_t": "5:00 PM",
+     "minutes": 66
+    },
+    {
+     "start": 1184,
+     "end": 1440,
+     "start_t": "7:44 PM",
      "end_t": "12:00 AM (midnight)",
-     "minutes": 486
+     "minutes": 256
     }
    ],
-   "game_count": 2,
+   "game_count": 3,
    "nfl_all_count": 0,
    "tbd_count": 4,
-   "estimated_count": 0,
+   "estimated_count": 1,
    "conditional_count": 1,
    "has_priority": true,
    "has_sf": false
@@ -30800,115 +31817,115 @@
  "flags": [
   {
    "kind": "TBD_TIME",
-   "msg": "2026-09-29: 4 MLB postseason game(s) have no confirmed time or teams (MLB Stats API returns placeholder 07:33:00Z + placeholder team ids)"
+   "msg": "2026-09-29: 4 MLB postseason game(s) have no confirmed time or teams (mlb.com/postseason prints TBD on every game; the Stats API returns placeholder 07:33:00Z + placeholder team ids)"
   },
   {
    "kind": "TBD_TIME",
-   "msg": "2026-09-30: 4 MLB postseason game(s) have no confirmed time or teams (MLB Stats API returns placeholder 07:33:00Z + placeholder team ids)"
+   "msg": "2026-09-30: 4 MLB postseason game(s) have no confirmed time or teams (mlb.com/postseason prints TBD on every game; the Stats API returns placeholder 07:33:00Z + placeholder team ids)"
   },
   {
    "kind": "TBD_TIME",
-   "msg": "2026-10-01: 4 MLB postseason game(s) have no confirmed time or teams (MLB Stats API returns placeholder 07:33:00Z + placeholder team ids)"
+   "msg": "2026-10-01: 4 MLB postseason game(s) have no confirmed time or teams (mlb.com/postseason prints TBD on every game; the Stats API returns placeholder 07:33:00Z + placeholder team ids)"
   },
   {
    "kind": "TBD_TIME",
-   "msg": "2026-10-03: 4 MLB postseason game(s) have no confirmed time or teams (MLB Stats API returns placeholder 07:33:00Z + placeholder team ids)"
+   "msg": "2026-10-03: 4 MLB postseason game(s) have no confirmed time or teams (mlb.com/postseason prints TBD on every game; the Stats API returns placeholder 07:33:00Z + placeholder team ids)"
   },
   {
    "kind": "TBD_TIME",
-   "msg": "2026-10-04: 2 MLB postseason game(s) have no confirmed time or teams (MLB Stats API returns placeholder 07:33:00Z + placeholder team ids)"
+   "msg": "2026-10-04: 2 MLB postseason game(s) have no confirmed time or teams (mlb.com/postseason prints TBD on every game; the Stats API returns placeholder 07:33:00Z + placeholder team ids)"
   },
   {
    "kind": "TBD_TIME",
-   "msg": "2026-10-05: 2 MLB postseason game(s) have no confirmed time or teams (MLB Stats API returns placeholder 07:33:00Z + placeholder team ids)"
+   "msg": "2026-10-05: 2 MLB postseason game(s) have no confirmed time or teams (mlb.com/postseason prints TBD on every game; the Stats API returns placeholder 07:33:00Z + placeholder team ids)"
   },
   {
    "kind": "TBD_TIME",
-   "msg": "2026-10-06: 2 MLB postseason game(s) have no confirmed time or teams (MLB Stats API returns placeholder 07:33:00Z + placeholder team ids)"
+   "msg": "2026-10-06: 2 MLB postseason game(s) have no confirmed time or teams (mlb.com/postseason prints TBD on every game; the Stats API returns placeholder 07:33:00Z + placeholder team ids)"
   },
   {
    "kind": "TBD_TIME",
-   "msg": "2026-10-07: 4 MLB postseason game(s) have no confirmed time or teams (MLB Stats API returns placeholder 07:33:00Z + placeholder team ids)"
+   "msg": "2026-10-07: 4 MLB postseason game(s) have no confirmed time or teams (mlb.com/postseason prints TBD on every game; the Stats API returns placeholder 07:33:00Z + placeholder team ids)"
   },
   {
    "kind": "TBD_TIME",
-   "msg": "2026-10-08: 2 MLB postseason game(s) have no confirmed time or teams (MLB Stats API returns placeholder 07:33:00Z + placeholder team ids)"
+   "msg": "2026-10-08: 2 MLB postseason game(s) have no confirmed time or teams (mlb.com/postseason prints TBD on every game; the Stats API returns placeholder 07:33:00Z + placeholder team ids)"
   },
   {
    "kind": "TBD_TIME",
-   "msg": "2026-10-09: 2 MLB postseason game(s) have no confirmed time or teams (MLB Stats API returns placeholder 07:33:00Z + placeholder team ids)"
+   "msg": "2026-10-09: 2 MLB postseason game(s) have no confirmed time or teams (mlb.com/postseason prints TBD on every game; the Stats API returns placeholder 07:33:00Z + placeholder team ids)"
   },
   {
    "kind": "TBD_TIME",
-   "msg": "2026-10-10: 2 MLB postseason game(s) have no confirmed time or teams (MLB Stats API returns placeholder 07:33:00Z + placeholder team ids)"
+   "msg": "2026-10-10: 2 MLB postseason game(s) have no confirmed time or teams (mlb.com/postseason prints TBD on every game; the Stats API returns placeholder 07:33:00Z + placeholder team ids)"
   },
   {
    "kind": "TBD_TIME",
-   "msg": "2026-10-11: 1 MLB postseason game(s) have no confirmed time or teams (MLB Stats API returns placeholder 07:33:00Z + placeholder team ids)"
+   "msg": "2026-10-11: 1 MLB postseason game(s) have no confirmed time or teams (mlb.com/postseason prints TBD on every game; the Stats API returns placeholder 07:33:00Z + placeholder team ids)"
   },
   {
    "kind": "TBD_TIME",
-   "msg": "2026-10-12: 2 MLB postseason game(s) have no confirmed time or teams (MLB Stats API returns placeholder 07:33:00Z + placeholder team ids)"
+   "msg": "2026-10-12: 2 MLB postseason game(s) have no confirmed time or teams (mlb.com/postseason prints TBD on every game; the Stats API returns placeholder 07:33:00Z + placeholder team ids)"
   },
   {
    "kind": "TBD_TIME",
-   "msg": "2026-10-13: 1 MLB postseason game(s) have no confirmed time or teams (MLB Stats API returns placeholder 07:33:00Z + placeholder team ids)"
+   "msg": "2026-10-13: 1 MLB postseason game(s) have no confirmed time or teams (mlb.com/postseason prints TBD on every game; the Stats API returns placeholder 07:33:00Z + placeholder team ids)"
   },
   {
    "kind": "TBD_TIME",
-   "msg": "2026-10-14: 1 MLB postseason game(s) have no confirmed time or teams (MLB Stats API returns placeholder 07:33:00Z + placeholder team ids)"
+   "msg": "2026-10-14: 1 MLB postseason game(s) have no confirmed time or teams (mlb.com/postseason prints TBD on every game; the Stats API returns placeholder 07:33:00Z + placeholder team ids)"
   },
   {
    "kind": "TBD_TIME",
-   "msg": "2026-10-15: 2 MLB postseason game(s) have no confirmed time or teams (MLB Stats API returns placeholder 07:33:00Z + placeholder team ids)"
+   "msg": "2026-10-15: 2 MLB postseason game(s) have no confirmed time or teams (mlb.com/postseason prints TBD on every game; the Stats API returns placeholder 07:33:00Z + placeholder team ids)"
   },
   {
    "kind": "TBD_TIME",
-   "msg": "2026-10-16: 2 MLB postseason game(s) have no confirmed time or teams (MLB Stats API returns placeholder 07:33:00Z + placeholder team ids)"
+   "msg": "2026-10-16: 2 MLB postseason game(s) have no confirmed time or teams (mlb.com/postseason prints TBD on every game; the Stats API returns placeholder 07:33:00Z + placeholder team ids)"
   },
   {
    "kind": "TBD_TIME",
-   "msg": "2026-10-17: 1 MLB postseason game(s) have no confirmed time or teams (MLB Stats API returns placeholder 07:33:00Z + placeholder team ids)"
+   "msg": "2026-10-17: 1 MLB postseason game(s) have no confirmed time or teams (mlb.com/postseason prints TBD on every game; the Stats API returns placeholder 07:33:00Z + placeholder team ids)"
   },
   {
    "kind": "TBD_TIME",
-   "msg": "2026-10-18: 1 MLB postseason game(s) have no confirmed time or teams (MLB Stats API returns placeholder 07:33:00Z + placeholder team ids)"
+   "msg": "2026-10-18: 1 MLB postseason game(s) have no confirmed time or teams (mlb.com/postseason prints TBD on every game; the Stats API returns placeholder 07:33:00Z + placeholder team ids)"
   },
   {
    "kind": "TBD_TIME",
-   "msg": "2026-10-19: 2 MLB postseason game(s) have no confirmed time or teams (MLB Stats API returns placeholder 07:33:00Z + placeholder team ids)"
+   "msg": "2026-10-19: 2 MLB postseason game(s) have no confirmed time or teams (mlb.com/postseason prints TBD on every game; the Stats API returns placeholder 07:33:00Z + placeholder team ids)"
   },
   {
    "kind": "TBD_TIME",
-   "msg": "2026-10-20: 1 MLB postseason game(s) have no confirmed time or teams (MLB Stats API returns placeholder 07:33:00Z + placeholder team ids)"
+   "msg": "2026-10-20: 1 MLB postseason game(s) have no confirmed time or teams (mlb.com/postseason prints TBD on every game; the Stats API returns placeholder 07:33:00Z + placeholder team ids)"
   },
   {
    "kind": "TBD_TIME",
-   "msg": "2026-10-23: 1 MLB postseason game(s) have no confirmed time or teams (MLB Stats API returns placeholder 07:33:00Z + placeholder team ids)"
+   "msg": "2026-10-23: 1 MLB postseason game(s) have no confirmed time or teams (mlb.com/postseason prints TBD on every game; the Stats API returns placeholder 07:33:00Z + placeholder team ids)"
   },
   {
    "kind": "TBD_TIME",
-   "msg": "2026-10-24: 1 MLB postseason game(s) have no confirmed time or teams (MLB Stats API returns placeholder 07:33:00Z + placeholder team ids)"
+   "msg": "2026-10-24: 1 MLB postseason game(s) have no confirmed time or teams (mlb.com/postseason prints TBD on every game; the Stats API returns placeholder 07:33:00Z + placeholder team ids)"
   },
   {
    "kind": "TBD_TIME",
-   "msg": "2026-10-26: 1 MLB postseason game(s) have no confirmed time or teams (MLB Stats API returns placeholder 07:33:00Z + placeholder team ids)"
+   "msg": "2026-10-26: 1 MLB postseason game(s) have no confirmed time or teams (mlb.com/postseason prints TBD on every game; the Stats API returns placeholder 07:33:00Z + placeholder team ids)"
   },
   {
    "kind": "TBD_TIME",
-   "msg": "2026-10-27: 1 MLB postseason game(s) have no confirmed time or teams (MLB Stats API returns placeholder 07:33:00Z + placeholder team ids)"
+   "msg": "2026-10-27: 1 MLB postseason game(s) have no confirmed time or teams (mlb.com/postseason prints TBD on every game; the Stats API returns placeholder 07:33:00Z + placeholder team ids)"
   },
   {
    "kind": "TBD_TIME",
-   "msg": "2026-10-28: 1 MLB postseason game(s) have no confirmed time or teams (MLB Stats API returns placeholder 07:33:00Z + placeholder team ids)"
+   "msg": "2026-10-28: 1 MLB postseason game(s) have no confirmed time or teams (mlb.com/postseason prints TBD on every game; the Stats API returns placeholder 07:33:00Z + placeholder team ids)"
   },
   {
    "kind": "TBD_TIME",
-   "msg": "2026-10-30: 1 MLB postseason game(s) have no confirmed time or teams (MLB Stats API returns placeholder 07:33:00Z + placeholder team ids)"
+   "msg": "2026-10-30: 1 MLB postseason game(s) have no confirmed time or teams (mlb.com/postseason prints TBD on every game; the Stats API returns placeholder 07:33:00Z + placeholder team ids)"
   },
   {
    "kind": "TBD_TIME",
-   "msg": "2026-10-31: 1 MLB postseason game(s) have no confirmed time or teams (MLB Stats API returns placeholder 07:33:00Z + placeholder team ids)"
+   "msg": "2026-10-31: 1 MLB postseason game(s) have no confirmed time or teams (mlb.com/postseason prints TBD on every game; the Stats API returns placeholder 07:33:00Z + placeholder team ids)"
   },
   {
    "kind": "IRREGULARITY",
@@ -31285,6 +32302,34 @@
   {
    "kind": "VERIFIED_PASS_2026_09_11",
    "msg": "Superseded-pass note kept for the audit trail: 2026-09-11 MLB Stats API re-query for 2026-09-10/11/12 matched the raw file 35/35 games (dates, times, team ids). The 'sparse' Tue/Thu slate days (5 games on Sep 10, 3 on Sep 21) are genuine scheduled light days, not data gaps."
+  },
+  {
+   "kind": "MLB_POSTSEASON_OFFICIAL_DATES",
+   "msg": "RESOLVED 2026-09-17 (user request 'resolve MLB postseason TBD dates'): every postseason date and per-date game count is now verified against the OFFICIAL tentative bracket on mlb.com/postseason - all 28 dates / 53 games match the raw file, and each game now has its official gamePk + TV network recorded (Wild Card on NBC/Peacock/NBCSN - NBC's first postseason baseball in a generation; ALDS+ALCS on TBS/truTV/HBO Max; NLDS+NLCS on FOX/FS1; World Series on FOX). Review link on every row: https://www.mlb.com/postseason. START TIMES: every one of the 53 games still prints 'TBD' on the official page - MLB announces Wild Card times once the field is set in the final regular-season weekend (ends Sun Sep 27, 2026). Re-run the build then."
+  },
+  {
+   "kind": "MLB_POSTSEASON_EST_WINDOWS",
+   "msg": "54 clearly-labeled ESTIMATED first-pitch windows (hatched, EST tag) now block documented-pattern slots on the MLB postseason days: derived from the ACTUAL 2025 postseason start times - Wild Card 1:08/3:08/6:08/9:08 PM ET (ESPN Press Room, TODAY, marca, abc.com); Division Series 2:08/4:08/6:38/8:38 (Sat), 4:08/8:03 (Sun), 6:08/9:08 (Mon/Thu), 4:08/8:08 (Tue), 3:08/5:08/7:08/9:08 (Wed), 4:40/8:08 (Fri), 4:38/8:08 (Sat) PM ET (freep.com tracker + mlb.com); LCS 8:03/5:03/8:08/5:08 PM ET with NLCS Gm6 at 2:08-or-5:08 (usatoday.com, dodgerblue.com, sports.yahoo.com); World Series 8:00 PM ET every game (nbclosangeles.com). CAVEAT: the 2026 Wild Card round moves to NBC/Peacock so exact times may differ from the 2025 ESPN pattern - that is why every slot is labeled EST and the days still assert NO free time."
+  },
+  {
+   "kind": "MLB_CLINCHED_2026",
+   "msg": "MLB playoff picture as of 2026-09-17 (data/raw/mlb_2026_playoff_picture.json, sources on every entry): 4 of 12 spots clinched - Tampa Bay Rays (Sep 11, first team), Milwaukee Brewers (Sep 11; NL Central title Sep 15 - guaranteed a top-3 NL seed), Los Angeles Dodgers (Sep 14; NL West title Sep 17 - guaranteed a top-3 NL seed), New York Yankees (Sep 14, at least a wild card). None of the four has clinched a first-round bye yet (a bye would put their first game on the Division Series dates Oct 3+; otherwise they host a Wild Card Series Sep 29-Oct 1). See mlb.com/news/2026-postseason-teams and mlb.com/news/mlb-playoff-picture-and-bracket-2026."
+  },
+  {
+   "kind": "MLB_ELIMINATED_BAY_AREA",
+   "msg": "RESOLVED FOR THE BAY AREA (2026-09-17): the Giants (eliminated Sep 6-7, tiebreaker procedures, 5th straight miss - Wikipedia/The Athletic/Yahoo/FOX Sports: MLB) and the Athletics (eliminated on/before Sep 15 at 61-90, 15.5 GB - Fox Sports + SI playoff picture) CANNOT appear in the 2026 postseason: NO Giants or Athletics games will occur after the regular season ends Sun Sep 27. The October postseason days therefore involve neither high-priority Bay Area club, but every one of them still blocks (ALL MLB games block, and the last regular-season Giants/A's games are Sep 25-27)."
+  },
+  {
+   "kind": "MLB_GIANTS_ELIM_DATE_CONFLICT",
+   "msg": "IRREGULARITY (Giants elimination date): sources disagree by a day - Wikipedia 2026 Giants season + Yahoo Sports say Sunday Sep 6 (loss to the Mets); The Athletic says 'mathematically eliminated Monday night' (Sep 7, 60-85 with 17 to play); FOX Sports: MLB's Sep 8 8:37 PM post says 'eliminated last night due to tiebreaker procedures'. The loss was Sep 6; the tiebreaker elimination registered Sep 7-8. Recorded as 2026-09-06/07; flagged for review."
+  },
+  {
+   "kind": "MLB_ATH_ELIM_DATE_UNPINNED",
+   "msg": "IRREGULARITY (Athletics elimination date): Fox Sports and SI both list the A's among eliminated teams in their 2026-09-15 playoff-picture pieces, but no source pins the exact day (the Wikipedia 2026 Athletics season game log carries no dated elimination marker). Recorded as 'on/before 2026-09-15'; flagged for review."
+  },
+  {
+   "kind": "WWO_REVERIFIED_2026_09_17",
+   "msg": "Westwood One re-verification 2026-09-17 (per the user's request to work all games broadcast on Westwood One in the Bay Area): (1) the NFL schedule page re-fetched live (all four chunks, both rendered lists) - every dated broadcast and all 8 TBA placeholders match data/raw/westwoodone_nfl_2026.txt at event-id level, ZERO deltas. (2) The NCAA football eventGrid (id=47030) re-fetched at both offsets - exactly the same 13 broadcasts (offset 20 returns 'No more events'); the Sep 26 Oklahoma@Georgia WWO air time is now printed as 3:00 PM ET (was TBD) - note updated, kickoff/block unchanged. (3) NCAA Basketball page (id=47031): 'No upcoming events' - the WWO college-basketball package is March Madness, outside the Aug-Feb window. (4) U.S. Soccer page (id=47032): 'No upcoming events'. (5) Golf page (id=47033): 'No upcoming events' (majors run Apr-Jul). MCWS/WCWS (June), Lacrosse (May) and NCAA Hockey (April) are outside the window by calendar. CONCLUSION: NFL + NCAA football remain the ONLY in-window Westwood One sports - both already tracked, both high priority. KNBR 680/104.5 remains the Bay Area affiliate."
   },
   {
    "kind": "UNBLOCKED_TBD",

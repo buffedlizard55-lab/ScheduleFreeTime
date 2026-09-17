@@ -49,7 +49,7 @@
 #           the official CBS kickoff (3:00 PM ET) is authoritative - flagged in the build.
 # Format: date|kickoffPT(HH:MM 24h, EST-<HH:MM> for an estimated slot, TBD = no slot known)|dur_min|away|home|eventId|note|customlabel(optional)
 2026-09-19|16:30|204|LSU|Ole Miss|557127|kickoff 7:30 PM ET ABC (olemissports.com); WWO air 7:00 PM ET; Danny Reed & Derek Rackley
-2026-09-26|12:30|204|Oklahoma|Georgia|557136|kickoff 3:30 PM ET ESPN/ABC (SEC announcement 2026-09-14); WWO air TBD; Sanford Stadium
+2026-09-26|12:30|204|Oklahoma|Georgia|557136|kickoff 3:30 PM ET ESPN/ABC (SEC announcement 2026-09-14); WWO air 3:00 PM ET (event grid 2026-09-17, was TBD); Sanford Stadium
 2026-10-03|EST-12:30|204|Notre Dame|North Carolina|557137|kickoff TBD (ESPN) - estimated showcase slot 3:30 PM ET; Kenan Stadium
 2026-10-03|EST-16:30|204|Notre Dame|North Carolina|557137|kickoff TBD - estimated showcase slot 7:30 PM ET (second possible window)
 2026-10-10|EST-12:30|204|Indiana|Nebraska|557139|kickoff TBD (The Athletic) - estimated showcase slot 3:30 PM ET; Memorial Stadium Lincoln
