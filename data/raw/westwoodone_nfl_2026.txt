@@ -16,6 +16,12 @@
 # (April) are all outside the Aug 2026 - Feb 2027 window by calendar.
 # RE-VERIFIED 2026-09-17 pass C (this session): all 4 NFL chunks + 3 WWO-property pages
 # re-fetched — zero deltas; no new in-window WWO sports; 94122 reception confirmed.
+# RE-VERIFIED 2026-09-17 pass D (independent re-verification, all 4 chunks fetched fresh):
+# all 65 dated broadcasts + 8 TBA placeholders match this file at event-id level — ZERO
+# deltas (49ers rows unchanged: WAS@SF Oct 19 MNF 548538, SF@LAC Dec 17 TNF 548568,
+# PHI@SF Jan 3 SNF 548509; the Nov 22 MIN@SF 548491 7:30pm ET page line is the pregame
+# air, official kickoff 8:20 PM ET = 5:20 PM PST per 49ers.com). WWO NCAA Basketball page
+# still 'No upcoming events'.
 # The Cumulus press release of 2026-09-09 confirms the package scope: NFL Kickoff,
 # MNF/SNF/TNF, Thanksgiving, Black Friday, Christmas, EIGHT International Games,
 # LATE-SEASON SATURDAY GAMES, and EVERY NFL POSTSEASON GAME through Super Bowl LXI

@@ -66,15 +66,24 @@ This file answers the user's request: "Make suggestions for what work still need
 - [ ] **When NFL settles Pro Bowl date:** Remove losing day (Feb 7 vs Feb 9) from `nfl_2027_postseason_tbd.txt`.
 
 ### Priority 2 — Close known gaps
-- [ ] **NEW (researched 2026-09-17) — Stanford men's basketball on KNBR 1050 AM:** the Cardinal Sports
-      Network flagship carries ALL regular-season + postseason men's basketball games over the air
-      (gostanford.com: "All Regular Season and Post-Season Men's Basketball Games") — that is ~30
-      in-window games (Nov 2026–Feb 2027) on Bay Area radio that currently do NOT block. Transcribe
-      from ESPN's team schedule pages exactly like the Warriors/Sharks passes (find the 2026-27
-      Stanford MBB schedule URL on espn.com) + gostanford.com game-center times, add as a blocking
-      high-priority league, and extend audit.py. Cal basketball: NO verified 2026-27 flagship found
-      yet (KGO 810 carried Cal for 47 years through 2020; the football schedule page now lists
-      KSFO 810) — verify at calbears.com BEFORE adding; do not assume.
+- [x] **RESOLVED 2026-09-17 pass D — Stanford/Cal men's basketball radio (was: "add ~30 Stanford MBB
+      games on KNBR 1050"):** the pass C suggestion is REVERSED after line-by-line research —
+      Stanford's own Nov 9, 2017 release ("Enhanced Basketball Coverage",
+      gostanford.com/news/2017/11/09/enhanced-basketball-coverage) states men's basketball
+      broadcasts "will shift FROM KNBR 1050 AM, which had previously served as the flagship network"
+      to free online audio (GoStanford.com/SIDEARM + TuneIn; select games on SiriusXM). The
+      KNBR-1050-carries-all-MBB claims that remain online are from 2011/2013 (pre-shift) or
+      third-party directories with stale boilerplate. Cal MBB: the 2026-27 calbears.com schedule
+      page prints NO radio rows at all (meaningful — every football game prints one), and no
+      current Bay Area OTA flagship was found. Both 2026-27 schedules WERE located (Cal opens
+      Nov 2 vs Adams State; Stanford ACC slate Jan 6 – Mar 6; all tipoff times TBA) but **neither
+      league is added as a blocking radio league** — the over-the-air carriage cannot be verified
+      for the current era (no-hallucination rule). Flag `MBB_RADIO_NOT_OTA` records the full
+      evidence. TO RE-OPEN: when gameday notes return in November, check ONE Stanford MBB and ONE
+      Cal MBB game note for an OTA station; only a per-game OTA listing justifies adding rows.
+- [ ] **Stanford/Cal WBB, other Bay Area OTA sports:** same standard applies — verify a per-game
+      over-the-air flagship before adding; online-only streams do NOT block (user's spec is
+      standard AM/FM radio receivable in 94122).
 - [ ] **NBA Cup and All-Star:** Warriors idle Dec 2-11 (NBA Cup window) and Feb 18-24 (All-Star break) — confirmed gaps, not missing rows. If you want Cup knockout or All-Star games to block, add them as conditional or blocking rows (currently deliberately not blocking — no Warriors game).
 - [ ] **NHL postponements:** Re-transcribe ESPN team pages (`/nhl/team/schedule/_/name/sj/season/2027`) if Sharks schedule changes.
 - [ ] **WNBA playoff radio carriage:** Per-game playoff radio carriage not published — currently blocks by date presuming Bay Area playoff game airs locally (flagged IRREGULARITY). Update `data/raw/wnba_valkyries_2026.txt` once club announces per-game radio split.
@@ -90,7 +99,14 @@ This file answers the user's request: "Make suggestions for what work still need
 - [ ] **Accessibility:** Timeline currently uses color only — add patterns or labels for color-blind users.
 
 ### Priority 4 — Data automation (future)
-- [ ] **Automate MLB Stats API fetch:** Currently hand-transcribed from API queries recorded in raw file headers. Build a script `scripts/fetch_mlb.py` that hits `https://statsapi.mlb.com/api/v1/schedule` and writes `data/raw/mlb_2026_regseason.txt` directly — requires handling UTC→PT conversion and placeholder times.
+- [x] **Automate MLB Stats API fetch (DONE 2026-09-17 pass D):** `scripts/fetch_mlb.py` — fetches the
+      official postseason query, diffs gamePk set + per-date counts against
+      `data/raw/mlb_2026_postseason_tbd.txt`, detects any `startTimeTBD`→official transition,
+      prints ready-to-paste replacement rows in the build's format, writes
+      `data/raw/mlb_postseason_live_snapshot.json` (advisory only — nothing auto-merges), exits 2
+      on any delta, and no-ops cleanly when offline (e.g. the build sandbox). **This is THE tool
+      for the Sep 27–28 Wild Card time drop.** A full auto-writer for the regular-season raw
+      files remains future work.
 - [ ] **Automate NFL PFR fetch:** PFR tables are HTML — build scraper for `https://www.pro-football-reference.com/years/2026/games.htm` (regular season) and `.../preseason.htm`.
 - [ ] **Automate Westwood One fetch:** WWO schedule page is JS-driven with 4 chunks and reCAPTCHA block — needs headless browser or API reverse-engineering (currently manual transcription with event IDs).
 - [ ] **Automate ESPN NBA/NHL:** ESPN team pages are rendered HTML — scraper for `https://www.espn.com/nba/team/schedule/_/name/gs/season/2027` etc.
