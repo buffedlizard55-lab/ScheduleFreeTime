@@ -16,10 +16,15 @@ A moment counts as *busy* if any of these is on air:
 * **Westwood One NCAA football showcase** (national radio, Bay Area: KNBR)
 
 The Giants, Athletics, 49ers, Warriors, Valkyries and Sharks are flagged **high priority** (★), but every
-other game in the leagues above still blocks. 📻 marks the games on Westwood One national radio
-in the Bay Area (KNBR 680 AM / 104.5 FM): all 65 dated NFL broadcasts were matched 65/65 against
-the league table, and per the Cumulus press release (Sep 9, 2026) WWO also airs the **late-season
-Saturday games and every NFL postseason game** through Super Bowl LXI. Everything is shown in
+other game in the leagues above still blocks. **📻 marks every game that is live on Bay Area radio** —
+hover the icon for the station, and the day view has an **"On the radio in the Bay Area today"** panel
+listing them: Westwood One on KNBR 680 AM / 104.5 FM / KTCT 1050 AM (all 65 dated NFL broadcasts matched
+65/65 against the league table; per the Cumulus press release (Sep 9, 2026) WWO also airs the
+**late-season Saturday games and every NFL postseason game** through Super Bowl LXI), the Giants on
+KNBR, the 49ers on KSAN/KNBR, the Earthquakes on KSFO 810 / KZSF 1370, Stanford on KNBR/KTCT 1050,
+Cal on KSFO 810 (the Nov 21 Big Game on KNBR — verified per-game 2026-09-17), the Warriors and
+Valkyries on 95.7 The Game, and the Sharks on the Sharks Audio Network (online; 98.5 KFOX 2000–2021).
+Everything is shown in
 **America/Los_Angeles** time (PDT through Oct 31, 2026, then PST) for **Aug 1, 2026 – Feb 28,
 2027**.
 
@@ -35,6 +40,14 @@ reported on the day at all** (the day shows no free windows and 0 free minutes �
 time on football days). Super Bowl LXI's 3:30 PM PT kickoff is official (ESPN event 401873270).
 Days that depend on a team qualifying (MLS playoffs, ACC/CFP/bowls) stay **UNCONFIRMED** —
 free time is not asserted there either.
+
+**MLB postseason, partially resolved (2026-09-17):** per MLB's official tracker, **4 of 12 berths
+are clinched** — Rays (9/11), Brewers (9/11; NL Central 9/15), Dodgers (9/14; NL West 9/17), Yankees
+(9/14) — and the current projected Wild Card bracket is shown on every MLB postseason day
+(Sep 29 – Oct 31): AL (1) Rays vs (4) Yankees, (2) Guardians vs (5) Red Sox, (3) Astros vs (6) White
+Sox; NL (1) Brewers vs (4) Cubs, (2) Dodgers vs (5) Phillies, (3) Braves vs (6) Padres. Projections
+are labeled "as of 2026-09-17, not final" (seeds move through Sep 27), and **all 53 kickoff times
+remain officially TBD** (the Stats API still returns 07:33:00Z placeholders — re-verified 2026-09-17).
 
 ## Run it
 
@@ -123,7 +136,8 @@ No manual entry anywhere. The pipeline reads hand-transcribed, source-attributed
 | `data/raw/teams_mlb.json` | all 30 MLB clubs (MLB Stats API) |
 | `data/raw/mlb_2026_regseason.txt` | 417 MLB games, Aug 1–31 |
 | `data/raw/mlb_2026_september.txt` | 361 MLB games, Sep 1–27 |
-| `data/raw/mlb_2026_postseason_tbd.txt` | 53 postseason games, all TBD (official bracket calendar, last date Oct 31; re-verified 2026-09-16) |
+| `data/raw/mlb_2026_postseason_tbd.txt` | 53 postseason games, all TBD (official bracket calendar, last date Oct 31; re-verified 2026-09-17 — 53 games / 28 dates, zero delta, every time still 07:33:00Z) |
+| `data/raw/mlb_2026_postseason_resolution.txt` | **new 2026-09-17:** the MLB postseason resolution layer — 4 official clinches (mlb.com tracker) + current projected bracket (mlb.com playoff picture) + times-still-TBD status; attached to the TBD rows as `playoff_note` |
 | `data/raw/nfl_2026_pfr_regseason.txt` | **all 272 league-wide NFL regular-season games** (PFR league table, cross-checked vs nfl.com + 49ers.com) |
 | `data/raw/nfl_2026_pfr_preseason.txt` | all 49 preseason games (times only where official sources publish one) |
 | `data/raw/nfl_2027_postseason_tbd.txt` | WC Jan 16–18 / Div Jan 23–24 / CC Jan 31 / **Super Bowl LXI Feb 14, 2027 SoFi** + Pro Bowl Feb 9⚠(date conflict) |
@@ -145,8 +159,15 @@ three 49ers kickoff-time **corrections** — Dec 17 TNF = 5:15 PM PT, Nov 29 vs 
 Dec 6 at NYG = 10:00 AM PT — plus the 2026-09-16 independent-audit pass: 778 MLB games' per-date counts matched the live Stats API on
 all 58 dates with game-level spot checks, the WWO NFL and NCAA-football pages re-verified with zero
 deltas, the postseason placeholder corrected (Oct 4: 4 → 2 games, total 55 → 53), next-game spot
-checks for Cal / Stanford / the Earthquakes, and the Valkyries (WNBA, 95.7 The Game) added; the
-2026-09-14 pass: 65/65 Westwood One NFL broadcasts matched
+checks for Cal / Stanford / the Earthquakes, and the Valkyries (WNBA, 95.7 The Game) added;
+**2026-09-17 pass**: WWO NFL page re-verified 71/71 upcoming events at event-id level (zero deltas),
+WWO NCAAF full list re-verified 13/13 via the eventGrid endpoint, MLB Stats API re-queried (53 games /
+28 dates, zero delta; all times still 07:33:00Z), MLB.com official clinch tracker + playoff picture
+fetched (4 teams clinched — recorded in the new resolution file), the Earthquakes' official 2026 table
+re-fetched (Oct 31 vs RSL 2:00 PM PT correction), Stanford 12/12 + Cal 12/12 rows live-verified (incl.
+Cal's per-game radio rows: KSFO 810 AM for all games, KNBR 104.5/680 for the Nov 21 Big Game), 49ers
+20/20, and the football-day bug fix re-proved by the new UI invariant test (`scripts/ui_logic_test.js`);
+the 2026-09-14 pass: 65/65 Westwood One NFL broadcasts matched
 to the league table, 63 Warriors + 68 Sharks games transcribed from ESPN with per-game review
 links, and the Bay Area radio flagship per team documented), the researched durations with
 citations, and every irregularity found. `schedules.md` is generated (do not hand-edit) and

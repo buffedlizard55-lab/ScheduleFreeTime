@@ -498,15 +498,15 @@
    "flag": ""
   },
   {
-   "date": "2026-10-31",
-   "sport": "mls",
-   "label": "Earthquakes vs Real Salt Lake",
-   "ha": "home",
-   "start_pt": null,
-   "phase": "MLS Regular Season",
-   "venue": "PayPal Park",
-   "source": "https://images.mlssoccer.com/image/upload/v1766018474/assets/sje/schedule/2026%20Schedule.pdf",
-   "flag": "KICKOFF TIME TBD - official PDF prints 'TBD' for this match."
+    "date": "2026-10-31",
+    "sport": "mls",
+    "label": "Earthquakes vs Real Salt Lake",
+    "ha": "home",
+    "start_pt": "14:00",
+    "phase": "MLS Regular Season",
+    "venue": "PayPal Park",
+    "source": "https://www.sjearthquakes.com/news/news-earthquakes-announce-radio-stations-for-2026-mls-season",
+    "flag": "CORRECTED 2026-09-17: the transcribed MLS schedule PDF printed TBD for this match, but the club's official 2026 radio release (fetched live 2026-09-17) lists it at 2:00 PM PT - time now official."
   },
   {
    "date": "2026-11-07",

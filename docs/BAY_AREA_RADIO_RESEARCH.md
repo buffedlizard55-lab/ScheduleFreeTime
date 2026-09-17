@@ -86,7 +86,11 @@ This matches user requirement: "any games that are covered on this site should b
 
 ### San Jose Earthquakes (MLS)
 - Flagship: KSFO 810 AM (English) / KZSF 1370 AM La Kaliente (Spanish) — third consecutive season in 2026
+  (the Feb 21 season opener aired on KNBR 680 AM / 104.5 FM per the same release)
 - Source: Official club release Feb 16, 2026 — [sjearthquakes.com](https://www.sjearthquakes.com/news/news-earthquakes-announce-radio-stations-for-2026-mls-season) — "Cumulus Media’s 810 AM/KSFO-AM will primarily serve as the English radio home of the Quakes for the third consecutive season, while La Kaliente 1370 AM/KZSF-AM will be the team’s Spanish-language flagship station for the 16th campaign."
+- **2026-09-17:** the release's full 2026 schedule table was re-fetched live — 16 of 17 in-window games
+  matched `data/games_local.json`; the **Oct 31 vs Real Salt Lake kickoff (2:00 PM PT)** was confirmed
+  there (the transcribed MLS PDF printed TBD for that match; correction flag MLB_OCT31_QUIKES_2PM).
 
 ### Stanford Cardinal (NCAA Football)
 - Flagship: KNBR/KTCT 1050 AM
@@ -96,9 +100,12 @@ This matches user requirement: "any games that are covered on this site should b
   - Programming page: [thesportsleader.com/stanfordfootball](https://www.thesportsleader.com/stanfordfootball/) — "KNBR 1050 is your home for Stanford Cardinal football!"
 
 ### Cal Golden Bears (NCAA Football)
-- 2026 flagship: KSFO 810 AM (per schedule page) — historically KGO 810 AM for 47 years through 2020
+- 2026 flagship: **KSFO 810 AM — VERIFIED PER-GAME 2026-09-17** on the official schedule page: every one
+  of the 12 2026 games prints "Radio: KSFO 810 AM", EXCEPT the **Nov 21 129th Big Game, which prints
+  "Radio: KNBR 104.5 FM / 680 AM"** (flag CAL_BIGGAME_KNBR_RADIO). Historically KGO 810 AM for 47 years
+  through 2020.
 - Sources:
-  - Cal schedule: [calbears.com/sports/football/schedule/2026](https://calbears.com/sports/football/schedule/2026) — every game lists "Radio: KSFO 810 AM"
+  - Cal schedule: [calbears.com/sports/football/schedule/2026](https://calbears.com/sports/football/schedule/2026) — per-game "Radio:" rows verified live 2026-09-17 (12/12 games; KSFO 810 AM x11, KNBR 104.5/680 for the Big Game)
   - Historical extension: [bearinsider.com — Cal Extends Partnership With KGO Radio](https://bearinsider.com/s/2255/cal-extends-partnership-with-kgo-radio) — "upcoming season will mark the 47th consecutive year KGO has served as the flagship of the Bears"
   - Format change note: [SI — KGO Radio, the Voice of Cal Football, Shuts Down](https://www.si.com/college/cal/news/kgo-changing-format) — KGO 810 changed format Oct 2022; [SI — Radio Game Coverage to Continue as KGO Becomes The Spread](https://www.si.com/college/cal/news/kgo-becomes-the-spread) — coverage continued as "The Spread 810-AM"
 
@@ -135,7 +142,12 @@ Earthquakes, Stanford, Cal, Warriors, Valkyries, Sharks, WWO NFL + WWO NCAAF) co
 verified as live on Bay Area radio.
 
 ## Verification date
-2026-09-16 pass A independent audit + pass B live re-verification (this session: WWO NFL / NCAAF /
-U.S. Soccer pages re-fetched, the three missing WWO NCAAF broadcasts added with official kickoff
-sources, other-sports sweep documented). All links above were fetched live and match the repo's
-stored transcriptions.
+CURRENT: **2026-09-17 pass** — WWO NFL page re-fetched (71/71 upcoming events match at event-id
+level, zero deltas), WWO NCAAF full list re-verified via the eventGrid endpoint (13/13), the
+Cumulus press release + KNBR Wikipedia re-fetched (WWO scope + Bay Area carriage unchanged),
+the Earthquakes official 2026 table re-fetched (Oct 31 2:00 PM PT correction), the Stanford and
+Cal official schedules re-fetched (12/12 rows each; Cal's per-game radio rows verified — KSFO 810
+AM for all games, KNBR 104.5/680 for the Nov 21 Big Game). Previous: 2026-09-16 pass A independent
+audit + pass B live re-verification (WWO NFL / NCAAF / U.S. Soccer pages re-fetched, the three
+missing WWO NCAAF broadcasts added with official kickoff sources, other-sports sweep documented).
+All links above were fetched live and match the repo's stored transcriptions.
