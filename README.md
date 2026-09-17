@@ -103,9 +103,9 @@ straight off the filesystem will not work.
 Citations in `docs/VERIFICATION.md` §2; the UI inputs are editable if you prefer different
 assumptions (e.g. your original 150-min MLB / 180-min NFL guesses).
 
-## Bay Area radio research (new 2026-09-17)
+## Bay Area radio research (new 2026-09-17, updated with Outer Sunset 94122 reception)
 
-Every team above is on Bay Area radio — verified line-by-line with official sources:
+Every team above is on Bay Area radio — verified line-by-line with official sources — and **every flagship is receivable on a standard AM/FM radio in Outer Sunset, SF 94122** (see `docs/BAY_AREA_RADIO_RESEARCH.md` § “Reception in Outer Sunset” for the 94122-specific RF analysis):
 
 * **Giants:** KNBR 680 AM / 104.5 FM — flagship since 1979 — [KNBR (AM)](https://en.wikipedia.org/wiki/KNBR_(AM)), [KNBR-FM](https://en.wikipedia.org/wiki/KNBR-FM)
 * **49ers:** KSAN 107.7 FM + KNBR 680/104.5 FM — [49ers.com/schedule](https://www.49ers.com/schedule/)

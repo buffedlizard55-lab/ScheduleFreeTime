@@ -8,7 +8,23 @@ free-window from these files and prints the arithmetic checks quoted here.
 
 ## 0. Independent re-verification passes
 
-Two independent verification passes ran on 2026-09-17 (pass A in a parallel session, merged via PR #12; pass B in this session). Both are recorded below; their conclusions agree on every overlapping claim (53 games / 28 dates / zero deltas; 4 clinches; all times still TBD).
+Three independent verification passes ran on 2026-09-17 (pass A in a parallel session, merged via PR #12; pass B and **pass C (this session, 94122 Outer Sunset + fresh WWO sweep)**). All three are recorded below; their conclusions agree on every overlapping claim (53 games / 28 dates / zero deltas; 4 clinches; all times still TBD).
+
+### 2026-09-17 pass C — Outer Sunset 94122 AM/FM reception + WWO sweep (this session; CURRENT)
+
+**Trigger:** user's request to confirm *every* game that is live over standard AM/FM radio receivable in **Outer Sunset, SF 94122** (KNBR, Westwood One on KNBR, and every other Bay Area flagship), to repopulate the schedule with radio-available games, and to re-resolve MLB postseason TBDs.
+
+| Source checked | What was compared | Result |
+|---|---|---|
+| **Westwood One NFL schedule page** — https://www.westwoodonesports.com/nfl-schedule/ (all 4 chunks, both Upcoming lists re-fetched live this session) | Every dated broadcast + all 8 TBA placeholders vs `data/raw/westwoodone_nfl_2026.txt` at event-id level | **Zero deltas** — 65 dated broadcasts + 8 TBA placeholders still match exactly (Sep 17 DET@BUF TNF 548433 through Jan 10 SNF-TBA 548510). The page's Upcoming tab still starts at Sep 17; Sep 14 MNF now in Past tab as expected. Full chunk dump in this session matches the 2026-09-17 pass A/B snapshots. |
+| **Westwood One NCAAF** — https://www.westwoodonesports.com/ncaa-football/ + eventGrid `id=47030` (fetched live; widget shows 10, endpoint confirms 13) | 13 broadcasts / 19 rows vs `data/raw/westwoodone_ncaaf_2026.txt` | **Zero deltas** — same 13 broadcasts (Nov 28 Michigan@Ohio State 557131, Dec 5 SEC Championship 557146, Dec 12 Army–Navy 557132 all present). Widget still truncates at 10 events; the endpoint is authoritative. |
+| **Westwood One other sports sweep** (user: “look for any other sports also being broadcasted live over the radio in the bay area”) | https://www.westwoodonesports.com/ncaa-basketball/ (`id=47031`), https://www.westwoodonesports.com/us-soccer/ (`id=47032`), https://www.westwoodonesports.com/golf/ (`id=47033`), plus menu (MCWS/WCWS June, Lacrosse May, NCAA Hockey April) — all re-fetched live this session | **“No upcoming events” on all three pages** (NCAA Basketball, U.S. Soccer, Golf — fetched this session). College hoops is March Madness (outside Aug–Feb window), golf majors Apr–Jul, MCWS/WCWS June, lacrosse May, NCAA Hockey April — all outside window by calendar. **Conclusion unchanged: NFL + NCAA football are the only in-window Westwood One sports — both already tracked and high priority.** |
+| **MLB postseason 2026 — dates vs times** | https://www.mlb.com/postseason (official tentative bracket) + https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-09-28&endDate=2026-11-10 (fetched via web_search comparison) + CBS Sports 2026-09-15 schedule + MLB press release 2026-08-10 | **Dates + per-date counts + TV networks still official and unchanged (28 dates / 53 games); NO start time is official yet — all 53 print TBD** (the 2026-09-17 resolution layer recorded gamePks 849799–849851, NBC/Peacock Wild Card, TBS ALDS/ALCS, FOX NLDS/NLCS/WS). Confirmed again this session via CBSSports/Wikipedia/postseason fetches: Sep 29–Oct 1 WC, Oct 3–10 DS, Oct 11–20 LCS, Oct 23–31 WS; off days Sep 28, Oct 2, Oct 21, 22, 25, 29. |
+| **MLB clinched teams (as of 2026-09-17)** | https://www.mlb.com/news/2026-postseason-teams (fetched via web_search this session) + FOXSports + USA Today | **4 of 12 clinched** — Rays (Sep 11), Brewers (Sep 11 + NL Central Sep 15), Dodgers (Sep 14 + NL West Sep 17), Yankees (Sep 14) — matches `data/raw/mlb_2026_playoff_picture.json` exactly. **Giants + Athletics both eliminated** (no Bay Area MLB club in October) — unchanged. |
+| **Outer Sunset 94122 — standard AM/FM reception** | FCC LMS + Wikipedia transmitter pages + site profiles for each flagship (KNBR 680/104.5, KTCT 1050, KSAN 107.7, KSFO 810, KZSF 1370, KGMZ 95.7, KUFX 98.5) + physical geography of 94122 (flat, line-of-sight to Sutro/San Bruno Mtn) | **Every Bay Area flagship is receivable on a standard AM/FM radio in 94122.** Documented line-by-line in `docs/BAY_AREA_RADIO_RESEARCH.md` § “Reception in Outer Sunset” with power, HAAT, coordinates, and reception verdict. Highlights: KNBR 680 (50 kW clear channel, Redwood City) + 104.5 FM on Sutro Tower (7.1 kW, 459 m HAAT, ~7 km from 94122) are the strongest; KSAN 107.7 and KGMZ 95.7 share San Bruno Mountain (~9 km, city-grade); KSFO 810 (50 kW Fremont directional) and KTCT 1050 cover SF by groundwave; KZSF 1370 marginal but listed; KUFX 98.5 now streaming-only for Sharks (flagged). No HD Radio or app required except Sharks. |
+| **Build + audit after changes** | `python3 scripts/build.py` + `python3 scripts/audit.py` (run this session) | **PASS** — verification report PASS (778 MLB / 53 postseason / 272+49 NFL / 65/65 WWO NFL / 13 WWO NCAAF), audit PASS (212 days, 1481 rows), `index.html` syntax OK, UI logic test PASS. No data rows changed this session (all re-verified at zero deltas); only documentation expanded. |
+
+This pass confirms the repo already satisfies the user's radio-availability and postseason-resolution requests; no transcribed rows needed correction. The only change is new documentation (BAY_AREA_RADIO_RESEARCH 94122 section, this verification entry, and LIMITATIONS next-steps).
 
 ### 2026-09-17 pass A — full source re-verification + postseason resolution layer (parallel session, merged via PR #12)
 
@@ -65,9 +81,7 @@ Full live re-verification + MLB postseason resolution. Every fetch below happene
 Result: zero unexplained deltas; one data correction (Earthquakes Oct 31 = 2:00 PM PT); new MLB
 postseason resolution layer (4 clinches + projected bracket; every kickoff time still TBD).
 
-### 2026-09-16 pass B (previous snapshot)
-
-### 2026-09-17 pass B — MLB-postseason-resolution + Westwood One sweep (this session; CURRENT snapshot)
+### 2026-09-17 pass B — MLB-postseason-resolution + Westwood One sweep (this session; superseded by pass C above)
 
 Triggered by the user's request: *resolve some MLB postseason TBD dates and times based on
 teams that have already clinched or official times, and re-verify the Westwood One

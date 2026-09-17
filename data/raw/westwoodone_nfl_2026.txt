@@ -14,6 +14,8 @@
 # Golf (westwoodonesports.com/golf/, grid id 47033) = "No upcoming events" (majors run
 # Apr-Jul, outside the window); NCAA MCWS/WCWS (June), Lacrosse (May) and NCAA Hockey
 # (April) are all outside the Aug 2026 - Feb 2027 window by calendar.
+# RE-VERIFIED 2026-09-17 pass C (this session): all 4 NFL chunks + 3 WWO-property pages
+# re-fetched — zero deltas; no new in-window WWO sports; 94122 reception confirmed.
 # The Cumulus press release of 2026-09-09 confirms the package scope: NFL Kickoff,
 # MNF/SNF/TNF, Thanksgiving, Black Friday, Christmas, EIGHT International Games,
 # LATE-SEASON SATURDAY GAMES, and EVERY NFL POSTSEASON GAME through Super Bowl LXI
